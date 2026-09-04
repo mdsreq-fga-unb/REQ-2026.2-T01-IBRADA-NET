@@ -1,0 +1,51 @@
+/* Cores customizadas */
+:root {
+  --md-primary-fg-color: #006139;
+  --md-primary-fg-color--light: #008C56;
+  --md-primary-fg-color--dark: #004d2e;
+  --md-accent-fg-color: #00897b;
+}
+
+/* Customização da barra superior */
+.md-header {
+  background-color: #006139 !important;
+}
+
+.md-header__button {
+  color: white;
+}
+
+/* Customização de links */
+.md-typeset a {
+  color: #006139;
+}
+
+.md-typeset a:hover {
+  color: #008C56;
+}
+
+/* Imagem em destaque - use a classe img-destaque */
+.img-destaque {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 97, 57, 0.2);
+  margin: 20px 0;
+  display: block;
+}
+
+/* Container para a imagem de capa */
+.hero-image {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Customização de abas */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.md-tabs__link--active {
+  color: white;
+  border-bottom-color: white;
+}

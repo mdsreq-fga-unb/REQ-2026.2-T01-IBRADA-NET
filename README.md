@@ -1,0 +1,87 @@
+# Como Atualizar a Documentação
+
+## 1. Atualize o arquivo
+
+Os arquivos da documentação ficam dentro da pasta `docs/`.
+
+Por exemplo:
+
+```text
+docs/
+├── index.md
+├── doc-visao
+│   └── topico1.md
+│   └── topico2.md
+    └── topico3.md
+```
+
+Abra o arquivo que deseja modificar e faça as alterações normalmente utilizando Markdown.
+
+> Lembre de adicionar o tópico no mkdocs.yml para que ele seja referenciado na navegação
+
+## 2. Salve as alterações
+
+Depois de editar o arquivo, salve as alterações no VS Code ou no editor utilizado.
+
+```bash
+git add .
+```
+
+Ou, para adicionar somente um arquivo:
+
+```bash
+git add docs/requisitos/visao-geral.md
+```
+
+---
+
+### Crie um commit
+
+
+```bash
+git commit -m "docs: atualiza documentação de requisitos"
+```
+
+---
+
+
+## 3. Atualização do GitHub Pages
+
+```bash
+git mkdocs gh-deploy
+```
+
+
+Depois do `mkdocs gh-deploy`, o GitHub irá executar o processo configurado para publicação do MkDocs na branch gh-deploy e fará o deploy automaticamente.
+
+Por favor verificar se o deploy ocorrey corretamente.
+
+---
+
+
+## extra: Teste a documentação localmente
+
+Antes de enviar as alterações para o GitHub, é recomendado executar o servidor local do MkDocs:
+
+```bash
+mkdocs serve
+```
+
+O terminal deverá apresentar um endereço semelhante a:
+
+```text
+http://127.0.0.1:8000/
+```
+
+Abra esse endereço no navegador para visualizar a documentação.
+
+Enquanto o `mkdocs serve` estiver executando, as alterações nos arquivos geralmente são atualizadas automaticamente no navegador.
+
+Para parar o servidor:
+
+```text
+Ctrl + C
+```
+
+---
+
