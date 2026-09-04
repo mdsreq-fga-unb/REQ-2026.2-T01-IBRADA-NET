@@ -13,25 +13,22 @@ Esta é a documentação centralizada de requisitos de software para nosso proje
 ### 📋 [Requisitos](requisitos/visao-geral.md)
 Definiçõ e especificação completa dos requisitos do sistema.
 
-- **Visão Geral**: Entendimento geral do projeto e seus objetivos
-- **Requisitos Funcionais**: O que o sistema deve fazer
-- **Requisitos Não-Funcionais**: Critérios de qualidade e performance
+- **Documento de visão**: ...
 
-### 🏗️ [Especificação](especificacao/casos-uso.md)
-Detalhes técnicos e arquiteturais do projeto.
+### Participantes
 
-- **Casos de Uso**: Interações entre usuários e sistema
-- **Arquitetura**: Visão técnica e componentes do sistema
+| Matrícula | Nome |
+|----|----|
+|- | -  |
 
-### 📚 [Documentação](documentacao/glossario.md)
-Recursos adicionais e suporte.
+### 📚 [links](documentacao/glossario.md)
 
-- **Glossário**: Termos e definições utilizadas no projeto
-- **FAQ**: Perguntas frequentes e respostas
+- **GitHub**: https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET
+- **VISÃO DO PRODUTO E PROJETO**: https://docs.google.com/document/d/1JuMdYhAhbbBK1ZZBhmm_-v7o6d5Aza8ZaxQL47o1ebc/edit?usp=sharing
 
 ---
 
-**Última atualização**: 2026-09-04
+**Última atualização**: 04-09-2026
 
 !!! note "Dica"
     Use o menu de navegação acima para explorar as diferentes seções da documentação.
