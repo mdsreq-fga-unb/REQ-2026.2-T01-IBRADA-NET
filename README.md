@@ -44,6 +44,11 @@ git commit -m "docs: atualiza documentação de requisitos"
 
 ---
 
+### Dê o push
+
+```bash
+git push
+```
 
 ## 3. Atualização do GitHub Pages
 
