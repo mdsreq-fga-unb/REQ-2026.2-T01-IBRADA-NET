@@ -49,3 +49,7 @@
   color: white;
   border-bottom-color: white;
 }
+
+.md-grid {
+    max-width: 1600px;
+}
