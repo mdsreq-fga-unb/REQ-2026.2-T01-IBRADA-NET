@@ -9,21 +9,21 @@ Tópico referente às reuniões que aconteceram durante o período da primeira u
     >Link da reunião: Indisponível (infelizmente essa reunião inicial foi mais informal com o cliente)
 
     ## 1. Pauta
-    - Levantamento inicial do contexto, histórico e setor de atuação do IBRADA[cite: 1].
-    - Identificação dos problemas e gargalos operacionais/negociais vivenciados pelo instituto[cite: 1].
-    - Mapeamento do público-alvo, atores envolvidos e serviços prestados[cite: 1].
-    - Elicitação básica inicial de requisitos para a nova solução de software[cite: 1].
-    - Análise dos materiais de apoio e referências (site atual, portfólio e plataformas similares)[cite: 1].
+    - Levantamento inicial do contexto, histórico e setor de atuação do IBRADA.
+    - Identificação dos problemas e gargalos operacionais/negociais vivenciados pelo instituto.
+    - Mapeamento do público-alvo, atores envolvidos e serviços prestados.
+    - Elicitação básica inicial de requisitos para a nova solução de software.
+    - Análise dos materiais de apoio e referências (site atual, portfólio e plataformas similares).
 
     ## 2. Assuntos debatidos
-    * **Visão Geral do Cliente:** O IBRADA é uma organização sem fins lucrativos atuante nos setores de meio ambiente, ecoturismo e inclusão social[cite: 1].
+    * **Visão Geral do Cliente:** O IBRADA é uma organização sem fins lucrativos atuante nos setores de meio ambiente, ecoturismo e inclusão social.
     * **Público-Alvo e Atores:** 
-        * *Beneficiários:* Turistas pagantes, comunidades indígenas e tradicionais (inclusão socio-produtiva não pagante) e agricultores familiares[cite: 1].
-        * *Parceiros:* Colaboradores voluntários, além de apoiadores e patrocinadores para captação de recursos, equipamentos e materiais[cite: 1].
-        * *Atores principais:* Diretoria do IBRADA, beneficiários e voluntários[cite: 1].
-    * **Serviços Prestados:** Regularização ambiental, inclusão socio-produtiva (agroecologia e turismo de base comunitária) e ecoturismo[cite: 1].
-    * **Problemas Identificados:** O site atual do IBRADA apresenta informações dispersas e bagunçadas, falhando em resolver gargalos críticos como a captação e articulação de voluntários, captação de recursos e a divulgação/venda de serviços[cite: 1].
-    * **Análise de Materiais:** Discussão sobre o portfólio e comparação entre o site do IBRADA, sites de venda de pacotes turísticos e o portal do Instituto Semeia[cite: 1].
+        * *Beneficiários:* Turistas pagantes, comunidades indígenas e tradicionais (inclusão socio-produtiva não pagante) e agricultores familiares.
+        * *Parceiros:* Colaboradores voluntários, além de apoiadores e patrocinadores para captação de recursos, equipamentos e materiais.
+        * *Atores principais:* Diretoria do IBRADA, beneficiários e voluntários.
+    * **Serviços Prestados:** Regularização ambiental, inclusão socio-produtiva (agroecologia e turismo de base comunitária) e ecoturismo.
+    * **Problemas Identificados:** O site atual do IBRADA apresenta informações dispersas e bagunçadas, falhando em resolver gargalos críticos como a captação e articulação de voluntários, captação de recursos e a divulgação/venda de serviços.
+    * **Análise de Materiais:** Discussão sobre o portfólio e comparação entre o site do IBRADA, sites de venda de pacotes turísticos e o portal do Instituto Semeia.
 
     ## 3. Participantes
 
@@ -35,13 +35,13 @@ Tópico referente às reuniões que aconteceram durante o período da primeira u
     ## 4. Decisões/Revisões
     |Tipo|Descrição|
     |-|-|
-    |Decisão|A nova solução de software/site deverá resolver centralmente a divulgação e captação de voluntários, captação de patrocinadores, vendas de pacotes de ecoturismo e captação de clientes para regularização fundiária[cite: 1].|
-    |Decisão|Definidas as páginas e módulos primários que comporão a versão inicial do sistema (módulo institucional, venda de pacotes e divulgação de serviços)[cite: 1]|
+    |Decisão|A nova solução de software/site deverá resolver centralmente a divulgação e captação de voluntários, captação de patrocinadores, vendas de pacotes de ecoturismo e captação de clientes para regularização fundiária.|
+    |Decisão|Definidas as páginas e módulos primários que comporão a versão inicial do sistema (módulo institucional, venda de pacotes e divulgação de serviços)|
 
     ## 5. Tarefas 
-    * Organizar e reescrever a elicitação inicial de requisitos nos padrões de Engenharia de Requisitos definidos para o projeto[cite: 1].
-    * Estruturar a página "Sobre Nós" incluindo uma linha do tempo dos projetos (histórico) baseada no portfólio do IBRADA[cite: 1].
-    * Mapear o fluxo de autenticação (cadastro e login) e o catálogo para venda de ecoturismo e regularização ambiental/fundiária[cite: 1].
+    * Organizar e reescrever a elicitação inicial de requisitos nos padrões de Engenharia de Requisitos definidos para o projeto.
+    * Estruturar a página "Sobre Nós" incluindo uma linha do tempo dos projetos (histórico) baseada no portfólio do IBRADA.
+    * Mapear o fluxo de autenticação (cadastro e login) e o catálogo para venda de ecoturismo e regularização ambiental/fundiária.
 
 
 
@@ -147,9 +147,11 @@ Tópico referente às reuniões que aconteceram durante o período da primeira u
     |Tipo|Descrição|
     |-|-|
     |Decisão|A prioridade máxima (MVP) será a construção de uma **Vitrine Interativa/Visual** (explicando o antes, durante e depois dos projetos) e a centralização dos canais de contato direcionados a cada público.|
-    |Decisão|O WhatsApp será mantido como o principal canal de comunicação de entrada para beneficiários rurais e comunitários devido à facilidade de uso por mensagens de áudio[cite: 4].|
-    |Decisão|A listagem detalhada de pacotes de trilhas para turistas fica categorizada como prioridade secundária no lançamento inicial[cite: 4].|
-    |Decisão|O custo de hospedagem permanecerá em torno de R$ 30,00/mês (servidor atual) durante o ciclo da disciplina, ficando eventuais custos de manutenção técnica profissional para alinhamento em etapas futuras pós-projeto[cite: 4].|
+    |Decisão|O WhatsApp será mantido como o principal canal de comunicação de entrada para beneficiários rurais e comunitários devido à facilidade de uso por mensagens de áudio.|
+    |Decisão|A listagem detalhada de pacotes de trilhas para turistas fica categorizada como prioridade secundária no lançamento inicial.|
+    |Revisão|Agora usaremos o RAD, por se encaixar melhor no que queremos apresentar ao cliente.|
 
     ## 5. Tarefas 
 
+    * Estruturar a linguagem visual e o fluxo da "Vitrine do Projeto" cobrindo o ciclo de recuperação ambiental e impacto comunitário.
+    * Consolidar os requisitos elicitados para elaborar a proposta formal de escopo do MVP e submeter à aprovação do cliente.
