@@ -48,7 +48,7 @@ extra_css:
 nav:
   - Home: index.md
   - Visão do Produto e Projeto:
-      - Documento: documento-visao/documento.md
+      - Visão do Produto e Projeto: documento-visao/documento.md
       - Imagem: documento-visao/testes.md
   # - Especificação:
   #     - Casos de Uso: especificacao/casos-uso.md

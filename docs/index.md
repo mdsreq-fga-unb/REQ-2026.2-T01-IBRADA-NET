@@ -15,13 +15,13 @@ Definiçõ e especificação completa dos requisitos do sistema.
 
 - **Documento de visão**: ...
 
-### Participantes
+## Participantes
 
 | Matrícula | Nome |
 |----|----|
 |- | -  |
 
-### 📚 [links](documentacao/glossario.md)
+## 📚 [links](documentacao/glossario.md)
 
 - **GitHub**: https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET
 - **VISÃO DO PRODUTO E PROJETO**: https://docs.google.com/document/d/1JuMdYhAhbbBK1ZZBhmm_-v7o6d5Aza8ZaxQL47o1ebc/edit?usp=sharing
