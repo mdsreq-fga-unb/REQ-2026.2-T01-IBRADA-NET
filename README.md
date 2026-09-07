@@ -1,3 +1,5 @@
+## GitPages: https://mdsreq-fga-unb.github.io/REQ-2026.2-T01-IBRADA-NET/
+
 # Como Atualizar a Documentação
 
 ## 1. Atualize o arquivo
@@ -53,13 +55,13 @@ git push
 ## 3. Atualização do GitHub Pages
 
 ```bash
-git mkdocs gh-deploy
+mkdocs gh-deploy
 ```
 
 
 Depois do `mkdocs gh-deploy`, o GitHub irá executar o processo configurado para publicação do MkDocs na branch gh-deploy e fará o deploy automaticamente.
 
-Por favor verificar se o deploy ocorrey corretamente.
+Por favor verificar se o deploy ocorreu corretamente.
 
 ---
 
