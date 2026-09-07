@@ -56,7 +56,7 @@ nav:
       - 6 Cronograma e entregas: documento-visao/6_cronograma.md
       - 7 Interação entre Equipe e Cliente: documento-visao/7_interacao.md
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
-      - Visão do Produto e Projeto: documento-visao/documento.md
+
   - Atas de Reunião:
       - Unidade 1: atas-reuniao/ata1.md
         
@@ -69,3 +69,4 @@ nav:
   # - Documentação:
   #     - Glossário: documentacao/glossario.md
   #     - FAQ: documentacao/faq.md
+  - Referências: referencias/referencia.md
