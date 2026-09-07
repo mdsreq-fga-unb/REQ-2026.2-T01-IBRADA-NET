@@ -55,3 +55,36 @@ Os principais stakeholders do projeto são: Guilherme Sampaio Scartezini, Nelson
 
 ![ Mapa de Stakeholders](../assets/stakeholders.png)
 *Figura 3:  Mapa de Stakeholders. Elaborado por Igor SOBRENOME*
+
+A seguir, é apresentado um quadro resumo dos stakeholders.
+
+| Stakeholder | Relação com a solução | Interesse principal | Influência |
+|:---:|:---:|:---:|:---:|
+| Presidência e representantes | Cliente real e stakeholder primordial do projeto | Validar requisitos, decisões e avaliar as entregas realizadas ao longo do desenvolvimento | Alta |
+| Interessados em ecoturismo | Usuários finais pagantes dos pacotes e trilhas | Acessar informações de pacotes de ecoturismo e realizar compras com clareza e agilidade | Alta |
+| Comunidades indígenas. Tradicionais e agricultores familiares | Beneficiários não pagantes ou pagantes de valores simbólicos | Ter acesso facilitado, com menor burocracia, às informações de iniciativas sociais e serviços de regularização de terras | Média |
+| Apoiadores e patrocinadores | Parceiros que injetam recursos financeiros e materiais | Encontrar informações de forma rápida para apoiar os projetos e aumentar a visibilidade de suas ações | Alta |
+| Voluntários | Usuários que colaboram com a operação diária | Encontrar informações claras sobre oportunidades de ajuda e engajar-se nos projetos facilmente | Média |
+| Equipe de desenvolvimento | Responsável pela construção técnica do sistema | Unificar as funcionalidades para operar a solução digital como um e-commerce e portal institucional seguro e acessível | Alta |
+
+### 1.7 Segmentação de Clientes
+
+Dentro do público-alvo do IBRADA temos perfis distintos com necessidades diferentes, entre eles:
+
+* **Interessados em Ecoturismo:** Público pagante que busca adquirir pacotes de viagens ou trilhas que promovem o ecoturismo e experiências imersivas.
+* **Comunidades Indígenas e Tradicionais:** Beneficiários diretos e não pagantes. O foco deste segmento é a integração de seus saberes ancestrais com os projetos do IBRADA, focados em agroecologia e preservação ambiental.
+* **Voluntários, Patrocinadores e Apoiadores:** Voluntários para o projeto e investidores (pessoas físicas ou empresas) que fornecem recursos financeiros, materiais ou equipamentos. 
+* **Agricultores familiares:** Beneficiários da inclusão sócio-produtiva e/ou pagante de valor simbólico do serviço de regularização fundiária.
+
+## 2. SOLUÇÃO PROPOSTA
+
+### 2.1 Objetivo Geral do Produto
+
+Aprimorar a comunicação e o relacionamento do IBRADA com seus diferentes públicos por meio do desenvolvimento de uma plataforma digital centralizada, que organize e disponibilize suas informações, facilite a divulgação e a contratação de serviços e amplie a participação de clientes, voluntários, apoiadores e parceiros em suas iniciativas sociais e ambientais.
+
+### 2.2 Objetivos Específicos (OE) do Produto
+
+* **OE1:** Otimizar a comunicação entre apoiadores, equipe interna e beneficiários.
+* **OE2:** Facilitar a jornada de contratação dos serviços oferecidos pelo IBRADA, reduzindo as dificuldades encontradas pelos interessados desde a descoberta do serviço até sua contratação.
+* **OE3:** Ampliar a capacidade do IBRADA de captar e gerenciar clientes, voluntários, apoiadores e parceiros, tornando o relacionamento com esses públicos mais organizado.
+* **OE4:** Incentivar o engajamento e aumentar a retenção em projetos ambientais.
