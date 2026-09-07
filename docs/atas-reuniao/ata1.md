@@ -109,17 +109,47 @@ Tópico referente às reuniões que aconteceram durante o período da primeira u
 === "06/09/2026 - Reunião com o Cliente"
     # Reunião 3
 
-    >06/09/2026 · 19:00–20:30 · Teams · Com Cliente
+    >06/09/2026 · 19:00–20:30 · Microsoft Teams · Com Cliente
 
     >[Link da reunião](https://youtu.be/RdfKNv9UFqM)
 
     ## 1. Pauta
+    - Entendimento das dores atuais e do modelo de atuação do IBRADA no momento presente.
+    - Expectativas para o MVP[cite: 4].
+    - Mapeamento dos fluxos de comunicação prioritários com os diferentes públicos-alvo.
+    - Alinhamento sobre hospedagem e custos de manutenção futura do software.
 
     ## 2. Assuntos debatidos
+    * Momento Atual e Foco de Atuação: O IBRADA está focado em projetos que unem a recuperação de áreas degradadas (reflorestamento nas margens de rios/APP) com a inclusão socio-produtiva e o turismo de base comunitária.
+    * Técnicas de Reflorestamento e Ecoturismo:
+        * Técnicas adotadas: Recomposição vegetal por meio de RNA (Recuperação Natural Assistida), Nendo Dango (bolas de semente com argila/composto) e nucleação
+        * Envolvimento comunitário: Capacitação e compra de mudas/esferas de sementes preparadas pelos próprios moradores e pequenos agricultores familiares
+        * Trilhas ecológicas: Criação de rotas curtas (ex: 13 km) com pontos de descanso e sinalização com QR Code para rota de fuga, apoio de saúde (UBS/postinho) e ofertas de serviços da comunidade (hospedagem rústica, refeições, aluguel de cavalos e bicicletas)
+    * Gargalos Operacionais e de Comunicação: Perda excessiva de tempo com explicações manuais repetitivas. O site precisa atuar como uma vitrine explicativa direta para evitar conversas iniciais extensas.
+    * Adequação de Comunicação por Público-Alvo
+    * Equipe do IBRADA: Formada por profissionais multidisciplinares (sociólogo, agrônomo, geógrafa, geólogo, economista e técnica em agroecologia).
 
     ## 3. Participantes
 
+    >Somente equipe interna 
+
+    | Nome |
+    | --- |
+    | Zayra Moraes |
+    | Filipe Brito  | 
+    | Vinicius Dos Santos  |
+    | ArthurScartezini |
+    | Cauã Mendes Coelho | 
+    | Gabriel Guedes Fernandes |
+
     ## 4. Decisões/Revisões
+
+    |Tipo|Descrição|
+    |-|-|
+    |Decisão|A prioridade máxima (MVP) será a construção de uma **Vitrine Interativa/Visual** (explicando o antes, durante e depois dos projetos) e a centralização dos canais de contato direcionados a cada público.|
+    |Decisão|O WhatsApp será mantido como o principal canal de comunicação de entrada para beneficiários rurais e comunitários devido à facilidade de uso por mensagens de áudio[cite: 4].|
+    |Decisão|A listagem detalhada de pacotes de trilhas para turistas fica categorizada como prioridade secundária no lançamento inicial[cite: 4].|
+    |Decisão|O custo de hospedagem permanecerá em torno de R$ 30,00/mês (servidor atual) durante o ciclo da disciplina, ficando eventuais custos de manutenção técnica profissional para alinhamento em etapas futuras pós-projeto[cite: 4].|
 
     ## 5. Tarefas 
 

@@ -48,8 +48,15 @@ extra_css:
 nav:
   - Home: index.md
   - Visão do Produto e Projeto:
+      - 1 Cenário Atual do Cliente e do Negócio: documento-visao/1_cenarioAtual.md
+      - 2 Solução Proposta: documento-visao/2_solucao.md
+      - 3 Intervenção Social: documento-visao/3_intervencao.md
+      - 4 Estratégias de engenharia de software: documento-visao/4_estrategias.md
+      - 5 Engenharia de Requisitos: documento-visao/5_requisitos.md
+      - 6 Cronograma e entregas: documento-visao/6_cronograma.md
+      - 7 Interação entre Equipe e Cliente: documento-visao/7_interacao.md
+      - 11 Lições Aprendidas: documento-visao/11_licoes.md
       - Visão do Produto e Projeto: documento-visao/documento.md
-      - Imagem: documento-visao/testes.md
   - Atas de Reunião:
       - Unidade 1: atas-reuniao/ata1.md
         
