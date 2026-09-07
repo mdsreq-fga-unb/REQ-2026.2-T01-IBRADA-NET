@@ -1,19 +1,20 @@
 
 ## Controle de versão
 
-|Versão|Data|Descrição| Autor (es)|
+|Data|Versão|Descrição| Autor (es)|
 |--|--|--|--|
 |26/08/2026|0.01|Proposta inicial do produto.|Arthur, Zayra, Gabriel|
-|30/08/2026|0.2|Ajustes da proposta|Cauã e Vinícius|
-|05/09/2026|0.3|Características de Produto e Tecnologias a serem utilizadas|Zayra Moraes|
-|06/09/2026|0.4|Inclusão da Intervenção Social e das Lições Aprendidas| Cauã Mendes|
-|06/09/2026|0.5|Benefícios Esperados| Igor Lima|
-|06/09/2026|0.6|Quadro Comparativo do 4.2 | Filipe Brito|
-|06/09/2026|0.7|Requisitos e o Rad|Gabriel Guedes|
-|06/09/2026|0.8|Composição da Equipe|Igor Lima|
-|07/09/2026|0.9|Cronograma final|Zayra Moraes|
-|07/09/2026|0.10|Inclusão do tópico Comunicação|Gabriel Mendes|
+|30/08/2026|0.02|Ajustes da proposta|Cauã e Vinícius|
+|05/09/2026|0.03|Características de Produto e Tecnologias a serem utilizadas|Zayra Moraes|
+|06/09/2026|0.04|Inclusão da Intervenção Social e das Lições Aprendidas| Cauã Mendes|
+|06/09/2026|0.05|Benefícios Esperados| Igor Lima|
+|06/09/2026|0.06|Quadro Comparativo do 4.2 | Filipe Brito|
+|06/09/2026|0.07|Requisitos e o Rad|Gabriel Guedes|
+|06/09/2026|0.08|Composição da Equipe|Igor Lima|
+|07/09/2026|0.09|Cronograma final|Zayra Moraes|
+|07/09/2026|0.10|Inclusão do tópico Comunicação|Gabriel Guedes|
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
+|07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
 
 
 ## 1.1 Identificação do Cliente/Parceiro
@@ -58,7 +59,7 @@ O acúmulo desses problemas compromete a organização interna do instituto, poi
 
 ##  1.6 Mapa de Stakeholders 
 
-Os principais stakeholders do projeto são: Guilherme Sampaio Scartezini, Nelson Vicente e Luiz Freitas Jr, representando o cliente na presidência da instituição e sendo os responsáveis diretos por validar os requisitos e entregas do sistema; os interessados em ecoturismo, que atuarão como clientes pagantes consumindo pacotes de viagens e trilhas; as comunidades indígenas e tradicionais e agricultores familiares, caracterizados como beneficiários das iniciativas de inclusão socioprodutiva e serviços de regularização ambiental; os parceiros voluntários, que colaboram com o trabalho diário da organização; os apoiadores e patrocinadores, que injetam recursos financeiros, materiais e equipamentos necessários para a sobrevivência do instituto; e a equipe de desenvolvimento, responsável por viabilizar tecnicamente a centralização das informações em um portal institucional engajador e e-commerce transacional.
+Os principais stakeholders do projeto são: Guilherme Sampaio Scartezini, Nelson Vicente e Luiz Freitas Jr, representando o cliente na presidência da instituição e sendo os responsáveis diretos por validar os requisitos e entregas do sistema; os interessados em ecoturismo, que atuarão como clientes pagantes consumindo pacotes de viagens e trilhas; as comunidades indígenas e tradicionais e agricultores familiares, caracterizados como beneficiários das iniciativas de inclusão socioprodutiva e serviços de regularização ambiental; os parceiros voluntários, que colaboram com o trabalho diário da organização; os apoiadores e patrocinadores, que injetam recursos financeiros, materiais e equipamentos necessários para a sobrevivência do instituto; e a equipe de desenvolvimento, responsável por viabilizar tecnicamente a centralização das informações em um portal institucional engajador.
 
 ![ Mapa de Stakeholders](../assets/stakeholders.png)
 *Figura 3:  Mapa de Stakeholders. Elaborado por Igor Lima.*
