@@ -31,6 +31,8 @@ O quadro a seguir apresenta uma comparação entre o RAD e o OpenUP, ambos são 
 |Tendencias atuais|Integração com DevOps para entrega contínua; incorporação de ferramentas low-code/no-code|Seus princípios sobrevivem em frameworks de agilidade escalada (como SAFe e DAD) que exigem governança sobre o desenvolvimento ágil. |
 |Adequação ao projeto IBRADA-NET|Adequado para o projeto: prazos curtos, sistema de informação com forte componente de interface, requisitos difíceis de articular por usuários com baixo letramento digital mas facilmente visualizáveis via protótipos, equipe pequena e necessidade de validação frequente com o cliente |Menos adequado: estrutura focada na estabilidade da arquitetura e na mitigação de riscos por meio de fases bem delimitadas. Não corresponde ao perfil do projeto. Além de estruturar o projeto em fases e focar em criar uma “arquitetura executável”, exigiria uma análise de riscos otimizada a cada ciclo que a equipe não necessariamente possui.|
 
+*Tabela 4: Quadro Comparativo entre RAD e OpenUP*
+
 ## 4.3 Justificativa
 
 Com base no nosso produto e suas características, após analisar os problemas enfrentados pelo instituto, o **RAD** será o mais ideal principalmente por ser direcionado a projetos de **menor duração**, com forte participação da interface e necessidade de obtenção de feedback durante a construção do produto. 

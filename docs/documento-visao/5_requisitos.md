@@ -120,3 +120,5 @@
     </tr>
   </tbody>
 </table>
+
+*Tabela 5: Atividades em cada fase do RAD*

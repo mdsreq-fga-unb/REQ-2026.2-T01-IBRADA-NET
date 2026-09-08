@@ -59,9 +59,9 @@ nav:
 
   - Atas de Reunião:
       - Unidade 1: atas-reuniao/ata1.md
-      - Unidade 2: atas-reuniao/ata2.md
-      - Unidade 3: atas-reuniao/ata3.md
-      - Unidade 4: atas-reuniao/ata4.md
+      # - Unidade 2: atas-reuniao/ata2.md
+      # - Unidade 3: atas-reuniao/ata3.md
+      # - Unidade 4: atas-reuniao/ata4.md
   # - Especificação:
   #     - Casos de Uso: especificacao/casos-uso.md
   #     - Arquitetura: especificacao/arquitetura.md

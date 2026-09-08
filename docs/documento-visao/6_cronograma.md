@@ -11,3 +11,5 @@
 | **Ciclo 7** | 01/11/2026 | 11/11/2026 | Construção e refinamento | - Implementação das funcionalidades priorizadas do MVP<br>- Atualização dos requisitos conforme necessário | Avaliação do produto em desenvolvimento |
 | **Ciclo 8** | 12/11/2026 | 22/11/2026 | Construção e refinamento | **Entrega 3 — 17/11/2026**<br>- Continuidade da implementação<br>- Integração das funcionalidades<br>- Ajustes identificados na validação<br>- Atualização dos requisitos conforme necessário | Validação integrada do produto |
 | **Ciclo 9** | 23/11/2026 | 01/12/2026 | Finalização e entrega | **Entrega 4 — 01/12/2026**<br>- Consolidação do produto<br>- Validação final<br>- Organização da documentação<br>- Preparação da entrega final | Validação integrada do produto |
+
+*Tabela 6: cronograma do projeto*

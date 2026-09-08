@@ -10,6 +10,8 @@
 |StakeHolder/Cliente|Cliente principal ou representa o interesse do cliente quando este não estiver presente.|Arthur Scartezini|Guilherme Sampaio, Nelson Vicente|
 |Analista de QA|Garante a qualidade do produto, executando testes de funcionalidade, performance e usabilidade. |Vinicius dos Santos|Gabriel Guedes|
 
+*Tabela 7: Composição da equipe*
+
 ## 7.2 Comunicação
 
 ### **Ferramentas de Comunicação**

@@ -16,6 +16,7 @@
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
 |07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
 
+*Tabela 1: Tabela de versionamento*
 
 ## 1.1 Identificação do Cliente/Parceiro
 
@@ -74,6 +75,8 @@ A seguir, é apresentado um quadro resumo dos stakeholders.
 | Apoiadores e patrocinadores | Parceiros que injetam recursos financeiros e materiais | Encontrar informações de forma rápida para apoiar os projetos e aumentar a visibilidade de suas ações | Alta |
 | Voluntários | Usuários que colaboram com a operação diária | Encontrar informações claras sobre oportunidades de ajuda e engajar-se nos projetos facilmente | Média |
 | Equipe de desenvolvimento | Responsável pela construção técnica do sistema | Unificar as funcionalidades para operar a solução digital como um e-commerce e portal institucional seguro e acessível | Alta |
+
+*Tabela 2: Tabela de stakeholders*
 
 ## 1.7 Segmentação de Clientes
 
