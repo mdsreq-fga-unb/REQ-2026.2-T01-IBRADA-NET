@@ -20,43 +20,43 @@ Equipe responsável pelo desenvolvimento do projeto de Engenharia de Requisitos.
 <div class="equipe-grid">
 
 <div class="membro">
-<img src="../assets/equipe/arthur.jpg" alt="Arthur Scartezini">
+<img src="assets/equipe/arthur.jpg" alt="Arthur Scartezini">
 <h3><a href="https://github.com/Ascartezin" target="_blank">Arthur Scartezini</a></h3>
 <p><strong>Matrícula:</strong> 241025176</p>
 </div>
 
 <div class="membro">
-<img src="../assets/equipe/caua.jpg" alt="Cauã Mendes">
+<img src="assets/equipe/caua.jpg" alt="Cauã Mendes">
 <h3><a href="https://github.com/cauamc2006-sketch">Cauã Mendes</a></h3>
 <p><strong>Matrícula:</strong> 242032237</p>
 </div>
 
 <div class="membro">
-<img src="../assets/equipe/filipe.jpg" alt="Filipe Brito">
+<img src="assets/equipe/filipe.jpg" alt="Filipe Brito">
 <h3><a href="https://github.com/filipeBG-07">Filipe Brito</a></h3>
 <p><strong>Matrícula:</strong> 241031530</p>
 </div>
 
 <div class="membro">
-<img src="../assets/equipe/gabriel.jpeg" alt="Gabriel Guedes">
+<img src="assets/equipe/gabriel.jpeg" alt="Gabriel Guedes">
 <h3><a href="https://github.com/gabriel-ggf">Gabriel Guedes</a></h3>
 <p><strong>Matrícula:</strong> 232014656</p>
 </div>
 
 <div class="membro">
-<img src="../assets/equipe/igor.jpg" alt="Igor Lima">
+<img src="assets/equipe/igor.jpg" alt="Igor Lima">
 <h3><a href="https://github.com/igorlym">Igor Lima</a></h3>
 <p><strong>Matrícula:</strong> 241025953</p>
 </div>
 
 <div class="membro">
-<img src="../assets/equipe/Vinicius.jpeg" alt="Vinícius dos Santos">
+<img src="assets/equipe/Vinicius.jpeg" alt="Vinícius dos Santos">
 <h3><a href="https://github.com/Vplayer-coder">Vinícius dos Santos</a></h3>
 <p><strong>Matrícula:</strong> 211043772</p>
 </div>
 
 <div class="membro">
-<img src="../assets/equipe/Zayra.jpg" alt="Zayra Moraes">
+<img src="assets/equipe/Zayra.jpg" alt="Zayra Moraes">
 <h3><a href="https://github.com/Zayra-Moraes">Zayra Moraes</a></h3>
 <p><strong>Matrícula:</strong> 242015989</p>
 </div>
