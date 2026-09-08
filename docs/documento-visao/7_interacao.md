@@ -17,7 +17,7 @@
 ### **Ferramentas de Comunicação**
 
 - **WhatsApp:** meio de comunicação utilizado para o envio de mensagens rápidas e alinhamentos diários entre a equipe. Também será empregado na comunicação com o cliente para demandas simples, como o esclarecimento de dúvidas e o agendamento de reuniões adicionais quando necessário.
-- **Goggle Meet/Teams:** as reuniões da equipe serão realizadas de forma remota e gravadas via Google Meet ou Microsoft Teams. As reuniões quinzenais com o cliente também ocorrerão de maneira remota.
+- **Goggle Meet/Teams:** as reuniões da equipe serão realizadas de forma remota e gravadas via Google Meet ou Microsoft Teams. As reuniões semanais com o cliente também ocorrerão de maneira remota.
 - **Github Projects e Figma:** o fluxo de trabalho será controlado via GitHub Projects, onde serão feitas a distribuição, o controle, o monitoramento e a atualização das atividades de cada ciclo. Para processos mais dinâmicos, como a visualização clara de soluções por meio de protótipos e brainstorming, será utilizada a plataforma Figma. 
 
 ### **Métodos e Frequências de Reuniões**
