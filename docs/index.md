@@ -9,6 +9,7 @@ Esta é a documentação centralizada de requisitos de software para nosso proje
 
 ## Índice de Documentos
 
+- [Vídeo Entrega Unidade 1](videos/entrega-videos.md)
 - [Visão do Produto e Projeto](documento-visao/1_cenarioAtual.md)
 - [Cronograma](documento-visao/6_cronograma.md)
 
