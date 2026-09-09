@@ -6,7 +6,7 @@
 |26/08/2026|0.01|Proposta inicial do produto.|Arthur, Zayra, Gabriel|
 |30/08/2026|0.02|Ajustes da proposta|Cauã e Vinícius|
 |05/09/2026|0.03|Características de Produto e Tecnologias a serem utilizadas|Zayra Moraes|
-|06/09/2026|0.04|Inclusão da Intervenção Social e das Lições Aprendidas| Cauã Mendes|
+|06/09/2026|0.04|Inclusão dos tópicos Intervenção Social e Lições Aprendidas| Cauã Mendes|
 |06/09/2026|0.05|Benefícios Esperados| Igor Lima|
 |06/09/2026|0.06|Quadro Comparativo do 4.2 | Filipe Brito|
 |06/09/2026|0.07|Requisitos e o Rad|Gabriel Guedes|
