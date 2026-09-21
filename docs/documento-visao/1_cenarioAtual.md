@@ -15,6 +15,7 @@
 |07/09/2026|0.10|Inclusão do tópico Comunicação|Gabriel Guedes|
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
 |07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
+|21/09/2026|-|ajustes depois da entrega em 2_solução proposta|Zayra, Vinicius, Filipe, Gabriel e Igor|
 
 *Tabela 1: Tabela de versionamento*
 
