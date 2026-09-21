@@ -1,0 +1,1201 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação de requisitos de software para o projeto web">
+      
+      
+        <meta name="author" content="Seu Projeto">
+      
+      
+      
+        <link rel="prev" href="1_cenarioAtual.html">
+      
+      
+        <link rel="next" href="3_intervencao.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2 Solução Proposta - Documentação de Requisitos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-solucao-proposta" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Documentação de Requisitos" class="md-header__button md-logo" aria-label="Documentação de Requisitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação de Requisitos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Solução Proposta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="dark" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="1_cenarioAtual.html" class="md-tabs__link">
+          
+  
+  
+  Visão do Produto e Projeto
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../atas-reuniao/ata1.html" class="md-tabs__link">
+          
+  
+  
+  Atas de Reunião
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../videos/entrega-videos.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Entrega de vídeos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../referencias/referencia.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Referências
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Documentação de Requisitos" class="md-nav__button md-logo" aria-label="Documentação de Requisitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação de Requisitos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto e Projeto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto e Projeto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1_cenarioAtual.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="2_solucao.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-objetivo-geral-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Objetivo Geral do Produto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-objetivos-especificos-oe-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Objetivos Específicos (OE) do Produto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Características de Produto (mapeadas com os Objetivos Específicos do Produto)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-tecnologias-a-serem-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Tecnologias a Serem Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-pesquisa-de-mercado-e-analise-competitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pesquisa de Mercado e Análise Competitiva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-viabilidade-da-proposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Viabilidade da Proposta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-beneficios-esperados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Benefícios Esperados
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3_intervencao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4_estrategias.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Estratégias de engenharia de software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5_requisitos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6_cronograma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Cronograma e entregas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7_interacao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Interação entre Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11_licoes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atas de Reunião
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atas de Reunião
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atas-reuniao/ata1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/entrega-videos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrega de vídeos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/referencia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-objetivo-geral-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Objetivo Geral do Produto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-objetivos-especificos-oe-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Objetivos Específicos (OE) do Produto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Características de Produto (mapeadas com os Objetivos Específicos do Produto)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-tecnologias-a-serem-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Tecnologias a Serem Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-pesquisa-de-mercado-e-analise-competitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pesquisa de Mercado e Análise Competitiva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-viabilidade-da-proposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Viabilidade da Proposta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-beneficios-esperados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Benefícios Esperados
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-solucao-proposta">2. SOLUÇÃO PROPOSTA</h1>
+<h2 id="21-objetivo-geral-do-produto">2.1 Objetivo Geral do Produto</h2>
+<p>Aprimorar a comunicação e o relacionamento do IBRADA com seus diferentes públicos por meio do desenvolvimento de uma plataforma digital centralizada, que organize e disponibilize suas informações, facilite a divulgação e a contratação de serviços e amplie a participação de clientes, voluntários, apoiadores e parceiros em suas iniciativas sociais e ambientais.</p>
+<h2 id="22-objetivos-especificos-oe-do-produto">2.2 Objetivos Específicos (OE) do Produto</h2>
+<ul>
+<li><strong>OE1:</strong> Otimizar a comunicação entre apoiadores, equipe interna e beneficiários.</li>
+<li><strong>OE2:</strong> Ampliar a capacidade do IBRADA de captar clientes, voluntários, apoiadores e parceiros, tornando o relacionamento com esses públicos mais organizado.</li>
+<li><strong>OE3:</strong> Incentivar o engajamento e aumentar a retenção em projetos ambientais.</li>
+</ul>
+<h2 id="23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos-do-produto">2.3 Características de Produto (mapeadas com os Objetivos Específicos do Produto)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Característica</th>
+<th>Descrição Resumida</th>
+<th>ID</th>
+<th>Valor de negócio principal</th>
+<th>Contribuição Principal</th>
+<th>Contribuição Secundária</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CP1</td>
+<td>Apresentação e divulgação da história e atuação institucional</td>
+<td>A solução deverá disponibilizar informações sobre a história, missão, trajetória, áreas de atuação e iniciativas, de modo a apresentar sua identidade e atuação institucional de forma clara, ampliar sua visibilidade e aproximar a instituição de seus públicos.</td>
+<td>VN01</td>
+<td>Aumento da visibilidade institucional, fortalecimento da identidade e aproximação com os públicos.</td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE1</a></td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE3</a></td>
+</tr>
+<tr>
+<td>CP2</td>
+<td>Divulgação e acompanhamento de projetos socioambientais</td>
+<td>A solução deverá disponibilizar informações sobre os projetos e iniciativas socioambientais desenvolvidos ou contratados pelo instituto, de modo a ampliar a visibilidade das iniciativas, incentivar o acompanhamento e promover o engajamento dos públicos.</td>
+<td>VN02</td>
+<td>Aumento da visibilidade dos projetos, fortalecimento do engajamento e melhoria da retenção dos participantes.</td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE2</a></td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE3</a></td>
+</tr>
+<tr>
+<td>CP3</td>
+<td>Comunicação institucional e interação com os públicos</td>
+<td>A solução deverá facilitar os recursos de comunicação e interação entre o IBRADA, seus apoiadores, equipe interna, beneficiários e demais públicos, permitindo o envio de dúvidas, sugestões e manifestações, de modo a tornar a comunicação e o relacionamento mais organizados e eficientes e claros.</td>
+<td>VN03</td>
+<td>Melhoria da comunicação, maior organização do relacionamento e fortalecimento da interação com os públicos.</td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE3</a></td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE1</a></td>
+</tr>
+<tr>
+<td>CP4</td>
+<td>Acesso e participação dos públicos</td>
+<td>A solução deverá disponibilizar mecanismos que permitam aos diferentes públicos do IBRADA acessar informações, serviços, projetos e oportunidades de participação de acordo com suas necessidades, de modo a apoiar a comunidades com baixo letramento digital.</td>
+<td>VN04</td>
+<td>Ampliação da capacidade de relacionamento, melhoria da organização dos públicos e aumento da participação.</td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE1</a></td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE2</a></td>
+</tr>
+<tr>
+<td>CP5</td>
+<td>Catálogo e contratação de serviços de ecoturismo</td>
+<td>A solução deverá disponibilizar um catálogo digital dos serviços de ecoturismo oferecidos pelo IBRADA, com informações de atividades, condições de participação, valores e demais dados relevantes.</td>
+<td>VN05</td>
+<td>Facilitação da contratação, redução de dificuldades na jornada e ampliação das oportunidades de negócio.</td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE2</a></td>
+<td><a href="#22-objetivos-específicos-oe-do-produto">OE3</a></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabela 3: Tabela com características de produto</em></p>
+<h2 id="24-tecnologias-a-serem-utilizadas">2.4 Tecnologias a Serem Utilizadas</h2>
+<p>Para a construção da solução proposta para o IBRADA-NET, serão utilizadas tecnologias compatíveis com a necessidade de escalabilidade da operação digital, segurança no gerenciamento de perfis e desenvolvimento iterativo do produto. A base do projeto será desenvolvida utilizando a <strong>linguagem TypeScript</strong>. No frontend, será utilizado o framework <strong>Next.js</strong>, garantindo a construção de interfaces responsivas, otimizadas e acessíveis para os diferentes públicos da plataforma (turistas, agricultores, voluntários e parceiros). No backend, será utilizado o <strong>NestJS</strong>, favorecendo a implementação de serviços web estruturados, modulares e integrações seguras. Para a persistência de dados, será adotado o banco de dados relacional <strong>MySQL</strong>, considerando que não há necessidade de grandes bancos de dados.</p>
+<p>A integração entre os módulos da plataforma e possíveis sistemas externos será realizada por meio de <strong>APIs REST</strong>, permitindo a comunicação eficiente e a sincronização de dados. Para o apoio ao desenvolvimento colaborativo e versionamento de código, serão utilizados <strong>Git e GitHub</strong>, além de práticas de testes e integração contínua compatíveis com a estratégia de desenvolvimento adotada. Por fim, a plataforma tratará a segurança e a privacidade como aspectos críticos que serão integrados ao ciclo de vida do software desde as suas fases iniciais de desenvolvimento. A solução incorpora rigorosos requisitos de <strong>Segurança da Informação</strong> (Security) voltados à proteção dos dados e recursos contra acessos não autorizados, perdas, vazamentos ou modificações maliciosas. Dessa forma, todos os dados pessoais serão armazenados de maneira estritamente segura e auditável, protegendo as operações digitais da plataforma e fortalecendo a relação de confiança com os diferentes públicos do projeto. </p>
+<h2 id="25-pesquisa-de-mercado-e-analise-competitiva">2.5 Pesquisa de Mercado e Análise Competitiva</h2>
+<p>O mercado de ecoturismo é vasto, contando com milhares de agências que  já atendem parcialmente às necessidades do IBRADA. Dessa forma, foram analisadas tanto soluções diretamente relacionadas ao ecoturismo quanto plataformas voltadas ao engajamento social e ao voluntariado. </p>
+<p>Um dos produtos identificados é o <a href="https://atados.com.br/"><strong>Atados</strong></a>, uma plataforma de engajamento social que conecta pessoas interessadas em realizar trabalho voluntário a organizações, movimentos e coletivos sociais. A plataforma permite que organizações divulguem vagas de voluntariado e que os usuários encontrem oportunidades de acordo com causas, habilidades e disponibilidade. Dessa forma, o Atados apresenta uma solução consolidada para um dos problemas enfrentados pelo IBRADA: a atração e mobilização de voluntários.</p>
+<p>Outro produto relevante é o <a href="https://www.parnanoronha.com.br/visitante"><strong>Sistema de Agendamento de Visitas e Venda de Ingressos do ICMBio</strong></a>, utilizado para o agendamento de atividades de ecoturismo e visitação em unidades de conservação federais. O sistema permite que visitantes solicitem o agendamento, acompanhem a solicitação e, quando necessário, realizem o pagamento relacionado à atividade. Essa solução representa uma referência para as funcionalidades de comercialização e agendamento de experiências de ecoturismo previstas no IBRADA-NET.</p>
+<p>Essas empresas operam com sites atuais que aliam a venda de pacotes turísticos com um forte impacto social gerado nas comunidades visitadas, mas estas não possuem uma autoridade de uma Organização Sem Fins Lucrativos que atua em frentes estruturais mais profundas. Então apesar de algumas plataformas já existentes apresentarem soluções para alguns problemas existentes do nosso instituto, não atendem integralmente ao escopo. Assim, os produtos analisados não são apenas concorrentes, mas também referências de mercado para funcionalidades específicas. O diferencial do IBRADA-NET está na integração dessas funcionalidades em uma única plataforma, adaptada à realidade e aos objetivos de uma OSCIP ambiental.</p>
+<h2 id="26-viabilidade-da-proposta">2.6 Viabilidade da Proposta</h2>
+<p>A avaliação de viabilidade do projeto IBRADA-NET demonstra que a proposta é exequível dentro dos limites acadêmicos da disciplina, sustentada pelos seguintes pilares:</p>
+<ul>
+<li><strong>Equipe:</strong> O projeto conta com uma equipe de sete integrantes com papéis bem definidos, abrangendo gerência de projeto, análise de requisitos, desenvolvimento e garantia de qualidade (QA). Essa distribuição permite a paralelização de tarefas e um controle eficiente de qualidade em cada ciclo.</li>
+<li><strong>Prazo e Metodologia:</strong> O desenvolvimento ocorrerá durante o período do semestre acadêmico, estruturado em nove ciclos de trabalho até o início de dezembro. A adoção da metodologia híbrida com o processo RAD (Rapid Application Development) viabiliza o cumprimento desse prazo, pois prioriza iterações rápidas, foco na interface do usuário e validações constantes por meio de protótipos em vez de documentações exaustivas.</li>
+<li><strong>Acesso ao Cliente:</strong> A comunicação e a validação com a organização apresentam viabilidade máxima e risco mitigado. A equipe possui contato direto, contínuo e interno com a instituição, contando inclusive com um membro do grupo atuando na função de representante/proxy dos stakeholders no dia a dia. Isso elimina gargalos de agendamento e permite o feedback rápido exigido pelo processo RAD.</li>
+<li><strong>Conhecimento Técnico Disponível:</strong> O stack tecnológico selecionado é altamente compatível com o domínio técnico já existente na equipe. A familiaridade prévia com o desenvolvimento web focado em interfaces responsivas e criação de serviços modulares com essas ferramentas reduz drasticamente a curva de aprendizado, permitindo que o tempo do semestre seja investido diretamente na implementação das funcionalidades.</li>
+<li><strong>Possibilidade de Entrega do MVP:</strong> Considerando a delimitação de escopo proporcionada pela matriz de priorização (Valor de Negócio vs. Esforço Técnico) e as entregas incrementais planejadas no cronograma, a construção de um Produto Mínimo Viável é perfeitamente possível.</li>
+</ul>
+<h2 id="27-beneficios-esperados">2.7 Benefícios Esperados</h2>
+<ul>
+<li>Para o <strong>cliente</strong>: centralizar a comunicação e organizar as informações dispersas, unificando as funcionalidades para operar como um portal institucional engajador. Isso permitirá aumentar a eficiência na divulgação, e impulsionar a venda de pacotes de ecoturismo, além de alavancar a captação de recursos financeiros, atrair novos patrocinadores e articular melhor o recrutamento de voluntários, garantindo a sustentabilidade da organização. </li>
+<li>Para os <strong>usuários</strong>: proporcionar uma experiência do usuário (UX) mais intuitiva, com informações centralizadas e acessíveis para os múltiplos perfis de acesso. Os turistas terão um processo de compra de ecoturismo claro e direto. Voluntários e patrocinadores encontrarão com facilidade as informações sobre oportunidades de ajuda e engajamento. Já as comunidades tradicionais e agricultores familiares terão acesso menos burocrático e mais claro aos serviços de inclusão socioprodutiva.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
