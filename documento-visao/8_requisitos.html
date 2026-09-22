@@ -982,13 +982,7 @@
 
 
 <h1 id="8-requisitos-de-software">8 REQUISITOS DE SOFTWARE</h1>
-<blockquote>
-<p>Esta seção descreve os requisitos necessários para o desenvolvimento do software. Ela está dividida em requisitos funcionais e não funcionais, que apresentam as funcionalidades do sistema e as qualidades que ele deve possuir para atender às expectativas dos usuários.</p>
-</blockquote>
 <h2 id="81-lista-de-requisitos-funcionais">8.1 Lista de Requisitos Funcionais</h2>
-<blockquote>
-<p>Os requisitos funcionais descrevem as funcionalidades específicas que o sistema deve implementar para atender às necessidades do negócio. Eles incluem integrações, processos e interações do usuário com o sistema. </p>
-</blockquote>
 <ul>
 <li><strong>Requisitos Funcionais (RF)</strong></li>
 </ul>
@@ -1242,21 +1236,89 @@
 </tbody>
 </table>
 <h2 id="82-lista-de-requisitos-nao-funcionais">8.2 Lista de Requisitos Não Funcionais</h2>
-<blockquote>
-<p>Os requisitos não funcionais especificam as qualidades e restrições do sistema, como desempenho, segurança e usabilidade, que não estão diretamente relacionadas às funcionalidades oferecidas, mas são essenciais para garantir a qualidade do software. Utilize o modelo URPS+ para classificar os requisitos não funcionais. 
-| ID    | Nome                                 | Descrição                                                                                                                                                                                                                                            | Classificação URPS+            | CPs relacionada/transversais |
-|-------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|------------------------------|
-| RNF01 | Responsividade da interface          | A interface do sistema deve se adaptar a smartphones (320px–480px), tablets (481px–1024px) e desktops (acima de 1024px), garantindo legibilidade, usabilidade e ausência de quebra de layout em todos os tamanhos de tela. | Usabilidade                    | Transversal (todas as CPs)    |
-| RNF02 | Integridade transacional             | O banco de dados deve garantir a conformidade ACID (Atomicidade, Consistência, Isolamento, Durabilidade) nas transações de ecoturismo para impedir reservas duplicadas (overbooking) e inconsistências de vagas. | Confiabilidade                 | CP3                          |
-| RNF03 | Desempenho do catálogo               | O tempo de carregamento das listagens de projetos e do catálogo de experiências de ecoturismo não deve ultrapassar 3 segundos em conexões de banda larga padrão. | Performance                    | CP1, CP3                     |
-| RNF04 | Autenticação e autorização           | O sistema deve implementar controle de acesso baseado em papéis (RBAC - Role-Based Access Control), restringindo o acesso aos painéis de gerenciamento exclusivamente à equipe autorizada do IBRADA. | + (Segurança)                  | Transversal (CP1, CP3, CP4, CP6) |
-| RNF05 | Integração Externa                   | O módulo de pagamento deve se comunicar com a API do gateway de pagamento externo de forma assíncrona, tratando as respostas de webhook para atualizar o status das reservas. | + (Interfaces)                 | CP3                          |
-| RNF06 | Escalabilidade sob demanda           | O sistema deve suportar até 200 usuários simultâneos ativos (navegando, reservando ou preenchendo formulários) sem degradação perceptível de desempenho. | Performance / Suportabilidade | CP1, CP3, CP5                |
-| RNF07 | Disponibilidade do sistema            | A plataforma deve estar disponível para acesso público (dashboard de projetos, catálogo de ecoturismo, formulários de triagem e parceria) de forma contínua, minimizando janelas de indisponibilidade. | Confiabilidade                 | Transversal (todas as CPs)   |
-| RNF08 | Proteção de dados pessoais (LGPD)    | O sistema deve armazenar e tratar dados sensíveis (como CPF e informações de contato) de voluntários e clientes de forma criptografada no banco de dados, e deve exibir e registrar o consentimento explícito do usuário no momento do cadastro. | + (Legal/Segurança)             | CP3, CP4, CP6                |
-| RNF09 | Usabilidade do formulário de triagem | O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital. | Usabilidade                    | CP2                          |
-| RNF10 | Compatibilidade entre navegadores    | O sistema deve funcionar corretamente nos principais navegadores web utilizados pelo público-alvo (Chrome, Firefox, Safari e Edge), suportando a versão estável mais recente e imediatamente a versão anterior de cada navegador. | Suportabilidade                | Transversal (todas as CPs)   |</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Nome</th>
+<th>Descrição</th>
+<th>Classificação URPS+</th>
+<th>CPs relacionada/transversais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RNF01</td>
+<td>Responsividade da interface</td>
+<td>A interface do sistema deve se adaptar a smartphones (320px–480px), tablets (481px–1024px) e desktops (acima de 1024px), garantindo legibilidade, usabilidade e ausência de quebra de layout em todos os tamanhos de tela.</td>
+<td>Usabilidade</td>
+<td>Transversal (todas as CPs)</td>
+</tr>
+<tr>
+<td>RNF02</td>
+<td>Integridade transacional</td>
+<td>O banco de dados deve garantir a conformidade ACID (Atomicidade, Consistência, Isolamento, Durabilidade) nas transações de ecoturismo para impedir reservas duplicadas (overbooking) e inconsistências de vagas.</td>
+<td>Confiabilidade</td>
+<td>CP3</td>
+</tr>
+<tr>
+<td>RNF03</td>
+<td>Desempenho do catálogo</td>
+<td>O tempo de carregamento das listagens de projetos e do catálogo de experiências de ecoturismo não deve ultrapassar 3 segundos em conexões de banda larga padrão.</td>
+<td>Performance</td>
+<td>CP1, CP3</td>
+</tr>
+<tr>
+<td>RNF04</td>
+<td>Autenticação e autorização</td>
+<td>O sistema deve implementar controle de acesso baseado em papéis (RBAC - Role-Based Access Control), restringindo o acesso aos painéis de gerenciamento exclusivamente à equipe autorizada do IBRADA.</td>
+<td>+ (Segurança)</td>
+<td>Transversal (CP1, CP3, CP4, CP6)</td>
+</tr>
+<tr>
+<td>RNF05</td>
+<td>Integração Externa</td>
+<td>O módulo de pagamento deve se comunicar com a API do gateway de pagamento externo de forma assíncrona, tratando as respostas de webhook para atualizar o status das reservas.</td>
+<td>+ (Interfaces)</td>
+<td>CP3</td>
+</tr>
+<tr>
+<td>RNF06</td>
+<td>Escalabilidade sob demanda</td>
+<td>O sistema deve suportar até 200 usuários simultâneos ativos (navegando, reservando ou preenchendo formulários) sem degradação perceptível de desempenho.</td>
+<td>Performance / Suportabilidade</td>
+<td>CP1, CP3, CP5</td>
+</tr>
+<tr>
+<td>RNF07</td>
+<td>Disponibilidade do sistema</td>
+<td>A plataforma deve estar disponível para acesso público (dashboard de projetos, catálogo de ecoturismo, formulários de triagem e parceria) de forma contínua, minimizando janelas de indisponibilidade.</td>
+<td>Confiabilidade</td>
+<td>Transversal (todas as CPs)</td>
+</tr>
+<tr>
+<td>RNF08</td>
+<td>Proteção de dados pessoais (LGPD)</td>
+<td>O sistema deve armazenar e tratar dados sensíveis (como CPF e informações de contato) de voluntários e clientes de forma criptografada no banco de dados, e deve exibir e registrar o consentimento explícito do usuário no momento do cadastro.</td>
+<td>+ (Legal/Segurança)</td>
+<td>CP3, CP4, CP6</td>
+</tr>
+<tr>
+<td>RNF09</td>
+<td>Usabilidade do formulário de triagem</td>
+<td>O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital.</td>
+<td>Usabilidade</td>
+<td>CP2</td>
+</tr>
+<tr>
+<td>RNF10</td>
+<td>Compatibilidade entre navegadores</td>
+<td>O sistema deve funcionar corretamente nos principais navegadores web utilizados pelo público-alvo (Chrome, Firefox, Safari e Edge), suportando a versão estável mais recente e imediatamente a versão anterior de cada navegador.</td>
+<td>Suportabilidade</td>
+<td>Transversal (todas as CPs)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="83-matriz-de-rastreabilidade">8.3 Matriz de Rastreabilidade</h2>
 <table>
 <thead>
@@ -1272,42 +1334,42 @@
 <tr>
 <td>Gestão e transparência de projetos e seus impactos</td>
 <td>CP1</td>
-<td>—</td>
+<td>VN01</td>
 <td>RF01–RF05, RN01</td>
 <td>RNF01, RNF03, RNF04, RNF06, RNF07, RNF10</td>
 </tr>
 <tr>
 <td>Triagem e direcionamento de solicitações</td>
 <td>CP2</td>
-<td>—</td>
+<td>VN02</td>
 <td>RF07, RN02, RN03</td>
 <td>RNF01, RNF04, RNF07, RNF09, RNF10</td>
 </tr>
 <tr>
 <td>Gestão e comercialização de experiências de ecoturismo</td>
 <td>CP3</td>
-<td>—</td>
+<td>VN03</td>
 <td>RF08–RF16, RN04, RN05</td>
 <td>RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
 <td>Gestão de oportunidades e voluntários</td>
 <td>CP4</td>
-<td>—</td>
+<td>VN04</td>
 <td>RF17–RF21, RN06–RN08</td>
 <td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
 <td>Gestão de interesses e notificações</td>
 <td>CP5</td>
-<td>—</td>
+<td>VN05</td>
 <td>RF22–RF24, RN09, RN10</td>
 <td>RNF01, RNF06, RNF07, RNF10</td>
 </tr>
 <tr>
 <td>Gestão de parcerias institucionais</td>
 <td>CP6</td>
-<td>—</td>
+<td>VN06</td>
 <td>RF25–RF27, RN11</td>
 <td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
 </tr>
