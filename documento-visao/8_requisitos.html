@@ -1246,21 +1246,21 @@
 <tr>
 <td>RNF01</td>
 <td>Responsividade da interface</td>
-<td>A interface do sistema deve se adaptar a smartphones (320px–480px), tablets (481px–1024px) e desktops (acima de 1024px), garantindo legibilidade, usabilidade e ausência de quebra de layout em todos os tamanhos de tela.</td>
+<td>A interface do sistema deve se adaptar a smartphones(320px-480px),tablets(481px-1024px) e desktops(acima de 1024px), garantindo legibilidade, usabilidade, e ausências de quebra de layout em todos os tamanhos de tela.<br></td>
 <td>Usabilidade</td>
-<td>Transversal (todas as CPs)</td>
+<td>Transversal(todas as CPs)</td>
 </tr>
 <tr>
 <td>RNF02</td>
 <td>Integridade transacional</td>
-<td>O banco de dados deve garantir a conformidade ACID (Atomicidade, Consistência, Isolamento, Durabilidade) nas transações de ecoturismo para impedir reservas duplicadas (overbooking) e inconsistências de vagas.</td>
+<td>O banco de dados deve garantir a conformidade ACID (Atomicidade, Consistência, Isolamento, Durabilidade) nas transações de ecoturismo para impedir reservas duplicadas (overbooking) e inconsistências de vagas</td>
 <td>Confiabilidade</td>
 <td>CP3</td>
 </tr>
 <tr>
 <td>RNF03</td>
 <td>Desempenho do catálogo</td>
-<td>O tempo de carregamento das listagens de projetos e do catálogo de experiências de ecoturismo não deve ultrapassar 3 segundos em conexões de banda larga padrão.</td>
+<td>O tempo de carregamento das listagens de projetos e do catálogo de experiências de ecoturismo não deve ultrapassar 3 segundos em conexões de banda larga padrão</td>
 <td>Performance</td>
 <td>CP1, CP3</td>
 </tr>
@@ -1269,7 +1269,7 @@
 <td>Autenticação e autorização</td>
 <td>O sistema deve implementar controle de acesso baseado em papéis (RBAC - Role-Based Access Control), restringindo o acesso aos painéis de gerenciamento exclusivamente à equipe autorizada do IBRADA.</td>
 <td>+ (Segurança)</td>
-<td>Transversal (CP1, CP3, CP4, CP6)</td>
+<td>Transversal(CP1,CP3,CP4, CP6)</td>
 </tr>
 <tr>
 <td>RNF05</td>
@@ -1281,37 +1281,37 @@
 <tr>
 <td>RNF06</td>
 <td>Escalabilidade sob demanda</td>
-<td>O sistema deve suportar até 200 usuários simultâneos ativos (navegando, reservando ou preenchendo formulários) sem degradação perceptível de desempenho.</td>
+<td>O sistema deve suportar até 200 usuários simultâneos ativos(navegando, reservando ou preenchendo formulários) sem degradação perceptível de desempenho.</td>
 <td>Performance / Suportabilidade</td>
-<td>CP1, CP3, CP5</td>
+<td>CP1,CP3, CP5</td>
 </tr>
 <tr>
 <td>RNF07</td>
 <td>Disponibilidade do sistema</td>
 <td>A plataforma deve estar disponível para acesso público (dashboard de projetos, catálogo de ecoturismo, formulários de triagem e parceria) de forma contínua, minimizando janelas de indisponibilidade.</td>
 <td>Confiabilidade</td>
-<td>Transversal (todas as CPs)</td>
+<td>Transversal(todas as CPs)</td>
 </tr>
 <tr>
 <td>RNF08</td>
-<td>Proteção de dados pessoais (LGPD)</td>
-<td>O sistema deve armazenar e tratar dados sensíveis (como CPF e informações de contato) de voluntários e clientes de forma criptografada no banco de dados, e deve exibir e registrar o consentimento explícito do usuário no momento do cadastro.</td>
+<td>Proteção de dados pessoais(LGPD)</td>
+<td>O sistema deve armazenar dados e tratar dados sensíveis(como CPF e informações de contato) de voluntários, clientes de forma criptografada no banco de dados, e deve exibir e registrar o consentimento explícito do usuário no momento do cadastro.</td>
 <td>+ (Legal/Segurança)</td>
 <td>CP3, CP4, CP6</td>
 </tr>
 <tr>
 <td>RNF09</td>
 <td>Usabilidade do formulário de triagem</td>
-<td>O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital.</td>
+<td>O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital</td>
 <td>Usabilidade</td>
 <td>CP2</td>
 </tr>
 <tr>
 <td>RNF10</td>
 <td>Compatibilidade entre navegadores</td>
-<td>O sistema deve funcionar corretamente nos principais navegadores web utilizados pelo público-alvo (Chrome, Firefox, Safari e Edge), suportando a versão estável mais recente e imediatamente a versão anterior de cada navegador.</td>
+<td>O sistema deve funcionar corretamente nos principais navegadores web utilizados pelo público-alvo(Chrome, Firefox, Safari e Edge) suportando a versão estável mais recente e imediatamente a versão anterior de cada navegador.</td>
 <td>Suportabilidade</td>
-<td>Transversal (todas as CPs)</td>
+<td>Transversal(todas as CPs)</td>
 </tr>
 </tbody>
 </table>
@@ -1328,46 +1328,46 @@
 </thead>
 <tbody>
 <tr>
-<td>Gestão e transparência de projetos e seus impactos</td>
+<td>Gestão e acompanhamento de projetos e indicadores de impacto</td>
 <td>CP1</td>
 <td>VN01</td>
-<td>RF01–RF05, RN01</td>
+<td>RF01, RF02, RF03, RN01, RF04, RN02</td>
 <td>RNF01, RNF03, RNF04, RNF06, RNF07, RNF10</td>
 </tr>
 <tr>
 <td>Triagem e direcionamento de solicitações</td>
 <td>CP2</td>
 <td>VN02</td>
-<td>RF07, RN02, RN03</td>
-<td>RNF01, RNF04, RNF07, RNF09, RNF10</td>
+<td>RF05, RN03, RN04</td>
+<td>RNF01, RNF07, RNF09, RNF10</td>
 </tr>
 <tr>
-<td>Gestão e comercialização de experiências de ecoturismo</td>
+<td>Catálogo, reserva e pagamento de experiências de ecoturismo</td>
 <td>CP3</td>
 <td>VN03</td>
-<td>RF08–RF16, RN04, RN05</td>
+<td>RF06, RN05, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RN06, RF14, RF15, RF16, RF17</td>
 <td>RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
-<td>Gestão de oportunidades e voluntários</td>
+<td>Recrutamento e gestão de voluntários</td>
 <td>CP4</td>
 <td>VN04</td>
-<td>RF17–RF21, RN06–RN08</td>
-<td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
+<td>RF18, RF19, RF20, RN07, RF21, RF22, RF23, RF24, RF25, RF26, RN08, RN09</td>
+<td>RNF01, RNF04, RNF06, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
-<td>Gestão de interesses e notificações</td>
+<td>Gestão de notificações e interesses</td>
 <td>CP5</td>
 <td>VN05</td>
-<td>RF22–RF24, RN09, RN10</td>
-<td>RNF01, RNF06, RNF07, RNF10</td>
+<td>RF27, RN10, RN11, RF28, RF29</td>
+<td>RNF01, RNF06, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
-<td>Gestão de parcerias institucionais</td>
+<td>Gestão de solicitações de parceria</td>
 <td>CP6</td>
 <td>VN06</td>
-<td>RF25–RF27, RN11</td>
-<td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
+<td>RF30, RF31, RN12, RF32</td>
+<td>RNF01, RNF04, RNF06, RNF07, RNF08, RNF10</td>
 </tr>
 </tbody>
 </table>
