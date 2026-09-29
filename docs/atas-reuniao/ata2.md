@@ -1,4 +1,4 @@
-ópico referente às reuniões que aconteceram durante o período da primeira unidade da matéria.
+Tópico referente às reuniões que aconteceram durante o período da primeira unidade da matéria.
 
 
 
@@ -114,3 +114,53 @@
     - Atualizar a documentação da proposta.
     - Prosseguir com a elicitação e formalização dos requisitos.
     - Manter as reuniões periódicas para acompanhamento do projeto.
+
+
+    Aqui está a ata da reunião elaborada no modelo fornecido, baseada na transcrição fornecida.
+
+=== "28/09/2026 - Reunião com o Cliente - MoSCoW"
+
+    # Reunião 5
+
+    >28/09/2026 · 21:10–22:18 · Microsoft Teams · Com Cliente
+
+    > [Gravação da Reunião](https://youtu.be/ghnkCrOkebU)
+
+    ## 1. Pauta
+
+    - Apresentação e leitura dos Requisitos Funcionais derivados das características do produto validadas na reunião anterior.
+    - Classificação e priorização dos requisitos de software utilizando a técnica MoSCoW (escala de 1 a 4, sendo 4 indispensável).
+    - Justificativa das priorizações para cada requisito debatido.
+    - Alinhamento sobre a estrutura organizacional e foco do IBRADA em relação a parcerias e beneficiários.
+
+    ## 2. Assuntos debatidos
+
+    ### Declaração de Prioridade em relação a lista de requisitos atualizada
+
+    O resultado se encontra na entrega da [atividade 4](../entrega-atividades/atividade4.md), no qual fizemos uma análise completa dos requisitos juntamente com as justificativas correspondentes.
+
+    ## 3. Participantes
+
+    | Nome |
+    | --- |
+    | Guilherme Sampaio Scartezini|
+    | Arthur Mezzaroba Scartezini |
+    | Gabriel Guedes Fernandes |
+    | Caua Mendes Coelho |
+
+    ## 4. Decisões/Revisões
+
+    | Tipo | Descrição |
+    | --- | --- |
+    | **Decisão** | A grande maioria dos requisitos (ecoturismo, cadastro de projetos, voluntariado, parcerias) foi priorizada como nível 4 (Must Have) no método MoSCoW. |
+    | **Decisão** | O detalhamento aprofundado das experiências de ecoturismo (RF7) foi definido como nível 3 (Should Have). |
+    | **Decisão** | O disparo de e-mails automáticos na resposta de parcerias foi reduzido para nível 2 (Could Have). |
+    | **Revisão** | O sistema de cadastro de projetos deve possuir um mecanismo de visibilidade, permitindo aos gestores debater internamente antes da exibição ao público geral. |
+    | **Revisão** | O desenvolvimento deve tratar o modelo de negócio considerando o IBRADA como uma OSCIP, priorizando fluxos de parceria e benefícios sociais em detrimento de visões estritamente comerciais. |
+
+    ## 5. Tarefas
+
+    - Atualizar a tabela de requisitos com as classificações MoSCoW (1 a 4) e justificativas discutidas na reunião.
+    - O cliente (Guilherme) deverá enviar para a equipe um documento/exemplo de projeto sobre "Turismo de base comunitária em Planaltina" para facilitar a compreensão sobre propostas da ONG.
+    - Avaliar internamente a sugestão de inclusão de funcionalidade de "estado de rascunho" para projetos que ainda não estão prontos para o público.
+    - Discutir futuramente quais serão as métricas e pesos utilizados para o sistema de funil de voluntários.
