@@ -103,48 +103,85 @@ Para consolidar os três critérios em uma única medida, foi utilizada a média
 
 O resultado é apresentado em escala de **1 a 4**, mantendo uma casa decimal quando necessário.
 
+| ID | Nome | Relação | Esforço | Complexidade | Lacuna de capacidade | Esforço técnico consolidado |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| RF01 | Cadastrar projetos | CP1 | 1 | 1 | 2 | 1,3 |
+| RF02 | Editar projetos | CP1 | 1 | 1 | 2 | 1,3 |
+| RF03 | Remover projetos | CP1 | 1 | 1 | 2 | 1,3 |
+| RF04 | Exibir dashboard de impacto | CP1 | 4 | 3 | 4 | 3,6 |
+| RF05 | Apresentar formulário de triagem | CP2 | 2 | 2 | 2 | 2,0 |
+| RF06 | Visualizar catálogo de ecoturismo | CP3 | 2 | 1 | 1 | 1,3 |
+| RF07 | Detalhar experiências | CP3 | 2 | 1 | 1 | 1,3 |
+| RF08 | Cadastrar clientes | CP3 | 3 | 3 | 2 | 2,6 |
+| RF09 | Editar perfil de clientes | CP3 | 2 | 2 | 2 | 2,0 |
+| RF10 | Realizar login de cliente | CP3 | 3 | 3 | 2 | 2,6 |
+| RF11 | Encerrar sessão de cliente | CP3 | 1 | 1 | 1 | 1,0 |
+| RF12 | Selecionar pacote de ecoturismo | CP3 | 2 | 1 | 1 | 1,3 |
+| RF13 | Confirmar reserva | CP3 | 1 | 1 | 1 | 1,0 |
+| RF14 | Pagar reserva | CP3 | 4 | 4 | 4 | 4,0 |
+| RF15 | Cadastrar experiências de ecoturismo | CP3 | 2 | 2 | 2 | 2,0 |
+| RF16 | Editar experiências de ecoturismo | CP3 | 2 | 2 | 2 | 2,0 |
+| RF17 | Alterar disponibilidade de experiência de ecoturismo | CP3 | 1 | 2 | 2 | 1,6 |
+| RF18 | Cadastrar oportunidades de voluntariado | CP4 | 2 | 2 | 2 | 2,0 |
+| RF19 | Editar oportunidades de voluntariado | CP4 | 2 | 2 | 2 | 2,0 |
+| RF20 | Gerenciar papel de gestor | CP4 | 3 | 3 | 2 | 2,6 |
+| RF21 | Listar oportunidades de voluntariado | CP4 | 1 | 2 | 2 | 1,6 |
+| RF22 | Visualizar detalhes de oportunidade de voluntariado | CP4 | 2 | 2 | 1 | 1,6 |
+| RF23 | Cadastrar perfil do voluntário | CP4 | 3 | 3 | 2 | 2,6 |
+| RF24 | Editar perfil do voluntário | CP4 | 2 | 2 | 2 | 2,0 |
+| RF25 | Candidatar-se a oportunidade | CP4 | 2 | 2 | 2 | 2,0 |
+| RF26 | Realizar login de voluntário | CP4 | 3 | 3 | 2 | 2,6 |
+| RF27 | Encerrar sessão de voluntários | CP4 | 1 | 1 | 1 | 1,0 |
+| RF28 | Visualizar candidatos | CP4 | 2 | 1 | 1 | 1,3 |
+| RF29 | Registrar consentimento de uso de dados | CP4 | 1 | 1 | 1 | 1,0 |
+| RF30 | Configurar preferências de notificação | CP5 | 1 | 1 | 1 | 1,0 |
+| RF31 | Exibir estatísticas de alcance das notificações | CP5 | 2 | 2 | 3 | 2,3 |
+| RF32 | Gerenciar envio de notificações | CP5 | 1 | 2 | 2 | 1,6 |
+| RF33 | Preencher solicitação de parceria | CP6 | 1 | 1 | 1 | 1,0 |
+| RF34 | Visualizar propostas de parceria | CP6 | 2 | 2 | 1 | 1,6 |
+| RF35 | Enviar resposta de solicitação | CP6 | 3 | 3 | 3 | 3,0 | 
+
 ## 3. Consolidação das Avaliações
 
 Após a avaliação do **valor de negócio**, realizada com a participação do cliente, e da avaliação do **esforço técnico**, realizada pela equipe do projeto, os resultados foram reunidos em uma única tabela.
 
-
-| Código | Requisito | Relação | Esforço | Complexidade | Lacuna de capacidade | Esforço técnico consolidado |
-| --- | --- | --- | ---: | ---: | ---: | ---: |
-| RF01 | Cadastrar projetos | CP1 | 1 | 1 | 2 | **1,3** |
-| RF02 | Editar projetos | CP1 | 1 | 1 | 2 | **1,3** |
-| RF03 | Remover projetos | CP1 | 1 | 1 | 2 | **1,3** |
-| RF04 | Exibir dashboard de impacto | CP1 | 4 | 3 | 4 | **3,6** |
-| RF05 | Apresentar formulário de triagem | CP2 | 2 | 2 | 2 | **2,0** |
-| RF06 | Visualizar catálogo de ecoturismo | CP3 | 2 | 1 | 1 | **1,3** |
-| RF07 | Detalhar experiências | CP3 | 2 | 1 | 1 | **1,3** |
-| RF08 | Cadastrar clientes | CP3 | 3 | 3 | 2 | **2,6** |
-| RF09 | Editar perfil de clientes | CP3 | 2 | 2 | 2 | **2,0** |
-| RF10 | Realizar login de cliente | CP3 | 3 | 3 | 2 | **2,6** |
-| RF11 | Encerrar sessão de cliente | CP3 | 1 | 1 | 1 | **1,0** |
-| RF12 | Selecionar pacote de ecoturismo | CP3 | 2 | 1 | 1 | **1,3** |
-| RF13 | Confirmar reserva | CP3 | 1 | 1 | 1 | **1,0** |
-| RF14 | Pagar reserva | CP3 | 4 | 4 | 4 | **4,0** |
-| RF15 | Cadastrar experiências de ecoturismo | CP3 | 2 | 2 | 2 | **2,0** |
-| RF16 | Editar experiências de ecoturismo | CP3 | 2 | 2 | 2 | **2,0** |
-| RF17 | Alterar disponibilidade de experiência de ecoturismo | CP3 | 1 | 2 | 2 | **1,6** |
-| RF18 | Cadastrar oportunidades de voluntariado | CP4 | 2 | 2 | 2 | **2,0** |
-| RF19 | Editar oportunidades de voluntariado | CP4 | 2 | 2 | 2 | **2,0** |
-| RF20 | Gerenciar papel de gestor | CP4 | 3 | 3 | 2 | **2,6** |
-| RF21 | Listar oportunidades de voluntariado | CP4 | 1 | 2 | 2 | **1,6** |
-| RF22 | Visualizar detalhes de oportunidade de voluntariado | CP4 | 2 | 2 | 1 | **1,7** |
-| RF23 | Cadastrar perfil do voluntário | CP4 | 3 | 3 | 2 | **2,6** |
-| RF24 | Editar perfil do voluntário | CP4 | 2 | 2 | 2 | **2,0** |
-| RF25 | Candidatar-se a oportunidade | CP4 | 2 | 2 | 2 | **2,0** |
-| RF26 | Realizar login de voluntário | CP4 | 3 | 3 | 2 | **2,6** |
-| RF27 | Encerrar sessão de voluntários | CP4 | 1 | 1 | 1 | **1,0** |
-| RF28 | Visualizar candidatos | CP4 | 2 | 1 | 1 | **1,3** |
-| RF29 | Registrar consentimento de uso de dados | CP4 | 1 | 1 | 1 | **1,0** |
-| RF30 | Configurar preferências de notificação | CP5 | 1 | 1 | 1 | **1,0** |
-| RF31 | Exibir estatísticas de alcance das notificações | CP5 | 2 | 2 | 3 | **2,3** |
-| RF32 | Gerenciar envio de notificações | CP5 | 1 | 2 | 2 | **1,6** |
-| RF33 | Preencher solicitação de parceria | CP6 | 1 | 1 | 1 | **1,0** |
-| RF34 | Visualizar propostas de parceria | CP6 | 2 | 2 | 1 | **1,6** |
-| RF35 | Enviar resposta de solicitação de parceria | CP6 | 3 | 3 | 3 | **3,0** |
+| ID | Nome | Valor de Negócio | Justificativa do cliente | Esforço | Complexidade | Capacidade da equipe | Esforço Técnico |
+| --- | --- | ---: | --- | ---: | ---: | ---: | ---: |
+| RF01 | Cadastrar projetos | 4 | É uma funcionalidade interessante para os gestores e para o público. | 1 | 1 | 2 | 1,3 (4/3) |
+| RF02 | Editar projetos | 4 | É uma funcionalidade interessante para os gestores, complementar ao RF01. | 1 | 1 | 2 | 1,3 (4/3) |
+| RF03 | Remover projetos | 4 | É uma funcionalidade interessante para os gestores, complementar ao RF01. | 1 | 1 | 2 | 1,3 (4/3) |
+| RF04 | Exibir dashboard de impacto | 4 | É uma funcionalidade interessante para os gestores, complementar ao RF01. | 4 | 3 | 4 | 3,6 (11/3) |
+| RF05 | Apresentar formulário de triagem | 4 | Acelera o processo de comunicação. | 2 | 2 | 2 | 2 (6/3) |
+| RF06 | Visualizar catálogo de ecoturismo | 4 | A forma da instituição de começar a venda de pacotes de ecoturismo e beneficiar os agricultores relacionados. | 2 | 1 | 1 | 1,3 (4/3) |
+| RF07 | Detalhar experiências | 3 | Atualmente, já existem vídeos para as trilhas atuais para ser inserido como conteúdo. Seria um bom trabalho para voluntários. | 2 | 1 | 1 | 1,3 (4/3) |
+| RF08 | Cadastrar clientes | 4 | É fundamental porque o ecoturista tem o perfil de cliente do IBRADA. | 3 | 3 | 2 | 2,6 (8/3) |
+| RF09 | Editar perfil de clientes | 4 | É fundamental porque o ecoturista tem o perfil de cliente do IBRADA. | 2 | 2 | 2 | 2 (6/3) |
+| RF10 | Realizar login de cliente | 4 | Complementar ao cadastro do cliente. | 3 | 3 | 2 | 2,6 (8/3) |
+| RF11 | Encerrar sessão de cliente | 4 | Complementar ao cadastro do cliente. | 1 | 1 | 1 | 1 (3/3) |
+| RF12 | Selecionar pacote de ecoturismo | 4 | Antes da compra, é essencial fazer a reserva do cliente. | 2 | 1 | 1 | 1,3 (4/3) |
+| RF13 | Confirmar reserva | 4 | O cliente deve poder verificar tudo antes de pegar sua reserva. | 1 | 1 | 1 | 1 (3/3) |
+| RF14 | Pagar reserva | 4 | É a primeira ligação que o cliente vai ter com o IBRADA. | 4 | 4 | 4 | 4 (12/3) |
+| RF15 | Cadastrar experiências de ecoturismo | 4 | É importante para que a equipe do IBRADA possa cadastrar novas experiências planejadas. | 2 | 2 | 2 | 2 (6/3) |
+| RF16 | Editar experiências de ecoturismo | 4 | Caso similar ao RF15. | 2 | 2 | 2 | 2 (6/3) |
+| RF17 | Alterar disponibilidade de experiência de ecoturismo | 4 | Sempre há um limite de vagas. | 1 | 2 | 2 | 1,6 (5/3) |
+| RF18 | Cadastrar oportunidades de voluntariado | 4 | Sem poder cadastrar oportunidades, não há como começar o relacionamento entre o IBRADA e o voluntário. É a porta de entrada para relacionamento com o voluntário. | 2 | 2 | 2 | 2 (6/3) |
+| RF19 | Editar oportunidades de voluntariado | 4 | É importante porque podem sofrer alterações depois de lançadas. | 2 | 2 | 2 | 2 (6/3) |
+| RF20 | Gerenciar papel de gestor | 4 | Dependendo do envolvimento do usuário com as operações do IBRADA, é interessante aumentar o acesso às operações do site quando necessário. | 3 | 3 | 2 | 2,6 (8/3) |
+| RF21 | Listar oportunidades de voluntariado | 4 | Caso similar ao RF18. Importante para o relacionamento. | 1 | 2 | 2 | 1,6 (5/3) |
+| RF22 | Visualizar detalhes de oportunidade de voluntariado | 4 | Caso similar ao RF06 | 2 | 2 | 1 | 1,3 (5/3) |
+| RF23 | Cadastrar perfil do voluntário | 4 | Importante para os gestores poderem analisar de forma ágil possíveis voluntários. | 3 | 3 | 2 | 2,6 (8/3) |
+| RF24 | Editar perfil do voluntário | 4 | Caso similar ao RF09. | 2 | 2 | 2 | 2 (6/3) |
+| RF25 | Candidatar-se a oportunidade | 4 | É uma expectativa do voluntário que possa se candidatar a uma oportunidade. | 2 | 2 | 2 | 2 (6/3) |
+| RF26 | Realizar login de voluntário | 4 | Complementar ao cadastro de voluntário. | 3 | 3 | 2 | 2,6 (8/3) |
+| RF27 | Encerrar sessão de voluntários | 4 | Complementar ao cadastro de voluntário. | 1 | 1 | 1 | 1 (3/3) |
+| RF28 | Visualizar candidatos | 4 | É um facilitador para a equipe do IBRADA. | 2 | 1 | 1 | 1,3 (4/3) |
+| RF29 | Registrar consentimento de uso de dados | 4 | A lei exige. | 1 | 1 | 1 | 1 (3/3) |
+| RF30 | Configurar preferências de notificação | 4 | É direito do usuário mudar de ideia. | 1 | 1 | 1 | 1 (3/3) |
+| RF31 | Exibir estatísticas de alcance das notificações | 3 | É algo bem importante e interessante para que a equipe do IBRADA análise o processo dos projetos. | 2 | 2 | 3 | 2,3 (7/3) |
+| RF32 | Gerenciar envio de notificações | 2 | É legal, mas pode ser adiantada para depois. | 1 | 2 | 2 | 1,6 (5/3) |
+| RF33 | Preencher solicitação de parceria | 4 | O IBRADA não trabalha apenas com clientes, mas também parceiros. É importante ter esse contato inicial de forma organizada com parceiros. | 1 | 1 | 1 | 1 (3/3) |
+| RF34 | Visualizar propostas de parceria | 4 | Essencial para que a equipe do IBRADA possa escolher suas parcerias. | 2 | 2 | 1 | 1,6 (5/3) |
+| RF35 | Enviar resposta de solicitação | 4 | É interessante, mas não é necessário em todos os casos. | 3 | 3 | 3 | 3 (9/3) | 
 
 ## 4. Construção da matriz 4 × 4
 
@@ -211,7 +248,7 @@ Os requisitos abaixo não foram selecionados neste primeiro recorte do MVP. A ex
 | **RF32** | Gerenciar envio de notificações | 2 | 1,6 | Possui valor de negócio 2 e foi considerado pelo cliente uma funcionalidade que pode ser adiada. Dessa forma, mesmo apresentando esforço técnico moderado, perde prioridade em relação aos principais fluxos do produto. |
 | **RF35** | Enviar resposta de solicitação de parceria | 2 | 3,0 | O cliente indicou que a resposta automática é interessante, porém não necessária em todos os casos. Além disso, o requisito apresenta esforço técnico alto, enquanto RF33 e RF34 já possibilitam um fluxo mínimo de envio e visualização das solicitações de parceria. |
 
-### 5.3 Composição preliminar do MVP
+### 5.1 Composição preliminar do MVP
 
 A seleção preliminar resulta em **25 requisitos funcionais incluídos no MVP** e **10 requisitos direcionados inicialmente para entregas posteriores**.
 

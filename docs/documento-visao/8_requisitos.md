@@ -85,12 +85,10 @@
 
 ## 8.5 Árvore de Rastreabilidade
 
-- Imagem para controle de versão
-
-![Arvore de Rastreabilidade](../assets/arvore.png)
-
-- Link interativo
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+> Imagem para controle de versão (última atualização 28/09/2026)
+![Arvore de Rastreabilidade](../assets/arvore.png)
 
 > [Link da árvore de rastreabilidade](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=4aifg0Jj2s4gHz3E-1)
