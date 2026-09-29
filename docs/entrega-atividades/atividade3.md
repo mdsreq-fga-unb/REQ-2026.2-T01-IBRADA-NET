@@ -56,3 +56,11 @@ Aqui é como ficou a lista finalizada após os apontamentos do grupo **Cascata �
 | RNF08 | Proteção de dados pessoais (LGPD) | O sistema deve proteger os dados pessoais e sensíveis (como CPF e informações de contato) de voluntários e clientes utilizando criptografia padrão AES-256 para dados em repouso no banco de dados e protocolo TLS 1.2 ou superior (HTTPS) para dados em trânsito. | + (Legal/Segurança) | CP3, CP4, CP6 | Aceito |
 | RNF09 | Usabilidade do formulário de triagem | O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital, sem a necessidade de criação de conta, com taxa de conclusão ≥ 90%. | Usabilidade | CP2 | Aceito |
 | RNF10 | Compatibilidade entre navegadores | O sistema deve apresentar paridade funcional e visual, sem quebras de layout, nas duas últimas versões estáveis do Chrome, Firefox, Safari e Edge. | Suportabilidade | Transversal (Todas as CPs) | Aceito |
+
+
+## PDF - CASCATA ÁGIL
+
+<iframe src="../assets/documents/documento_avaliacao_cascata.pdf" width="100%" height="600px">
+    <p>Seu navegador não suporta a visualização de PDFs. 
+    <a href="../assets/documents/documento_avaliacao_cascata.pdf">Clique aqui para baixar o PDF.</a></p>
+</iframe>
