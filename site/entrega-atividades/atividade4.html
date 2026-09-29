@@ -1150,6 +1150,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#6-tratamento-dos-rnfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tratamento dos RNFs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#7-validacao-do-mvp" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1321,6 +1332,17 @@
       
         <li class="md-nav__item">
   <a href="#6-tratamento-dos-rnfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tratamento dos RNFs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tratamento-dos-rnfs_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         6. Tratamento dos RNFs
@@ -2126,9 +2148,346 @@
 </tbody>
 </table>
 <h2 id="4-construcao-da-matriz-4-4">4. Construção da matriz 4 × 4</h2>
+<p>Após a consolidação das avaliações de valor de negócio e esforço técnico, os requisitos funcionais foram posicionados em uma matriz <strong>4 × 4</strong>, permitindo visualizar conjuntamente a importância de cada requisito para o negócio e o esforço necessário para sua implementação.</p>
+<p>Para o posicionamento no eixo horizontal, o esforço técnico consolidado foi convertido para a escala de 1 a 4 conforme o valor obtido na avaliação técnica:</p>
+<table>
+<thead>
+<tr>
+<th>Esforço técnico consolidado</th>
+<th>Posição na matriz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,0 a 1,4</td>
+<td><strong>1 — Baixo</strong></td>
+</tr>
+<tr>
+<td>1,5 a 2,4</td>
+<td><strong>2 — Moderado</strong></td>
+</tr>
+<tr>
+<td>2,5 a 3,4</td>
+<td><strong>3 — Alto</strong></td>
+</tr>
+<tr>
+<td>3,5 a 4,0</td>
+<td><strong>4 — Muito alto</strong></td>
+</tr>
+</tbody>
+</table>
+<p>O eixo vertical representa o <strong>valor de negócio</strong>, avaliado junto ao cliente, enquanto o eixo horizontal representa o <strong>esforço técnico</strong>, avaliado pela equipe.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Valor de negócio ↓ / Esforço técnico →</strong></th>
+<th><strong>1 — Baixo</strong></th>
+<th><strong>2 — Moderado</strong></th>
+<th><strong>3 — Alto</strong></th>
+<th><strong>4 — Muito alto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4 — Muito alto</strong></td>
+<td>RF01, RF02, RF03, RF06, RF11, RF12, RF13, RF27, RF28, RF29, RF30, RF33</td>
+<td>RF05, RF09, RF15, RF16, RF17, RF18, RF19, RF21, RF22, RF24, RF25, RF34</td>
+<td>RF08, RF10, RF20, RF23, RF26</td>
+<td>RF04, RF14</td>
+</tr>
+<tr>
+<td><strong>3 — Alto</strong></td>
+<td>RF07</td>
+<td>RF31</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>2 — Moderado</strong></td>
+<td>—</td>
+<td>RF32</td>
+<td>RF35</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>1 — Baixo</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+<blockquote>
+<p>Em rosa são os que posteriormente entraram no MVP do produto.</p>
+<p>imagem abaixo para controle de versão (última atualização 28/09/2026)
+<img alt="alt text" src="../assets/matriz4x4.png" /></p>
+</blockquote>
+<p>A matriz será utilizada como apoio à definição do MVP, em conjunto com a análise das dependências entre requisitos, formação de fluxos completos de uso, riscos técnicos, prazo disponível e manifestação do cliente.</p>
 <h2 id="5-definicao-dos-rfs-do-mvp">5. Definição dos RFs do MVP</h2>
+<p>Após a construção da matriz de <strong>valor de negócio × esforço técnico</strong>, foi realizada uma seleção preliminar dos requisitos funcionais que poderão compor o MVP.</p>
+<p>A seleção não considerou apenas a posição individual dos requisitos na matriz. Também foram analisados outros quesitos. Dessa forma, requisitos de maior esforço não foram automaticamente descartados quando necessários para completar um fluxo essencial do sistema.</p>
+<table>
+<thead>
+<tr>
+<th>CP</th>
+<th>RFs preliminares</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gestão e Transparência de Projetos</strong></td>
+<td>RF01, RF02, RF03</td>
+<td>Os três requisitos permitem que os gestores realizem a manutenção básica dos projetos, possibilitando cadastrar, editar e remover informações. Todos possuem <strong>valor de negócio 4</strong> e <strong>esforço técnico consolidado 1,3</strong>, estando no quadrante de prioridade máxima da matriz.</td>
+</tr>
+<tr>
+<td><strong>Canal Unificado de Atendimento e Triagem</strong></td>
+<td>RF05</td>
+<td>O requisito permite receber a necessidade apresentada pelo visitante e realizar seu encaminhamento inicial. Possui <strong>valor de negócio 4</strong> e <strong>esforço técnico 2,0</strong>, posicionando-se como forte candidato ao MVP.</td>
+</tr>
+<tr>
+<td><strong>Módulo Transacional de Ecoturismo</strong></td>
+<td>RF06, RF08, RF10, RF11, RF12, RF13, RF14, RF15, RF17</td>
+<td>O conjunto forma um fluxo mínimo envolvendo <strong>cadastro da experiência → visualização → cadastro do cliente → autenticação → seleção → confirmação da reserva → pagamento</strong>. A maior parte dos requisitos possui valor de negócio 4 e está em quadrantes favoráveis à entrada no MVP. O <strong>RF14 — Pagar reserva</strong>, apesar de possuir esforço técnico 4, foi mantido preliminarmente por fazer parte do fluxo transacional considerado importante pelo cliente.</td>
+</tr>
+<tr>
+<td><strong>Gestão do Ciclo de Voluntariado</strong></td>
+<td>RF18, RF21, RF22, RF23, RF25, RF26, RF27, RF28, RF29</td>
+<td>O conjunto permite estabelecer um fluxo mínimo de <strong>cadastro da oportunidade → descoberta da oportunidade → cadastro do perfil → autenticação → candidatura → visualização dos candidatos pelo gestor</strong>, incluindo o registro de consentimento de uso de dados.</td>
+</tr>
+<tr>
+<td><strong>Sistema de Notificações e Engajamento</strong></td>
+<td>RF31</td>
+<td>O módulo de notificações apresenta menor participação no MVP preliminar, pois não é necessário para viabilizar os principais fluxos de projetos, ecoturismo, voluntariado e parcerias. O RF31 foi mantido como possibilidade preliminar por possuir <strong>valor de negócio 3</strong> e <strong>esforço técnico 2,3</strong>, devendo sua permanência ser avaliada conforme a capacidade disponível da equipe.</td>
+</tr>
+<tr>
+<td><strong>Gestão de Solicitações de Parcerias</strong></td>
+<td>RF33, RF34</td>
+<td>Os dois requisitos estabelecem o fluxo mínimo em que <strong>o parceiro envia uma solicitação → a equipe do IBRADA visualiza a proposta recebida</strong>. RF33 possui <strong>valor 4 e esforço 1,0</strong>, enquanto RF34 possui <strong>valor 4 e esforço 1,6</strong>, tornando o fluxo compatível com a proposta do MVP.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="requisitos-nao-selecionados-para-o-mvp-preliminar">Requisitos não selecionados para o MVP preliminar</h3>
+<p>Os requisitos abaixo não foram selecionados neste primeiro recorte do MVP. A exclusão não significa que eles não possuam valor para o produto, mas que podem ser postergados sem inviabilizar os fluxos mínimos definidos nesta etapa.</p>
+<table>
+<thead>
+<tr>
+<th>RF</th>
+<th>Requisito</th>
+<th style="text-align: right;">Valor de negócio</th>
+<th style="text-align: right;">Esforço técnico</th>
+<th>Justificativa para não inclusão no MVP preliminar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RF04</strong></td>
+<td>Exibir dashboard de impacto</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3,6</td>
+<td>Apesar do alto valor de negócio, possui um dos maiores esforços técnicos da lista. Na matriz, requisitos de valor 4 e esforço muito alto devem ter sua viabilidade analisada, podendo ser reduzidos ou decompostos. A funcionalidade pode ser incorporada após a estrutura básica de gestão dos projetos.</td>
+</tr>
+<tr>
+<td><strong>RF07</strong></td>
+<td>Detalhar experiências</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1,3</td>
+<td>Possui baixo esforço, mas valor de negócio 3. A visualização inicial das experiências já é possibilitada pelo RF06, permitindo que detalhes adicionais e mecanismos de compartilhamento sejam incorporados posteriormente.</td>
+</tr>
+<tr>
+<td><strong>RF09</strong></td>
+<td>Editar perfil de clientes</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2,0</td>
+<td>Apesar do valor de negócio alto e do esforço moderado, não é indispensável para validar inicialmente o fluxo de cadastro, autenticação e reserva do cliente.</td>
+</tr>
+<tr>
+<td><strong>RF16</strong></td>
+<td>Editar experiências de ecoturismo</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2,0</td>
+<td>Possui valor 4 e esforço moderado, porém o RF15 já permite o cadastro inicial das experiências necessárias para validar o fluxo. A edição pode ser incorporada posteriormente.</td>
+</tr>
+<tr>
+<td><strong>RF19</strong></td>
+<td>Editar oportunidades de voluntariado</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2,0</td>
+<td>Possui valor de negócio 4, porém o RF18 já permite cadastrar oportunidades e iniciar a validação do processo de voluntariado. A edição das oportunidades pode ser acrescentada em uma entrega posterior.</td>
+</tr>
+<tr>
+<td><strong>RF20</strong></td>
+<td>Gerenciar papel de gestor</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2,6</td>
+<td>Possui alto valor de negócio, mas esforço técnico elevado em relação a outros requisitos selecionados. No MVP preliminar, o fluxo pode operar inicialmente com gestores previamente definidos, adiando o gerenciamento dinâmico dos papéis.</td>
+</tr>
+<tr>
+<td><strong>RF24</strong></td>
+<td>Editar perfil do voluntário</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2,0</td>
+<td>Embora possua valor 4, o cadastro do perfil por meio do RF23 é suficiente para testar inicialmente o fluxo de candidatura do voluntário.</td>
+</tr>
+<tr>
+<td><strong>RF30</strong></td>
+<td>Configurar preferências de notificação</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1,0</td>
+<td>Apesar do alto valor de negócio e baixo esforço técnico, depende de um fluxo de notificações mais completo. Como esse módulo não é central aos principais fluxos selecionados para o MVP, sua implementação pode acompanhar a evolução posterior do sistema de notificações.</td>
+</tr>
+<tr>
+<td><strong>RF32</strong></td>
+<td>Gerenciar envio de notificações</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1,6</td>
+<td>Possui valor de negócio 2 e foi considerado pelo cliente uma funcionalidade que pode ser adiada. Dessa forma, mesmo apresentando esforço técnico moderado, perde prioridade em relação aos principais fluxos do produto.</td>
+</tr>
+<tr>
+<td><strong>RF35</strong></td>
+<td>Enviar resposta de solicitação de parceria</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3,0</td>
+<td>O cliente indicou que a resposta automática é interessante, porém não necessária em todos os casos. Além disso, o requisito apresenta esforço técnico alto, enquanto RF33 e RF34 já possibilitam um fluxo mínimo de envio e visualização das solicitações de parceria.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-composicao-preliminar-do-mvp">5.3 Composição preliminar do MVP</h3>
+<p>A seleção preliminar resulta em <strong>25 requisitos funcionais incluídos no MVP</strong> e <strong>10 requisitos direcionados inicialmente para entregas posteriores</strong>.</p>
+<p>Os requisitos preliminarmente selecionados são:</p>
+<p><strong>RF01, RF02, RF03, RF05, RF06, RF08, RF10, RF11, RF12, RF13, RF14, RF15, RF17, RF18, RF21, RF22, RF23, RF25, RF26, RF27, RF28, RF29, RF31, RF33 e RF34.</strong></p>
+<p>Os requisitos inicialmente deixados para entregas futuras são:</p>
+<p><strong>RF04, RF07, RF09, RF16, RF19, RF20, RF24, RF30, RF32 e RF35.</strong></p>
 <h2 id="6-tratamento-dos-rnfs">6. Tratamento dos RNFs</h2>
+<h2 id="6-tratamento-dos-rnfs_1">6. Tratamento dos RNFs</h2>
+<p>Os requisitos não funcionais foram analisados separadamente dos requisitos funcionais, uma vez que não são posicionados individualmente na matriz de <strong>valor de negócio × esforço técnico</strong>.</p>
+<p>Para determinar sua aplicação ao MVP, os RNFs foram classificados nas seguintes categorias:</p>
+<ul>
+<li><strong>Obrigatório para o MVP:</strong> necessário para garantir segurança, privacidade, legislação, operação ou um nível mínimo de qualidade do produto;</li>
+<li><strong>Associado a RFs do MVP:</strong> aplicável diretamente a uma ou mais funcionalidades selecionadas para o MVP;</li>
+<li><strong>Evolutivo:</strong> requisito cuja implementação ou nível de atendimento pode ser aprimorado em entregas posteriores;</li>
+<li><strong>Não aplicável ao MVP:</strong> relacionado exclusivamente a funcionalidades que não fazem parte do escopo definido para o MVP.</li>
+</ul>
+<p>A análise considerou os RFs preliminarmente selecionados, as CPs às quais cada RNF está relacionado e a necessidade de garantir condições mínimas de segurança, confiabilidade e utilização da solução.</p>
+<h3 id="61-classificacao-dos-rnfs">6.1 Classificação dos RNFs</h3>
+<table>
+<thead>
+<tr>
+<th>RNF</th>
+<th>Requisito</th>
+<th>Tratamento no MVP</th>
+<th>RFs / CPs relacionados</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RNF01</strong></td>
+<td>Responsividade da interface</td>
+<td><strong>Obrigatório para o MVP</strong></td>
+<td>Transversal — todas as CPs</td>
+<td>A responsividade constitui uma condição mínima de utilização da aplicação nos três grupos de dispositivos definidos pelo requisito: smartphones, tablets e desktops.</td>
+</tr>
+<tr>
+<td><strong>RNF02</strong></td>
+<td>Integridade transacional</td>
+<td><strong>Associado a RFs do MVP</strong></td>
+<td>RF12, RF13, RF14 / CP3</td>
+<td>O fluxo de reserva e pagamento faz parte do MVP. Portanto, é necessário impedir reservas concorrentes para uma mesma vaga e evitar situações de overbooking ou inconsistência na disponibilidade.</td>
+</tr>
+<tr>
+<td><strong>RNF03</strong></td>
+<td>Desempenho do catálogo</td>
+<td><strong>Associado a RFs do MVP</strong></td>
+<td>RF06 / CP1, CP3</td>
+<td>O catálogo de experiências de ecoturismo está presente no MVP por meio do RF06. Dessa forma, o limite de carregamento definido pelo RNF deve ser considerado nessa funcionalidade. A parte referente às listagens públicas de projetos deverá acompanhar a evolução desse fluxo.</td>
+</tr>
+<tr>
+<td><strong>RNF04</strong></td>
+<td>Autenticação e autorização</td>
+<td><strong>Obrigatório para o MVP</strong></td>
+<td>CP1, CP3, CP4 e CP6</td>
+<td>O MVP possui funcionalidades destinadas aos gestores e funcionalidades destinadas ao público. Portanto, é necessário restringir as rotas de gerenciamento a usuários autenticados e autorizados como Gestor.</td>
+</tr>
+<tr>
+<td><strong>RNF05</strong></td>
+<td>Integração Externa</td>
+<td><strong>Associado a RFs do MVP</strong></td>
+<td>RF14 / CP3</td>
+<td>O pagamento de reservas foi selecionado para o MVP e envolve integração externa. Dessa forma, o processamento das notificações recebidas via webhook e o tratamento de falhas dessa comunicação devem acompanhar esse fluxo.</td>
+</tr>
+<tr>
+<td><strong>RNF06</strong></td>
+<td>Escalabilidade sob demanda</td>
+<td><strong>Evolutivo</strong></td>
+<td>CP1, CP3 e CP5</td>
+<td>A capacidade de suportar 200 usuários simultâneos, mantendo os limites definidos de tempo de resposta e taxa de erro, poderá ser avaliada e aprimorada em entregas posteriores conforme o crescimento da utilização do produto.</td>
+</tr>
+<tr>
+<td><strong>RNF07</strong></td>
+<td>Disponibilidade do sistema</td>
+<td><strong>Obrigatório para o MVP</strong></td>
+<td>Transversal — todas as CPs</td>
+<td>Como o MVP disponibilizará funcionalidades públicas, a disponibilidade mínima estabelecida para a plataforma deve ser considerada desde sua implantação. O requisito também define as condições para realização de manutenções programadas.</td>
+</tr>
+<tr>
+<td><strong>RNF08</strong></td>
+<td>Proteção de dados pessoais (LGPD)</td>
+<td><strong>Obrigatório para o MVP</strong></td>
+<td>CP3, CP4 e CP6</td>
+<td>O MVP realiza coleta e armazenamento de dados de clientes, voluntários e usuários envolvidos nos fluxos selecionados. Portanto, os mecanismos de proteção dos dados em repouso e em trânsito devem estar presentes desde a primeira versão.</td>
+</tr>
+<tr>
+<td><strong>RNF09</strong></td>
+<td>Usabilidade do formulário de triagem</td>
+<td><strong>Associado a RFs do MVP</strong></td>
+<td>RF05 / CP2</td>
+<td>O formulário de triagem faz parte do MVP. Dessa forma, devem ser observadas as condições de utilização definidas pelo RNF, incluindo a possibilidade de preenchimento sem criação de conta e a meta estabelecida de conclusão do formulário.</td>
+</tr>
+<tr>
+<td><strong>RNF10</strong></td>
+<td>Compatibilidade entre navegadores</td>
+<td><strong>Obrigatório para o MVP</strong></td>
+<td>Transversal — todas as CPs</td>
+<td>O MVP deve manter funcionamento e apresentação equivalentes nas duas últimas versões estáveis dos navegadores definidos no requisito: Chrome, Firefox, Safari e Edge.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-rnfs-aplicaveis-ao-mvp">6.2 RNFs aplicáveis ao MVP</h3>
+<p>Com base na análise realizada, os RNFs foram agrupados da seguinte forma:</p>
+<table>
+<thead>
+<tr>
+<th>Classificação</th>
+<th>RNFs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Obrigatórios para o MVP</strong></td>
+<td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
+</tr>
+<tr>
+<td><strong>Associados a RFs do MVP</strong></td>
+<td>RNF02, RNF03, RNF05, RNF09</td>
+</tr>
+<tr>
+<td><strong>Evolutivos</strong></td>
+<td>RNF06</td>
+</tr>
+<tr>
+<td><strong>Não aplicáveis ao MVP</strong></td>
+<td>Nenhum</td>
+</tr>
+</tbody>
+</table>
+<p>Todos os requisitos não funcionais possuem alguma relação com funcionalidades ou características de produto presentes no MVP. Por esse motivo, <strong>nenhum RNF foi classificado como não aplicável</strong>.</p>
 <h2 id="7-validacao-do-mvp">7. Validação do MVP</h2>
+<p>Infelizmente a validação não foi possível ser realizada ainda. Como as atividades foram enviadas na última semana só conseguimos uma reunião com cliente. </p>
+<p>Ainda pretendemos finalizar a validação do MVP na nossa próxima reunião no dia (04/10/2026).</p>
 
 
 
