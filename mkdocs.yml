@@ -60,7 +60,7 @@ nav:
 
   - Atas de Reunião:
       - Unidade 1: atas-reuniao/ata1.md
-      # - Unidade 2: atas-reuniao/ata2.md
+      - Unidade 2: atas-reuniao/ata2.md
       # - Unidade 3: atas-reuniao/ata3.md
       # - Unidade 4: atas-reuniao/ata4.md
   # - Especificação:
@@ -69,5 +69,12 @@ nav:
   # - Documentação:
   #     - Glossário: documentacao/glossario.md
   #     - FAQ: documentacao/faq.md
+
+  - Entrega de Atividades: 
+    - Unidade 2:
+      - Atividade 1: entrega-atividades/atividade1.md
+      - Atividade 2: entrega-atividades/atividade2.md
+      - Atividade 3: entrega-atividades/atividade3.md
+      - Atividade 4: entrega-atividades/atividade4.md
   - Entrega de vídeos: videos/entrega-videos.md
   - Referências: referencias/referencia.md
