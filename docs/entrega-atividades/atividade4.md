@@ -226,8 +226,6 @@ Os requisitos inicialmente deixados para entregas futuras são:
 
 ## 6. Tratamento dos RNFs
 
-## 6. Tratamento dos RNFs
-
 Os requisitos não funcionais foram analisados separadamente dos requisitos funcionais, uma vez que não são posicionados individualmente na matriz de **valor de negócio × esforço técnico**.
 
 Para determinar sua aplicação ao MVP, os RNFs foram classificados nas seguintes categorias:
