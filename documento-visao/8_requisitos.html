@@ -731,10 +731,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#82-lista-de-requisitos-nao-funcionais" class="md-nav__link">
+  <a href="#82-lista-de-requisitos-de-negocio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.2 Lista de Requisitos Não Funcionais
+        8.2 Lista de Requisitos de Negócio
       
     </span>
   </a>
@@ -742,10 +742,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#83-matriz-de-rastreabilidade" class="md-nav__link">
+  <a href="#83-lista-de-requisitos-nao-funcionais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.3 Matriz de Rastreabilidade
+        8.3 Lista de Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-matriz-de-rastreabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Matriz de Rastreabilidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-arvore-de-rastreabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Árvore de Rastreabilidade
       
     </span>
   </a>
@@ -1228,10 +1250,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#82-lista-de-requisitos-nao-funcionais" class="md-nav__link">
+  <a href="#82-lista-de-requisitos-de-negocio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.2 Lista de Requisitos Não Funcionais
+        8.2 Lista de Requisitos de Negócio
       
     </span>
   </a>
@@ -1239,10 +1261,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#83-matriz-de-rastreabilidade" class="md-nav__link">
+  <a href="#83-lista-de-requisitos-nao-funcionais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.3 Matriz de Rastreabilidade
+        8.3 Lista de Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-matriz-de-rastreabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Matriz de Rastreabilidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-arvore-de-rastreabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Árvore de Rastreabilidade
       
     </span>
   </a>
@@ -1268,189 +1312,236 @@
 
 <h1 id="8-requisitos-de-software">8 REQUISITOS DE SOFTWARE</h1>
 <h2 id="81-lista-de-requisitos-funcionais">8.1 Lista de Requisitos Funcionais</h2>
-<ul>
-<li><strong>Requisitos Funcionais (RF)</strong></li>
-</ul>
 <table>
 <thead>
 <tr>
 <th>ID</th>
 <th>Nome</th>
 <th>Descrição</th>
+<th>Relação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>RF01</td>
 <td>Cadastrar projetos</td>
-<td>Permitir que os gestores do IBRADA possam cadastrar projetos de regularização ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais em um dashboard.</td>
+<td>Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais em um dashboard.</td>
+<td>CP1</td>
 </tr>
 <tr>
 <td>RF02</td>
 <td>Editar projetos</td>
 <td>Permitir que os gestores possam editar informações sobre os projetos do dashboard.</td>
+<td>CP1</td>
 </tr>
 <tr>
 <td>RF03</td>
 <td>Remover projetos</td>
 <td>Permitir que os gestores possam remover os projetos do dashboard.</td>
+<td>CP1</td>
 </tr>
 <tr>
 <td>RF04</td>
 <td>Exibir dashboard de impacto</td>
-<td>Disponibilizar um painel público que permite interação com o gestor e exibe indicadores de impacto dos projetos.</td>
+<td>Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos.</td>
+<td>CP1</td>
 </tr>
 <tr>
 <td>RF05</td>
 <td>Apresentar formulário de triagem</td>
-<td>Apresentar um formulário guiado com campos simplificados para identificar o tipo de solicitação e o perfil do usuário</td>
+<td>Permitir que o visitante (possível turista, apoiador ou usuário buscando regulamentação ambiental) preencha um formulário de triagem guiado com campos simplificados para identificar o tipo de solicitação e seu perfil, armazenando os dados no sistema e o encaminhando corretamente.</td>
+<td>CP2</td>
 </tr>
 <tr>
 <td>RF06</td>
 <td>Visualizar catálogo de ecoturismo</td>
 <td>Permitir aos usuários visualizar o catálogo de experiências de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF07</td>
 <td>Detalhar experiências</td>
-<td>Página detalhada de uma experiência com informações completas e com mecanismos simplificados de compartilhamento.</td>
+<td>Permitir que o usuário visualize informações completas de uma experiência de ecoturismo selecionada e com possibilidade de compartilhamento de seu conteúdo.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF08</td>
 <td>Cadastrar clientes</td>
-<td>Permitir cadastro de novas contas para clientes interessados em reservas.</td>
+<td>Permitir que os visitantes interessados em reservas se cadastrem em novas contas como clientes.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF09</td>
 <td>Editar perfil de clientes</td>
-<td>Permitir que clientes possam editar seus dados pessoais registrados em suas contas.</td>
+<td>Permitir que clientes possam editar seus dados pessoais registrados em suas próprias contas.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF10</td>
 <td>Realizar login de cliente</td>
-<td>Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais, garantido limitação adequada a acesso de funcionalidades destinadas a gestores do sistema.</td>
+<td>Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF11</td>
 <td>Encerrar sessão de cliente</td>
-<td>Permitir que clientes encerrem sua sessão do sistema de forma segura.</td>
+<td>Permitir que clientes encerrem sua sessão ativa no sistema.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF12</td>
-<td>Realizar reserva de pacotes de ecoturismo</td>
-<td>Permitir que o usuário autenticado selecione uma experiência, realize a reserva visualizando resumo antes de checkout.</td>
+<td>Selecionar pacote de ecoturismo</td>
+<td>Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF13</td>
-<td>Realizar pagamento</td>
-<td>Permitir que o usuário realize pagamento de pacotes de ecoturismo.</td>
+<td>Confirmar reserva</td>
+<td>Permitir que o cliente confirme a reserva antes do checkout.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF14</td>
-<td>Criar experiências de ecoturismo</td>
-<td>Oferecer um painel administrativo para a equipe do IBRADA criar experiências.</td>
+<td>Pagar reserva</td>
+<td>Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF15</td>
-<td>Editar experiências de ecoturismo</td>
-<td>Oferecer um painel administrativo para a equipe do IBRADA editar experiências.</td>
+<td>Cadastrar experiências de ecoturismo</td>
+<td>Permitir à equipe do IBRADA cadastrar experiências de ecoturismo no sistema.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF16</td>
-<td>Habilitar a disponibilidade dos produtos</td>
-<td>O gestor pode habilitar a inscrição nas experiências de ecoturismo</td>
+<td>Editar experiências de ecoturismo</td>
+<td>Permitir à equipe do IBRADA editar experiências de ecoturismo no sistema.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF17</td>
-<td>Desabilitar a disponibilidade dos produtos</td>
-<td>O gestor pode desabilitar a inscrição nas experiências de ecoturismo</td>
+<td>Alterar disponibilidade de experiência de ecoturismo</td>
+<td>Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RF18</td>
 <td>Cadastrar oportunidades de voluntariado</td>
-<td>Permitir ao gestor cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado</td>
+<td>Permitir ao gestor cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF19</td>
 <td>Editar oportunidades de voluntariado</td>
 <td>Permitir ao gestor editar as informações das oportunidades de voluntariado registradas no sistema.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF20</td>
-<td>Listar oportunidades de voluntariado</td>
-<td>Voluntários podem visualizar oportunidades abertas.</td>
+<td>Gerenciar papel de gestor</td>
+<td>Permitir que um gestor cadastre outros membros da equipe do IBRADA como gestores, concedendo a eles acesso aos painéis do sistema.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF21</td>
-<td>Cadastrar perfil do voluntário</td>
-<td>Permitir que usuários se cadastrem como voluntários, informando suas habilidades, experiências, áreas de interesse e disponibilidade</td>
+<td>Listar oportunidades de voluntariado</td>
+<td>Permitir que o voluntário consulte a lista de oportunidades de voluntariado abertas.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF22</td>
-<td>Editar perfil do voluntário</td>
-<td>Permitir que usuários cadastrados como voluntários possam editar suas informações do perfil.</td>
+<td>Visualizar detalhes de oportunidade de voluntariado</td>
+<td>Permitir que o voluntário visualize as informações detalhadas de uma oportunidade selecionada, incluindo habilidades requeridas, duração, disponibilidade e projeto associado.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF23</td>
-<td>Candidatar voluntários</td>
-<td>Permitir que voluntários se candidatem à oportunidades de voluntariado abertas.</td>
+<td>Cadastrar perfil do voluntário</td>
+<td>Permitir que usuários se cadastrem como voluntários, informando suas habilidades, experiências, áreas de interesse e disponibilidade.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF24</td>
-<td>Realizar login de voluntário</td>
-<td>Permitir que voluntários cadastrados acessem o sistema mediante validação de credenciais, garantido limitação adequada a acesso de funcionalidades destinadas a gestores do sistema.</td>
+<td>Editar perfil do voluntário</td>
+<td>Permitir que usuários cadastrados como voluntários possam editar suas informações do perfil.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF25</td>
-<td>Encerrar sessão de voluntários</td>
-<td>Permitir que voluntários encerrem sua sessão do sistema de forma segura.</td>
+<td>Candidatar-se a oportunidade</td>
+<td>Permitir que o voluntário autenticado se candidate a uma oportunidade de voluntariado aberta.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF26</td>
-<td>Visualizar candidatos</td>
-<td>Permitir que gestores visualizem todos os candidatos em funil.</td>
+<td>Realizar login de voluntário</td>
+<td>Permitir que voluntários cadastrados acessem o sistema mediante validação de credenciais.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF27</td>
-<td>Criar perfil de interesse de notificações</td>
-<td>Permitir que o usuários selecione preferências para receber notificações de novos projetos de interesse.</td>
+<td>Encerrar sessão de voluntários</td>
+<td>Permitir que voluntários encerrem sua sessão ativa no sistema.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF28</td>
-<td>Editar preferências de notificações</td>
-<td>Permitir que o usuário edite quais notificações deseja receber ou desativá-las.</td>
+<td>Visualizar candidatos</td>
+<td>Permitir que gestores visualizem todos os candidatos a uma oportunidade em funil.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF29</td>
-<td>Exibir painel de gestão de notificações</td>
-<td>Permitir que o gestor visualize estatísticas e gerencie notificações enviadas.</td>
+<td>Registrar consentimento de uso de dados</td>
+<td>Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RF30</td>
-<td>Realizar formulário de solicitação de parceria</td>
-<td>Fornecer um formulário simplificado para empresas externas enviarem solicitações de parceria, coletando informações.</td>
+<td>Configurar preferências de notificação</td>
+<td>Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse.</td>
+<td>CP5</td>
 </tr>
 <tr>
 <td>RF31</td>
-<td>Gerenciar propostas de parceria</td>
-<td>Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações recebidas</td>
+<td>Exibir estatísticas de alcance das notificações</td>
+<td>Permitir que o gestor visualize estatísticas de alcance das notificações enviadas.</td>
+<td>CP5</td>
 </tr>
 <tr>
 <td>RF32</td>
-<td>Enviar resposta de solicitação</td>
-<td>Permitir que o gestor envie uma resposta formal automatizada à empresa via email.</td>
+<td>Gerenciar envio de notificações</td>
+<td>Permitir que o gestor gerencie notificações enviadas.</td>
+<td>CP5</td>
+</tr>
+<tr>
+<td>RF33</td>
+<td>Preencher solicitação de parceria</td>
+<td>Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área).</td>
+<td>CP6</td>
+</tr>
+<tr>
+<td>RF34</td>
+<td>Visualizar propostas de parceria</td>
+<td>Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas.</td>
+<td>CP6</td>
+</tr>
+<tr>
+<td>RF35</td>
+<td>Enviar resposta de solicitação de parceria</td>
+<td>Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata.</td>
+<td>CP6</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>Requisitos de Negócio (RN)</strong></li>
-</ul>
+<h2 id="82-lista-de-requisitos-de-negocio">8.2 Lista de Requisitos de Negócio</h2>
 <table>
 <thead>
 <tr>
 <th>ID</th>
 <th>Nome</th>
 <th>Descrição</th>
+<th>Relação</th>
 </tr>
 </thead>
 <tbody>
@@ -1458,65 +1549,77 @@
 <td>RN01</td>
 <td>Indicadores de impacto</td>
 <td>Permitir que gestores atualizem indicadores de impacto para cada projeto.</td>
+<td>CP1</td>
 </tr>
 <tr>
 <td>RN02</td>
 <td>Filtro do dashboard de impacto</td>
 <td>Permitir filtragem do dashboard de impacto por área de atuação, status e período.</td>
+<td>CP1</td>
 </tr>
 <tr>
 <td>RN03</td>
 <td>Redirecionar para atendimento via WhatsApp</td>
-<td>Redirecionar o usuário para o WhatsApp do IBRADA, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem</td>
+<td>Redirecionar o usuário para o WhatsApp do IBRADA, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem.</td>
+<td>CP2</td>
 </tr>
 <tr>
 <td>RN04</td>
 <td>Encaminhamento para Departamentos</td>
-<td>Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico (roteamento interno).</td>
+<td>Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno.</td>
+<td>CP2</td>
 </tr>
 <tr>
 <td>RN05</td>
 <td>Filtros e busca de experiências</td>
-<td>Permitir que o usuário possa filtrar experiências por critérios.</td>
+<td>Permitir que o usuário filtre experiências de ecoturismo por critérios.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RN06</td>
 <td>Pagamento via gateway externo</td>
-<td>Os pagamentos realizados no produto deverão utilizar um gateway externo via API e exibindo o status do pagamento.</td>
+<td>Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento.</td>
+<td>CP3</td>
 </tr>
 <tr>
 <td>RN07</td>
 <td>Detalhes de oportunidade</td>
-<td>Página com informações completas de uma oportunidade.</td>
+<td>Disponibilizar uma página com informações completas de uma oportunidade de voluntariado.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RN08</td>
 <td>Filtros de candidato</td>
 <td>Permitir que gestores filtrem candidatos por múltiplos critérios.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RN09</td>
-<td>Detalhes de Candidato</td>
-<td>Ao selecionar um candidato o sistema permite ver perfil completo.</td>
+<td>Detalhes de candidato</td>
+<td>Ao selecionar um candidato, o sistema deve permitir visualizar seu perfil completo.</td>
+<td>CP4</td>
 </tr>
 <tr>
 <td>RN10</td>
 <td>Notificações a candidato de voluntariado</td>
-<td>Enviar notificações por email automaticamente aos usuários cadastrados que correspondam aos interesses declarados em seus perfis</td>
+<td>Enviar notificações por email automaticamente aos usuários cadastrados que correspondam aos interesses declarados em seus perfis.</td>
+<td>CP5</td>
 </tr>
 <tr>
 <td>RN11</td>
-<td>Notificação novo projeto</td>
-<td>Notificar apoiador quando projeto novo na sua área é lançado.</td>
+<td>Notificação de novo projeto</td>
+<td>Notificar o apoiador quando um novo projeto relacionado à sua área de interesse for lançado.</td>
+<td>CP5</td>
 </tr>
 <tr>
 <td>RN12</td>
-<td>Detalhe de Solicitação</td>
-<td>Meio de visualizar informações completas de solicitação.</td>
+<td>Detalhe de solicitação</td>
+<td>Permitir a visualização das informações completas de uma solicitação de parceria.</td>
+<td>CP6</td>
 </tr>
 </tbody>
 </table>
-<h2 id="82-lista-de-requisitos-nao-funcionais">8.2 Lista de Requisitos Não Funcionais</h2>
+<h2 id="83-lista-de-requisitos-nao-funcionais">8.3 Lista de Requisitos Não Funcionais</h2>
 <table>
 <thead>
 <tr>
@@ -1524,83 +1627,83 @@
 <th>Nome</th>
 <th>Descrição</th>
 <th>Classificação URPS+</th>
-<th>CPs relacionada/transversais</th>
+<th>Relação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>RNF01</td>
 <td>Responsividade da interface</td>
-<td>A interface do sistema deve se adaptar a smartphones(320px-480px),tablets(481px-1024px) e desktops(acima de 1024px), garantindo legibilidade, usabilidade, e ausências de quebra de layout em todos os tamanhos de tela.<br></td>
-<td>Usabilidade</td>
-<td>Transversal(todas as CPs)</td>
+<td>A interface do sistema deve se adaptar a smartphones (320px-480px), tablets (481px-1024px) e desktops (acima de 1024px), sem quebra de layout ou sobreposição nos três breakpoints definidos.</td>
+<td>Portabilidade</td>
+<td>Transversal (Todas as CPs)</td>
 </tr>
 <tr>
 <td>RNF02</td>
 <td>Integridade transacional</td>
-<td>O banco de dados deve garantir a conformidade ACID (Atomicidade, Consistência, Isolamento, Durabilidade) nas transações de ecoturismo para impedir reservas duplicadas (overbooking) e inconsistências de vagas</td>
+<td>O sistema deve garantir a conformidade ACID nas transações de ecoturismo e impedir reservas concorrentes para a mesma vaga por meio de controle de concorrência (lock otimista/pessimista e constraints de unicidade/capacidade na tabela de reservas). Em caso de requisições simultâneas para a última vaga disponível, apenas a primeira transação confirmada deve ser efetivada, rejeitando as demais sem gerar overbooking.</td>
 <td>Confiabilidade</td>
 <td>CP3</td>
 </tr>
 <tr>
 <td>RNF03</td>
 <td>Desempenho do catálogo</td>
-<td>O tempo de carregamento das listagens de projetos e do catálogo de experiências de ecoturismo não deve ultrapassar 3 segundos em conexões de banda larga padrão</td>
+<td>O tempo de carregamento das listagens de projetos e do catálogo de experiências de ecoturismo não deve ultrapassar 3 segundos em conexão de 15 Mbps.</td>
 <td>Performance</td>
 <td>CP1, CP3</td>
 </tr>
 <tr>
 <td>RNF04</td>
 <td>Autenticação e autorização</td>
-<td>O sistema deve implementar controle de acesso baseado em papéis (RBAC - Role-Based Access Control), restringindo o acesso aos painéis de gerenciamento exclusivamente à equipe autorizada do IBRADA.</td>
+<td>O sistema deve negar acesso por padrão a usuários não autenticados ou sem papel de Gestor, e registrar tentativas de acesso não autorizadas às rotas de gerenciamento.</td>
 <td>+ (Segurança)</td>
-<td>Transversal(CP1,CP3,CP4, CP6)</td>
+<td>Transversal (CP1, CP3, CP4, CP6)</td>
 </tr>
 <tr>
 <td>RNF05</td>
 <td>Integração Externa</td>
-<td>O módulo de pagamento deve se comunicar com a API do gateway de pagamento externo de forma assíncrona, tratando as respostas de webhook para atualizar o status das reservas.</td>
+<td>A interface de integração externa via webhook deve processar notificações recebidas de forma assíncrona em até 3 segundos, realizando até 5 tentativas automáticas de reprocessamento em caso de falha na comunicação.</td>
 <td>+ (Interfaces)</td>
 <td>CP3</td>
 </tr>
 <tr>
 <td>RNF06</td>
 <td>Escalabilidade sob demanda</td>
-<td>O sistema deve suportar até 200 usuários simultâneos ativos(navegando, reservando ou preenchendo formulários) sem degradação perceptível de desempenho.</td>
+<td>O sistema deve suportar 200 usuários simultâneos ativos (navegando, reservando ou preenchendo formulários), com tempo de resposta ≤ 2s para 95% das requisições e taxa de erro ≤ 1% (respostas 5xx ou timeout), medidos em teste de carga de 10 minutos em ambiente de homologação.</td>
 <td>Performance / Suportabilidade</td>
-<td>CP1,CP3, CP5</td>
+<td>CP1, CP3, CP5</td>
 </tr>
 <tr>
 <td>RNF07</td>
 <td>Disponibilidade do sistema</td>
-<td>A plataforma deve estar disponível para acesso público (dashboard de projetos, catálogo de ecoturismo, formulários de triagem e parceria) de forma contínua, minimizando janelas de indisponibilidade.</td>
+<td>A plataforma deve garantir disponibilidade mínima de 98% ao mês para acesso público (dashboard de projetos, catálogo de ecoturismo, formulários de triagem e parceria), com manutenções programadas com 2 dias de antecedência realizadas fora do horário de pico (entre as 02h00 e as 05h00 - BRT).</td>
 <td>Confiabilidade</td>
-<td>Transversal(todas as CPs)</td>
+<td>Transversal (Todas as CPs)</td>
 </tr>
 <tr>
 <td>RNF08</td>
-<td>Proteção de dados pessoais(LGPD)</td>
-<td>O sistema deve armazenar dados e tratar dados sensíveis(como CPF e informações de contato) de voluntários, clientes de forma criptografada no banco de dados, e deve exibir e registrar o consentimento explícito do usuário no momento do cadastro.</td>
+<td>Proteção de dados pessoais (LGPD)</td>
+<td>O sistema deve proteger os dados pessoais e sensíveis (como CPF e informações de contato) de voluntários e clientes utilizando criptografia padrão AES-256 para dados em repouso no banco de dados e protocolo TLS 1.2 ou superior (HTTPS) para dados em trânsito.</td>
 <td>+ (Legal/Segurança)</td>
 <td>CP3, CP4, CP6</td>
 </tr>
 <tr>
 <td>RNF09</td>
 <td>Usabilidade do formulário de triagem</td>
-<td>O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital</td>
+<td>O formulário de triagem inicial deve ser simples o suficiente para ser concluído por usuários com baixa familiaridade digital, sem a necessidade de criação de conta, com taxa de conclusão ≥ 90%.</td>
 <td>Usabilidade</td>
 <td>CP2</td>
 </tr>
 <tr>
 <td>RNF10</td>
 <td>Compatibilidade entre navegadores</td>
-<td>O sistema deve funcionar corretamente nos principais navegadores web utilizados pelo público-alvo(Chrome, Firefox, Safari e Edge) suportando a versão estável mais recente e imediatamente a versão anterior de cada navegador.</td>
+<td>O sistema deve apresentar paridade funcional e visual, sem quebras de layout, nas duas últimas versões estáveis do Chrome, Firefox, Safari e Edge.</td>
 <td>Suportabilidade</td>
-<td>Transversal(todas as CPs)</td>
+<td>Transversal (Todas as CPs)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="83-matriz-de-rastreabilidade">8.3 Matriz de Rastreabilidade</h2>
+<h2 id="84-matriz-de-rastreabilidade">8.4 Matriz de Rastreabilidade</h2>
 <table>
 <thead>
 <tr>
@@ -1616,7 +1719,7 @@
 <td>OE1</td>
 <td>CP1</td>
 <td>VN01</td>
-<td>RF01, RF02, RF03, RN01, RF04, RN02</td>
+<td>RF01, RF02, RF03, RF04, RN01, RN02</td>
 <td>RNF01, RNF03, RNF04, RNF06, RNF07, RNF10</td>
 </tr>
 <tr>
@@ -1627,35 +1730,48 @@
 <td>RNF01, RNF07, RNF09, RNF10</td>
 </tr>
 <tr>
-<td>0E2</td>
+<td>OE2</td>
 <td>CP3</td>
 <td>VN03</td>
-<td>RF06, RN05, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RN06, RF14, RF15, RF16, RF17</td>
+<td>RF06, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RN05, RN06</td>
 <td>RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
 <td>OE3</td>
 <td>CP4</td>
 <td>VN04</td>
-<td>RF18, RF19, RF20, RN07, RF21, RF22, RF23, RF24, RF25, RF26, RN08, RN09</td>
-<td>RNF01, RNF04, RNF06, RNF07, RNF08, RNF10</td>
+<td>RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF25, RF26, RF27, RF28, RF29, RN07, RN08, RN09</td>
+<td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
 </tr>
 <tr>
 <td>OE2</td>
 <td>CP5</td>
 <td>VN05</td>
-<td>RF27, RN10, RN11, RF28, RF29</td>
-<td>RNF01, RNF06, RNF07, RNF08, RNF10</td>
+<td>RF30, RF31, RF32, RN10, RN11</td>
+<td>RNF01, RNF06, RNF07, RNF10</td>
 </tr>
 <tr>
 <td>OE1</td>
 <td>CP6</td>
 <td>VN06</td>
-<td>RF30, RF31, RN12, RF32</td>
-<td>RNF01, RNF04, RNF06, RNF07, RNF08, RNF10</td>
+<td>RF33, RF34, RF35, RN12</td>
+<td>RNF01, RNF04, RNF07, RNF08, RNF10</td>
 </tr>
 </tbody>
 </table>
+<h2 id="85-arvore-de-rastreabilidade">8.5 Árvore de Rastreabilidade</h2>
+<ul>
+<li>Imagem para controle de versão</li>
+</ul>
+<p><img alt="Arvore de Rastreabilidade" src="../assets/arvore.png" /></p>
+<ul>
+<li>Link interativo</li>
+</ul>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+<blockquote>
+<p><a href="https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&amp;t=4aifg0Jj2s4gHz3E-1">Link da árvore de rastreabilidade</a></p>
+</blockquote>
 
 
 
