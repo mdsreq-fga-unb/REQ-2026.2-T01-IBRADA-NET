@@ -15,8 +15,15 @@
 |07/09/2026|0.10|Inclusão do tópico Comunicação|Gabriel Guedes|
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
 |07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
+|20/09/2026|1.1 |Ajuste no tópico Desafios do projeto e no quadro resumo dos stakeholders|Cauã|
+|20/09/2026|1.2|Correções nos tópicos 2.6 e 2.4|Vinícius|
+|21/09/2026|1.3|Ajustes do tópico 2.|Zayra|
+|21/09/2026|1.4|Adição parcial dos requisitos.|Zayra|
+|27/09/2026|1.5|Correção nos requisitos a partir da verificação em pares|Gabriel , Zayra, Vinicius, Arthur|
+|28/09/2026|1.6|Entrega de atividade 4|Arthur, Vinicius, Filipe, Gabriel, Igor, Cauã e Zayra |
 |03/10/2026| |Ajustes no cronograma|Gabriel Guedes|
 |04/10/2026| |Ajustes no cronograma|Gabriel Guedes|
+
 
 *Tabela 1: Tabela de versionamento*
 

@@ -155,3 +155,5 @@ Tópico referente às reuniões que aconteceram durante o período da primeira u
 
     * Estruturar a linguagem visual e o fluxo da "Vitrine do Projeto" cobrindo o ciclo de recuperação ambiental e impacto comunitário.
     * Consolidar os requisitos elicitados para elaborar a proposta formal de escopo do MVP e submeter à aprovação do cliente.
+
+        
