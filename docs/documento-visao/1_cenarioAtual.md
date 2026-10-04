@@ -16,6 +16,7 @@
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
 |07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
 |03/10/2026| |Ajustes no cronograma|Gabriel Guedes|
+|04/10/2026| |Ajustes no cronograma|Gabriel Guedes|
 
 *Tabela 1: Tabela de versionamento*
 
