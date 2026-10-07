@@ -15,6 +15,7 @@
 |07/09/2026|0.10|Inclusão do tópico Comunicação|Gabriel Guedes|
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
 |07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
+|06/10/2026|0.12|Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
 
 *Tabela 1: Tabela de versionamento*
 
