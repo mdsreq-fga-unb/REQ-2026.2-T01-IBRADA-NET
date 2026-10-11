@@ -25,6 +25,7 @@
 |04/10/2026| |Ajustes no cronograma|Gabriel Guedes|
 |10/10/2026| |Adição do glossário com siglas das atividades ER|Gabriel Guedes|
 |11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
+|11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
 
 
 *Tabela 1: Tabela de versionamento*
