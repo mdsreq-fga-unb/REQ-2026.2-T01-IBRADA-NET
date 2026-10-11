@@ -30,9 +30,13 @@ E o segundo é a frequencia de uso:
 
 O peso maior na frequencia foca em entregar ao cliente um produto inicial que cubra as principais funcionalidades que ele deseja e usa mais no seu contexto inicial.
 
+Para os requisitos não funcionais o valor de negócio leva em consideração apenas o contexto do projeto.
+
 - **Esforço técnico**: (Esforço + Complexidade + Lacuna de capacidade) / 3
 
-A avaliação técnica dos requisitos funcionais foi realizada pela equipe do projeto considerando três critérios: **esforço necessário para implementação**, **complexidade técnica** e **lacuna de capacidade da equipe**.
+A avaliação técnica tanto dos funcionais quanto dos não funcionais foi realizada pela equipe do projeto considerando três critérios: **esforço necessário para implementação**, **complexidade técnica** e **lacuna de capacidade da equipe**.
+
+> Utilizamos formulários onlines para capturar esses dados.
 
 Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que valores maiores representem maior dificuldade para implementação.
 
@@ -64,9 +68,11 @@ Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que va
     | **3** | A equipe precisa desenvolver conhecimentos relevantes |
     | **4** | A equipe ainda não possui os conhecimentos ou recursos necessários |
 
+[Tabelas com todos os valores detalhados antes de calcular as médias]() TODO
+
 ### 10.2.2 Tabela de critérios
 
-Aqui está a sua tabela de Requisitos Funcionais formatada em **Markdown**:
+Após todos os calculos, a tabela final ficou assim:
 
 | ID | Nome | Descrição | Relação | Avaliação MoSCoW | Avaliação Frequência de Uso | Esforço Técnico |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -105,6 +111,17 @@ Aqui está a sua tabela de Requisitos Funcionais formatada em **Markdown**:
 | **RF33** | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 | 4 | 4 | 1,56 |
 | **RF34** | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 | 4 | 4 | 1,61 |
 | **RF35** | Enviar resposta de solicitação | Permitir que o gestor escreva uma resposta a solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 | 2 | 2 | 1,78 |
+| **RNF01** | Responsividade da interface | A interface deve se adaptar a smartphones, tablets e desktops sem quebra de layout ou sobreposição. | Transversal — todas as CPs | 4 |-| 2 |
+| **RNF02** | Integridade transacional | O sistema deve garantir transações ACID e impedir reservas concorrentes para a mesma vaga, evitando overbooking. | CP3 | 4 |-| 3 |
+| **RNF03** | Desempenho do catálogo | As listagens de projetos e experiências de ecoturismo devem carregar em até 3 segundos em conexão de 15 Mbps. | CP1 e CP3 | 4 |-| 2 |
+| **RNF04** | Autenticação e autorização | O sistema deve negar acesso não autorizado e registrar tentativas de acesso às rotas de gerenciamento. | Transversal — CP1, CP3, CP4 e CP6 | 4 |-| 2 |
+| **RNF05** | Integração externa | Webhooks devem processar notificações de forma assíncrona em até 3 segundos e realizar até 5 tentativas de reprocessamento. | CP3 | 4 |-| 3 |
+| **RNF06** | Escalabilidade sob demanda | O sistema deve suportar 200 usuários simultâneos, com tempo de resposta de até 2 segundos para 95% das requisições e taxa de erro de até 1%. | CP1, CP3 e CP5 | 3 |-| 3 |
+| **RNF07** | Disponibilidade do sistema | A plataforma deve garantir disponibilidade mínima de 98% ao mês, com manutenções programadas fora do horário de pico. | Transversal — todas as CPs | 4 |-| 2 |
+| **RNF08** | Proteção de dados pessoais (LGPD) | O sistema deve proteger dados pessoais e sensíveis usando AES-256 para dados em repouso e TLS 1.2 ou superior em trânsito. | CP3, CP4 e CP6 | 4 |-| 2 |
+| **RNF09** | Usabilidade do formulário de triagem | O formulário deve ser simples para usuários com baixa familiaridade digital e alcançar taxa de conclusão mínima de 90%. | CP2 | 4 |-| 2 |
+| **RNF10** | Compatibilidade entre navegadores | O sistema deve manter paridade funcional e visual nas duas últimas versões estáveis do Chrome, Firefox, Safari e Edge. | Transversal — todas as CPs | 3 |-| 3 |
+
 
 
 ### 10.2.3 Matriz 4 x 4
@@ -113,22 +130,26 @@ Após a consolidação das avaliações de valor de negócio e esforço técnico
 
 Para o posicionamento no eixo horizontal, o esforço técnico consolidado foi convertido para a escala de 1 a 4 conforme o valor obtido na avaliação técnica:
 
-| Esforço técnico consolidado | Posição na matriz |
-| --- | --- |
-| 1,0 a 1,4 | **1 — Baixo** |
-| 1,5 a 2,4 | **2 — Moderado** |
-| 2,5 a 3,4 | **3 — Alto** |
-| 3,5 a 4,0 | **4 — Muito alto** |
-
 O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, enquanto o eixo horizontal representa o **esforço técnico**, avaliado pela equipe.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+| **Valor de negócio ↓ / Esforço técnico →** | **1 — Baixo** | **2 — Moderado** | **3 — Alto** | **4 — Muito alto** |
+| --- | --- | --- | --- | --- |
+| **4 — Muito alto** | **RF21, RF27, RF29** | **RF05, RF08, RF10, RF11, RF12, RF13, RF17, RF23, RF25, RF26, RF28, RF33, RF34, RNF01, RNF03, RNF04, RNF07, RNF08, RNF09** | RF04, **RF14** **, RNF02, RNF05** | — |
+| **3 — Alto** |  — | **RF06, RF07, RF09, RF15, RF18, RF22, RF30** | RNF06, RNF10 | — |
+| **2 — Moderado** | RF24 | RF02, RF16, RF19, RF20, RF31, RF32, RF35, RF01 |  — | — |
+| **1 — Baixo** | — | RF03 | — | — |
 
-> Em rosa são os que posteriormente entraram no MVP do produto.
+*Matriz 4x4, em negrito são os que entrarão no MVP*
 
-> imagem abaixo para controle de versão (última atualização 28/09/2026)
-! ![matriz](../assets/matriz4x4.png)
+
+<!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
+
+<!-- > Em rosa são os que posteriormente entraram no MVP do produto. -->
+
+> imagem abaixo para controle de versão (última atualização 11/10/2026)
+![matriz](../assets/matriz4x4.png)
+[LINK](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=Dq32iZJOkZ0Vwe6r-1)
 
 A partir da matriz realizamos a definição do MVP baseado nos requisitos localizados no quadrante superior esquerdo, no qual encontram-se aqueles com menor esforço técnico e maior valor de negócio. 
 
-A unica exceção é o **RF14**, que apesar de ter um esforço técnico mais alto, é um requisito primordial nessa primeira entrega para o cliente.
+A unica exceção é o **RF14**, que apesar de ter um esforço técnico mais alto, é um requisito primordial nessa primeira entrega para o cliente. Portando o **RNF02** e o **RNF05** que eram fortes candidatos ao MVP também entrarão por serem fortemente relacionados ao requisito RF14.
