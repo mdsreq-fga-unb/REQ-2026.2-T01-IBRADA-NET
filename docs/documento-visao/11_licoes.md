@@ -14,7 +14,7 @@ A Unidade 1 representou um momento de intensa adaptação, marcado pela formaç�
 ### Gestão de tempo e cronograma
 
 - Dificuldade encontrada: Falta de um cronograma concreto no início do projeto.
-- Causa e Consequências: A principal causa foi a baixa comunicação entre membros da equipe, de modo que não houve um consenso em relação a prazos e tempo. Isso levou a falhas que não foram percebidas durante a revisão final e ao acúmulo de tarefas nos dias que antecederam o prazo de entrega da proposta.
+- Causa e Consequências: A principal causa foi a baixa comunicação entre membros da equipe, de modo que não houve um consenso em relação a prazos e tempo. Isso levou a falhas que não foram percebidas durante a revisão final, como necessidade de esclarecer termos e seções do documento que não foram portadas ao Github Pages, e ao acúmulo de tarefas nos dias que antecederam o prazo de entrega da proposta.
 - Mudanças Adotadas: Adoção de um cronograma de entregas internas mais rígido para as próximas unidades, de forma a garantir tempo suficiente para revisões de qualidade antes do envio oficial.
 - Evidência: Cronograma criado na seção 6 e atividades entregues, feitas por Gabriel e Zarya.
 
