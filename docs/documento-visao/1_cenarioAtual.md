@@ -21,6 +21,7 @@
 |21/09/2026|1.4|Adição parcial dos requisitos.|Zayra|
 |27/09/2026|1.5|Correção nos requisitos a partir da verificação em pares|Gabriel , Zayra, Vinicius, Arthur|
 |28/09/2026|1.6|Entrega de atividade 4|Arthur, Vinicius, Filipe, Gabriel, Igor, Cauã e Zayra |
+|11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
 
 
 *Tabela 1: Tabela de versionamento*
