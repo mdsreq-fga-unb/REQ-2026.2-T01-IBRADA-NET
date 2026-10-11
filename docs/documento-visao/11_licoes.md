@@ -31,3 +31,6 @@ A Unidade 1 representou um momento de intensa adaptação, marcado pela formaç�
 - Causa e Consequências: Baixa comunicação entre os membros da equipe, não havendo alinhamento sobre disponibilidade para trabalhar no documento. Isso resultou em distribuição inconsistente e injusta de trabalho entre os membros da equipe.
 - Mudanças Adotadas: A distribuição de atividades será feita antecipadamente e o progresso deve ser informado de forma assíncrona para caso haja alguma dificuldade, erro ou dúvida.
 - Evidência: Distribuição de atividades no GitHub e Pages e de forma assíncrona (WhatsApp) pela Zayra.
+
+# 11.2 Unidade 2
+
