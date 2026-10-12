@@ -68,7 +68,7 @@ Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que va
     | **3** | A equipe precisa desenvolver conhecimentos relevantes |
     | **4** | A equipe ainda não possui os conhecimentos ou recursos necessários |
 
-[Tabelas com todos os valores detalhados antes de calcular as médias]() TODO
+[Tabelas com todos os valores detalhados antes de calcular as médias](../entrega-atividades/classificacao-requisitos.md) TODO
 
 ### 10.2.2 Tabela de critérios
 
@@ -105,7 +105,7 @@ Após todos os calculos, a tabela final ficou assim:
 | **RF27** | Encerrar sessão de voluntários | Permitir que voluntários encerrem sua sessão ativa no sistema. | CP4 | 4 | 4 | 1,39 |
 | **RF28** | Visualizar candidatos | Permitir que gestores visualizem todos os candidatos a uma oportunidade em funil. | CP4 | 4 | 4 | 1,94 |
 | **RF29** | Registrar consentimento de uso de dados | Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito. | CP4 | 4 | 4 | 1,44 |
-| **RF30** | Configurar preferências de notificação | Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse. | CP5 | 4 | 3 | 2,11 |
+| RF30 | Configurar preferências de notificação | Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse. | CP5 | 4 | 3 | 2,11 |
 | RF31 | Exibir estatísticas de alcance das notificações | Permitir que o gestor visualize estatísticas de alcance das notificações enviadas. | CP5 | 3 | 2 | 2,33 |
 | RF32 | Gerenciar envio de notificações | Permitir que o gestor gerencie notificações enviadas. | CP5 | 2 | 3 | 1,94 |
 | **RF33** | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 | 4 | 4 | 1,56 |
@@ -135,8 +135,8 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 | **Valor de negócio ↓ / Esforço técnico →** | **1 — Baixo** | **2 — Moderado** | **3 — Alto** | **4 — Muito alto** |
 | --- | --- | --- | --- | --- |
 | **4 — Muito alto** | **RF21, RF27, RF29** | **RF05, RF08, RF10, RF11, RF12, RF13, RF17, RF23, RF25, RF26, RF28, RF33, RF34, RNF01, RNF03, RNF04, RNF07, RNF08, RNF09** | RF04, **RF14** **, RNF02, RNF05** | — |
-| **3 — Alto** |  — | **RF06, RF07, RF09, RF15, RF18, RF22, RF30** | RNF06, RNF10 | — |
-| **2 — Moderado** | RF24 | RF02, RF16, RF19, RF20, RF31, RF32, RF35, RF01 |  — | — |
+| **3 — Alto** |  — | **RF06, RF07, RF09, RF15, RF18, RF22** | RNF06, RNF10 | — |
+| **2 — Moderado** | RF24 | RF30, RF02, RF16, RF19, RF20, RF31, RF32, RF35, RF01 |  — | — |
 | **1 — Baixo** | — | RF03 | — | — |
 
 *Matriz 4x4, em negrito são os que entrarão no MVP*
@@ -144,9 +144,9 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 
 <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
 
-<!-- > Em rosa são os que posteriormente entraram no MVP do produto. -->
+> Em rosa são os que posteriormente entraram no MVP do produto.
 
-> imagem abaixo para controle de versão (última atualização 11/10/2026)
+> A imagem abaixo serve para controle de versão (última atualização 12/10/2026)
 ![matriz](../assets/matriz4x4.png)
 [LINK](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=Dq32iZJOkZ0Vwe6r-1)
 

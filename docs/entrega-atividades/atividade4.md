@@ -1,4 +1,4 @@
-# Atividade 4 - Priorização dos requisitos e definição do MVP
+# Atividade 4 - Priorização dos requisitos e definição do MVP (28/09/2026 - algumas informações dessa atividade mudaram, mas permanecem aqui pelo controle de versões)
 
 ## 1. Avaliação do valor de negócio
 

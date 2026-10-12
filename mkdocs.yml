@@ -52,7 +52,7 @@ nav:
       - 2 Solução Proposta: documento-visao/2_solucao.md
       - 3 Intervenção Social: documento-visao/3_intervencao.md
       - 4 Estratégias de engenharia de software: documento-visao/4_estrategias.md
-      - 5 Engenharia de Requisitos: documento-visao/5_requisitos.md
+      - 5 Engenharia de Requisitos: documento-visao/5_requisitos2.md
       - 6 Cronograma e entregas: documento-visao/6_cronograma.md
       - 7 Interação entre Equipe e Cliente: documento-visao/7_interacao.md
       - 8 Requisitos de Software: documento-visao/8_requisitos.md
@@ -73,8 +73,9 @@ nav:
       - Glossário: documentacao/glossario.md
   #     - FAQ: documentacao/faq.md
 
-  - Entrega de Atividades: 
+  - Atividades: 
     - Unidade 2:
+      - classificação dos requisitos: entrega-atividades/classificacao-requisitos.md
       - Atividade 1: entrega-atividades/atividade1.md
       - Atividade 2: entrega-atividades/atividade2.md
       - Atividade 3: entrega-atividades/atividade3.md
