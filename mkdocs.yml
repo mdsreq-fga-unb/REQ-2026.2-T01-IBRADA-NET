@@ -69,8 +69,8 @@ nav:
   - Especificação de Requisitos:
       - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
-  # - Documentação:
-  #     - Glossário: documentacao/glossario.md
+  - Documentação:
+      - Glossário: documentacao/glossario.md
   #     - FAQ: documentacao/faq.md
 
   - Entrega de Atividades: 
