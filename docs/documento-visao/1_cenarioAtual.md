@@ -70,7 +70,7 @@ Quanto à captação de recursos, a dificuldade não é de ineficiência comerci
 
 A Figura a seguir, apresenta o diagrama de Ishikawa contendo as causas (organizados pelos 6M’s) e o problema do IBRADA:
 
-![Diagrama de Ishikawa](assets/ishikawa_IBRADA-NET.png)
+![Diagrama de Ishikawa](../assets/ishikawa_IBRADA-NET.png)
 *Figura 2: Diagrama de Ishikawa. Elaborado por Cauã Mendes (2026).*
 
 ##  1.5 Desafios do Projeto
@@ -103,7 +103,7 @@ O quadro a seguir apresenta os principais stakeholders identificados e suas resp
 
 *Tabela 2: Tabela de stakeholders*
 
-![ Mapa de Stakeholders](assets/mapa-de-stakeholders.jpg)
+![ Mapa de Stakeholders](../assets/mapa-de-stakeholders.jpg)
 *Figura 3:  Mapa de Stakeholders. Elaborado por Arthur Scartezini (2026).*
 
 ## 1.7 Segmentação de Clientes
