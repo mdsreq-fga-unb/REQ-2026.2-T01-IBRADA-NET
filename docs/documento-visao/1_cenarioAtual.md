@@ -23,10 +23,12 @@
 |28/09/2026|1.6|Entrega de atividade 4|Arthur, Vinicius, Filipe, Gabriel, Igor, Cauã e Zayra |
 |03/10/2026| |Ajustes no cronograma|Gabriel Guedes|
 |04/10/2026| |Ajustes no cronograma|Gabriel Guedes|
+|06/10/2026| |Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
 |10/10/2026| |Adição do glossário com siglas das atividades ER|Gabriel Guedes|
 |11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
 |11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
-|06/10/2026|0.12|Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
+|12/10/2026| |Ajustes nas Regras de Negócio|Gabriel Guedes|
+
 
 *Tabela 1: Tabela de versionamento*
 

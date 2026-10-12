@@ -40,22 +40,16 @@
 | RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 |
 | RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
 
-## 8.2 Lista de Requisitos de Negócio
+## 8.2 Lista de Regras de Negócio
 
 | ID | Nome | Descrição | Relação |
-| --- | --- | --- | --- |
-| RN01 | Indicadores de impacto | Permitir que gestores atualizem indicadores de impacto para cada projeto. | CP1 |
-| RN02 | Filtro do dashboard de impacto | Permitir filtragem do dashboard de impacto por área de atuação, status e período. | CP1 |
-| RN03 | Redirecionar para atendimento via WhatsApp | Redirecionar o usuário para o WhatsApp do IBRADA, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem. | CP2 |
-| RN04 | Encaminhamento para Departamentos | Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno. | CP2 |
-| RN05 | Filtros e busca de experiências | Permitir que o usuário filtre experiências de ecoturismo por critérios. | CP3 |
-| RN06 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
-| RN07 | Detalhes de oportunidade | Disponibilizar uma página com informações completas de uma oportunidade de voluntariado. | CP4 |
-| RN08 | Filtros de candidato | Permitir que gestores filtrem candidatos por múltiplos critérios. | CP4 |
-| RN09 | Detalhes de candidato | Ao selecionar um candidato, o sistema deve permitir visualizar seu perfil completo. | CP4 |
-| RN10 | Notificações a candidato de voluntariado | Enviar notificações por email automaticamente aos usuários cadastrados que correspondam aos interesses declarados em seus perfis. | CP5 |
-| RN11 | Notificação de novo projeto | Notificar o apoiador quando um novo projeto relacionado à sua área de interesse for lançado. | CP5 |
-| RN12 | Detalhe de solicitação | Permitir a visualização das informações completas de uma solicitação de parceria. | CP6 |
+| :--- | :--- | :--- | :---: |
+| RN01 | Redirecionar para atendimento via WhatsApp | Usuários devem ser redirecionados para o WhatsApp do IBRADA após responder uma triagem, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem. | CP2 |
+| RN02 | Encaminhamento para Departamentos | Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno. | CP2 |
+| RN03 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
+| RN04 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
+| RN05 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc.). | CP4 |
+| RN06 | Notificações de oportunidades e projetos | Notificações devem ser enviadas por email de forma automática aos usuários cadastrados que correspondam aos interesses declarados em seus perfis. | CP5 |
 
 ## 8.3 Lista de Requisitos Não Funcionais
 
