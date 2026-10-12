@@ -48,7 +48,7 @@
 
 
 === "Organização e Atualização de Requisitos:"
-    - **Backlog de Requisitos Evolutivo (Product Backlog):** Repositório unificado, dinâmico e flexível que organiza as histórias de usuário, requisitos suplementares e defeitos de forma priorizada de acordo com o valor de negócio para o instituto. 
+    - **Backlog de Requisitos Evolutivo (Product Backlog):** Lista de requisitos priorizados, organizandos em temas, épicos e histórias de usuário associados. A lista traz como características principais unificação, dinamicidade e flexibilidade para o backlog.
     - **Matriz de Rastreabilidade Seletiva:** Relação cruzada que conecta de forma visível as características de produto de alto nível (CPs) com as histórias de usuário e os objetivos de negócio (VNs e OEs) que as motivaram. 
 
 ### **Construção:**
@@ -57,7 +57,7 @@
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, completude técnica, verificabilidade e ausência de acoplamento com soluções específicas de design.
 
 === "Organização e Atualização de Requisitos:"
-    - **Backlog de Requisitos Evolutivo (Product Backlog):** Repositório unificado, dinâmico e flexível que organiza as histórias de usuário, requisitos suplementares e defeitos de forma priorizada de acordo com o valor de negócio para o instituto.
+    - **Backlog de Requisitos Evolutivo (Product Backlog):** Lista de requisitos priorizados, organizandos em temas, épicos e histórias de usuário associados. A lista traz como características principais unificação, dinamicidade e flexibilidade para o backlog.
     - **Matriz de Rastreabilidade Seletiva:** Relação cruzada que conecta de forma visível as características de produto de alto nível (CPs) com as histórias de usuário e os objetivos de negócio (VNs e OEs) que as motivaram.
 
 ### **Transição (Cutover):**
@@ -111,7 +111,7 @@
       <td>Organização e Atualização</td>
       <td>Organização e Atualização do MVP</td>
       <td>Backlog de Requisitos Evolutivo (Product Backlog), Matriz de Rastreabilidade Seletiva</td>
-      <td>Ajustes em histórias de usuário conforme o design evolui</td>
+      <td>Ajustes em temas, épicos e histórias de usuário conforme o design evolui</td>
     </tr>
 
     <!-- DESIGN DO USUÁRIO -->
@@ -144,7 +144,7 @@
       <td>Organização e Atualização</td>
       <td>Organização e Atualização do MVP</td>
       <td>Backlog de Requisitos Evolutivo (Product Backlog), Matriz de Rastreabilidade Seletiva</td>
-      <td>Ajustes em histórias de usuário conforme o design evolui</td>
+      <td>Ajustes em temas, épicos e histórias de usuário conforme o design evolui</td>
     </tr>
 
     <!-- CONSTRUÇÃO -->
@@ -159,7 +159,7 @@
       <td>Organização e Atualização</td>
       <td>Evolução e Manutenção Contínua do Backlog</td>
       <td>Backlog de Requisitos Evolutivo (Product Backlog), Matriz de Rastreabilidade Seletiva</td>
-      <td>Ajustes em histórias de usuário conforme o design evolui.</td>
+      <td>Ajustes em temas, épicos e histórias de usuário conforme o design evolui.</td>
     </tr>
 
     <!-- TRANSIÇÃO -->
