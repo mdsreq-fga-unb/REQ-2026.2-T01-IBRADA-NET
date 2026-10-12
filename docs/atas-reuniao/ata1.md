@@ -131,14 +131,14 @@ Tópico referente às reuniões que aconteceram durante o período da primeira u
 
     ## 3. Participantes
 
-    >Somente equipe interna 
 
     | Nome |
     | --- |
+    |Guilherme Sampaio|
     | Zayra Moraes |
     | Filipe Brito  | 
     | Vinicius Dos Santos  |
-    | ArthurScartezini |
+    | Arthur Scartezini |
     | Cauã Mendes Coelho | 
     | Gabriel Guedes Fernandes |
 

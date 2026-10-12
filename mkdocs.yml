@@ -52,10 +52,12 @@ nav:
       - 2 Solução Proposta: documento-visao/2_solucao.md
       - 3 Intervenção Social: documento-visao/3_intervencao.md
       - 4 Estratégias de engenharia de software: documento-visao/4_estrategias.md
-      - 5 Engenharia de Requisitos: documento-visao/5_requisitos.md
+      - 5 Engenharia de Requisitos: documento-visao/5_requisitos2.md
       - 6 Cronograma e entregas: documento-visao/6_cronograma.md
       - 7 Interação entre Equipe e Cliente: documento-visao/7_interacao.md
       - 8 Requisitos de Software: documento-visao/8_requisitos.md
+      - 9 DOR e DOD: documento-visao/9_dor_dod.md
+      - 10 Backlog do Produto: documento-visao/10_backlog.md
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
 
   - Atas de Reunião:
@@ -63,15 +65,17 @@ nav:
       - Unidade 2: atas-reuniao/ata2.md
       # - Unidade 3: atas-reuniao/ata3.md
       # - Unidade 4: atas-reuniao/ata4.md
-  # - Especificação:
-  #     - Casos de Uso: especificacao/casos-uso.md
+
+  - Especificação de Requisitos:
+      - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
-  # - Documentação:
-  #     - Glossário: documentacao/glossario.md
+  - Documentação:
+      - Glossário: documentacao/glossario.md
   #     - FAQ: documentacao/faq.md
 
-  - Entrega de Atividades: 
+  - Atividades: 
     - Unidade 2:
+      - classificação dos requisitos: entrega-atividades/classificacao-requisitos.md
       - Atividade 1: entrega-atividades/atividade1.md
       - Atividade 2: entrega-atividades/atividade2.md
       - Atividade 3: entrega-atividades/atividade3.md
