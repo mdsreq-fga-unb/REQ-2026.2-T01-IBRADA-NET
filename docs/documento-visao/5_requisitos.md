@@ -21,12 +21,14 @@
 
 
 === "Verificação e Validação de Requisitos:"
-    - **Reuniões:** a verificação e a validação são realizadas de forma contínua e iterativa, obtendo grande destaque durante as reuniões de alinhamento com os representantes do IBRADA (stakeholders).
+    A verificação e a validação são realizadas de forma contínua e iterativa, obtendo grande destaque durante as reuniões de alinhamento com os representantes do IBRADA (stakeholders).
+    - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, verificabilidade etc. dos requisitos levantados durante o planejamento.
 
 
 === "Organização e Atualização de Requisitos:"
-    - **Backlog de Requisitos Evolutivo (Product Backlog):** Repositório unificado, dinâmico e flexível que organiza as histórias de usuário, requisitos suplementares e defeitos de forma priorizada de acordo com o valor de negócio para o instituto. 
+    - **Backlog de Requisitos Evolutivo (Product Backlog):** Lista de requisitos priorizados, organizandos em temas, épicos e histórias de usuário associados. A lista traz como características principais unificação, dinamicidade e flexibilidade para o backlog.
     - **Matriz de Rastreabilidade Seletiva:** Relação cruzada que conecta de forma visível as características de produto de alto nível (CPs) com as histórias de usuário e os objetivos de negócio (VNs e OEs) que as motivaram. 
+
 ### **Design do Usuário:**
 
 === "Elicitação e Descoberta: "
@@ -34,7 +36,8 @@
 
 
 === "Análise e Consenso: "
-    - **Reuniões:** Análise e Consenso feita de forma constante por meio de reuniões de negociação e alinhamento com os representantes do IBRADA (stakeholders) para avaliar quais funcionalidades farão parte do prótotipo trabalhado. 
+    Análise e Consenso feita de forma constante por meio de reuniões de negociação e alinhamento com os representantes do IBRADA (stakeholders) para avaliar quais funcionalidades farão parte do prótotipo trabalhado. 
+    - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, verificabilidade etc. dos requisitos levantados durante o planejamento.
 
 
 === "Representação de Requisitos:"
@@ -47,10 +50,8 @@
 === "Organização e Atualização de Requisitos:"
     - **Backlog de Requisitos Evolutivo (Product Backlog):** Repositório unificado, dinâmico e flexível que organiza as histórias de usuário, requisitos suplementares e defeitos de forma priorizada de acordo com o valor de negócio para o instituto. 
     - **Matriz de Rastreabilidade Seletiva:** Relação cruzada que conecta de forma visível as características de produto de alto nível (CPs) com as histórias de usuário e os objetivos de negócio (VNs e OEs) que as motivaram. 
-### **Construção:**
 
-=== "Análise e Organização:"
-    - **Análise de Tarefas:** A análise das tarefas traz detalhamento às atividades que cada membro da equipe deverá realizar, garantindo que todos entendam as dependências, que a distribuição do trabalho seja feita de forma eficiente e que o desenvolvimento possa ser acompanhado com clareza.
+### **Construção:**
 
 === "Verificação e Validação de Requisitos:"
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, completude técnica, verificabilidade e ausência de acoplamento com soluções específicas de design.
@@ -58,7 +59,6 @@
 === "Organização e Atualização de Requisitos:"
     - **Backlog de Requisitos Evolutivo (Product Backlog):** Repositório unificado, dinâmico e flexível que organiza as histórias de usuário, requisitos suplementares e defeitos de forma priorizada de acordo com o valor de negócio para o instituto.
     - **Matriz de Rastreabilidade Seletiva:** Relação cruzada que conecta de forma visível as características de produto de alto nível (CPs) com as histórias de usuário e os objetivos de negócio (VNs e OEs) que as motivaram.
-
 
 ### **Transição (Cutover):**
 
@@ -104,7 +104,7 @@
     <tr>
       <td>Verificação e Validação</td>
       <td>Verificação e Validação de Requisitos</td>
-      <td>Reuniões para alinhamento do projeto com os Representantes do IBRADA (stakeholders)</td>
+      <td>Checklists de Qualidade de Requisitos, Reuniões para alinhamento do projeto com os Representantes do IBRADA (stakeholders)</td>
       <td>Confirmação de que os requisitos levantados e selecionados para o MVP trazem o valor esperado pelo cliente (IBRADA)</td>
     </tr>
     <tr>
@@ -125,8 +125,8 @@
     <tr>
       <td>Análise e Consenso</td>
       <td>Priorização de requisitos</td>
-      <td>Reuniões</td>
-      <td>Alinhamento com o cliente de quais as funcionalidades que devem ser priorizadas</td>
+      <td>Checklists de Qualidade de Requisitos</td>
+      <td>Alinhamento com o cliente de quais as funcionalidades que devem ser priorizadas, garantindo que elas forneçam o valor de negócio esperado.</td>
     </tr>
     <tr>
       <td>Representação</td>
