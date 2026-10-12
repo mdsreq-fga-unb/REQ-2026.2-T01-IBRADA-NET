@@ -28,7 +28,7 @@
 |11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
 |11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
 |12/10/2026| |Ajustes nas Regras de Negócio|Gabriel Guedes|
-
+|12/10/2026| |Correção da seção 5 de processo de ER|Vinicius|
 
 *Tabela 1: Tabela de versionamento*
 
