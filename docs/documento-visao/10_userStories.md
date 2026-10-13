@@ -8,15 +8,19 @@ As histórias são declaradas preferencialmente no formato:
 
 ## Checklist de Definition of Ready (DoR)
 
-Uma história estará preparada para entrar em planejamento ou implementação quando atender aos seguintes itens:
+Uma história estará preparada para entrar no desenvolvimento do Design de Usuário ou na construção rápida quando atender integralmente à [Definition of Ready definida para o projeto](9_dor_dod.md#91-definition-of-ready-dor). Para cada história, a equipe deve verificar os seguintes itens:
 
-- [ ] O ator, o objetivo e o benefício estão claros para a equipe.
-- [ ] Os critérios de aceitação estão definidos e são verificáveis.
-- [ ] As regras de negócio e os requisitos não funcionais aplicáveis foram identificados.
-- [ ] As dependências e dúvidas relevantes foram identificadas e tratadas.
-- [ ] A história pode ser estimada pela equipe.
-- [ ] A história possui tamanho adequado para ser implementada em uma iteração.
-- [ ] A história pode ser testada e demonstrada aos stakeholders.
+- [ ] **Documentação e rastreabilidade:** a história está associada a um requisito, tema e épico, e essas relações estão atualizadas nas páginas de Requisitos, Backlog e User Stories.
+- [ ] **Viabilidade:** o tempo e a complexidade foram avaliados pela equipe por meio do formulário definido para as estimativas, e o trabalho previsto possui tamanho adequado para caber em um ciclo.
+- [ ] **Testabilidade e gestão:** os critérios de aceitação estão definidos e são verificáveis, e a história está associada a uma Issue no GitHub Projects.
+- [ ] **Clareza e delimitação:** o fluxo principal está compreendido, incluindo entradas necessárias, saídas esperadas, restrições e comportamentos que o sistema não deve permitir.
+- [ ] **Regras relacionadas:** as regras de negócio aplicáveis foram identificadas, listadas e vinculadas à história ou ao requisito de origem.
+- [ ] **Prototipação, quando aplicável:** as histórias que exigem interface visual possuem protótipo de baixa fidelidade associado e previamente validado pelo cliente ou pelo proxy do cliente.
+- [ ] **Validação:** a história foi validada pelo cliente ou pelo proxy, e a aprovação está registrada em ata, vídeo ou comentário na Issue.
+- [ ] **Confirmação da validação por proxy:** quando a validação tiver sido realizada pelo proxy, sua confirmação pela presidência está prevista para a reunião do ciclo seguinte.
+- [ ] **Decisões reservadas à presidência:** decisões relacionadas a escopo, prioridade, valores dos pacotes e uso de imagens ou conhecimentos das comunidades foram encaminhadas à presidência do IBRADA.
+
+Uma história que não cumpra algum item aplicável deve permanecer em refinamento e não deve ser considerada pronta para implementação. Itens não aplicáveis, como prototipação para histórias sem interface visual, devem ser registrados como `N/A` com uma justificativa breve.
 
 ---
 
@@ -39,7 +43,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -63,7 +67,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -87,7 +91,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -111,7 +115,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -135,7 +139,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -159,7 +163,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -183,7 +187,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -207,7 +211,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -231,7 +235,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -255,7 +259,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -279,7 +283,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -303,7 +307,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -327,7 +331,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -351,7 +355,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -375,7 +379,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -399,7 +403,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -423,7 +427,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -447,7 +451,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -471,7 +475,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -495,7 +499,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -519,7 +523,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -543,7 +547,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -567,7 +571,7 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
 
 ---
@@ -591,5 +595,5 @@ Uma história estará preparada para entrar em planejamento ou implementação q
 
 ### DoR da história
 
-- [ ] Atende ao checklist de DoR definido neste documento.
+- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
