@@ -68,8 +68,8 @@ nav:
       # - Unidade 3: atas-reuniao/ata3.md
       # - Unidade 4: atas-reuniao/ata4.md
 
-  - Especificação de Requisitos:
-      - User Stories: especificacao/user-stories.md
+  # - Especificação de Requisitos:
+  #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
   - Documentação:
       - Glossário: documentacao/glossario.md

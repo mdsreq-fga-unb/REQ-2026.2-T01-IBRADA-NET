@@ -2,6 +2,8 @@
 
 A apuração dos requisitos está descrita na [Disponibilização dos requisitos](../entrega-atividades/atividade1.md)
 
+A classificação desses requisitos e a apuração da declaração se econtra na [atividade de declaração](../entrega-atividades/atividade5.md) 
+
 ## 8.1 Lista de Requisitos Funcionais
 
 | ID | Nome | Descrição | Relação |
@@ -9,7 +11,7 @@ A apuração dos requisitos está descrita na [Disponibilização dos requisitos
 | RF01 | Cadastrar projetos | Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais em um dashboard. | CP1 |
 | RF02 | Editar projetos | Permitir que os gestores possam editar informações sobre os projetos do dashboard. | CP1 |
 | RF03 | Remover projetos | Permitir que os gestores possam remover os projetos do dashboard. | CP1 |
-| RF04 | Exibir dashboard de impacto | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos. | CP1 |
+| RF04 | Exibir resultados e dados de impacto dos projetos | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos. | CP1 |
 | RF05 | Apresentar formulário de triagem | Permitir que o visitante (possível turista, apoiador ou usuário buscando regulamentação ambiental) preencha um formulário de triagem guiado com campos simplificados para identificar o tipo de solicitação e seu perfil, armazenando os dados no sistema e o encaminhando corretamente. | CP2 |
 | RF06 | Visualizar catálogo de ecoturismo | Permitir aos usuários visualizar o catálogo de experiências de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores. | CP3 |
 | RF07 | Detalhar experiências | Permitir que o usuário visualize informações completas de uma experiência de ecoturismo selecionada e com possibilidade de compartilhamento de seu conteúdo. | CP3 |

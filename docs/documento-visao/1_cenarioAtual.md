@@ -15,26 +15,24 @@
 |07/09/2026|0.10|Inclusão do tópico Comunicação|Gabriel Guedes|
 |07/09/2026|0.11|Inclusão do tópico Atividades e Técnicas de ER| Vinícius dos Santos|
 |07/09/2026|0.12|Processo de Validação|Vinícius dos Santos|
-|20/09/2026|1.1 |Ajuste no tópico Desafios do projeto e no quadro resumo dos stakeholders|Cauã|
+|08/09/2026|1.0|Entrega unidade 1|Toda a equipe|
+|20/09/2026|1.1|Ajuste no tópico Desafios do projeto e no quadro resumo dos stakeholders|Cauã|
 |20/09/2026|1.2|Correções nos tópicos 2.6 e 2.4|Vinícius|
-|21/09/2026|1.3|Ajustes do tópico 2.|Zayra|gig
+|21/09/2026|1.3|Ajustes do tópico 2.|Zayra|
 |21/09/2026|1.4|Adição parcial dos requisitos.|Zayra|
 |27/09/2026|1.5|Correção nos requisitos a partir da verificação em pares|Gabriel , Zayra, Vinicius, Arthur|
 |28/09/2026|1.6|Entrega de atividade 4|Arthur, Vinicius, Filipe, Gabriel, Igor, Cauã e Zayra |
-|03/10/2026| |Ajustes no cronograma|Gabriel Guedes|
-|04/10/2026| |Ajustes no cronograma|Gabriel Guedes|
-|06/10/2026|0.12|Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
-|10/10/2026| |Adição do glossário com siglas das atividades ER|Gabriel Guedes|
-|11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
-|11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
-|06/10/2026| |Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
-|10/10/2026| |Adição do glossário com siglas das atividades ER|Gabriel Guedes|
-|11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
-|11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
-|12/10/2026| |Ajustes nas Regras de Negócio|Gabriel Guedes|
-|12/10/2026| |Correção da seção 5 de processo de ER|Vinicius|
-|12/10/2026| |Ajustes em Cenário Atual do Cliente e do Negócio da Unidade 1|Arthur Scartezini, Cauã Mendes|
-|12/10/2026| |Adição do glossário com siglas de rastreabilidade do backlog|Gabriel|
+|03/10/2026|1.7|Ajustes no cronograma|Gabriel Guedes|
+|04/10/2026|1.8|Ajustes no cronograma|Gabriel Guedes|
+|06/10/2026|1.9|Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
+|10/10/2026|1.10|Adição do glossário com siglas das atividades ER|Gabriel Guedes|
+|11/10/2026|1.11|Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
+|11/10/2026|1.12|Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
+|12/10/2026|1.13|Ajustes nas Regras de Negócio|Gabriel Guedes|
+|12/10/2026|1.14|Correção da seção 5 de processo de ER|Vinicius|
+|12/10/2026|1.15|Ajustes em Cenário Atual do Cliente e do Negócio da Unidade 1|Arthur Scartezini, Cauã Mendes|
+|12/10/2026|1.16|Adição do glossário com siglas de rastreabilidade do backlog|Gabriel|
+|12/10/2026|1.17|Adição do backlog|Zayra Moraes|
 
 *Tabela 1: Tabela de versionamento*
 
