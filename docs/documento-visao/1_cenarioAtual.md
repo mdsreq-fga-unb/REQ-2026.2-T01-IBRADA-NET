@@ -33,6 +33,7 @@
 |12/10/2026|1.15|Ajustes em Cenário Atual do Cliente e do Negócio da Unidade 1|Arthur Scartezini, Cauã Mendes|
 |12/10/2026|1.16|Adição do glossário com siglas de rastreabilidade do backlog|Gabriel|
 |12/10/2026|1.17|Adição do backlog|Zayra Moraes|
+|12/10/2026|1.18|Adição das lições aprendidas da unidade 2|Arthur Scartezini, Gabriel Guedes|
 
 *Tabela 1: Tabela de versionamento*
 
