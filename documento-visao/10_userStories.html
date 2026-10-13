@@ -1,0 +1,3155 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação de requisitos de software para o projeto web">
+      
+      
+        <meta name="author" content="Seu Projeto">
+      
+      
+      
+        <link rel="prev" href="10_backlog.html">
+      
+      
+        <link rel="next" href="11_licoes.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>User Stories - Documentação de Requisitos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-stories-do-mvp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Documentação de Requisitos" class="md-header__button md-logo" aria-label="Documentação de Requisitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação de Requisitos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Stories
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="dark" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="1_cenarioAtual.html" class="md-tabs__link">
+          
+  
+  
+  Visão do Produto e Projeto
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../atas-reuniao/ata1.html" class="md-tabs__link">
+          
+  
+  
+  Atas de Reunião
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../especificacao/user-stories.md" class="md-tabs__link">
+          
+  
+  
+  Especificação de Requisitos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../documentacao/glossario.html" class="md-tabs__link">
+          
+  
+  
+  Documentação
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../entrega-atividades/atividade1.html" class="md-tabs__link">
+          
+  
+  
+  Atividades
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../videos/entrega-videos.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Entrega de vídeos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../referencias/referencia.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Referências
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Documentação de Requisitos" class="md-nav__button md-logo" aria-label="Documentação de Requisitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação de Requisitos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto e Projeto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto e Projeto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1_cenarioAtual.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="2_solucao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="3_intervencao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="4_estrategias.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Estratégias de engenharia de software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5_requisitos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="6_cronograma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Cronograma e entregas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="7_interacao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Interação entre Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="8_requisitos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Requisitos de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="9_dor_dod.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 DOR e DOD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Backlog do Produto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    10 Backlog do Produto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10_backlog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog do Produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="10_userStories.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-de-definition-of-ready-dor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist de Definition of Ready (DoR)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us01-realizar-triagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US01 — Realizar triagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us02-visualizar-catalogo-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US02 — Visualizar catálogo de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us03-visualizar-detalhes-de-pacote-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US03 — Visualizar detalhes de pacote de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us04-cadastrar-se-como-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US04 — Cadastrar-se como cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us05-visualizar-e-editar-dados-pessoais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US05 — Visualizar e editar dados pessoais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us06-autenticar-se-como-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US06 — Autenticar-se como cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us07-encerrar-sessao-de-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US07 — Encerrar sessão de cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us08-reservar-pacote-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US08 — Reservar pacote de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us09-revisar-e-confirmar-reserva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US09 — Revisar e confirmar reserva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us10-pagar-reserva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US10 — Pagar reserva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us11-cadastrar-experiencia-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US11 — Cadastrar experiência de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us12-controlar-disponibilidade-de-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US12 — Controlar disponibilidade de pacotes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us13-cadastrar-oportunidade-de-voluntariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US13 — Cadastrar oportunidade de voluntariado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us14-visualizar-detalhes-da-oportunidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US14 — Visualizar detalhes da oportunidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us15-criar-perfil-de-voluntario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US15 — Criar perfil de voluntário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us16-candidatar-se-a-uma-oportunidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US16 — Candidatar-se a uma oportunidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us17-autenticar-se-como-voluntario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US17 — Autenticar-se como voluntário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us18-visualizar-candidatos-em-funil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US18 — Visualizar candidatos em funil
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us19-enviar-solicitacao-de-parceria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US19 — Enviar solicitação de parceria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us20-visualizar-solicitacoes-de-parceria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US20 — Visualizar solicitações de parceria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us21-consultar-oportunidades-abertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US21 — Consultar oportunidades abertas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us22-encerrar-sessao-de-voluntario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US22 — Encerrar sessão de voluntário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us23-registrar-consentimento-de-uso-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US23 — Registrar consentimento de uso de dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us24-compartilhar-experiencia-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US24 — Compartilhar experiência de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11_licoes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atas de Reunião
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atas de Reunião
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atas-reuniao/ata1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atas-reuniao/ata2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificação de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Especificação de Requisitos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../especificacao/user-stories.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao/glossario.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossário
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega-atividades/classificacao-requisitos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    classificação dos requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega-atividades/atividade1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega-atividades/atividade2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega-atividades/atividade3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega-atividades/atividade4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrega-atividades/atividade5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/entrega-videos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrega de vídeos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/referencia.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-de-definition-of-ready-dor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist de Definition of Ready (DoR)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us01-realizar-triagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US01 — Realizar triagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us02-visualizar-catalogo-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US02 — Visualizar catálogo de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us03-visualizar-detalhes-de-pacote-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US03 — Visualizar detalhes de pacote de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us04-cadastrar-se-como-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US04 — Cadastrar-se como cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us05-visualizar-e-editar-dados-pessoais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US05 — Visualizar e editar dados pessoais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us06-autenticar-se-como-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US06 — Autenticar-se como cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us07-encerrar-sessao-de-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US07 — Encerrar sessão de cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us08-reservar-pacote-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US08 — Reservar pacote de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us09-revisar-e-confirmar-reserva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US09 — Revisar e confirmar reserva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us10-pagar-reserva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US10 — Pagar reserva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us11-cadastrar-experiencia-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US11 — Cadastrar experiência de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us12-controlar-disponibilidade-de-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US12 — Controlar disponibilidade de pacotes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us13-cadastrar-oportunidade-de-voluntariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US13 — Cadastrar oportunidade de voluntariado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us14-visualizar-detalhes-da-oportunidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US14 — Visualizar detalhes da oportunidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us15-criar-perfil-de-voluntario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US15 — Criar perfil de voluntário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us16-candidatar-se-a-uma-oportunidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US16 — Candidatar-se a uma oportunidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us17-autenticar-se-como-voluntario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US17 — Autenticar-se como voluntário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us18-visualizar-candidatos-em-funil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US18 — Visualizar candidatos em funil
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us19-enviar-solicitacao-de-parceria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US19 — Enviar solicitação de parceria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us20-visualizar-solicitacoes-de-parceria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US20 — Visualizar solicitações de parceria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us21-consultar-oportunidades-abertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US21 — Consultar oportunidades abertas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us22-encerrar-sessao-de-voluntario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US22 — Encerrar sessão de voluntário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us23-registrar-consentimento-de-uso-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US23 — Registrar consentimento de uso de dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us24-compartilhar-experiencia-de-ecoturismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US24 — Compartilhar experiência de ecoturismo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-stories-do-mvp">User Stories do MVP</h1>
+<p>Este documento apresenta as histórias de usuário selecionadas para o MVP do produto. Cada história possui identificação própria, requisito funcional de origem, nome, tema e épico relacionados, além de espaços destinados aos critérios de aceitação e à verificação da Definition of Ready (DoR).</p>
+<p>As histórias são declaradas preferencialmente no formato:</p>
+<blockquote>
+<p>Como <code>&lt;usuário&gt;</code>, quero <code>&lt;objetivo&gt;</code>, para <code>&lt;benefício ou valor&gt;</code>.</p>
+</blockquote>
+<h2 id="checklist-de-definition-of-ready-dor">Checklist de Definition of Ready (DoR)</h2>
+<p>Uma história estará preparada para entrar em planejamento ou implementação quando atender aos seguintes itens:</p>
+<ul>
+<li>[ ] O ator, o objetivo e o benefício estão claros para a equipe.</li>
+<li>[ ] Os critérios de aceitação estão definidos e são verificáveis.</li>
+<li>[ ] As regras de negócio e os requisitos não funcionais aplicáveis foram identificados.</li>
+<li>[ ] As dependências e dúvidas relevantes foram identificadas e tratadas.</li>
+<li>[ ] A história pode ser estimada pela equipe.</li>
+<li>[ ] A história possui tamanho adequado para ser implementada em uma iteração.</li>
+<li>[ ] A história pode ser testada e demonstrada aos stakeholders.</li>
+</ul>
+<hr />
+<h2 id="us01-realizar-triagem">US01 — Realizar triagem</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF05</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T01 — Atendimento e Triagem</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP01 — Triagem e direcionamento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como visitante da plataforma, quero responder a um formulário de triagem guiado e simplificado, para ser encaminhado ao setor ou fluxo de comunicação adequado à minha necessidade.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us02-visualizar-catalogo-de-ecoturismo">US02 — Visualizar catálogo de ecoturismo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF06</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP02 — Descoberta de experiências e pacotes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como visitante, quero visualizar o catálogo de pacotes de ecoturismo, para conhecer as opções disponíveis e escolher a mais adequada ao meu interesse e planejamento.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us03-visualizar-detalhes-de-pacote-de-ecoturismo">US03 — Visualizar detalhes de pacote de ecoturismo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF07</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP02 — Descoberta de experiências e pacotes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como visitante, quero visualizar as informações detalhadas de um pacote de ecoturismo selecionado, para planejar minha participação com precisão.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us04-cadastrar-se-como-cliente">US04 — Cadastrar-se como cliente</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF08</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP03 — Conta do cliente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como visitante da plataforma, quero me cadastrar como cliente de ecoturismo, para criar uma conta pessoal e acessar as funcionalidades de compra de pacotes de ecoturismo.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us05-visualizar-e-editar-dados-pessoais">US05 — Visualizar e editar dados pessoais</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF09</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP03 — Conta do cliente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como cliente, quero visualizar e editar meus dados pessoais registrados, para manter minhas informações corretas e atualizadas durante o uso dos serviços da plataforma.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us06-autenticar-se-como-cliente">US06 — Autenticar-se como cliente</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF10</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP03 — Conta do cliente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como cliente, quero autenticar-me no sistema informando minhas credenciais, para acessar minha conta de forma segura e utilizar as funcionalidades de compra de pacotes de ecoturismo.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us07-encerrar-sessao-de-cliente">US07 — Encerrar sessão de cliente</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF11</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP03 — Conta do cliente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como cliente, quero encerrar minha sessão ativa no sistema, para proteger minha conta e impedir acessos não autorizados no dispositivo utilizado.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us08-reservar-pacote-de-ecoturismo">US08 — Reservar pacote de ecoturismo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF12</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP04 — Reserva e pagamento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como cliente, quero realizar a reserva de um pacote de ecoturismo selecionado, para garantir minha vaga na experiência desejada.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us09-revisar-e-confirmar-reserva">US09 — Revisar e confirmar reserva</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF13</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP04 — Reserva e pagamento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como cliente, quero visualizar um resumo completo da minha reserva e confirmar os dados antes do pagamento, para validar as informações do passeio e os valores, evitando erros ou cobranças indevidas.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us10-pagar-reserva">US10 — Pagar reserva</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF14</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP04 — Reserva e pagamento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como cliente, quero realizar o pagamento dos pacotes de ecoturismo que reservei, para confirmar minha vaga e receber o comprovante da transação.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us11-cadastrar-experiencia-de-ecoturismo">US11 — Cadastrar experiência de ecoturismo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF15</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP05 — Gestão de experiências e pacotes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como gestor do IBRADA, quero cadastrar novas experiências de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-las aos clientes interessados.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us12-controlar-disponibilidade-de-pacotes">US12 — Controlar disponibilidade de pacotes</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF17</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP05 — Gestão de experiências e pacotes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como gestor, quero habilitar ou desabilitar a disponibilidade de pacotes de ecoturismo, para controlar a oferta dos pacotes.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us13-cadastrar-oportunidade-de-voluntariado">US13 — Cadastrar oportunidade de voluntariado</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF18</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP08 — Gestão de oportunidades e candidatos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como gestor, quero cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado, para divulgar as vagas disponíveis e atrair voluntários com o perfil adequado às necessidades de cada ação.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us14-visualizar-detalhes-da-oportunidade">US14 — Visualizar detalhes da oportunidade</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF22</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP07 — Descoberta e candidatura</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como visitante da plataforma, quero visualizar as informações detalhadas de uma oportunidade de voluntariado selecionada, para conhecer o projeto associado, a duração, a disponibilidade e as habilidades requeridas.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us15-criar-perfil-de-voluntario">US15 — Criar perfil de voluntário</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF23</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP06 — Conta e perfil do voluntário</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como interessado em atuar como voluntário, quero criar um perfil informando minhas habilidades, experiências, áreas de interesse e disponibilidade, para apresentar ao IBRADA como posso contribuir com seus projetos.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us16-candidatar-se-a-uma-oportunidade">US16 — Candidatar-se a uma oportunidade</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF25</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP07 — Descoberta e candidatura</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como voluntário, quero me candidatar a oportunidades de voluntariado que se encaixem no meu perfil, para que o gestor visualize meu interesse em participar do projeto.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us17-autenticar-se-como-voluntario">US17 — Autenticar-se como voluntário</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF26</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP06 — Conta e perfil do voluntário</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como voluntário cadastrado, quero autenticar-me com minhas credenciais, para acessar com segurança meu perfil e as funcionalidades destinadas aos voluntários.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us18-visualizar-candidatos-em-funil">US18 — Visualizar candidatos em funil</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF28</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP08 — Gestão de oportunidades e candidatos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como gestor membro da equipe do IBRADA, quero visualizar os candidatos voluntários de uma oportunidade em formato de funil, para acompanhar com clareza o processo de triagem e seleção.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us19-enviar-solicitacao-de-parceria">US19 — Enviar solicitação de parceria</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF33</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T04 — Parcerias Institucionais</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP09 — Solicitação e análise de parcerias</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como representante de uma organização interessada, quero enviar uma solicitação contendo meus dados de contato e as informações da proposta, para iniciar uma possível parceria com o IBRADA.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us20-visualizar-solicitacoes-de-parceria">US20 — Visualizar solicitações de parceria</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF34</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T04 — Parcerias Institucionais</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP09 — Solicitação e análise de parcerias</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como gestor do IBRADA, quero visualizar as solicitações de parceria recebidas e suas informações, para organizar sua análise e entrar em contato com os potenciais parceiros.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us21-consultar-oportunidades-abertas">US21 — Consultar oportunidades abertas</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF21</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP07 — Descoberta e candidatura</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como interessado em voluntariado, quero consultar as oportunidades abertas, para encontrar formas de contribuir compatíveis com meus interesses e disponibilidade.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us22-encerrar-sessao-de-voluntario">US22 — Encerrar sessão de voluntário</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF27</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP06 — Conta e perfil do voluntário</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como voluntário autenticado, quero encerrar minha sessão, para proteger minha conta contra acessos não autorizados no dispositivo utilizado.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us23-registrar-consentimento-de-uso-de-dados">US23 — Registrar consentimento de uso de dados</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF29</td>
+</tr>
+<tr>
+<td>Temas</td>
+<td>T02 — Ecoturismo e Reservas; T03 — Voluntariado</td>
+</tr>
+<tr>
+<td>Épicos</td>
+<td>EP03 — Conta do cliente; EP06 — Conta e perfil do voluntário</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como usuário em processo de cadastro, quero consultar e aceitar explicitamente o termo de uso de dados pessoais, para decidir de forma consciente sobre o tratamento das minhas informações.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+<hr />
+<h2 id="us24-compartilhar-experiencia-de-ecoturismo">US24 — Compartilhar experiência de ecoturismo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Relação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisito de origem</td>
+<td>RF07</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>T02 — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td>EP02 — Descoberta de experiências e pacotes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>História de usuário</strong></p>
+<blockquote>
+<p>Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.</p>
+</blockquote>
+<!--
+### Critérios de aceitação
+
+- [ ] A definir durante o refinamento.
+
+### DoR da história
+
+- [ ] Atende ao checklist de DoR definido neste documento.
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
