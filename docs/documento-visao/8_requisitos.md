@@ -1,5 +1,7 @@
 # 8 REQUISITOS DE SOFTWARE
 
+A apuração dos requisitos está descrita na [Disponibilização dos requisitos](../entrega-atividades/atividade1.md)
+
 ## 8.1 Lista de Requisitos Funcionais
 
 | ID | Nome | Descrição | Relação |

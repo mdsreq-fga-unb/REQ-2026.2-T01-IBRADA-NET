@@ -32,5 +32,5 @@ A Unidade 1 representou um momento de intensa adaptação, marcado pela formaç�
 - Mudanças Adotadas: A distribuição de atividades será feita antecipadamente e o progresso deve ser informado de forma assíncrona para caso haja alguma dificuldade, erro ou dúvida.
 - Evidência: Distribuição de atividades no GitHub e Pages e de forma assíncrona (WhatsApp) pela Zayra.
 
-# 11.2 Unidade 2
+## 11.2 Unidade 2
 

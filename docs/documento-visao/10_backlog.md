@@ -1,6 +1,60 @@
 # 10 BACKLOG DO PRODUTO 
 
+| Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
+| --- | --- | --- | --- | --- | --- |
+| T01 | EP01 | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
+| T02 | EP02 | Descoberta de experiências e pacotes | US02, US03, US24 | — | RNF01, RNF03, RNF07 |
+| T02 | EP03 | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
+| T02 | EP04 | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
+| T02 | EP05 | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
+| T03 | EP06 | Conta e perfil do voluntário | US15, US17, US22, US23 | RN03 | RNF01, RNF04, RNF08 |
+| T03 | EP07 | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
+| T03 | EP08 | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
+| T04 | EP09 | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
+
 ## 10.1 Backlog Geral
+
+O backlog geral reúne as funcionalidades, regras de negócio e requisitos de qualidade planejados para a plataforma do IBRADA. Ele representa o escopo conhecido do produto e possui caráter evolutivo: seus itens podem ser detalhados, divididos, reordenados ou revistos conforme novos aprendizados, validações com os stakeholders e restrições técnicas sejam identificados.
+
+Os itens do backlog foram originados a partir das características de produto, dos objetivos específicos e dos valores de negócio definidos no [Documento de Visão](2_solucao.md). Suas descrições completas e relações de rastreabilidade estão disponíveis no [Catálogo de Requisitos](8_requisitos.md). Nesta seção, o backlog é apresentado de maneira consolidada; sua avaliação, priorização e o recorte do Produto Mínimo Viável (MVP) são apresentados na Seção 10.2.
+
+### 10.1.1 Composição e rastreabilidade do backlog
+
+O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes, a legenda se encontra no [glossário](../documentacao/glossario.md)
+
+A rastreabilidade adotada segue, de forma geral, a seguinte relação:
+
+```text
+Objetivo Específico e Valor de Negócio
+                  ↓
+     Característica de Produto (CP)
+                  ↓
+          RF, RN e RNF relacionados
+                  ↓
+         Tema → Épico → User Story
+                  ↓
+          Critérios de Aceitação
+```
+
+### 10.1.2 Escolha do backlog
+
+Como complemento à prototipação evolutiva do RAD e ao caráter ágil da abordagem híbrida adotada, os itens priorizados são refinados progressivamente em temas, épicos e histórias de usuário.
+
+- **Tema:** representa uma área estratégica de valor e utiliza como referência as características de produto.
+- **Épico:** representa um resultado amplo de usuário ou de negócio, ainda grande demais para ser implementado diretamente em uma única iteração.
+- **User Story:** representa uma entrega pequena, implementável e testável, escrita preferencialmente no formato: `Como <usuário>, quero <objetivo>, para <benefício ou valor>`.
+- **Critérios de Aceitação:** definem as condições objetivas que devem ser atendidas para que uma história seja considerada aceita.
+
+Os itens mais próximos do desenvolvimento recebem maior nível de detalhamento, enquanto itens planejados para horizontes posteriores podem permanecer inicialmente como requisitos ou épicos. Esse refinamento progressivo evita detalhamento antecipado desnecessário e permite incorporar feedback dos stakeholders ao backlog.
+
+As histórias de usuário devem explicitar valor para o usuário ou para a organização e ser verificadas quanto à independência, negociabilidade, valor, estimabilidade, tamanho e testabilidade. As regras de negócio e os requisitos não funcionais aplicáveis devem ser registrados junto às histórias ou aos seus critérios de aceitação.
+
+As políticas de entrada e saída do fluxo de desenvolvimento são mantidas separadamente:
+
+- a **Definition of Ready (DoR)** estabelece as condições mínimas para que uma história possa ser planejada e implementada;
+- a **Definition of Done (DoD)** estabelece as condições comuns para que um incremento seja considerado concluído.
+
+Essa separação evita utilizar a DoR ou a DoD como substitutas dos critérios de aceitação específicos de cada história.
 
 ## 10.2 Priorização do backlog e MVP
 

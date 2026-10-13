@@ -57,7 +57,9 @@ nav:
       - 7 Interação entre Equipe e Cliente: documento-visao/7_interacao.md
       - 8 Requisitos de Software: documento-visao/8_requisitos.md
       - 9 DOR e DOD: documento-visao/9_dor_dod.md
-      - 10 Backlog do Produto: documento-visao/10_backlog.md
+      - 10 Backlog do Produto: 
+        - Backlog do Produto: documento-visao/10_backlog.md
+        - User Stories: documento-visao/10_userStories.md  
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
 
   - Atas de Reunião:
@@ -71,11 +73,11 @@ nav:
   #     - Arquitetura: especificacao/arquitetura.md
   - Documentação:
       - Glossário: documentacao/glossario.md
+      - classificação dos requisitos: entrega-atividades/classificacao-requisitos.md
   #     - FAQ: documentacao/faq.md
 
   - Atividades: 
     - Unidade 2:
-      - classificação dos requisitos: entrega-atividades/classificacao-requisitos.md
       - Atividade 1: entrega-atividades/atividade1.md
       - Atividade 2: entrega-atividades/atividade2.md
       - Atividade 3: entrega-atividades/atividade3.md
