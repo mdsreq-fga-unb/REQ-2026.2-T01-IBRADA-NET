@@ -1,6 +1,6 @@
-# User Stories do MVP
+# User Stories do Produto
 
-Este documento apresenta as histórias de usuário selecionadas para o MVP do produto. Cada história possui identificação própria, requisito funcional de origem, nome, tema e épico relacionados, além de espaços destinados aos critérios de aceitação e à verificação da Definition of Ready (DoR).
+Este documento apresenta as histórias de usuário do produto, distinguindo as histórias selecionadas para o MVP daquelas planejadas para entregas posteriores. Cada história possui identificação própria, requisito funcional de origem, nome, tema e épico relacionados, além de espaços destinados aos critérios de aceitação e à verificação da Definition of Ready (DoR).
 
 As histórias são declaradas preferencialmente no formato:
 
@@ -23,6 +23,8 @@ Uma história estará preparada para entrar no desenvolvimento do Design de Usu�
 Uma história que não cumpra algum item aplicável deve permanecer em refinamento e não deve ser considerada pronta para implementação. Itens não aplicáveis, como prototipação para histórias sem interface visual, devem ser registrados como `N/A` com uma justificativa breve.
 
 ---
+
+## User Stories do MVP
 
 ## US01 — Realizar triagem
 
@@ -597,3 +599,5 @@ Uma história que não cumpra algum item aplicável deve permanecer em refinamen
 
 - [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
 -->
+
+---

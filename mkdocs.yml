@@ -59,7 +59,9 @@ nav:
       - 9 DOR e DOD: documento-visao/9_dor_dod.md
       - 10 Backlog do Produto: 
         - Backlog do Produto: documento-visao/10_backlog.md
-        - User Stories: documento-visao/10_userStories.md  
+        - User Stories: 
+          - Dentro do MVP: documento-visao/10_userStories.md  
+          - Fora do MVP: documento-visao/10_userStoriesForaMVP.md
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
 
   - Atas de Reunião:
