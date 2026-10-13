@@ -122,7 +122,7 @@ Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que va
     | **3** | A equipe precisa desenvolver conhecimentos relevantes |
     | **4** | A equipe ainda não possui os conhecimentos ou recursos necessários |
 
-[Tabelas com todos os valores detalhados antes de calcular as médias](../entrega-atividades/classificacao-requisitos.md) TODO
+[Tabelas com todos os valores detalhados antes de calcular as médias](../entrega-atividades/classificacao-requisitos.md) 
 
 ### 10.2.2 Tabela de critérios
 
