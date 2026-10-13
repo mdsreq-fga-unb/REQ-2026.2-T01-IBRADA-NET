@@ -99,11 +99,11 @@ O quadro a seguir apresenta os principais stakeholders identificados e suas resp
 | Agricultores familiares | Beneficiários das iniciativas de inclusão socioprodutiva do IBRADA | Obter informações e acesso facilitado às iniciativas de inclusão socioprodutiva | Média |
 | Apoiadores e patrocinadores | Parceiros que injetam recursos financeiros e materiais  | Encontrar informações de forma rápida para apoiar os projetos e aumentar a visibilidade de suas ações | Alta |
 | Voluntários | Usuários que colaboram com a operação diária  | Encontrar informações claras sobre oportunidades de ajuda e engajar-se nos projetos facilmente | Média |
-| Equipe de desenvolvimento | Responsável pela construção técnica do sistema | Unificar as funcionalidades para operar a solução digital como portal institucional seguro e acessível | Alta |
+| Equipe de desenvolvimento | Responsável pela construção técnica do sistema | Unificar as funcionalidades para operar a solução digital como portal institucional seguro e acessível | Média |
 
 *Tabela 2: Tabela de stakeholders*
 
-![ Mapa de Stakeholders](../assets/mapa-de-stakeholders.jpg)
+![ Mapa de Stakeholders](../assets/mapaDeStakeholders.jpg)
 *Figura 3:  Mapa de Stakeholders. Elaborado por Arthur Scartezini (2026).*
 
 ## 1.7 Segmentação de Clientes
