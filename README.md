@@ -25,6 +25,7 @@ A documentação completa do projeto está disponível no **GitHub Pages**:
 *  [Gravações das Reuniões](https://youtube.com/playlist?list=PLOmJTo1E5Wyw&si=9lyK_hsuy6EZTuQn)
 *  [Teams da Equipe](https://teams.microsoft.com/l/team/19%3A0dOSnB3AYm3zzQCzEALbv6DH-oHT9kyTA-W4dfta8WQ1%40thread.tacv2/conversations?groupId=36b1501e-47b5-4aa9-ae12-2e90ad821653&tenantId=ec359ba1-630b-4d2b-b833-c8e6d48f8059)
 * [Entrega Vídeo Unidade 1](https://youtu.be/Tbwe6YTXCpU)
+* [Entrega Vídeo Unidade 2](https://youtu.be/wUdjf5uPtsc)
 
 ##  Equipe
 
@@ -47,5 +48,15 @@ A documentação completa do projeto está disponível no **GitHub Pages**:
  - Visão de Produto e Projeto entregue.
  - Site do projeto (GitHub Pages)
  - [Vídeo de apresentação](https://youtu.be/Tbwe6YTXCpU)
+
+**Entrega da unidade 2 realizada**
+
+- Elicitação e Descoberta de requisitos
+- Analise e consenso de requisitos
+- Declaração de requisitos
+- Definição do backlog do produto
+- Definição do MVP
+- DoR e DoD
+- [Vídeo de apresentação](https://youtu.be/wUdjf5uPtsc)
 
 **Última atualização:** 07/09/2026
