@@ -4,3 +4,6 @@
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/Tbwe6YTXCpU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Unidade 2 - 12/10/2025
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
