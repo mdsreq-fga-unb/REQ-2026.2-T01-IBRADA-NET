@@ -27,6 +27,12 @@
 |10/10/2026| |Adição do glossário com siglas das atividades ER|Gabriel Guedes|
 |11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
 |11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
+|06/10/2026| |Correção do tópico 4 - quadro comparativo e justificativas |Filipe Brito|
+|10/10/2026| |Adição do glossário com siglas das atividades ER|Gabriel Guedes|
+|11/10/2026| |Adição de escopo e outros ajustes no cronograma|Gabriel Guedes|
+|11/10/2026| |Ajustes em Lições Aprendidas da Unidade 1|Gabriel Guedes|
+|12/10/2026| |Ajustes nas Regras de Negócio|Gabriel Guedes|
+|12/10/2026| |Correção da seção 5 de processo de ER|Vinicius|
 |12/10/2026| |Ajustes em Cenário Atual do Cliente e do Negócio da Unidade 1|Arthur Scartezini, Cauã Mendes|
 
 *Tabela 1: Tabela de versionamento*
