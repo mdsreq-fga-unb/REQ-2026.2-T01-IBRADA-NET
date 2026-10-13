@@ -46,4 +46,4 @@ A DoR é um acordo sobre as condições mínimas e critérios que um requisito p
 
 * Os testes automatizados foram executados e passaram?
 
- Cada User Story trabalhada deve contar com testes unitários (no mínimo testes de caixa preta cobrindo os fluxos de funcionamento válidos e inválidos) e testes de interface cobrindo o fluxo esperado de funcionamento. Tanto os testes recém-criados quanto os legados devem passar com sucesso (decidir em grupo se entram aqui também os testes de integração/automatizados de pipeline CI). A execução deve ser documentada na Issue da User Story ou, caso não tenha sido realizada, o motivo deve ser detalhado. 
+ Cada User Story trabalhada deve contar com testes unitários (no mínimo testes de caixa preta cobrindo os fluxos de funcionamento válidos e inválidos) e testes de interface cobrindo o fluxo esperado de funcionamento. Tanto os testes recém-criados quanto os legados devem passar com sucesso. A execução deve ser documentada na Issue da User Story ou, caso não tenha sido realizada, o motivo deve ser detalhado.

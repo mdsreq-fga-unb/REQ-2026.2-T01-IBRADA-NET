@@ -34,3 +34,25 @@ A Unidade 1 representou um momento de intensa adaptação, marcado pela formaç�
 
 ## 11.2 Unidade 2
 
+A Unidade 2 representou um momento de diálogo, evolução e compromisso, na qual tivemos um maior entendimento e ligação com o cliente, entendendo melhor suas necessidades e expectativas. Abaixo, evidenciamos as lições aprendidas na unidade.
+
+### Priorização dos requisitos para o MVP
+
+- Dificuldade encontrada: Dificuldade para entrar em consenso entre a equipe e o cliente. 
+- Causa e Consequências: Na primeira reunião de atribuição de valor de negócio (MOSCOW) para cada um dos requisitos, o cliente entendeu mal a metodologia e atribui valor 4 (MUST HAVE) para quase todos os requisitos, o que resultou numa priorização ruim na matriz para o MVP.
+- Mudanças Adotadas: Resolvemos marcar uma segunda reunião de atribuição de valor de negócio com o cliente, onde explicamos melhor o objetivo do Moscow e reatribuimos os valores de negócio para os requisitos. Além disso, levamos em consideração também um critério de frequência de uso para cada um dos requisitos, fato que ajudou a alcançar um MVP mais adequado. 
+- Evidência: Elaboração do tópico 10.2 do documento de Visão do Produto e Projeto, e reuniões gravadas com o cliente.
+
+### Declaração dos requisitos
+
+- Dificuldade encontrada: Declaração inicial dos requisitos estava mal estruturada. 
+- Causa e Consequências: Observamos que tínhamos requisitos em diferentes níveis de abstração, fato que gerava uma inconsistência na representação dos mesmos. Fato que também gerou requisitos "instáveis" no projeto.
+- Mudanças Adotadas: Comunicação com a equipe Cascata Ágil, que nos ajudou por meio de um feedback a declarar melhor os requisitos, adotando uma declaração em um nível de abstração consistente para todos eles. 
+- Evidência: Atividade 3 da unidade 2.
+
+### Inconsistência no planejamento
+
+- Dificuldade encontrada: Priorização e planejamento ruim para realização das atividades e pendências.
+- Causa e Consequências: Dado nosso problema com o MVP citado anteriormente, a equipe concentrou muitos esforços para solucioná-lo e acabou deixando adiando outras pendências e necessidades do projeto, fato que gerou entregas corridas no final da unidade.
+- Mudanças Adotadas: Priorização de resolução rápida de atividades e alocação de membros com melhor disponibilidade de tempo para isso. 
+- Evidência: Issues fechadas no tempo correto e atividades na unidade posterior.
