@@ -89,4 +89,4 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 > Imagem para controle de versão (última atualização 28/09/2026)
 ![Arvore de Rastreabilidade](../assets/arvore.png)
 
-> [Link da árvore de rastreabilidade](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=4aifg0Jj2s4gHz3E-1)
+> [Link da árvore de rastreabilidade](https://www.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&t=2ngK5C1yXCCQdzgd-1)

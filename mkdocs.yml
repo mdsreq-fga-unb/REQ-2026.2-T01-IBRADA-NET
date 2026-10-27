@@ -65,10 +65,21 @@ nav:
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
 
   - Atas de Reunião:
-      - Unidade 1: atas-reuniao/ata1.md
-      - Unidade 2: atas-reuniao/ata2.md
-      # - Unidade 3: atas-reuniao/ata3.md
-      # - Unidade 4: atas-reuniao/ata4.md
+      - Unidade 1: 
+        - Cliente (24/08/2026): atas-reuniao/unidade-1/24-08.md
+        - Equipe (03/09/2026): atas-reuniao/unidade-1/03-09.md
+        - Cliente (06/09/2026): atas-reuniao/unidade-1/06-09.md
+      - Unidade 2: 
+        - Cliente (21/09/2026): atas-reuniao/unidade-2/21-09.md
+        - Cliente (28/09/2026): atas-reuniao/unidade-2/28-09.md
+        - Cliente (04/10/2026): atas-reuniao/unidade-2/04-10.md
+        - Equipe (07/10/2026): atas-reuniao/unidade-2/07-10.md
+        - Cliente (11/10/2026): atas-reuniao/unidade-2/11-10.md
+      - Unidade 3: 
+        - Equipe (23/10/2026): atas-reuniao/unidade-3/23-10.md
+
+      # - Unidade 3: atas-reuniao/unidade-3/ata3.md
+      # - Unidade 4: atas-reuniao/unidade-4/ata4.md
 
   # - Especificação de Requisitos:
   #     - User Stories: especificacao/user-stories.md

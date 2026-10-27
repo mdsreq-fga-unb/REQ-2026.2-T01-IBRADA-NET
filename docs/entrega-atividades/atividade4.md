@@ -1,5 +1,7 @@
 # Atividade 4 - Priorização dos requisitos e definição do MVP (28/09/2026 - algumas informações dessa atividade mudaram, mas permanecem aqui pelo controle de versões)
 
+> A versão finalizada se encontra explicada em [9. Backlog do produto](../documento-visao/10_backlog.md)
+
 ## 1. Avaliação do valor de negócio
 
 Durante a [reunião](../atas-reuniao/ata2.md) foi apurado a pontuação de valor de negócio baseado na medida **MoSCoW** adaptado de 1 a 4 juntamente ao cliente.
