@@ -53,6 +53,16 @@
 
 ### **Construção:**
 
+=== "Elicitação e Descoberta:"
+    - **Retorno de testes, integrações e cliente:** qualquer comportamento não previsto será registrado em uma Issue ou ata, com evidência, origem e requisito afetado.
+
+=== "Análise e Consenso:"
+    - **Análise de impacto:** a equipe classificará o achado como requisito novo, alteração, defeito ou esclarecimento e avaliará impacto em escopo, dependências, segurança e esforço.
+    - **Decisão registrada:** aceitar, rejeitar ou postergar será decidido pela equipe e, quando envolver escopo, prioridade ou regra de negócio, validado pelo representante autorizado do IBRADA. A decisão, justificativa, responsável e data ficarão registrados.
+
+=== "Declaração de Requisitos:"
+    - **Atualização dos artefatos:** achados aceitos serão descritos como RF, RNF, RN, história ou critério de aceitação e refletidos no catálogo, backlog, matriz de rastreabilidade e história afetada antes da implementação.
+
 === "Verificação e Validação de Requisitos:"
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, completude técnica, verificabilidade e ausência de acoplamento com soluções específicas de design.
 
@@ -125,8 +135,8 @@
     <tr>
       <td>Análise e Consenso</td>
       <td>Priorização de requisitos</td>
-      <td>Checklists de Qualidade de Requisitos</td>
-      <td>Alinhamento com o cliente de quais as funcionalidades que devem ser priorizadas, garantindo que elas forneçam o valor de negócio esperado.</td>
+      <td>Checklists de Qualidade de Requisitos + matriz de decisão de prioridade</td>
+      <td>Inspeção da qualidade e registro da prioridade com valor, esforço, dependências, justificativa, responsável e aprovação do cliente quando aplicável.</td>
     </tr>
     <tr>
       <td>Representação</td>
@@ -149,11 +159,29 @@
 
     <!-- CONSTRUÇÃO -->
     <tr>
-      <td rowspan="2"><strong>Construção</strong></td> <!-- Corrigido para 2 -->
+      <td rowspan="5"><strong>Construção</strong></td>
+      <td>Elicitação e Descoberta</td>
+      <td>Registro de achados de testes, integração e feedback</td>
+      <td>Testes, demonstrações, Issues e atas</td>
+      <td>Identificação documentada de novas regras, necessidades, restrições ou divergências.</td>
+    </tr>
+    <tr>
+      <td>Análise e Consenso</td>
+      <td>Análise de impacto e decisão</td>
+      <td>Reunião de refinamento e matriz de impacto</td>
+      <td>Classificação do achado, impacto avaliado e decisão registrada.</td>
+    </tr>
+    <tr>
+      <td>Declaração</td>
+      <td>Atualização do requisito e da rastreabilidade</td>
+      <td>Catálogo, backlog, histórias e matriz de rastreabilidade</td>
+      <td>Regra ou requisito aceito descrito, vinculado e pronto para verificação.</td>
+    </tr>
+    <tr>
       <td>Verificação e Validação</td>
       <td>Controle de Qualidade</td>
       <td>Checklists de Qualidade de Requisitos</td>
-      <td>Garantia de qualidade e refinamento (clareza, testabilidade, verificabilidade, documentação, etc.) durante o desenvolvimento do design.</td>
+      <td>Garantia de qualidade e refinamento durante a construção.</td>
     </tr>
     <tr>
       <td>Organização e Atualização</td>
