@@ -132,50 +132,50 @@ Após todos os calculos, a tabela final ficou assim:
 
 | ID | Relação | Avaliação MoSCoW | Avaliação Frequência de Uso | Esforço Técnico |
 | --- | --- | --- | --- | --- |
-| RF01 | CP1 | 3 | 2 | 2,17 |
-| RF02 | CP1 | 3 | 2 | 1,67 |
-| RF03 | CP1 | 3 | 1 | 1,50 |
-| RF04 | CP1 | 4 | 4 | 2,89 |
-| **RF05** | CP2 | 4 | 4 | 1,83 |
-| **RF06** | CP3 | 4 | 3 | 1,78 |
-| **RF07** | CP3 | 3 | 3 | 1,61 |
-| **RF08** | CP3 | 4 | 4 | 1,72 |
-| **RF09** | CP3 | 4 | 3 | 1,50 |
-| **RF10** | CP3 | 4 | 4 | 2,06 |
-| **RF11** | CP3 | 4 | 4 | 1,50 |
-| **RF12** | CP3 | 4 | 4 | 2,22 |
-| **RF13** | CP3 | 4 | 4 | 1,72 |
-| **RF14** | CP3 | 4 | 4 | 3,39 |
-| **RF15** | CP3 | 3 | 3 | 1,67 |
-| RF16 | CP3 | 2 | 2 | 1,56 |
-| **RF17** | CP3 | 4 | 4 | 1,61 |
-| **RF18** | CP4 | 4 | 3 | 2,06 |
-| RF19 | CP4 | 4 | 2 | 1,61 |
-| RF20 | CP4 | 4 | 2 | 2,22 |
-| **RF21** | CP4 | 4 | 4 | 1,44 |
-| **RF22** | CP4 | 4 | 3 | 1,50 |
-| **RF23** | CP4 | 4 | 4 | 1,89 |
-| RF24 | CP4 | 4 | 2 | 1,39 |
-| **RF25** | CP4 | 4 | 4 | 1,72 |
-| **RF26** | CP4 | 4 | 4 | 2,00 |
-| **RF27** | CP4 | 4 | 4 | 1,39 |
-| **RF28** | CP4 | 4 | 4 | 1,94 |
-| **RF29** | CP4 | 4 | 4 | 1,44 |
-| RF30 | CP5 | 4 | 3 | 2,11 |
-| RF31 | CP5 | 3 | 2 | 2,33 |
-| RF32 | CP5 | 2 | 3 | 1,94 |
-| **RF33** | CP6 | 4 | 4 | 1,56 |
-| **RF34** | CP6 | 4 | 4 | 1,61 |
-| RF35 | CP6 | 2 | 2 | 1,78 |
-| **RNF01** | Transversal — todas as CPs | 4 |-| 2 |
-| **RNF02** | CP3 | 4 |-| 3 |
-| **RNF03** | CP1 e CP3 | 4 |-| 2 |
-| **RNF04** | Transversal — CP1, CP3, CP4 e CP6 | 4 |-| 2 |
-| **RNF05** | CP3 | 4 |-| 3 |
+| [RF01](8_requisitos.md#L11) | [CP1](2_solucao.md#L18) | 3 | 2 | 2,17 |
+| [RF02](8_requisitos.md#L12) | [CP1](2_solucao.md#L18) | 3 | 2 | 1,67 |
+| [RF03](8_requisitos.md#L13) | [CP1](2_solucao.md#L18) | 3 | 1 | 1,50 |
+| [RF04](8_requisitos.md#L14) | [CP1](2_solucao.md#L18) | 4 | 4 | 2,89 |
+| [RF05](8_requisitos.md#L15) | [CP2](2_solucao.md#L19) | 4 | 4 | 1,83 |
+| [RF06](8_requisitos.md#L16)| [CP3](2_solucao.md#L20) | 4 | 3 | 1,78 |
+| [RF07](8_requisitos.md#L17) | [CP3](2_solucao.md#L20) | 3 | 3 | 1,61 |
+| [RF08](8_requisitos.md#L18) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,72 |
+| [RF09](8_requisitos.md#L19) | [CP3](2_solucao.md#L20) | 4 | 3 | 1,50 |
+| [RF10](8_requisitos.md#L20) | [CP3](2_solucao.md#L20) | 4 | 4 | 2,06 |
+| [RF11](8_requisitos.md#L21) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,50 |
+| [RF12](8_requisitos.md#L22) | [CP3](2_solucao.md#L20) | 4 | 4 | 2,22 |
+| [RF13](8_requisitos.md#L23) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,72 |
+| [RF14](8_requisitos.md#L24) | [CP3](2_solucao.md#L20) | 4 | 4 | 3,39 |
+| [RF15](8_requisitos.md#L25) | [CP3](2_solucao.md#L20) | 3 | 3 | 1,67 |
+| [RF16](8_requisitos.md#L26) | [CP3](2_solucao.md#L20) | 2 | 2 | 1,56 |
+| [RF17](8_requisitos.md#L27) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,61 |
+| [RF18](8_requisitos.md#L28) | [CP4](2_solucao.md#L21) | 4 | 3 | 2,06 |
+| [RF19](8_requisitos.md#L29) | [CP4](2_solucao.md#L21) | 4 | 2 | 1,61 |
+| [RF20](8_requisitos.md#L30) | [CP4](2_solucao.md#L21) | 4 | 2 | 2,22 |
+| [RF21](8_requisitos.md#L31) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,44 |
+| [RF22](8_requisitos.md#L32) | [CP4](2_solucao.md#L21) | 4 | 3 | 1,50 |
+| [RF23](8_requisitos.md#L33) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,89 |
+| [RF24](8_requisitos.md#L34) | [CP4](2_solucao.md#L21) | 4 | 2 | 1,39 |
+| [RF25](8_requisitos.md#L35) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,72 |
+| [RF26](8_requisitos.md#L36) | [CP4](2_solucao.md#L21) | 4 | 4 | 2,00 |
+| [RF27](8_requisitos.md#L37) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,39 |
+| [RF28](8_requisitos.md#L38) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,94 |
+| [RF29](8_requisitos.md#L39) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,44 |
+| [RF30](8_requisitos.md#L40) | [CP5](2_solucao.md#L22) | 4 | 3 | 2,11 |
+| [RF31](8_requisitos.md#L41) | [CP5](2_solucao.md#L22) | 3 | 2 | 2,33 |
+| [RF32](8_requisitos.md#L42) | [CP5](2_solucao.md#L22) | 2 | 3 | 1,94 |
+| [RF33](8_requisitos.md#L43) | [CP6](2_solucao.md#L23) | 4 | 4 | 1,56 |
+| [RF34](8_requisitos.md#L44) | [CP6](2_solucao.md#L23) | 4 | 4 | 1,61 |
+| [RF35](8_requisitos.md#L45) | [CP6](2_solucao.md#L23) | 2 | 2 | 1,78 |
+| RNF01 | Transversal — todas as CPs | 4 |-| 2 |
+| RNF02 | CP3 | 4 |-| 3 |
+| RNF03 | CP1 e CP3 | 4 |-| 2 |
+| RNF04 | Transversal — CP1, CP3, CP4 e CP6 | 4 |-| 2 |
+| RNF05 | CP3 | 4 |-| 3 |
 | RNF06 | CP1, CP3 e CP5 | 3 |-| 3 |
-| **RNF07** | Transversal — todas as CPs | 4 |-| 2 |
-| **RNF08** | CP3, CP4 e CP6 | 4 |-| 2 |
-| **RNF09** | CP2 | 4 |-| 2 |
+| RNF07 | Transversal — todas as CPs | 4 |-| 2 |
+| RNF08 | CP3, CP4 e CP6 | 4 |-| 2 |
+| RNF09 | CP2 | 4 |-| 2 |
 | RNF10 | Transversal — todas as CPs | 3 |-| 3 |
 
 
@@ -190,7 +190,7 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 
 | **Valor de negócio ↓ / Esforço técnico →** | **1 — Baixo** | **2 — Moderado** | **3 — Alto** | **4 — Muito alto** |
 | --- | --- | --- | --- | --- |
-| **4 — Muito alto** | **RF21, RF27, RF29** | **RF05, RF08, RF10, RF11, RF12, RF13, RF17, RF23, RF25, RF26, RF28, RF33, RF34, RNF01, RNF03, RNF04, RNF07, RNF08, RNF09** | RF04, **RF14** **, RNF02, RNF05** | — |
+| **4 — Muito alto** | **RF21, RF27, RF29** | **RF05, RF08, RF10, RF11, RF12, RF13, RF17, RF23, RF25, RF26, RF28, RF33, RF34, RNF01, RNF03, RNF04, RNF07, RNF08, RNF09** | RF04, **RF14**, **RNF02, RNF05** | — |
 | **3 — Alto** |  — | **RF06, RF07, RF09, RF15, RF18, RF22** | RNF06, RNF10 | — |
 | **2 — Moderado** | RF24 | RF30, RF02, RF16, RF19, RF20, RF31, RF32, RF35, RF01 |  — | — |
 | **1 — Baixo** | — | RF03 | — | — |

@@ -1,6 +1,9 @@
 # Atividade 4 - Priorização dos requisitos e definição do MVP (28/09/2026 - algumas informações dessa atividade mudaram, mas permanecem aqui pelo controle de versões)
 
-> A versão finalizada se encontra explicada em [9. Backlog do produto](../documento-visao/10_backlog.md)
+
+## Versão atualizada:
+
+A versão finalizada se encontra explicada em [9. Backlog do produto](../documento-visao/10_backlog.md), esse documento foi o primeiro estudo que fizemos para o backloog.
 
 ## 1. Avaliação do valor de negócio
 
