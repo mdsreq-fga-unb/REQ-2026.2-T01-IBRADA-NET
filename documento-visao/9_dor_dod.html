@@ -1635,31 +1635,56 @@
 
 <h1 id="9-dor-e-dod">9 DOR E DOD</h1>
 <h2 id="91-definition-of-ready-dor">9.1 Definition of Ready (DoR)</h2>
-<p>A DoR é um acordo sobre as condições mínimas e critérios que um requisito precisa atender para entrar no desenvolvimento do Design de Usuário e na construção rápida. Também é o acordo entre a equipe de desenvolvimento e o cliente que garante clareza e alinhamento, reduz retrabalho, bloqueios e interrupções no meio da sprint e dá ao refinamento do Backlog um objetivo claro. Os critérios do DoR estão estruturados como uma lista de perguntas a serem respondidas antes de um requisito ser considerado pronto, dispostas abaixo: </p>
+<p>A Definition of Ready (DoR) é o acordo entre a equipe de desenvolvimento e o cliente que estabelece os critérios e condições mínimas que um requisito deve atender para avançar no fluxo de trabalho. Seu objetivo é garantir clareza, alinhamento e rastreabilidade, reduzindo retrabalho, bloqueios e interrupções durante as sprints e fornecendo uma meta clara ao refinamento do backlog.</p>
+<p>A DoR adota a preparação progressiva dos itens: o checklist é aplicado especificamente aos itens selecionados para o próximo ciclo, sem a necessidade de exigir que todo o backlog esteja previamente pronto. Para respeitar os diferentes níveis de maturidade dos requisitos, o acordo separa os critérios em duas etapas sucessivas:</p>
+<h3 id="1-pronto-para-design-de-usuario-prototipacao">1. Pronto para Design de Usuário (Prototipação)</h3>
+<p>Uma User Story ou requisito é considerado pronto para entrar na etapa de Design de Usuário e elaboração de protótipo quando:</p>
 <ul>
-<li>O requisito está devidamente documentado?</li>
+<li>
+<p><strong>Compreensão Geral e Delimitação:</strong> O problema e o objetivo da funcionalidade estão suficientemente compreendidos, identificando-se o fluxo principal esperado. Questões de negócio (por exemplo, quem pode contratar um pacote, quais dados são obrigatórios no cadastro, quando uma inscrição de voluntário é aceita) devem ser avaliadas; se impedirem a compreensão mínima necessária para desenhar o protótipo, precisam ser esclarecidas antes do início do design.</p>
+</li>
+<li>
+<p><strong>Maturidade Inicial:</strong> A história pode permanecer menos detalhada neste momento, focando no entendimento funcional necessário para que o design crie a interface, e depois refinar para a implementação.</p>
+</li>
+<li>
+<p><strong>Estimativa Preliminar:</strong> Avaliação inicial pela equipe quanto à viabilidade e complexidade em relação ao ciclo/sprint.</p>
+</li>
+<li>
+<p><strong>Documentação básica e rastreabilidade:</strong> O requisito está associado a um Tema, Épico e User Story no backlog e vinculado a uma Issue no GitHub Projects.</p>
+</li>
 </ul>
-<p>O requisito deve estar associado a um Tema, um Épico e a uma User Story e deve estar atualizado nas páginas de Requisitos e Backlog.</p>
+<h3 id="2-pronto-para-construcao-implementacao">2. Pronto para Construção (Implementação)</h3>
+<p>Uma User Story é considerada pronta para entrar no ciclo de Construção / Desenvolvimento quando atende integralmente ao checklist abaixo:</p>
 <ul>
-<li>O requisito é viável em termos de tempo e complexidade?</li>
-</ul>
-<p>O requisito deve ter sido avaliado pela equipe de desenvolvimento quanto ao tempo necessário para finalizar a implementação, estimado pelo grupo para caber em um ciclo, e quanto à complexidade, utilizar o google forms para realizar essas estimativas.</p>
+<li>
+<p><strong>A User Story apresenta critérios de aceitação verificáveis?:</strong>
+ Por estar próxima do desenvolvimento, a User Story deve obrigatoriamente apresentar critérios de aceitação claros, bem delimitados e testáveis. (Histórias mais distantes no backlog podem permanecer menos detalhadas até se aproximarem da execução).</p>
+</li>
+<li>
+<p><strong>O fluxo e as regras de negócio estão claros e sem bloqueios?:</strong>
+ Deve-se definir o fluxo principal, as entradas exigidas, as saídas geradas, as restrições do sistema e as Regras de Negócio (RNs) associadas. Dúvidas operacionais e de escopo que impeçam a compreensão ou a estimativa precisa devem ser resolvidas antes da seleção do item para a sprint.</p>
+</li>
+<li>
+<p><strong>O requisito é viável em termos de tempo e complexidade?:</strong>
+ A equipe de desenvolvimento deve avaliar e estimar a história (tempo e complexidade via formulário padrão/Google Forms), garantindo que ela é viável para ser concluída dentro de um único ciclo.</p>
+</li>
+<li>
+<p><strong>A User Story possui protótipo validado?:</strong>
+ Para itens que envolvem interface visual, deve haver um protótipo associado devidamente validado.</p>
+</li>
+<li>
+<p><strong>A validação e o status de aprovação estão rastreáveis?:</strong> 
+ A validação do item deve ficar registrada em ata, vídeo ou comentário na Issue. As decisões devem ser explicitamente identificadas quanto ao seu nível de aprovação:</p>
 <ul>
-<li>A User Story está definida, é testável e rastreável?</li>
+<li><strong>Decisões Provisórias:</strong> Acordos e ajustes validados com o proxy (Arthur) são registrados como provisórios.</li>
+<li><strong>Aprovação Institucional:</strong> Validações feitas pelo proxy e decisões reservadas à presidência (escopo, prioridades, valores de pacotes e uso de imagens ou conhecimentos das comunidades) devem ter sua confirmação formal registrada na reunião/ata de ciclo seguinte.</li>
 </ul>
-<p>As User Stories devem ter critérios de aceite bem definidos, testáveis e estar associadas a uma Issue no GitHub Projects</p>
+</li>
+</ul>
+<h3 id="aplicacao-e-registro-do-checklist">Aplicação e Registro do Checklist</h3>
 <ul>
-<li>O requisito está claro e delimitado?</li>
+<li><strong>Rastreabilidade por Ciclo:</strong> A verificação dos critérios da DoR deve ser documentada diretamente no GitHub Projects da equipe para cada um dos itens selecionados para a sprint atual, evidenciando o momento em que a história transicionou de "Pronto para Prototipar" para "Pronto para Implementar".</li>
 </ul>
-<p>O requisito deve definir o fluxo principal da funcionalidade, detalhando quais são as entradas necessárias, as saídas geradas pelo sistema e as restrições (o que o sistema não deve fazer). As regras de negócio (RNs) associadas devem estar listadas e vinculadas ao requisito (por exemplo, quem pode contratar um pacote, quais dados são obrigatórios no cadastro, quando uma inscrição de voluntário é aceita).</p>
-<ul>
-<li>A User Story foi prototipada?</li>
-</ul>
-<p>Para as User Stories que necessitam de desenvolvimento de uma interface visual no sistema, deve haver um protótipo de baixa fidelidade associado a ela, assim como este protótipo precisa ter sido previamente validado pelos clientes ou pelo proxy (Arthur)..</p>
-<ul>
-<li>A User Story foi validada pelo cliente?</li>
-</ul>
-<p>A User Story deve ter sido validada pelos clientes ou pelo proxy (Arthur), e a aprovação deve estar registrada em ata, vídeo ou comentário na Issue. A validação feita pelo proxy deve ser confirmada pela presidência na reunião de ciclo seguinte. Decisões de escopo, prioridade, valores de pacotes e uso de imagens ou conhecimentos das comunidades continuam sendo da presidência.</p>
 <h2 id="92-definition-of-done-dod">9.2 Definition of Done (DoD)</h2>
 <p>O Definition of Done (DoD) é um conjunto de critérios estabelecidos pela equipe para determinar quando uma entrega (história, requisito ou incremento) pode ser considerada concluída, e se o item não atende à DoD, não é considerado concluído nem pode ser entregue ou apresentado como parte do Incremento. O conceito de “Done” indica que a funcionalidade foi desenvolvida, testada, validada e documentada, garantindo qualidade consistente em todas as entregas, rastreabilidade e transparência aos stakeholders sobre o que foi realmente entregue. 
  Os itens que devem ser verificados para determinar se um requisito está “Done” consistem em critérios de aceitação claros, verificáveis e alinhados com o comportamento esperado da entrega. </p>
