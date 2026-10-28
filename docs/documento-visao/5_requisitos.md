@@ -7,7 +7,7 @@
 === "Elicitação e Descoberta:" 
     - **Entrevistas e Reuniões:** Conversas de profundidade com os representantes do IBRADA (stakeholders) para compreender os problemas, necessidades e desafios enfrentados na operação atual, como a dificuldade de comunicação com os diferentes perfis de clientes e patrocinadores.
     - **Brainstorming:** Sessões de brainstorming permitem que a equipe discuta soluções criativas para melhorar a divulgação dos projetos e serviços expostos no site do IBRADA, o contato com voluntários e parceiros etc.
-    - **Análise de Domínio de Negócio:** Análise do domínio do ecoturismo, aprofundando a compreensão dos valores e diferenciais do IBRADA, como sustentabilidade e fortalecimento da autonomia de comunidades locais, garantindo que os requisitos estejam alinhados com a identidade do instituto.
+    - **[Análise de Domínio de Negócio](../evidencias/analise-dominio.md):** Análise do domínio do ecoturismo, aprofundando a compreensão dos valores e diferenciais do IBRADA, como sustentabilidade e fortalecimento da autonomia de comunidades locais, garantindo que os requisitos estejam alinhados com a identidade do instituto.
 
 
 === "Análise e Consenso:"
@@ -44,7 +44,7 @@
     - **Mockups e Protótipos de Baixa Fidelidade:** Esboços visuais e wireframes de telas para materialização de soluções estéticas e dinâmicas de interface. Essas técnicas e ferramentas permitem o uso de documentação simplificada e direta, trazendo mais eficiência ao desenvolvimento e ao processo de validação com os representantes do IBRADA (stakeholders).
 
 === "Verificação e Validação de Requisitos:"
-    - **Oficinas de Validação Baseadas em Protótipos (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
+    - **Oficinas de [Validação Baseadas em Protótipos](../evidencias/oficina-validação.md) (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
 
 
 === "Organização e Atualização de Requisitos:"
