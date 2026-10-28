@@ -35,6 +35,7 @@
 |12/10/2026|1.17|Adição do backlog|Zayra Moraes|
 |12/10/2026|1.18|Adição das lições aprendidas da unidade 2|Arthur Scartezini, Gabriel Guedes|
 |13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe
+|27/10/2026|2.1 |Ajuste tópico 8| Cauã
 
 *Tabela 1: Tabela de versionamento*
 
