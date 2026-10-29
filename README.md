@@ -59,4 +59,4 @@ A documentação completa do projeto está disponível no **GitHub Pages**:
 - DoR e DoD
 - [Vídeo de apresentação](https://youtu.be/wUdjf5uPtsc)
 
-**Última atualização:** 07/09/2026
+**Última atualização:** 13/10/2026
