@@ -44,21 +44,35 @@ Uma User Story é considerada pronta para entrar no ciclo de Construção / Dese
 
 ## 9.2 Definition of Done (DoD)
 
- O Definition of Done (DoD) é um conjunto de critérios estabelecidos pela equipe para determinar quando uma entrega (história, requisito ou incremento) pode ser considerada concluída, e se o item não atende à DoD, não é considerado concluído nem pode ser entregue ou apresentado como parte do Incremento. O conceito de “Done” indica que a funcionalidade foi desenvolvida, testada, validada e documentada, garantindo qualidade consistente em todas as entregas, rastreabilidade e transparência aos stakeholders sobre o que foi realmente entregue. 
- Os itens que devem ser verificados para determinar se um requisito está “Done” consistem em critérios de aceitação claros, verificáveis e alinhados com o comportamento esperado da entrega. 
+O Definition of Done (DoD) é o acordo coletivo entre a equipe de desenvolvimento e o cliente que estabelece os critérios e condições necessárias para considerar uma entrega (User Story, requisito ou incremento) como concluída. Caso um item não atenda integralmente a este conjunto de critérios, ele não é considerado concluído nem pode ser entregue ou apresentado como parte do incremento. O conceito de "Done" garante qualidade consistente, rastreabilidade e transparência aos stakeholders sobre o que foi realmente entregue.
 
-* O código foi devidamente revisado?
+Para que um requisito seja considerado concluído ("Done"), a equipe e o cliente devem verificar o cumprimento dos seguintes critérios:
 
- O código produzido da entrega em questão deve ser revisado e aprovado por pelo menos uma outra pessoa da equipe de desenvolvimento (Pull Request aprovado).
+* **O código foi devidamente revisado e integrado?:** O código produzido para a entrega deve ser revisado e aprovado por pelo menos outro membro da equipe de desenvolvimento via Pull Request (PR) aprovado. A funcionalidade deve estar integrada à ramificação principal e disponível e demonstrável em ambiente de homologação, conforme o compromisso da estratégia de desenvolvimento.
 
-* A funcionalidade implementada está completa e atende aos requisitos?
+* **A funcionalidade atende aos requisitos funcionais e critérios de aceitação?:** A funcionalidade deve implementar todas as Regras de Negócio (RNs) associadas e atender integralmente aos critérios de aceitação testáveis e verificáveis definidos na User Story.
 
- A funcionalidade deve atender a todos os critérios de aceitação definidos na User Story e implementar todas as regras de negócio associadas, utilizando o checklist de critérios presente na Issue.
+* **Os Requisitos Não Funcionais (RNFs) aplicáveis foram atendidos?:** A entrega deve demonstrar conformidade com os RNFs relevantes para o seu escopo. Conforme a natureza do requisito, devem ser verificados critérios como controle de autorização/acesso, integridade das transações e reservas, responsividade da interface, métricas aceitáveis de desempenho, compatibilidade e proteção de dados sensíveis dos usuários.
 
-* A documentação foi atualizada?
+* **Os testes foram executados com sucesso (ou com exceção devidamente registrada)?:** A funcionalidade deve contar com a suíte de testes apropriada (ex.: testes unitários de caixa preta cobrindo fluxos válidos/inválidos e testes de interface cobrindo o fluxo esperado).
 
- A documentação do projeto deve ser atualizada, evidenciando o cumprimento da entrega com provas do que foi feito (README, Git Pages etc). 
+    * **Regra geral:** Tanto os testes novos quanto os testes legados devem passar com sucesso.
 
-* Os testes automatizados foram executados e passaram?
+    * **Exceção autorizada:** Caso a execução de algum teste não ocorra por impedimento específico, isso constituirá uma exceção autorizada e não impedirá a conclusão, desde que a justificativa técnica, a análise de risco e o encaminhamento registrado (ex.: débito técnico para o ciclo seguinte) estejam documentados na Issue.
 
- Cada User Story trabalhada deve contar com testes unitários (no mínimo testes de caixa preta cobrindo os fluxos de funcionamento válidos e inválidos) e testes de interface cobrindo o fluxo esperado de funcionamento. Tanto os testes recém-criados quanto os legados devem passar com sucesso. A execução deve ser documentada na Issue da User Story ou, caso não tenha sido realizada, o motivo deve ser detalhado.
+* **A entrega passou pelas etapas de verificação, demonstração e aceite?:** A conclusão da entrega deve distinguir com clareza o papel técnico e a participação do cliente:
+
+    * **1-Verificação Técnica:** Validação do código, cobertura de testes e ausência de regressões efetuada pela equipe de desenvolvimento.
+
+    * **2-Demonstração:** Apresentação da funcionalidade rodando em ambiente de homologação.
+
+    * **3-Aceite Institucional:** Validação formal pelo cliente ou proxy, confirmando o alinhamento com os objetivos de negócio e as decisões operacionais/institucionais.
+
+* **A documentação foi atualizada?:** A documentação do projeto deve ser atualizada, fornecendo evidências e provas da entrega realizada ( atualização de README, GitHub Pages e GitHub Projects).
+
+### Aplicação e Registro do Checklist de DoD
+
+* **Acompanhamento das Entregas:** O registro do checklist do DoD preenchido deve acompanhar obrigatoriamente os itens declarados como concluídos (Done).
+
+* **Maturidade e Progresso:** A ausência do checklist preenchido em itens que ainda estão em desenvolvimento não configura falha do processo enquanto o projeto não os apresentar como concluídos.
+
