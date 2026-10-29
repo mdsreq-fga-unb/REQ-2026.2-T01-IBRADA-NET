@@ -19,8 +19,8 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | RF09 | Editar perfil de clientes | Permitir que clientes possam editar seus dados pessoais registrados em suas próprias contas. | CP3 |
 | RF10 | Realizar login de cliente | Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais. | CP3 |
 | RF11 | Encerrar sessão de cliente | Permitir que clientes encerrem sua sessão ativa no sistema. | CP3 |
-| RF12 | Selecionar pacote de ecoturismo | Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados. | CP3 |
-| RF13 | Confirmar reserva | Permitir que o cliente confirme a reserva antes do checkout. | CP3 |
+| RF12 | Reservar pacote de ecoturismo | Permitir que o cliente faça a reserva de um ou mais pacotes selecionados. | CP3 |
+| RF13 | Confirmar reserva | Permitir que o cliente verifique os dados básicos das reservas e dados do pagamento antes do checkout. | CP3 |
 | RF14 | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 |
 | RF15 | Cadastrar experiências de ecoturismo | Permitir à equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 |
 | RF16 | Editar experiências de ecoturismo | Permitir à equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 |
@@ -39,7 +39,7 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | RF29 | Registrar consentimento de uso de dados | Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito. | CP4 |
 | RF30 | Configurar preferências de notificação | Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse. | CP5 |
 | RF31 | Exibir estatísticas de alcance das notificações | Permitir que o gestor visualize estatísticas de alcance das notificações enviadas. | CP5 |
-| RF32 | Gerenciar envio de notificações | Permitir que o gestor gerencie notificações enviadas. | CP5 |
+| RF32 | Gerenciar envio de notificações | Permitir que o gestor gerencie notificações enviadas, como alteração de suas tags, limitar alcance ou envio direcionado. | CP5 |
 | RF33 | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 |
 | RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 |
 | RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
@@ -52,7 +52,7 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | RN02 | Encaminhamento para Departamentos | Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno. | CP2 |
 | RN03 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
 | RN04 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
-| RN05 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc.). | CP4 |
+| RN05 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc). Essa filtragem deve ser feita de forma automatica pelo sistema e deve listar os cantidos em uma classificação disponibilizada para os gestores.  | CP4 |
 | RN06 | Notificações de oportunidades e projetos | Notificações devem ser enviadas por email de forma automática aos usuários cadastrados que correspondam aos interesses declarados em seus perfis. | CP5 |
 
 ## 8.3 Lista de Requisitos Não Funcionais
