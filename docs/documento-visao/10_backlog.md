@@ -1,5 +1,9 @@
 # 10 BACKLOG DO PRODUTO 
 
+O Backlog do Produto foi dividido em duas visões para facilitar a análise. A tabela abaixo apresenta **exclusivamente** o **Escopo do MVP**, que filtra apenas os épicos e histórias priorizados para a primeira entrega. Logo a seguir, é possível expandir o restante da estrutura que compõe o produto geral.
+
+### Escopo do MVP (Primeira Entrega)
+
 | Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
 | --- | --- | --- | --- | --- | --- |
 | T01 | EP01 | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
@@ -11,6 +15,28 @@
 | T03 | EP07 | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
 | T03 | EP08 | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
 | T04 | EP09 | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
+
+<br>
+
+<details>
+<summary><strong> Clique aqui para expandir o restante do Backlog Geral (Itens Pós-MVP)</strong></summary>
+<br>
+
+| Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
+| --- | --- | --- | --- | --- | --- |
+| T02 | EP05 | Gestão de experiências e pacotes | US30 | — | RNF01, RNF04 |
+| T03 | EP06 | Conta e perfil do voluntário | US33 | RN03 | RNF01, RNF04, RNF08 |
+| T03 | EP08 | Gestão de oportunidades e candidatos | US31 | RN05 | RNF01, RNF04, RNF08 |
+| T04 | EP09 | Solicitação e análise de parcerias | US37 | — | RNF01, RNF04, RNF07, RNF08, RNF10 |
+| T05 | EP10 | Gestão de projetos | US25, US26, US27 | — | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
+| T05 | EP11 | Transparência e impacto dos projetos | US29 | — | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
+| T03 | EP12 | Gestão de acesso administrativo | US32 | — | RNF01, RNF04, RNF07, RNF08, RNF10 |
+| T06 | EP13 | Preferências de notificações | US34 | RN06 | RNF01, RNF06, RNF07, RNF10 |
+| T06 | EP14 | Gestão e monitoramento de notificações | US35, US36 | RN06 | RNF01, RNF06, RNF07, RNF10 |
+
+*(Nota: O identificador US28 permanece sem atribuição nesta versão do backlog, conforme documentação.)*
+
+</details>
 
 ## 10.1 Backlog Geral
 
