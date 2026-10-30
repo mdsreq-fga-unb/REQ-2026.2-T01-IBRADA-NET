@@ -74,7 +74,7 @@ Uma história que não cumpra algum item aplicável deve permanecer em refinamen
 
 **História de usuário**
 
-> Como visitante, quero visualizar as informações detalhadas de um pacote de ecoturismo selecionado, para planejar minha participação com precisão.
+> Como visitante, quero visualizar as informações detalhadas de um pacote de ecoturismo selecionado, para planejar minha participação com precisão e poder compartilha-lá.
 
 <!--
 ### Critérios de aceitação
@@ -555,30 +555,6 @@ Uma história que não cumpra algum item aplicável deve permanecer em refinamen
 **História de usuário**
 
 > Como usuário em processo de cadastro, quero consultar e aceitar explicitamente o termo de uso de dados pessoais, para decidir de forma consciente sobre o tratamento das minhas informações.
-
-<!--
-### Critérios de aceitação
-
-- [ ] A definir durante o refinamento.
-
-### DoR da história
-
-- [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
--->
-
----
-
-## US24 — Compartilhar experiência de ecoturismo
-
-| Campo | Relação |
-| --- | --- |
-| Requisito de origem | RF07 |
-| Tema | T02 — Ecoturismo e Reservas |
-| Épico | EP02 — Descoberta de experiências e pacotes |
-
-**História de usuário**
-
-> Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.
 
 <!--
 ### Critérios de aceitação

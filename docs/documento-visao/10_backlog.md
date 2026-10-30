@@ -3,7 +3,7 @@
 | Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
 | --- | --- | --- | --- | --- | --- |
 | T01 | EP01 | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
-| T02 | EP02 | Descoberta de experiências e pacotes | US02, US03, US24 | — | RNF01, RNF03, RNF07 |
+| T02 | EP02 | Descoberta de experiências e pacotes | US02, US03 | — | RNF01, RNF03 |
 | T02 | EP03 | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
 | T02 | EP04 | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
 | T02 | EP05 | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
@@ -167,6 +167,7 @@ Após todos os calculos, a tabela final ficou assim:
 | [RF33](8_requisitos.md#L43) | [CP6](2_solucao.md#L23) | 4 | 4 | 1,56 |
 | [RF34](8_requisitos.md#L44) | [CP6](2_solucao.md#L23) | 4 | 4 | 1,61 |
 | [RF35](8_requisitos.md#L45) | [CP6](2_solucao.md#L23) | 2 | 2 | 1,78 |
+| [RF36](8_requisitos.md#L46) | [CP6](2_solucao.md#L22) |  |  |  |
 | RNF01 | Transversal — todas as CPs | 4 |-| 2 |
 | RNF02 | CP3 | 4 |-| 3 |
 | RNF03 | CP1 e CP3 | 4 |-| 2 |

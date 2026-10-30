@@ -43,17 +43,17 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | RF33 | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 |
 | RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 |
 | RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
+| RF36 | Enviar notificações automatizadas | Enviar notificações automatizadas para usuários cujas preferências correspondem ao seu assunto. | CP5 |
 
 ## 8.2 Lista de Regras de Negócio
 
 | ID | Nome | Descrição | Relação |
 | :--- | :--- | :--- | :---: |
-| RN01 | Redirecionar para atendimento via WhatsApp | Usuários devem ser redirecionados para o WhatsApp do IBRADA após responder uma triagem, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem. | CP2 |
-| RN02 | Encaminhamento para Departamentos | Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno. | CP2 |
-| RN03 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
-| RN04 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
-| RN05 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc). Essa filtragem deve ser feita de forma automatica pelo sistema e deve listar os cantidos em uma classificação disponibilizada para os gestores.  | CP4 |
-| RN06 | Notificações de oportunidades e projetos | Notificações devem ser enviadas por email de forma automática aos usuários cadastrados que correspondam aos interesses declarados em seus perfis. | CP5 |
+| RN01 | Redirecionar para atendimento via WhatsApp | O encaminhamento após a triagem deve ser feito via WhatsApp para o departamento específico. | CP2 |
+| RN02 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
+| RN03 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
+| RN04 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc). Essa filtragem deve ser feita de forma automatica pelo sistema e deve listar os cantidos em uma classificação disponibilizada para os gestores.  | CP4 |
+| RN05 | Notificações de oportunidades e projetos | Notificações do sistema devem ser enviadas via email. | CP5 |
 
 ## 8.3 Lista de Requisitos Não Funcionais
 

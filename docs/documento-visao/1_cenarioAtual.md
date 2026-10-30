@@ -36,6 +36,7 @@
 |12/10/2026|1.18|Adição das lições aprendidas da unidade 2|Arthur Scartezini, Gabriel Guedes|
 |13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe |
 |29/10/2026| |Ajustes na descrição de alguns requisitos funcionais| Gabriel |
+|29/10/2026| |Adição da RF36, alterações da US24| Gabriel |
 
 *Tabela 1: Tabela de versionamento*
 
