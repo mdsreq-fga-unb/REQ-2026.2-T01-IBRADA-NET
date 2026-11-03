@@ -1,7 +1,11 @@
+import { SiteHeader } from "@/components/navbar";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <h1>home</h1>
+    <div>
+      <h1>home</h1>
+      <h1>teste</h1>
+    </div>
   )
 }
