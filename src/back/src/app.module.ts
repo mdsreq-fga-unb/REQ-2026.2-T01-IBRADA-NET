@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
-import { UserController } from './user/user.controller';
-import { UserService } from './user/user.service';
-import { UserModule } from './user/user.module';
+import { UserController } from './user/user.controller.js';
+import { UserService } from './user/user.service.js';
+import { UserModule } from './user/user.module.js';
 import { PrismaModule } from './prisma/prisma.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();

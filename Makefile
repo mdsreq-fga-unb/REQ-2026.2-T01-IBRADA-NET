@@ -1,5 +1,18 @@
 # Makefile para o projeto IBRADA-NET
-# Atalhos convenientes para Docker Compose (especialmente útil no Linux/macOS/WSL/Git Bash)
+
+# Para quem está no windows: 
+#   Para subir todo o ecossistema (banco, backend e frontend):
+
+#     docker compose up -d --build
+
+#   • Ver logs em tempo real:
+#     docker compose logs -f
+
+#   • Rodar migrations do Prisma dentro do contêiner:
+#     docker compose exec back npx prisma migrate dev
+
+#   • Parar os contêineres:
+#     docker compose down
 
 .PHONY: help up down restart build logs logs-back logs-front prisma-migrate prisma-generate prisma-studio back-shell front-shell db-shell
 
