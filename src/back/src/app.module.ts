@@ -5,6 +5,7 @@ import { AppService } from './app.service.js';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { UserModule } from './user/user.module';
+import { PrismaModule } from './prisma/prisma.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -19,6 +20,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'back',
     }),
     UserModule,
+    PrismaModule,
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],

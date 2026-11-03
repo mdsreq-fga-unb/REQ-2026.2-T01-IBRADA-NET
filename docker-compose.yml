@@ -1,0 +1,61 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: ibrada_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ibradanet
+      MYSQL_USER: ibrada_user
+      MYSQL_PASSWORD: ibrada_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u ibrada_user -pibrada_password || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  back:
+    container_name: ibrada_backend
+    build:
+      context: ./src/back
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      DATABASE_URL: "mysql://ibrada_user:ibrada_password@db:3306/ibradanet"
+      OBSERVE_APP_KEY: ${OBSERVE_APP_KEY:-}
+      OBSERVE_APP_SECRET: ${OBSERVE_APP_SECRET:-}
+    volumes:
+      - ./src/back:/app
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+
+  front:
+    container_name: ibrada_frontend
+    build:
+      context: ./src/front
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NEXT_PUBLIC_API_URL: "http://localhost:3001"
+    volumes:
+      - ./src/front:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - back
+
+volumes:
+  mysql_data:
