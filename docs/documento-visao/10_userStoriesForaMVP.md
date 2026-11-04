@@ -3,6 +3,18 @@
 
 As histórias desta seção permanecem no backlog geral do produto, mas não fazem parte do escopo definido para o MVP. Elas poderão ser refinadas e priorizadas para entregas posteriores. O identificador US28 permanece sem atribuição nesta versão do backlog.
 
+## US24 — Receber notificações de interesse
+
+| Campo | Relação |
+| --- | --- |
+| Requisito de origem | RF36 |
+| Tema | T06 — Notificações e Engajamento |
+| Épico | EP13 — Preferências de notificações |
+
+**História de usuário**
+
+> Como visitante, quero receber notificações baseadas em minhas preferências, para saber quando um projeto de meu interesse esteja em execução.
+
 ## US25 — Cadastrar projetos
 
 | Campo | Relação |
