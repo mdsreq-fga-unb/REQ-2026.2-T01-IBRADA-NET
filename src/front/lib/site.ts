@@ -2,11 +2,11 @@ export const site = {
   name: 'IBRADA',
   fullName: 'Instituto Brasileiro de Direito Ambiental',
   legalName: 'Instituto Brasileiro de Direito Ambiental – IBRADA (OSCIP)',
-  cnpj: '00.000.000/0001-00',
-  address: 'SCS Quadra 2, Bloco C, Sala 101 – Asa Sul, Brasília/DF – CEP 70302-000',
-  email: 'contato@ibrada.org.br',
-  phoneDisplay: '(61) 99999-0000',
-  whatsappNumber: '5561999990000',
+  cnpj: '06.984.927/0001-90',
+  address: 'SHS, Quadra 6 conjunto e bloco A, n.130, salas 501 a 512, Asa Sul, Brasília/DF, CEP 70.316-102',
+  email: 'ibrada.org.br@gmail.com',
+  phoneDisplay: '(61) 981150274',
+  whatsappNumber: '5561981150274',
 }
 
 export const navItems = [
