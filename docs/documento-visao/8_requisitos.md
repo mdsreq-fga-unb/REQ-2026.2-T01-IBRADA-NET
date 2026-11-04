@@ -20,8 +20,8 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | RF10 | Realizar login de cliente | Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais. | CP3 |
 | RF11 | Encerrar sessão de cliente | Permitir que clientes encerrem sua sessão ativa no sistema. | CP3 |
 | RF12 | Reservar pacote de ecoturismo | Permitir que o cliente faça a reserva de um ou mais pacotes selecionados. | CP3 |
-| RF13 | Confirmar reserva | Permitir que o cliente verifique os dados básicos das reservas e dados do pagamento antes do checkout. | CP3 |
-| RF14 | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 |
+| RF13 | Confirmar reserva | Permitir que o cliente revise e confirme os dados da reserva antes do checkout. | CP3 |
+| RF14 | Pagar reserva | Permitir que o cliente pague a reserva de pacotes de ecoturismo, confirmando sua participação quando o pagamento for aprovado. | CP3 |
 | RF15 | Cadastrar experiências de ecoturismo | Permitir à equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 |
 | RF16 | Editar experiências de ecoturismo | Permitir à equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 |
 | RF17 | Alterar disponibilidade de experiência de ecoturismo | Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas. | CP3 |
