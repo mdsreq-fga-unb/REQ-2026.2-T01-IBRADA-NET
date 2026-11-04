@@ -60,6 +60,8 @@ Essa separação evita utilizar a DoR ou a DoD como substitutas dos critérios d
 
 ### 10.2.1 Critérios usados
 
+A prioridade não é definida pelo checklist de qualidade. O checklist apenas verifica se o requisito está claro, completo, testável e rastreável. Depois dessa inspeção, a equipe registra a decisão na tabela de critérios e no histórico do backlog, considerando valor de negócio, frequência de uso, esforço técnico, dependências, riscos e necessidade para o MVP. A decisão recebe a justificativa, a data e os responsáveis pela avaliação; quando alterar escopo ou regra de negócio, também é validada e registrada com o representante do IBRADA. Requisitos que não passam no checklist permanecem em refinamento e não são priorizados para implementação.
+
 Para a priorização do backlog avaliamos cada requisito funcional nos seguintes critérios: 
 
 - **Valor de Negócio**: (0,4 x **MoSCoW**) +  (0,6 x **Frequência de uso**)
