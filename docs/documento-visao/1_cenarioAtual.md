@@ -37,6 +37,7 @@
 |13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe |
 |29/10/2026| |Ajustes na descrição de alguns requisitos funcionais| Gabriel |
 |29/10/2026| |Adição da RF36, alterações da US24| Gabriel |
+|03/11/2026| |Adição de critérios de aceitação de algumas US| Gabriel |
 
 *Tabela 1: Tabela de versionamento*
 
