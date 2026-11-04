@@ -39,6 +39,8 @@
 |29/10/2026|2.2|Ajustes na descrição de alguns requisitos funcionais| Gabriel |
 |29/10/2026|2.3|Adição da RF36, alterações da US24| Gabriel |
 |03/11/2026|2.4|Adição de critérios de aceitação de algumas US| Gabriel |
+|04/11/2026|2.5|Ajusta RF13 e RF14|Cauã|
+
 
 
 *Tabela 1: Tabela de versionamento*
