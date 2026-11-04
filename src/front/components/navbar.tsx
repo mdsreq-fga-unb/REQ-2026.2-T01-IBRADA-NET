@@ -13,11 +13,10 @@ import { cn } from '@/lib/utils'
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} – página inicial`}>
-      <div className="w-10 h-10 bg-primary rounded-5">
-        <span className="text-stone-50">logo</span>
-      </div>
+      <img src="/logo_retangulo_detalhe.jpg" alt="Logo do IBRADA" width={40} height={40} className="h-15 w-25" />
+
       <span className="flex flex-col leading-none">
-        <span className="font-serif text-lg font-semibold tracking-tight text-primary">{site.name}</span>
+        {/* <span className="font-serif text-lg font-semibold tracking-tight text-primary">{site.name}</span> */}
         <span className="hidden text-[11px] text-muted-foreground sm:block">{site.fullName}</span>
       </span>
     </Link>
