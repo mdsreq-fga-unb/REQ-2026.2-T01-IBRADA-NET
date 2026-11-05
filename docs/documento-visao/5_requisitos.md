@@ -7,7 +7,7 @@
 === "Elicitação e Descoberta:" 
     - **Entrevistas e Reuniões:** Conversas de profundidade com os representantes do IBRADA (stakeholders) para compreender os problemas, necessidades e desafios enfrentados na operação atual, como a dificuldade de comunicação com os diferentes perfis de clientes e patrocinadores.
     - **Brainstorming:** Sessões de brainstorming permitem que a equipe discuta soluções criativas para melhorar a divulgação dos projetos e serviços expostos no site do IBRADA, o contato com voluntários e parceiros etc.
-    - **[Análise de Domínio de Negócio](../evidencias/analise-dominio.md):** Análise do domínio do ecoturismo, aprofundando a compreensão dos valores e diferenciais do IBRADA, como sustentabilidade e fortalecimento da autonomia de comunidades locais, garantindo que os requisitos estejam alinhados com a identidade do instituto.
+    - **Análise de Domínio de Negócio:** Análise do domínio do ecoturismo, aprofundando a compreensão dos valores e diferenciais do IBRADA, como sustentabilidade e fortalecimento da autonomia de comunidades locais, garantindo que os requisitos estejam alinhados com a identidade do instituto.
 
 
 === "Análise e Consenso:"
@@ -44,7 +44,7 @@
     - **Mockups e Protótipos de Baixa Fidelidade:** Esboços visuais e wireframes de telas para materialização de soluções estéticas e dinâmicas de interface. Essas técnicas e ferramentas permitem o uso de documentação simplificada e direta, trazendo mais eficiência ao desenvolvimento e ao processo de validação com os representantes do IBRADA (stakeholders).
 
 === "Verificação e Validação de Requisitos:"
-    - **Oficinas de [Validação Baseadas em Protótipos](../evidencias/oficina-validação.md) (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
+    - **Oficinas de Validação Baseadas em Protótipos (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
 
 
 === "Organização e Atualização de Requisitos:"
@@ -52,16 +52,6 @@
     - **Matriz de Rastreabilidade Seletiva:** Relação cruzada que conecta de forma visível as características de produto de alto nível (CPs) com as histórias de usuário e os objetivos de negócio (VNs e OEs) que as motivaram. 
 
 ### **Construção:**
-
-=== "Elicitação e Descoberta:"
-    - **Retorno de testes, integrações e cliente:** qualquer comportamento não previsto será registrado em uma Issue ou ata, com evidência, origem e requisito afetado.
-
-=== "Análise e Consenso:"
-    - **Análise de impacto:** a equipe classificará o achado como requisito novo, alteração, defeito ou esclarecimento e avaliará impacto em escopo, dependências, segurança e esforço.
-    - **Decisão registrada:** aceitar, rejeitar ou postergar será decidido pela equipe e, quando envolver escopo, prioridade ou regra de negócio, validado pelo representante autorizado do IBRADA. A decisão, justificativa, responsável e data ficarão registrados.
-
-=== "Declaração de Requisitos:"
-    - **Atualização dos artefatos:** achados aceitos serão descritos como RF, RNF, RN, história ou critério de aceitação e refletidos no catálogo, backlog, matriz de rastreabilidade e história afetada antes da implementação.
 
 === "Verificação e Validação de Requisitos:"
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, completude técnica, verificabilidade e ausência de acoplamento com soluções específicas de design.
@@ -135,8 +125,8 @@
     <tr>
       <td>Análise e Consenso</td>
       <td>Priorização de requisitos</td>
-      <td>Checklists de Qualidade de Requisitos + matriz de decisão de prioridade</td>
-      <td>Inspeção da qualidade e registro da prioridade com valor, esforço, dependências, justificativa, responsável e aprovação do cliente quando aplicável.</td>
+      <td>Checklists de Qualidade de Requisitos</td>
+      <td>Alinhamento com o cliente de quais as funcionalidades que devem ser priorizadas, garantindo que elas forneçam o valor de negócio esperado.</td>
     </tr>
     <tr>
       <td>Representação</td>
@@ -159,29 +149,11 @@
 
     <!-- CONSTRUÇÃO -->
     <tr>
-      <td rowspan="5"><strong>Construção</strong></td>
-      <td>Elicitação e Descoberta</td>
-      <td>Registro de achados de testes, integração e feedback</td>
-      <td>Testes, demonstrações, Issues e atas</td>
-      <td>Identificação documentada de novas regras, necessidades, restrições ou divergências.</td>
-    </tr>
-    <tr>
-      <td>Análise e Consenso</td>
-      <td>Análise de impacto e decisão</td>
-      <td>Reunião de refinamento e matriz de impacto</td>
-      <td>Classificação do achado, impacto avaliado e decisão registrada.</td>
-    </tr>
-    <tr>
-      <td>Declaração</td>
-      <td>Atualização do requisito e da rastreabilidade</td>
-      <td>Catálogo, backlog, histórias e matriz de rastreabilidade</td>
-      <td>Regra ou requisito aceito descrito, vinculado e pronto para verificação.</td>
-    </tr>
-    <tr>
+      <td rowspan="2"><strong>Construção</strong></td> <!-- Corrigido para 2 -->
       <td>Verificação e Validação</td>
       <td>Controle de Qualidade</td>
       <td>Checklists de Qualidade de Requisitos</td>
-      <td>Garantia de qualidade e refinamento durante a construção.</td>
+      <td>Garantia de qualidade e refinamento (clareza, testabilidade, verificabilidade, documentação, etc.) durante o desenvolvimento do design.</td>
     </tr>
     <tr>
       <td>Organização e Atualização</td>

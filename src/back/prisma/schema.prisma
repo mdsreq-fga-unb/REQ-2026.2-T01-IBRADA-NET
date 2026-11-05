@@ -1,8 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -10,4 +8,206 @@ generator client {
 
 datasource db {
   provider = "mysql"
+}
+
+enum Role {
+  CLIENTE // US04: cliente de ecoturismo
+  VOLUNTARIO // US15: voluntário
+  GESTOR // US11, US13, US18, US20: gestor do IBRADA
+}
+
+enum BookingStatus {
+  PENDING // criada, aguardando pagamento (US08/US09)
+  CONFIRMED // paga (US10)
+  CANCELED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum PartnershipStatus {
+  RECEIVED
+  IN_ANALYSIS
+  ACCEPTED
+  DECLINED
+}
+
+// Etapas do funil de seleção (US18). A ordem aqui é a ordem do funil.
+enum StatusCandidatura {
+  INSCRITO
+  EM_ANALISE
+  ENTREVISTA
+  APROVADO
+  REJEITADO
+}
+
+// Uma tabela só para login (cliente, voluntário e gestor).
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String // nunca guardar a senha em texto puro
+  phone        String?
+  role         Role     @default(CLIENTE)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  consents         ConsentRecord[]
+  bookings         Booking[]
+  perfilVoluntario PerfilVoluntario?
+}
+
+// US23 / LGPD: prova de que o usuário aceitou o termo (qual versão e quando).
+model ConsentRecord {
+  id          String   @id @default(cuid())
+  userId      String
+  termVersion String // ex.: "2026-09-v1"
+  acceptedAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Experiencia {
+  id          String   @id @default(cuid())
+  slug        String   @unique // URL amigável: /ecoturismo/vivencia-quilombola
+  title       String
+  description String   @db.Text
+  itinerary   String?  @db.Text // roteiro (US11)
+  price       Decimal  @db.Decimal(10, 2) // dinheiro: nunca Float
+  startsAt    DateTime
+  endsAt      DateTime
+  capacity    Int // vagas totais
+  isAvailable Boolean  @default(true) // US12: gestor liga/desliga a oferta
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  bookings Booking[]
+}
+
+model Booking {
+  id           String        @id @default(cuid())
+  userId       String
+  experienceId String
+  seats        Int           @default(1)
+  totalAmount  Decimal       @db.Decimal(10, 2)
+  status       BookingStatus @default(PENDING)
+  createdAt    DateTime      @default(now())
+
+  user       User        @relation(fields: [userId], references: [id])
+  experience Experiencia @relation(fields: [experienceId], references: [id])
+  payments   Payment[]
+
+  @@index([userId])
+  @@index([experienceId])
+}
+
+// Uma reserva pode ter várias tentativas de pagamento (falhou, tentou de novo).
+model Payment {
+  id         String        @id @default(cuid())
+  bookingId  String
+  amount     Decimal       @db.Decimal(10, 2)
+  method     String // "PIX", "CARD"... (vira enum quando o gateway for definido)
+  status     PaymentStatus @default(PENDING)
+  externalId String? // id da transação no gateway
+  paidAt     DateTime?
+  createdAt  DateTime      @default(now())
+
+  booking Booking @relation(fields: [bookingId], references: [id])
+
+  @@index([bookingId])
+}
+
+model PedidoParceria {
+  id           String            @id @default(cuid())
+  organization String
+  contactName  String
+  contactEmail String
+  contactPhone String?
+  proposal     String            @db.Text
+  status       PartnershipStatus @default(RECEIVED)
+  createdAt    DateTime          @default(now())
+}
+
+// Lista de habilidades cadastrável pelo gestor, sem precisar de migration.
+// (MySQL não aceita lista de enum num campo, por isso é uma tabela.)
+// Valores iniciais sugeridos: Professor, Agricultor, Artesão, Biólogo, Médico,
+// Enfermeiro, Psicólogo, Engenheiro, Advogado, Designer, Fotógrafo, Jornalista.
+model Habilidade {
+  id   String @id @default(cuid())
+  nome String @unique
+
+  perfis        PerfilVoluntario[]
+  oportunidades Oportunidade[]
+}
+
+model Projeto {
+  id          String    @id @default(cuid())
+  title       String
+  description String    @db.Text
+  startDate   DateTime?
+  endDate     DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  oportunidades Oportunidade[]
+}
+
+// US15: perfil do voluntário (1:1 com o usuário).
+model PerfilVoluntario {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  bio             String?  @db.Text
+  outros          String? // habilidades que não estão na lista
+  experiencias    String?  @db.Text
+  interesses      String?  @db.Text
+  disponibilidade String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  habilidades  Habilidade[]
+  candidaturas Candidatura[]
+}
+
+// US13 / US14 / US21: a vaga publicada pelo gestor.
+model Oportunidade {
+  id              String   @id @default(cuid())
+  projetoId       String // projeto associado
+  title           String
+  description     String   @db.Text
+  duracao         String // ex.: "3 meses", "2 fins de semana"
+  disponibilidade String // ex.: "20h semanais"
+  isOpen          Boolean  @default(true) // US21: só as abertas aparecem na listagem
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  projeto      Projeto       @relation(fields: [projetoId], references: [id])
+  habilidades  Habilidade[] // habilidades requeridas
+  candidaturas Candidatura[]
+
+  @@index([projetoId])
+}
+
+// US16 / US18: o voluntário se candidata a uma vaga; o status é o funil.
+model Candidatura {
+  id             String            @id @default(cuid())
+  perfilId       String
+  oportunidadeId String
+  status         StatusCandidatura @default(INSCRITO)
+  mensagem       String?           @db.Text // apresentação opcional do voluntário
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  perfil       PerfilVoluntario @relation(fields: [perfilId], references: [id], onDelete: Cascade)
+  oportunidade Oportunidade     @relation(fields: [oportunidadeId], references: [id], onDelete: Cascade)
+
+  // Impede o mesmo voluntário de se candidatar duas vezes à mesma vaga.
+  @@unique([perfilId, oportunidadeId])
+  @@index([oportunidadeId, status]) // o funil filtra por vaga + etapa
 }

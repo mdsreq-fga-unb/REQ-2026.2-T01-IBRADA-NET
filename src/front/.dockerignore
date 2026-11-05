@@ -1,7 +1,0 @@
-node_modules
-.next
-out
-.git
-.env*.local
-*.log
-npm-debug.log*

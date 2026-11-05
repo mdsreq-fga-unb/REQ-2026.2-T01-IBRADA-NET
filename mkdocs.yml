@@ -1,7 +1,6 @@
 site_name: Documentação de Requisitos
 site_description: Documentação de requisitos de software para o projeto web
 site_author: Seu Projeto
-site_url: https://mdsreq-fga-unb.github.io/REQ-2026.2-T01-IBRADA-NET/
 
 theme:
   name: material
@@ -28,6 +27,7 @@ theme:
 
 plugins:
   - search
+  - offline
 
 markdown_extensions:
   - admonition
@@ -84,21 +84,17 @@ nav:
   # - Especificação de Requisitos:
   #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
-  # - Documentação:
-  - Glossário e termos: 
-    - glossário: documentacao/glossario.md
-    - Termos: documentacao/termos.md
+  - Documentação:
+      - Glossário: documentacao/glossario.md
+      - classificação dos requisitos: entrega-atividades/classificacao-requisitos.md
+  #     - FAQ: documentacao/faq.md
 
-  - Evidências: 
-    - Classificação dos requisitos: evidencias/classificacao-requisitos.md
-    - Análise de Domínio: evidencias/analise-dominio.md
-    - oficinas de validação: evidencias/oficina-validacao.md
-    - Atividades:
-      - Unidade 2:
-        - Atividade 1: evidencias/atividade1.md
-        - Atividade 2: evidencias/atividade2.md
-        - Atividade 3: evidencias/atividade3.md
-        - Atividade 4: evidencias/atividade4.md
-        # - Atividade 5: evidencias/atividade5.md
+  - Atividades: 
+    - Unidade 2:
+      - Atividade 1: entrega-atividades/atividade1.md
+      - Atividade 2: entrega-atividades/atividade2.md
+      - Atividade 3: entrega-atividades/atividade3.md
+      - Atividade 4: entrega-atividades/atividade4.md
+      # - Atividade 5: entrega-atividades/atividade5.md
   - Entrega de vídeos: videos/entrega-videos.md
   - Referências: referencias/referencia.md
