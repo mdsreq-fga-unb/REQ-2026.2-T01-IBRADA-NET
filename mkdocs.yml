@@ -85,8 +85,9 @@ nav:
   #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
   # - Documentação:
-  - Glossário: documentacao/glossario.md
-      
+  - Glossário e termos: 
+    - glossário: documentacao/glossario.md
+    - Termos: documentacao/termos.md
 
   - Evidências: 
     - Classificação dos requisitos: evidencias/classificacao-requisitos.md
