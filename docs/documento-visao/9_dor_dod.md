@@ -46,11 +46,11 @@ Uma User Story é considerada pronta para entrar no ciclo de Construção / Dese
 
 O Definition of Done (DoD) é o acordo coletivo entre a equipe de desenvolvimento e o cliente que estabelece os critérios e condições necessárias para considerar uma entrega (User Story, requisito ou incremento) como concluída. Caso um item não atenda integralmente a este conjunto de critérios, ele não é considerado concluído nem pode ser entregue ou apresentado como parte do incremento. O conceito de "Done" garante qualidade consistente, rastreabilidade e transparência aos stakeholders sobre o que foi realmente entregue.
 
-Para que um requisito seja considerado concluído ("Done"), a equipe e o cliente devem verificar o cumprimento dos seguintes critérios:
+Para que uma User Story seja considerado concluído ("Done"), a equipe e o cliente devem verificar o cumprimento dos seguintes critérios:
 
 * **O código foi devidamente revisado e integrado?:** O código produzido para a entrega deve ser revisado e aprovado por pelo menos outro membro da equipe de desenvolvimento via Pull Request (PR) aprovado. A funcionalidade deve estar integrada à ramificação principal e disponível e demonstrável em ambiente de homologação, conforme o compromisso da estratégia de desenvolvimento.
 
-* **A funcionalidade atende aos requisitos funcionais e critérios de aceitação?:** A funcionalidade deve implementar todas as Regras de Negócio (RNs) associadas e atender integralmente aos critérios de aceitação testáveis e verificáveis definidos na User Story.
+* **A funcionalidade atende às regras de negócio e critérios de aceitação?:** A funcionalidade deve implementar todas as Regras de Negócio (RNs) associadas e atender integralmente aos critérios de aceitação testáveis e verificáveis definidos na User Story.
 
 * **Os Requisitos Não Funcionais (RNFs) aplicáveis foram atendidos?:** A entrega deve demonstrar conformidade com os RNFs relevantes para o seu escopo. Conforme a natureza do requisito, devem ser verificados critérios como controle de autorização/acesso, integridade das transações e reservas, responsividade da interface, métricas aceitáveis de desempenho, compatibilidade e proteção de dados sensíveis dos usuários.
 
