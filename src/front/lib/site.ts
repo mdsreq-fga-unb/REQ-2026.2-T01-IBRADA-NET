@@ -40,3 +40,10 @@ export const navItems = [
 export function buildWhatsAppLink(message: string) {
   return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`
 }
+
+// Versão vigente dos Termos de Uso e da Política de Privacidade (RF29).
+// Atualize ao alterar o texto de app/termos/page.tsx e registre em docs/documentacao/termos.md.
+export const terms = {
+  version: '1.0',
+  updatedAt: '05/11/2026',
+}
