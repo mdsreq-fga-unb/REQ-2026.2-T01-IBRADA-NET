@@ -11,6 +11,9 @@ Os níveis e suas relações (Tema → OE, Épico → CP, User Story → RF) est
 
 Navegue pelo caminho **Objetivo → Tema → Épico → User Story**. Clique em qualquer item para abrir os detalhes, inclusive características de produto, regras de negócio e requisitos não funcionais.
 
+!!! note "Sobre os critérios de aceitação"
+    Os critérios são acompanhados em tempo real nas issues do GitHub de cada história. Nesta documentação eles só são atualizados depois da conclusão da US. As marcações feitas no mapa ficam salvas apenas no navegador de quem as fez.
+
 <div id="mapa-rastreabilidade" data-base="../../"></div>
 
 <link rel="stylesheet" href="../mapa/mapa.css">
