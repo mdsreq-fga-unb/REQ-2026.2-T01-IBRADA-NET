@@ -23,6 +23,62 @@ function Logo() {
   )
 }
 
+/**
+ * Estado de autenticação (placeholder).
+ * Quando a autenticação existir, substitua o retorno de `useAuthUser` pelo
+ * usuário real (contexto/sessão). `null` = visitante.
+ */
+type AuthUser = { name: string; avatarUrl?: string } | null
+
+function useAuthUser(): AuthUser {
+  return null
+}
+
+/**
+ * Único lugar que define o botão de conta (entrar / logado).
+ * Para trocar o ícone ou o link de quem está logado, edite só `loggedIn` e `guest`.
+ */
+function AccountButton({
+  variant,
+  className,
+  labelClassName,
+  onNavigate,
+}: {
+  variant: 'ghost' | 'outline'
+  className?: string
+  labelClassName?: string
+  onNavigate?: () => void
+}) {
+  const user = useAuthUser()
+
+  const loggedIn = {
+    href: '/minha-conta',
+    label: 'Minha Conta',
+    icon: user?.avatarUrl ? (
+      <img src={user.avatarUrl} alt="" className="size-5 rounded-full object-cover" />
+    ) : (
+      <UserRound data-icon="inline-start" />
+    ),
+  }
+  const guest = {
+    href: '/login',
+    label: 'Entrar',
+    icon: <UserRound data-icon="inline-start" />,
+  }
+  const { href, label, icon } = user ? loggedIn : guest
+
+  return (
+    <Link
+      href={href}
+      onClick={onNavigate}
+      className={cn(buttonVariants({ variant, size: 'lg' }), className)}
+    >
+      {icon}
+      <span className={labelClassName}>{label}</span>
+    </Link>
+  )
+}
+
 export function SiteHeader() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -62,13 +118,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          <Link
-            href="/minha-conta"
-            className={cn(buttonVariants({ variant: 'ghost', size: 'lg' }), 'hidden h-10 md:inline-flex')}
-          >
-            <UserRound data-icon="inline-start" />
-            <span className="xl:sr-only 2xl:not-sr-only">Entrar / Minha Conta</span>
-          </Link>
+          <AccountButton
+            variant="ghost"
+            className="hidden h-10 md:inline-flex"
+            labelClassName="xl:sr-only 2xl:not-sr-only"
+          />
           <Button
             size="lg"
             onClick={() => openTriage()}
@@ -127,14 +181,7 @@ export function SiteHeader() {
               <MessageCircle data-icon="inline-start" />
               Atendimento / Triagem
             </Button>
-            <Link
-              href="/minha-conta"
-              onClick={() => setMenuOpen(false)}
-              className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'h-11')}
-            >
-              <UserRound data-icon="inline-start" />
-              Entrar / Minha Conta
-            </Link>
+            <AccountButton variant="outline" className="h-11" onNavigate={() => setMenuOpen(false)} />
           </div>
         </SheetContent>
       </Sheet>
