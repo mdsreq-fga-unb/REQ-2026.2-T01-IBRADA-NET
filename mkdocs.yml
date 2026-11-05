@@ -64,6 +64,15 @@ nav:
           - Fora do MVP: documento-visao/10_userStoriesForaMVP.md
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
 
+  - Documentação e Planejamento:
+    - User Stories:
+      - Dentro do MVP:
+        - US01: user-stories/us01.md
+
+      - Fora do MVP: documento-visao/10_userStoriesForaMVP.md
+    - Glossário: documentacao/glossario.md
+
+
   - Atas de Reunião:
       - Unidade 1: 
         - Cliente (24/08/2026): atas-reuniao/unidade-1/24-08.md
@@ -85,13 +94,11 @@ nav:
   #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
   # - Documentação:
-  - Glossário: documentacao/glossario.md
-      
 
   - Evidências: 
-    - Classificação dos requisitos: evidencias/classificacao-requisitos.md
+    - Classificação dos Requisitos: evidencias/classificacao-requisitos.md
     - Análise de Domínio: evidencias/analise-dominio.md
-    - oficinas de validação: evidencias/oficina-validacao.md
+    - Oficinas de Validação: evidencias/oficina-validacao.md
     - Atividades:
       - Unidade 2:
         - Atividade 1: evidencias/atividade1.md
