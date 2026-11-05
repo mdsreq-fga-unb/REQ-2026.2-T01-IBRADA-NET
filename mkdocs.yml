@@ -86,6 +86,7 @@ nav:
   #     - Arquitetura: especificacao/arquitetura.md
   - Documentação:
       - Glossário: documentacao/glossario.md
+      - Termos de Uso e Privacidade: documentacao/termos.md
       - classificação dos requisitos: entrega-atividades/classificacao-requisitos.md
   #     - FAQ: documentacao/faq.md
 
