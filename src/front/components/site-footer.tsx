@@ -84,12 +84,12 @@ export function SiteFooter() {
           </p>
           <ul className="flex flex-wrap gap-4">
             <li>
-              <Link href="/termos-de-uso" className="hover:text-primary-foreground hover:underline">
+              <Link href="/termos#termos-de-uso" className="hover:text-primary-foreground hover:underline">
                 Termos de Uso
               </Link>
             </li>
             <li>
-              <Link href="/privacidade" className="hover:text-primary-foreground hover:underline">
+              <Link href="/termos#privacidade" className="hover:text-primary-foreground hover:underline">
                 Política de Privacidade (LGPD)
               </Link>
             </li>

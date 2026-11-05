@@ -86,7 +86,11 @@ export default function Cadastro() {
                         type={showPassword ? "text" : "password"}
                         placeholder="Digite sua senha"
                     />
+                    <span className="text-sm text-gray-500">
+                    A senha do cadastro deve ter no mínimo 8 caracteres, contendo um caractere maiúsculo, um número e um caractere especial.
+                </span>
                 </label>
+                
                 <label className="block mt-4">
                     Confirme sua senha *
                     <input
@@ -112,8 +116,8 @@ export default function Cadastro() {
                 <label className="flex items-start">
                     <input name="termos" type="checkbox" required className="mr-2 mt-1.5" />
                     <span>
-                        Li e concordo com os <a href="#" className="text-blue-500 hover:underline">Termos de uso</a> e a{" "}
-                        <a href="#" className="text-blue-500 hover:underline">Política de Privacidade (LGPD)</a> do IBRADA.
+                        Li e concordo com os <a href="/termos#termos-de-uso" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Termos de uso</a> e a{" "}
+                        <a href="/termos#privacidade" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Política de Privacidade (LGPD)</a> do IBRADA.
                     </span>
                 </label>
 
