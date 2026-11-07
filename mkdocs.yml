@@ -32,7 +32,11 @@ plugins:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -47,6 +51,49 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Planejamento e Escopo:
+      - Rastreabilidade: planejamento/rastreabilidade.md
+      - User Stories:
+        - Dentro do MVP:
+          - "US01 — Realizar triagem": user-stories/us01.md
+          - "US02 — Visualizar catálogo de ecoturismo": user-stories/us02.md
+          - "US03 — Visualizar detalhes de pacote de ecoturismo": user-stories/us03.md
+          - "US04 — Cadastrar-se como cliente": user-stories/us04.md
+          - "US05 — Visualizar e editar dados pessoais": user-stories/us05.md
+          - "US06 — Autenticar-se como cliente": user-stories/us06.md
+          - "US07 — Encerrar sessão de cliente": user-stories/us07.md
+          - "US08 — Reservar pacote de ecoturismo": user-stories/us08.md
+          - "US09 — Revisar e confirmar reserva": user-stories/us09.md
+          - "US10 — Pagar reserva": user-stories/us10.md
+          - "US11 — Cadastrar experiência de ecoturismo": user-stories/us11.md
+          - "US12 — Controlar disponibilidade de pacotes": user-stories/us12.md
+          - "US13 — Cadastrar oportunidade de voluntariado": user-stories/us13.md
+          - "US14 — Visualizar detalhes da oportunidade": user-stories/us14.md
+          - "US15 — Criar perfil de voluntário": user-stories/us15.md
+          - "US16 — Candidatar-se a uma oportunidade": user-stories/us16.md
+          - "US17 — Autenticar-se como voluntário": user-stories/us17.md
+          - "US18 — Visualizar candidatos em funil": user-stories/us18.md
+          - "US19 — Enviar solicitação de parceria": user-stories/us19.md
+          - "US20 — Visualizar solicitações de parceria": user-stories/us20.md
+          - "US21 — Consultar oportunidades abertas": user-stories/us21.md
+          - "US22 — Encerrar sessão de voluntário": user-stories/us22.md
+          - "US23 — Registrar consentimento de uso de dados": user-stories/us23.md
+          - "US24 — Compartilhar experiência de ecoturismo": user-stories/us24.md
+        - Fora do MVP:
+          - Visão geral: user-stories/fora-do-mvp.md
+          - "US25 — Cadastrar projetos": user-stories/us25.md
+          - "US26 — Editar projetos": user-stories/us26.md
+          - "US27 — Remover projetos": user-stories/us27.md
+          - "US29 — Visualizar painel público de projetos": user-stories/us29.md
+          - "US30 — Editar pacotes de ecoturismo": user-stories/us30.md
+          - "US31 — Editar oportunidade de voluntariado": user-stories/us31.md
+          - "US32 — Gerenciar acesso de gestores": user-stories/us32.md
+          - "US33 — Editar perfil de voluntário": user-stories/us33.md
+          - "US34 — Configurar preferências de notificações": user-stories/us34.md
+          - "US35 — Visualizar alcance das notificações": user-stories/us35.md
+          - "US36 — Gerenciar notificações": user-stories/us36.md
+          - "US37 — Responder à solicitação de parceria": user-stories/us37.md
+
   - Visão do Produto e Projeto:
       - 1 Cenário Atual do Cliente e do Negócio: documento-visao/1_cenarioAtual.md
       - 2 Solução Proposta: documento-visao/2_solucao.md
@@ -59,10 +106,10 @@ nav:
       - 9 DOR e DOD: documento-visao/9_dor_dod.md
       - 10 Backlog do Produto: 
         - Backlog do Produto: documento-visao/10_backlog.md
-        - User Stories: 
-          - Dentro do MVP: documento-visao/10_userStories.md  
-          - Fora do MVP: documento-visao/10_userStoriesForaMVP.md
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
+
+
+
 
   - Atas de Reunião:
       - Unidade 1: 
@@ -85,14 +132,14 @@ nav:
   #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
   # - Documentação:
-  - Glossário e termos: 
-    - glossário: documentacao/glossario.md
+  - Glossário e Termos: 
+    - Glosário: documentacao/glossario.md
     - Termos: documentacao/termos.md
 
   - Evidências: 
-    - Classificação dos requisitos: evidencias/classificacao-requisitos.md
+    - Classificação dos Requisitos: evidencias/classificacao-requisitos.md
     - Análise de Domínio: evidencias/analise-dominio.md
-    - oficinas de validação: evidencias/oficina-validacao.md
+    - Oficinas de Validação: evidencias/oficina-validacao.md
     - Atividades:
       - Unidade 2:
         - Atividade 1: evidencias/atividade1.md
@@ -100,5 +147,8 @@ nav:
         - Atividade 3: evidencias/atividade3.md
         - Atividade 4: evidencias/atividade4.md
         # - Atividade 5: evidencias/atividade5.md
+
+  - Glossário: documentacao/glossario.md 
+         
   - Entrega de vídeos: videos/entrega-videos.md
   - Referências: referencias/referencia.md

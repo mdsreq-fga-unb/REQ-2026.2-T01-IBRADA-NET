@@ -7,7 +7,7 @@
 | T02 | EP03 | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
 | T02 | EP04 | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
 | T02 | EP05 | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
-| T03 | EP06 | Conta e perfil do voluntário | US15, US17, US22, US23 | RN03 | RNF01, RNF04, RNF08 |
+| T03 | EP06 | Conta e perfil do voluntário | US15, US17, US22, US23 | — | RNF01, RNF04, RNF08 |
 | T03 | EP07 | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
 | T03 | EP08 | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
 | T04 | EP09 | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
@@ -20,20 +20,23 @@ Os itens do backlog foram originados a partir das características de produto, d
 
 ### 10.1.1 Composição e rastreabilidade do backlog
 
-O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes, a legenda se encontra no [glossário](../documentacao/glossario.md)
+O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes; a legenda se encontra no [glossário](../documentacao/glossario.md).
 
-A rastreabilidade adotada segue, de forma geral, a seguinte relação:
+A rastreabilidade é mantida em um único lugar, a página [Rastreabilidade](../planejamento/rastreabilidade.md) (*Planejamento e Escopo*), e cada [User Story](../user-stories/us01.md) aponta para os itens já existentes nesta documentação em vez de repeti-los. Os vínculos seguem três níveis, do mais estratégico ao mais próximo da implementação:
+
+| Nível do backlog | Relaciona-se com | Como se lê |
+| --- | --- | --- |
+| **Tema** | **Objetivo Específico (OE)** | Cada tema contribui principalmente para o OE da característica de produto que o originou ([2.2](2_solucao.md#22-objetivos-especificos-oe-do-produto)). |
+| **Épico** | **Característica de Produto (CP)** | Cada épico detalha uma característica de produto ([2.3](2_solucao.md#23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos-do-produto)). |
+| **User Story** | **Requisito Funcional (RF)** | Cada história declara o RF de origem ([8.1](8_requisitos.md#81-lista-de-requisitos-funcionais)) e possui critérios de aceitação próprios. |
+
+As regras de negócio (RN) e os requisitos não funcionais (RNF) estão ligados às características de produto no catálogo ([8.2](8_requisitos.md#82-lista-de-regras-de-negocio) e [8.3](8_requisitos.md#83-lista-de-requisitos-nao-funcionais)) e chegam às histórias por meio do épico a que pertencem, conforme a tabela no início deste documento.
 
 ```text
-Objetivo Específico e Valor de Negócio
-                  ↓
-     Característica de Produto (CP)
-                  ↓
-          RF, RN e RNF relacionados
-                  ↓
-         Tema → Épico → User Story
-                  ↓
-          Critérios de Aceitação
+Objetivo Específico (OE)  <-  Tema
+Característica (CP)       <-  Épico
+Requisito Funcional (RF)  <-  User Story  ->  Critérios de Aceitação
+RN e RNF                  <-  CP e Épico
 ```
 
 ### 10.1.2 Escolha do backlog
@@ -134,41 +137,42 @@ Após todos os calculos, a tabela final ficou assim:
 
 | ID | Relação | Avaliação MoSCoW | Avaliação Frequência de Uso | Esforço Técnico |
 | --- | --- | --- | --- | --- |
-| [RF01](8_requisitos.md#L11) | [CP1](2_solucao.md#L18) | 3 | 2 | 2,17 |
-| [RF02](8_requisitos.md#L12) | [CP1](2_solucao.md#L18) | 3 | 2 | 1,67 |
-| [RF03](8_requisitos.md#L13) | [CP1](2_solucao.md#L18) | 3 | 1 | 1,50 |
-| [RF04](8_requisitos.md#L14) | [CP1](2_solucao.md#L18) | 4 | 4 | 2,89 |
-| [RF05](8_requisitos.md#L15) | [CP2](2_solucao.md#L19) | 4 | 4 | 1,83 |
-| [RF06](8_requisitos.md#L16)| [CP3](2_solucao.md#L20) | 4 | 3 | 1,78 |
-| [RF07](8_requisitos.md#L17) | [CP3](2_solucao.md#L20) | 3 | 3 | 1,61 |
-| [RF08](8_requisitos.md#L18) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,72 |
-| [RF09](8_requisitos.md#L19) | [CP3](2_solucao.md#L20) | 4 | 3 | 1,50 |
-| [RF10](8_requisitos.md#L20) | [CP3](2_solucao.md#L20) | 4 | 4 | 2,06 |
-| [RF11](8_requisitos.md#L21) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,50 |
-| [RF12](8_requisitos.md#L22) | [CP3](2_solucao.md#L20) | 4 | 4 | 2,22 |
-| [RF13](8_requisitos.md#L23) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,72 |
-| [RF14](8_requisitos.md#L24) | [CP3](2_solucao.md#L20) | 4 | 4 | 3,39 |
-| [RF15](8_requisitos.md#L25) | [CP3](2_solucao.md#L20) | 3 | 3 | 1,67 |
-| [RF16](8_requisitos.md#L26) | [CP3](2_solucao.md#L20) | 2 | 2 | 1,56 |
-| [RF17](8_requisitos.md#L27) | [CP3](2_solucao.md#L20) | 4 | 4 | 1,61 |
-| [RF18](8_requisitos.md#L28) | [CP4](2_solucao.md#L21) | 4 | 3 | 2,06 |
-| [RF19](8_requisitos.md#L29) | [CP4](2_solucao.md#L21) | 4 | 2 | 1,61 |
-| [RF20](8_requisitos.md#L30) | [CP4](2_solucao.md#L21) | 4 | 2 | 2,22 |
-| [RF21](8_requisitos.md#L31) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,44 |
-| [RF22](8_requisitos.md#L32) | [CP4](2_solucao.md#L21) | 4 | 3 | 1,50 |
-| [RF23](8_requisitos.md#L33) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,89 |
-| [RF24](8_requisitos.md#L34) | [CP4](2_solucao.md#L21) | 4 | 2 | 1,39 |
-| [RF25](8_requisitos.md#L35) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,72 |
-| [RF26](8_requisitos.md#L36) | [CP4](2_solucao.md#L21) | 4 | 4 | 2,00 |
-| [RF27](8_requisitos.md#L37) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,39 |
-| [RF28](8_requisitos.md#L38) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,94 |
-| [RF29](8_requisitos.md#L39) | [CP4](2_solucao.md#L21) | 4 | 4 | 1,44 |
-| [RF30](8_requisitos.md#L40) | [CP5](2_solucao.md#L22) | 4 | 3 | 2,11 |
-| [RF31](8_requisitos.md#L41) | [CP5](2_solucao.md#L22) | 3 | 2 | 2,33 |
-| [RF32](8_requisitos.md#L42) | [CP5](2_solucao.md#L22) | 2 | 3 | 1,94 |
-| [RF33](8_requisitos.md#L43) | [CP6](2_solucao.md#L23) | 4 | 4 | 1,56 |
-| [RF34](8_requisitos.md#L44) | [CP6](2_solucao.md#L23) | 4 | 4 | 1,61 |
-| [RF35](8_requisitos.md#L45) | [CP6](2_solucao.md#L23) | 2 | 2 | 1,78 |
+| [RF01](8_requisitos.md#rf01) | [CP1](2_solucao.md#cp1) | 3 | 2 | 2,17 |
+| [RF02](8_requisitos.md#rf02) | [CP1](2_solucao.md#cp1) | 3 | 2 | 1,67 |
+| [RF03](8_requisitos.md#rf03) | [CP1](2_solucao.md#cp1) | 3 | 1 | 1,50 |
+| [RF04](8_requisitos.md#rf04) | [CP1](2_solucao.md#cp1) | 4 | 4 | 2,89 |
+| [RF05](8_requisitos.md#rf05) | [CP2](2_solucao.md#cp2) | 4 | 4 | 1,83 |
+| [RF06](8_requisitos.md#rf06)| [CP3](2_solucao.md#cp3) | 4 | 3 | 1,78 |
+| [RF07](8_requisitos.md#rf07) | [CP3](2_solucao.md#cp3) | 3 | 3 | 1,61 |
+| [RF08](8_requisitos.md#rf08) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,72 |
+| [RF09](8_requisitos.md#rf09) | [CP3](2_solucao.md#cp3) | 4 | 3 | 1,50 |
+| [RF10](8_requisitos.md#rf10) | [CP3](2_solucao.md#cp3) | 4 | 4 | 2,06 |
+| [RF11](8_requisitos.md#rf11) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,50 |
+| [RF12](8_requisitos.md#rf12) | [CP3](2_solucao.md#cp3) | 4 | 4 | 2,22 |
+| [RF13](8_requisitos.md#rf13) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,72 |
+| [RF14](8_requisitos.md#rf14) | [CP3](2_solucao.md#cp3) | 4 | 4 | 3,39 |
+| [RF15](8_requisitos.md#rf15) | [CP3](2_solucao.md#cp3) | 3 | 3 | 1,67 |
+| [RF16](8_requisitos.md#rf16) | [CP3](2_solucao.md#cp3) | 2 | 2 | 1,56 |
+| [RF17](8_requisitos.md#rf17) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,61 |
+| [RF18](8_requisitos.md#rf18) | [CP4](2_solucao.md#cp4) | 4 | 3 | 2,06 |
+| [RF19](8_requisitos.md#rf19) | [CP4](2_solucao.md#cp4) | 4 | 2 | 1,61 |
+| [RF20](8_requisitos.md#rf20) | [CP4](2_solucao.md#cp4) | 4 | 2 | 2,22 |
+| [RF21](8_requisitos.md#rf21) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,44 |
+| [RF22](8_requisitos.md#rf22) | [CP4](2_solucao.md#cp4) | 4 | 3 | 1,50 |
+| [RF23](8_requisitos.md#rf23) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,89 |
+| [RF24](8_requisitos.md#rf24) | [CP4](2_solucao.md#cp4) | 4 | 2 | 1,39 |
+| [RF25](8_requisitos.md#rf25) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,72 |
+| [RF26](8_requisitos.md#rf26) | [CP4](2_solucao.md#cp4) | 4 | 4 | 2,00 |
+| [RF27](8_requisitos.md#rf27) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,39 |
+| [RF28](8_requisitos.md#rf28) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,94 |
+| [RF29](8_requisitos.md#rf29) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,44 |
+| [RF30](8_requisitos.md#rf30) | [CP5](2_solucao.md#cp5) | 4 | 3 | 2,11 |
+| [RF31](8_requisitos.md#rf31) | [CP5](2_solucao.md#cp5) | 3 | 2 | 2,33 |
+| [RF32](8_requisitos.md#rf32) | [CP5](2_solucao.md#cp5) | 2 | 3 | 1,94 |
+| [RF33](8_requisitos.md#rf33) | [CP6](2_solucao.md#cp6) | 4 | 4 | 1,56 |
+| [RF34](8_requisitos.md#rf34) | [CP6](2_solucao.md#cp6) | 4 | 4 | 1,61 |
+| [RF35](8_requisitos.md#rf35) | [CP6](2_solucao.md#cp6) | 2 | 2 | 1,78 |
+| [RF36](8_requisitos.md#rf36) | [CP3](2_solucao.md#cp3) | — | — | — |
 | RNF01 | Transversal — todas as CPs | 4 |-| 2 |
 | RNF02 | CP3 | 4 |-| 3 |
 | RNF03 | CP1 e CP3 | 4 |-| 2 |
@@ -180,10 +184,30 @@ Após todos os calculos, a tabela final ficou assim:
 | RNF09 | CP2 | 4 |-| 2 |
 | RNF10 | Transversal — todas as CPs | 3 |-| 3 |
 
+> O **RF36** (compartilhar experiências) foi separado do RF07 para manter a relação 1 para 1 com a US24. Ele ainda não passou pela avaliação de valor e esforço, que já considerou o RF07 com o compartilhamento incluído.
+
 
 
 ### 10.2.3 Matriz 4 x 4
 
+![Matriz 4x4 de valor de negócio e esforço técnico](../assets/matriz4x4.png)
+
+<!-- [Abrir a matriz no Figma](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=Dq32iZJOkZ0Vwe6r-1) -->
+
+Última atualização da imagem em 12/10/2026.
+
+**Legenda**
+
+| Valor | Valor de negócio (eixo vertical, avaliado com o cliente) | Esforço técnico (eixo horizontal, avaliado pela equipe) |
+| :---: | --- | --- |
+| 4 | Muito alto | Muito alto |
+| 3 | Alto | Alto |
+| 2 | Moderado | Moderado |
+| 1 | Baixo | Baixo |
+
+Os requisitos em rosa são os que entraram no MVP: os do quadrante superior esquerdo, de menor esforço técnico e maior valor de negócio. A exceção é o **RF14** (pagamento), primordial para a primeira entrega, e os **RNF02** e **RNF05**, fortemente relacionados a ele. O **RF36**, separado do RF07, ainda não foi posicionado na matriz.
+
+<!--
 Após a consolidação das avaliações de valor de negócio e esforço técnico, os requisitos funcionais foram posicionados em uma matriz **4 × 4**, permitindo visualizar conjuntamente a importância de cada requisito para o negócio e o esforço necessário para sua implementação.
 
 Para o posicionamento no eixo horizontal, o esforço técnico consolidado foi convertido para a escala de 1 a 4 conforme o valor obtido na avaliação técnica:
@@ -200,7 +224,6 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 *Matriz 4x4, em negrito são os que entrarão no MVP*
 
 
-<!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
 
 > Em rosa são os que posteriormente entraram no MVP do produto.
 
@@ -211,3 +234,4 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 A partir da matriz realizamos a definição do MVP baseado nos requisitos localizados no quadrante superior esquerdo, no qual encontram-se aqueles com menor esforço técnico e maior valor de negócio. 
 
 A unica exceção é o **RF14**, que apesar de ter um esforço técnico mais alto, é um requisito primordial nessa primeira entrega para o cliente. Portando o **RNF02** e o **RNF05** que eram fortes candidatos ao MVP também entrarão por serem fortemente relacionados ao requisito RF14.
+-->
