@@ -142,8 +142,8 @@ model Habilidade {
   id   String @id @default(cuid())
   nome String @unique
 
-  perfis        PerfilVoluntario[]
-  oportunidades Oportunidade[]
+  perfis        HabilidadeDoVoluntario[]
+  oportunidades HabilidadeDaOportunidade[]
 }
 
 model Projeto {
@@ -170,9 +170,20 @@ model PerfilVoluntario {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  habilidades  Habilidade[]
+  user         User                     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  habilidades  HabilidadeDoVoluntario[]
   candidaturas Candidatura[]
+}
+
+model HabilidadeDoVoluntario {
+  perfilId     String
+  habilidadeId String
+
+  perfil     PerfilVoluntario @relation(fields: [perfilId], references: [id], onDelete: Cascade)
+  habilidade Habilidade       @relation(fields: [habilidadeId], references: [id], onDelete: Cascade)
+
+  @@id([perfilId, habilidadeId])
+  @@index([habilidadeId])
 }
 
 // US13 / US14 / US21: a vaga publicada pelo gestor.
@@ -187,11 +198,22 @@ model Oportunidade {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  projeto      Projeto       @relation(fields: [projetoId], references: [id])
-  habilidades  Habilidade[] // habilidades requeridas
+  projeto      Projeto                    @relation(fields: [projetoId], references: [id])
+  habilidades  HabilidadeDaOportunidade[] // habilidades requeridas
   candidaturas Candidatura[]
 
   @@index([projetoId])
+}
+
+model HabilidadeDaOportunidade {
+  oportunidadeId String
+  habilidadeId   String
+
+  oportunidade Oportunidade @relation(fields: [oportunidadeId], references: [id], onDelete: Cascade)
+  habilidade   Habilidade   @relation(fields: [habilidadeId], references: [id], onDelete: Cascade)
+
+  @@id([oportunidadeId, habilidadeId])
+  @@index([habilidadeId])
 }
 
 // US16 / US18: o voluntário se candidata a uma vaga; o status é o funil.
