@@ -44,7 +44,7 @@
     - **Mockups e Protótipos de Baixa Fidelidade:** Esboços visuais e wireframes de telas para materialização de soluções estéticas e dinâmicas de interface. Essas técnicas e ferramentas permitem o uso de documentação simplificada e direta, trazendo mais eficiência ao desenvolvimento e ao processo de validação com os representantes do IBRADA (stakeholders).
 
 === "Verificação e Validação de Requisitos:"
-    - **Oficinas de [Validação Baseadas em Protótipos](../evidencias/oficina-validação.md) (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
+    - **Oficinas de [Validação Baseadas em Protótipos](../evidencias/oficina-validacao.md) (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
 
 
 === "Organização e Atualização de Requisitos:"
@@ -55,13 +55,14 @@
 
 === "Elicitação e Descoberta:"
     - **Retorno de testes, integrações e cliente:** qualquer comportamento não previsto será registrado em uma Issue ou ata, com evidência, origem e requisito afetado.
+    - "**Testes Exploratórios:** Investigação prática direcionada no código e no fluxo de execução da aplicação, focada em alguma funcionalidade, para descobrir potenciais bugs, desvendar contratos de APIs de terceiros etc.
 
 === "Análise e Consenso:"
     - **Análise de impacto:** a equipe classificará o achado como requisito novo, alteração, defeito ou esclarecimento e avaliará impacto em escopo, dependências, segurança e esforço.
     - **Decisão registrada:** aceitar, rejeitar ou postergar será decidido pela equipe e, quando envolver escopo, prioridade ou regra de negócio, validado pelo representante autorizado do IBRADA. A decisão, justificativa, responsável e data ficarão registrados.
 
 === "Declaração de Requisitos:"
-    - **Atualização dos artefatos:** achados aceitos serão descritos como RF, RNF, RN, história ou critério de aceitação e refletidos no catálogo, backlog, matriz de rastreabilidade e história afetada antes da implementação.
+    - **Atualização dos artefatos:** achados aceitos serão descritos como RNF, RN, história de usuário ou critério de aceitação. A mudança é formalizada e refletida no catálogo, backlog, matriz de rastreabilidade e história afetada antes da implementação.
 
 === "Verificação e Validação de Requisitos:"
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, completude técnica, verificabilidade e ausência de acoplamento com soluções específicas de design.
