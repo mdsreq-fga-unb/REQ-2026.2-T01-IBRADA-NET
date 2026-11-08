@@ -75,17 +75,17 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 
 A matriz e a árvore de rastreabilidade foram substituídas pela página [Rastreabilidade](../planejamento/rastreabilidade.md), em *Planejamento e Escopo*, que relaciona Temas → OEs, Épicos → CPs e User Stories → RFs, além das regras de negócio e dos requisitos não funcionais.
 
-<!--
+
 ## 8.4 Matriz de Rastreabilidade
 
 | Contribuição Principal | CP | VN | RFs/RNs | RNFs |
 | --- | --- | --- | --- | --- |
-| OE1 | CP1 | VN01 | RF01, RF02, RF03, RF04 | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
+| OE1 | CP1 | VN01 | RF01, RF02, RF03, RF20, RF04 | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
 | OE1 | CP2 | VN02 | RF05, RN01, RN02 | RNF01, RNF07, RNF09, RNF10 |
-| OE2 | CP3 | VN03 | RF06, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF36, RN03, RN04 | RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10 |
-| OE3 | CP4 | VN04 | RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF25, RF26, RF27, RF28, RF29, RN05 | RNF01, RNF04, RNF07, RNF08, RNF10 |
+| OE2 | CP3 | VN03 | RF06, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF20, RF29, RN03, RN04 | RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10 |
+| OE3 | CP4 | VN04 | RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF25, RF26, RF27, RF28, RF29, RN03, RN05 | RNF01, RNF04, RNF07, RNF08, RNF10 |
 | OE2 | CP5 | VN05 | RF30, RF31, RF32, RN06 | RNF01, RNF06, RNF07, RNF10 |
-| OE1 | CP6 | VN06 | RF33, RF34, RF35 | RNF01, RNF04, RNF07, RNF08, RNF10 |
+| OE1 | CP6 | VN06 | RF20, RF33, RF34, RF35 | RNF01, RNF04, RNF07, RNF08, RNF10 |
 
 ## 8.5 Árvore de Rastreabilidade
 
@@ -96,4 +96,3 @@ A matriz e a árvore de rastreabilidade foram substituídas pela página [Rastre
 ![Arvore de Rastreabilidade](../assets/arvore.png)
 
 > [Link da árvore de rastreabilidade](https://www.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&t=2ngK5C1yXCCQdzgd-1)
--->
