@@ -1,13 +1,4 @@
-site/
-./site/*
-!.gitkeep
-tmp/*
-./tmp/*
-
-# Environment variables
-.env
-.env.local
-
-# Logs and OS
-*.log
-.DS_Store
+node_modules/
+dist/
+build/
+*.tsbuildinfo
