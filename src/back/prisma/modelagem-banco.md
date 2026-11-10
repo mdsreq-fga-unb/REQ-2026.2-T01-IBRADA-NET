@@ -18,11 +18,9 @@ erDiagram
     Projeto ||--o{ Oportunidade : "gera vagas (US13)"
     PerfilVoluntario ||--o{ Candidatura : "se candidata (US16)"
     Oportunidade ||--o{ Candidatura : "recebe (US18)"
-
-    PerfilVoluntario ||--o{ HabilidadeDoVoluntario : "possui"
-    Habilidade ||--o{ HabilidadeDoVoluntario : "é possuída por"
-    Oportunidade ||--o{ HabilidadeDaOportunidade : "requer"
-    Habilidade ||--o{ HabilidadeDaOportunidade : "é requerida por"
+    PerfilVoluntario }o--o{ InteresseVoluntario : "tem interesse"
+    Categoria }o--o{ InteresseVoluntario : ""
+    Categoria ||--o{ Oportunidade : "possui"
 
     User {
         string id PK
@@ -89,19 +87,14 @@ erDiagram
         datetime createdAt
     }
 
-    Habilidade {
+    Categoria {
         string id PK
         string nome UK
     }
 
-    HabilidadeDoVoluntario {
-        string perfilId PK, FK
-        string habilidadeId PK, FK
-    }
-
-    HabilidadeDaOportunidade {
-        string oportunidadeId PK, FK
-        string habilidadeId PK, FK
+    InteresseVoluntario {
+        string idCategoria PK, FK
+        string idVoluntario PK, FK
     }
 
     Projeto {
@@ -119,9 +112,8 @@ erDiagram
         string userId FK, UK
         text bio
         string outros
-        text experiencias
-        text interesses
-        text disponibilidade
+        text educacaoNivel
+        StatusEducacao educacaoCompletude "COMPLETO | EM_ANDAMENTO"
         datetime createdAt
         datetime updatedAt
     }
@@ -129,10 +121,10 @@ erDiagram
     Oportunidade {
         string id PK
         string projetoId FK
+        string categoriaId FK
         string title
         text description
         string duracao
-        string disponibilidade
         boolean isOpen
         datetime createdAt
         datetime updatedAt
@@ -143,6 +135,7 @@ erDiagram
         string perfilId FK
         string oportunidadeId FK
         StatusCandidatura status "INSCRITO | EM_ANALISE | ENTREVISTA | APROVADO | REJEITADO"
+        boolean experienciaNaArea
         text mensagem
         datetime createdAt
         datetime updatedAt
@@ -151,7 +144,7 @@ erDiagram
 
 > `PedidoParceria` aparece sem linhas de relação de propósito: quem envia a solicitação é visitante, sem conta (US19).
 > `Candidatura` tem restrição única em (`perfilId`, `oportunidadeId`): ninguém se candidata duas vezes à mesma vaga.
-> As relações muitos-para-muitos com `Habilidade` usam tabelas de junção explícitas (`HabilidadeDoVoluntario` e `HabilidadeDaOportunidade`), com chave composta. Assim cada vínculo pode ganhar campos no futuro.
+> A relação muitos-para-muitos com `Categoria` e `PerfilVoluntario` usa a tabela de junção explícitas `InteresseVoluntario`, com chave composta. Assim o vínculo pode ganhar campos no futuro.
 
 ## Resumo por tema
 
@@ -159,7 +152,7 @@ erDiagram
 | --- | --- | --- |
 | Conta e LGPD | `User`, `ConsentRecord` | US04–US07, US17, US22, US23 |
 | Ecoturismo e reservas | `Experiencia`, `Booking`, `Payment` | US02, US03, US08–US12 |
-| Voluntariado | `Projeto`, `Oportunidade`, `Candidatura`, `PerfilVoluntario`, `Habilidade`, `HabilidadeDoVoluntario`, `HabilidadeDaOportunidade` | US13–US18, US21 |
+| Voluntariado | `Projeto`, `Oportunidade`, `Candidatura`, `PerfilVoluntario`, `Categoria`, `InteresseVoluntario` | US13–US18, US21 |
 | Parcerias | `PedidoParceria` | US19, US20 |
 
 ## Exclusão em cascata
@@ -168,7 +161,7 @@ erDiagram
 | --- | --- |
 | `ConsentRecord` | Cascade ao excluir `User` |
 | `PerfilVoluntario` | Cascade ao excluir `User` |
-| `HabilidadeDoVoluntario` / `HabilidadeDaOportunidade` | Cascade ao excluir `PerfilVoluntario`, `Oportunidade` ou `Habilidade` |
+| `InteresseVoluntario` | Cascade ao excluir `Categoria` ou `PerfilVoluntario` |
 | `Candidatura` | Cascade ao excluir `PerfilVoluntario` ou `Oportunidade` |
 | `Booking` | Sem cascade: impede excluir `User` ou `Experiencia` com reservas |
 | `Payment` | Sem cascade: impede excluir `Booking` com pagamentos |
@@ -184,3 +177,4 @@ erDiagram
 | `PaymentStatus` | PENDING, PAID, FAILED, REFUNDED |
 | `PartnershipStatus` | RECEIVED, IN_ANALYSIS, ACCEPTED, DECLINED |
 | `StatusCandidatura` | INSCRITO, EM_ANALISE, ENTREVISTA, APROVADO, REJEITADO |
+| `StatusEducacao` | COMPLETO, EM_ANDAMENTO |
