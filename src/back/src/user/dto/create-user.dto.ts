@@ -7,6 +7,13 @@ export enum UserRole {
   GESTOR = 'GESTOR',
 }
 
+// Adicionei um Enum restrito apenas para o cadastro público, para evitar que qualquer pessoa
+// consiga se cadastrar como GESTOR, que é um papel mais restrito.
+export enum PublicUserRole {
+  CLIENTE = 'CLIENTE',
+  VOLUNTARIO = 'VOLUNTARIO',
+}
+
 export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
@@ -25,10 +32,10 @@ export class CreateUserDto {
   @IsOptional()
   phone?: string;
 
-  //usei o Enum local na validação
-  @IsEnum(UserRole, { message: 'O papel deve ser CLIENTE, VOLUNTARIO ou GESTOR.' })
+  // subtitui o enum local na validação pelo PublicUserRole
+  @IsEnum(PublicUserRole, { message: 'O papel deve ser apenas CLIENTE ou VOLUNTARIO.' })
   @IsNotEmpty()
-  role: UserRole;
+  role: PublicUserRole;
 
   @IsBoolean()
   @IsNotEmpty({ message: 'É obrigatório aceitar os termos de uso (LGPD).' })

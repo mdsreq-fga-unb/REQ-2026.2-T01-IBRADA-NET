@@ -1,6 +1,6 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import { ConflictException, ForbiddenException, Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
-import { CreateUserDto } from './dto/create-user.dto.js';
+import { CreateUserDto , UserRole } from './dto/create-user.dto.js';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -8,6 +8,10 @@ export class UserService {
   constructor(private prisma: PrismaService) {}
 
   async create(dto: CreateUserDto) {
+    if ((dto.role as string) === UserRole.GESTOR) {
+      throw new ForbiddenException('Não é permitido criar um usuário com o papel de GESTOR via cadastro público.');
+    }
+
     const userExists = await this.prisma.user.findUnique({
       where: { email: dto.email },
     });
@@ -29,7 +33,7 @@ export class UserService {
         email: dto.email,
         passwordHash,
         phone: dto.phone,
-        role: roleStr,
+        role: dto.role,
         consents: {
           create: {
             termVersion: dto.lgpdVersion,
