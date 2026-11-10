@@ -38,6 +38,8 @@
 === "Análise e Consenso: "
     Análise e Consenso feita de forma constante por meio de reuniões de negociação e alinhamento com os representantes do IBRADA (stakeholders) para avaliar quais funcionalidades farão parte do prótotipo trabalhado. 
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, verificabilidade etc. dos requisitos levantados durante o planejamento.
+    - **Priorização MoSCoW:** Técnica primária para classificar os requisitos em Must, Should, Could, Won't Have, garantindo um rápido consenso com o IBRADA sobre o que é essencial para compor o portal nas primeiras iterações.
+    - **Matriz de Priorização 2x2 (Valor de Negócio vs. Esforço Técnico):** Plotagem gráfica para visualização das funcionalidades, permitindo identificar as candidatas ideais para cada incremento de entrega.
 
 
 === "Representação de Requisitos:"
@@ -136,7 +138,7 @@
     <tr>
       <td>Análise e Consenso</td>
       <td>Priorização de requisitos</td>
-      <td>Checklists de Qualidade de Requisitos + matriz de decisão de prioridade</td>
+      <td>Checklists de Qualidade de Requisitos, matriz de priorização e priorização MoSCoW </td>
       <td>Inspeção da qualidade e registro da prioridade com valor, esforço, dependências, justificativa, responsável e aprovação do cliente quando aplicável.</td>
     </tr>
     <tr>
