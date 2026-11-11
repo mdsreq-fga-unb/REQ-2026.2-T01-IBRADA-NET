@@ -112,7 +112,7 @@ erDiagram
         string userId FK, UK
         text bio
         string outros
-        NivelEducacao educacaoNivel "FUNDAMENTAL | MEDIO | GRADUACAO | POS_GRADUCAO | MESTRADO | DOUTORADO"
+        NivelEducacao educacaoNivel "FUNDAMENTAL | MEDIO | GRADUACAO | POS_GRADUACAO | MESTRADO | DOUTORADO"
         StatusEducacao educacaoCompletude "COMPLETO | EM_ANDAMENTO | INCOMPLETO"
         datetime createdAt
         datetime updatedAt
@@ -178,4 +178,4 @@ erDiagram
 | `PartnershipStatus` | RECEIVED, IN_ANALYSIS, ACCEPTED, DECLINED |
 | `StatusCandidatura` | INSCRITO, EM_ANALISE, ENTREVISTA, APROVADO, REJEITADO |
 | `StatusEducacao` | COMPLETO, EM_ANDAMENTO, INCOMPLETO |
-| `NivelEducacao` | FUNDAMENTAL, MEDIO, GRADUACAO, POS_GRADUCAO, MESTRADO, DOUTORADO |
+| `NivelEducacao` | FUNDAMENTAL, MEDIO, GRADUACAO, POS_GRADUACAO, MESTRADO, DOUTORADO |
