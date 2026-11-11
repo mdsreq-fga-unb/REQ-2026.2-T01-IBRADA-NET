@@ -25,6 +25,7 @@ export class RolesGuard implements CanActivate {
     const user = request.user; // Esse user foi injetado pelo JwtAuthGuard
 
     if (!user) {
+      this.logger.warn(`Acesso negado: requisição sem usuário autenticado em ${request.method} ${request.url}`);
       throw new ForbiddenException('Usuário não autenticado.');
     }
 

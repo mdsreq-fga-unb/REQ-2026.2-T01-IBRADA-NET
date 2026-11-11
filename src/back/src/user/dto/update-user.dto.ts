@@ -31,6 +31,7 @@ export class UpdateUserDto {
   outros?: string;
 
   @IsArray()
+  @IsString({ each: true })
   @IsOptional()
   habilidadeIds?: string[];
 }

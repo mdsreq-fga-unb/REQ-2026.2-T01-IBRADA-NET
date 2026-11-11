@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString, Matches, IsBoolean, IsOptional, IsEnum, IsArray } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, Matches, IsBoolean, IsOptional, IsEnum, IsArray, Equals } from 'class-validator';
 
 //criei o Enum localmente refletindo o que está no banco
 export enum UserRole {
@@ -33,12 +33,13 @@ export class CreateUserDto {
   phone?: string;
 
   // subtitui o enum local na validação pelo PublicUserRole
+  // Opcional: sem papel, o cadastro é de CLIENTE (padrão do banco). GESTOR é rejeitado.
+  @IsOptional()
   @IsEnum(PublicUserRole, { message: 'O papel deve ser apenas CLIENTE ou VOLUNTARIO.' })
-  @IsNotEmpty()
-  role: PublicUserRole;
+  role?: PublicUserRole;
 
   @IsBoolean()
-  @IsNotEmpty({ message: 'É obrigatório aceitar os termos de uso (LGPD).' })
+  @Equals(true, { message: 'É obrigatório aceitar os termos de uso (LGPD).' })
   lgpdAccepted: boolean;
 
   @IsString()
@@ -68,6 +69,7 @@ export class CreateUserDto {
   outros?: string;
 
   @IsArray()
+  @IsString({ each: true })
   @IsOptional()
   habilidadeIds?: string[];
 }

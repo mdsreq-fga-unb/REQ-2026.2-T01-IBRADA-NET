@@ -4,3 +4,6 @@ build/
 *.tsbuildinfo
 
 src/generated/
+
+# Segredos locais (nunca versionar)
+.env

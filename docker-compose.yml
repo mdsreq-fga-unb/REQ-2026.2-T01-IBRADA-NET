@@ -32,6 +32,11 @@ services:
       DATABASE_URL: "mysql://ibrada_user:ibrada_password@db:3306/ibradanet"
       OBSERVE_APP_KEY: ${OBSERVE_APP_KEY:-}
       OBSERVE_APP_SECRET: ${OBSERVE_APP_SECRET:-}
+      JWT_SECRET: ${JWT_SECRET:?Defina JWT_SECRET no .env (ex.: openssl rand -hex 32)}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      GESTOR_EMAIL: ${GESTOR_EMAIL:-}
+      GESTOR_PASSWORD: ${GESTOR_PASSWORD:-}
+      GESTOR_NAME: ${GESTOR_NAME:-}
     volumes:
       - ./src/back:/app
       - /app/node_modules
