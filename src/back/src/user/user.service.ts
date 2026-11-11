@@ -2,6 +2,7 @@ import { ConflictException, ForbiddenException, Injectable } from '@nestjs/commo
 import { PrismaService } from '../prisma/prisma.service.js';
 import { CreateUserDto , UserRole } from './dto/create-user.dto.js';
 import * as bcrypt from 'bcrypt';
+import { UpdateUserDto } from './dto/update-user.dto.js';
 
 @Injectable()
 export class UserService {
@@ -64,7 +65,7 @@ export class UserService {
     return this.prisma.user.findUnique({ where: { email } });
   }
 
-  async update(userId: string, data: any) {
+  async update(userId: string, data: UpdateUserDto) {
     return this.prisma.user.update({
       where: { id: userId },
       data,
