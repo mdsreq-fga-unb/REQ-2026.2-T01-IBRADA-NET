@@ -45,9 +45,19 @@ enum StatusCandidatura {
   REJEITADO
 }
 
-enum EducacaoCompletude {
+enum NivelEducacao {
+  FUNDAMENTAL
+  MEDIO
+  GRADUACAO
+  POS_GRADUCAO
+  MESTRADO
+  DOUTORADO
+}
+
+enum StatusEducacao {
   COMPLETO
   EM_ANDAMENTO
+  INCOMPLETO
 }
 
 // Uma tabela só para login (cliente, voluntário e gestor).
@@ -147,7 +157,6 @@ model Categoria {
   oportunidades        Oportunidade[]
 }
 
-// Relação n:n entre Categoria e PerfilVoluntario.
 model InteresseVoluntario {
   idCategoria  String
   idVoluntario String
@@ -173,17 +182,17 @@ model Projeto {
 
 // US15: perfil do voluntário (1:1 com o usuário).
 model PerfilVoluntario {
-  id                 String              @id @default(cuid())
-  userId             String              @unique
-  bio                String?             @db.Text
+  id                 String          @id @default(cuid())
+  userId             String          @unique
+  bio                String?         @db.Text
   outros             String? // habilidades que não estão na lista
-  educacaoNivel      String?             @db.Text
-  educacaoCompletude EducacaoCompletude?
-  createdAt          DateTime            @default(now())
-  updatedAt          DateTime            @updatedAt
+  educacaoNivel      NivelEducacao?
+  educacaoCompletude StatusEducacao?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
 
-  user       User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  interesses InteresseVoluntario[]
+  user         User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  interesses   InteresseVoluntario[]
   candidaturas Candidatura[]
 }
 
@@ -209,14 +218,14 @@ model Oportunidade {
 
 // US16 / US18: o voluntário se candidata a uma vaga; o status é o funil.
 model Candidatura {
-  id                 String            @id @default(cuid())
-  perfilId           String
-  oportunidadeId     String
-  status             StatusCandidatura @default(INSCRITO)
-  experienciaNaArea  Boolean           @default(false)
-  mensagem           String?           @db.Text // apresentação opcional do voluntário
-  createdAt          DateTime          @default(now())
-  updatedAt          DateTime          @updatedAt
+  id                String            @id @default(cuid())
+  perfilId          String
+  oportunidadeId    String
+  status            StatusCandidatura @default(INSCRITO)
+  experienciaNaArea Boolean           @default(false)
+  mensagem          String?           @db.Text // apresentação opcional do voluntário
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
 
   perfil       PerfilVoluntario @relation(fields: [perfilId], references: [id], onDelete: Cascade)
   oportunidade Oportunidade     @relation(fields: [oportunidadeId], references: [id], onDelete: Cascade)
