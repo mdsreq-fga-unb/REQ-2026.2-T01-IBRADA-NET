@@ -3,6 +3,8 @@ import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { App } from 'supertest/types.js';
 import { AppModule } from './../src/app.module.js';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 describe('AppController (e2e)', () => {
   let app: INestApplication<App>;

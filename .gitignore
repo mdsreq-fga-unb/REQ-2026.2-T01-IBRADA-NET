@@ -1,13 +1,9 @@
-site/
-./site/*
-!.gitkeep
-tmp/*
-./tmp/*
+node_modules/
+dist/
+build/
+*.tsbuildinfo
 
-# Environment variables
+src/generated/
+
+# Segredos locais (nunca versionar)
 .env
-.env.local
-
-# Logs and OS
-*.log
-.DS_Store
