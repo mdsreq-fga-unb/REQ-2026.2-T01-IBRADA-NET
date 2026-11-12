@@ -55,6 +55,7 @@ services:
     environment:
       PORT: 3000
       NEXT_PUBLIC_API_URL: "http://localhost:3001"
+      WATCHPACK_POLLING: "true"
     volumes:
       - ./src/front:/app
       - /app/node_modules
