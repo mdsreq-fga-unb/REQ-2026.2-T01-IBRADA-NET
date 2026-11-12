@@ -36,6 +36,7 @@
 |12/10/2026|1.18|Adição das lições aprendidas da unidade 2|Arthur Scartezini, Gabriel Guedes|
 |13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe
 |27/10/2026|2.1 |Correção dos RNFs tópico 8| Cauã
+|12/11/2026|2.2|Revisão e adequação da Visão de Produto e Projeto conforme os apontamentos da Issue #21|Cauã|
 
 *Tabela 1: Tabela de versionamento*
 
@@ -49,14 +50,14 @@
 
 ## 1.2 Introdução ao Negócio e Contexto
 
-O Instituto Brasileiro de Direito Ambiental - IBRADA é uma organização sem fins lucrativos que tem como missão promover a educação, a paz, a ética, a cidadania, o direito e a justiça em defesa da conservação e recuperação do meio ambiente. A dinâmica atual do instituto se concentra principalmente em oferecer consultoria e elaboração dos documentos necessários para a regularização ambiental e fundiária de propriedades rurais no DF, venda de pacotes de viagens ou trilhas que promovem o ecoturismo, e a inclusão socioprodutiva de comunidades carentes, com foco em soluções de agroecologia e turismo de base comunitária.
+O Instituto Brasileiro de Direito Ambiental - IBRADA é uma organização sem fins lucrativos que tem como missão promover a educação, a paz, a ética, a cidadania, o direito e a justiça em defesa da conservação e recuperação do meio ambiente. A dinâmica atual do instituto se concentra principalmente na consultoria e elaboração dos documentos necessários para a regularização ambiental e fundiária de propriedades rurais no DF e na inclusão socioprodutiva de comunidades carentes, com foco em soluções de agroecologia e turismo de base comunitária.
 
 O público-alvo da organização se divide em duas frentes principais de interação:
 
-- Beneficiários/Clientes: Inclui os interessados que pagam pelos pacotes de ecoturismo, as comunidades indígenas e tradicionais (beneficiários não pagantes da inclusão socioprodutiva) e os agricultores familiares (que participam da inclusão socioprodutiva e/ou pagam um valor simbólico pelos serviços de regularização de suas terras).
-- Parceiros: Composto por voluntários que colaboram com o trabalho diário, além de apoiadores e patrocinadores responsáveis por injetar recursos financeiros, materiais e equipamentos.	
+- Beneficiários/Clientes: Inclui os interessados em trilhas e futuros pacotes de ecoturismo, as comunidades indígenas e tradicionais (beneficiários não pagantes da inclusão socioprodutiva) e os agricultores familiares (que participam da inclusão socioprodutiva e/ou pagam um valor simbólico pelos serviços de regularização de suas terras).
+- Parceiros: Inclui pessoas interessadas em colaborar como voluntárias e apoiadores e patrocinadores que podem contribuir com recursos financeiros, materiais e equipamentos. O recebimento de manifestações de interesse não constitui um programa de voluntariado estruturado.
 
-A estratégia da organização utiliza metodologias participativas para garantir o protagonismo local e adaptar tecnologias sociais e ambientais aos biomas brasileiros. Atualmente, o IBRADA possui um site que limita a instituição, não traz os resultados necessários de engajamento com voluntários, patrocinadores e apoiadores, e não recruta com eficiência os interessados em viagens e trilhas de ecoturismo, somado a isso, as informações se encontram dispersas pelas páginas e links no site, o que gera gargalos significativos. Essa dificuldade impacta a venda de serviços de ecoturismo e a captação de novos clientes para regularização fundiária.
+A estratégia da organização utiliza metodologias participativas para garantir o protagonismo local e adaptar tecnologias sociais e ambientais aos biomas brasileiros. Atualmente, o IBRADA possui um site que limita a instituição, não traz os resultados necessários de engajamento com voluntários, patrocinadores e apoiadores, e não recruta com eficiência os interessados em viagens e trilhas de ecoturismo, somado a isso, as informações se encontram dispersas pelas páginas e links no site, o que gera gargalos significativos. Essa dificuldade limita a organização de uma futura oferta comercial de pacotes de ecoturismo e a captação de novos clientes para regularização fundiária. A plataforma deverá apoiar tanto a melhoria da comunicação dos serviços existentes quanto a estruturação dos novos processos de comercialização e voluntariado.
 
 ## 1.3 Rich Picture
 
@@ -70,7 +71,7 @@ A estratégia da organização utiliza metodologias participativas para garantir
 
 O IBRADA atua em diferentes frentes, como consultorias, ecoturismo, preservação ambiental e inclusão socioprodutiva. Entretanto, atualmente enfrenta dificuldades para centralizar e organizar a comunicação e o relacionamento com seus diferentes públicos. A atual infraestrutura digital não atende adequadamente às necessidades da organização, enquanto parte significativa da comunicação ocorre por meio de canais informais. Além disso, as informações sobre os serviços e projetos encontram-se dispersas, dificultando o acesso e a compreensão por parte dos interessados. 
 
-Esse cenário reduz a capacidade do IBRADA de divulgar seus serviços, atrair novos clientes, captar voluntários e apoiadores, e ampliar o alcance de suas iniciativas. Dessa forma, o problema central identificado é: atualmente, alguém conhece um projeto somente pela divulgação no Instagram, e procura o IBRADA por meio do WhatsApp divulgado no site que já existe, entretanto a instituição não possui um canal digital centralizado que apresente seus projetos e serviços adequadamente, receba e acompanhe seus diferentes públicos e permita medir esse relacionamento. Com isso, o interesse desses públicos não se converte de forma organizada em ações concretas, como contratação de serviços, participação como voluntário e apoio aos projetos da instituição. Em relação aos voluntários, o IBRADA atualmente não possui nenhum voluntário, pois não existe um programa de voluntariado estruturado. Quem deseja colaborar envie um e-mail à instituição, sem triagem ou acompanhamento, o que torna a taxa de conversão e o número de desistências impossíveis de mensurar. Isso significa que a dificuldade não está em reter voluntários, mas na ausência de um fluxo para captá-los e acompanhá-los.
+Esse cenário reduz a capacidade do IBRADA de divulgar seus serviços, atrair novos clientes, captar voluntários e apoiadores, e ampliar o alcance de suas iniciativas. Dessa forma, o problema central identificado é: atualmente, alguém conhece um projeto somente pela divulgação no Instagram, e procura o IBRADA por meio do WhatsApp divulgado no site que já existe, entretanto a instituição não possui um canal digital centralizado que apresente seus projetos e serviços adequadamente, receba e acompanhe seus diferentes públicos e permita medir esse relacionamento. Com isso, o interesse desses públicos não se converte de forma organizada em ações concretas, como contratação de serviços, participação como voluntário e apoio aos projetos da instituição. Em relação aos voluntários, o IBRADA atualmente não possui nenhum voluntário, pois não existe um programa de voluntariado estruturado. Quem deseja colaborar envia um e-mail à instituição, sem triagem ou acompanhamento, o que torna a taxa de conversão e o número de desistências impossíveis de mensurar. Isso significa que a dificuldade não está em reter voluntários, mas na ausência de um fluxo para captá-los e acompanhá-los.
 
 No ecoturismo, nenhum pacote foi vendido até o momento. As atividades realizadas no DF e no Pará foram trilhas voluntárias oferecidas pela direção, e somente no início de 2026 a atividade de Operadora de Turismo foi incluída no estatuto, o que passou a permitir a venda de pacotes. Não há registro do número de contatos recebidos nem de acessos ao site, o que impede avaliar a eficácia da divulgação.
 
@@ -98,15 +99,15 @@ O quadro a seguir apresenta os principais stakeholders identificados e suas resp
 | Stakeholder | Relação com a solução | Interesse principal | Influência |
 |:---:|:---:|:---:|:---:|
 | Presidência (Guilherme, Nelson e Luiz) | Cliente real; valida requisitos e entregas. O presidente produz o conteúdo | Validar requisitos, decisões e avaliar as entregas realizadas ao longo do desenvolvimento | Alta |
-| Diretoria: cientista social e geólogo | Responsáveis pelos pacotes e trilhas | Operar os pacotes de ecoturismo | Média |
+| Diretoria: cientista social e geólogo | Atuam nas trilhas e na preparação da oferta de pacotes | Organizar a futura operação comercial de ecoturismo | Média |
 | Diretor financeiro | Responsável pela parte financeira, junto com o presidente | Ter controle e registro das receitas dos pacotes e dos recursos captados | Média |
 | Responsáveis pelo conteúdo (presidente e um estudante de Eng.Software) | O presidente produz o conteúdo e o estudante  atualiza | Manter o conteúdo organizado e atualizado | Média |
-| Interessados em ecoturismo | Usuários finais pagantes dos pacotes e trilhas | Acessar informações de pacotes de ecoturismo e realizar compras com clareza e agilidade | Média |
+| Interessados em ecoturismo | Potenciais clientes dos pacotes de ecoturismo | Acessar informações de pacotes de ecoturismo e realizar compras com clareza e agilidade | Média |
 | Comunidades indígenas | Beneficiários das iniciativas e serviços disponibilizados pelo IBRADA | Ter acesso facilitado, com menor burocracia, às informações de iniciativas sociais e serviços de regularização de terras | Média |
 | Comunidades tradicionais | Beneficiários e participantes de iniciativas de inclusão socioprodutiva e turismo de base comunitária | Acessar informações sobre projetos, iniciativas e serviços oferecidos pelo IBRADA de forma clara e acessível | Média |
 | Agricultores familiares | Beneficiários das iniciativas de inclusão socioprodutiva do IBRADA | Obter informações e acesso facilitado às iniciativas de inclusão socioprodutiva | Média |
 | Apoiadores e patrocinadores | Parceiros que injetam recursos financeiros e materiais  | Encontrar informações de forma rápida para apoiar os projetos e aumentar a visibilidade de suas ações | Alta |
-| Voluntários | Usuários que colaboram com a operação diária  | Encontrar informações claras sobre oportunidades de ajuda e engajar-se nos projetos facilmente | Média |
+| Voluntários | Pessoas interessadas em colaborar, cujo processo de participação será estruturado  | Encontrar informações claras sobre oportunidades de ajuda e engajar-se nos projetos facilmente | Média |
 | Equipe de desenvolvimento | Responsável pela construção técnica do sistema | Unificar as funcionalidades para operar a solução digital como portal institucional seguro e acessível | Média |
 
 *Tabela 2: Tabela de stakeholders*
@@ -118,7 +119,7 @@ O quadro a seguir apresenta os principais stakeholders identificados e suas resp
 
 Dentro do público-alvo do IBRADA temos perfis distintos com necessidades diferentes, entre eles:
 
-* **Interessados em Ecoturismo:** Público pagante que busca adquirir pacotes de viagens ou trilhas que promovem o ecoturismo e experiências imersivas.
+* **Interessados em Ecoturismo:** Público interessado em trilhas e na futura aquisição de pacotes de viagens ou trilhas que promovem o ecoturismo e experiências imersivas.
 * **Comunidades Indígenas e Tradicionais:** Beneficiários diretos e não pagantes. O foco deste segmento é a integração de seus saberes ancestrais com os projetos do IBRADA, focados em agroecologia e preservação ambiental.
 * **Voluntários, Patrocinadores e Apoiadores:** Voluntários para o projeto e investidores (pessoas físicas ou empresas) que fornecem recursos financeiros, materiais ou equipamentos. 
 * **Agricultores familiares:** Beneficiários da inclusão sócio-produtiva.

@@ -66,7 +66,7 @@ Para que uma User Story seja considerado concluído ("Done"), a equipe e o clien
 
     * **2-Demonstração:** Apresentação da funcionalidade rodando em ambiente de homologação.
 
-    * **3-Aceite Institucional:** Validação formal pelo cliente ou proxy, confirmando o alinhamento com os objetivos de negócio e as decisões operacionais/institucionais.
+    * **3-Aceite Institucional:** Validação formal pelos representantes autorizados do cliente, confirmando o alinhamento com os objetivos de negócio e as decisões operacionais/institucionais. A avaliação pelo proxy permanece provisória e requer confirmação institucional conforme a DoR da seção 9.1.
 
 * **A documentação foi atualizada?:** A documentação do projeto deve ser atualizada, fornecendo evidências e provas da entrega realizada ( atualização de README, GitHub Pages e GitHub Projects).
 

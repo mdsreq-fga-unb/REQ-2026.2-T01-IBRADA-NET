@@ -1,17 +1,17 @@
 # 8 REQUISITOS DE SOFTWARE
 
-A apuração dos requisitos está descrita na [Disponibilização dos requisitos](../entrega-atividades/atividade1.md)
+A apuração dos requisitos está descrita na [Disponibilização dos requisitos](../evidencias/atividade1.md)
 
-A classificação desses requisitos e a apuração da declaração se econtra na [atividade de declaração](../entrega-atividades/atividade5.md) 
+A classificação desses requisitos e a apuração da declaração se econtra na [atividade de declaração](../evidencias/atividade5.md)
 
 ## 8.1 Lista de Requisitos Funcionais
 
 | ID | Nome | Descrição | Relação |
 | --- | --- | --- | --- |
-| <span id="rf01"></span>RF01 | Cadastrar projetos | Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais em um dashboard. | CP1 |
-| <span id="rf02"></span>RF02 | Editar projetos | Permitir que os gestores possam editar informações sobre os projetos do dashboard. | CP1 |
-| <span id="rf03"></span>RF03 | Remover projetos | Permitir que os gestores possam remover os projetos do dashboard. | CP1 |
-| <span id="rf04"></span>RF04 | Exibir resultados e dados de impacto dos projetos | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos. | CP1 |
+| <span id="rf01"></span>RF01 | Cadastrar projetos | Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais com controle de visibilidade para que possam ser discutidos internamente antes da divulgação pública. | CP1 |
+| <span id="rf02"></span>RF02 | Editar projetos | Permitir que os gestores editem as informações dos projetos, considerando o controle de visibilidade para distinguir o conteúdo em discussão interna daquele disponibilizado ao público. | CP1 |
+| <span id="rf03"></span>RF03 | Remover projetos | Permitir que os gestores removam projetos do painel, distinguindo essa ação do controle de visibilidade de um projeto mantido para discussão interna. | CP1 |
+| <span id="rf04"></span>RF04 | Exibir resultados e dados de impacto dos projetos | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos disponibilizados para divulgação, distinguindo resultados alcançados de impactos pretendidos e preservando as informações mantidas para discussão interna. | CP1 |
 | <span id="rf05"></span>RF05 | Apresentar formulário de triagem | Permitir que o visitante (possível turista, apoiador ou usuário buscando regulamentação ambiental) preencha um formulário de triagem guiado com campos simplificados para identificar o tipo de solicitação e seu perfil, armazenando os dados no sistema e o encaminhando corretamente. | CP2 |
 | <span id="rf06"></span>RF06 | Visualizar catálogo de ecoturismo | Permitir aos usuários visualizar o catálogo de experiências de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores. | CP3 |
 | <span id="rf07"></span>RF07 | Detalhar experiências | Permitir que o usuário visualize informações completas de uma experiência de ecoturismo selecionada. | CP3 |
@@ -36,7 +36,7 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf26"></span>RF26 | Realizar login de voluntário | Permitir que voluntários cadastrados acessem o sistema mediante validação de credenciais. | CP4 |
 | <span id="rf27"></span>RF27 | Encerrar sessão de voluntários | Permitir que voluntários encerrem sua sessão ativa no sistema. | CP4 |
 | <span id="rf28"></span>RF28 | Visualizar candidatos | Permitir que gestores visualizem todos os candidatos a uma oportunidade em funil. | CP4 |
-| <span id="rf29"></span>RF29 | Registrar consentimento de uso de dados | Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito. | CP4 |
+| <span id="rf29"></span>RF29 | Registrar consentimento de uso de dados | Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito. | CP3, CP4 |
 | <span id="rf30"></span>RF30 | Configurar preferências de notificação | Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse. | CP5 |
 | <span id="rf31"></span>RF31 | Exibir estatísticas de alcance das notificações | Permitir que o gestor visualize estatísticas de alcance das notificações enviadas. | CP5 |
 | <span id="rf32"></span>RF32 | Gerenciar envio de notificações | Permitir que o gestor gerencie notificações enviadas. | CP5 |
@@ -45,13 +45,15 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf35"></span>RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
 | <span id="rf36"></span>RF36 | Compartilhar experiências | Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada. | CP3 |
 
+A necessidade de controle de visibilidade em RF01–RF04 foi registrada na [ata de 28/09/2026](../atas-reuniao/unidade-2/28-09.md). O estado de rascunho é uma proposta ainda pendente de avaliação e validação. Não estão definidos o estado inicial, os responsáveis pela publicação, o efeito da edição de conteúdo publicado ou as condições de ocultação e remoção. Esses detalhes deverão ser refinados nas histórias existentes, conforme a DoR, sem criação de regras operacionais presumidas. A [ata de 11/10/2026](../atas-reuniao/unidade-2/11-10.md) mantém RF01–RF04 fora do MVP e prevê a apresentação estática inicial dos projetos.
+
 ## 8.2 Lista de Regras de Negócio
 
 | ID | Nome | Descrição | Relação |
 | :--- | :--- | :--- | :---: |
 | <span id="rn01"></span>RN01 | Redirecionar para atendimento via WhatsApp | Usuários devem ser redirecionados para o WhatsApp do IBRADA após responder uma triagem, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem. | CP2 |
 | <span id="rn02"></span>RN02 | Encaminhamento para Departamentos | Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno. | CP2 |
-| <span id="rn03"></span>RN03 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
+| <span id="rn03"></span>RN03 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3, CP4 |
 | <span id="rn04"></span>RN04 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
 | <span id="rn05"></span>RN05 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc.). | CP4 |
 | <span id="rn06"></span>RN06 | Notificações de oportunidades e projetos | Notificações devem ser enviadas por email de forma automática aos usuários cadastrados que correspondam aos interesses declarados em seus perfis. | CP5 |
@@ -71,28 +73,29 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rnf09"></span>RNF09 | Usabilidade do formulário de triagem | O formulário de triagem inicial deve poder ser concluído, sem criação de conta, por pelo menos 90% dos usuários com baixa familiaridade digital em teste de usabilidade com o protótipo, considerando concluído quando o usuário chega ao encaminhamento adequado sem ajuda externa. | Usabilidade | CP2 |
 | <span id="rnf10"></span>RNF10 | Compatibilidade entre navegadores | O sistema deve apresentar paridade funcional e visual, sem quebras de layout, nas duas últimas versões estáveis do Chrome, Firefox, Safari e Edge. | Suportabilidade | Transversal (Todas as CPs) |
 
-## 8.4 Rastreabilidade
-
-A matriz e a árvore de rastreabilidade foram substituídas pela página [Rastreabilidade](../planejamento/rastreabilidade.md), em *Planejamento e Escopo*, que relaciona Temas → OEs, Épicos → CPs e User Stories → RFs, além das regras de negócio e dos requisitos não funcionais.
-
+<span id="84-rastreabilidade"></span>
 
 ## 8.4 Matriz de Rastreabilidade
+
+A página [Rastreabilidade](../planejamento/rastreabilidade.md), em *Planejamento e Escopo*, detalha os vínculos do MVP entre Temas → OEs, Épicos → CPs e User Stories → RFs. A matriz abaixo complementa essa visão com o catálogo geral do produto, incluindo itens fora do MVP.
 
 | Contribuição Principal | CP | VN | RFs/RNs | RNFs |
 | --- | --- | --- | --- | --- |
 | OE1 | CP1 | VN01 | RF01, RF02, RF03, RF20, RF04 | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
 | OE1 | CP2 | VN02 | RF05, RN01, RN02 | RNF01, RNF07, RNF09, RNF10 |
-| OE2 | CP3 | VN03 | RF06, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF20, RF29, RN03, RN04 | RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10 |
+| OE2 | CP3 | VN03 | RF06, RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF36, RF20, RF29, RN03, RN04 | RNF01, RNF02, RNF03, RNF04, RNF05, RNF06, RNF07, RNF08, RNF10 |
 | OE3 | CP4 | VN04 | RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF25, RF26, RF27, RF28, RF29, RN03, RN05 | RNF01, RNF04, RNF07, RNF08, RNF10 |
 | OE2 | CP5 | VN05 | RF30, RF31, RF32, RN06 | RNF01, RNF06, RNF07, RNF10 |
 | OE1 | CP6 | VN06 | RF20, RF33, RF34, RF35 | RNF01, RNF04, RNF07, RNF08, RNF10 |
+
+Os vínculos de RF20 com outras CPs representam dependências de gestão de acesso; sua origem permanece na CP4 e sua implementação dinâmica continua fora do MVP. A presença de RNF06 e RNF10 na matriz geral também não os inclui no MVP, conforme a ata de 11/10.
 
 ## 8.5 Árvore de Rastreabilidade
 
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
-> Imagem para controle de versão (última atualização 28/09/2026)
+> Registro histórico de 28/09/2026. A imagem não reflete necessariamente os refinamentos posteriores, como a separação de RF36. Para os vínculos vigentes, consultar a matriz acima e a página de Rastreabilidade.
 ![Arvore de Rastreabilidade](../assets/arvore.png)
 
 > [Link da árvore de rastreabilidade](https://www.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&t=2ngK5C1yXCCQdzgd-1)

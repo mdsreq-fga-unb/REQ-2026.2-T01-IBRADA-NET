@@ -7,7 +7,7 @@ A versão finalizada se encontra explicada em [9. Backlog do produto](../documen
 
 ## 1. Avaliação do valor de negócio
 
-Durante a [reunião](../atas-reuniao/ata2.md) foi apurado a pontuação de valor de negócio baseado na medida **MoSCoW** adaptado de 1 a 4 juntamente ao cliente.
+Durante a [reunião](../atas-reuniao/unidade-2/28-09.md) foi apurado a pontuação de valor de negócio baseado na medida **MoSCoW** adaptado de 1 a 4 juntamente ao cliente.
 
 ### 1.1 Critérios e escala de avaliação
 

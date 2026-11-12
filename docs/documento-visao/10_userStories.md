@@ -36,7 +36,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 - [ ] O sistema deve apresentar um formulário de triagem guiado, com campos simplificados, que possa ser concluído sem cadastro.
 - [ ] O sistema deve identificar o tipo de solicitação e o perfil do visitante a partir das respostas e armazenar os dados informados.
-- [ ] Após o envio, o sistema deve encaminhar o visitante ao canal ou departamento correspondente às respostas fornecidas.
+- [ ] Após o envio, o sistema deve encaminhar o visitante ao WhatsApp do IBRADA, com mensagem pré-configurada correspondente às respostas e direcionamento ao departamento pertinente, conforme RN01 e RN02.
 - [ ] O sistema deve retornar uma mensagem de erro caso a triagem não possa ser concluída ou algum campo obrigatório não seja preenchido.
 
 ### DoR da história
@@ -256,6 +256,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 - [ ] O sistema deve exibir o status do pagamento retornado pelo gateway (aprovado, pendente ou recusado).
 - [ ] Caso o pagamento seja aprovado, o sistema deve confirmar a reserva e disponibilizar o comprovante da transação.
 - [ ] Caso o pagamento falhe ou seja recusado, o sistema não deve confirmar a vaga e deve retornar uma mensagem de erro.
+- [ ] O sistema deve atualizar a reserva correspondente ao receber a notificação de pagamento do provedor e impedir que notificações repetidas sejam processadas em duplicidade, conforme RNF05.
 
 ### DoR da história
 
@@ -378,7 +379,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 - [ ] A senha do cadastro deve ter no mínimo 8 caracteres, contendo um caractere maiúsculo, um número e um caractere especial.
 - [ ] O sistema deve verificar se o email já foi registrado.
 - [ ] O sistema deve retornar uma mensagem de erro caso o cadastro não seja realizado com sucesso.
-- [ ] Durante o cadastro, o sistema deve permitir se cadastrar como voluntário e registrar habilidades e interesses do usuário.
+- [ ] Durante o cadastro, o sistema deve permitir se cadastrar como voluntário, selecionar palavras-chave de habilidades e registrar experiências, interesses e disponibilidade, conforme RF23 e a ata de 11/10/2026.
 - [ ] Caso o usuário já possua um login salvo de um acesso anterior, o sistema deve autenticá-lo automaticamente ao concluir o perfil de voluntário e direcioná-lo à página principal; caso contrário, deve direcioná-lo à página de login, como no cadastro de cliente (US04).
 
 ### DoR da história
@@ -571,7 +572,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 ### Critérios de aceitação
 
 - [ ] Durante o cadastro, o sistema deve exibir uma opção para ver os termos de uso de dados pessoais.
-- [ ] O sistema deve permitir que o usuário aceite os termos de uso de dados pessoais durante o cadastro.
+- [ ] O sistema deve permitir que o usuário aceite explicitamente os termos de uso de dados pessoais durante o cadastro e registrar data, hora e versão do termo aceito, conforme RF29.
 - [ ] O sistema deve bloquear o cadastro de uma nova conta caso os termos de uso de dados pessoais não sejam aceitos.
 
 ### DoR da história

@@ -48,8 +48,7 @@
   function usApplying(id) {   // US a que uma CP, RN ou RNF se aplica
     var eps = Object.keys(D.epicos).filter(function (e) {
       var ep = D.epicos[e];
-      return ep.cp === id || ep.rn.indexOf(id) >= 0 || ep.rnf.indexOf(id) >= 0 ||
-        (D.rn[id] && D.rn[id].cps.indexOf(ep.cp) >= 0) || (D.rnf[id] && D.rnf[id].cps.indexOf(ep.cp) >= 0);
+      return ep.cp === id || ep.rn.indexOf(id) >= 0 || ep.rnf.indexOf(id) >= 0;
     });
     return D.us.filter(function (u) { return u.epicos.some(function (e) { return eps.indexOf(e) >= 0; }); }).map(function (u) { return u.id; });
   }
@@ -170,10 +169,10 @@
       var cps = u.epicos.map(function (e) { return D.epicos[e].cp; }).filter(function (v, i, a) { return a.indexOf(v) === i; });
       k = "User story · " + D.temas[ep0.tema].nome; t = u.id + " — " + u.nome;
       h = '<div class="mapa-story">' + esc(u.historia) + "</div>" +
-        "<h4>Épico</h4>" + chipsOf(u.epicos) + "<h4>Característica de produto</h4>" + chipsOf(cps) +
+        "<h4>Requisito funcional</h4>" + docLink("8_requisitos", u.rf, u.rf) + "<h4>Épico</h4>" + chipsOf(u.epicos) + "<h4>Característica de produto</h4>" + chipsOf(cps) +
         "<h4>Critérios de aceitação</h4><ul class=\"mapa-check\">" +
         u.criterios.map(function (c, i) { return '<li><label><input type="checkbox" data-us="' + u.id + '" data-k="c' + i + '"' + (ck["c" + i] ? " checked" : "") + "><span>" + esc(c) + "</span></label></li>"; }).join("") + "</ul>" +
-        '<span class="mapa-src">' + (u.issue ? 'Fonte: <a href="' + u.issueUrl + '" target="_blank" rel="noopener">issue #' + u.issue + "</a>" + (u.adaptado ? " (último critério reformulado)" : "") : "Critérios escritos no formato das issues; a história ainda não tem issue própria.") + "</span>" +
+        '<span class="mapa-src">' + (u.issue ? 'Fonte: <a href="' + u.issueUrl + '" target="_blank" rel="noopener">issue #' + u.issue + "</a>" + (u.adaptado ? " (critérios complementados na documentação; atualização da Issue pendente)" : "") : "Critérios escritos no formato das issues; a história ainda não tem issue própria.") + "</span>" +
         '<h4>Protótipo</h4><div class="mapa-proto"><img src="' + BASE + 'assets/prototipos/' + u.id.toLowerCase() + '.png" alt="Protótipo da ' + u.id + '" onerror="this.parentNode.classList.add(\'vazio\');this.remove()"><span>Espaço reservado para a captura do protótipo.</span></div>' +
         "<h4>Regras de negócio</h4>" + (rn.length ? chipsOf(rn) : '<p class="mapa-nada">Nenhuma regra de negócio específica.</p>') +
         "<h4>Requisitos não funcionais</h4>" + chipsOf(rnf) +
