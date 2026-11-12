@@ -20,8 +20,8 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf10"></span>RF10 | Realizar login de cliente | Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais. | CP3 |
 | <span id="rf11"></span>RF11 | Encerrar sessão de cliente | Permitir que clientes encerrem sua sessão ativa no sistema. | CP3 |
 | <span id="rf12"></span>RF12 | Selecionar pacote de ecoturismo | Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados. | CP3 |
-| <span id="rf13"></span>RF13 | Confirmar reserva | Permitir que o cliente confirme a reserva antes do checkout. | CP3 |
-| <span id="rf14"></span>RF14 | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 |
+| <span id="rf13"></span>RF13 | Confirmar reserva | Permitir que o cliente revise e confirme os dados da reserva antes do checkout. | CP3 |
+| <span id="rf14"></span>RF14 | Pagar reserva | Permitir que o cliente pague a reserva de pacotes de ecoturismo, confirmando sua participação quando o pagamento for aprovado. | CP3 |
 | <span id="rf15"></span>RF15 | Cadastrar experiências de ecoturismo | Permitir à equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 |
 | <span id="rf16"></span>RF16 | Editar experiências de ecoturismo | Permitir à equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 |
 | <span id="rf17"></span>RF17 | Alterar disponibilidade de experiência de ecoturismo | Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas. | CP3 |
@@ -39,22 +39,22 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf29"></span>RF29 | Registrar consentimento de uso de dados | Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito. | CP4 |
 | <span id="rf30"></span>RF30 | Configurar preferências de notificação | Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse. | CP5 |
 | <span id="rf31"></span>RF31 | Exibir estatísticas de alcance das notificações | Permitir que o gestor visualize estatísticas de alcance das notificações enviadas. | CP5 |
-| <span id="rf32"></span>RF32 | Gerenciar envio de notificações | Permitir que o gestor gerencie notificações enviadas. | CP5 |
+| <span id="rf32"></span>RF32 | Gerenciar critérios de envio de notificações | Permitir que o gestor gerencie os critérios para o envio de notificações para limitar ou aumentar o alcance, como catégorias relacionadas e dados específicos do usuário (ex.: apenas usuários com menos de 40 anos). | CP5 |
 | <span id="rf33"></span>RF33 | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 |
 | <span id="rf34"></span>RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 |
 | <span id="rf35"></span>RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
 | <span id="rf36"></span>RF36 | Compartilhar experiências | Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada. | CP3 |
+| <span id="rf37"></span>RF37 | Enviar notificações automatizadas | Enviar notificações automatizadas para usuários cujas preferências correspondem ao seu assunto. | CP5 |
 
 ## 8.2 Lista de Regras de Negócio
 
 | ID | Nome | Descrição | Relação |
 | :--- | :--- | :--- | :---: |
-| <span id="rn01"></span>RN01 | Redirecionar para atendimento via WhatsApp | Usuários devem ser redirecionados para o WhatsApp do IBRADA após responder uma triagem, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem. | CP2 |
-| <span id="rn02"></span>RN02 | Encaminhamento para Departamentos | Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno. | CP2 |
-| <span id="rn03"></span>RN03 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
-| <span id="rn04"></span>RN04 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
-| <span id="rn05"></span>RN05 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc.). | CP4 |
-| <span id="rn06"></span>RN06 | Notificações de oportunidades e projetos | Notificações devem ser enviadas por email de forma automática aos usuários cadastrados que correspondam aos interesses declarados em seus perfis. | CP5 |
+| <span id="rn01"></span>RN01 | Redirecionar para atendimento via WhatsApp | O encaminhamento após a triagem deve ser feito via WhatsApp para o departamento específico. | CP2 |
+| <span id="rn02"></span>RN02 | Cadastro de email de usuário. | Cada email registrado pode ter apenas um usuário vinculado a ele. | CP3 |
+| <span id="rn03"></span>RN03 | Pagamento via gateway externo | Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento. | CP3 |
+| <span id="rn04"></span>RN04 | Filtro de candidatos | O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc). Essa filtragem deve ser feita de forma automatica pelo sistema e deve listar os cantidos em uma classificação disponibilizada para os gestores.  | CP4 |
+| <span id="rn05"></span>RN05 | Notificações de oportunidades e projetos | Notificações do sistema devem ser enviadas via email. | CP5 |
 
 ## 8.3 Lista de Requisitos Não Funcionais
 

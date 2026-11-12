@@ -199,6 +199,7 @@ Após todos os calculos, a tabela final ficou assim:
 | [RF34](8_requisitos.md#rf34) | [CP6](2_solucao.md#cp6) | 4 | 4 | 1,61 |
 | [RF35](8_requisitos.md#rf35) | [CP6](2_solucao.md#cp6) | 2 | 2 | 1,78 |
 | [RF36](8_requisitos.md#rf36) | [CP3](2_solucao.md#cp3) | — | — | — |
+| [RF37](8_requisitos.md#rf37) | [CP5](2_solucao.md#cp3) | 3 | 2 | 2,11 |
 | RNF01 | Transversal — todas as CPs | 4 |-| 2 |
 | RNF02 | CP3 | 4 |-| 3 |
 | RNF03 | CP1 e CP3 | 4 |-| 2 |
