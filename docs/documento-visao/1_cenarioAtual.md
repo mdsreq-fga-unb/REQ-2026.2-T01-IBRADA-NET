@@ -34,8 +34,9 @@
 |12/10/2026|1.16|Adição do glossário com siglas de rastreabilidade do backlog|Gabriel|
 |12/10/2026|1.17|Adição do backlog|Zayra Moraes|
 |12/10/2026|1.18|Adição das lições aprendidas da unidade 2|Arthur Scartezini, Gabriel Guedes|
-|13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe
-|27/10/2026|2.1 |Correção dos RNFs tópico 8| Cauã
+|13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe|
+|27/10/2026|2.1 |Correção dos RNFs tópico 8| Cauã|
+|28/10/2026| |Pequenos replanejamentos e ajustes no cronograma|Gabriel Guedes|
 
 *Tabela 1: Tabela de versionamento*
 

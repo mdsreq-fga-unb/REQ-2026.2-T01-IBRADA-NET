@@ -131,19 +131,10 @@ nav:
   # - Especificação de Requisitos:
   #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
-  # - Documentação:
-
-  - Evidências: 
-    - Classificação dos Requisitos: evidencias/classificacao-requisitos.md
-    - Análise de Domínio: evidencias/analise-dominio.md
-    - Oficinas de Validação: evidencias/oficina-validacao.md
-    - Atividades:
-      - Unidade 2:
-        - Atividade 1: evidencias/atividade1.md
-        - Atividade 2: evidencias/atividade2.md
-        - Atividade 3: evidencias/atividade3.md
-        - Atividade 4: evidencias/atividade4.md
-        # - Atividade 5: evidencias/atividade5.md
+  - Documentação:
+      - Glossário: documentacao/glossario.md
+      - Classificação dos Requisitos: entrega-atividades/classificacao-requisitos.md
+  #     - FAQ: documentacao/faq.md
 
   - Glossário: documentacao/glossario.md 
          
