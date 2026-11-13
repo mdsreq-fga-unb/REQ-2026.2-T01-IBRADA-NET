@@ -3,6 +3,13 @@
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 const TOKEN_KEY = "token";
+const USER_KEY = "user";
+
+// Disparado quando o back recusa o token (401): o AuthProvider escuta e limpa o estado.
+export const AUTH_EXPIRED_EVENT = "auth:expired";
+
+export type Role = "CLIENTE" | "VOLUNTARIO" | "GESTOR";
+export type AuthUser = { id: string; name: string; role: Role };
 
 export function getToken(): string | null {
     if (typeof window === "undefined") return null;
@@ -15,6 +22,26 @@ export function setToken(token: string) {
 
 export function clearToken() {
     localStorage.removeItem(TOKEN_KEY);
+}
+
+export function getStoredUser(): AuthUser | null {
+    if (typeof window === "undefined") return null;
+    try {
+        const raw = localStorage.getItem(USER_KEY);
+        return raw ? (JSON.parse(raw) as AuthUser) : null;
+    } catch {
+        return null;
+    }
+}
+
+function setStoredUser(user: AuthUser) {
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+}
+
+// Descarta token e usuário (logout ou sessão expirada).
+export function clearSession() {
+    clearToken();
+    localStorage.removeItem(USER_KEY);
 }
 
 export class ApiError extends Error {
@@ -32,14 +59,14 @@ type ApiOptions = {
     body?: unknown;
 };
 
+const FALLBACK_ERROR = "Não foi possível concluir a requisição.";
 
-// TODO:revisar isso
-function getErrorMessage(body: unknown, status: number): string {
-    if(Array.isArray((body as { message: string[] }).message)) {
-        return (body as { message: string[] }).message.join(", ");
-    }
-    return (body as { message: string }).message || "Não foi possível concluir a requisição.";
-    
+// O Nest devolve { message: string | string[] }; o ValidationPipe manda uma lista.
+function getErrorMessage(body: unknown): string {
+    const message = (body as { message?: unknown } | null)?.message;
+    if (Array.isArray(message)) return message.join(" ");
+    if (typeof message === "string" && message) return message;
+    return FALLBACK_ERROR;
 }
 
 function parseJson(text: string): unknown {
@@ -71,9 +98,12 @@ export async function api<T = unknown>(path: string, { method = "GET", body }: A
     const data = text ? parseJson(text) : null;
 
     if (!res.ok) {
-        // Token enviado e recusado: expirou ou é inválido, então descartamos.
-        if (res.status === 401 && token) clearToken();
-        throw new ApiError(res.status, getErrorMessage(data, res.status));
+        // Token enviado e recusado: expirou ou é inválido, então descartamos a sessão.
+        if (res.status === 401 && token) {
+            clearSession();
+            window.dispatchEvent(new Event(AUTH_EXPIRED_EVENT));
+        }
+        throw new ApiError(res.status, getErrorMessage(data));
     }
 
     return data as T;
@@ -81,7 +111,7 @@ export async function api<T = unknown>(path: string, { method = "GET", body }: A
 
 export type LoginResponse = {
     access_token: string;
-    user: { id: string; name: string; role: "CLIENTE" | "VOLUNTARIO" | "GESTOR" };
+    user: AuthUser;
 };
 
 // Faz o login e guarda o token. Devolve o usuário (o AuthProvider vai guardá-lo no estado).
@@ -91,5 +121,39 @@ export async function login(email: string, password: string) {
         body: { email, password },
     });
     setToken(res.access_token);
+    setStoredUser(res.user);
     return res.user;
+}
+
+// JWT é stateless: o encerramento efetivo é descartar o token aqui. A chamada ao back
+// é só informativa, então uma falha nela não impede o logout.
+export async function logout() {
+    try {
+        await api("/auth/logout", { method: "POST" });
+    } catch {
+        // ignorado de propósito
+    }
+    clearSession();
+}
+
+// Corpo de POST /auth/register (CreateUserDto do back).
+export type RegisterPayload = {
+    name: string;
+    email: string;
+    password: string;
+    phone?: string;
+    dataNascimento: string; // AAAA-MM-DD
+    cidade: string;
+    estado: string;
+    lgpdAccepted: boolean;
+    lgpdVersion: string;
+    // TODO(voluntário): role: "VOLUNTARIO" + bio, outros, educacaoNivel,
+    // educacaoCompletude e categoriaIds quando a aba de voluntário existir.
+};
+
+export async function register(payload: RegisterPayload) {
+    return api<{ id: string; name: string; email: string; role: Role }>("/auth/register", {
+        method: "POST",
+        body: payload,
+    });
 }
