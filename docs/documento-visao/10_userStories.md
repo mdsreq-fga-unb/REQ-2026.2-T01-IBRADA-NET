@@ -79,7 +79,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 **História de usuário**
 
-> Como visitante, quero visualizar as informações detalhadas de um pacote de ecoturismo selecionado, para planejar minha participação com precisão.
+> Como visitante, quero visualizar as informações detalhadas de um pacote de ecoturismo selecionado, para planejar minha participação com precisão e poder compartilha-lá.
 
 ### Critérios de aceitação
 
@@ -135,6 +135,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 - [ ] O sistema deve verificar se os dados preenchidos obedecem às regras de seu campo antes do salvamento.
 - [ ] O sistema deve retornar uma mensagem de erro caso a edição não seja concluída e uma mensagem de sucesso caso os dados sejam salvos.
 
+<!--
 ### DoR da história
 
 - [ ] Atende integralmente à DoR da Seção 9.1 e ao checklist definido no início deste documento.
