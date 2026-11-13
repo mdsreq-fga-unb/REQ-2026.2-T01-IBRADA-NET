@@ -1713,6 +1713,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-stories/us38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US38 — Receber notificações de interesse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3408,13 +3436,13 @@
 <tr>
 <td><span id="rf13"></span>RF13</td>
 <td>Confirmar reserva</td>
-<td>Permitir que o cliente confirme a reserva antes do checkout.</td>
+<td>Permitir que o cliente revise e confirme os dados da reserva antes do checkout.</td>
 <td>CP3</td>
 </tr>
 <tr>
 <td><span id="rf14"></span>RF14</td>
 <td>Pagar reserva</td>
-<td>Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo.</td>
+<td>Permitir que o cliente pague a reserva de pacotes de ecoturismo, confirmando sua participação quando o pagamento for aprovado.</td>
 <td>CP3</td>
 </tr>
 <tr>
@@ -3521,8 +3549,8 @@
 </tr>
 <tr>
 <td><span id="rf32"></span>RF32</td>
-<td>Gerenciar envio de notificações</td>
-<td>Permitir que o gestor gerencie notificações enviadas.</td>
+<td>Gerenciar critérios de envio de notificações</td>
+<td>Permitir que o gestor gerencie os critérios para o envio de notificações para limitar ou aumentar o alcance, como catégorias relacionadas e dados específicos do usuário (ex.: apenas usuários com menos de 40 anos).</td>
 <td>CP5</td>
 </tr>
 <tr>
@@ -3549,6 +3577,12 @@
 <td>Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada.</td>
 <td>CP3</td>
 </tr>
+<tr>
+<td><span id="rf37"></span>RF37</td>
+<td>Enviar notificações automatizadas</td>
+<td>Enviar notificações automatizadas para usuários cujas preferências correspondem ao seu assunto.</td>
+<td>CP5</td>
+</tr>
 </tbody>
 </table>
 <h2 id="82-lista-de-regras-de-negocio">8.2 Lista de Regras de Negócio</h2>
@@ -3565,37 +3599,31 @@
 <tr>
 <td style="text-align: left;"><span id="rn01"></span>RN01</td>
 <td style="text-align: left;">Redirecionar para atendimento via WhatsApp</td>
-<td style="text-align: left;">Usuários devem ser redirecionados para o WhatsApp do IBRADA após responder uma triagem, carregando uma mensagem pré-configurada correspondente às respostas fornecidas na triagem.</td>
+<td style="text-align: left;">O encaminhamento após a triagem deve ser feito via WhatsApp para o departamento específico.</td>
 <td style="text-align: center;">CP2</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span id="rn02"></span>RN02</td>
-<td style="text-align: left;">Encaminhamento para Departamentos</td>
-<td style="text-align: left;">Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno.</td>
-<td style="text-align: center;">CP2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span id="rn03"></span>RN03</td>
 <td style="text-align: left;">Cadastro de email de usuário.</td>
 <td style="text-align: left;">Cada email registrado pode ter apenas um usuário vinculado a ele.</td>
 <td style="text-align: center;">CP3</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span id="rn04"></span>RN04</td>
+<td style="text-align: left;"><span id="rn03"></span>RN03</td>
 <td style="text-align: left;">Pagamento via gateway externo</td>
 <td style="text-align: left;">Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento.</td>
 <td style="text-align: center;">CP3</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span id="rn05"></span>RN05</td>
+<td style="text-align: left;"><span id="rn04"></span>RN04</td>
 <td style="text-align: left;">Filtro de candidatos</td>
-<td style="text-align: left;">O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc.).</td>
+<td style="text-align: left;">O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc). Essa filtragem deve ser feita de forma automatica pelo sistema e deve listar os cantidos em uma classificação disponibilizada para os gestores.</td>
 <td style="text-align: center;">CP4</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span id="rn06"></span>RN06</td>
+<td style="text-align: left;"><span id="rn05"></span>RN05</td>
 <td style="text-align: left;">Notificações de oportunidades e projetos</td>
-<td style="text-align: left;">Notificações devem ser enviadas por email de forma automática aos usuários cadastrados que correspondam aos interesses declarados em seus perfis.</td>
+<td style="text-align: left;">Notificações do sistema devem ser enviadas via email.</td>
 <td style="text-align: center;">CP5</td>
 </tr>
 </tbody>
