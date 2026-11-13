@@ -4,6 +4,8 @@ O Backlog do Produto foi dividido em duas visões para facilitar a análise. A t
 
 ### Escopo do MVP (Primeira Entrega)
 
+O MVP mantém as 24 histórias selecionadas e o fluxo de reserva e pagamento, incluindo RF14/US10. Conforme a [ata de 11/10/2026](../atas-reuniao/unidade-2/11-10.md), RF01–RF04/US25–US27 e US29, RF30–RF32/US34–US36 e RNF06/RNF10 ficam fora desse recorte. Os projetos serão apresentados estaticamente, com resumo e link para o PDF. O controle de visibilidade integra o refinamento da gestão dinâmica futura; o estado de rascunho permanece em avaliação, sem inclusão automática no MVP.
+
 | Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
 | --- | --- | --- | --- | --- | --- |
 | [T01](../planejamento/rastreabilidade.md#t01) | [EP01](../planejamento/rastreabilidade.md#ep01) | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
@@ -11,7 +13,7 @@ O Backlog do Produto foi dividido em duas visões para facilitar a análise. A t
 | [T02](../planejamento/rastreabilidade.md#t02) | [EP03](../planejamento/rastreabilidade.md#ep03) | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
 | [T02](../planejamento/rastreabilidade.md#t02) | [EP04](../planejamento/rastreabilidade.md#ep04) | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
 | [T02](../planejamento/rastreabilidade.md#t02) | [EP05](../planejamento/rastreabilidade.md#ep05) | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP06](../planejamento/rastreabilidade.md#ep06) | Conta e perfil do voluntário | US15, US17, US22, US23 | — | RNF01, RNF04, RNF08 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP06](../planejamento/rastreabilidade.md#ep06) | Conta e perfil do voluntário | US15, US17, US22, US23 | RN03 | RNF01, RNF04, RNF08 |
 | [T03](../planejamento/rastreabilidade.md#t03) | [EP07](../planejamento/rastreabilidade.md#ep07) | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
 | [T03](../planejamento/rastreabilidade.md#t03) | [EP08](../planejamento/rastreabilidade.md#ep08) | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
 | [T04](../planejamento/rastreabilidade.md#t04) | [EP09](../planejamento/rastreabilidade.md#ep09) | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
@@ -48,7 +50,7 @@ Os itens do backlog foram originados a partir das características de produto, d
 
 O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes; a legenda se encontra no [glossário](../documentacao/glossario.md).
 
-A rastreabilidade é mantida em um único lugar, a página [Rastreabilidade](../planejamento/rastreabilidade.md) (*Planejamento e Escopo*), e cada [User Story](../user-stories/us01.md) aponta para os itens já existentes nesta documentação em vez de repeti-los. Os vínculos seguem três níveis, do mais estratégico ao mais próximo da implementação:
+A rastreabilidade do MVP é detalhada na página [Rastreabilidade](../planejamento/rastreabilidade.md) (*Planejamento e Escopo*), e cada [User Story](../user-stories/us01.md) aponta para os itens já existentes nesta documentação em vez de repeti-los. Os vínculos seguem três níveis, do mais estratégico ao mais próximo da implementação:
 
 | Nível do backlog | Relaciona-se com | Como se lê |
 | --- | --- | --- |
@@ -153,7 +155,7 @@ Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que va
     | **3** | A equipe precisa desenvolver conhecimentos relevantes |
     | **4** | A equipe ainda não possui os conhecimentos ou recursos necessários |
 
-[Tabelas com todos os valores detalhados antes de calcular as médias](../entrega-atividades/classificacao-requisitos.md) 
+[Tabelas com todos os valores detalhados antes de calcular as médias](../evidencias/classificacao-requisitos.md)
 
 ### 10.2.2 Tabela de critérios
 
@@ -233,7 +235,7 @@ Após todos os calculos, a tabela final ficou assim:
 
 **Transição de Requisitos para User Stories**
 
-Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as **User Stories (US)**. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, **cada US herdou diretamente o valor de negócio e o esforço técnico exatos de seu RF de origem**. Isso permitiu reaproveitar a avaliação matemática detalhada sem necessidade de reestimar o escopo.
+Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as **User Stories (US)**. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, as histórias representadas reutilizam as avaliações registradas de seus RFs de origem. A US24/RF36 é uma exceção: o compartilhamento estava incluído na avaliação anterior de RF07 e ainda não tem avaliação separada. A US24 permanece no MVP conforme o backlog, embora não apareça na imagem; sua posição dependerá de refinamento pela equipe, sem duplicação automática de esforço ou atribuição presumida de pontuação.
 
 Os Requisitos Não Funcionais (RNF) foram removidos da visualização isolada na matriz. Eles não deixaram de existir, mas mudaram de lugar: a complexidade e as restrições impostas por eles agora compõem os **Critérios de Aceite** e as validações técnicas dentro das próprias User Stories que eles impactam.
 

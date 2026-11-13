@@ -1,5 +1,7 @@
 # Visão do Produto e Projeto
 
+> **Registro histórico da proposta inicial (agosto de 2026).** As descrições de vendas de pacotes, atuação de voluntários e objetivos deste arquivo refletem a compreensão inicial e não representam o cenário vigente. O IBRADA ainda não comercializa pacotes nem possui programa estruturado de voluntariado. Consultar o [cenário refinado](1_cenarioAtual.md) e a [solução proposta vigente](2_solucao.md).
+
 ## Controle de versão
 
 |Versão|Data|Descrição| Autor (es)|
@@ -46,15 +48,13 @@ A perpetuação desse gargalo digital gera as seguintes consequências diretas p
 
 O acúmulo desses problemas compromete a organização interna do instituto, pois a escassez de recursos dificulta a continuidade do trabalho de uma organização sem fins lucrativos. A Figura a seguir, apresenta o diagrama de Ishikawa contendo as causas (organizados pelos 6M’s) e o problema do IBRADA:
 
-![Diagrama de Ishikawa](../assets/ishikawa.png)
-*Figura 2: Diagrama de Ishikawa. Elaborado por Vinicius SOBRENOME*
+*Figura 2: Diagrama de Ishikawa. Elaborado por Vinicius SOBRENOME (referência histórica; o arquivo original não está disponível no repositório). Consultar o [diagrama vigente](1_cenarioAtual.md#14-identificacao-da-oportunidade-ou-problema).*
 
 ###  1.6 Mapa de Stakeholders 
 
 Os principais stakeholders do projeto são: Guilherme Sampaio Scartezini, Nelson Vicente e Luiz Freitas Jr, representando o cliente na presidência da instituição e sendo os responsáveis diretos por validar os requisitos e entregas do sistema; os interessados em ecoturismo, que atuarão como clientes pagantes consumindo pacotes de viagens e trilhas; as comunidades indígenas e tradicionais e agricultores familiares, caracterizados como beneficiários das iniciativas de inclusão socioprodutiva e serviços de regularização ambiental; os parceiros voluntários, que colaboram com o trabalho diário da organização; os apoiadores e patrocinadores, que injetam recursos financeiros, materiais e equipamentos necessários para a sobrevivência do instituto; e a equipe de desenvolvimento, responsável por viabilizar tecnicamente a centralização das informações em um portal institucional engajador e e-commerce transacional.
 
-![ Mapa de Stakeholders](../assets/stakeholders.png)
-*Figura 3:  Mapa de Stakeholders. Elaborado por Igor SOBRENOME*
+*Figura 3: Mapa de Stakeholders. Elaborado por Igor SOBRENOME (referência histórica; o arquivo original não está disponível no repositório). Consultar o [mapa vigente](1_cenarioAtual.md#16-mapa-de-stakeholders).*
 
 A seguir, é apresentado um quadro resumo dos stakeholders.
 

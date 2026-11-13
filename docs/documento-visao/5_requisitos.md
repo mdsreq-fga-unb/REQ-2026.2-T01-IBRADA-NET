@@ -44,7 +44,7 @@
     - **Mockups e Protótipos de Baixa Fidelidade:** Esboços visuais e wireframes de telas para materialização de soluções estéticas e dinâmicas de interface. Essas técnicas e ferramentas permitem o uso de documentação simplificada e direta, trazendo mais eficiência ao desenvolvimento e ao processo de validação com os representantes do IBRADA (stakeholders).
 
 === "Verificação e Validação de Requisitos:"
-    - **Oficinas de [Validação Baseadas em Protótipos](../evidencias/oficina-validação.md) (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
+    - **Oficinas de [Validação Baseadas em Protótipos](../evidencias/oficina-validacao.md) (Prototype Walkthroughs):** Sessões de navegação assistida e walkthroughs onde apresentamos o design das soluções interativas diretamente aos representantes do IBRADA para obtenção de feedback imediato.
 
 
 === "Organização e Atualização de Requisitos:"
