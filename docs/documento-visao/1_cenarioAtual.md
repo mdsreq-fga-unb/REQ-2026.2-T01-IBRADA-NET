@@ -36,7 +36,12 @@
 |12/10/2026|1.18|Adição das lições aprendidas da unidade 2|Arthur Scartezini, Gabriel Guedes|
 |13/10/2026|2.0 |Entrega Unidade 2| Toda a equipe
 |27/10/2026|2.1 |Correção dos RNFs tópico 8| Cauã
-|12/11/2026|2.2|Revisão e adequação da Visão de Produto e Projeto|Cauã|
+|12/11/2026|2.2 |Ajustes em Cenário Atual e Intervenção Social|Cauã|
+|12/11/2026|2.3 |Ajustes em Estratégias e Requisitos|Cauã|
+|13/11/2026|2.4 |Ajustes em UserStories e Mapa de rastreabilidade|Cauã|
+
+
+
 
 *Tabela 1: Tabela de versionamento*
 
@@ -55,7 +60,7 @@ O Instituto Brasileiro de Direito Ambiental - IBRADA é uma organização sem fi
 O público-alvo da organização se divide em duas frentes principais de interação:
 
 - Beneficiários/Clientes: Inclui os interessados em trilhas e futuros pacotes de ecoturismo, as comunidades indígenas e tradicionais (beneficiários não pagantes da inclusão socioprodutiva) e os agricultores familiares (que participam da inclusão socioprodutiva e/ou pagam um valor simbólico pelos serviços de regularização de suas terras).
-- Parceiros: Inclui pessoas interessadas em colaborar como voluntárias e apoiadores e patrocinadores que podem contribuir com recursos financeiros, materiais e equipamentos. O recebimento de manifestações de interesse não constitui um programa de voluntariado estruturado.
+- Parceiros: Inclui pessoas interessadas em colaborar como voluntárias e apoiadores e patrocinadores que podem contribuir com recursos financeiros, materiais e equipamentos. 
 
 A estratégia da organização utiliza metodologias participativas para garantir o protagonismo local e adaptar tecnologias sociais e ambientais aos biomas brasileiros. Atualmente, o IBRADA possui um site que limita a instituição, não traz os resultados necessários de engajamento com voluntários, patrocinadores e apoiadores, e não recruta com eficiência os interessados em viagens e trilhas de ecoturismo, somado a isso, as informações se encontram dispersas pelas páginas e links no site, o que gera gargalos significativos. Essa dificuldade limita a organização de uma futura oferta comercial de pacotes de ecoturismo e a captação de novos clientes para regularização fundiária. A plataforma deverá apoiar tanto a melhoria da comunicação dos serviços existentes quanto a estruturação dos novos processos de comercialização e voluntariado.
 

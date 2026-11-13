@@ -24,7 +24,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF05 |
+| Requisito de origem | [RF05](8_requisitos.md#rf05) |
 | Tema | T01 — Atendimento e Triagem |
 | Épico | EP01 — Triagem e direcionamento |
 
@@ -36,7 +36,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 - [ ] O sistema deve apresentar um formulário de triagem guiado, com campos simplificados, que possa ser concluído sem cadastro.
 - [ ] O sistema deve identificar o tipo de solicitação e o perfil do visitante a partir das respostas e armazenar os dados informados.
-- [ ] Após o envio, o sistema deve encaminhar o visitante ao WhatsApp do IBRADA, com mensagem pré-configurada correspondente às respostas e direcionamento ao departamento pertinente, conforme RN01 e RN02.
+- [ ] Após o envio, o sistema deve encaminhar o visitante ao WhatsApp do IBRADA, com mensagem pré-configurada correspondente às respostas e direcionamento ao departamento pertinente, conforme [RN01](8_requisitos.md#rn01) e [RN02](8_requisitos.md#rn02).
 - [ ] O sistema deve retornar uma mensagem de erro caso a triagem não possa ser concluída ou algum campo obrigatório não seja preenchido.
 
 ### DoR da história
@@ -49,7 +49,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF06 |
+| Requisito de origem | [RF06](8_requisitos.md#rf06) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP02 — Descoberta de experiências e pacotes |
 
@@ -73,7 +73,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF07 |
+| Requisito de origem | [RF07](8_requisitos.md#rf07) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP02 — Descoberta de experiências e pacotes |
 
@@ -96,7 +96,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF08 |
+| Requisito de origem | [RF08](8_requisitos.md#rf08) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP03 — Conta do cliente |
 
@@ -122,7 +122,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF09 |
+| Requisito de origem | [RF09](8_requisitos.md#rf09) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP03 — Conta do cliente |
 
@@ -145,7 +145,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF10 |
+| Requisito de origem | [RF10](8_requisitos.md#rf10) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP03 — Conta do cliente |
 
@@ -169,7 +169,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF11 |
+| Requisito de origem | [RF11](8_requisitos.md#rf11) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP03 — Conta do cliente |
 
@@ -193,7 +193,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF12 |
+| Requisito de origem | [RF12](8_requisitos.md#rf12) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP04 — Reserva e pagamento |
 
@@ -218,7 +218,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF13 |
+| Requisito de origem | [RF13](8_requisitos.md#rf13) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP04 — Reserva e pagamento |
 
@@ -242,7 +242,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF14 |
+| Requisito de origem | [RF14](8_requisitos.md#rf14) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP04 — Reserva e pagamento |
 
@@ -256,7 +256,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 - [ ] O sistema deve exibir o status do pagamento retornado pelo gateway (aprovado, pendente ou recusado).
 - [ ] Caso o pagamento seja aprovado, o sistema deve confirmar a reserva e disponibilizar o comprovante da transação.
 - [ ] Caso o pagamento falhe ou seja recusado, o sistema não deve confirmar a vaga e deve retornar uma mensagem de erro.
-- [ ] O sistema deve atualizar a reserva correspondente ao receber a notificação de pagamento do provedor e impedir que notificações repetidas sejam processadas em duplicidade, conforme RNF05.
+- [ ] O sistema deve atualizar a reserva correspondente ao receber a notificação de pagamento do provedor e impedir que notificações repetidas sejam processadas em duplicidade, conforme [RNF05](8_requisitos.md#rnf05).
 
 ### DoR da história
 
@@ -268,7 +268,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF15 |
+| Requisito de origem | [RF15](8_requisitos.md#rf15) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP05 — Gestão de experiências e pacotes |
 
@@ -293,7 +293,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF17 |
+| Requisito de origem | [RF17](8_requisitos.md#rf17) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP05 — Gestão de experiências e pacotes |
 
@@ -317,7 +317,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF18 |
+| Requisito de origem | [RF18](8_requisitos.md#rf18) |
 | Tema | T03 — Voluntariado |
 | Épico | EP08 — Gestão de oportunidades e candidatos |
 
@@ -342,7 +342,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF22 |
+| Requisito de origem | [RF22](8_requisitos.md#rf22) |
 | Tema | T03 — Voluntariado |
 | Épico | EP07 — Descoberta e candidatura |
 
@@ -365,7 +365,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF23 |
+| Requisito de origem | [RF23](8_requisitos.md#rf23) |
 | Tema | T03 — Voluntariado |
 | Épico | EP06 — Conta e perfil do voluntário |
 
@@ -379,8 +379,8 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 - [ ] A senha do cadastro deve ter no mínimo 8 caracteres, contendo um caractere maiúsculo, um número e um caractere especial.
 - [ ] O sistema deve verificar se o email já foi registrado.
 - [ ] O sistema deve retornar uma mensagem de erro caso o cadastro não seja realizado com sucesso.
-- [ ] Durante o cadastro, o sistema deve permitir se cadastrar como voluntário, selecionar palavras-chave de habilidades e registrar experiências, interesses e disponibilidade, conforme RF23 e a ata de 11/10/2026.
-- [ ] Caso o usuário já possua um login salvo de um acesso anterior, o sistema deve autenticá-lo automaticamente ao concluir o perfil de voluntário e direcioná-lo à página principal; caso contrário, deve direcioná-lo à página de login, como no cadastro de cliente (US04).
+- [ ] Durante o cadastro, o sistema deve permitir se cadastrar como voluntário, selecionar palavras-chave de habilidades e registrar experiências, interesses e disponibilidade, conforme [RF23](8_requisitos.md#rf23) e a [ata de 11/10/2026](../atas-reuniao/unidade-2/11-10.md).
+- [ ] Caso o usuário já possua um login salvo de um acesso anterior, o sistema deve autenticá-lo automaticamente ao concluir o perfil de voluntário e direcioná-lo à página principal; caso contrário, deve direcioná-lo à página de login, como no cadastro de cliente ([US04](#us04-cadastrar-se-como-cliente)).
 
 ### DoR da história
 
@@ -392,7 +392,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF25 |
+| Requisito de origem | [RF25](8_requisitos.md#rf25) |
 | Tema | T03 — Voluntariado |
 | Épico | EP07 — Descoberta e candidatura |
 
@@ -417,7 +417,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF26 |
+| Requisito de origem | [RF26](8_requisitos.md#rf26) |
 | Tema | T03 — Voluntariado |
 | Épico | EP06 — Conta e perfil do voluntário |
 
@@ -441,7 +441,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF28 |
+| Requisito de origem | [RF28](8_requisitos.md#rf28) |
 | Tema | T03 — Voluntariado |
 | Épico | EP08 — Gestão de oportunidades e candidatos |
 
@@ -466,7 +466,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF33 |
+| Requisito de origem | [RF33](8_requisitos.md#rf33) |
 | Tema | T04 — Parcerias Institucionais |
 | Épico | EP09 — Solicitação e análise de parcerias |
 
@@ -490,7 +490,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF34 |
+| Requisito de origem | [RF34](8_requisitos.md#rf34) |
 | Tema | T04 — Parcerias Institucionais |
 | Épico | EP09 — Solicitação e análise de parcerias |
 
@@ -513,7 +513,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF21 |
+| Requisito de origem | [RF21](8_requisitos.md#rf21) |
 | Tema | T03 — Voluntariado |
 | Épico | EP07 — Descoberta e candidatura |
 
@@ -537,7 +537,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF27 |
+| Requisito de origem | [RF27](8_requisitos.md#rf27) |
 | Tema | T03 — Voluntariado |
 | Épico | EP06 — Conta e perfil do voluntário |
 
@@ -561,7 +561,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF29 |
+| Requisito de origem | [RF29](8_requisitos.md#rf29) |
 | Temas | T02 — Ecoturismo e Reservas; T03 — Voluntariado |
 | Épicos | EP03 — Conta do cliente; EP06 — Conta e perfil do voluntário |
 
@@ -572,7 +572,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 ### Critérios de aceitação
 
 - [ ] Durante o cadastro, o sistema deve exibir uma opção para ver os termos de uso de dados pessoais.
-- [ ] O sistema deve permitir que o usuário aceite explicitamente os termos de uso de dados pessoais durante o cadastro e registrar data, hora e versão do termo aceito, conforme RF29.
+- [ ] O sistema deve permitir que o usuário aceite explicitamente os termos de uso de dados pessoais durante o cadastro e registrar data, hora e versão do termo aceito, conforme [RF29](8_requisitos.md#rf29).
 - [ ] O sistema deve bloquear o cadastro de uma nova conta caso os termos de uso de dados pessoais não sejam aceitos.
 
 ### DoR da história
@@ -585,7 +585,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 | Campo | Relação |
 | --- | --- |
-| Requisito de origem | RF36 |
+| Requisito de origem | [RF36](8_requisitos.md#rf36) |
 | Tema | T02 — Ecoturismo e Reservas |
 | Épico | EP02 — Descoberta de experiências e pacotes |
 

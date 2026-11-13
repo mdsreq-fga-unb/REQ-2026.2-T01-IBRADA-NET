@@ -45,7 +45,7 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf35"></span>RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
 | <span id="rf36"></span>RF36 | Compartilhar experiências | Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada. | CP3 |
 
-A necessidade de controle de visibilidade em RF01–RF04 foi registrada na [ata de 28/09/2026](../atas-reuniao/unidade-2/28-09.md). O estado de rascunho é uma proposta ainda pendente de avaliação e validação. Não estão definidos o estado inicial, os responsáveis pela publicação, o efeito da edição de conteúdo publicado ou as condições de ocultação e remoção. Esses detalhes deverão ser refinados nas histórias existentes, conforme a DoR, sem criação de regras operacionais presumidas. A [ata de 11/10/2026](../atas-reuniao/unidade-2/11-10.md) mantém RF01–RF04 fora do MVP e prevê a apresentação estática inicial dos projetos.
+A necessidade de controle de visibilidade em RF01–RF04 foi registrada na [ata de 28/09/2026](../atas-reuniao/unidade-2/28-09.md). O estado de rascunho é uma proposta ainda pendente de avaliação e validação. Não estão definidos o estado inicial, os responsáveis pela publicação, o efeito da edição de conteúdo publicado ou as condições de ocultação e remoção. 
 
 ## 8.2 Lista de Regras de Negócio
 
