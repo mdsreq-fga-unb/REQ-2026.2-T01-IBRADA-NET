@@ -40,6 +40,11 @@ export class UserService implements OnApplicationBootstrap {
       throw new ConflictException('Este email já está vinculado a uma conta.');
     }
 
+    const dataNascimento = new Date(dto.dataNascimento);
+    if (dataNascimento.getTime() > Date.now()) {
+      throw new BadRequestException('A data de nascimento não pode estar no futuro.');
+    }
+
     const passwordHash = await bcrypt.hash(dto.password, 10);
 
     try {
@@ -49,6 +54,9 @@ export class UserService implements OnApplicationBootstrap {
           email: dto.email,
           passwordHash,
           phone: dto.phone,
+          dataNascimento,
+          cidade: dto.cidade,
+          estado: dto.estado,
           role: dto.role,
           consents: {
             create: {
@@ -59,29 +67,28 @@ export class UserService implements OnApplicationBootstrap {
             perfilVoluntario: {
               create: {
                 bio: dto.bio,
-                experiencias: dto.experiencias,
-                interesses: dto.interesses,
-                disponibilidade: dto.disponibilidade,
                 outros: dto.outros,
-                habilidades: dto.habilidadeIds ? {
-                  create: dto.habilidadeIds.map((id: string) => ({
-                    habilidade: { connect: { id } }
-                  }))
-                } : undefined
-              }
-            }
-          })
+                educacaoNivel: dto.educacaoNivel,
+                educacaoCompletude: dto.educacaoCompletude,
+                interesses: dto.categoriaIds
+                  ? {
+                      create: dto.categoriaIds.map((id: string) => ({
+                        categoria: { connect: { id } },
+                      })),
+                    }
+                  : undefined,
+              },
+            },
+          }),
         },
-        select: { id: true, name: true, email: true, role: true }
+        select: { id: true, name: true, email: true, role: true },
       });
     } catch (error) {
-      // P2002: e-mail duplicado numa corrida entre duas requisições.
       if (prismaCode(error) === 'P2002') {
         throw new ConflictException('Este email já está vinculado a uma conta.');
       }
-      // P2025: alguma habilidade informada não existe.
       if (prismaCode(error) === 'P2025') {
-        throw new BadRequestException('Uma das habilidades informadas não existe.');
+        throw new BadRequestException('Uma das categorias de interesse informadas não existe.');
       }
       throw error;
     }
@@ -92,12 +99,11 @@ export class UserService implements OnApplicationBootstrap {
   }
 
   async update(userId: string, data: UpdateUserDto) {
-    // name/phone são colunas de User; os demais campos pertencem ao PerfilVoluntario.
-    const { name, phone, habilidadeIds, ...perfil } = data;
+    const { name, phone, dataNascimento, cidade, estado, categoriaIds, ...perfil } = data;
     const perfilData = Object.fromEntries(
       Object.entries(perfil).filter(([, value]) => value !== undefined),
     );
-    const editaPerfil = Object.keys(perfilData).length > 0 || habilidadeIds !== undefined;
+    const editaPerfil = Object.keys(perfilData).length > 0 || categoriaIds !== undefined;
 
     if (editaPerfil) {
       const perfilExiste = await this.prisma.perfilVoluntario.findUnique({ where: { userId } });
@@ -112,16 +118,19 @@ export class UserService implements OnApplicationBootstrap {
         data: {
           name,
           phone,
+          cidade,
+          estado,
+          ...(dataNascimento !== undefined && { dataNascimento: new Date(dataNascimento) }),
           ...(editaPerfil && {
             perfilVoluntario: {
               update: {
                 ...perfilData,
-                ...(habilidadeIds !== undefined && {
-                  // Substitui a lista de habilidades pela enviada.
-                  habilidades: {
+                ...(categoriaIds !== undefined && {
+                  // Substitui a lista de interesses pela enviada.
+                  interesses: {
                     deleteMany: {},
-                    create: habilidadeIds.map((id: string) => ({
-                      habilidade: { connect: { id } },
+                    create: categoriaIds.map((id: string) => ({
+                      categoria: { connect: { id } },
                     })),
                   },
                 }),
@@ -133,14 +142,12 @@ export class UserService implements OnApplicationBootstrap {
       });
     } catch (error) {
       if (prismaCode(error) === 'P2025') {
-        throw new NotFoundException('Usuário ou habilidade informada não encontrada.');
+        throw new NotFoundException('Usuário ou categoria informada não encontrada.');
       }
       throw error;
     }
   }
 
-  // Cria o gestor inicial a partir de GESTOR_EMAIL / GESTOR_PASSWORD (e GESTOR_NAME,
-  // opcional). Idempotente: não faz nada se a conta já existe e nunca promove uma conta existente.
   async onApplicationBootstrap() {
     const email = process.env.GESTOR_EMAIL;
     const password = process.env.GESTOR_PASSWORD;

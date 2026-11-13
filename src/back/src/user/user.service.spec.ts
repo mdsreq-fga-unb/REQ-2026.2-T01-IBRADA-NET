@@ -23,6 +23,9 @@ const base = {
   password: 'SenhaForte@123',
   lgpdAccepted: true,
   lgpdVersion: '2026-11-v1',
+  dataNascimento: '1999-05-20',
+  cidade: 'Brasília',
+  estado: 'DF',
 } as CreateUserDto;
 
 describe('UserService.create (US04, US15, US23)', () => {
@@ -54,17 +57,36 @@ describe('UserService.create (US04, US15, US23)', () => {
     expect(prisma.user.create).not.toHaveBeenCalled();
   });
 
-  it('VOLUNTARIO cria o perfil com as habilidades na mesma operação', async () => {
+  it('grava dataNascimento, cidade e estado no User', async () => {
+    await service.create(base);
+
+    const data = dadosCriados();
+    expect(data.dataNascimento).toEqual(new Date('1999-05-20'));
+    expect(data.cidade).toBe('Brasília');
+    expect(data.estado).toBe('DF');
+  });
+
+  it('recusa data de nascimento no futuro (400)', async () => {
+    await expect(service.create({ ...base, dataNascimento: '2999-01-01' })).rejects.toBeInstanceOf(
+      BadRequestException,
+    );
+    expect(prisma.user.create).not.toHaveBeenCalled();
+  });
+
+  it('VOLUNTARIO cria o perfil com educação e interesses (categorias) na mesma operação', async () => {
     await service.create({
       ...base,
       role: PublicUserRole.VOLUNTARIO,
       bio: 'Bio',
-      habilidadeIds: ['h1', 'h2'],
+      educacaoNivel: 'GRADUACAO' as never,
+      educacaoCompletude: 'EM_ANDAMENTO' as never,
+      categoriaIds: ['c1', 'c2'],
     });
 
-    const data = dadosCriados();
-    expect(data.perfilVoluntario.create.bio).toBe('Bio');
-    expect(data.perfilVoluntario.create.habilidades.create).toHaveLength(2);
+    const perfil = dadosCriados().perfilVoluntario.create;
+    expect(perfil.bio).toBe('Bio');
+    expect(perfil.educacaoNivel).toBe('GRADUACAO');
+    expect(perfil.interesses.create).toHaveLength(2);
   });
 
   it('recusa cadastro sem aceite da LGPD com 400 (não 409)', async () => {
@@ -84,10 +106,10 @@ describe('UserService.create (US04, US15, US23)', () => {
     await expect(service.create(base)).rejects.toBeInstanceOf(ConflictException);
   });
 
-  it('habilidade inexistente (P2025) vira 400', async () => {
+  it('categoria inexistente (P2025) vira 400', async () => {
     prisma.user.create.mockRejectedValue({ code: 'P2025' });
     await expect(
-      service.create({ ...base, role: PublicUserRole.VOLUNTARIO, habilidadeIds: ['x'] }),
+      service.create({ ...base, role: PublicUserRole.VOLUNTARIO, categoriaIds: ['x'] }),
     ).rejects.toBeInstanceOf(BadRequestException);
   });
 });
@@ -113,12 +135,12 @@ describe('UserService.update (US05)', () => {
   it('campos de voluntário vão para o perfil, não para o User (antes causavam 500)', async () => {
     prisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'p1' });
 
-    await service.update('u1', { bio: 'Nova bio', habilidadeIds: ['h1'] });
+    await service.update('u1', { bio: 'Nova bio', categoriaIds: ['c1'] });
 
     const update = dados().perfilVoluntario.update;
     expect(update.bio).toBe('Nova bio');
-    expect(update.habilidades.deleteMany).toEqual({});
-    expect(update.habilidades.create).toHaveLength(1);
+    expect(update.interesses.deleteMany).toEqual({});
+    expect(update.interesses.create).toHaveLength(1);
     expect(dados().bio).toBeUndefined();
   });
 
