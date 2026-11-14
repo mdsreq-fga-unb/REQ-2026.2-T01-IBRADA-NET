@@ -178,6 +178,7 @@ Após todos os calculos, a tabela final ficou assim:
 | [RF34](8_requisitos.md#rf34) | [CP6](2_solucao.md#cp6) | 4 | 4 | 1,61 |
 | [RF35](8_requisitos.md#rf35) | [CP6](2_solucao.md#cp6) | 2 | 2 | 1,78 |
 | [RF36](8_requisitos.md#rf36) | [CP3](2_solucao.md#cp3) | — | — | — |
+| [RF37](8_requisitos.md#rf37) | [CP5](2_solucao.md#cp3) | 3 | 2 | 2,11 |
 | RNF01 | Transversal — todas as CPs | 4 |-| 2 |
 | RNF02 | CP3 | 4 |-| 3 |
 | RNF03 | CP1 e CP3 | 4 |-| 2 |
@@ -199,7 +200,7 @@ Após todos os calculos, a tabela final ficou assim:
 
 <!-- [Abrir a matriz no Figma](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=Dq32iZJOkZ0Vwe6r-1) -->
 
-Última atualização da imagem em 12/10/2026.
+Última atualização da imagem em 05/11/2026.
 
 **Legenda**
 
@@ -210,7 +211,16 @@ Após todos os calculos, a tabela final ficou assim:
 | 2 | Moderado | Moderado |
 | 1 | Baixo | Baixo |
 
-Os requisitos em rosa são os que entraram no MVP: os do quadrante superior esquerdo, de menor esforço técnico e maior valor de negócio. A exceção é o **RF14** (pagamento), primordial para a primeira entrega, e os **RNF02** e **RNF05**, fortemente relacionados a ele. O **RF36**, separado do RF07, ainda não foi posicionado na matriz.
+**Transição de Requisitos para User Stories**
+
+Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as **User Stories (US)**. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, **cada US herdou diretamente o valor de negócio e o esforço técnico exatos de seu RF de origem**. Isso permitiu reaproveitar a avaliação matemática detalhada sem necessidade de reestimar o escopo.
+
+Os Requisitos Não Funcionais (RNF) foram removidos da visualização isolada na matriz. Eles não deixaram de existir, mas mudaram de lugar: a complexidade e as restrições impostas por eles agora compõem os **Critérios de Aceite** e as validações técnicas dentro das próprias User Stories que eles impactam.
+
+**Definição do Escopo do MVP**
+As histórias destacadas em rosa representam os itens selecionados para a primeira entrega do produto (MVP). A estratégia de seleção focou majoritariamente no **quadrante superior esquerdo**, que concentra as funcionalidades de maior valor imediato para o IBRADA com o menor esforço de implementação técnico.
+
+A principal exceção a essa regra geométrica foi a **US10 referente ao pagamento online (originada do RF14)**. Embora o esforço técnico de integrar a API de terceiros a posicione mais à direita na matriz, viabilizar a transação financeira é um pilar imprescindível para o negócio operar na primeira entrega, justificando sua inclusão obrigatória no MVP.
 
 <!--
 Após a consolidação das avaliações de valor de negócio e esforço técnico, os requisitos funcionais foram posicionados em uma matriz **4 × 4**, permitindo visualizar conjuntamente a importância de cada requisito para o negócio e o esforço necessário para sua implementação.

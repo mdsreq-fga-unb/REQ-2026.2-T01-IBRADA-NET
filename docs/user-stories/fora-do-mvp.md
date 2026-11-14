@@ -16,6 +16,8 @@ Estas histórias permanecem no backlog geral do produto, mas não fazem parte do
 | [US35](us35.md) | Visualizar alcance das notificações | [RF31](../documento-visao/8_requisitos.md#rf31) | EP14 — Gestão e monitoramento de notificações | T06 — Notificações e Engajamento |
 | [US36](us36.md) | Gerenciar notificações | [RF32](../documento-visao/8_requisitos.md#rf32) | EP14 — Gestão e monitoramento de notificações | T06 — Notificações e Engajamento |
 | [US37](us37.md) | Responder à solicitação de parceria | [RF35](../documento-visao/8_requisitos.md#rf35) | EP09 — Solicitação e análise de parcerias | T04 — Parcerias Institucionais |
+| [US38](us38.md) | Receber notificações de interesse | [RF37](../documento-visao/8_requisitos.md#rf37) | EP13 — Preferências de notificações | T06 — Notificações e Engajamento |
+
 
 ## US32 — Gerenciar acesso de gestores
 

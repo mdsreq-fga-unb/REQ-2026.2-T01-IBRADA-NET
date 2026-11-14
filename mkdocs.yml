@@ -93,6 +93,7 @@ nav:
           - "US35 — Visualizar alcance das notificações": user-stories/us35.md
           - "US36 — Gerenciar notificações": user-stories/us36.md
           - "US37 — Responder à solicitação de parceria": user-stories/us37.md
+          - "US38 — Receber notificações de interesse": user-stories/us38.md
 
   - Visão do Produto e Projeto:
       - 1 Cenário Atual do Cliente e do Negócio: documento-visao/1_cenarioAtual.md
