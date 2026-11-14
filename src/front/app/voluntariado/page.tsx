@@ -237,7 +237,7 @@ export default function VoluntariadoPage() {
 
               {/* Ação */}
               <Link
-                href="#"
+                href={`/voluntariado/${op.id}`}
                 className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors group mt-4"
               >
                 Ver detalhes e candidatar-se

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/navbar";
 import { SiteFooter } from "@/components/site-footer";
+import { PublicSiteChrome } from "@/components/public-site-chrome";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -31,9 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
-        <SiteHeader />
+        <PublicSiteChrome><SiteHeader /></PublicSiteChrome>
         <main id="conteudo">{children}</main>
-        <SiteFooter />
+        <PublicSiteChrome><SiteFooter /></PublicSiteChrome>
       </body>
     </html>
   );
