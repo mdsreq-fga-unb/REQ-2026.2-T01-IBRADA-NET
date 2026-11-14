@@ -1,6 +1,12 @@
 "use client";
 
 import { useState, type SubmitEvent } from "react";
+import { useRouter } from "next/navigation";
+import { register, type RegisterPayload } from "@/lib/api";
+import { terms } from "@/lib/site";
+
+// Mesma regra do back (CreateUserDto): 8+ caracteres, 1 maiúscula, 1 número, 1 especial.
+const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
 const inputClass =
     "border mt-2 mb-5 border-gray-300 rounded-md py-2 pl-4 pr-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-left w-full";
@@ -8,32 +14,60 @@ const inputClass =
 export default function Cadastro() {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
         setError("");
 
-        const form = e.currentTarget;
-        const data = Object.fromEntries(new FormData(form).entries());
+        const data = Object.fromEntries(new FormData(e.currentTarget).entries());
 
+        // US23: sem aceitar os termos, o cadastro não é enviado.
+        if (!data.termos) {
+            setError("É obrigatório aceitar os Termos de uso e a Política de Privacidade (LGPD).");
+            return;
+        }
         if (data.senha !== data.confirmarSenha) {
             setError("As senhas não coincidem.");
             return;
         }
+        if (!PASSWORD_REGEX.test(String(data.senha))) {
+            setError("A senha deve ter no mínimo 8 caracteres, contendo 1 maiúscula, 1 número e 1 caractere especial.");
+            return;
+        }
 
-        const { confirmarSenha, termos, ...payload } = data;
-        console.log("Cadastro:", payload);
-        // TODO: enviar `payload` para a API do back-end
-        // await fetch("/api/cadastro", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+        const payload: RegisterPayload = {
+            name: String(data.nome).trim(),
+            email: String(data.email).trim(),
+            phone: String(data.telefone).trim(),
+            password: String(data.senha),
+            dataNascimento: String(data.dataNascimento),
+            cidade: String(data.cidade).trim(),
+            estado: String(data.estado).trim(),
+            lgpdAccepted: true,
+            lgpdVersion: terms.version,
+        };
+
+        setLoading(true);
+        try {
+            await register(payload);
+            router.push("/login");
+        } catch (err) {
+            // Mensagem vem do back
+            setError(err instanceof Error ? err.message : "Não foi possível concluir o cadastro.");
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
         <div>
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left pb-10 px-4 bg-fuchsia-100">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left pb-10 px-4 bg-[#F8EFE2]">
                 <h1 className="mt-10 lg:ml-10 text-3xl font-bold sm:text-4xl">Sua jornada começa aqui.</h1>
                 <span className="mt-2 lg:ml-10">Cadastre-se para ter acesso a todos os recursos do IBRADA</span>
             </div>
-            <div className="mx-4 md:mx-12 lg:mx-40 my-5 p-5 md:p-10 rounded-2xl bg-fuchsia-100">
+            <div className="mx-4 md:mx-12 lg:mx-40 my-5 p-5 md:p-10 rounded-2xl bg-[#F8EFE2]">
                 <h2 className="font-bold text-lime-900">Uma conta, muitas formas de participar</h2>
                 <span>A mesma conta serve para turismo e voluntariado. O perfil voluntário é um complemento opcional, que você pode preencher depois.</span>
             </div>
@@ -81,7 +115,7 @@ export default function Cadastro() {
                     <input
                         name="senha"
                         required
-                        minLength={6}
+                        minLength={8}
                         className={inputClass}
                         type={showPassword ? "text" : "password"}
                         placeholder="Digite sua senha"
@@ -96,7 +130,7 @@ export default function Cadastro() {
                     <input
                         name="confirmarSenha"
                         required
-                        minLength={6}
+                        minLength={8}
                         className={inputClass}
                         type={showPassword ? "text" : "password"}
                         placeholder="Confirme sua senha"
@@ -126,9 +160,10 @@ export default function Cadastro() {
                 <div className="flex justify-center w-full">
                     <button
                         type="submit"
-                        className="bg-lime-900 mt-8 w-full sm:w-auto text-center text-white px-6 py-2 rounded-md hover:bg-lime-800 transition-colors cursor-pointer"
+                        disabled={loading}
+                        className="bg-lime-900 disabled:opacity-60 mt-8 w-full sm:w-auto text-center text-white px-6 py-2 rounded-md hover:bg-lime-800 transition-colors cursor-pointer"
                     >
-                        Cadastrar
+                        {loading ? "Cadastrando..." : "Cadastrar"}
                     </button>
                 </div>
                 <span className="block mt-4 text-sm text-gray-500">
