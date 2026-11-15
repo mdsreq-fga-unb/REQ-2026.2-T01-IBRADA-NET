@@ -110,7 +110,6 @@ export class UserService implements OnApplicationBootstrap {
       Object.entries(perfil).filter(([, value]) => value !== undefined),
     );
     const editaPerfil = Object.keys(perfilData).length > 0 || categoriaIds !== undefined;
-    const editaPerfil = Object.keys(perfilData).length > 0 || categoriaIds !== undefined;
 
     if (editaPerfil) {
       const perfilExiste = await this.prisma.perfilVoluntario.findUnique({ where: { userId } });
@@ -135,12 +134,7 @@ export class UserService implements OnApplicationBootstrap {
                 ...(categoriaIds !== undefined && {
                   // Substitui a lista de interesses pela enviada.
                   interesses: {
-                ...(categoriaIds !== undefined && {
-                  // Substitui a lista de interesses pela enviada.
-                  interesses: {
                     deleteMany: {},
-                    create: categoriaIds.map((id: string) => ({
-                      categoria: { connect: { id } },
                     create: categoriaIds.map((id: string) => ({
                       categoria: { connect: { id } },
                     })),
@@ -163,7 +157,6 @@ export class UserService implements OnApplicationBootstrap {
       });
     } catch (error) {
       if (prismaCode(error) === 'P2025') {
-        throw new NotFoundException('Usuário ou categoria informada não encontrada.');
         throw new NotFoundException('Usuário ou categoria informada não encontrada.');
       }
       throw error;
