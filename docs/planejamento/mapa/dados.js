@@ -423,8 +423,10 @@ window.MAPA_DATA = {
    "criterios": [
     "O sistema deve permitir que o cliente autenticado selecione uma experiência com vaga disponível e informe os dados da reserva.",
     "Caso o usuário não esteja autenticado, o sistema deve direcioná-lo à página de login antes de prosseguir com a reserva.",
-    "O sistema deve impedir a reserva quando não houver vagas suficientes e retornar uma mensagem de erro.",
-    "O sistema deve impedir reservas concorrentes para a mesma vaga (overbooking)."
+    "O sistema deve verificar a disponibilidade de vagas via transação ACID no banco de dados, bloqueando concorrência (overbooking). Caso não haja vagas deve retornar mensagem de erro.",
+    "Havendo vagas, registrar reserva Pendente e iniciar cronômetro de 30 minutos de retenção temporária das vagas.",
+    "Exibir aviso orientando que a vaga só será garantida após o pagamento dentro do prazo limite.",
+    "Bloquear avanço caso a quantidade de vagas solicitada seja superior ao saldo disponível."
    ],
    "issue": null,
    "issueUrl": null,
@@ -438,9 +440,10 @@ window.MAPA_DATA = {
    ],
    "historia": "Como cliente, quero visualizar um resumo completo da minha reserva e confirmar os dados antes do pagamento, para validar as informações do passeio e os valores, evitando erros ou cobranças indevidas.",
    "criterios": [
-    "Antes do pagamento, o sistema deve exibir um resumo da reserva com experiência, data, quantidade, valores e condições.",
-    "O sistema deve permitir que o cliente volte e altere os dados da reserva antes de confirmá-la.",
-    "O sistema só deve prosseguir para o pagamento após a confirmação explícita dos dados pelo cliente."
+    "Antes do pagamento, o sistema deve exibir um resumo da reserva com experiência, data, quantidade, valores, condições e tempo regressivo restante da pré-reserva.",
+    "O sistema deve permitir que o cliente volte e altere os dados da reserva dentro do prazo de 30 minutos antes de confirmá-la.",
+    "O sistema só deve prosseguir para o pagamento após a confirmação explícita dos dados pelo cliente.",
+    "Cancelar automaticamente a reserva e liberar a vaga se o tempo de retenção temporária expirar antes do checkout."
    ],
    "issue": null,
    "issueUrl": null,
@@ -705,7 +708,8 @@ window.MAPA_DATA = {
     "O sistema deve exibir ao gestor os candidatos de uma oportunidade agrupados por etapa do funil.",
     "O sistema deve filtrar os candidatos aptos de acordo com os critérios definidos no cadastro da oportunidade.",
     "Cada candidato deve exibir as informações de seu perfil (habilidades, experiências e disponibilidade) para a análise do gestor.",
-    "O acesso ao funil de candidatos deve ser permitido apenas ao gestor autenticado."
+    "O acesso ao funil de candidatos deve ser permitido apenas ao gestor autenticado.",
+    "Estruturar os candidatos nas 4 etapas mínimas: 1. Inscritos, 2. Em Triagem, 3. Em Avaliação/Contato, 4. Concluídos (Aprovados ou Não Selecionados)."
    ],
    "issue": null,
    "issueUrl": null,
