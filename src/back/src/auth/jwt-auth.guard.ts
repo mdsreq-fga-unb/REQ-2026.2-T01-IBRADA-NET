@@ -37,7 +37,7 @@ export class JwtAuthGuard implements CanActivate {
       const payload = await this.jwtService.verifyAsync(token);
       request['user'] = payload;
     } catch (error) {
-      this.logger.warn(`Acesso negado: Token inválido em ${request.method} ${request.url} - Erro: ${error.message}`);
+      this.logger.warn(`Acesso negado: Token inválido em ${request.method} ${request.url} - Erro: ${error instanceof Error ? error.message : String(error)}`);
       throw new UnauthorizedException('Token inválido ou expirado.');
     }
     return true;
