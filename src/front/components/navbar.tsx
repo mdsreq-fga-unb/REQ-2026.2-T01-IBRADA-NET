@@ -10,6 +10,7 @@ import { IbradaMark } from '@/components/brand-icons'
 import { useAuth } from '@/lib/auth-context'
 import { buildWhatsAppLink, navItems, site } from '@/lib/site'
 import { cn } from '@/lib/utils'
+import { FlashBanner } from '@/components/flash-banner'
 
 function Logo() {
   return (
@@ -108,6 +109,7 @@ export function SiteHeader() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
 
   return (
+    <>
     <header className="sticky top-0 z-30 border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:h-18">
         <Logo />
@@ -202,5 +204,7 @@ export function SiteHeader() {
         </SheetContent>
       </Sheet>
     </header>
+    <FlashBanner />
+    </>
   )
 }

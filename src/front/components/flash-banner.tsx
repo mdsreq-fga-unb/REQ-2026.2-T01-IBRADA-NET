@@ -1,0 +1,43 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { CheckCircle2, X } from "lucide-react";
+import { consumeFlashMessage } from "@/lib/api";
+
+export function FlashBanner() {
+  const pathname = usePathname();
+  const [message, setMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const flash = consumeFlashMessage();
+    if (flash) {
+      setMessage(flash);
+    }
+  }, [pathname]);
+
+  if (!message) return null;
+
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="border-b border-emerald-200 bg-emerald-50 text-emerald-950"
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 text-sm sm:px-6">
+        <div className="flex items-center gap-2.5">
+          <CheckCircle2 className="size-4 shrink-0 text-emerald-700" aria-hidden="true" />
+          <p className="font-medium">{message}</p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setMessage(null)}
+          aria-label="Fechar aviso"
+          className="rounded-md p-1 text-emerald-800 hover:bg-emerald-100"
+        >
+          <X className="size-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
