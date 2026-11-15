@@ -1,16 +1,42 @@
 # 10 BACKLOG DO PRODUTO 
 
+O Backlog do Produto foi dividido em duas visões para facilitar a análise. A tabela abaixo apresenta **exclusivamente** o **Escopo do MVP**, que filtra apenas os épicos e histórias priorizados para a primeira entrega. Logo a seguir, é possível expandir o restante da estrutura que compõe o produto geral.
+
+### Escopo do MVP (Primeira Entrega)
+
 | Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
 | --- | --- | --- | --- | --- | --- |
-| T01 | EP01 | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
-| T02 | EP02 | Descoberta de experiências e pacotes | US02, US03, US24 | — | RNF01, RNF03, RNF07 |
-| T02 | EP03 | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
-| T02 | EP04 | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
-| T02 | EP05 | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
-| T03 | EP06 | Conta e perfil do voluntário | US15, US17, US22, US23 | RN03 | RNF01, RNF04, RNF08 |
-| T03 | EP07 | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
-| T03 | EP08 | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
-| T04 | EP09 | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
+| [T01](../planejamento/rastreabilidade.md#t01) | [EP01](../planejamento/rastreabilidade.md#ep01) | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
+| [T02](../planejamento/rastreabilidade.md#t02) | [EP02](../planejamento/rastreabilidade.md#ep02) | Descoberta de experiências e pacotes | US02, US03, US24 | — | RNF01, RNF03, RNF07 |
+| [T02](../planejamento/rastreabilidade.md#t02) | [EP03](../planejamento/rastreabilidade.md#ep03) | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
+| [T02](../planejamento/rastreabilidade.md#t02) | [EP04](../planejamento/rastreabilidade.md#ep04) | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
+| [T02](../planejamento/rastreabilidade.md#t02) | [EP05](../planejamento/rastreabilidade.md#ep05) | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP06](../planejamento/rastreabilidade.md#ep06) | Conta e perfil do voluntário | US15, US17, US22, US23 | — | RNF01, RNF04, RNF08 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP07](../planejamento/rastreabilidade.md#ep07) | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP08](../planejamento/rastreabilidade.md#ep08) | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
+| [T04](../planejamento/rastreabilidade.md#t04) | [EP09](../planejamento/rastreabilidade.md#ep09) | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
+
+<br>
+
+<details>
+<summary><strong> Clique aqui para expandir o restante do Backlog Geral (Itens Pós-MVP)</strong></summary>
+<br>
+
+| Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
+| --- | --- | --- | --- | --- | --- |
+| [T02](../planejamento/rastreabilidade.md#t02) | [EP05](../planejamento/rastreabilidade.md#ep05) | Gestão de experiências e pacotes | US30 | — | RNF01, RNF04 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP06](../planejamento/rastreabilidade.md#ep06) | Conta e perfil do voluntário | US33 | RN03 | RNF01, RNF04, RNF08 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP08](../planejamento/rastreabilidade.md#ep08) | Gestão de oportunidades e candidatos | US31 | RN05 | RNF01, RNF04, RNF08 |
+| [T04](../planejamento/rastreabilidade.md#t04) | [EP09](../planejamento/rastreabilidade.md#ep09) | Solicitação e análise de parcerias | US37 | — | RNF01, RNF04, RNF07, RNF08, RNF10 |
+| [T05](../planejamento/rastreabilidade.md#t05) | [EP10](../planejamento/rastreabilidade.md#ep10) | Gestão de projetos | US25, US26, US27 | — | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
+| [T05](../planejamento/rastreabilidade.md#t05) | [EP11](../planejamento/rastreabilidade.md#ep11) | Transparência e impacto dos projetos | US29 | — | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
+| [T03](../planejamento/rastreabilidade.md#t03) | [EP12](../planejamento/rastreabilidade.md#ep12) | Gestão de acesso administrativo | US32 | — | RNF01, RNF04, RNF07, RNF08, RNF10 |
+| [T06](../planejamento/rastreabilidade.md#t06) | [EP13](../planejamento/rastreabilidade.md#ep13) | Preferências de notificações | US34 | RN06 | RNF01, RNF06, RNF07, RNF10 |
+| [T06](../planejamento/rastreabilidade.md#t06) | [EP14](../planejamento/rastreabilidade.md#ep14) | Gestão e monitoramento de notificações | US35, US36 | RN06 | RNF01, RNF06, RNF07, RNF10 |
+
+*(Nota: O identificador US28 permanece sem atribuição nesta versão do backlog, conforme documentação.)*
+
+</details>
 
 ## 10.1 Backlog Geral
 
@@ -20,20 +46,23 @@ Os itens do backlog foram originados a partir das características de produto, d
 
 ### 10.1.1 Composição e rastreabilidade do backlog
 
-O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes, a legenda se encontra no [glossário](../documentacao/glossario.md)
+O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes; a legenda se encontra no [glossário](../documentacao/glossario.md).
 
-A rastreabilidade adotada segue, de forma geral, a seguinte relação:
+A rastreabilidade é mantida em um único lugar, a página [Rastreabilidade](../planejamento/rastreabilidade.md) (*Planejamento e Escopo*), e cada [User Story](../user-stories/us01.md) aponta para os itens já existentes nesta documentação em vez de repeti-los. Os vínculos seguem três níveis, do mais estratégico ao mais próximo da implementação:
+
+| Nível do backlog | Relaciona-se com | Como se lê |
+| --- | --- | --- |
+| **Tema** | **Objetivo Específico (OE)** | Cada tema contribui principalmente para o OE da característica de produto que o originou ([2.2](2_solucao.md#22-objetivos-especificos-oe-do-produto)). |
+| **Épico** | **Característica de Produto (CP)** | Cada épico detalha uma característica de produto ([2.3](2_solucao.md#23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos-do-produto)). |
+| **User Story** | **Requisito Funcional (RF)** | Cada história declara o RF de origem ([8.1](8_requisitos.md#81-lista-de-requisitos-funcionais)) e possui critérios de aceitação próprios. |
+
+As regras de negócio (RN) e os requisitos não funcionais (RNF) estão ligados às características de produto no catálogo ([8.2](8_requisitos.md#82-lista-de-regras-de-negocio) e [8.3](8_requisitos.md#83-lista-de-requisitos-nao-funcionais)) e chegam às histórias por meio do épico a que pertencem, conforme a tabela no início deste documento.
 
 ```text
-Objetivo Específico e Valor de Negócio
-                  ↓
-     Característica de Produto (CP)
-                  ↓
-          RF, RN e RNF relacionados
-                  ↓
-         Tema → Épico → User Story
-                  ↓
-          Critérios de Aceitação
+Objetivo Específico (OE)  <-  Tema
+Característica (CP)       <-  Épico
+Requisito Funcional (RF)  <-  User Story  ->  Critérios de Aceitação
+RN e RNF                  <-  CP e Épico
 ```
 
 ### 10.1.2 Escolha do backlog
@@ -59,6 +88,8 @@ Essa separação evita utilizar a DoR ou a DoD como substitutas dos critérios d
 ## 10.2 Priorização do backlog e MVP
 
 ### 10.2.1 Critérios usados
+
+A prioridade não é definida pelo checklist de qualidade. O checklist apenas verifica se o requisito está claro, completo, testável e rastreável. Depois dessa inspeção, a equipe registra a decisão na tabela de critérios e no histórico do backlog, considerando valor de negócio, frequência de uso, esforço técnico, dependências, riscos e necessidade para o MVP. A decisão recebe a justificativa, a data e os responsáveis pela avaliação; quando alterar escopo ou regra de negócio, também é validada e registrada com o representante do IBRADA. Requisitos que não passam no checklist permanecem em refinamento e não são priorizados para implementação.
 
 Para a priorização do backlog avaliamos cada requisito funcional nos seguintes critérios: 
 
@@ -128,58 +159,90 @@ Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que va
 
 Após todos os calculos, a tabela final ficou assim:
 
-| ID | Nome | Descrição | Relação | Avaliação MoSCoW | Avaliação Frequência de Uso | Esforço Técnico |
-| --- | --- | --- | --- | --- | --- | --- |
-| RF01 | Cadastrar projetos | Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais em um dashboard. | CP1 | 3 | 2 | 2,17 |
-| RF02 | Editar projetos | Permitir que os gestores possam editar informações sobre os projetos do dashboard. | CP1 | 3 | 2 | 1,67 |
-| RF03 | Remover projetos | Permitir que os gestores possam remover os projetos do dashboard. | CP1 | 3 | 1 | 1,50 |
-| RF04 | Exibir dashboard de impacto | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos. | CP1 | 4 | 4 | 2,89 |
-| **RF05** | Apresentar formulário de triagem | Permitir que o visitante (possível turista, apoiador ou usuário buscando regulamentação ambiental) preencha um formulário de triagem guiado com campos simplificados para identificar o tipo de solicitação e seu perfil, armazenando os dados no sistema e o encaminhando corretamente. | CP2 | 4 | 4 | 1,83 |
-| **RF06** | Visualizar catálogo de ecoturismo | Permitir aos usuários visualizar o catálogo de experiências de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores. | CP3 | 4 | 3 | 1,78 |
-| **RF07** | Detalhar experiências | Permitir que o usuário visualize informações completas de uma experiência de ecoturismo selecionada e com possibilidade de compartilhamento de seu conteúdo. | CP3 | 3 | 3 | 1,61 |
-| **RF08** | Cadastrar clientes | Permitir que os visitantes interessados em reservas se cadastrem em novas contas como clientes. | CP3 | 4 | 4 | 1,72 |
-| **RF09** | Editar perfil de clientes | Permitir que clientes possam editar seus dados pessoais registrados em suas próprias contas. | CP3 | 4 | 3 | 1,50 |
-| **RF10** | Realizar login de cliente | Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais. | CP3 | 4 | 4 | 2,06 |
-| **RF11** | Encerrar sessão de cliente | Permitir que clientes encerrem sua sessão ativa no sistema. | CP3 | 4 | 4 | 1,50 |
-| **RF12** | Selecionar pacote de ecoturismo | Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados. | CP3 | 4 | 4 | 2,22 |
-| **RF13** | Confirmar reserva | Permitir que o cliente confirme a reserva antes do checkout. | CP3 | 4 | 4 | 1,72 |
-| **RF14** | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 | 4 | 4 | 3,39 |
-| **RF15** | Cadastrar experiências de ecoturismo | Permitir a equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 | 3 | 3 | 1,67 |
-| RF16 | Editar experiências de ecoturismo | Permitir a equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 | 2 | 2 | 1,56 |
-| **RF17** | Alterar disponibilidade de experiência de ecoturismo | Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas. | CP3 | 4 | 4 | 1,61 |
-| **RF18** | Cadastrar oportunidades de voluntariado | Permitir ao gestor cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado. | CP4 | 4 | 3 | 2,06 |
-| RF19 | Editar oportunidades de voluntariado | Permitir ao gestor editar as informações das oportunidades de voluntariado registradas no sistema. | CP4 | 4 | 2 | 1,61 |
-| RF20 | Gerenciar papel de gestor | Permitir que um gestor cadastre outros membros da equipe do IBRADA como gestores, concedendo a eles acesso aos painéis do sistema. | CP4 | 4 | 2 | 2,22 |
-| **RF21** | Listar oportunidades de voluntariado | Permitir que o voluntário consulte a lista de oportunidades de voluntariado abertas. | CP4 | 4 | 4 | 1,44 |
-| **RF22** | Visualizar detalhes de oportunidade de voluntariado | Permitir que o voluntário visualize as informações detalhadas de uma oportunidade selecionada, incluindo habilidades requeridas, duração, disponibilidade e projeto associado. | CP4 | 4 | 3 | 1,50 |
-| **RF23** | Cadastrar perfil do voluntário | Permitir que usuários se cadastrem como voluntários, informando suas habilidades, experiências, áreas de interesse e disponibilidade. | CP4 | 4 | 4 | 1,89 |
-| RF24 | Editar perfil do voluntário | Permitir que usuários cadastrados como voluntários possam editar suas informações do perfil. | CP4 | 4 | 2 | 1,39 |
-| **RF25** | Candidatar-se a oportunidade | Permitir que o voluntário autenticado se candidate a uma oportunidade de voluntariado aberta. | CP4 | 4 | 4 | 1,72 |
-| **RF26** | Realizar login de voluntário | Permitir que voluntários cadastrados acessem o sistema mediante validação de credenciais. | CP4 | 4 | 4 | 2,00 |
-| **RF27** | Encerrar sessão de voluntários | Permitir que voluntários encerrem sua sessão ativa no sistema. | CP4 | 4 | 4 | 1,39 |
-| **RF28** | Visualizar candidatos | Permitir que gestores visualizem todos os candidatos a uma oportunidade em funil. | CP4 | 4 | 4 | 1,94 |
-| **RF29** | Registrar consentimento de uso de dados | Permitir que o usuário visualize o termo de consentimento (LGPD) no momento do cadastro e o aceite explicitamente, registrando data, hora e versão do termo aceito. | CP4 | 4 | 4 | 1,44 |
-| RF30 | Configurar preferências de notificação | Permitir que o usuário selecione, edite ou desative os alertas de projetos de seu interesse. | CP5 | 4 | 3 | 2,11 |
-| RF31 | Exibir estatísticas de alcance das notificações | Permitir que o gestor visualize estatísticas de alcance das notificações enviadas. | CP5 | 3 | 2 | 2,33 |
-| RF32 | Gerenciar envio de notificações | Permitir que o gestor gerencie notificações enviadas. | CP5 | 2 | 3 | 1,94 |
-| **RF33** | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 | 4 | 4 | 1,56 |
-| **RF34** | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 | 4 | 4 | 1,61 |
-| RF35 | Enviar resposta de solicitação | Permitir que o gestor escreva uma resposta a solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 | 2 | 2 | 1,78 |
-| **RNF01** | Responsividade da interface | A interface deve se adaptar a smartphones, tablets e desktops sem quebra de layout ou sobreposição. | Transversal — todas as CPs | 4 |-| 2 |
-| **RNF02** | Integridade transacional | O sistema deve garantir transações ACID e impedir reservas concorrentes para a mesma vaga, evitando overbooking. | CP3 | 4 |-| 3 |
-| **RNF03** | Desempenho do catálogo | As listagens de projetos e experiências de ecoturismo devem carregar em até 3 segundos em conexão de 15 Mbps. | CP1 e CP3 | 4 |-| 2 |
-| **RNF04** | Autenticação e autorização | O sistema deve negar acesso não autorizado e registrar tentativas de acesso às rotas de gerenciamento. | Transversal — CP1, CP3, CP4 e CP6 | 4 |-| 2 |
-| **RNF05** | Integração externa | Webhooks devem processar notificações de forma assíncrona em até 3 segundos e realizar até 5 tentativas de reprocessamento. | CP3 | 4 |-| 3 |
-| RNF06 | Escalabilidade sob demanda | O sistema deve suportar 200 usuários simultâneos, com tempo de resposta de até 2 segundos para 95% das requisições e taxa de erro de até 1%. | CP1, CP3 e CP5 | 3 |-| 3 |
-| **RNF07** | Disponibilidade do sistema | A plataforma deve garantir disponibilidade mínima de 98% ao mês, com manutenções programadas fora do horário de pico. | Transversal — todas as CPs | 4 |-| 2 |
-| **RNF08** | Proteção de dados pessoais (LGPD) | O sistema deve proteger dados pessoais e sensíveis usando AES-256 para dados em repouso e TLS 1.2 ou superior em trânsito. | CP3, CP4 e CP6 | 4 |-| 2 |
-| **RNF09** | Usabilidade do formulário de triagem | O formulário deve ser simples para usuários com baixa familiaridade digital e alcançar taxa de conclusão mínima de 90%. | CP2 | 4 |-| 2 |
-| RNF10 | Compatibilidade entre navegadores | O sistema deve manter paridade funcional e visual nas duas últimas versões estáveis do Chrome, Firefox, Safari e Edge. | Transversal — todas as CPs | 3 |-| 3 |
+> Para visualizar o que cada requisito é consultar o catálogo de requisitos no [8. Requisitos de Software](../documento-visao/8_requisitos.md)
+
+| ID | Relação | Avaliação MoSCoW | Avaliação Frequência de Uso | Esforço Técnico |
+| --- | --- | --- | --- | --- |
+| [RF01](8_requisitos.md#rf01) | [CP1](2_solucao.md#cp1) | 3 | 2 | 2,17 |
+| [RF02](8_requisitos.md#rf02) | [CP1](2_solucao.md#cp1) | 3 | 2 | 1,67 |
+| [RF03](8_requisitos.md#rf03) | [CP1](2_solucao.md#cp1) | 3 | 1 | 1,50 |
+| [RF04](8_requisitos.md#rf04) | [CP1](2_solucao.md#cp1) | 4 | 4 | 2,89 |
+| [RF05](8_requisitos.md#rf05) | [CP2](2_solucao.md#cp2) | 4 | 4 | 1,83 |
+| [RF06](8_requisitos.md#rf06)| [CP3](2_solucao.md#cp3) | 4 | 3 | 1,78 |
+| [RF07](8_requisitos.md#rf07) | [CP3](2_solucao.md#cp3) | 3 | 3 | 1,61 |
+| [RF08](8_requisitos.md#rf08) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,72 |
+| [RF09](8_requisitos.md#rf09) | [CP3](2_solucao.md#cp3) | 4 | 3 | 1,50 |
+| [RF10](8_requisitos.md#rf10) | [CP3](2_solucao.md#cp3) | 4 | 4 | 2,06 |
+| [RF11](8_requisitos.md#rf11) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,50 |
+| [RF12](8_requisitos.md#rf12) | [CP3](2_solucao.md#cp3) | 4 | 4 | 2,22 |
+| [RF13](8_requisitos.md#rf13) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,72 |
+| [RF14](8_requisitos.md#rf14) | [CP3](2_solucao.md#cp3) | 4 | 4 | 3,39 |
+| [RF15](8_requisitos.md#rf15) | [CP3](2_solucao.md#cp3) | 3 | 3 | 1,67 |
+| [RF16](8_requisitos.md#rf16) | [CP3](2_solucao.md#cp3) | 2 | 2 | 1,56 |
+| [RF17](8_requisitos.md#rf17) | [CP3](2_solucao.md#cp3) | 4 | 4 | 1,61 |
+| [RF18](8_requisitos.md#rf18) | [CP4](2_solucao.md#cp4) | 4 | 3 | 2,06 |
+| [RF19](8_requisitos.md#rf19) | [CP4](2_solucao.md#cp4) | 4 | 2 | 1,61 |
+| [RF20](8_requisitos.md#rf20) | [CP4](2_solucao.md#cp4) | 4 | 2 | 2,22 |
+| [RF21](8_requisitos.md#rf21) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,44 |
+| [RF22](8_requisitos.md#rf22) | [CP4](2_solucao.md#cp4) | 4 | 3 | 1,50 |
+| [RF23](8_requisitos.md#rf23) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,89 |
+| [RF24](8_requisitos.md#rf24) | [CP4](2_solucao.md#cp4) | 4 | 2 | 1,39 |
+| [RF25](8_requisitos.md#rf25) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,72 |
+| [RF26](8_requisitos.md#rf26) | [CP4](2_solucao.md#cp4) | 4 | 4 | 2,00 |
+| [RF27](8_requisitos.md#rf27) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,39 |
+| [RF28](8_requisitos.md#rf28) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,94 |
+| [RF29](8_requisitos.md#rf29) | [CP4](2_solucao.md#cp4) | 4 | 4 | 1,44 |
+| [RF30](8_requisitos.md#rf30) | [CP5](2_solucao.md#cp5) | 4 | 3 | 2,11 |
+| [RF31](8_requisitos.md#rf31) | [CP5](2_solucao.md#cp5) | 3 | 2 | 2,33 |
+| [RF32](8_requisitos.md#rf32) | [CP5](2_solucao.md#cp5) | 2 | 3 | 1,94 |
+| [RF33](8_requisitos.md#rf33) | [CP6](2_solucao.md#cp6) | 4 | 4 | 1,56 |
+| [RF34](8_requisitos.md#rf34) | [CP6](2_solucao.md#cp6) | 4 | 4 | 1,61 |
+| [RF35](8_requisitos.md#rf35) | [CP6](2_solucao.md#cp6) | 2 | 2 | 1,78 |
+| [RF36](8_requisitos.md#rf36) | [CP3](2_solucao.md#cp3) | — | — | — |
+| RNF01 | Transversal — todas as CPs | 4 |-| 2 |
+| RNF02 | CP3 | 4 |-| 3 |
+| RNF03 | CP1 e CP3 | 4 |-| 2 |
+| RNF04 | Transversal — CP1, CP3, CP4 e CP6 | 4 |-| 2 |
+| RNF05 | CP3 | 4 |-| 3 |
+| RNF06 | CP1, CP3 e CP5 | 3 |-| 3 |
+| RNF07 | Transversal — todas as CPs | 4 |-| 2 |
+| RNF08 | CP3, CP4 e CP6 | 4 |-| 2 |
+| RNF09 | CP2 | 4 |-| 2 |
+| RNF10 | Transversal — todas as CPs | 3 |-| 3 |
+
+> O **RF36** (compartilhar experiências) foi separado do RF07 para manter a relação 1 para 1 com a US24. Ele ainda não passou pela avaliação de valor e esforço, que já considerou o RF07 com o compartilhamento incluído.
 
 
 
 ### 10.2.3 Matriz 4 x 4
 
+![Matriz 4x4 de valor de negócio e esforço técnico](../assets/matriz4x4.png)
+
+<!-- [Abrir a matriz no Figma](https://www.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&t=Dq32iZJOkZ0Vwe6r-1) -->
+
+Última atualização da imagem em 05/11/2026.
+
+**Legenda**
+
+| Valor | Valor de negócio (eixo vertical, avaliado com o cliente) | Esforço técnico (eixo horizontal, avaliado pela equipe) |
+| :---: | --- | --- |
+| 4 | Muito alto | Muito alto |
+| 3 | Alto | Alto |
+| 2 | Moderado | Moderado |
+| 1 | Baixo | Baixo |
+
+**Transição de Requisitos para User Stories**
+
+Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as **User Stories (US)**. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, **cada US herdou diretamente o valor de negócio e o esforço técnico exatos de seu RF de origem**. Isso permitiu reaproveitar a avaliação matemática detalhada sem necessidade de reestimar o escopo.
+
+Os Requisitos Não Funcionais (RNF) foram removidos da visualização isolada na matriz. Eles não deixaram de existir, mas mudaram de lugar: a complexidade e as restrições impostas por eles agora compõem os **Critérios de Aceite** e as validações técnicas dentro das próprias User Stories que eles impactam.
+
+**Definição do Escopo do MVP**
+As histórias destacadas em rosa representam os itens selecionados para a primeira entrega do produto (MVP). A estratégia de seleção focou majoritariamente no **quadrante superior esquerdo**, que concentra as funcionalidades de maior valor imediato para o IBRADA com o menor esforço de implementação técnico.
+
+A principal exceção a essa regra geométrica foi a **US10 referente ao pagamento online (originada do RF14)**. Embora o esforço técnico de integrar a API de terceiros a posicione mais à direita na matriz, viabilizar a transação financeira é um pilar imprescindível para o negócio operar na primeira entrega, justificando sua inclusão obrigatória no MVP.
+
+<!--
 Após a consolidação das avaliações de valor de negócio e esforço técnico, os requisitos funcionais foram posicionados em uma matriz **4 × 4**, permitindo visualizar conjuntamente a importância de cada requisito para o negócio e o esforço necessário para sua implementação.
 
 Para o posicionamento no eixo horizontal, o esforço técnico consolidado foi convertido para a escala de 1 a 4 conforme o valor obtido na avaliação técnica:
@@ -188,7 +251,7 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 
 | **Valor de negócio ↓ / Esforço técnico →** | **1 — Baixo** | **2 — Moderado** | **3 — Alto** | **4 — Muito alto** |
 | --- | --- | --- | --- | --- |
-| **4 — Muito alto** | **RF21, RF27, RF29** | **RF05, RF08, RF10, RF11, RF12, RF13, RF17, RF23, RF25, RF26, RF28, RF33, RF34, RNF01, RNF03, RNF04, RNF07, RNF08, RNF09** | RF04, **RF14** **, RNF02, RNF05** | — |
+| **4 — Muito alto** | **RF21, RF27, RF29** | **RF05, RF08, RF10, RF11, RF12, RF13, RF17, RF23, RF25, RF26, RF28, RF33, RF34, RNF01, RNF03, RNF04, RNF07, RNF08, RNF09** | RF04, **RF14**, **RNF02, RNF05** | — |
 | **3 — Alto** |  — | **RF06, RF07, RF09, RF15, RF18, RF22** | RNF06, RNF10 | — |
 | **2 — Moderado** | RF24 | RF30, RF02, RF16, RF19, RF20, RF31, RF32, RF35, RF01 |  — | — |
 | **1 — Baixo** | — | RF03 | — | — |
@@ -196,7 +259,6 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 *Matriz 4x4, em negrito são os que entrarão no MVP*
 
 
-<!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/Onc9sxunGlXpjNQXJqnAMF/Matriz-de-prioridade?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
 
 > Em rosa são os que posteriormente entraram no MVP do produto.
 
@@ -207,3 +269,4 @@ O eixo vertical representa o **valor de negócio**, avaliado junto ao cliente, e
 A partir da matriz realizamos a definição do MVP baseado nos requisitos localizados no quadrante superior esquerdo, no qual encontram-se aqueles com menor esforço técnico e maior valor de negócio. 
 
 A unica exceção é o **RF14**, que apesar de ter um esforço técnico mais alto, é um requisito primordial nessa primeira entrega para o cliente. Portando o **RNF02** e o **RNF05** que eram fortes candidatos ao MVP também entrarão por serem fortemente relacionados ao requisito RF14.
+-->
