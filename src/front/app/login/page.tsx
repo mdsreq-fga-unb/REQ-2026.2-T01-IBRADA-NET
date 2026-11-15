@@ -1,4 +1,32 @@
+"use client";
+
+import { useState, type SubmitEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
+
 export default function Login() {
+    const { login } = useAuth();
+    const router = useRouter();
+    const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setError("");
+        setLoading(true);
+
+        const data = new FormData(e.currentTarget);
+        try {
+            await login(String(data.get("email")), String(data.get("senha")));
+            router.push("/");
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Não foi possível entrar. Tente novamente.");
+        } finally {
+            setLoading(false);
+        }
+    }
+
     return (
         <div className="mx-auto grid min-h-screen w-full max-w-6xl grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-2 lg:gap-12 lg:py-16">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -17,26 +45,36 @@ export default function Login() {
             <div className="mx-auto w-full max-w-md rounded-md border border-gray-300 p-5 sm:p-8 lg:max-w-none lg:p-10">
                 <h1 className="text-xl font-semibold">Entrar na sua conta</h1>
                 <span className="text-sm text-gray-600">Preencha os campos abaixo para acessar sua conta</span>
-                <form className="mt-4 flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
                     <input
-                        type="text"
+                        name="email"
+                        type="email"
+                        required
                         placeholder="Email"
                         className="min-h-11 w-full rounded-md border border-gray-300 p-2 text-base"
                     />
                     <input
-                        type="password"
+                        name="senha"
+                        type={showPassword ? "text" : "password"}
+                        required
                         placeholder="Senha"
                         className="min-h-11 w-full rounded-md border border-gray-300 p-2 text-base"
                     />
-                    <button type="submit" className="min-h-11 rounded-md bg-green-800 p-2 text-white">
-                        Entrar
+                    {error && <p className="text-sm text-red-600" role="alert">{error}</p>}
+                    <button type="submit" disabled={loading} className="min-h-11 rounded-md bg-green-800 p-2 text-white disabled:opacity-60">
+                        {loading ? "Entrando..." : "Entrar"}
                     </button>
                     <label className="flex items-center gap-2">
                         <input type="checkbox" className="size-4" />
                         <span className="text-sm text-gray-600">Lembrar-me</span>
                     </label>
                     <label className="mb-3 flex items-center gap-2">
-                        <input type="checkbox" className="size-4" />
+                        <input
+                            type="checkbox"
+                            className="size-4"
+                            checked={showPassword}
+                            onChange={(e) => setShowPassword(e.target.checked)}
+                        />
                         <span className="text-sm text-gray-600">Exibir senha</span>
                     </label>
                 </form>
