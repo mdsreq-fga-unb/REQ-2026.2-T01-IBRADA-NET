@@ -1,5 +1,5 @@
-import { IsString, IsOptional, IsArray, IsEnum, IsDateString, IsNotEmpty } from 'class-validator';
-import { NivelEducacao, StatusEducacao } from './create-user.dto.js';
+import { IsString, IsOptional, IsArray, IsEnum, IsDateString, IsNotEmpty, IsIn } from 'class-validator';
+import { NivelEducacao, StatusEducacao, UFS, UF_MESSAGE } from './create-user.dto.js';
 
 export class UpdateUserDto {
   @IsString()
@@ -19,8 +19,7 @@ export class UpdateUserDto {
   @IsOptional()
   cidade?: string;
 
-  @IsString()
-  @IsNotEmpty()
+  @IsIn(UFS, { message: UF_MESSAGE })
   @IsOptional()
   estado?: string;
 

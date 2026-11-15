@@ -34,7 +34,7 @@ export function getStoredUser(): AuthUser | null {
     }
 }
 
-function setStoredUser(user: AuthUser) {
+export function setStoredUser(user: AuthUser) {
     localStorage.setItem(USER_KEY, JSON.stringify(user));
 }
 

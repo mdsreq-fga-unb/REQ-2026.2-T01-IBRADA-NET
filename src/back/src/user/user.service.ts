@@ -40,10 +40,7 @@ export class UserService implements OnApplicationBootstrap {
       throw new ConflictException('Este email já está vinculado a uma conta.');
     }
 
-    const dataNascimento = new Date(dto.dataNascimento);
-    if (dataNascimento.getTime() > Date.now()) {
-      throw new BadRequestException('A data de nascimento não pode estar no futuro.');
-    }
+    const dataNascimento = this.parseDataNascimento(dto.dataNascimento);
 
     const passwordHash = await bcrypt.hash(dto.password, 10);
 
@@ -94,6 +91,15 @@ export class UserService implements OnApplicationBootstrap {
     }
   }
 
+  // Converte a data e recusa datas futuras (usado no cadastro e na edição).
+  private parseDataNascimento(value: string): Date {
+    const data = new Date(value);
+    if (data.getTime() > Date.now()) {
+      throw new BadRequestException('A data de nascimento não pode estar no futuro.');
+    }
+    return data;
+  }
+
   async findByEmail(email: string) {
     return this.prisma.user.findUnique({ where: { email } });
   }
@@ -120,7 +126,7 @@ export class UserService implements OnApplicationBootstrap {
           phone,
           cidade,
           estado,
-          ...(dataNascimento !== undefined && { dataNascimento: new Date(dataNascimento) }),
+          ...(dataNascimento !== undefined && { dataNascimento: this.parseDataNascimento(dataNascimento) }),
           ...(editaPerfil && {
             perfilVoluntario: {
               update: {
@@ -138,7 +144,16 @@ export class UserService implements OnApplicationBootstrap {
             },
           }),
         },
-        select: { id: true, name: true, phone: true },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          phone: true,
+          dataNascimento: true,
+          cidade: true,
+          estado: true,
+        },
       });
     } catch (error) {
       if (prismaCode(error) === 'P2025') {

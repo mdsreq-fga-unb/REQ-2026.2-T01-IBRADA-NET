@@ -5,6 +5,7 @@ import {
     AUTH_EXPIRED_EVENT,
     getStoredUser,
     getToken,
+    setStoredUser,
     login as apiLogin,
     logout as apiLogout,
     type AuthUser,
@@ -16,6 +17,8 @@ type AuthContextValue = {
     ready: boolean;
     login: (email: string, password: string) => Promise<AuthUser>;
     logout: () => Promise<void>;
+    // Atualiza nome/papel na sessão (estado + localStorage) após editar o perfil, sem novo login.
+    updateUser: (patch: Partial<Omit<AuthUser, "id">>) => void;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -45,7 +48,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null);
     }, []);
 
-    const value = useMemo(() => ({ user, ready, login, logout }), [user, ready, login, logout]);
+    const updateUser = useCallback((patch: Partial<Omit<AuthUser, "id">>) => {
+        const current = getStoredUser();
+        if (!current) return;
+        const next = { ...current, ...patch };
+        setStoredUser(next);
+        setUser(next);
+    }, []);
+
+    const value = useMemo(
+        () => ({ user, ready, login, logout, updateUser }),
+        [user, ready, login, logout, updateUser],
+    );
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

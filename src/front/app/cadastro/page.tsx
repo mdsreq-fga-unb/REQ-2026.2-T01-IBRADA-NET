@@ -40,11 +40,11 @@ export default function Cadastro() {
         const payload: RegisterPayload = {
             name: String(data.nome).trim(),
             email: String(data.email).trim(),
-            phone: String(data.telefone).trim(),
+            phone: String(data.telefone).trim() || undefined,
             password: String(data.senha),
             dataNascimento: String(data.dataNascimento),
             cidade: String(data.cidade).trim(),
-            estado: String(data.estado).trim(),
+            estado: String(data.estado).trim().toUpperCase(),
             lgpdAccepted: true,
             lgpdVersion: terms.version,
         };
