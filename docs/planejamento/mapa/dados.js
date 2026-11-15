@@ -347,6 +347,7 @@ window.MAPA_DATA = {
     "O sistema deve disponibilizar uma seção de texto livre para que o usuário possa descrever o tipo de parceria que queira sugerir ou trabalhar.",
     "Deve haver um botão para enviar a proposta. O botão deve ser bloqueado caso algum campo de identificação não seja preenchido."
    ],
+   "feitos": [0, 1],
    "issue": 44,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/44",
    "adaptado": false
