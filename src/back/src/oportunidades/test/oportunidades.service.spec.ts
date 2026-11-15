@@ -441,4 +441,13 @@ describe('OportunidadesService (US13, US14, US21, RF19)', () => {
       expect(mockPrisma.oportunidade.update).not.toHaveBeenCalled();
     });
   });
+  it('preserva os critérios omitidos no PATCH parcial', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op-1' });
+    mockPrisma.oportunidade.update.mockResolvedValue({ id: 'op-1', habilidades: '[]' });
+    await service.update('op-1', { criteriosFunil: { exigeExperiencia: true } });
+    expect(mockPrisma.criterioFunil.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      update: { exigeExperiencia: true },
+    }));
+  });
+
 });

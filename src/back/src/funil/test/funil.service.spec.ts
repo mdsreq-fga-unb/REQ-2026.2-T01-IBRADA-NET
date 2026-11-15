@@ -186,7 +186,7 @@ describe('FunilService — Regra de Negócio RN05 (Filtro de Candidatos)', () =>
       expect(lucas.apto).toBe(true);
     });
 
-    it('deve filtrar candidatos pelas tags/habilidades exigidas tanto nos interesses quanto no campo outros', async () => {
+    it('deve comparar habilidades declaradas como tags completas no campo outros', async () => {
       mockPrisma.oportunidade.findUnique.mockResolvedValue({
         id: oportunidadeId,
         title: 'Oficina Agroecológica',
@@ -204,7 +204,7 @@ describe('FunilService — Regra de Negócio RN05 (Filtro de Candidatos)', () =>
           experienciaNaArea: false,
           perfil: {
             educacaoNivel: NivelEducacao.GRADUACAO,
-            outros: 'Prática em compostagem e minhocário', // Tem compostagem aqui
+            outros: 'Compostagem; Agroecologia', // Habilidades declaradas explicitamente
             user: { name: 'Clara Silva', email: 'clara@email.com' },
             interesses: [{ categoria: { nome: 'Agroecologia Comunitária' } }], // Tem agroecologia aqui
           },
@@ -277,4 +277,17 @@ describe('FunilService — Regra de Negócio RN05 (Filtro de Candidatos)', () =>
       );
     });
   });
+  it('não aprova uma negação de habilidade nem um interesse isolado', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ criteriosFunil: {
+      exigeExperiencia: false, educacaoMinima: null, habilidadesExigidas: '["Botânica"]',
+    } });
+    mockPrisma.candidatura.findMany.mockResolvedValue([{
+      id: 'c1', perfilId: 'p1', experienciaNaArea: false,
+      perfil: { user: { name: 'Teste', email: 'teste@example.com' },
+        outros: 'Não tenho conhecimento em Botânica', interesses: [{ categoria: { nome: 'Botânica' } }] },
+    }]);
+    const [resultado] = await service.filtrarCandidatos('op1');
+    expect(resultado.apto).toBe(false);
+  });
+
 });

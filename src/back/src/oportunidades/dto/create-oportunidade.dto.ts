@@ -4,7 +4,9 @@ import {
   IsBoolean,
   IsEnum,
   IsNotEmpty,
-  IsOptional,
+  Matches,
+  MaxLength,
+  ValidateIf,
   IsString,
   ValidateNested,
 } from 'class-validator';
@@ -21,24 +23,25 @@ import { NivelEducacao } from '../../user/dto/create-user.dto.js';
  */
 export class CriterioFunilDto {
   /** Se `true`, apenas candidatos com `experienciaNaArea = true` passam no funil. */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @IsBoolean({ message: 'exigeExperiencia deve ser um booleano.' })
   exigeExperiencia?: boolean;
 
   /** Nível mínimo de educação exigido (ex.: GRADUACAO). */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @IsEnum(NivelEducacao, { message: 'educacaoMinima inválido. Valores aceitos: FUNDAMENTAL, MEDIO, GRADUACAO, POS_GRADUACAO, MESTRADO, DOUTORADO.' })
   educacaoMinima?: NivelEducacao;
 
   /**
    * Tags de habilidades específicas exigidas.
    * Ex.: ["Botânica", "Primeiros Socorros"]
-   * No funil, cada tag será comparada (case-insensitive) com os interesses
-   * e habilidades do perfil do candidato.
+   * No funil, cada tag é comparada integralmente, sem diferenciar maiúsculas,
+   * com as habilidades declaradas em `outros` (separadas por vírgula, ; ou quebra de linha).
    */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @IsArray({ message: 'habilidadesExigidas deve ser um array de strings.' })
   @IsString({ each: true, message: 'Cada habilidade exigida deve ser um texto.' })
+  @Matches(/\S/, { each: true, message: 'Habilidades não podem ser vazias.' })
   habilidadesExigidas?: string[];
 }
 
@@ -49,30 +52,41 @@ export class CriterioFunilDto {
 export class CreateOportunidadeDto {
   @IsString({ message: 'O título deve ser um texto válido.' })
   @IsNotEmpty({ message: 'O título da oportunidade é obrigatório.' })
+  @Matches(/\S/, { message: 'Informe um texto que não contenha apenas espaços.' })
+  @MaxLength(191)
   title: string;
 
   @IsString({ message: 'A descrição deve ser um texto válido.' })
   @IsNotEmpty({ message: 'A descrição da oportunidade é obrigatória.' })
+  @Matches(/\S/, { message: 'Informe um texto que não contenha apenas espaços.' })
   description: string;
 
   /** ID do projeto associado (obrigatório, US13). */
   @IsString({ message: 'O ID do projeto deve ser um texto válido.' })
   @IsNotEmpty({ message: 'O projeto associado é obrigatório.' })
+  @Matches(/\S/, { message: 'Informe um texto que não contenha apenas espaços.' })
+  @MaxLength(191)
   projetoId: string;
 
   /** ID da categoria / área de atuação. */
   @IsString({ message: 'O ID da categoria deve ser um texto válido.' })
   @IsNotEmpty({ message: 'A categoria da oportunidade é obrigatória.' })
+  @Matches(/\S/, { message: 'Informe um texto que não contenha apenas espaços.' })
+  @MaxLength(191)
   categoriaId: string;
 
   /** Duração estimada (texto livre). Ex.: "3 meses", "2 fins de semana". */
   @IsString({ message: 'A duração deve ser um texto válido.' })
   @IsNotEmpty({ message: 'A duração da oportunidade é obrigatória.' })
+  @Matches(/\S/, { message: 'Informe um texto que não contenha apenas espaços.' })
+  @MaxLength(191)
   duracao: string;
 
   /** Disponibilidade exigida. Ex.: "Manhãs", "Integral", "Fins de semana". */
   @IsString({ message: 'A disponibilidade deve ser um texto válido.' })
   @IsNotEmpty({ message: 'A disponibilidade da oportunidade é obrigatória.' })
+  @Matches(/\S/, { message: 'Informe um texto que não contenha apenas espaços.' })
+  @MaxLength(191)
   disponibilidade: string;
 
   /**
@@ -81,17 +95,19 @@ export class CreateOportunidadeDto {
    */
   @IsArray({ message: 'As habilidades devem ser informadas como um array de textos.' })
   @IsString({ each: true, message: 'Cada habilidade deve ser um texto.' })
+  @Matches(/\S/, { each: true, message: 'Habilidades não podem ser vazias.' })
   @ArrayMinSize(1, { message: 'Informe ao menos uma habilidade requerida.' })
   habilidades: string[];
 
   /** Atividades planejadas (US14). Opcional no cadastro. */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @IsString({ message: 'As atividades planejadas devem ser um texto válido.' })
   atividades?: string;
 
   /** Local de atuação (US14). */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @IsString({ message: 'O local de atuação deve ser um texto válido.' })
+  @MaxLength(191)
   localAtuacao?: string;
 
   /**
@@ -100,7 +116,7 @@ export class CreateOportunidadeDto {
    * `false` = Rascunho (não visível publicamente).
    * Padrão: `true`.
    */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @IsBoolean({ message: 'isOpen deve ser um valor booleano (true ou false).' })
   isOpen?: boolean;
 
@@ -109,7 +125,7 @@ export class CreateOportunidadeDto {
    * O gestor seleciona tags de critérios objetivos no cadastro da oportunidade.
    * Opcional — se não informado, nenhuma filtragem automática é aplicada.
    */
-  @IsOptional()
+  @ValidateIf((_, value: unknown) => value !== undefined)
   @ValidateNested({ message: 'Os critérios do funil devem ser um objeto válido.' })
   @Type(() => CriterioFunilDto)
   criteriosFunil?: CriterioFunilDto;

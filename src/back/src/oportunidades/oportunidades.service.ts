@@ -277,11 +277,15 @@ export class OportunidadesService {
               : null,
           },
           update: {
-            exigeExperiencia: dto.criteriosFunil.exigeExperiencia ?? false,
-            educacaoMinima: dto.criteriosFunil.educacaoMinima ?? null,
-            habilidadesExigidas: dto.criteriosFunil.habilidadesExigidas
-              ? JSON.stringify(dto.criteriosFunil.habilidadesExigidas)
-              : null,
+            ...(dto.criteriosFunil.exigeExperiencia !== undefined && {
+              exigeExperiencia: dto.criteriosFunil.exigeExperiencia,
+            }),
+            ...(dto.criteriosFunil.educacaoMinima !== undefined && {
+              educacaoMinima: dto.criteriosFunil.educacaoMinima,
+            }),
+            ...(dto.criteriosFunil.habilidadesExigidas !== undefined && {
+              habilidadesExigidas: JSON.stringify(dto.criteriosFunil.habilidadesExigidas),
+            }),
           },
         });
       }

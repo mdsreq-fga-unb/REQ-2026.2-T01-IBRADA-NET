@@ -56,8 +56,8 @@ export interface ResultadoFiltragem {
  *
  *   1. **exigeExperiencia** — candidato deve ter marcado `experienciaNaArea = true`
  *   2. **educacaoMinima** — nível mínimo de educação (ordem hierárquica)
- *   3. **habilidadesExigidas** — tags que devem estar presentes nos interesses
- *      ou habilidades extras (`outros`) do perfil do candidato (case-insensitive)
+ *   3. **habilidadesExigidas** — tags declaradas no campo de habilidades extras
+ *      (`outros`), comparadas integralmente e sem diferenciar maiúsculas
  *
  * Se a oportunidade não possuir CriterioFunil, todos os candidatos são
  * considerados aptos (sem filtragem).
@@ -94,7 +94,6 @@ export class FunilService {
         perfil: {
           include: {
             user: { select: { name: true, email: true } },
-            interesses: { include: { categoria: true } },
           },
         },
       },
@@ -153,19 +152,17 @@ export class FunilService {
 
       // Critério 3: habilidades / tags exigidas
       if (habilidadesExigidas.length > 0) {
-        const interessesCandidato = candidatura.perfil.interesses.map((i) =>
-          i.categoria.nome.toLowerCase(),
+        // `outros` contém habilidades declaradas, separadas por vírgula,
+        // ponto e vírgula ou quebra de linha. Interesses não comprovam habilidade.
+        const habilidadesCandidato = new Set(
+          (candidatura.perfil.outros ?? '')
+            .split(/[,;\n]/)
+            .map((tag) => tag.trim().toLocaleLowerCase('pt-BR'))
+            .filter(Boolean),
         );
-        const outrosCandidato = (candidatura.perfil.outros ?? '').toLowerCase();
-
-        const habilidadesFaltantes = habilidadesExigidas.filter((hab) => {
-          const habLower = hab.toLowerCase();
-          const temNoInteresse = interessesCandidato.some((ic) =>
-            ic.includes(habLower),
-          );
-          const temNoOutros = outrosCandidato.includes(habLower);
-          return !temNoInteresse && !temNoOutros;
-        });
+        const habilidadesFaltantes = habilidadesExigidas.filter(
+          (hab) => !habilidadesCandidato.has(hab.trim().toLocaleLowerCase('pt-BR')),
+        );
 
         if (habilidadesFaltantes.length > 0) {
           motivos.push(
