@@ -51,6 +51,7 @@ describe('ParceriasService (US19, US20)', () => {
       expect(mockPrisma.pedidoParceria.create).toHaveBeenCalledWith({
         data: {
           organization: 'Instituto Terra Viva',
+          cnpj: null,
           contactName: 'Carlos Silva',
           contactEmail: 'carlos@terraviva.org',
           contactPhone: '(61) 98765-4321',
@@ -61,7 +62,7 @@ describe('ParceriasService (US19, US20)', () => {
       expect(response.data.status).toBe(PartnershipStatus.RECEIVED);
     });
 
-    it('deve formatar e incluir o CNPJ no texto da proposta quando fornecido', async () => {
+    it('deve salvar o CNPJ na coluna própria, sem misturar com o texto da proposta', async () => {
       const dtoComCnpj: CreatePedidoParceriaDto = {
         organization: 'Empresa Verde S.A.',
         cnpj: '12.345.678/0001-90',
@@ -73,20 +74,23 @@ describe('ParceriasService (US19, US20)', () => {
       mockPrisma.pedidoParceria.create.mockResolvedValue({
         id: 'parceria-2',
         ...dtoComCnpj,
-        proposal: `[CNPJ: 12.345.678/0001-90]\n\nProposta de apoio financeiro e capacitação.`,
         status: PartnershipStatus.RECEIVED,
         createdAt: new Date(),
       });
 
       await service.create(dtoComCnpj);
 
-      expect(mockPrisma.pedidoParceria.create).toHaveBeenCalledWith(
-        expect.objectContaining({
-          data: expect.objectContaining({
-            proposal: expect.stringContaining('[CNPJ: 12.345.678/0001-90]'),
-          }),
-        }),
-      );
+      expect(mockPrisma.pedidoParceria.create).toHaveBeenCalledWith({
+        data: {
+          organization: 'Empresa Verde S.A.',
+          cnpj: '12.345.678/0001-90',
+          contactName: 'Mariana Costa',
+          contactEmail: 'mariana@empresa.com',
+          contactPhone: null,
+          proposal: 'Proposta de apoio financeiro e capacitação.',
+          status: PartnershipStatus.RECEIVED,
+        },
+      });
     });
   });
 

@@ -21,18 +21,14 @@ export class ParceriasService {
    * Rota pública (sem autenticação). Salva a proposta com status inicial 'RECEIVED' (Nova Solicitação).
    */
   async create(dto: CreatePedidoParceriaDto) {
-    // Preserva o CNPJ na proposta sem exigir alteração imediata da tabela do banco de dados
-    const proposalWithCnpj = dto.cnpj
-      ? `[CNPJ: ${dto.cnpj.trim()}]\n\n${dto.proposal.trim()}`
-      : dto.proposal.trim();
-
     const pedido = await this.prisma.pedidoParceria.create({
       data: {
         organization: dto.organization.trim(),
+        cnpj: dto.cnpj?.trim() || null,
         contactName: dto.contactName.trim(),
         contactEmail: dto.contactEmail.trim(),
-        contactPhone: dto.contactPhone?.trim() ?? null,
-        proposal: proposalWithCnpj,
+        contactPhone: dto.contactPhone?.trim() || null,
+        proposal: dto.proposal.trim(),
         status: PartnershipStatus.RECEIVED,
       },
     });
