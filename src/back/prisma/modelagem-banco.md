@@ -79,6 +79,7 @@ erDiagram
     PedidoParceria {
         string id PK
         string organization
+        string cnpj
         string contactName
         string contactEmail
         string contactPhone

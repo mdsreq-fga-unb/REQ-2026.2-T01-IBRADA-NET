@@ -20,6 +20,8 @@
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   };
   var checks = store.get("ibrada-mapa-v2", {});
+  // "feitos" (dados.js): critérios já entregues; só valem enquanto o navegador não tem marcação própria da US.
+  window.MAPA_DATA.us.forEach(function (u) { if (u.feitos && !checks[u.id]) { checks[u.id] = {}; u.feitos.forEach(function (i) { checks[u.id]["c" + i] = true; }); } });
   var sel = null, hover = null;
 
   /* ---------- grafo ---------- */

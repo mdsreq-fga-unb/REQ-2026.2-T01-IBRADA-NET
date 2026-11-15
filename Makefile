@@ -14,7 +14,7 @@
 #   • Parar os contêineres:
 #     docker compose down
 
-.PHONY: help up down restart build logs logs-back logs-front prisma-migrate prisma-migrate-deploy prisma-generate prisma-studio back-shell front-shell db-shell setup
+.PHONY: help up down restart build logs logs-back logs-front prisma-migrate prisma-migrate-deploy prisma-generate prisma-studio back-shell front-shell db-shell setup test
 
 help:
 	@echo "Comandos disponíveis:"
@@ -31,6 +31,7 @@ help:
 	@echo "  make front-shell      - Abre o terminal dentro do contêiner frontend"
 	@echo "  make db-shell         - Conecta ao MySQL no contêiner do banco"
 	@echo "  make setup             - Configura o ambiente e atualiza o banco"
+	@echo "  make test				- Roda tests"
 
 up:
 	docker compose up -d
@@ -72,3 +73,6 @@ setup:
 	docker compose up -d --build
 	docker compose exec back npx prisma migrate deploy
 	docker compose exec back npx prisma generate
+
+make test:
+	docker compose exec back npm test

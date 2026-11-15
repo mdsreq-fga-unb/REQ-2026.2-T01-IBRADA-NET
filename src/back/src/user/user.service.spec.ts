@@ -107,8 +107,10 @@ describe('UserService.create (US04, US15, US23)', () => {
   });
 
   it('categoria inexistente (P2025) vira 400', async () => {
+  it('categoria inexistente (P2025) vira 400', async () => {
     prisma.user.create.mockRejectedValue({ code: 'P2025' });
     await expect(
+      service.create({ ...base, role: PublicUserRole.VOLUNTARIO, categoriaIds: ['x'] }),
       service.create({ ...base, role: PublicUserRole.VOLUNTARIO, categoriaIds: ['x'] }),
     ).rejects.toBeInstanceOf(BadRequestException);
   });
@@ -136,9 +138,12 @@ describe('UserService.update (US05)', () => {
     prisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'p1' });
 
     await service.update('u1', { bio: 'Nova bio', categoriaIds: ['c1'] });
+    await service.update('u1', { bio: 'Nova bio', categoriaIds: ['c1'] });
 
     const update = dados().perfilVoluntario.update;
     expect(update.bio).toBe('Nova bio');
+    expect(update.interesses.deleteMany).toEqual({});
+    expect(update.interesses.create).toHaveLength(1);
     expect(update.interesses.deleteMany).toEqual({});
     expect(update.interesses.create).toHaveLength(1);
     expect(dados().bio).toBeUndefined();
