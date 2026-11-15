@@ -2,6 +2,8 @@
 
 Aqui é como ficou a lista finalizada após os apontamentos do grupo **Cascata ágil**. O documento com as críticas enviada pelo grupo também foi em PDF, o documento pode ser visualizado [aqui](https://drive.google.com/file/d/1vvE9TA4tvYRuvLK9ac-VAhXjeb-X0otm/view?usp=drive_link).
 
+"Nota de Rastreabilidade e Renumeração: Em decorrência do apontamento sobre granularidade excessiva no antigo RF12, a equipe desmembrou o fluxo de reserva, inserindo o RF13 (Confirmar reserva). Com isso, os requisitos funcionais subsequentes foram reordenados a partir do RF14."
+
 ## Requisitos Funcionais
 
 | ID | Nome | Descrição | Relação | Decisão + justificativa |
@@ -17,12 +19,12 @@ Aqui é como ficou a lista finalizada após os apontamentos do grupo **Cascata �
 | RF09 | Editar perfil de clientes | Permitir que clientes possam editar seus dados pessoais registrados em suas próprias contas. | CP3 | Nada consta |
 | RF10 | Realizar login de cliente | Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais. | CP3 | Aceito |
 | RF11 | Encerrar sessão de cliente | Permitir que clientes encerrem sua sessão ativa no sistema. | CP3 | Aceito |
-| RF12 | Selecionar pacote de ecoturismo | Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados. | CP3 | Adicionado posteriormente |
-| RF13 | Confirmar reserva | Permitir que o cliente confirme a reserva antes do checkout. | CP3 | Adicionado posteriormente |
-| RF14 | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 | Aceito |
-| RF15 | Cadastrar experiências de ecoturismo | Permitir a equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 | Parcialmente aceito, mencionar um “painel administrativo” não torna o requisito automaticamente errado, trocamos algumas palavras para cadastro para melhor compreendimento. |
-| RF16 | Editar experiências de ecoturismo | Permitir a equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 | Não aceito, o RF14 é um requisito de cadastro, ou seja, essa sugestão não é válida. |
-| RF17 | Alterar disponibilidade de experiência de ecoturismo | Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas. | CP3 | Aceito |
+| RF12 | Selecionar pacote de ecoturismo | Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados. | CP3 | Aceito. O requisito original englobava seleção, resumo e checkout. Foi refinado para contemplar apenas a seleção do pacote e quantidade de vagas, atendendo ao feedback de atomicidade. |
+| RF13 | Confirmar reserva | Permitir que o cliente confirme a reserva antes do checkout. | CP3 | Aceito (Criado a partir da divisão do antigo RF12). Separa a etapa de revisão e confirmação dos dados da reserva antes do direcionamento ao checkout. |
+| RF14 (Antigo RF13) | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 | Aceito. O termo genérico 'usuário' foi substituído por 'cliente', padronizando a nomenclatura com os demais requisitos de compra. |
+| RF15 (Antigo RF14) | Cadastrar experiências de ecoturismo | Permitir a equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 | Parcialmente aceito, mencionar um “painel administrativo” não torna o requisito automaticamente errado, trocamos algumas palavras para cadastro para melhor compreendimento. |
+| RF16 (Antigo RF15) | Editar experiências de ecoturismo | Permitir a equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 | Não aceito, o RF15 (antigo RF14) é um requisito de cadastro, ou seja, essa sugestão não é válida. |
+| RF17 | Alterar disponibilidade de experiência de ecoturismo | Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas. | CP3 | Aceito. Os antigos RF16 (Habilitar) e RF17 (Desabilitar) foram unificados em um único requisito funcional parametrizado (Alterar disponibilidade), eliminando redundância. |
 | RF18 | Cadastrar oportunidades de voluntariado | Permitir ao gestor cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado. | CP4 | Não aplicável, não existe obrigação de todo domínio possuir CRUD completo, a experiência continuará visível, só não aplicável após o período estabelecido. |
 | RF19 | Editar oportunidades de voluntariado | Permitir ao gestor editar as informações das oportunidades de voluntariado registradas no sistema. | CP4 | Não aplicável, não existe obrigação de todo domínio possuir CRUD completo, a experiência continuará visível, só não aplicável após o período estabelecido. |
 | RF20 | Gerenciar papel de gestor | Permitir que um gestor cadastre outros membros da equipe do IBRADA como gestores, concedendo a eles acesso aos painéis do sistema. | CP4 | Aceito |
