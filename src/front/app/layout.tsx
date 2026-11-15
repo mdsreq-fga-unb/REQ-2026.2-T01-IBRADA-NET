@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/navbar";
 import { SiteFooter } from "@/components/site-footer";
+import { AuthProvider } from "@/lib/auth-context";
 import { PublicSiteChrome } from "@/components/public-site-chrome";
 import "./globals.css";
 
@@ -32,9 +33,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
-        <PublicSiteChrome><SiteHeader /></PublicSiteChrome>
-        <main id="conteudo">{children}</main>
-        <PublicSiteChrome><SiteFooter /></PublicSiteChrome>
+        <AuthProvider>
+          <SiteHeader />
+          <main id="conteudo">{children}</main>
+          <SiteFooter />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -23,6 +23,9 @@ const base = {
   password: 'SenhaForte@123',
   lgpdAccepted: true,
   lgpdVersion: '2026-11-v1',
+  dataNascimento: '1999-05-20',
+  cidade: 'Brasília',
+  estado: 'DF',
 } as CreateUserDto;
 
 describe('UserService.create (US04, US15, US23)', () => {
@@ -54,20 +57,36 @@ describe('UserService.create (US04, US15, US23)', () => {
     expect(prisma.user.create).not.toHaveBeenCalled();
   });
 
-  it('VOLUNTARIO cria o perfil com os interesses (categorias) na mesma operação', async () => {
+  it('grava dataNascimento, cidade e estado no User', async () => {
+    await service.create(base);
+
+    const data = dadosCriados();
+    expect(data.dataNascimento).toEqual(new Date('1999-05-20'));
+    expect(data.cidade).toBe('Brasília');
+    expect(data.estado).toBe('DF');
+  });
+
+  it('recusa data de nascimento no futuro (400)', async () => {
+    await expect(service.create({ ...base, dataNascimento: '2999-01-01' })).rejects.toBeInstanceOf(
+      BadRequestException,
+    );
+    expect(prisma.user.create).not.toHaveBeenCalled();
+  });
+
+  it('VOLUNTARIO cria o perfil com educação e interesses (categorias) na mesma operação', async () => {
     await service.create({
       ...base,
       role: PublicUserRole.VOLUNTARIO,
       bio: 'Bio',
+      educacaoNivel: 'GRADUACAO' as never,
+      educacaoCompletude: 'EM_ANDAMENTO' as never,
       categoriaIds: ['c1', 'c2'],
     });
 
-    const data = dadosCriados();
-    expect(data.perfilVoluntario.create.bio).toBe('Bio');
-    expect(data.perfilVoluntario.create.interesses.create).toHaveLength(2);
-    expect(data.perfilVoluntario.create.interesses.create[0]).toEqual({
-      categoria: { connect: { id: 'c1' } },
-    });
+    const perfil = dadosCriados().perfilVoluntario.create;
+    expect(perfil.bio).toBe('Bio');
+    expect(perfil.educacaoNivel).toBe('GRADUACAO');
+    expect(perfil.interesses.create).toHaveLength(2);
   });
 
   it('recusa cadastro sem aceite da LGPD com 400 (não 409)', async () => {
@@ -142,6 +161,10 @@ describe('UserService gestor inicial', () => {
 
   beforeEach(() => {
     resetPrisma();
+    // Isola do ambiente real (o container pode ter GESTOR_* definidos).
+    vi.stubEnv('GESTOR_EMAIL', '');
+    vi.stubEnv('GESTOR_PASSWORD', '');
+    vi.stubEnv('GESTOR_NAME', '');
     prisma.user.findUnique.mockResolvedValue(null);
     service = new UserService(prisma as never);
   });

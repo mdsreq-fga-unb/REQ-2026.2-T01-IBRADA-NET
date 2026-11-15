@@ -40,6 +40,8 @@ export class UserService implements OnApplicationBootstrap {
       throw new ConflictException('Este email já está vinculado a uma conta.');
     }
 
+    const dataNascimento = this.parseDataNascimento(dto.dataNascimento);
+
     const passwordHash = await bcrypt.hash(dto.password, 10);
 
     try {
@@ -49,6 +51,9 @@ export class UserService implements OnApplicationBootstrap {
           email: dto.email,
           passwordHash,
           phone: dto.phone,
+          dataNascimento,
+          cidade: dto.cidade,
+          estado: dto.estado,
           role: dto.role,
           consents: {
             create: {
@@ -60,28 +65,39 @@ export class UserService implements OnApplicationBootstrap {
               create: {
                 bio: dto.bio,
                 outros: dto.outros,
-                interesses: dto.categoriaIds ? {
-                  create: dto.categoriaIds.map((id: string) => ({
-                    categoria: { connect: { id } }
-                  }))
-                } : undefined
-              }
-            }
-          })
+                educacaoNivel: dto.educacaoNivel,
+                educacaoCompletude: dto.educacaoCompletude,
+                interesses: dto.categoriaIds
+                  ? {
+                      create: dto.categoriaIds.map((id: string) => ({
+                        categoria: { connect: { id } },
+                      })),
+                    }
+                  : undefined,
+              },
+            },
+          }),
         },
-        select: { id: true, name: true, email: true, role: true }
+        select: { id: true, name: true, email: true, role: true },
       });
     } catch (error) {
-      // P2002: e-mail duplicado numa corrida entre duas requisições.
       if (prismaCode(error) === 'P2002') {
         throw new ConflictException('Este email já está vinculado a uma conta.');
       }
-      // P2025: alguma categoria de interesse informada não existe.
       if (prismaCode(error) === 'P2025') {
-        throw new BadRequestException('Uma das categorias informadas não existe.');
+        throw new BadRequestException('Uma das categorias de interesse informadas não existe.');
       }
       throw error;
     }
+  }
+
+  // Converte a data e recusa datas futuras (usado no cadastro e na edição).
+  private parseDataNascimento(value: string): Date {
+    const data = new Date(value);
+    if (data.getTime() > Date.now()) {
+      throw new BadRequestException('A data de nascimento não pode estar no futuro.');
+    }
+    return data;
   }
 
   async findByEmail(email: string) {
@@ -89,8 +105,7 @@ export class UserService implements OnApplicationBootstrap {
   }
 
   async update(userId: string, data: UpdateUserDto) {
-    // name/phone são colunas de User; os demais campos pertencem ao PerfilVoluntario.
-    const { name, phone, categoriaIds, ...perfil } = data;
+    const { name, phone, dataNascimento, cidade, estado, categoriaIds, ...perfil } = data;
     const perfilData = Object.fromEntries(
       Object.entries(perfil).filter(([, value]) => value !== undefined),
     );
@@ -109,6 +124,9 @@ export class UserService implements OnApplicationBootstrap {
         data: {
           name,
           phone,
+          cidade,
+          estado,
+          ...(dataNascimento !== undefined && { dataNascimento: this.parseDataNascimento(dataNascimento) }),
           ...(editaPerfil && {
             perfilVoluntario: {
               update: {
@@ -126,7 +144,16 @@ export class UserService implements OnApplicationBootstrap {
             },
           }),
         },
-        select: { id: true, name: true, phone: true },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          phone: true,
+          dataNascimento: true,
+          cidade: true,
+          estado: true,
+        },
       });
     } catch (error) {
       if (prismaCode(error) === 'P2025') {
@@ -136,8 +163,6 @@ export class UserService implements OnApplicationBootstrap {
     }
   }
 
-  // Cria o gestor inicial a partir de GESTOR_EMAIL / GESTOR_PASSWORD (e GESTOR_NAME,
-  // opcional). Idempotente: não faz nada se a conta já existe e nunca promove uma conta existente.
   async onApplicationBootstrap() {
     const email = process.env.GESTOR_EMAIL;
     const password = process.env.GESTOR_PASSWORD;

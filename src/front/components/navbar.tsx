@@ -1,12 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, MessageCircle, UserRound } from 'lucide-react'
+import { LogOut, Menu, MessageCircle, UserRound } from 'lucide-react'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { IbradaMark } from '@/components/brand-icons'
+import { useAuth } from '@/lib/auth-context'
 import { buildWhatsAppLink, navItems, site } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
@@ -24,17 +25,6 @@ function Logo() {
 }
 
 /**
- * Estado de autenticação (placeholder).
- * Quando a autenticação existir, substitua o retorno de `useAuthUser` pelo
- * usuário real (contexto/sessão). `null` = visitante.
- */
-type AuthUser = { name: string; avatarUrl?: string } | null
-
-function useAuthUser(): AuthUser {
-  return null
-}
-
-/**
  * Único lugar que define o botão de conta (entrar / logado).
  * Para trocar o ícone ou o link de quem está logado, edite só `loggedIn` e `guest`.
  */
@@ -49,16 +39,12 @@ function AccountButton({
   labelClassName?: string
   onNavigate?: () => void
 }) {
-  const user = useAuthUser()
+  const { user } = useAuth()
 
   const loggedIn = {
     href: '/minha-conta',
-    label: 'Minha Conta',
-    icon: user?.avatarUrl ? (
-      <img src={user.avatarUrl} alt="" className="size-5 rounded-full object-cover" />
-    ) : (
-      <UserRound data-icon="inline-start" />
-    ),
+    label: user ? `Olá, ${user.name.split(' ')[0]}` : 'Minha Conta',
+    icon: <UserRound data-icon="inline-start" />,
   }
   const guest = {
     href: '/login',
@@ -76,6 +62,34 @@ function AccountButton({
       {icon}
       <span className={labelClassName}>{label}</span>
     </Link>
+  )
+}
+
+function LogoutButton({
+  variant,
+  className,
+  onNavigate,
+}: {
+  variant: 'ghost' | 'outline'
+  className?: string
+  onNavigate?: () => void
+}) {
+  const { user, logout } = useAuth()
+  const router = useRouter()
+  if (!user) return null
+
+  const handleLogout = async () => {
+    if (!window.confirm('Deseja realmente sair da sua conta?')) return
+    onNavigate?.()
+    await logout()
+    router.push('/')
+  }
+
+  return (
+    <Button variant={variant} size="lg" className={className} onClick={handleLogout}>
+      <LogOut data-icon="inline-start" />
+      Sair
+    </Button>
   )
 }
 
@@ -123,6 +137,7 @@ export function SiteHeader() {
             className="hidden h-10 md:inline-flex"
             labelClassName="xl:sr-only 2xl:not-sr-only"
           />
+          <LogoutButton variant="ghost" className="hidden h-10 md:inline-flex" />
           <Button
             size="lg"
             onClick={() => openTriage()}
@@ -182,6 +197,7 @@ export function SiteHeader() {
               Atendimento / Triagem
             </Button>
             <AccountButton variant="outline" className="h-11" onNavigate={() => setMenuOpen(false)} />
+            <LogoutButton variant="outline" className="h-11" onNavigate={() => setMenuOpen(false)} />
           </div>
         </SheetContent>
       </Sheet>

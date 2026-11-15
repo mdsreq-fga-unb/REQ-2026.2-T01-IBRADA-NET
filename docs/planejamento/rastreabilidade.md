@@ -12,7 +12,7 @@ Os níveis e suas relações (Tema → OE, Épico → CP, User Story → RF) est
 Navegue pelo caminho **Objetivo → Tema → Épico → User Story**. Clique em qualquer item para abrir os detalhes, inclusive características de produto, regras de negócio e requisitos não funcionais.
 
 !!! note "Sobre os critérios de aceitação"
-    Os critérios são acompanhados em tempo real nas issues do GitHub de cada história. Nesta documentação eles só são atualizados depois da conclusão da US. As marcações feitas no mapa ficam salvas apenas no navegador de quem as fez.
+    Os critérios são acompanhados em tempo real nas issues do GitHub de cada história. Nesta documentação eles só são atualizados depois da conclusão da US: os critérios já concluídos aparecem marcados no mapa (campo `feitos` em `mapa/dados.js`). Marcações feitas no mapa ficam salvas apenas no navegador de quem as fez e prevalecem sobre as do repositório.
 
 <div id="mapa-rastreabilidade" data-base="../../"></div>
 
@@ -37,6 +37,18 @@ Navegue pelo caminho **Objetivo → Tema → Épico → User Story**. Clique em 
 | [OE1](../documento-visao/2_solucao.md#oe1) | <span id="t04"></span>**T04** — Parcerias Institucionais | [CP6](../documento-visao/2_solucao.md#cp6) | <span id="ep09"></span>**EP09** — Solicitação e análise de parcerias | [US19](../user-stories/us19.md) → [RF33](../documento-visao/8_requisitos.md#rf33)<br>[US20](../user-stories/us20.md) → [RF34](../documento-visao/8_requisitos.md#rf34) |
 
 A US23 aparece em dois épicos (EP03 e EP06) porque o consentimento vale para o cadastro de clientes e de voluntários.
+
+## Estado de implementação (ciclo 5)
+
+| US | Critérios concluídos | Observações |
+| --- | --- | --- |
+| [US04](../user-stories/us04.md) | 5/5 | Cadastro com validação de campos e senha, email repetido (409), mensagem de erro e redirecionamento ao login. Telefone opcional (vazio grava NULL), data de nascimento não futura e estado como sigla de UF. |
+| [US06](../user-stories/us06.md) | 3/3 | Login com token JWT, mensagem de erro em credenciais inválidas e redirecionamento à página inicial. |
+| [US07](../user-stories/us07.md) | 3/3 | Logout com confirmação, descarte da sessão e rotas protegidas por `RequireAuth`. |
+| [US17](../user-stories/us17.md) | 3/3 | Mesmo fluxo de login do cliente, com o papel `VOLUNTARIO` no token. |
+| [US22](../user-stories/us22.md) | 3/3 | Mesmo fluxo de logout do cliente. |
+| [US23](../user-stories/us23.md) | 3/3 | Link para os termos, aceite obrigatório no front e no back, consentimento gravado com a versão do termo. |
+
 
 ## Regras de negócio e requisitos não funcionais
 

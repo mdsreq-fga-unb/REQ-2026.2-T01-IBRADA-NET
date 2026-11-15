@@ -1,4 +1,5 @@
-import { IsString, IsOptional, IsArray } from 'class-validator';
+import { IsString, IsOptional, IsArray, IsEnum, IsDateString, IsNotEmpty, IsIn } from 'class-validator';
+import { NivelEducacao, StatusEducacao, UFS, UF_MESSAGE } from './create-user.dto.js';
 
 export class UpdateUserDto {
   @IsString()
@@ -9,16 +10,37 @@ export class UpdateUserDto {
   @IsOptional()
   phone?: string;
 
-  // Campos de voluntário
+  @IsDateString({ strict: true }, { message: 'Informe uma data de nascimento válida (AAAA-MM-DD).' })
+  @IsOptional()
+  dataNascimento?: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @IsOptional()
+  cidade?: string;
+
+  @IsIn(UFS, { message: UF_MESSAGE })
+  @IsOptional()
+  estado?: string;
+
+  // Campos de voluntário (PerfilVoluntario)
   @IsString()
   @IsOptional()
   bio?: string;
 
   @IsString()
   @IsOptional()
-  outros?: string; // habilidades que não estão na lista
+  outros?: string;
 
-  // Interesses do voluntário: ids de Categoria (tabela InteresseVoluntario).
+  @IsOptional()
+  @IsEnum(NivelEducacao, { message: 'Nível de educação inválido.' })
+  educacaoNivel?: NivelEducacao;
+
+  @IsOptional()
+  @IsEnum(StatusEducacao, { message: 'Situação da educação inválida.' })
+  educacaoCompletude?: StatusEducacao;
+
+  // Substitui a lista de interesses (Categoria) pela enviada.
   @IsArray()
   @IsString({ each: true })
   @IsOptional()

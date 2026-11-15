@@ -5,8 +5,7 @@ import { navItems, site } from '@/lib/site'
 
 const socials = [
   { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'Facebook', href: 'https://facebook.com' },
-  { label: 'LinkedIn', href: 'https://linkedin.com' },
+  // { label: 'Facebook', href: 'https://facebook.com' },
   { label: 'YouTube', href: 'https://youtube.com' },
 ]
 
@@ -16,8 +15,8 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4 lg:col-span-1">
           <div className="flex items-center gap-2.5">
-            <IbradaMark className="size-10 [&_rect]:fill-primary-foreground/15" />
-            <span className="font-serif text-xl font-semibold">{site.name}</span>
+            <img src="/IBRADA_logo_Sfundo.png" alt="Logo do IBRADA" width={40} height={60} className="h-20 w-25" />
+            {/* <span className="font-serif text-xl font-semibold">{site.name}</span> */}
           </div>
           <p className="text-sm leading-relaxed text-primary-foreground/80">
             Organização da Sociedade Civil de Interesse Público (OSCIP) que une direito ambiental, inclusão de
@@ -94,9 +93,9 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/quem-somos#transparencia" className="hover:text-primary-foreground hover:underline">
+              {/* <Link href="/quem-somos#transparencia" className="hover:text-primary-foreground hover:underline">
                 Transparência
-              </Link>
+              </Link> */}
             </li>
           </ul>
         </div>

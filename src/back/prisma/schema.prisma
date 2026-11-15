@@ -67,6 +67,11 @@ model User {
   email        String   @unique
   passwordHash String // nunca guardar a senha em texto puro
   phone        String?
+  // Dados pessoais do cadastro (US04). Opcionais no banco porque contas antigas e o
+  // gestor inicial não têm esses dados; o cadastro público exige os três (CreateUserDto).
+  dataNascimento DateTime? @db.Date
+  cidade         String?
+  estado         String?
   role         Role     @default(CLIENTE)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
