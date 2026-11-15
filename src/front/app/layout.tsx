@@ -34,9 +34,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Pular para o conteúdo
         </a>
         <AuthProvider>
-          <SiteHeader />
+          <PublicSiteChrome><SiteHeader /></PublicSiteChrome>
           <main id="conteudo">{children}</main>
-          <SiteFooter />
+          <PublicSiteChrome><SiteFooter /></PublicSiteChrome>
         </AuthProvider>
       </body>
     </html>

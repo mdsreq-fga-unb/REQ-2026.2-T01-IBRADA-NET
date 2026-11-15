@@ -7,7 +7,7 @@ const criteria = ["Conhecimento técnico", "Experiência prévia", "Aptidão fí
 
 type Option = { id: string; label: string };
 
-type OpportunityDraft = {
+export type OpportunityDraft = {
   name: string;
   projectId: string;
   categoryId: string;
@@ -21,7 +21,6 @@ type OpportunityDraft = {
 type Props = {
   projects: Option[];
   categories: Option[];
-  //TODO: Adaptar o rascunho ao contrato da API, incluindo os valores dos critérios do funil
   onCreate?: (draft: OpportunityDraft) => Promise<void>;
 };
 
@@ -33,6 +32,7 @@ export function OpportunityForm({ projects, categories, onCreate }: Props) {
   const [skill, setSkill] = useState("");
   const [skillError, setSkillError] = useState(false);
   const [status, setStatus] = useState<"idle" | "saving" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const saving = status === "saving";
   const canSubmit = Boolean(onCreate && projects.length && categories.length);
 
@@ -79,8 +79,9 @@ export function OpportunityForm({ projects, categories, onCreate }: Props) {
       setSkills([]);
       setSkill("");
       setStatus("success");
-    } catch {
-      //TODO: Tratar respostas de sessão expirada, acesso negado e erros de validação da API
+    } catch (error) {
+      // A página de origem já traduz sessão expirada, acesso negado e erros de validação.
+      setErrorMessage(error instanceof Error && error.message ? error.message : "Não foi possível criar a oportunidade. Tente novamente.");
       setStatus("error");
     }
   }
@@ -181,7 +182,7 @@ export function OpportunityForm({ projects, categories, onCreate }: Props) {
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-5">
           {!canSubmit && <p className="text-sm text-muted-foreground">O envio está indisponível no momento.</p>}
-          {status === "error" && <p role="alert" className="text-sm text-destructive">Não foi possível criar a oportunidade. Tente novamente.</p>}
+          {status === "error" && <p role="alert" className="text-sm text-destructive">{errorMessage}</p>}
           {status === "success" && <p role="status" className="text-sm text-primary">Oportunidade criada com sucesso.</p>}
           <Button type="submit" disabled={!canSubmit || saving} className="ml-auto h-11 px-5">
             {saving ? "Criando oportunidade…" : "Criar oportunidade"}

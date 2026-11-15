@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Check, Clock3, FolderOpen } from "lucide-react";
+import { useAuth } from "@/lib/auth-context";
 import { buscarOportunidade, type Oportunidade } from "@/lib/oportunidades";
 
 type Estado =
@@ -23,6 +24,8 @@ const voltar = (
 
 export function OportunidadeDetalhe({ id }: { id: string }) {
   const [estado, setEstado] = useState<Estado>({ tipo: "carregando" });
+  const { user } = useAuth();
+  const [aviso, setAviso] = useState(false);
 
   useEffect(() => {
     let ativo = true;
@@ -146,15 +149,30 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
             </div>
           </dl>
 
-          {oportunidade.aberta ? (
-            // TODO (US16, ciclo 8): com sessão ativa, enviar a candidatura. Sem
-            // contexto de autenticação ainda, todo visitante segue para o login.
+          {oportunidade.aberta && !user ? (
+            // Visitante: segue para o login.
             <Link
-              href={`/login?redirect=/voluntariado/${oportunidade.id}`}
+              href="/login"
               className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               Candidatar-se
             </Link>
+          ) : oportunidade.aberta ? (
+            // TODO (US16, ciclo 8): enviar a candidatura. Por enquanto só avisa.
+            <>
+              <button
+                type="button"
+                onClick={() => setAviso(true)}
+                className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              >
+                Candidatar-se
+              </button>
+              {aviso && (
+                <p role="status" className="mt-3 text-sm text-muted-foreground">
+                  O envio de candidaturas ainda não está disponível.
+                </p>
+              )}
+            </>
           ) : (
             <>
               <button

@@ -1,4 +1,4 @@
-import { ApiError, apiFetch } from "@/lib/api";
+import { ApiError, api } from "@/lib/api";
 
 // Modelo usado pelas telas de voluntariado (US21 e US14).
 // `formato` e `local` não constam nas histórias: são opcionais e só aparecem
@@ -21,7 +21,7 @@ export type Oportunidade = {
 // Formato esperado da API (contrato a confirmar com o back de oportunidades).
 // Toda a adaptação fica concentrada em `normalizar`, para absorver ajustes
 // de nome sem mexer nas telas.
-type OportunidadeApi = {
+export type OportunidadeApi = {
   id: string;
   title: string;
   duracao: string;
@@ -35,7 +35,7 @@ type OportunidadeApi = {
   habilidades?: Array<string | { nome: string }>;
 };
 
-function normalizar(raw: OportunidadeApi): Oportunidade {
+export function normalizar(raw: OportunidadeApi): Oportunidade {
   const projeto = typeof raw.projeto === "string" ? { title: raw.projeto } : raw.projeto;
   const atividades =
     typeof raw.atividades === "string"
@@ -60,7 +60,7 @@ function normalizar(raw: OportunidadeApi): Oportunidade {
 
 // US21: lista pública das oportunidades abertas.
 export async function listarOportunidades(): Promise<Oportunidade[]> {
-  const dados = await apiFetch<OportunidadeApi[] | { data: OportunidadeApi[] }>("/oportunidades");
+  const dados = await api<OportunidadeApi[] | { data: OportunidadeApi[] }>("/oportunidades");
   const lista = Array.isArray(dados) ? dados : dados.data;
   return lista.map(normalizar);
 }
@@ -68,7 +68,7 @@ export async function listarOportunidades(): Promise<Oportunidade[]> {
 // US14: detalhe público; devolve null quando a API responde 404.
 export async function buscarOportunidade(id: string): Promise<Oportunidade | null> {
   try {
-    const dados = await apiFetch<OportunidadeApi | { data: OportunidadeApi }>(
+    const dados = await api<OportunidadeApi | { data: OportunidadeApi }>(
       `/oportunidades/${encodeURIComponent(id)}`,
     );
     return normalizar("data" in dados ? dados.data : dados);

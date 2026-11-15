@@ -6,5 +6,5 @@ import { usePathname } from "next/navigation";
 export function PublicSiteChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
-  return pathname === "/gestor/voluntariado" ? null : children;
+  return pathname?.startsWith("/gestor") ? null : children;
 }

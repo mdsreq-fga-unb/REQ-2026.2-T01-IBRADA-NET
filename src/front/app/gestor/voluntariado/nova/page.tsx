@@ -1,9 +1,38 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import {
+  criarOportunidade,
+  listarCategorias,
+  listarProjetos,
+  mensagemDeErro,
+  type Opcao,
+} from "@/lib/gestor-oportunidades";
 import { OpportunityForm } from "./opportunity-form";
 
 export default function NovaOportunidadePage() {
-  //TODO: Exigir sessão de gestor também no acesso direto ao formulário
+  const [projects, setProjects] = useState<Opcao[]>([]);
+  const [categories, setCategories] = useState<Opcao[]>([]);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let ativo = true;
+    Promise.all([listarProjetos(), listarCategorias()])
+      .then(([projetos, categorias]) => {
+        if (!ativo) return;
+        setProjects(projetos);
+        setCategories(categorias);
+      })
+      .catch((erro) => {
+        if (ativo) setLoadError(mensagemDeErro(erro, "Não foi possível carregar projetos e categorias."));
+      });
+    return () => {
+      ativo = false;
+    };
+  }, []);
+
   return (
     <section className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
       <header className="mb-8">
@@ -16,9 +45,22 @@ export default function NovaOportunidadePage() {
         </Link>
         <h1 className="font-serif text-4xl text-primary sm:text-5xl">Criar oportunidade</h1>
       </header>
-      {/*TODO: Carregar projetos e categorias da API para preencher os seletores */}
-      {/*TODO: Conectar onCreate ao cadastro autenticado e atualizar a lista e os contadores após salvar */}
-      <OpportunityForm projects={[]} categories={[]} />
+      {loadError && (
+        <p role="alert" className="mb-4 text-sm text-destructive">
+          {loadError}
+        </p>
+      )}
+      <OpportunityForm
+        projects={projects}
+        categories={categories}
+        onCreate={async (draft) => {
+          try {
+            await criarOportunidade(draft);
+          } catch (erro) {
+            throw new Error(mensagemDeErro(erro, "Não foi possível criar a oportunidade. Tente novamente."));
+          }
+        }}
+      />
     </section>
   );
 }
