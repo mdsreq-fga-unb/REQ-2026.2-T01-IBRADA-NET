@@ -202,24 +202,32 @@ model PerfilVoluntario {
   candidaturas Candidatura[]
 }
 
+// ---------- MODELO ALTERADO: Oportunidade ----------
+
 // US13 / US14 / US21: a vaga publicada pelo gestor.
 model Oportunidade {
-  id          String   @id @default(cuid())
-  projetoId   String // projeto associado
-  categoriaId String
-  title       String
-  description String   @db.Text
-  duracao     String // ex.: "3 meses", "2 fins de semana"
-  isOpen      Boolean  @default(true) // US21: só as abertas aparecem na listagem
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id              String   @id @default(cuid())
+  projetoId       String // projeto associado (obrigatório, US13)
+  categoriaId     String
+  title           String
+  description     String   @db.Text
+  atividades      String?  @db.Text // atividades planejadas (US14)
+  duracao         String // ex.: "3 meses", "2 fins de semana" (obrigatório, US13)
+  disponibilidade String // ex.: "Manhãs", "Fins de semana" (obrigatório, US13)
+  habilidades     String   @db.Text // JSON string[] — habilidades requeridas (obrigatório, US13)
+  localAtuacao    String?  // local de atuação (US14)
+  isOpen          Boolean  @default(true) // US21: só as abertas aparecem na listagem pública
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
-  projeto      Projeto       @relation(fields: [projetoId], references: [id])
-  categoria    Categoria     @relation(fields: [categoriaId], references: [id])
-  candidaturas Candidatura[]
+  projeto        Projeto         @relation(fields: [projetoId], references: [id])
+  categoria      Categoria       @relation(fields: [categoriaId], references: [id])
+  candidaturas   Candidatura[]
+  criteriosFunil CriterioFunil? // 1:1 — critérios do funil (ciclo 7 / RN05)
 
   @@index([projetoId])
   @@index([categoriaId])
+  @@index([isOpen]) // índice para a listagem pública US21
 }
 
 // US16 / US18: o voluntário se candidata a uma vaga; o status é o funil.
@@ -239,4 +247,21 @@ model Candidatura {
   // Impede o mesmo voluntário de se candidatar duas vezes à mesma vaga.
   @@unique([perfilId, oportunidadeId])
   @@index([oportunidadeId, status]) // o funil filtra por vaga + etapa
+}
+
+// ---------- MODELO NOVO: CriterioFunil ----------
+
+// Ciclo 7 / RN05: critérios de filtragem do funil, definidos pelo gestor
+// ao cadastrar a oportunidade. Cada oportunidade tem no máximo um conjunto
+// de critérios (relação 1:1).
+model CriterioFunil {
+  id                  String         @id @default(cuid())
+  oportunidadeId      String         @unique // 1:1 com Oportunidade
+  exigeExperiencia    Boolean        @default(false) // candidato deve ter experiência na área?
+  educacaoMinima      NivelEducacao? // nível mínimo de educação exigido
+  habilidadesExigidas String?        @db.Text // JSON string[] — tags que o candidato deve possuir
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  oportunidade Oportunidade @relation(fields: [oportunidadeId], references: [id], onDelete: Cascade)
 }
