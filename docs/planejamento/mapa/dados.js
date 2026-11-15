@@ -379,6 +379,7 @@ window.MAPA_DATA = {
     "Experiências sem vagas ou indisponíveis devem ser sinalizadas na listagem.",
     "O sistema deve permitir que o usuário selecione uma experiência e direcione para sua própria página de detalhes."
    ],
+   "feitos": [0, 1],
    "issue": null,
    "issueUrl": null,
    "adaptado": false
@@ -394,6 +395,7 @@ window.MAPA_DATA = {
     "A página de cada experiência deve conter todas as informações sobre o pacote de ecoturismo (descrição, roteiro, data, vagas disponíveis e valor).",
     "O sistema deve exibir uma opção para reservar, e bloqueá-la caso a experiência esteja indisponível ou sem vagas."
    ],
+   "feitos": [0],
    "issue": null,
    "issueUrl": null,
    "adaptado": false
@@ -477,6 +479,7 @@ window.MAPA_DATA = {
     "O sistema deve retornar uma mensagem de erro caso o cadastro não seja concluído e uma mensagem de sucesso caso a experiência seja salva.",
     "A experiência cadastrada deve aparecer no catálogo conforme sua disponibilidade."
    ],
+   "feitos": [0, 1, 2, 3],
    "issue": null,
    "issueUrl": null,
    "adaptado": false
@@ -493,6 +496,7 @@ window.MAPA_DATA = {
     "Experiências indisponíveis devem ser sinalizadas no catálogo e não devem aceitar novas reservas.",
     "O sistema deve retornar uma mensagem de sucesso caso a alteração seja salva e uma mensagem de erro caso contrário."
    ],
+   "feitos": [0, 2],
    "issue": null,
    "issueUrl": null,
    "adaptado": false
