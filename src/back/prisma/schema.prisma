@@ -141,6 +141,7 @@ model Payment {
 model PedidoParceria {
   id           String            @id @default(cuid())
   organization String
+  cnpj         String? // opcional; só dígitos e pontuação do CNPJ, como informado
   contactName  String
   contactEmail String
   contactPhone String?
