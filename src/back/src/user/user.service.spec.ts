@@ -203,3 +203,97 @@ describe('UserService gestor inicial', () => {
     expect(prisma.user.create).not.toHaveBeenCalled();
   });
 });
+describe('UserService.findMe (US05)', () => {
+  let service: UserService;
+
+  beforeEach(() => {
+    resetPrisma();
+    service = new UserService(prisma as never);
+  });
+
+  it('retorna dados do usuário e perfilVoluntario quando encontrado', async () => {
+    const mockUser = { id: 'u1', name: 'Ana', email: 'ana@teste.com', role: 'CLIENTE', perfilVoluntario: null };
+    prisma.user.findUnique.mockResolvedValue(mockUser);
+
+    const result = await service.findMe('u1');
+    expect(result).toEqual(mockUser);
+    expect(prisma.user.findUnique).toHaveBeenCalledWith(expect.objectContaining({ where: { id: 'u1' } }));
+  });
+
+  it('lança 404 se o usuário não existir', async () => {
+    prisma.user.findUnique.mockResolvedValue(null);
+    await expect(service.findMe('inexistente')).rejects.toBeInstanceOf(NotFoundException);
+  });
+});
+
+describe('UserService.createPerfilVoluntario (US15)', () => {
+  const jwtService = { sign: vi.fn().mockReturnValue('novo-token-jwt') };
+  let service: UserService;
+
+  beforeEach(() => {
+    resetPrisma();
+    jwtService.sign.mockClear();
+    service = new UserService(prisma as never, jwtService as never);
+  });
+
+  it('cria perfil de voluntário, promove CLIENTE para VOLUNTARIO e devolve novo access_token', async () => {
+    prisma.user.findUnique.mockResolvedValue({
+      id: 'u1',
+      name: 'Ana',
+      email: 'ana@teste.com',
+      role: 'CLIENTE',
+      perfilVoluntario: null,
+    });
+    prisma.user.update.mockResolvedValue({
+      id: 'u1',
+      name: 'Ana',
+      email: 'ana@teste.com',
+      role: 'VOLUNTARIO',
+      perfilVoluntario: { id: 'p1', bio: 'Bio', interesses: [] },
+    });
+
+    const result = await service.createPerfilVoluntario('u1', {
+      bio: 'Bio',
+      categoriaIds: ['c1'],
+    });
+
+    expect(prisma.user.update.mock.calls[0][0].data.role).toBe('VOLUNTARIO');
+    expect(jwtService.sign).toHaveBeenCalledWith({
+      sub: 'u1',
+      email: 'ana@teste.com',
+      role: 'VOLUNTARIO',
+    });
+    expect(result.access_token).toBe('novo-token-jwt');
+    expect(result.user.role).toBe('VOLUNTARIO');
+  });
+
+  it('retorna 409 Conflict se o usuário já possuir perfil de voluntário', async () => {
+    prisma.user.findUnique.mockResolvedValue({
+      id: 'u1',
+      name: 'Ana',
+      email: 'ana@teste.com',
+      role: 'VOLUNTARIO',
+      perfilVoluntario: { id: 'p1' },
+    });
+
+    await expect(service.createPerfilVoluntario('u1', { bio: 'Novo' })).rejects.toBeInstanceOf(
+      ConflictException,
+    );
+    expect(prisma.user.update).not.toHaveBeenCalled();
+  });
+
+  it('converte P2025 (categoria inexistente) em 400 BadRequest', async () => {
+    prisma.user.findUnique.mockResolvedValue({
+      id: 'u1',
+      name: 'Ana',
+      email: 'ana@teste.com',
+      role: 'CLIENTE',
+      perfilVoluntario: null,
+    });
+    prisma.user.update.mockRejectedValue({ code: 'P2025' });
+
+    await expect(
+      service.createPerfilVoluntario('u1', { categoriaIds: ['invalida'] }),
+    ).rejects.toBeInstanceOf(BadRequestException);
+  });
+});
