@@ -1,20 +1,43 @@
-import { Controller, Patch, Body, Param, Request, ForbiddenException, Logger } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  ForbiddenException,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Logger,
+  Param,
+  Patch,
+  Post,
+  Request,
+} from '@nestjs/common';
 import { UserService } from './user.service.js';
 import { UpdateUserDto } from './dto/update-user.dto.js';
+import { CreatePerfilVoluntarioDto } from './dto/create-perfil-voluntario.dto.js';
 import type { AuthenticatedRequest } from '../auth/auth.types.js';
 
 @Controller('users')
 export class UserController {
-  // logger para atender ao RNF04
   private readonly logger = new Logger(UserController.name);
 
   constructor(private readonly userService: UserService) {}
 
-  // A autenticação (JWT) e a validação do corpo (ValidationPipe com
-  // forbidNonWhitelisted) são globais; ver AuthModule e main.ts.
+  @Get('me')
+  findMe(@Request() req: AuthenticatedRequest) {
+    return this.userService.findMe(req.user.sub);
+  }
+
+  @Post('me/perfil-voluntario')
+  @HttpCode(HttpStatus.CREATED)
+  createPerfilVoluntario(
+    @Body() dto: CreatePerfilVoluntarioDto,
+    @Request() req: AuthenticatedRequest,
+  ) {
+    return this.userService.createPerfilVoluntario(req.user.sub, dto);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateData: UpdateUserDto, @Request() req: AuthenticatedRequest) {
-    // Cada usuário só edita o próprio perfil (nem o gestor edita a conta de outra pessoa).
     if (req.user.sub !== id) {
       this.logger.warn(
         `Acesso negado: usuário ${req.user.email} tentou editar o perfil de outro usuário em ${req.method} ${req.url}`,
