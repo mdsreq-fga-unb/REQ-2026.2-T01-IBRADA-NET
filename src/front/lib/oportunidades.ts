@@ -1,104 +1,79 @@
+import { ApiError, apiFetch } from "@/lib/api";
+
+// Modelo usado pelas telas de voluntariado (US21 e US14).
+// `formato` e `local` não constam nas histórias: são opcionais e só aparecem
+// nas telas quando a API os enviar.
 export type Oportunidade = {
   id: string;
-  area: string;
-  formato: string;
   titulo: string;
-  projeto: string;
+  categoria?: string;
+  formato?: string;
+  local?: string;
+  projeto?: string;
+  projetoDescricao?: string;
   duracao: string;
-  local: string;
-  requisitos: string[];
-  descricao?: string;
-  atividades?: string[];
+  disponibilidade: string;
+  aberta: boolean;
+  atividades: string[];
+  habilidades: string[];
 };
 
-export const oportunidades: Oportunidade[] = [
-  {
-    id: "1",
-    area: "Jurídico",
-    formato: "Híbrido",
-    titulo: "Apoio jurídico em regularização fundiária",
-    projeto: "Terra Legal Cerrado",
-    duracao: "6h por semana · 6 meses",
-    local: "Brasília/DF",
-    descricao:
-      "O projeto Terra Legal Cerrado ajuda famílias de agricultores a conseguirem o título da sua terra e a regularizar a situação ambiental das propriedades.",
-    atividades: [
-      "Apoiar a análise de documentos de posse de famílias agricultoras",
-      "Auxiliar na elaboração do CAR (Cadastro Ambiental Rural)",
-      "Participar de mutirões de atendimento nas comunidades",
-    ],
-    requisitos: [
-      "Estudante (a partir do 6º semestre) ou formado em Direito",
-      "Interesse em direito agrário e ambiental",
-    ],
-  },
-  {
-    id: "2",
-    area: "Comunicação",
-    formato: "Remoto",
-    titulo: "Comunicação e redes sociais",
-    projeto: "Vozes do Cerrado",
-    duracao: "4h por semana · 3 meses",
-    local: "Remoto",
-    requisitos: [
-      "Experiência com produção de conteúdo",
-      "Noções de edição de vídeo ou design",
-    ],
-  },
-  {
-    id: "3",
-    area: "Campo",
-    formato: "Presencial",
-    titulo: "Mutirão de recuperação de nascentes",
-    projeto: "Águas do Cerrado",
-    duracao: "1 sábado por mês · Contínuo",
-    local: "Planaltina/DF",
-    requisitos: [
-      "Disposição para atividades ao ar livre",
-      "Maior de 16 anos (menores com responsável)",
-    ],
-  },
-  {
-    id: "4",
-    area: "Educação Ambiental",
-    formato: "Presencial",
-    titulo: "Educador(a) ambiental em escolas rurais",
-    projeto: "Escola Viva",
-    duracao: "8h por semana · 1 semestre letivo",
-    local: "Região do Entorno do DF",
-    requisitos: [
-      "Formação ou estudo em Pedagogia, Biologia ou áreas afins",
-      "Gostar de trabalhar com crianças",
-    ],
-  },
-  {
-    id: "5",
-    area: "Campo",
-    formato: "Presencial",
-    titulo: "Monitoramento de fauna e flora",
-    projeto: "Águas do Cerrado",
-    duracao: "2 expedições por mês · 3 meses",
-    local: "Cavalcante/GO",
-    requisitos: [
-      "Estudante ou formado em Biologia, Eng. Florestal ou afins",
-      "Disponibilidade para viagens curtas",
-    ],
-  },
-  {
-    id: "6",
-    area: "Comunicação",
-    formato: "Remoto",
-    titulo: "Redação de projetos para editais",
-    projeto: "Captação Institucional",
-    duracao: "5h por semana · 4 meses",
-    local: "Remoto",
-    requisitos: [
-      "Boa escrita",
-      "Experiência com elaboração de projetos é um diferencial",
-    ],
-  },
-];
+// Formato esperado da API (contrato a confirmar com o back de oportunidades).
+// Toda a adaptação fica concentrada em `normalizar`, para absorver ajustes
+// de nome sem mexer nas telas.
+type OportunidadeApi = {
+  id: string;
+  title: string;
+  duracao: string;
+  disponibilidade: string;
+  isOpen?: boolean;
+  formato?: string;
+  local?: string;
+  categoria?: string | { nome: string };
+  projeto?: string | { title: string; description?: string };
+  atividades?: string | string[];
+  habilidades?: Array<string | { nome: string }>;
+};
 
-export function buscarOportunidade(id: string) {
-  return oportunidades.find((oportunidade) => oportunidade.id === id);
+function normalizar(raw: OportunidadeApi): Oportunidade {
+  const projeto = typeof raw.projeto === "string" ? { title: raw.projeto } : raw.projeto;
+  const atividades =
+    typeof raw.atividades === "string"
+      ? raw.atividades.split(/\r?\n/).map((linha) => linha.trim()).filter(Boolean)
+      : (raw.atividades ?? []);
+
+  return {
+    id: raw.id,
+    titulo: raw.title,
+    categoria: typeof raw.categoria === "string" ? raw.categoria : raw.categoria?.nome,
+    formato: raw.formato,
+    local: raw.local,
+    projeto: projeto?.title,
+    projetoDescricao: projeto && "description" in projeto ? projeto.description : undefined,
+    duracao: raw.duracao,
+    disponibilidade: raw.disponibilidade,
+    aberta: raw.isOpen ?? true,
+    atividades,
+    habilidades: (raw.habilidades ?? []).map((h) => (typeof h === "string" ? h : h.nome)),
+  };
+}
+
+// US21: lista pública das oportunidades abertas.
+export async function listarOportunidades(): Promise<Oportunidade[]> {
+  const dados = await apiFetch<OportunidadeApi[] | { data: OportunidadeApi[] }>("/oportunidades");
+  const lista = Array.isArray(dados) ? dados : dados.data;
+  return lista.map(normalizar);
+}
+
+// US14: detalhe público; devolve null quando a API responde 404.
+export async function buscarOportunidade(id: string): Promise<Oportunidade | null> {
+  try {
+    const dados = await apiFetch<OportunidadeApi | { data: OportunidadeApi }>(
+      `/oportunidades/${encodeURIComponent(id)}`,
+    );
+    return normalizar("data" in dados ? dados.data : dados);
+  } catch (erro) {
+    if (erro instanceof ApiError && erro.status === 404) return null;
+    throw erro;
+  }
 }
