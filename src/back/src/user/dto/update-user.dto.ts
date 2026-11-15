@@ -16,22 +16,11 @@ export class UpdateUserDto {
 
   @IsString()
   @IsOptional()
-  experiencias?: string;
+  outros?: string; // habilidades que não estão na lista
 
-  @IsString()
-  @IsOptional()
-  interesses?: string;
-
-  @IsString()
-  @IsOptional()
-  disponibilidade?: string;
-
-  @IsString()
-  @IsOptional()
-  outros?: string;
-
+  // Interesses do voluntário: ids de Categoria (tabela InteresseVoluntario).
   @IsArray()
   @IsString({ each: true })
   @IsOptional()
-  habilidadeIds?: string[];
+  categoriaIds?: string[];
 }

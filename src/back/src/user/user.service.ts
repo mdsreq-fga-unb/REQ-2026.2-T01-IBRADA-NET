@@ -59,13 +59,10 @@ export class UserService implements OnApplicationBootstrap {
             perfilVoluntario: {
               create: {
                 bio: dto.bio,
-                experiencias: dto.experiencias,
-                interesses: dto.interesses,
-                disponibilidade: dto.disponibilidade,
                 outros: dto.outros,
-                habilidades: dto.habilidadeIds ? {
-                  create: dto.habilidadeIds.map((id: string) => ({
-                    habilidade: { connect: { id } }
+                interesses: dto.categoriaIds ? {
+                  create: dto.categoriaIds.map((id: string) => ({
+                    categoria: { connect: { id } }
                   }))
                 } : undefined
               }
@@ -79,9 +76,9 @@ export class UserService implements OnApplicationBootstrap {
       if (prismaCode(error) === 'P2002') {
         throw new ConflictException('Este email já está vinculado a uma conta.');
       }
-      // P2025: alguma habilidade informada não existe.
+      // P2025: alguma categoria de interesse informada não existe.
       if (prismaCode(error) === 'P2025') {
-        throw new BadRequestException('Uma das habilidades informadas não existe.');
+        throw new BadRequestException('Uma das categorias informadas não existe.');
       }
       throw error;
     }
@@ -93,11 +90,11 @@ export class UserService implements OnApplicationBootstrap {
 
   async update(userId: string, data: UpdateUserDto) {
     // name/phone são colunas de User; os demais campos pertencem ao PerfilVoluntario.
-    const { name, phone, habilidadeIds, ...perfil } = data;
+    const { name, phone, categoriaIds, ...perfil } = data;
     const perfilData = Object.fromEntries(
       Object.entries(perfil).filter(([, value]) => value !== undefined),
     );
-    const editaPerfil = Object.keys(perfilData).length > 0 || habilidadeIds !== undefined;
+    const editaPerfil = Object.keys(perfilData).length > 0 || categoriaIds !== undefined;
 
     if (editaPerfil) {
       const perfilExiste = await this.prisma.perfilVoluntario.findUnique({ where: { userId } });
@@ -116,12 +113,12 @@ export class UserService implements OnApplicationBootstrap {
             perfilVoluntario: {
               update: {
                 ...perfilData,
-                ...(habilidadeIds !== undefined && {
-                  // Substitui a lista de habilidades pela enviada.
-                  habilidades: {
+                ...(categoriaIds !== undefined && {
+                  // Substitui a lista de interesses pela enviada.
+                  interesses: {
                     deleteMany: {},
-                    create: habilidadeIds.map((id: string) => ({
-                      habilidade: { connect: { id } },
+                    create: categoriaIds.map((id: string) => ({
+                      categoria: { connect: { id } },
                     })),
                   },
                 }),
@@ -133,7 +130,7 @@ export class UserService implements OnApplicationBootstrap {
       });
     } catch (error) {
       if (prismaCode(error) === 'P2025') {
-        throw new NotFoundException('Usuário ou habilidade informada não encontrada.');
+        throw new NotFoundException('Usuário ou categoria informada não encontrada.');
       }
       throw error;
     }
