@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ConflictException,
   Injectable,
   Logger,
   NotFoundException,
@@ -13,6 +14,13 @@ import {
   decimalStringToCents,
   parseCurrency,
 } from './utils/currency.util.js';
+
+const MAX_SLUG_ATTEMPTS = 5;
+
+// P2002 = violação de restrição única no Prisma.
+function isUniqueViolation(error: unknown): boolean {
+  return typeof error === 'object' && error !== null && (error as { code?: string }).code === 'P2002';
+}
 
 @Injectable()
 export class ExperienciasService {
@@ -120,23 +128,43 @@ export class ExperienciasService {
 
     // Normalização monetária sem perda binária IEEE 754
     const safePrice = parseCurrency(dto.price);
-    const slug = await this.generateUniqueSlug(dto.title);
 
     // O Prisma aceita a string decimal exata (ex: "150.50"), repassando ao
-    // DECIMAL(10, 2) do banco sem qualquer corrupção de arredondamento
-    const created = await this.prisma.experiencia.create({
-      data: {
-        title: dto.title,
-        slug,
-        description: dto.description,
-        itinerary: dto.itinerary ?? null,
-        price: safePrice.decimalString,
-        startsAt,
-        endsAt,
-        capacity: dto.capacity,
-        isAvailable: dto.isAvailable ?? true,
-      },
-    });
+    // DECIMAL(10, 2) do banco sem qualquer corrupção de arredondamento.
+    // Se duas requisições gerarem o mesmo slug ao mesmo tempo, o índice único
+    // do banco responde com P2002 e tentamos de novo com o próximo sufixo.
+    let created;
+    let startFrom = 1;
+
+    for (let attempt = 1; attempt <= MAX_SLUG_ATTEMPTS; attempt++) {
+      const { slug, suffix } = await this.generateUniqueSlug(dto.title, startFrom);
+      try {
+        created = await this.prisma.experiencia.create({
+          data: {
+            title: dto.title,
+            slug,
+            description: dto.description,
+            itinerary: dto.itinerary,
+            price: safePrice.decimalString,
+            startsAt,
+            endsAt,
+            capacity: dto.capacity,
+            isAvailable: dto.isAvailable,
+          },
+        });
+        break;
+      } catch (error) {
+        if (isUniqueViolation(error) && attempt < MAX_SLUG_ATTEMPTS) {
+          startFrom = suffix + 1;
+          continue;
+        }
+        throw error;
+      }
+    }
+
+    if (!created) {
+      throw new ConflictException('Não foi possível gerar um slug único para a experiência.');
+    }
 
     const priceDecimal = created.price.toString();
     const priceCents = decimalStringToCents(priceDecimal);
@@ -198,17 +226,21 @@ export class ExperienciasService {
 
   /**
    * Gera um slug único no banco adicionando sufixos numéricos caso já exista colisão.
+   * `startFrom` é o primeiro sufixo a testar (1 = slug sem sufixo).
    */
-  private async generateUniqueSlug(title: string): Promise<string> {
+  private async generateUniqueSlug(
+    title: string,
+    startFrom = 1,
+  ): Promise<{ slug: string; suffix: number }> {
     const baseSlug = slugify(title) || 'experiencia';
-    let slug = baseSlug;
-    let counter = 1;
+    let suffix = startFrom;
+    let slug = suffix === 1 ? baseSlug : `${baseSlug}-${suffix}`;
 
     while (await this.prisma.experiencia.findUnique({ where: { slug } })) {
-      counter += 1;
-      slug = `${baseSlug}-${counter}`;
+      suffix += 1;
+      slug = `${baseSlug}-${suffix}`;
     }
 
-    return slug;
+    return { slug, suffix };
   }
 }

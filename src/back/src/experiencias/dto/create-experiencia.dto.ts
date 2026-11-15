@@ -1,9 +1,9 @@
 import {
   IsBoolean,
   IsDateString,
+  IsDefined,
   IsInt,
   IsNotEmpty,
-  IsOptional,
   IsString,
   Min,
 } from 'class-validator';
@@ -20,8 +20,8 @@ export class CreateExperienciaDto {
   description: string;
 
   @IsString({ message: 'O roteiro deve ser um texto válido.' })
-  @IsOptional()
-  itinerary?: string;
+  @IsNotEmpty({ message: 'O roteiro da experiência é obrigatório.' })
+  itinerary: string;
 
   /**
    * Preço monetário protegido contra imprecisões do IEEE 754.
@@ -45,7 +45,7 @@ export class CreateExperienciaDto {
   @Min(1, { message: 'A capacidade deve ser de no mínimo 1 vaga.' })
   capacity: number;
 
-  @IsBoolean({ message: 'A disponibilidade deve ser um valor booleano.' })
-  @IsOptional()
-  isAvailable?: boolean;
+  @IsBoolean({ message: 'A disponibilidade deve ser um valor booleano (true ou false).' })
+  @IsDefined({ message: 'A disponibilidade da experiência é obrigatória.' })
+  isAvailable: boolean;
 }

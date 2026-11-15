@@ -43,10 +43,12 @@ describe('ExperienciasController', () => {
     const dto: CreateExperienciaDto = {
       title: 'Passeio',
       description: 'Desc',
+      itinerary: 'Roteiro',
       price: 50,
       startsAt: '2026-12-01T08:00:00Z',
       endsAt: '2026-12-01T12:00:00Z',
       capacity: 5,
+      isAvailable: true,
     };
     mockService.create.mockResolvedValue({ message: 'Criado', data: dto });
 

@@ -238,6 +238,47 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       );
     });
 
+    it('deve tentar de novo com o próximo sufixo quando o banco rejeitar o slug (P2002)', async () => {
+      mockPrisma.experiencia.findUnique.mockResolvedValue(null);
+      mockPrisma.experiencia.create
+        .mockRejectedValueOnce({ code: 'P2002' })
+        .mockResolvedValueOnce({
+          id: 'exp-novo',
+          slug: 'passeio-historico-botanico-2',
+          title: validDto.title,
+          price: '120.50',
+          startsAt: new Date(validDto.startsAt),
+          endsAt: new Date(validDto.endsAt),
+          capacity: 20,
+          isAvailable: true,
+        });
+
+      const response = await service.create(validDto);
+
+      expect(mockPrisma.experiencia.create).toHaveBeenCalledTimes(2);
+      expect(mockPrisma.experiencia.create).toHaveBeenNthCalledWith(
+        1,
+        expect.objectContaining({
+          data: expect.objectContaining({ slug: 'passeio-historico-botanico' }),
+        }),
+      );
+      expect(mockPrisma.experiencia.create).toHaveBeenNthCalledWith(
+        2,
+        expect.objectContaining({
+          data: expect.objectContaining({ slug: 'passeio-historico-botanico-2' }),
+        }),
+      );
+      expect(response.data.slug).toBe('passeio-historico-botanico-2');
+    });
+
+    it('deve propagar erros do banco que não sejam de slug duplicado', async () => {
+      mockPrisma.experiencia.findUnique.mockResolvedValue(null);
+      mockPrisma.experiencia.create.mockRejectedValue(new Error('falha de conexão'));
+
+      await expect(service.create(validDto)).rejects.toThrow('falha de conexão');
+      expect(mockPrisma.experiencia.create).toHaveBeenCalledTimes(1);
+    });
+
     it('deve lançar BadRequestException se endsAt <= startsAt', async () => {
       const invalidDatesDto: CreateExperienciaDto = {
         ...validDto,
