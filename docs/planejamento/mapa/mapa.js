@@ -98,7 +98,9 @@
       '<circle cx="14" cy="14" r="' + r + '" class="rb"/><circle cx="14" cy="14" r="' + r + '" class="rf" stroke-dasharray="' + (C * f) + " " + C + '" transform="rotate(-90 14 14)"/>' +
       '<text x="14" y="17" text-anchor="middle">' + d + "/" + t + "</text></svg>";
   }
-  function doneCount(u) { var c = checks[u.id] || {}; return u.criterios.filter(function (_, i) { return c["c" + i]; }).length; }
+  // Critério feito: marcação local do navegador, se houver; senão o que está registrado em dados.js ("feitos").
+  function isDone(u, i) { var c = checks[u.id] || {}; return ("c" + i) in c ? !!c["c" + i] : (u.feitos || []).indexOf(i) >= 0; }
+  function doneCount(u) { return u.criterios.filter(function (_, i) { return isDone(u, i); }).length; }
 
   Object.keys(nodes).forEach(function (id) {
     var n = nodes[id], b = document.createElement("button");
@@ -172,7 +174,7 @@
       h = '<div class="mapa-story">' + esc(u.historia) + "</div>" +
         "<h4>Épico</h4>" + chipsOf(u.epicos) + "<h4>Característica de produto</h4>" + chipsOf(cps) +
         "<h4>Critérios de aceitação</h4><ul class=\"mapa-check\">" +
-        u.criterios.map(function (c, i) { return '<li><label><input type="checkbox" data-us="' + u.id + '" data-k="c' + i + '"' + (ck["c" + i] ? " checked" : "") + "><span>" + esc(c) + "</span></label></li>"; }).join("") + "</ul>" +
+        u.criterios.map(function (c, i) { return '<li><label><input type="checkbox" data-us="' + u.id + '" data-k="c' + i + '"' + (isDone(u, i) ? " checked" : "") + "><span>" + esc(c) + "</span></label></li>"; }).join("") + "</ul>" +
         '<span class="mapa-src">' + (u.issue ? 'Fonte: <a href="' + u.issueUrl + '" target="_blank" rel="noopener">issue #' + u.issue + "</a>" + (u.adaptado ? " (último critério reformulado)" : "") : "Critérios escritos no formato das issues; a história ainda não tem issue própria.") + "</span>" +
         '<h4>Protótipo</h4><div class="mapa-proto"><img src="' + BASE + 'assets/prototipos/' + u.id.toLowerCase() + '.png" alt="Protótipo da ' + u.id + '" onerror="this.parentNode.classList.add(\'vazio\');this.remove()"><span>Espaço reservado para a captura do protótipo.</span></div>' +
         "<h4>Regras de negócio</h4>" + (rn.length ? chipsOf(rn) : '<p class="mapa-nada">Nenhuma regra de negócio específica.</p>') +

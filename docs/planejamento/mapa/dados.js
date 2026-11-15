@@ -510,6 +510,7 @@ window.MAPA_DATA = {
     "O sistema deve retornar uma mensagem de erro caso o cadastro não seja realizado com sucesso.",
     "O sistema deve direcionar o usuário para a página de login após o cadastro."
    ],
+   "feitos": [0, 1, 2, 3, 4],
    "issue": 37,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/37",
    "adaptado": false
@@ -541,6 +542,7 @@ window.MAPA_DATA = {
     "Caso a autenticação falhe, o sistema deve bloquear o acesso e retornar uma mensagem de erro.",
     "Caso as credenciais sejam válidas, o sistema deve autenticar o usuário e direcioná-lo à página inicial."
    ],
+   "feitos": [0, 1, 2],
    "issue": 39,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/39",
    "adaptado": false
@@ -557,6 +559,7 @@ window.MAPA_DATA = {
     "Após a confirmação, o sistema deve invalidar a sessão ativa e retornar para a página inicial ou página de login.",
     "Após o encerramento, o sistema deve impedir acesso a regiões protegidas sem uma nova autenticação."
    ],
+   "feitos": [0, 1, 2],
    "issue": 40,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/40",
    "adaptado": false
@@ -574,6 +577,7 @@ window.MAPA_DATA = {
     "O sistema deve permitir que o usuário aceite os termos de uso de dados pessoais durante o cadastro.",
     "O sistema deve bloquear o cadastro de uma nova conta caso os termos de uso de dados pessoais não sejam aceitos."
    ],
+   "feitos": [0, 1, 2],
    "issue": 48,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/48",
    "adaptado": false
@@ -609,6 +613,7 @@ window.MAPA_DATA = {
     "Caso a autenticação falhe, o sistema deve bloquear o acesso e retornar uma mensagem de erro.",
     "Caso as credenciais sejam válidas, o sistema deve autenticar o usuário e direcioná-lo à página inicial."
    ],
+   "feitos": [0, 1, 2],
    "issue": 43,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/43",
    "adaptado": false
@@ -625,6 +630,7 @@ window.MAPA_DATA = {
     "Após a confirmação, o sistema deve invalidar a sessão ativa e retornar para a página inicial ou página de login.",
     "Após o encerramento, o sistema deve impedir acesso a regiões protegidas sem uma nova autenticação."
    ],
+   "feitos": [0, 1, 2],
    "issue": 47,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/47",
    "adaptado": false
