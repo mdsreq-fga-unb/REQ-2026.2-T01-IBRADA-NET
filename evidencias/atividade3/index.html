@@ -2655,6 +2655,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/unidade-3/01-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (01/11/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3287,6 +3315,7 @@
 
 <h1 id="atividade-3-ajuste-e-validacao">Atividade 3 - Ajuste e validação</h1>
 <p>Aqui é como ficou a lista finalizada após os apontamentos do grupo <strong>Cascata ágil</strong>. O documento com as críticas enviada pelo grupo também foi em PDF, o documento pode ser visualizado <a href="https://drive.google.com/file/d/1vvE9TA4tvYRuvLK9ac-VAhXjeb-X0otm/view?usp=drive_link">aqui</a>.</p>
+<p>"Nota de Rastreabilidade e Renumeração: Em decorrência do apontamento sobre granularidade excessiva no antigo RF12, a equipe desmembrou o fluxo de reserva, inserindo o RF13 (Confirmar reserva). Com isso, os requisitos funcionais subsequentes foram reordenados a partir do RF14."</p>
 <h2 id="requisitos-funcionais">Requisitos Funcionais</h2>
 <table>
 <thead>
@@ -3381,42 +3410,42 @@
 <td>Selecionar pacote de ecoturismo</td>
 <td>Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados.</td>
 <td>CP3</td>
-<td>Adicionado posteriormente</td>
+<td>Aceito. O requisito original englobava seleção, resumo e checkout. Foi refinado para contemplar apenas a seleção do pacote e quantidade de vagas, atendendo ao feedback de atomicidade.</td>
 </tr>
 <tr>
 <td>RF13</td>
 <td>Confirmar reserva</td>
 <td>Permitir que o cliente confirme a reserva antes do checkout.</td>
 <td>CP3</td>
-<td>Adicionado posteriormente</td>
+<td>Aceito (Criado a partir da divisão do antigo RF12). Separa a etapa de revisão e confirmação dos dados da reserva antes do direcionamento ao checkout.</td>
 </tr>
 <tr>
-<td>RF14</td>
+<td>RF14 (Antigo RF13)</td>
 <td>Pagar reserva</td>
 <td>Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo.</td>
 <td>CP3</td>
-<td>Aceito</td>
+<td>Aceito. O termo genérico 'usuário' foi substituído por 'cliente', padronizando a nomenclatura com os demais requisitos de compra.</td>
 </tr>
 <tr>
-<td>RF15</td>
+<td>RF15 (Antigo RF14)</td>
 <td>Cadastrar experiências de ecoturismo</td>
 <td>Permitir a equipe do IBRADA cadastrar experiências de ecoturismo no sistema.</td>
 <td>CP3</td>
 <td>Parcialmente aceito, mencionar um “painel administrativo” não torna o requisito automaticamente errado, trocamos algumas palavras para cadastro para melhor compreendimento.</td>
 </tr>
 <tr>
-<td>RF16</td>
+<td>RF16 (Antigo RF15)</td>
 <td>Editar experiências de ecoturismo</td>
 <td>Permitir a equipe do IBRADA editar experiências de ecoturismo no sistema.</td>
 <td>CP3</td>
-<td>Não aceito, o RF14 é um requisito de cadastro, ou seja, essa sugestão não é válida.</td>
+<td>Não aceito, o RF15 (antigo RF14) é um requisito de cadastro, ou seja, essa sugestão não é válida.</td>
 </tr>
 <tr>
 <td>RF17</td>
 <td>Alterar disponibilidade de experiência de ecoturismo</td>
 <td>Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas.</td>
 <td>CP3</td>
-<td>Aceito</td>
+<td>Aceito. Os antigos RF16 (Habilitar) e RF17 (Desabilitar) foram unificados em um único requisito funcional parametrizado (Alterar disponibilidade), eliminando redundância.</td>
 </tr>
 <tr>
 <td>RF18</td>

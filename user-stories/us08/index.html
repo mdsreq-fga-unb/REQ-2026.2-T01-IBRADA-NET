@@ -2766,6 +2766,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atas-reuniao/unidade-3/01-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (01/11/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3379,10 +3407,11 @@
 </blockquote>
 <h2 id="criterios-de-aceitacao">Critérios de aceitação</h2>
 <ul>
-<li>[ ] O sistema deve permitir que o cliente autenticado selecione uma experiência com vaga disponível e informe os dados da reserva.</li>
+<li>[ ] O sistema deve permitir que o cliente autenticado selecione uma experiência com data válida, vaga disponível e informe os dados da reserva.</li>
 <li>[ ] Caso o usuário não esteja autenticado, o sistema deve direcioná-lo à página de login antes de prosseguir com a reserva.</li>
 <li>[ ] O sistema deve impedir a reserva quando não houver vagas suficientes e retornar uma mensagem de erro.</li>
 <li>[ ] O sistema deve impedir reservas concorrentes para a mesma vaga (overbooking).</li>
+<li>[ ] Ao confirmar a intenção de reserva, o sistema deve reservar a quantidade de vagas em transação ACID com status "Pendente", iniciando uma contagem regressiva de 30 minutos para conclusão do pagamento (RNF02).</li>
 </ul>
 <p><em>Critérios escritos no formato das issues; esta história ainda não possui issue própria.</em></p>
 <h2 id="prototipo">Protótipo</h2>
