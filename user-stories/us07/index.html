@@ -3392,12 +3392,16 @@
 <td><a href="../../documento-visao/2_solucao/#oe2">OE2</a></td>
 </tr>
 <tr>
-<td>Regras de negócio</td>
-<td><a href="../../documento-visao/8_requisitos/#rn03">RN03</a></td>
+<td>Ciclo Planejado</td>
+<td>Ciclo 5 (Incremento 2)</td>
 </tr>
 <tr>
-<td>Requisitos não funcionais</td>
-<td><a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
+<td>Maturidade</td>
+<td>?? (DoR NÃO atendida)</td>
+</tr>
+<tr>
+<td>Dependências</td>
+<td><a href="../us06/">US06</a> (Sessão ativa), <a href="../../documento-visao/8_requisitos/#rn03">RN03</a>, <a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
 </tr>
 <tr>
 <td>Issue</td>
@@ -3412,7 +3416,8 @@
 <h2 id="criterios-de-aceitacao">Critérios de aceitação</h2>
 <ul>
 <li>[ ] O sistema deve solicitar confirmação antes de encerrar a sessão do usuário.</li>
-<li>[ ] Após a confirmação, o sistema deve invalidar a sessão ativa e retornar para a página inicial ou página de login.</li>
+<li>[ ] O botão de logout deve estar visível e acessível em todas as telas da área logada do cliente.</li>
+<li>[ ] Após a confirmação, o sistema deve invalidar a sessão ativa, revogar o token no servidor e retornar para a página inicial ou página de login.</li>
 <li>[ ] Após o encerramento, o sistema deve impedir acesso a regiões protegidas sem uma nova autenticação.</li>
 </ul>
 <p><em>Fonte: <a href="https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/40">issue #40</a>.</em></p>

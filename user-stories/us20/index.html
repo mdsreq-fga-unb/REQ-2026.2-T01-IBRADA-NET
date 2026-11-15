@@ -3392,12 +3392,16 @@
 <td><a href="../../documento-visao/2_solucao/#oe1">OE1</a></td>
 </tr>
 <tr>
-<td>Regras de negócio</td>
-<td>—</td>
+<td>Ciclo Planejado</td>
+<td>Ciclo 6 (Incremento 3)</td>
 </tr>
 <tr>
-<td>Requisitos não funcionais</td>
-<td><a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf07">RNF07</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
+<td>Maturidade</td>
+<td>Preparada para Construção?? (DoR atendida?)</td>
+</tr>
+<tr>
+<td>Dependências</td>
+<td><a href="../us19/">US19</a> (Solicitações enviadas), Acesso de Gestor autenticado, <a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf07">RNF07</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
 </tr>
 <tr>
 <td>Issue</td>
@@ -3411,8 +3415,11 @@
 </blockquote>
 <h2 id="criterios-de-aceitacao">Critérios de aceitação</h2>
 <ul>
+<li>[ ] Apenas gestores autenticados podem acessar a área de parcerias (RNF04).</li>
+<li>[ ] O painel deve listar as solicitações com data de envio, nome da empresa, tipo de parceria e status (Nova, Em Análise, Respondida, Arquivada).</li>
 <li>[ ] O sistema deve disponibilizar um ambiente com uma lista com as propostas enviadas para os gestores. Deve ser possível selecionar um item da lista para sua própria seção.</li>
 <li>[ ] Após selecionar um item da lista, o sistema deve direcionar o gestor para a seção da proposta com todas as informações registradas (identificação, contato e proposta).</li>
+<li>[ ] O gestor deve poder alterar o status da proposta para manter o controle interno de acompanhamento.</li>
 </ul>
 <p><em>Fonte: <a href="https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/45">issue #45</a>.</em></p>
 <h2 id="prototipo">Protótipo</h2>

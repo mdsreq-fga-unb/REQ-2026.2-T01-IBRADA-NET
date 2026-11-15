@@ -3392,12 +3392,16 @@
 <td><a href="../../documento-visao/2_solucao/#oe3">OE3</a></td>
 </tr>
 <tr>
-<td>Regras de negócio</td>
-<td><a href="../../documento-visao/8_requisitos/#rn05">RN05</a></td>
+<td>Ciclo Planejado</td>
+<td>Ciclo 7 (Incremento 4)</td>
 </tr>
 <tr>
-<td>Requisitos não funcionais</td>
-<td><a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
+<td>Maturidade</td>
+<td>Preparada para Construção?? (DoR atendida)</td>
+</tr>
+<tr>
+<td>Dependências</td>
+<td>Acesso de Gestor autenticado (Provisionamento inicial), <a href="../../documento-visao/8_requisitos/#rn05">RN05</a>, <a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
 </tr>
 </tbody>
 </table>
@@ -3408,9 +3412,11 @@
 <h2 id="criterios-de-aceitacao">Critérios de aceitação</h2>
 <ul>
 <li>[ ] O sistema deve verificar o preenchimento dos campos obrigatórios da oportunidade (habilidades requeridas, duração, disponibilidade e projeto associado).</li>
-<li>[ ] O sistema deve permitir que o gestor selecione, no cadastro, os critérios usados para filtrar os candidatos no funil.</li>
+<li>[ ] O gestor deve poder selecionar tags de critérios objetivos (ex.: "Experiência em campo", "Conhecimento em botânica/agroecologia", "Disponibilidade aos finais de semana") que alimentarão o funil da oportunidade (RN05).</li>
 <li>[ ] O cadastro de oportunidades deve ser permitido apenas ao gestor autenticado.</li>
 <li>[ ] O sistema deve retornar uma mensagem de erro caso o cadastro não seja concluído e uma mensagem de sucesso caso a oportunidade seja salva.</li>
+<li>[ ] O sistema deve validar todos os campos obrigatórios e permitir salvar a oportunidade como "Rascunho" ou "Publicada".</li>
+<li>[ ] Oportunidades com status "Publicada" devem ficar imediatamente disponíveis para visualização pública (US21).</li>
 </ul>
 <p><em>Critérios escritos no formato das issues; esta história ainda não possui issue própria.</em></p>
 <h2 id="prototipo">Protótipo</h2>

@@ -3376,12 +3376,12 @@
 <td><a href="../../documento-visao/8_requisitos/#rf08">RF08</a> — Cadastrar clientes</td>
 </tr>
 <tr>
-<td>Épico</td>
-<td><a href="../../planejamento/rastreabilidade/#ep03">EP03</a> — Conta do cliente</td>
-</tr>
-<tr>
 <td>Tema</td>
 <td><a href="../../planejamento/rastreabilidade/#t02">T02</a> — Ecoturismo e Reservas</td>
+</tr>
+<tr>
+<td>Épico</td>
+<td><a href="../../planejamento/rastreabilidade/#ep03">EP03</a> — Conta do cliente</td>
 </tr>
 <tr>
 <td>Característica de produto</td>
@@ -3392,12 +3392,16 @@
 <td><a href="../../documento-visao/2_solucao/#oe2">OE2</a></td>
 </tr>
 <tr>
-<td>Regras de negócio</td>
-<td><a href="../../documento-visao/8_requisitos/#rn03">RN03</a></td>
+<td>Ciclo Planejado</td>
+<td>Ciclo 5 (Incremento 2)</td>
 </tr>
 <tr>
-<td>Requisitos não funcionais</td>
-<td><a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
+<td>Maturidade</td>
+<td>Preparada para Construção?? (DoR atendida)</td>
+</tr>
+<tr>
+<td>Dependências</td>
+<td><a href="../us23/">US23</a> (Consentimento LGPD), <a href="../../documento-visao/8_requisitos/#rn03">RN03</a>, <a href="../../documento-visao/8_requisitos/#rnf01">RNF01</a>, <a href="../../documento-visao/8_requisitos/#rnf04">RNF04</a>, <a href="../../documento-visao/8_requisitos/#rnf08">RNF08</a></td>
 </tr>
 <tr>
 <td>Issue</td>
@@ -3412,7 +3416,10 @@
 <h2 id="criterios-de-aceitacao">Critérios de aceitação</h2>
 <ul>
 <li>[ ] O sistema deve verificar o preenchimento dos campos obrigatórios.</li>
+<li>[ ] O formulário deve exigir nome completo, e-mail válido, telefone de contato e senha.</li>
 <li>[ ] A senha do cadastro deve ter no mínimo 8 caracteres, contendo um caractere maiúsculo, um número e um caractere especial.</li>
+<li>[ ] A senha deve ser criptografada com algoritmo de hash seguro antes de qualquer persistência (RNF08).</li>
+<li>[ ] O envio do cadastro deve ser bloqueado enquanto o usuário não marcar o aceite explícito dos termos de uso e privacidade (US23)</li>
 <li>[ ] O sistema deve verificar se o email já foi registrado.</li>
 <li>[ ] O sistema deve retornar uma mensagem de erro caso o cadastro não seja realizado com sucesso.</li>
 <li>[ ] O sistema deve direcionar o usuário para a página de login após o cadastro.</li>
