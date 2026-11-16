@@ -3,9 +3,17 @@
 
 As histórias desta seção permanecem no backlog geral do produto, mas não fazem parte do escopo definido para o MVP. Elas poderão ser refinadas e priorizadas para entregas posteriores. O identificador US28 permanece sem atribuição nesta versão do backlog.
 
-A necessidade de controle de visibilidade foi registrada em 28/09/2026. O estado de rascunho e os detalhes de publicação, edição e remoção continuam pendentes de avaliação e validação, conforme o [catálogo de requisitos](8_requisitos.md#81-lista-de-requisitos-funcionais). US25–US27 e US29 permanecem fora do MVP, que terá apresentação estática dos projetos conforme a ata de 11/10/2026.
+## US24 — Receber notificações de interesse
 
-As referências anteriores de US25 e US27 à geração de relatórios permanecem pendentes de confirmação; RF01 e RF03 não especificam essa capacidade.
+| Campo | Relação |
+| --- | --- |
+| Requisito de origem | RF36 |
+| Tema | T06 — Notificações e Engajamento |
+| Épico | EP13 — Preferências de notificações |
+
+**História de usuário**
+
+> Como visitante, quero receber notificações baseadas em minhas preferências, para saber quando um projeto de meu interesse esteja em execução.
 
 ## US25 — Cadastrar projetos
 

@@ -38,6 +38,8 @@
 === "Análise e Consenso: "
     Análise e Consenso feita de forma constante por meio de reuniões de negociação e alinhamento com os representantes do IBRADA (stakeholders) para avaliar quais funcionalidades farão parte do prótotipo trabalhado. 
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, verificabilidade etc. dos requisitos levantados durante o planejamento.
+    - **Priorização MoSCoW:** Técnica primária para classificar os requisitos em Must, Should, Could, Won't Have, garantindo um rápido consenso com o IBRADA sobre o que é essencial para compor o portal nas primeiras iterações.
+    - **Matriz de Priorização 2x2 (Valor de Negócio vs. Esforço Técnico):** Plotagem gráfica para visualização das funcionalidades, permitindo identificar as candidatas ideais para cada incremento de entrega.
 
 
 === "Representação de Requisitos:"
@@ -55,13 +57,14 @@
 
 === "Elicitação e Descoberta:"
     - **Retorno de testes, integrações e cliente:** qualquer comportamento não previsto será registrado em uma Issue ou ata, com evidência, origem e requisito afetado.
+    - "**Testes Exploratórios:** Investigação prática direcionada no código e no fluxo de execução da aplicação, focada em alguma funcionalidade, para descobrir potenciais bugs, desvendar contratos de APIs de terceiros etc.
 
 === "Análise e Consenso:"
     - **Análise de impacto:** a equipe classificará o achado como requisito novo, alteração, defeito ou esclarecimento e avaliará impacto em escopo, dependências, segurança e esforço.
     - **Decisão registrada:** aceitar, rejeitar ou postergar será decidido pela equipe e, quando envolver escopo, prioridade ou regra de negócio, validado pelo representante autorizado do IBRADA. A decisão, justificativa, responsável e data ficarão registrados.
 
 === "Declaração de Requisitos:"
-    - **Atualização dos artefatos:** achados aceitos serão descritos como RF, RNF, RN, história ou critério de aceitação e refletidos no catálogo, backlog, matriz de rastreabilidade e história afetada antes da implementação.
+    - **Atualização dos artefatos:** achados aceitos serão descritos como RNF, RN, história de usuário ou critério de aceitação. A mudança é formalizada e refletida no catálogo, backlog, matriz de rastreabilidade e história afetada antes da implementação.
 
 === "Verificação e Validação de Requisitos:"
     - **Checklists de Qualidade de Requisitos:** Listas de controle técnico aplicadas internamente para inspecionar clareza, testabilidade, completude técnica, verificabilidade e ausência de acoplamento com soluções específicas de design.
@@ -135,7 +138,7 @@
     <tr>
       <td>Análise e Consenso</td>
       <td>Priorização de requisitos</td>
-      <td>Checklists de Qualidade de Requisitos + matriz de decisão de prioridade</td>
+      <td>Checklists de Qualidade de Requisitos, matriz de priorização e priorização MoSCoW </td>
       <td>Inspeção da qualidade e registro da prioridade com valor, esforço, dependências, justificativa, responsável e aprovação do cliente quando aplicável.</td>
     </tr>
     <tr>
