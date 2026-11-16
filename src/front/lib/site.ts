@@ -1,7 +1,7 @@
 export const site = {
   name: 'IBRADA',
-  fullName: 'Instituto Brasileiro de Direito Ambiental',
-  legalName: 'Instituto Brasileiro de Direito Ambiental – IBRADA (OSCIP)',
+  fullName: 'Instituto Brasileiro do Direito Ambiental',
+  legalName: 'Instituto Brasileiro do Direito Ambiental – IBRADA (OSCIP)',
   cnpj: '06.984.927/0001-90',
   address: 'SHS, Quadra 6 conjunto e bloco A, n.130, salas 501 a 512, Asa Sul, Brasília/DF, CEP 70.316-102',
   email: 'ibrada.org.br@gmail.com',

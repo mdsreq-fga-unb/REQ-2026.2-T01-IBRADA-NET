@@ -59,7 +59,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 ### Critérios de aceitação
 
-- [ ] O sistema deve exibir uma lista das experiências de ecoturismo com nome, descrição, data, vagas disponíveis e valor.
+- [ ] O sistema deve exibir uma lista dos pacotes de ecoturismo com nome, descrição, data, vagas disponíveis e valor.
 - [ ] Experiências sem vagas ou indisponíveis devem ser sinalizadas na listagem.
 - [ ] O sistema deve permitir que o usuário selecione uma experiência e direcione para sua própria página de detalhes.
 
@@ -263,7 +263,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 ---
 
-## US11 — Cadastrar experiência de ecoturismo
+## US11 — Cadastrar pacote de ecoturismo
 
 | Campo | Relação |
 | --- | --- |
@@ -273,7 +273,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 **História de usuário**
 
-> Como gestor do IBRADA, quero cadastrar novas experiências de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-las aos clientes interessados.
+> Como gestor do IBRADA, quero cadastrar novos pacotes de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-los aos clientes interessados.
 
 ### Critérios de aceitação
 
@@ -580,7 +580,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 ---
 
-## US24 — Compartilhar experiência de ecoturismo
+## US24 — Compartilhar pacote de ecoturismo
 
 | Campo | Relação |
 | --- | --- |
@@ -590,7 +590,7 @@ Os critérios de cada história estão na seção da própria história, abaixo,
 
 **História de usuário**
 
-> Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.
+> Como visitante, quero compartilhar um pacote de ecoturismo, para apresentá-lo a outras pessoas interessadas.
 
 ### Critérios de aceitação
 

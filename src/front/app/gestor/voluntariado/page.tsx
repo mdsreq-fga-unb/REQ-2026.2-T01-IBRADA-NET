@@ -91,7 +91,7 @@ export default function GestaoVoluntariadoPage() {
       <header className="flex flex-wrap items-center justify-between gap-4 border-b border-border px-6 py-5 lg:px-9">
         <div className="flex items-center gap-3">
           <Image src="/IBRADA_logo_Sfundo.png" alt="IBRADA" width={712} height={660} className="h-14 w-auto" />
-          <p className="max-w-[12rem] text-xs text-muted-foreground sm:text-sm">Instituto Brasileiro de Direito Ambiental</p>
+          <p className="max-w-[12rem] text-xs text-muted-foreground sm:text-sm">Instituto Brasileiro do Direito Ambiental</p>
         </div>
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-muted px-4 py-2 text-sm font-medium text-muted-foreground">

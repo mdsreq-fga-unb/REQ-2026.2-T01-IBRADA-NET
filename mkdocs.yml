@@ -65,7 +65,7 @@ nav:
           - "US08 — Reservar pacote de ecoturismo": user-stories/us08.md
           - "US09 — Revisar e confirmar reserva": user-stories/us09.md
           - "US10 — Pagar reserva": user-stories/us10.md
-          - "US11 — Cadastrar experiência de ecoturismo": user-stories/us11.md
+          - "US11 — Cadastrar pacote de ecoturismo": user-stories/us11.md
           - "US12 — Controlar disponibilidade de pacotes": user-stories/us12.md
           - "US13 — Cadastrar oportunidade de voluntariado": user-stories/us13.md
           - "US14 — Visualizar detalhes da oportunidade": user-stories/us14.md
@@ -78,7 +78,7 @@ nav:
           - "US21 — Consultar oportunidades abertas": user-stories/us21.md
           - "US22 — Encerrar sessão de voluntário": user-stories/us22.md
           - "US23 — Registrar consentimento de uso de dados": user-stories/us23.md
-          - "US24 — Compartilhar experiência de ecoturismo": user-stories/us24.md
+          - "US24 — Compartilhar pacote de ecoturismo": user-stories/us24.md
         - Fora do MVP:
           - Visão geral: user-stories/fora-do-mvp.md
           - "US25 — Cadastrar projetos": user-stories/us25.md

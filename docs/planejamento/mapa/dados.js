@@ -375,7 +375,7 @@ window.MAPA_DATA = {
    ],
    "historia": "Como visitante, quero visualizar o catálogo de pacotes de ecoturismo, para conhecer as opções disponíveis e escolher a mais adequada ao meu interesse e planejamento.",
    "criterios": [
-    "O sistema deve exibir uma lista das experiências de ecoturismo com nome, descrição, data, vagas disponíveis e valor.",
+    "O sistema deve exibir uma lista dos pacotes de ecoturismo com nome, descrição, data, vagas disponíveis e valor.",
     "Experiências sem vagas ou indisponíveis devem ser sinalizadas na listagem.",
     "O sistema deve permitir que o usuário selecione uma experiência e direcione para sua própria página de detalhes."
    ],
@@ -402,11 +402,11 @@ window.MAPA_DATA = {
   },
   {
    "id": "US24",
-   "nome": "Compartilhar experiência de ecoturismo",
+   "nome": "Compartilhar pacote de ecoturismo",
    "epicos": [
     "EP02"
    ],
-   "historia": "Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.",
+   "historia": "Como visitante, quero compartilhar um pacote de ecoturismo, para apresentá-lo a outras pessoas interessadas.",
    "criterios": [
     "O sistema deve disponibilizar, na página de cada experiência, uma opção para compartilhar seu conteúdo.",
     "O conteúdo compartilhado deve identificar a experiência (nome e descrição resumida).",
@@ -468,11 +468,11 @@ window.MAPA_DATA = {
   },
   {
    "id": "US11",
-   "nome": "Cadastrar experiência de ecoturismo",
+   "nome": "Cadastrar pacote de ecoturismo",
    "epicos": [
     "EP05"
    ],
-   "historia": "Como gestor do IBRADA, quero cadastrar novas experiências de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-las aos clientes interessados.",
+   "historia": "Como gestor do IBRADA, quero cadastrar novos pacotes de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-los aos clientes interessados.",
    "criterios": [
     "O sistema deve verificar o preenchimento dos campos obrigatórios da experiência (roteiro, datas, valores e disponibilidade).",
     "O cadastro de experiências deve ser permitido apenas ao gestor autenticado.",

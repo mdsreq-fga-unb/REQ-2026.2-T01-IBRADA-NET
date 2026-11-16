@@ -19,7 +19,7 @@
 
 ### 1.2 Introdução ao Negócio e Contexto
 
-O Instituto Brasileiro de Direito Ambiental - IBRADA é uma organização sem fins lucrativos que tem como missão promover a educação, a paz, a ética, a cidadania, o direito e a justiça em defesa da conservação e recuperação do meio ambiente. A dinâmica atual do instituto se concentra principalmente na a inclusão socioprodutiva de comunidades carentes, com foco em soluções de agroecologia e turismo de base comunitária e na venda de pacotes de viagens ou trilhas que promovem o ecoturismo. 
+O Instituto Brasileiro do Direito Ambiental - IBRADA é uma organização sem fins lucrativos que tem como missão promover a educação, a paz, a ética, a cidadania, o direito e a justiça em defesa da conservação e recuperação do meio ambiente. A dinâmica atual do instituto se concentra principalmente na a inclusão socioprodutiva de comunidades carentes, com foco em soluções de agroecologia e turismo de base comunitária e na venda de pacotes de viagens ou trilhas que promovem o ecoturismo. 
 
 O público-alvo da organização se divide em duas frentes principais de interação:
 
