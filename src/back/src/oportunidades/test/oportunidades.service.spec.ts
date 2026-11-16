@@ -128,6 +128,22 @@ describe('OportunidadesService (US13, US14, US21, RF19)', () => {
     });
   });
 
+  describe('findAllForGestor (RF19 - Painel do gestor)', () => {
+    it('deve listar todas as oportunidades, sem filtrar por isOpen', async () => {
+      mockPrisma.oportunidade.findMany.mockResolvedValue([
+        { id: 'op-1', title: 'Aberta', isOpen: true },
+        { id: 'op-2', title: 'Fechada', isOpen: false },
+      ]);
+
+      const result = await service.findAllForGestor();
+
+      expect(result).toHaveLength(2);
+      const args = mockPrisma.oportunidade.findMany.mock.calls[0][0];
+      expect(args.where).toBeUndefined();
+      expect(args.select.isOpen).toBe(true);
+    });
+  });
+
   // ===========================================================================
   // US14 — Visualizar detalhes da oportunidade (RF22)
   // ===========================================================================

@@ -59,6 +59,8 @@ export function consumeFlashMessage(): string | null {
   return msg;
 }
 
+type ApiOptions = { method?: "GET" | "POST" | "PATCH" | "PUT" | "DELETE"; body?: unknown };
+
 export class ApiError extends Error {
   constructor(
     public status: number,
@@ -69,10 +71,7 @@ export class ApiError extends Error {
   }
 }
 
-type ApiOptions = {
-  method?: "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
-  body?: unknown;
-};
+
 
 const FALLBACK_ERROR = "Não foi possível concluir a requisição.";
 
@@ -185,6 +184,7 @@ export async function register(payload: RegisterPayload) {
     body: payload,
   });
 }
+
 
 export type PerfilVoluntario = {
   id: string;

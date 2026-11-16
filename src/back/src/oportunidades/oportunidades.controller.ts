@@ -46,6 +46,23 @@ export class OportunidadesController {
   }
 
   // ===========================================================================
+  // RF19 — Painel do gestor: todas as oportunidades (abertas e fechadas)
+  // ===========================================================================
+
+  /**
+   * GET /oportunidades/gestor
+   * Rota restrita: lista todas as oportunidades, inclusive as fechadas, para o
+   * gestor poder reabri-las. Precisa ficar antes de `:id`, senão "gestor" seria
+   * tratado como um ID.
+   */
+  @Roles(UserRole.GESTOR)
+  @Get('gestor')
+  async findAllForGestor() {
+    this.logger.log('Gestor solicitou a lista completa de oportunidades (RF19)');
+    return this.oportunidadesService.findAllForGestor();
+  }
+
+  // ===========================================================================
   // US14 — Visualizar detalhes da oportunidade (rota pública)
   // ===========================================================================
 
