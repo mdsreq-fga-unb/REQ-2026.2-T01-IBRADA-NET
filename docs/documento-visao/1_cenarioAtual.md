@@ -41,6 +41,7 @@
 |03/11/2026|2.4 |Adição de critérios de aceitação de algumas US| Gabriel |
 |04/11/2026|2.5 |Ajusta RF13 e RF14|Cauã|
 |11/11/2026|2.6 |Ajustes na RF32 e estrutura das US|Gabriel|
+|16/11/2026| |Reorganização do Pages, Adição de Evidências e Ajustes no Mapa de Rastreabilidade|Gabriel|
 
 *Tabela 1: Tabela de versionamento*
 

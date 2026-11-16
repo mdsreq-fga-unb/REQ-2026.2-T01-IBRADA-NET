@@ -62,7 +62,10 @@ nav:
   - Planejamento e Escopo:
       - Rastreabilidade do MVP: planejamento/rastreabilidade.md
       - Evidências:
-        - Prótipos e Diagramas: evidencias/prototipos.md
+        - Por Ciclo: 
+          - Incremento 1: evidencias/ciclos/ciclo1.md
+          - Incremento 2: evidencias/ciclos/ciclo2.md
+          - Incremento 3: evidencias/ciclos/ciclo3.md
         - Análise de Domínio: evidencias/analise-dominio.md
         - Oficinas de Validação: evidencias/oficina-validacao.md
       - Fora do MVP:
