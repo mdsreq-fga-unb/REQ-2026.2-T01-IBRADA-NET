@@ -207,7 +207,8 @@ window.MAPA_DATA = {
    "desc": "Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento.",
    "rel": "CP3",
    "cps": [
-    "CP3"
+    "CP3",
+    "CP4"
    ]
   },
   "RN04": {
@@ -334,7 +335,7 @@ window.MAPA_DATA = {
    "criterios": [
     "O sistema deve apresentar um formulário de triagem guiado, com campos simplificados, que possa ser concluído sem cadastro.",
     "O sistema deve identificar o tipo de solicitação e o perfil do visitante a partir das respostas e armazenar os dados informados.",
-    "Após o envio, o sistema deve encaminhar o visitante ao canal ou departamento correspondente às respostas fornecidas.",
+    "Após o envio, o sistema deve encaminhar o visitante ao WhatsApp do IBRADA, com mensagem pré-configurada correspondente às respostas e direcionamento ao departamento pertinente, conforme RN01 e RN02.",
     "O sistema deve retornar uma mensagem de erro caso a triagem não possa ser concluída ou algum campo obrigatório não seja preenchido."
    ],
    "issue": 58,
@@ -361,7 +362,8 @@ window.MAPA_DATA = {
    ],
    "issue": 44,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/44",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF33"
   },
   {
    "id": "US20",
@@ -382,7 +384,8 @@ window.MAPA_DATA = {
    ],
    "issue": 45,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/45",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF34"
   },
   {
    "id": "US02",
@@ -514,7 +517,8 @@ window.MAPA_DATA = {
     "O sistema deve encaminhar o cliente ao gateway de pagamento externo para realizar o pagamento da reserva.",
     "O sistema deve exibir o status do pagamento retornado pelo gateway (aprovado, pendente ou recusado).",
     "Caso o pagamento seja aprovado, o sistema deve confirmar a reserva e disponibilizar o comprovante da transação.",
-    "Caso o pagamento falhe ou seja recusado, o sistema não deve confirmar a vaga e deve retornar uma mensagem de erro."
+    "Caso o pagamento falhe ou seja recusado, o sistema não deve confirmar a vaga e deve retornar uma mensagem de erro.",
+    "O sistema deve atualizar a reserva correspondente ao receber a notificação de pagamento do provedor e impedir que notificações repetidas sejam processadas em duplicidade, conforme RNF05."
    ],
    "issue": 63,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/63",
@@ -589,7 +593,8 @@ window.MAPA_DATA = {
    ],
    "issue": 37,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/37",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF08"
   },
   {
    "id": "US05",
@@ -610,7 +615,8 @@ window.MAPA_DATA = {
    ],
    "issue": 38,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/38",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF09"
   },
   {
    "id": "US06",
@@ -632,7 +638,8 @@ window.MAPA_DATA = {
    ],
    "issue": 39,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/39",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF10"
   },
   {
    "id": "US07",
@@ -654,7 +661,8 @@ window.MAPA_DATA = {
    ],
    "issue": 40,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/40",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF11"
   },
   {
    "id": "US23",
@@ -671,12 +679,13 @@ window.MAPA_DATA = {
    "historia": "Como usuário em processo de cadastro, quero consultar e aceitar explicitamente o termo de uso de dados pessoais, para decidir de forma consciente sobre o tratamento das minhas informações.",
    "criterios": [
     "Durante o cadastro, o sistema deve exibir uma opção para ver os termos de uso de dados pessoais.",
-    "O sistema deve permitir que o usuário aceite os termos de uso de dados pessoais durante o cadastro.",
+    "O sistema deve permitir que o usuário aceite explicitamente os termos de uso de dados pessoais durante o cadastro e registrar data, hora e versão do termo aceito, conforme RF29.",
     "O sistema deve bloquear o cadastro de uma nova conta caso os termos de uso de dados pessoais não sejam aceitos."
    ],
    "issue": 48,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/48",
-   "adaptado": false
+   "adaptado": true,
+   "rf": "RF29"
   },
   {
    "id": "US15",
@@ -696,12 +705,13 @@ window.MAPA_DATA = {
     "A senha do cadastro deve ter no mínimo 8 caracteres, contendo um caractere maiúsculo, um número e um caractere especial.",
     "O sistema deve verificar se o email já foi registrado.",
     "O sistema deve retornar uma mensagem de erro caso o cadastro não seja realizado com sucesso.",
-    "Durante o cadastro, o sistema deve permitir se cadastrar como voluntário e registrar habilidades e interesses do usuário.",
+    "Durante o cadastro, o sistema deve permitir se cadastrar como voluntário, selecionar palavras-chave de habilidades e registrar experiências, interesses e disponibilidade, conforme RF23 e a ata de 11/10/2026.",
     "Caso o usuário já possua um login salvo de um acesso anterior, o sistema deve autenticá-lo automaticamente ao concluir o perfil de voluntário e direcioná-lo à página principal; caso contrário, deve direcioná-lo à página de login, como no cadastro de cliente (US04)."
    ],
    "issue": 42,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/42",
-   "adaptado": true
+   "adaptado": true,
+   "rf": "RF23"
   },
   {
    "id": "US17",
@@ -723,7 +733,8 @@ window.MAPA_DATA = {
    ],
    "issue": 43,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/43",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF26"
   },
   {
    "id": "US22",
@@ -745,7 +756,8 @@ window.MAPA_DATA = {
    ],
    "issue": 47,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/47",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF27"
   },
   {
    "id": "US14",
@@ -766,7 +778,8 @@ window.MAPA_DATA = {
    ],
    "issue": 41,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/41",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF22"
   },
   {
    "id": "US16",
@@ -811,7 +824,8 @@ window.MAPA_DATA = {
    ],
    "issue": 46,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/46",
-   "adaptado": false
+   "adaptado": false,
+   "rf": "RF21"
   },
   {
    "id": "US13",

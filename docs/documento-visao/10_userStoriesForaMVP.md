@@ -25,7 +25,7 @@ As histórias desta seção permanecem no backlog geral do produto, mas não faz
 
 **História de usuário**
 
-> Como gestor, quero cadastrar projetos de regularização fundiária e ambiental, inclusão socioprodutiva e assistência técnica e extensão rural no painel público interativo, para que a instituição possa centralizar os dados das propriedades atendidas, acompanhar a evolução dos projetos e gerar relatórios operacionais.
+> Como gestor, quero cadastrar projetos de regularização fundiária e ambiental, inclusão socioprodutiva e assistência técnica e extensão rural com controle de visibilidade, para centralizar as informações e permitir sua discussão interna antes da divulgação pública.
 
 <!--
 ### Critérios de aceitação
@@ -49,7 +49,7 @@ As histórias desta seção permanecem no backlog geral do produto, mas não faz
 
 **História de usuário**
 
-> Como gestor, quero editar as informações de projetos existentes no painel público interativo, para manter corretos e atualizados o histórico de acompanhamento, os dados operacionais e o progresso das atividades.
+> Como gestor, quero editar as informações dos projetos considerando seu controle de visibilidade, para manter o conteúdo atualizado e distinguir informações em discussão interna daquelas disponibilizadas ao público.
 
 <!--
 ### Critérios de aceitação
@@ -73,7 +73,7 @@ As histórias desta seção permanecem no backlog geral do produto, mas não faz
 
 **História de usuário**
 
-> Como gestor, quero remover projetos do painel público interativo, para manter limpas e precisas a visualização dos dados operacionais e a geração dos relatórios institucionais.
+> Como gestor, quero remover projetos do painel público interativo, para manter atualizada a apresentação institucional, distinguindo a remoção do controle de visibilidade de um projeto mantido para discussão interna.
 
 <!--
 ### Critérios de aceitação
@@ -97,7 +97,7 @@ As histórias desta seção permanecem no backlog geral do produto, mas não faz
 
 **História de usuário**
 
-> Como visitante, quero visualizar os projetos realizados pela instituição em um painel público interativo, para conhecer melhor suas ações e os benefícios produzidos por suas operações.
+> Como visitante, quero visualizar as informações dos projetos disponibilizadas para divulgação em um painel público interativo, distinguindo resultados alcançados de impactos pretendidos, para conhecer as ações da instituição sem acesso ao conteúdo mantido para discussão interna.
 
 <!--
 ### Critérios de aceitação
