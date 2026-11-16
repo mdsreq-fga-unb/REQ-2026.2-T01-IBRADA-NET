@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { setFlashMessage } from "@/lib/api";
 import {
   criarOportunidade,
   listarCategorias,
@@ -13,6 +15,7 @@ import {
 import { OpportunityForm } from "./opportunity-form";
 
 export default function NovaOportunidadePage() {
+  const router = useRouter();
   const [projects, setProjects] = useState<Opcao[]>([]);
   const [categories, setCategories] = useState<Opcao[]>([]);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -59,6 +62,9 @@ export default function NovaOportunidadePage() {
           } catch (erro) {
             throw new Error(mensagemDeErro(erro, "Não foi possível criar a oportunidade. Tente novamente."));
           }
+          // Criada: volta para a lista do gestor, que mostra o aviso de sucesso.
+          setFlashMessage("Oportunidade criada com sucesso.");
+          router.push("/gestor/voluntariado");
         }}
       />
     </section>

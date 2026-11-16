@@ -10,6 +10,7 @@ describe('OportunidadesController (US13, US14, US21, RF19)', () => {
 
   const mockService = {
     findAllOpen: vi.fn(),
+    findAllForGestor: vi.fn(),
     findById: vi.fn(),
     create: vi.fn(),
     update: vi.fn(),
@@ -46,6 +47,20 @@ describe('OportunidadesController (US13, US14, US21, RF19)', () => {
         categoriaId: undefined,
         busca: undefined,
       });
+    });
+  });
+
+  describe('findAllForGestor (RF19 - Rota gestor)', () => {
+    it('deve chamar service.findAllForGestor e devolver abertas e fechadas', async () => {
+      mockService.findAllForGestor.mockResolvedValue([
+        { id: 'op-1', title: 'Aberta', isOpen: true },
+        { id: 'op-2', title: 'Fechada', isOpen: false },
+      ]);
+
+      const result = await controller.findAllForGestor();
+
+      expect(mockService.findAllForGestor).toHaveBeenCalledTimes(1);
+      expect(result).toHaveLength(2);
     });
   });
 

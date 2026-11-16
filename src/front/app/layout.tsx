@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import { Fraunces, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/navbar";
 import { SiteFooter } from "@/components/site-footer";
@@ -34,9 +35,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Pular para o conteúdo
         </a>
         <AuthProvider>
-          <PublicSiteChrome><SiteHeader /></PublicSiteChrome>
+          {/* Com cacheComponents, ler a URL (usePathname) exige Suspense. */}
+          <Suspense fallback={null}>
+            <PublicSiteChrome><SiteHeader /></PublicSiteChrome>
+          </Suspense>
           <main id="conteudo">{children}</main>
-          <PublicSiteChrome><SiteFooter /></PublicSiteChrome>
+          <Suspense fallback={null}>
+            <PublicSiteChrome><SiteFooter /></PublicSiteChrome>
+          </Suspense>
         </AuthProvider>
       </body>
     </html>

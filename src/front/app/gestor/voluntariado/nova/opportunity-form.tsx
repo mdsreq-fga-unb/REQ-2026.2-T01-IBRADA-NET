@@ -2,20 +2,29 @@
 
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
+import { NIVEL_EDUCACAO_OPTIONS, type NivelEducacao } from "@/lib/brasil";
 
-const criteria = ["Conhecimento técnico", "Experiência prévia", "Aptidão física"] as const;
+// Separa as habilidades exigidas digitadas (vírgula, ponto e vírgula ou quebra de linha),
+// do mesmo jeito que o funil lê as habilidades do perfil do voluntário.
+const splitTags = (value: string) =>
+  Array.from(new Set(value.split(/[,;\n]/).map((tag) => tag.trim()).filter(Boolean)));
 
 type Option = { id: string; label: string };
 
 export type OpportunityDraft = {
   name: string;
+  description: string;
   projectId: string;
   categoryId: string;
   activities: string;
   duration: string;
   availability: string;
   skills: string[];
-  funnelCriteria: string[];
+  funnelCriteria: {
+    exigeExperiencia: boolean;
+    educacaoMinima: NivelEducacao | "";
+    habilidadesExigidas: string[];
+  };
 };
 
 type Props = {
@@ -67,13 +76,18 @@ export function OpportunityForm({ projects, categories, onCreate }: Props) {
     try {
       await onCreate({
         name: read("name"),
+        description: read("description"),
         projectId: read("projectId"),
         categoryId: read("categoryId"),
         activities: read("activities"),
         duration: read("duration"),
         availability: read("availability"),
         skills: submittedSkills,
-        funnelCriteria: data.getAll("funnelCriteria").map(String),
+        funnelCriteria: {
+          exigeExperiencia: data.get("exigeExperiencia") === "on",
+          educacaoMinima: read("educacaoMinima") as NivelEducacao | "",
+          habilidadesExigidas: splitTags(read("habilidadesExigidas")),
+        },
       });
       form.reset();
       setSkills([]);
@@ -94,11 +108,16 @@ export function OpportunityForm({ projects, categories, onCreate }: Props) {
           <input name="name" required pattern={".*\\S.*"} className={fieldClass} />
         </label>
 
+        <label className={labelClass}>
+          Descrição
+          <textarea name="description" rows={3} required className={fieldClass} />
+        </label>
+
         <div className="grid gap-6 sm:grid-cols-2">
           <label className={labelClass}>
             Projeto associado
             <select name="projectId" defaultValue="" required disabled={!projects.length} className={fieldClass}>
-              <option value="" disabled>{projects.length ? "Selecione um projeto" : "Nenhum projeto disponível"}</option>
+              <option value="" disabled>{projects.length ? "Selecione um projeto" : "Nenhum projeto cadastrado"}</option>
               {projects.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
             </select>
           </label>
@@ -170,18 +189,45 @@ export function OpportunityForm({ projects, categories, onCreate }: Props) {
 
         <fieldset className="rounded-xl border border-border p-4">
           <legend className="px-2 text-sm font-medium">Critérios do funil (opcional)</legend>
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
-            {criteria.map((criterion) => (
-              <label key={criterion} className="flex items-center gap-2 text-sm">
-                <input type="checkbox" name="funnelCriteria" value={criterion} className="size-4 accent-primary" />
-                {criterion}
-              </label>
-            ))}
+          <p className="mb-4 px-2 text-sm text-muted-foreground">
+            Usados para separar os candidatos aptos. Sem critérios, todos os candidatos ficam aptos.
+          </p>
+          <div className="grid gap-5">
+            <label className="flex items-center gap-2 text-sm">
+              <input type="checkbox" name="exigeExperiencia" className="size-4 accent-primary" />
+              Exigir experiência prévia na área
+            </label>
+            <label className={labelClass}>
+              Escolaridade mínima
+              <select name="educacaoMinima" defaultValue="" className={fieldClass}>
+                <option value="">Sem exigência</option>
+                {NIVEL_EDUCACAO_OPTIONS.map(({ value, label }) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
+              </select>
+            </label>
+            <label className={labelClass}>
+              Habilidades exigidas
+              <input
+                name="habilidadesExigidas"
+                placeholder="Separe por vírgula. Ex. Primeiros socorros, Botânica"
+                className={fieldClass}
+              />
+              <span className="text-xs font-normal text-muted-foreground">
+                O candidato precisa ter declarado cada uma delas em &quot;outras habilidades&quot; no perfil.
+              </span>
+            </label>
           </div>
         </fieldset>
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-5">
-          {!canSubmit && <p className="text-sm text-muted-foreground">O envio está indisponível no momento.</p>}
+          {!canSubmit && (
+            <p className="text-sm text-muted-foreground">
+              {onCreate && categories.length && !projects.length
+                ? "Nenhum projeto cadastrado. Peça à equipe de desenvolvimento para cadastrar o projeto antes de criar a oportunidade."
+                : "O envio está indisponível no momento."}
+            </p>
+          )}
           {status === "error" && <p role="alert" className="text-sm text-destructive">{errorMessage}</p>}
           {status === "success" && <p role="status" className="text-sm text-primary">Oportunidade criada com sucesso.</p>}
           <Button type="submit" disabled={!canSubmit || saving} className="ml-auto h-11 px-5">

@@ -152,7 +152,7 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
           {oportunidade.aberta && !user ? (
             // Visitante: segue para o login.
             <Link
-              href="/login"
+              href={`/login?next=${encodeURIComponent(`/voluntariado/${oportunidade.id}`)}`}
               className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               Candidatar-se

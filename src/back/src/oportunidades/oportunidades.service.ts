@@ -61,6 +61,30 @@ export class OportunidadesService {
   }
 
   // ===========================================================================
+  // RF19 — Painel do gestor: todas as oportunidades (abertas e fechadas)
+  // ===========================================================================
+
+  /**
+   * Lista todas as oportunidades, abertas ou fechadas, para o painel do gestor.
+   * Sem filtros: a lista pública (US21) é que mostra só as abertas.
+   */
+  async findAllForGestor() {
+    return this.prisma.oportunidade.findMany({
+      orderBy: { createdAt: 'desc' },
+      select: {
+        id: true,
+        title: true,
+        duracao: true,
+        disponibilidade: true,
+        isOpen: true,
+        categoria: { select: { id: true, nome: true } },
+        projeto: { select: { id: true, title: true } },
+        createdAt: true,
+      },
+    });
+  }
+
+  // ===========================================================================
   // US14 — Visualizar detalhes da oportunidade (rota pública)
   // ===========================================================================
 

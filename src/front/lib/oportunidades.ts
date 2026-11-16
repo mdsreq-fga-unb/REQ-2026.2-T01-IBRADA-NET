@@ -18,7 +18,7 @@ export type Oportunidade = {
   habilidades: string[];
 };
 
-// Formato esperado da API (contrato a confirmar com o back de oportunidades).
+// Formato da API de oportunidades (GET /oportunidades e /oportunidades/:id).
 // Toda a adaptação fica concentrada em `normalizar`, para absorver ajustes
 // de nome sem mexer nas telas.
 export type OportunidadeApi = {
@@ -29,6 +29,7 @@ export type OportunidadeApi = {
   isOpen?: boolean;
   formato?: string;
   local?: string;
+  localAtuacao?: string | null;
   categoria?: string | { nome: string };
   projeto?: string | { title: string; description?: string };
   atividades?: string | string[];
@@ -47,7 +48,7 @@ export function normalizar(raw: OportunidadeApi): Oportunidade {
     titulo: raw.title,
     categoria: typeof raw.categoria === "string" ? raw.categoria : raw.categoria?.nome,
     formato: raw.formato,
-    local: raw.local,
+    local: raw.local ?? raw.localAtuacao ?? undefined,
     projeto: projeto?.title,
     projetoDescricao: projeto && "description" in projeto ? projeto.description : undefined,
     duracao: raw.duracao,

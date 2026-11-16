@@ -1,32 +1,35 @@
 import { ApiError, api } from "@/lib/api";
+import type { NivelEducacao } from "@/lib/brasil";
 import { normalizar, type Oportunidade, type OportunidadeApi } from "@/lib/oportunidades";
 
-// Chamadas restritas ao GESTOR (US13 e RF19). O contrato abaixo segue o escopo do
-// back de oportunidades; se os nomes mudarem lá, o ajuste é só neste arquivo.
-//   GET   /oportunidades/gestor   todas as oportunidades (abertas e pausadas)  [a confirmar]
+// Chamadas restritas ao GESTOR (US13 e RF19). Se os nomes mudarem no back, o ajuste
+// é só neste arquivo.
+//   GET   /oportunidades/gestor   todas as oportunidades (abertas e fechadas)
 //   GET   /projetos               projetos para o seletor
-//   GET   /categorias             categorias para o seletor                    [a confirmar]
+//   GET   /categorias             categorias para o seletor (rota pública)
 //   POST  /oportunidades          cadastra (US13)
 //   PATCH /oportunidades/:id      abre ou fecha (RF19)
 
 export type Opcao = { id: string; label: string };
 
+// Critérios do funil (RN05) que o back avalia: experiência na área, escolaridade
+// mínima e habilidades exigidas (comparadas com as declaradas no perfil do voluntário).
+export type CriteriosFunil = {
+  exigeExperiencia: boolean;
+  educacaoMinima: NivelEducacao | "";
+  habilidadesExigidas: string[];
+};
+
 export type NovaOportunidade = {
   name: string;
+  description: string;
   projectId: string;
   categoryId: string;
   activities: string;
   duration: string;
   availability: string;
   skills: string[];
-  funnelCriteria: string[];
-};
-
-// Critérios do funil (RN05): rótulo da tela -> código enviado à API [a confirmar].
-const CODIGO_CRITERIO: Record<string, string> = {
-  "Conhecimento técnico": "CONHECIMENTO_TECNICO",
-  "Experiência prévia": "EXPERIENCIA_PREVIA",
-  "Aptidão física": "APTIDAO_FISICA",
+  funnelCriteria: CriteriosFunil;
 };
 
 const lista = <T>(dados: T[] | { data: T[] }): T[] => (Array.isArray(dados) ? dados : dados.data);
@@ -65,17 +68,28 @@ export function mensagemDeErro(erro: unknown, padrao: string): string {
 }
 
 export async function criarOportunidade(dados: NovaOportunidade) {
+  const { exigeExperiencia, educacaoMinima, habilidadesExigidas } = dados.funnelCriteria;
+  // Só envia o bloco quando o gestor escolheu algum critério (sem critérios, todos ficam aptos).
+  const temCriterio = exigeExperiencia || Boolean(educacaoMinima) || habilidadesExigidas.length > 0;
+
   return api("/oportunidades", {
     method: "POST",
     body: {
       title: dados.name,
+      description: dados.description,
       projetoId: dados.projectId,
       categoriaId: dados.categoryId,
       atividades: dados.activities,
       duracao: dados.duration,
       disponibilidade: dados.availability,
       habilidades: dados.skills,
-      criterios: dados.funnelCriteria.map((c) => CODIGO_CRITERIO[c] ?? c),
+      ...(temCriterio && {
+        criteriosFunil: {
+          ...(exigeExperiencia && { exigeExperiencia: true }),
+          ...(educacaoMinima && { educacaoMinima }),
+          ...(habilidadesExigidas.length > 0 && { habilidadesExigidas }),
+        },
+      }),
     },
   });
 }

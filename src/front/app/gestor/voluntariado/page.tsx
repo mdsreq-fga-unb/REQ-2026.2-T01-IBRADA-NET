@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, HandHeart, LogOut, Plus } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { FlashBanner } from "@/components/flash-banner";
 import { useAuth } from "@/lib/auth-context";
 import {
   alterarStatusOportunidade,
@@ -83,6 +84,10 @@ export default function GestaoVoluntariadoPage() {
 
   return (
     <div className="min-h-screen">
+      {/* Aviso de sucesso vindo do cadastro (Suspense: o banner lê a URL). */}
+      <Suspense fallback={null}>
+        <FlashBanner />
+      </Suspense>
       <header className="flex flex-wrap items-center justify-between gap-4 border-b border-border px-6 py-5 lg:px-9">
         <div className="flex items-center gap-3">
           <Image src="/IBRADA_logo_Sfundo.png" alt="IBRADA" width={712} height={660} className="h-14 w-auto" />
