@@ -38,13 +38,15 @@
 |27/10/2026|2.1 |Correção dos RNFs tópico 8| Cauã |
 |29/10/2026|2.2 |Ajustes na descrição de alguns requisitos funcionais| Gabriel |
 |29/10/2026|2.3 |Adição da RF37 e US24| Gabriel |
-|03/11/2026|2.4 |Adição de critérios de aceitação de algumas US| Gabriel |
-|04/11/2026|2.5 |Ajusta RF13 e RF14|Cauã|
-|11/11/2026|2.6 |Ajustes na RF32 e estrutura das US|Gabriel|
-|12/11/2026|2.7 |Ajustes em Cenário Atual e Intervenção Social|Cauã|
-|12/11/2026|2.8 |Ajustes em Estratégias e Requisitos|Cauã|
-|13/11/2026|2.9 |Ajustes em UserStories e Mapa de rastreabilidade|Cauã|
-|16/11/2026| |Reorganização do Pages, Adição de Evidências e Ajustes no Mapa de Rastreabilidade|Gabriel|
+|28/10/2026|2.4 |Pequenos replanejamentos e ajustes no cronograma|Gabriel Guedes|
+|03/11/2026|2.5 |Adição de critérios de aceitação de algumas US| Gabriel |
+|04/11/2026|2.6 |Ajusta RF13 e RF14|Cauã|
+|11/11/2026|2.7 |Ajustes na RF32 e estrutura das US|Gabriel|
+|12/11/2026|2.8 |Ajustes em Cenário Atual e Intervenção Social|Cauã|
+|12/11/2026|2.9 |Ajustes em Estratégias e Requisitos|Cauã|
+|13/11/2026|2.10 |Ajustes em UserStories e Mapa de rastreabilidade|Cauã|
+|16/11/2026|2.11 |Reorganização do Pages, Adição de Evidências e Ajustes no Mapa de Rastreabilidade|Gabriel|
+
 
 *Tabela 1: Tabela de versionamento*
 
