@@ -439,8 +439,8 @@ window.MAPA_DATA = {
    ],
    "rf": "RF36",
    "rfUrl": "documento-visao/8_requisitos/#rf36",
-   "ciclo": "Ciclo 1",
-   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "ciclo": "Incremento 3",
+   "cicloUrl": "documento-visao/6_cronograma/#ic3",
    "valorNegocio": "3 / 1,61",
    "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.",
@@ -566,8 +566,6 @@ window.MAPA_DATA = {
     "Experiências indisponíveis devem ser sinalizadas no catálogo e não devem aceitar novas reservas.",
     "O sistema deve retornar uma mensagem de sucesso caso a alteração seja salva e uma mensagem de erro caso contrário."
    ],
-   "ciclo": "Ciclo 1",
-   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
    "issue": 65,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/65",
    "adaptado": false
