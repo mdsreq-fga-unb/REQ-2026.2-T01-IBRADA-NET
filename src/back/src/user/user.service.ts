@@ -5,23 +5,49 @@ import {
   Injectable,
   Logger,
   NotFoundException,
+  Optional,
   type OnApplicationBootstrap,
 } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '../prisma/prisma.service.js';
-import { CreateUserDto , UserRole } from './dto/create-user.dto.js';
+import { CreateUserDto, UserRole } from './dto/create-user.dto.js';
 import * as bcrypt from 'bcrypt';
 import { UpdateUserDto } from './dto/update-user.dto.js';
+import { CreatePerfilVoluntarioDto } from './dto/create-perfil-voluntario.dto.js';
 
 const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
 const prismaCode = (error: unknown): string | undefined =>
   typeof error === 'object' && error !== null ? (error as { code?: string }).code : undefined;
 
+const PERFIL_VOLUNTARIO_SELECT = {
+  id: true,
+  bio: true,
+  outros: true,
+  educacaoNivel: true,
+  educacaoCompletude: true,
+  createdAt: true,
+  updatedAt: true,
+  interesses: {
+    select: {
+      categoria: {
+        select: {
+          id: true,
+          nome: true,
+        },
+      },
+    },
+  },
+} as const;
+
 @Injectable()
 export class UserService implements OnApplicationBootstrap {
   private readonly logger = new Logger(UserService.name);
 
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    @Optional() private jwtService?: JwtService,
+  ) {}
 
   async create(dto: CreateUserDto) {
     if ((dto.role as string) === UserRole.GESTOR) {
@@ -41,7 +67,6 @@ export class UserService implements OnApplicationBootstrap {
     }
 
     const dataNascimento = this.parseDataNascimento(dto.dataNascimento);
-
     const passwordHash = await bcrypt.hash(dto.password, 10);
 
     try {
@@ -91,7 +116,6 @@ export class UserService implements OnApplicationBootstrap {
     }
   }
 
-  // Converte a data e recusa datas futuras (usado no cadastro e na edição).
   private parseDataNascimento(value: string): Date {
     const data = new Date(value);
     if (data.getTime() > Date.now()) {
@@ -102,6 +126,109 @@ export class UserService implements OnApplicationBootstrap {
 
   async findByEmail(email: string) {
     return this.prisma.user.findUnique({ where: { email } });
+  }
+
+  // US05 / US15: retorna os dados pessoais do usuário logado e seu perfil de voluntário (se existir).
+  async findMe(userId: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        phone: true,
+        dataNascimento: true,
+        cidade: true,
+        estado: true,
+        role: true,
+        createdAt: true,
+        updatedAt: true,
+        perfilVoluntario: {
+          select: PERFIL_VOLUNTARIO_SELECT,
+        },
+      },
+    });
+
+    if (!user) {
+      throw new NotFoundException('Usuário não encontrado.');
+    }
+
+    return user;
+  }
+
+  // US15: cria o perfil de voluntário para uma conta já existente (apenas uma vez).
+  async createPerfilVoluntario(userId: string, dto: CreatePerfilVoluntarioDto) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        perfilVoluntario: { select: { id: true } },
+      },
+    });
+
+    if (!user) {
+      throw new NotFoundException('Usuário não encontrado.');
+    }
+
+    if (user.perfilVoluntario) {
+      throw new ConflictException('Este usuário já possui um perfil de voluntário cadastrado.');
+    }
+
+    // Promove CLIENTE para VOLUNTARIO; se for GESTOR, mantém GESTOR.
+    const nextRole = user.role === UserRole.CLIENTE ? UserRole.VOLUNTARIO : user.role;
+
+    try {
+      const updated = await this.prisma.user.update({
+        where: { id: userId },
+        data: {
+          role: nextRole,
+          perfilVoluntario: {
+            create: {
+              bio: dto.bio,
+              outros: dto.outros,
+              educacaoNivel: dto.educacaoNivel,
+              educacaoCompletude: dto.educacaoCompletude,
+              interesses: dto.categoriaIds
+                ? {
+                    create: dto.categoriaIds.map((id: string) => ({
+                      categoria: { connect: { id } },
+                    })),
+                  }
+                : undefined,
+            },
+          },
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          perfilVoluntario: {
+            select: PERFIL_VOLUNTARIO_SELECT,
+          },
+        },
+      });
+
+      const payload = { sub: updated.id, email: updated.email, role: updated.role };
+      const access_token = this.jwtService ? this.jwtService.sign(payload) : undefined;
+
+      return {
+        ...(access_token && { access_token }),
+        user: { id: updated.id, name: updated.name, role: updated.role },
+        perfilVoluntario: updated.perfilVoluntario,
+      };
+    } catch (error) {
+      if (prismaCode(error) === 'P2002') {
+        throw new ConflictException('Este usuário já possui um perfil de voluntário cadastrado.');
+      }
+      if (prismaCode(error) === 'P2025') {
+        throw new BadRequestException('Uma das categorias de interesse informadas não existe.');
+      }
+      throw error;
+    }
   }
 
   async update(userId: string, data: UpdateUserDto) {
@@ -132,7 +259,6 @@ export class UserService implements OnApplicationBootstrap {
               update: {
                 ...perfilData,
                 ...(categoriaIds !== undefined && {
-                  // Substitui a lista de interesses pela enviada.
                   interesses: {
                     deleteMany: {},
                     create: categoriaIds.map((id: string) => ({

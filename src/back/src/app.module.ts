@@ -10,6 +10,7 @@ import { ExperienciasModule } from './experiencias/experiencias.module.js';
 import { ProjetosModule } from './projetos/projetos.module.js';
 import { OportunidadesModule } from './oportunidades/oportunidades.module.js';
 import { FunilModule } from './funil/funil.module.js';
+import { CategoriaModule } from './categoria/categoria.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -31,6 +32,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     OportunidadesModule,
     FunilModule,
     AuthModule
+    AuthModule,
+    CategoriaModule
   ],
   controllers: [AppController],
   providers: [AppService],
