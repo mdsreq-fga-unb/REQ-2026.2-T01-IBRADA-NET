@@ -62,6 +62,20 @@ A Unidade 2 representou um momento de diálogo, evolução e compromisso, na qua
 ### Organização e Planejamento
 
 - Dificuldade encontrada: Dificuldade em organização e atualização das informações registradas. 
-- Causa e Consequências: Na primeira reunião de atribuição de valor de negócio (MOSCOW) para cada um dos requisitos, o cliente entendeu mal a metodologia e atribui valor 4 (MUST HAVE) para quase todos os requisitos, o que resultou numa priorização ruim na matriz para o MVP.
-- Mudanças Adotadas: Resolvemos marcar uma segunda reunião de atribuição de valor de negócio com o cliente, onde explicamos melhor o objetivo do Moscow e reatribuimos os valores de negócio para os requisitos. Além disso, levamos em consideração também um critério de frequência de uso para cada um dos requisitos, fato que ajudou a alcançar um MVP mais adequado. 
-- Evidência: Elaboração do tópico 10.2 do documento de Visão do Produto e Projeto, e reuniões gravadas com o cliente.
+- Causa e Consequências: A alteração de um dado exigia modificações em vários registros, o que dificultava tanto a manutenção do sistema quanto a clareza na exibição das informações.
+- Mudanças Adotadas: Reestruturação do Github Pages do projeto, redução de dados e tabelas com informações repetidas.
+- Evidência: A nova estrutura deste site.
+
+### Integração das funcionalidades
+
+- Dificuldade encontrada: Dificuldade de integreção de sistemas.
+- Causa e Consequências: Devido ao curto prazo de implementação, o trabalho foi distribuído entre diferentes membros da equipe para execução simultânea. Isso resultou em conflitos no momento de integrar os arquivos.
+- Mudanças Adotadas: Os conflitos necessitaram de trabalho adicionou da equipe para serem tratados.
+- Evidência: Pull request de implementação.
+
+### Validações com o Cliente
+
+- Dificuldade encontrada: Validar protótipos iniciais com o cliente.
+- Causa e Consequências: Os protótipos iniciais não representavam adequadamente o design visual do site, o que tornou o fluxo de atividades difícil de compreender e prejudicou o entendimento por parte do cliente.
+- Mudanças Adotadas: Foram realizados protótipos de média fidelidade para melhor visualização.
+- Evidência: Reuniões com o cliente da unidade 3,
