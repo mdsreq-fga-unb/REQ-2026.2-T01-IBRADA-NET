@@ -3230,8 +3230,8 @@ RN e RNF                  &lt;-  CP e Épico
 <tr>
 <td><a href="../8_requisitos/#rf30">RF30</a></td>
 <td><a href="../2_solucao/#cp5">CP5</a></td>
-<td>4</td>
 <td>3</td>
+<td>2</td>
 <td>2,11</td>
 </tr>
 <tr>
@@ -3395,12 +3395,101 @@ RN e RNF                  &lt;-  CP e Épico
 </tr>
 </tbody>
 </table>
+<p><strong>Regra de Conversão dos Valores Decimais</strong></p>
+<p>Para posicionar os valores contínuos calculados na Seção 10.2.2 nos quatro níveis discretos da matriz (<code>1</code> a <code>4</code>), adotam-se as seguintes regras de conversão:</p>
+<ul>
+<li><strong>Valor de Negócio (eixo vertical):</strong> aplica-se o <strong>truncamento da parte decimal (arredondamento para baixo)</strong>, mantendo a parte inteira do resultado (<code>[1,0 ; 2,0)</code> → <code>1</code>; <code>[2,0 ; 3,0)</code> → <code>2</code>; <code>[3,0 ; 4,0)</code> → <code>3</code>; <code>4,0</code> → <code>4</code>). Dessa forma, pontuações como <code>1,8</code> (<code>RF03</code>) são posicionadas na linha <code>1</code>; <code>2,4</code> (<code>RF01</code>, <code>RF02</code>, <code>RF30</code>, <code>RF31</code>), <code>2,6</code> (<code>RF32</code>) e <code>2,8</code> (<code>RF19</code>, <code>RF20</code>, <code>RF24</code>) na linha <code>2</code>; e <code>3,4</code> (<code>RF06</code>, <code>RF09</code>, <code>RF18</code>, <code>RF22</code>) na linha <code>3</code>.</li>
+<li><strong>Esforço Técnico (eixo horizontal):</strong> aplica-se o <strong>arredondamento padrão para o inteiro mais próximo</strong> (a partir de <code>,50</code> arredonda-se para cima: <code>&lt; 1,50</code> → <code>1</code>; <code>1,50</code> a <code>2,49</code> → <code>2</code>; <code>2,50</code> a <code>3,49</code> → <code>3</code>; <code>≥ 3,50</code> → <code>4</code>). Assim, médias como <code>1,39</code> e <code>1,44</code> (<code>RF21</code>, <code>RF24</code>, <code>RF27</code>, <code>RF29</code>) ficam na coluna <code>1</code>; <code>1,50</code> (<code>RF03</code>, <code>RF09</code>, <code>RF11</code>, <code>RF22</code>) e <code>1,56</code> (<code>RF16</code>, <code>RF33</code>) ficam na coluna <code>2</code>; e <code>2,89</code> (<code>RF04</code>) e <code>3,39</code> (<code>RF14</code>) ficam na coluna <code>3</code>.</li>
+</ul>
 <p><strong>Transição de Requisitos para User Stories</strong></p>
 <p>Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as <strong>User Stories (US)</strong>. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, as histórias representadas reutilizam as avaliações registradas de seus RFs de origem. A US24/RF36 é uma exceção: o compartilhamento estava incluído na avaliação anterior de RF07 e ainda não tem avaliação separada. A US24 permanece no MVP conforme o backlog, embora não apareça na imagem; sua posição dependerá de refinamento pela equipe, sem duplicação automática de esforço ou atribuição presumida de pontuação.</p>
 <p>Os Requisitos Não Funcionais (RNF) foram removidos da visualização isolada na matriz. Eles não deixaram de existir, mas mudaram de lugar: a complexidade e as restrições impostas por eles agora compõem os <strong>Critérios de Aceite</strong> e as validações técnicas dentro das próprias User Stories que eles impactam.</p>
-<p><strong>Definição do Escopo do MVP</strong>
-As histórias destacadas em rosa representam os itens selecionados para a primeira entrega do produto (MVP). A estratégia de seleção focou majoritariamente no <strong>quadrante superior esquerdo</strong>, que concentra as funcionalidades de maior valor imediato para o IBRADA com o menor esforço de implementação técnico.</p>
+<p><strong>Definição do Escopo do MVP</strong></p>
+<p>As histórias destacadas em rosa representam os itens selecionados para a primeira entrega do produto (MVP). A estratégia de seleção focou majoritariamente no <strong>quadrante superior esquerdo</strong>, que concentra as funcionalidades de maior valor imediato para o IBRADA com o menor esforço de implementação técnico.</p>
 <p>A principal exceção a essa regra geométrica foi a <strong>US10 referente ao pagamento online (originada do RF14)</strong>. Embora o esforço técnico de integrar a API de terceiros a posicione mais à direita na matriz, viabilizar a transação financeira é um pilar imprescindível para o negócio operar na primeira entrega, justificando sua inclusão obrigatória no MVP.</p>
+<p><strong>Exceções por Dependência ou Obrigação (Impacto do Peso da Frequência de Uso)</strong></p>
+<p>Como a fórmula de Valor de Negócio atribui peso maior à frequência de uso (<code>0,4 × MoSCoW + 0,6 × Frequência</code>), requisitos classificados como <em>Must have</em> (<code>MoSCoW = 4</code>) mas de uso pouco frequente (<code>Frequência = 2</code>) obtiveram pontuação consolidada <code>2,8</code>, sendo posicionados na faixa <code>2 — Moderado</code> da matriz e ficando fora do recorte automático do MVP. A conferência desses itens em relação aos fluxos selecionados identificou as seguintes exceções e tratamentos obrigatórios:</p>
+<ul>
+<li><strong><a href="../8_requisitos/#rf20">RF20</a> / <a href="../../user-stories/us32/">US32</a> — Gerenciar papel de gestor (Dependência operacional e de segurança — RNF04):</strong> Os fluxos administrativos do MVP (US11, US12, US13, US18 e US20) e a regra de controle de acesso (<a href="../8_requisitos/#rnf04">RNF04</a>) dependem da existência prévia de usuários autenticados com papel de Gestor. Embora a interface gráfica de gerenciamento dinâmico de gestores (US32) permaneça fora do MVP, essa dependência é suprida obrigatoriamente na primeira entrega por meio do <strong>provisionamento inicial das contas de gestores via script de carga/migração (<em>Database Seeding / Migrations</em>)</strong>, com troca obrigatória de senha no primeiro acesso (conforme decisão registrada em <a href="../../user-stories/fora-do-mvp/#registro-de-decisao-tecnica-e-provisionamento-inicial-do-acesso-de-gestor-mvp">User Stories fora do MVP</a>).</li>
+<li><strong><a href="../8_requisitos/#rf24">RF24</a> / <a href="../../user-stories/us33/">US33</a> — Editar perfil do voluntário (Obrigação legal LGPD e consistência de EP06):</strong> Apesar de possuir <code>MoSCoW = 4</code> e baixo esforço técnico (<code>1,39</code>), foi rebaixado pela frequência semestral (<code>2</code>), enquanto o equivalente para clientes (<a href="../8_requisitos/#rf09">RF09</a> / US05) entrou no MVP por ter frequência mensal (<code>3</code>). Considerando a obrigação legal de permitir a retificação de dados pessoais pelo titular (LGPD / <a href="../8_requisitos/#rnf08">RNF08</a>) e a necessidade de manter habilidades e disponibilidade atualizadas para candidaturas (US16), registra-se a dependência: enquanto a interface própria de edição (US33) não for entregue, o IBRADA deve assegurar canal administrativo de atendimento para atualização ou retificação cadastral dos voluntários.</li>
+<li><strong><a href="../8_requisitos/#rf19">RF19</a> / <a href="../../user-stories/us31/">US31</a> — Editar oportunidades de voluntariado (Dependência de manutenção de EP08):</strong> Classificado com <code>MoSCoW = 4</code> e esforço <code>1,61</code>, também foi rebaixado pela frequência (<code>2</code>). No MVP, o fluxo mínimo é viabilizado pelo cadastro inicial (<a href="../8_requisitos/#rf18">RF18</a> / US13) e visualização de candidatos (US18), assumindo-se a restrição operacional de que eventuais correções em oportunidades já publicadas exigirão ajuste administrativo ou novo cadastro até a entrega de US31.</li>
+<li><strong><a href="../8_requisitos/#rf01">RF01</a> / <a href="../../user-stories/us25/">US25</a> — Cadastrar projetos como pré-requisito de <a href="../8_requisitos/#rf18">RF18</a> / <a href="../../user-stories/us13/">US13</a> (Dependência estrutural entre T03 e T05):</strong> Embora o módulo de Gestão e Transparência de Projetos (T05 — <code>RF01</code> a <code>RF04</code>) tenha sido adiado para fora do MVP (<code>RF01</code> com <code>MoSCoW = 3</code> e <code>Frequência = 2</code>), o requisito <code>RF18</code> (e sua visualização em <code>RF22</code> / US14) exige que toda oportunidade de voluntariado possua um projeto associado. Para sustentar esse fluxo no MVP sem antecipar o épico EP10, <strong>o sistema operará com uma lista de projetos previamente preparados via carga inicial no banco de dados (<em>Database Seeding / Migrations</em>)</strong>. Como <strong>limites explícitos</strong> dessa escolha: (I) os gestores não poderão criar, editar ou remover projetos pela interface durante o MVP (funcionalidades restritas a US25, US26 e US27); (II) apenas os projetos pré-cadastrados na carga inicial estarão disponíveis para vínculo em novas oportunidades; e (III) qualquer inclusão ou ajuste na lista de projetos durante o MVP dependerá de atualização técnica via script/migração até a entrega do módulo T05.</li>
+</ul>
+<p>Os demais requisitos fora do MVP com baixa frequência de uso pertencem a módulos postergados (T05 — Gestão e Transparência de Projetos, ressalvada a carga inicial acima para sustentar <code>RF18</code>, e T06 — Notificações e Engajamento) ou possuem <code>MoSCoW = 2</code> com fluxos mínimos já sustentados no MVP (<a href="../8_requisitos/#rf16">RF16</a> mitigado pelo controle de disponibilidade em <a href="../8_requisitos/#rf17">RF17</a>/US12, e <a href="../8_requisitos/#rf35">RF35</a> atendido por contato externo a partir dos dados visualizados em US20), não configurando bloqueio aos fluxos selecionados.</p>
+<p><strong>Tratamento dos Requisitos Não Funcionais (RNF) no Recorte do MVP</strong></p>
+<p>Como os RNFs não são posicionados individualmente na matriz 4 × 4 (Seção 10.2.3), registra-se explicitamente abaixo quais condições de qualidade são exigidas já na primeira entrega (em consonância com a tabela de épicos do backlog e a <a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10/2026</a>, referenciada em <a href="../8_requisitos/#84-rastreabilidade">8.4 Matriz de Rastreabilidade</a>) e quais ficam para evolução posterior:</p>
+<table>
+<thead>
+<tr>
+<th>RNF</th>
+<th>Requisito</th>
+<th>Status no MVP</th>
+<th>Escopo de aplicação / Condição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../8_requisitos/#rnf01">RNF01</a></td>
+<td>Responsividade da interface</td>
+<td><strong>Exigido no MVP (Obrigatório)</strong></td>
+<td>Aplicável transversalmente a todas as telas dos épicos do MVP (<code>EP01</code> a <code>EP09</code>).</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf02">RNF02</a></td>
+<td>Integridade transacional</td>
+<td><strong>Exigido no MVP (Associado)</strong></td>
+<td>Aplicável ao fluxo de reserva e pagamento (<code>EP04</code> — <code>US08</code> a <code>US10</code>), garantindo transações ACID e prevenção de <em>overbooking</em>.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf03">RNF03</a></td>
+<td>Desempenho do catálogo</td>
+<td><strong>Exigido no MVP (Parcial / Associado)</strong></td>
+<td>Exigido no MVP para o catálogo de experiências de ecoturismo (<code>EP02</code> — <code>US02</code>); a parcela referente às listagens públicas de projetos acompanha a evolução de <code>T05</code>.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf04">RNF04</a></td>
+<td>Autenticação e autorização</td>
+<td><strong>Exigido no MVP (Obrigatório)</strong></td>
+<td>Exigido nas rotas autenticadas e administrativas do MVP (<code>EP03</code>, <code>EP05</code>, <code>EP06</code>, <code>EP07</code>, <code>EP08</code> e <code>EP09</code>), negando acesso sem papel de Gestor e registrando tentativas indevidas.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf05">RNF05</a></td>
+<td>Integração Externa</td>
+<td><strong>Exigido no MVP (Associado)</strong></td>
+<td>Aplicável ao pagamento online (<code>EP04</code> — <code>US10</code>), garantindo processamento idempotente de <em>webhooks</em> e atualização do status da reserva.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf06">RNF06</a></td>
+<td>Capacidade e desempenho sob carga</td>
+<td><strong>Para evolução (Pós-MVP)</strong></td>
+<td>Suporte formal a 200 usuários simultâneos e testes de carga dedicados em homologação postergados para ciclos de evolução, conforme o crescimento de uso e decisão da ata de 11/10.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf07">RNF07</a></td>
+<td>Disponibilidade do sistema</td>
+<td><strong>Exigido no MVP (Obrigatório)</strong></td>
+<td>Exigido nas áreas públicas do MVP (<code>EP01</code>, <code>EP02</code>, <code>EP07</code> e <code>EP09</code>), com disponibilidade mínima de 98%.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf08">RNF08</a></td>
+<td>Proteção de dados pessoais e credenciais (LGPD)</td>
+<td><strong>Exigido no MVP (Obrigatório)</strong></td>
+<td>Exigido em todos os fluxos com coleta de dados pessoais e credenciais (<code>EP03</code>, <code>EP04</code>, <code>EP06</code>, <code>EP07</code>, <code>EP08</code> e <code>EP09</code>), com HTTPS/TLS e <em>hash</em> seguro de senhas.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf09">RNF09</a></td>
+<td>Usabilidade do formulário de triagem</td>
+<td><strong>Exigido no MVP (Associado)</strong></td>
+<td>Exigido no fluxo inicial de triagem (<code>EP01</code> — <code>US01</code>), garantindo conclusão sem criação de conta.</td>
+</tr>
+<tr>
+<td><a href="../8_requisitos/#rnf10">RNF10</a></td>
+<td>Compatibilidade entre navegadores</td>
+<td><strong>Para evolução (Pós-MVP)</strong></td>
+<td>Validação formal de paridade visual e funcional nas duas últimas versões de Chrome, Firefox, Safari e Edge postergada para pós-MVP, conforme ata de 11/10.</td>
+</tr>
+</tbody>
+</table>
 <!--
 Após a consolidação das avaliações de valor de negócio e esforço técnico, os requisitos funcionais foram posicionados em uma matriz **4 × 4**, permitindo visualizar conjuntamente a importância de cada requisito para o negócio e o esforço necessário para sua implementação.
 
