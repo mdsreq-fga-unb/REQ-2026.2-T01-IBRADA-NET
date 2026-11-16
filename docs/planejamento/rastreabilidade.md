@@ -5,14 +5,14 @@ Esta página reúne, em um só lugar, como os itens do planejamento se relaciona
 Os níveis e suas relações (Tema → OE, Épico → CP, User Story → RF) estão descritos na seção [10.1.1 do Backlog](../documento-visao/10_backlog.md#1011-composicao-e-rastreabilidade-do-backlog).
 
 !!! info "Escopo desta página"
-    Aparecem apenas as 24 histórias dentro do MVP. As 12 histórias restantes estão listadas em [User Stories fora do MVP](../user-stories/fora-do-mvp.md), sem critérios de aceitação por enquanto.
+    O mapa interativo e a visão consolidada apresentam apenas as 24 histórias dentro do MVP. As 12 histórias restantes estão listadas em [User Stories fora do MVP](../user-stories/fora-do-mvp.md), sem critérios de aceitação por enquanto. RF20 → US32 → EP12 → CP4 permanece fora do mapa interativo porque não integra o MVP; RF36 → US24 → EP02 → CP3 integra o MVP e aparece no mapa e na tabela.
 
 ## Mapa interativo
 
 Navegue pelo caminho **Objetivo → Tema → Épico → User Story**. Clique em qualquer item para abrir os detalhes, inclusive características de produto, regras de negócio e requisitos não funcionais.
 
 !!! note "Sobre os critérios de aceitação"
-    Os critérios são acompanhados em tempo real nas issues do GitHub de cada história. Nesta documentação eles só são atualizados depois da conclusão da US. As marcações feitas no mapa ficam salvas apenas no navegador de quem as fez.
+    Os critérios são acompanhados em tempo real nas issues do GitHub de cada história. Nesta documentação, os critérios são refinados antes da implementação e atualizados quando houver mudanças aceitas, conforme a DoR e a DoD; sua presença não comprova conclusão ou validação institucional da US. As marcações feitas no mapa ficam salvas apenas no navegador de quem as fez.
 
 <div id="mapa-rastreabilidade" data-base="../../"></div>
 
@@ -41,3 +41,15 @@ A US23 aparece em dois épicos (EP03 e EP06) porque o consentimento vale para o 
 ## Regras de negócio e requisitos não funcionais
 
 As regras de negócio e os requisitos não funcionais de cada épico já estão na tabela do [Backlog do Produto](../documento-visao/10_backlog.md), e sua relação com as características de produto está nos catálogos [8.2](../documento-visao/8_requisitos.md#82-lista-de-regras-de-negocio) e [8.3](../documento-visao/8_requisitos.md#83-lista-de-requisitos-nao-funcionais). As User Stories herdam os vínculos do seu épico, e o mapa acima mostra, ao clicar em uma RN ou RNF, quais histórias dependem dela.
+
+## Referências fora do MVP
+
+Os vínculos abaixo reproduzem o [backlog geral](../documento-visao/10_backlog.md) e a [lista de histórias fora do MVP](../user-stories/fora-do-mvp.md). Eles permitem consultar os itens posteriores sem incluí-los no mapa do MVP.
+
+| Tema | Épico | CP de origem | Histórias → RF |
+| --- | --- | --- | --- |
+| <span id="t05"></span>T05 — Gestão e Transparência de Projetos | <span id="ep10"></span>EP10 — Gestão de projetos | [CP1](../documento-visao/2_solucao.md#cp1) | [US25](../user-stories/us25.md) → RF01; [US26](../user-stories/us26.md) → RF02; [US27](../user-stories/us27.md) → RF03 |
+| T05 | <span id="ep11"></span>EP11 — Transparência e impacto dos projetos | [CP1](../documento-visao/2_solucao.md#cp1) | [US29](../user-stories/us29.md) → RF04 |
+| T03 — Voluntariado | <span id="ep12"></span>EP12 — Gestão de acesso administrativo | [CP4](../documento-visao/2_solucao.md#cp4) | [US32](../user-stories/us32.md) → [RF20](../documento-visao/8_requisitos.md#rf20) |
+| <span id="t06"></span>T06 — Notificações e Engajamento | <span id="ep13"></span>EP13 — Preferências de notificações | [CP5](../documento-visao/2_solucao.md#cp5) | [US34](../user-stories/us34.md) → RF30 |
+| T06 | <span id="ep14"></span>EP14 — Gestão e monitoramento de notificações | [CP5](../documento-visao/2_solucao.md#cp5) | [US35](../user-stories/us35.md) → RF31; [US36](../user-stories/us36.md) → RF32 |

@@ -27,7 +27,7 @@ Os itens do backlog foram originados a partir das características de produto, d
 
 O backlog contém elementos de diferentes naturezas, que devem permanecer relacionados sem serem tratados como equivalentes; a legenda se encontra no [glossário](../documentacao/glossario.md).
 
-A rastreabilidade é mantida em um único lugar, a página [Rastreabilidade](../planejamento/rastreabilidade.md) (*Planejamento e Escopo*), e cada [User Story](../user-stories/us01.md) aponta para os itens já existentes nesta documentação em vez de repeti-los. Os vínculos seguem três níveis, do mais estratégico ao mais próximo da implementação:
+A rastreabilidade do MVP é detalhada na página [Rastreabilidade](../planejamento/rastreabilidade.md) (*Planejamento e Escopo*), e cada [User Story](../user-stories/us01.md) aponta para os itens já existentes nesta documentação em vez de repeti-los. Os vínculos seguem três níveis, do mais estratégico ao mais próximo da implementação:
 
 | Nível do backlog | Relaciona-se com | Como se lê |
 | --- | --- | --- |
@@ -132,7 +132,7 @@ Cada critério foi avaliado em uma escala de **1 a 4**, orientada de modo que va
     | **3** | A equipe precisa desenvolver conhecimentos relevantes |
     | **4** | A equipe ainda não possui os conhecimentos ou recursos necessários |
 
-[Tabelas com todos os valores detalhados antes de calcular as médias](../entrega-atividades/classificacao-requisitos.md) 
+[Tabelas com todos os valores detalhados antes de calcular as médias](../evidencias/classificacao-requisitos.md)
 
 ### 10.2.2 Tabela de critérios
 
@@ -213,7 +213,7 @@ Após todos os calculos, a tabela final ficou assim:
 
 **Transição de Requisitos para User Stories**
 
-Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as **User Stories (US)**. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, **cada US herdou diretamente o valor de negócio e o esforço técnico exatos de seu RF de origem**. Isso permitiu reaproveitar a avaliação matemática detalhada sem necessidade de reestimar o escopo.
+Para alinhar a ferramenta de priorização ao backlog de desenvolvimento ágil, os elementos posicionados na matriz são as **User Stories (US)**. Como o planejamento do IBRADA-NET estabeleceu uma relação direta de rastreabilidade (1 para 1) entre os Requisitos Funcionais (RF) e as histórias de usuário correspondentes, as histórias representadas reutilizam as avaliações registradas de seus RFs de origem. A US24/RF36 é uma exceção: o compartilhamento estava incluído na avaliação anterior de RF07 e ainda não tem avaliação separada. A US24 permanece no MVP conforme o backlog, embora não apareça na imagem; sua posição dependerá de refinamento pela equipe, sem duplicação automática de esforço ou atribuição presumida de pontuação.
 
 Os Requisitos Não Funcionais (RNF) foram removidos da visualização isolada na matriz. Eles não deixaram de existir, mas mudaram de lugar: a complexidade e as restrições impostas por eles agora compõem os **Critérios de Aceite** e as validações técnicas dentro das próprias User Stories que eles impactam.
 
