@@ -8,9 +8,9 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 
 | ID | Nome | Descrição | Relação |
 | --- | --- | --- | --- |
-| <span id="rf01"></span>RF01 | Cadastrar projetos | Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais com controle de visibilidade para que possam ser discutidos internamente antes da divulgação pública. | CP1 |
-| <span id="rf02"></span>RF02 | Editar projetos | Permitir que os gestores editem as informações dos projetos, considerando o controle de visibilidade para distinguir o conteúdo em discussão interna daquele disponibilizado ao público. | CP1 |
-| <span id="rf03"></span>RF03 | Remover projetos | Permitir que os gestores removam projetos do painel, distinguindo essa ação do controle de visibilidade de um projeto mantido para discussão interna. | CP1 |
+| <span id="rf01"></span>RF01 | Cadastrar projetos | Permitir que os gestores do IBRADA possam cadastrar projetos de regularização fundiária e ambiental de propriedades rurais, inclusão sócio-produtiva e assistência técnica e extensão de áreas rurais com controle de visibilidade. | CP1 |
+| <span id="rf02"></span>RF02 | Editar projetos | Permitir que os gestores editem as informações dos projetos. | CP1 |
+| <span id="rf03"></span>RF03 | Remover projetos | Permitir que os gestores removam projetos do painel | CP1 |
 | <span id="rf04"></span>RF04 | Exibir resultados e dados de impacto dos projetos | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos disponibilizados para divulgação, distinguindo resultados alcançados de impactos pretendidos e preservando as informações mantidas para discussão interna. | CP1 |
 | <span id="rf05"></span>RF05 | Apresentar formulário de triagem | Permitir que o visitante (possível turista, apoiador ou usuário buscando regulamentação ambiental) preencha um formulário de triagem guiado com campos simplificados para identificar o tipo de solicitação e seu perfil, armazenando os dados no sistema e o encaminhando corretamente. | CP2 |
 | <span id="rf06"></span>RF06 | Visualizar catálogo de ecoturismo | Permitir aos usuários visualizar o catálogo de experiências de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores. | CP3 |
@@ -44,8 +44,6 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf34"></span>RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 |
 | <span id="rf35"></span>RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
 | <span id="rf36"></span>RF36 | Compartilhar experiências | Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada. | CP3 |
-
-A necessidade de controle de visibilidade em RF01–RF04 foi registrada na [ata de 28/09/2026](../atas-reuniao/unidade-2/28-09.md). O estado de rascunho é uma proposta ainda pendente de avaliação e validação. Não estão definidos o estado inicial, os responsáveis pela publicação, o efeito da edição de conteúdo publicado ou as condições de ocultação e remoção. 
 
 ## 8.2 Lista de Regras de Negócio
 
@@ -95,7 +93,7 @@ Os vínculos de RF20 com outras CPs representam dependências de gestão de aces
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
-> Registro histórico de 28/09/2026. A imagem não reflete necessariamente os refinamentos posteriores, como a separação de RF36. Para os vínculos vigentes, consultar a matriz acima e a página de Rastreabilidade.
+> Imagem para controle de versão (última atualização 28/09/2026)
 ![Arvore de Rastreabilidade](../assets/arvore.png)
 
 > [Link da árvore de rastreabilidade](https://www.figma.com/board/kxAD4nuFXL6o56GWf61CdO/Guerreiros-do-Backlog?node-id=0-1&t=2ngK5C1yXCCQdzgd-1)
