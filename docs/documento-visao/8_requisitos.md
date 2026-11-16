@@ -13,8 +13,8 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf03"></span>RF03 | Remover projetos | Permitir que os gestores possam remover os projetos do dashboard. | CP1 |
 | <span id="rf04"></span>RF04 | Exibir resultados e dados de impacto dos projetos | Permitir que visitantes visualizem, em um painel de acesso público, os indicadores de impacto dos projetos. | CP1 |
 | <span id="rf05"></span>RF05 | Apresentar formulário de triagem | Permitir que o visitante (possível turista, apoiador ou usuário buscando regulamentação ambiental) preencha um formulário de triagem guiado com campos simplificados para identificar o tipo de solicitação e seu perfil, armazenando os dados no sistema e o encaminhando corretamente. | CP2 |
-| <span id="rf06"></span>RF06 | Visualizar catálogo de ecoturismo | Permitir aos usuários visualizar o catálogo de experiências de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores. | CP3 |
-| <span id="rf07"></span>RF07 | Detalhar experiências | Permitir que o usuário visualize informações completas de uma experiência de ecoturismo selecionada. | CP3 |
+| <span id="rf06"></span>RF06 | Visualizar catálogo de ecoturismo | Permitir aos usuários visualizar o catálogo de pacotes de ecoturismo, incluindo descrições, datas, disponibilidade de vagas e valores. | CP3 |
+| <span id="rf07"></span>RF07 | Detalhar pacotes | Permitir que o usuário visualize informações completas de um pacote de ecoturismo selecionado. | CP3 |
 | <span id="rf08"></span>RF08 | Cadastrar clientes | Permitir que os visitantes interessados em reservas se cadastrem em novas contas como clientes. | CP3 |
 | <span id="rf09"></span>RF09 | Editar perfil de clientes | Permitir que clientes possam editar seus dados pessoais registrados em suas próprias contas. | CP3 |
 | <span id="rf10"></span>RF10 | Realizar login de cliente | Permitir que clientes cadastrados acessem o sistema mediante validação de credenciais. | CP3 |
@@ -22,9 +22,9 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf12"></span>RF12 | Selecionar pacote de ecoturismo | Permitir que o cliente realize a reserva dos pacotes de ecoturismo selecionados. | CP3 |
 | <span id="rf13"></span>RF13 | Confirmar reserva | Permitir que o cliente confirme a reserva antes do checkout. | CP3 |
 | <span id="rf14"></span>RF14 | Pagar reserva | Permitir que o cliente realize pagamento de suas reservas de pacotes de ecoturismo. | CP3 |
-| <span id="rf15"></span>RF15 | Cadastrar experiências de ecoturismo | Permitir à equipe do IBRADA cadastrar experiências de ecoturismo no sistema. | CP3 |
-| <span id="rf16"></span>RF16 | Editar experiências de ecoturismo | Permitir à equipe do IBRADA editar experiências de ecoturismo no sistema. | CP3 |
-| <span id="rf17"></span>RF17 | Alterar disponibilidade de experiência de ecoturismo | Permitir que o gestor marque uma experiência de ecoturismo como disponível ou indisponível para novas reservas. | CP3 |
+| <span id="rf15"></span>RF15 | Cadastrar pacotes de ecoturismo | Permitir à equipe do IBRADA cadastrar pacotes de ecoturismo no sistema. | CP3 |
+| <span id="rf16"></span>RF16 | Editar pacotes de ecoturismo | Permitir à equipe do IBRADA editar pacotes de ecoturismo no sistema. | CP3 |
+| <span id="rf17"></span>RF17 | Alterar disponibilidade de pacote de ecoturismo | Permitir que o gestor marque um pacote de ecoturismo como disponível ou indisponível para novas reservas. | CP3 |
 | <span id="rf18"></span>RF18 | Cadastrar oportunidades de voluntariado | Permitir ao gestor cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado. | CP4 |
 | <span id="rf19"></span>RF19 | Editar oportunidades de voluntariado | Permitir ao gestor editar as informações das oportunidades de voluntariado registradas no sistema. | CP4 |
 | <span id="rf20"></span>RF20 | Gerenciar papel de gestor | Permitir que um gestor cadastre outros membros da equipe do IBRADA como gestores, concedendo a eles acesso aos painéis do sistema. | CP4 |
@@ -43,7 +43,7 @@ A classificação desses requisitos e a apuração da declaração se econtra na
 | <span id="rf33"></span>RF33 | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 |
 | <span id="rf34"></span>RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 |
 | <span id="rf35"></span>RF35 | Enviar resposta de solicitação de parceria | Permitir que o gestor escreva uma resposta à solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 |
-| <span id="rf36"></span>RF36 | Compartilhar experiências | Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada. | CP3 |
+| <span id="rf36"></span>RF36 | Compartilhar pacotes | Permitir que o usuário compartilhe o conteúdo de um pacote de ecoturismo selecionado, identificando corretamente o pacote compartilhado. | CP3 |
 
 ## 8.2 Lista de Regras de Negócio
 

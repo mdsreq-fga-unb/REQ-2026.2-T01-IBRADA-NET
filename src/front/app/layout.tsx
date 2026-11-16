@@ -12,7 +12,7 @@ const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata: Metadata = {
   title: {
-    default: "IBRADA – Instituto Brasileiro de Direito Ambiental",
+    default: "IBRADA – Instituto Brasileiro do Direito Ambiental",
     template: "%s | IBRADA",
   },
   description:
