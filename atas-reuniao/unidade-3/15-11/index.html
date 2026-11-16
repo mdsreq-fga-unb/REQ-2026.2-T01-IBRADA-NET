@@ -1,0 +1,2906 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação de requisitos de software para o projeto web">
+      
+      
+        <meta name="author" content="Seu Projeto">
+      
+      
+        <link rel="canonical" href="https://mdsreq-fga-unb.github.io/REQ-2026.2-T01-IBRADA-NET/atas-reuniao/unidade-3/15-11/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Ata de Reunião - Documentação de Requisitos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="../../../evidencias/prototipos/carousel.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ata-de-reuniao" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Documentação de Requisitos" class="md-header__button md-logo" aria-label="Documentação de Requisitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação de Requisitos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ata de Reunião
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="light" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="dark" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../planejamento/rastreabilidade/" class="md-tabs__link">
+          
+  
+  
+  Planejamento e Escopo
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../documento-visao/1_cenarioAtual/" class="md-tabs__link">
+          
+  
+  
+  Visão do Produto e Projeto
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../unidade-1/24-08/" class="md-tabs__link">
+          
+  
+  
+  Atas de Reunião
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../documentacao/glossario/" class="md-tabs__link">
+          
+  
+  
+  Documentação
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../videos/entrega-videos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Entrega de vídeos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../referencias/referencia/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Referências
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Documentação de Requisitos" class="md-nav__button md-logo" aria-label="Documentação de Requisitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentação de Requisitos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planejamento e Escopo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planejamento e Escopo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../planejamento/rastreabilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rastreabilidade do MVP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../planejamento/atualizacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processo de Atualização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evidências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Evidências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Por Ciclo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Por Ciclo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/ciclos/ciclo1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incremento 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/ciclos/ciclo2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incremento 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/ciclos/ciclo3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incremento 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/analise-dominio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Análise de Domínio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/oficina-validacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficinas de Validação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fora do MVP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fora do MVP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/fora-do-mvp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US25 — Cadastrar projetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US26 — Editar projetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US27 — Remover projetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US29 — Visualizar painel público de projetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us30/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US30 — Editar pacotes de ecoturismo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US31 — Editar oportunidade de voluntariado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US32 — Gerenciar acesso de gestores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us33/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US33 — Editar perfil de voluntário
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us34/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US34 — Configurar preferências de notificações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US35 — Visualizar alcance das notificações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US36 — Gerenciar notificações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US37 — Responder à solicitação de parceria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-stories/us38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    US38 — Receber notificações de interesse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto e Projeto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto e Projeto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/1_cenarioAtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/2_solucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/3_intervencao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/4_estrategias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Estratégias de engenharia de software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/5_requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/6_cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 Cronograma e entregas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/7_interacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Interação entre Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/8_requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Requisitos de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/9_dor_dod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 DOR e DOD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/10_backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Backlog do Produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documento-visao/11_licoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atas de Reunião
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atas de Reunião
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-1/24-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (24/08/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-1/03-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipe (03/09/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-1/06-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (06/09/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-2/21-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (21/09/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-2/28-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (28/09/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-2/04-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (04/10/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-2/07-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipe (07/10/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade-2/11-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (11/10/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipe (23/10/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente (01/11/2026)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentacao/glossario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossário
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/classificacao-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classificação dos Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/atividade1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/atividade2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/atividade3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../evidencias/atividade4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atividade 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/entrega-videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrega de vídeos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../referencias/referencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-identificacao-e-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Identificação e Participantes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pauta-da-reuniao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pauta da Reunião
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-status-geral-da-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Status Geral da Validação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-assuntos-debatidos-validacoes-por-us-e-decisoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Assuntos Debatidos, Validações por US e Decisões
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tabela-consolidada-de-validacao-das-historias-de-usuario-uss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tabela Consolidada de Validação das Histórias de Usuário (USs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-proximos-passos-e-encaminhamentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Próximos Passos e Encaminhamentos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ata-de-reuniao">Ata de Reunião</h1>
+<blockquote>
+<p>15/11/2026 · 19:37–20:55 · Microsoft Teams (Canal General) · Com Equipe Interna e Cliente</p>
+<p><a href="https://youtu.be/w0CNc1XnY0s">Gravação da Reunião</a></p>
+</blockquote>
+<hr />
+<h2 id="1-identificacao-e-participantes">1. Identificação e Participantes</h2>
+<ul>
+<li><strong>Data e Horário:</strong> 15 de novembro de 2026, das 19h37 às 20h55 (duração: 1h18m45s).</li>
+<li><strong>Local:</strong> Remoto via Microsoft Teams (Canal <em>General</em>).</li>
+<li><strong>Link de Registro:</strong> <a href="https://youtu.be/w0CNc1XnY0s">https://youtu.be/w0CNc1XnY0s</a></li>
+<li><strong>Participantes Presentes:</strong></li>
+<li><strong>Guilherme Scartezini</strong> (Cliente / Representante institucional do IBRADA)</li>
+<li><strong>Arthur Mezzaroba Scartezini</strong> (Equipe de Requisitos / Desenvolvimento - Apresentador)</li>
+<li><strong>Vinicius Dos Santos Evangelista Dias</strong> (Equipe de Requisitos / Desenvolvimento)</li>
+<li><strong>Cauã Mendes Coelho</strong> (Equipe de Requisitos / Desenvolvimento)</li>
+<li><strong>Filipe Brito</strong> (Equipe de Requisitos / Desenvolvimento)</li>
+</ul>
+<hr />
+<h2 id="2-pauta-da-reuniao">2. Pauta da Reunião</h2>
+<ol>
+<li>Alinhamento transparente sobre o cronograma da disciplina e transição dos protótipos no Figma para telas e funcionalidades implementadas em código.</li>
+<li>Validação formal das <strong>Histórias de Usuário (USs)</strong> e respectivos <strong>Critérios de Aceitação</strong> (registrados no GitHub):</li>
+<li><strong>Estrutura Base:</strong> Home, Navbar, Rodapé e correções de identidade/nomenclatura.</li>
+<li><strong>Módulo de Autenticação e Dados (US04, US06, US07, US23):</strong> Cadastro, login, logout e consentimento de uso de dados (LGPD).</li>
+<li><strong>Módulo de Perfil e Voluntariado (US05, US13, US14, US15, US17, US21, US22):</strong> Catálogo com filtros, detalhes da vaga, cadastro complementar e gestão de perfil.</li>
+<li><strong>Módulo de Ecoturismo (US02, US03, US11, US12):</strong> Catálogo de pacotes, detalhes da experiência/pacote, cadastro pelo gestor e controle de disponibilidade.</li>
+<li>Registro de entrega das palavras-chave de voluntariado pelo cliente e atualização de demandas comerciais em campo.</li>
+</ol>
+<hr />
+<h2 id="3-status-geral-da-validacao">3. Status Geral da Validação</h2>
+<blockquote>
+<p><strong>Resultado Geral: VALIDADO PARCIALMENTE — AVANÇOS DE IMPLEMENTAÇÃO COM PENDÊNCIAS DE INTEGRAÇÃO PARA A PRÓXIMA REUNIÃO.</strong></p>
+</blockquote>
+<p>A equipe demonstrou a evolução do projeto para telas reais em código (parte já integrada entre <em>front-end</em> e <em>back-end</em>, parte com <em>front-end</em> estático/mockado e parte com <em>back-end</em> validado em testes unitários).</p>
+<p>Foram <strong>validadas integralmente</strong> as histórias <strong>US06, US07 e US23</strong>, e <strong>validadas parcialmente/com ressalvas</strong> as histórias <strong>US02, US03, US04, US14, US15 e US21</strong> (além da validação lógica de back-end de <strong>US11 e US12</strong>). As histórias <strong>US05, US13, US17 e US22</strong> tiveram a validação formal postergada para a próxima reunião devido a pendências de unificação de <em>branches</em> e integração entre front e back-end.</p>
+<p>O cliente compreendeu o estágio atual, conseguiu associar os fluxos entre front-end e back-end e aprovou a evolução visual e funcional apresentada com base nos critérios de aceitação presentes nas issues de cada US no Github.</p>
+<hr />
+<h2 id="4-assuntos-debatidos-validacoes-por-us-e-decisoes">4. Assuntos Debatidos, Validações por US e Decisões</h2>
+<h3 id="41-cronograma-home-e-ajustes-visuais-base">4.1. Cronograma, Home e Ajustes Visuais Base</h3>
+<ul>
+<li><strong>Transparência de Cronograma:</strong> Arthur informou que a equipe enfrenta atrasos pontuais em alguns ciclos, mas que a entrega do <strong>MVP completo está prevista para aproximadamente 2 semanas</strong> (com duas reuniões semanais restantes de validação).</li>
+<li><strong>Home, Navbar e Rodapé:</strong> Estrutura base implementada em código.</li>
+<li><strong>Ressalvas Visuais Registradas pelo Cliente:</strong></li>
+<li>Alterar a cor do botão <em>"Atendimento e Triagem"</em> de laranja para o <strong>vermelho institucional</strong> (ajuste pendente do protótipo anterior).</li>
+<li>Corrigir o texto institucional exibido para <strong>"Instituto Brasileiro <em>de</em> Direito Ambiental"</strong> (substituindo <em>"do"</em> por <em>"de"</em>).</li>
+<li>Padronização do termo <strong>"pacotes"</strong> em substituição a <em>"experiências"</em>.</li>
+</ul>
+<h3 id="42-autenticacao-cadastro-geral-e-lgpd-us04-us06-us07-us23">4.2. Autenticação, Cadastro Geral e LGPD (US04, US06, US07, US23)</h3>
+<blockquote>
+<p><em>Demonstração realizada ao vivo por Cauã (após falha inicial no servidor local de Arthur), com comunicação integrada entre front-end, back-end e banco de dados.</em></p>
+</blockquote>
+<ul>
+<li><strong>US04 – Cadastrar-se como cliente (Validada com ressalva de fluxo complementar):</strong></li>
+<li><strong>Critérios Validados:</strong> Verificação de preenchimento de campos obrigatórios, validação de formato de e-mail, exigência de senha segura (mínimo 8 caracteres, incluindo letra maiúscula, número e caractere especial), bloqueio de e-mail duplicado, exibição de mensagem de erro em caso de falha e redirecionamento para a página de login após sucesso.</li>
+<li><strong>Critério Pendente:</strong> A verificação de autenticação automática ao concluir perfil de voluntário com sessão prévia ficou desmarcada para validação posterior.</li>
+<li><strong>US06 – Autenticar-se como cliente (VALIDADA):</strong></li>
+<li><strong>Critérios Validados:</strong> Verificação de credenciais correspondentes à conta registrada; bloqueio de acesso com mensagem de erro ao inserir senha ou e-mail inválidos; autenticação com sucesso e redirecionamento para a Home exibindo saudação personalizada (<em>"Olá, Guilherme"</em>) e opção de logout.</li>
+<li><strong>US07 – Encerrar sessão como cliente (VALIDADA):</strong></li>
+<li><strong>Critérios Validados:</strong> Solicitação de confirmação antes de encerrar a sessão; invalidação da sessão ativa com retorno à página inicial/login; impedimento de acesso a rotas protegidas sem nova autenticação.</li>
+<li><strong>US23 – Registrar consentimento de uso de dados / LGPD (VALIDADA):</strong></li>
+<li><strong>Critérios Validados:</strong> Exibição de links para <strong>Termos de Uso</strong> e <strong>Política de Privacidade</strong> dentro do próprio site (atualizados em 05/11), contendo o e-mail oficial <strong><code>ibrada.org.br@gmail.com</code></strong> confirmado pelo cliente; permissão de aceite explícito e bloqueio do cadastro caso o termo não seja aceito.</li>
+</ul>
+<h3 id="43-cadastro-complementar-e-perfil-de-voluntario-us05-us15-us17-us22">4.3. Cadastro Complementar e Perfil de Voluntário (US05, US15, US17, US22)</h3>
+<ul>
+<li><strong>US15 – Cadastro complementar de voluntário (Validada parcialmente / Em ajuste):</strong></li>
+<li>Filipe apresentou a tela com a opção opcional <em>"Quero também me cadastrar como voluntário"</em>, exibindo campos de escolaridade, formação, experiências e disponibilidades.</li>
+<li><strong>Entrega do Cliente:</strong> Guilherme informou ter enviado no grupo do WhatsApp (às 19h27) um documento Word contendo as <strong>palavras-chave</strong> definitivas para áreas de interesse e atuação, que ainda deverão ser refletidas no código.</li>
+<li><strong>US05 (Visualizar e editar dados pessoais), US17 (Autenticar-se como voluntário) e US22 (Encerrar sessão como voluntário):</strong></li>
+<li><strong>Status: Postergadas.</strong> Não puderam ser demonstradas em funcionamento devido à separação de <em>branches</em> locais (a <em>branch</em> <code>feat/perfil_voluntario</code> de Filipe não estava unificada com as correções locais de login de Cauã). Serão validadas na próxima reunião.</li>
+</ul>
+<h3 id="44-modulo-de-ecoturismo-us02-us03-us11-us12">4.4. Módulo de Ecoturismo (US02, US03, US11, US12)</h3>
+<ul>
+<li><strong>US02 – Visualizar catálogo de pacotes de ecoturismo (Validada com ressalvas – Front-end estático):</strong></li>
+<li><strong>Critérios Validados:</strong> Exibição da listagem de pacotes com nome, descrição, data, vagas disponíveis e valor, além do direcionamento ao clicar no card para a página de detalhes. Estrutura preparada para consumo do banco de dados.</li>
+<li><strong>Ressalvas:</strong> O critério de sinalização de pacotes sem vagas/indisponíveis não pôde ser comprovado visualmente porque os dados de exemplo possuíam vagas em todos os cards (embora previsto no código). O cliente reforçou a troca de <em>"experiências"</em> por <strong>"pacotes"</strong>.</li>
+<li><strong>US03 – Visualizar detalhes de um pacote de ecoturismo (Validada com ressalvas – Front-end estático):</strong></li>
+<li><strong>Critérios Validados:</strong> Exibição completa de descrição, roteiro cronológico, datas, vagas disponíveis, valor dinâmico por número de participantes, itens inclusos, regras de conservação e guia local.</li>
+<li><strong>Ressalva:</strong> O botão de reserva está visível, porém redireciona provisoriamente para o WhatsApp e ainda não possui o bloqueio dinâmico integrado ao fluxo real de reserva.</li>
+<li><strong>US11 (Cadastrar pacotes de ecoturismo) e US12 (Controlar disponibilidade de pacotes) (Back-end testado / Aguardando Front-end):</strong></li>
+<li>Vinicius e Arthur explicaram que ambas as histórias estão implementadas no <em>back-end</em> e aprovadas em testes unitários, mas ainda sem tela administrativa integrada para demonstração ao cliente.</li>
+<li><strong>US11:</strong> Validação de campos obrigatórios (roteiro, datas, valor, disponibilidade), restrição de acesso a gestor autenticado e retornos de sucesso/erro. Vinicius deixou fotos como opcionais no momento; o cliente ressaltou que, na prática, todo pacote publicado sempre terá fotos e vídeos.</li>
+<li><strong>US12:</strong> Controle booleano (disponível/indisponível) pelo gestor autenticado, mantendo o pacote listado no catálogo com sinalização de indisponível e bloqueio de reservas. O cliente aprovou a regra, reforçando que será usada durante o <strong>período de chuvas</strong>.</li>
+</ul>
+<h3 id="45-modulo-de-voluntariado-e-gestao-us13-us14-us21">4.5. Módulo de Voluntariado e Gestão (US13, US14, US21)</h3>
+<ul>
+<li><strong>US21 – Consultar oportunidades abertas (Validada – Front-end):</strong></li>
+<li><strong>Critérios Validados:</strong> Exibição da lista de oportunidades com nome, duração, disponibilidade, projeto associado e local, com <strong>filtros por área e formato funcionando</strong> em tela.</li>
+<li><strong>Observação:</strong> Textos exibidos (ex.: <em>"Terra Legal Cerrado"</em>) são <em>placeholders</em> gerados por IA e serão substituídos por dados reais.</li>
+<li><strong>US14 – Visualizar detalhes de oportunidade (Validada parcialmente):</strong></li>
+<li><strong>Critérios Validados:</strong> A página de detalhes (acessada diretamente via rota <code>/1</code> e <code>/2</code>) exibe projeto associado, atividades planejadas, duração, disponibilidade e habilidades requeridas.</li>
+<li><strong>Pendências:</strong> O botão <em>"Ver detalhes"</em> na listagem ainda não direciona para a rota da vaga (recarrega a página atual) e o botão <em>"Candidatar-se"</em> ainda não possui ação de <em>back-end</em> integrada.</li>
+<li><strong>US13 e Telas de Gestor (Admin):</strong> Não demonstradas pois o <em>back-end</em> de voluntariado está em revisão (PR ainda não integrado à <code>developer</code>) e as telas administrativas exigem autenticação e configuração de ambiente (<code>.env</code>).</li>
+</ul>
+<h3 id="46-contexto-de-negocio-e-validacao-de-demanda-em-campo">4.6. Contexto de Negócio e Validação de Demanda em Campo</h3>
+<ul>
+<li>O cliente relatou que está em <strong>Aripuanã (MT)</strong> articulando parcerias com guias locais e divulgando atrativos de ecoturismo comunitário (<em>Salto das Andorinhas</em>, <em>Cachoeira do Dardanello</em> e comunidade indígena da etnia <em>Cinta Larga</em>) em grupos de trilheiros (400 a 700 participantes).</li>
+<li>Destacou forte receptividade para futuras viagens e voluntariado, confirmando que publicar os pacotes no site — mesmo marcados inicialmente como <em>indisponíveis</em> durante as chuvas — servirá para captar interesse e validar demanda.</li>
+</ul>
+<hr />
+<h2 id="5-tabela-consolidada-de-validacao-das-historias-de-usuario-uss">5. Tabela Consolidada de Validação das Histórias de Usuário (USs)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">US / Item</th>
+<th style="text-align: left;">Descrição Resumida</th>
+<th style="text-align: left;">Status na Reunião</th>
+<th style="text-align: left;">Observações e Pendências</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>US02</strong></td>
+<td style="text-align: left;">Visualizar catálogo de pacotes de ecoturismo</td>
+<td style="text-align: left;"><strong>Validada c/ Ressalvas</strong></td>
+<td style="text-align: left;">Front-end estático aprovado; falta evidenciar visualmente card sem vagas e trocar <em>"experiências"</em> por <strong>"pacotes"</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US03</strong></td>
+<td style="text-align: left;">Visualizar detalhes de um pacote de ecoturismo</td>
+<td style="text-align: left;"><strong>Validada c/ Ressalvas</strong></td>
+<td style="text-align: left;">Layout e campos aprovados; botão de reserva ainda aponta provisoriamente para WhatsApp (sem bloqueio integrado).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US04</strong></td>
+<td style="text-align: left;">Cadastrar-se como cliente</td>
+<td style="text-align: left;"><strong>Validada c/ Ressalva</strong></td>
+<td style="text-align: left;">Fluxo integrado validado ao vivo; pendente validar autenticação automática pós-cadastro de voluntário.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US05</strong></td>
+<td style="text-align: left;">Visualizar e editar dados pessoais ("Meu Perfil")</td>
+<td style="text-align: left;"><strong>Postergada</strong></td>
+<td style="text-align: left;">Depende de unificação da <em>branch</em> de Filipe com o fluxo de login funcional.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US06</strong></td>
+<td style="text-align: left;">Autenticar-se como cliente</td>
+<td style="text-align: left;"><strong>Validada</strong></td>
+<td style="text-align: left;">Demonstrada ao vivo (front + back): validação de credenciais, erro de login e redirecionamento para Home.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US07</strong></td>
+<td style="text-align: left;">Encerrar sessão como cliente</td>
+<td style="text-align: left;"><strong>Validada</strong></td>
+<td style="text-align: left;">Demonstrada ao vivo: modal de confirmação, invalidação da sessão e bloqueio de rotas protegidas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US11</strong></td>
+<td style="text-align: left;">Cadastrar pacotes de ecoturismo</td>
+<td style="text-align: left;"><strong>Back-end OK / Sem Front</strong></td>
+<td style="text-align: left;">Testes unitários aprovados; aguarda tela administrativa integrada para demonstração visual.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US12</strong></td>
+<td style="text-align: left;">Controlar disponibilidade de pacotes</td>
+<td style="text-align: left;"><strong>Back-end OK / Sem Front</strong></td>
+<td style="text-align: left;">Regra booleana aprovada pelo cliente (sazonalidade/chuvas); aguarda integração com tela de gestor.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US13</strong></td>
+<td style="text-align: left;">Candidatar-se / Back-end de voluntariado</td>
+<td style="text-align: left;"><strong>Postergada</strong></td>
+<td style="text-align: left;">PR em aberto, ainda não integrado à <code>developer</code> e sem ação conectada no botão <em>"Candidatar-se"</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US14</strong></td>
+<td style="text-align: left;">Visualizar detalhes de oportunidade</td>
+<td style="text-align: left;"><strong>Validada Parcialmente</strong></td>
+<td style="text-align: left;">Página de detalhes validada via rota direta; pendente vincular botão <em>"Ver detalhes"</em> e ação <em>"Candidatar-se"</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US15</strong></td>
+<td style="text-align: left;">Cadastro complementar de voluntário</td>
+<td style="text-align: left;"><strong>Validada Parcialmente</strong></td>
+<td style="text-align: left;">Tela apresentada; pendente incorporar palavras-chave enviadas pelo cliente e integrar fluxo completo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US17</strong></td>
+<td style="text-align: left;">Autenticar-se como voluntário</td>
+<td style="text-align: left;"><strong>Postergada</strong></td>
+<td style="text-align: left;">Depende de unificação das <em>branches</em> e ambiente de demonstração.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US21</strong></td>
+<td style="text-align: left;">Consultar oportunidades abertas</td>
+<td style="text-align: left;"><strong>Validada</strong></td>
+<td style="text-align: left;">Listagem e filtros por área/formato funcionando em tela.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US22</strong></td>
+<td style="text-align: left;">Encerrar sessão como voluntário</td>
+<td style="text-align: left;"><strong>Postergada</strong></td>
+<td style="text-align: left;">Depende de unificação das <em>branches</em> e ambiente de demonstração.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>US23</strong></td>
+<td style="text-align: left;">Registrar consentimento de dados (LGPD)</td>
+<td style="text-align: left;"><strong>Validada</strong></td>
+<td style="text-align: left;">Exibição de Termos/Privacidade no site, bloqueio sem aceite e e-mail <code>ibrada.org.br@gmail.com</code> confirmados.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-proximos-passos-e-encaminhamentos">6. Próximos Passos e Encaminhamentos</h2>
+<ul>
+<li>[ ] <strong>Equipe (Integração e Ambiente):</strong> Unificar as <em>branches</em> pendentes (<code>feat/perfil_voluntario</code>, PR de voluntariado e módulos de ecoturismo) na <code>developer</code> e padronizar a configuração de <code>.env</code> para evitar falhas de demonstração nas próximas reuniões.</li>
+<li>[ ] <strong>Equipe (Ajustes de Interface e Texto):</strong></li>
+<li>Alterar o botão <em>"Atendimento e Triagem"</em> para o <strong>vermelho institucional</strong>;</li>
+<li>Corrigir a grafia para <strong>"Instituto Brasileiro <em>de</em> Direito Ambiental"</strong>;</li>
+<li>Padronizar a substituição de <em>"experiências"</em> por <strong>"pacotes"</strong>;</li>
+<li>Conectar os links dos botões <em>"Ver detalhes"</em> na listagem de voluntariado.</li>
+<li>[ ] <strong>Equipe (Palavras-Chave de Voluntariado):</strong> Repassar ao Filipe e à equipe o documento Word enviado por Guilherme no WhatsApp (19h27 do dia 15/11/2026) e atualizar as opções de áreas de interesse/atuação no sistema.</li>
+<li>[ ] <strong>Equipe (Conclusão do MVP):</strong> Finalizar a integração entre <em>front-end</em> e <em>back-end</em> das funcionalidades pendentes (<strong>US05, US11, US12, US13, US14, US15, US17, US22</strong> e fluxo de reserva da <strong>US03</strong>), com previsão de entrega do MVP completo em aproximadamente 2 semanas.</li>
+<li>[ ] <strong>Próxima Reunião:</strong> Prevista para a semana seguinte, com foco na validação integrada das USs postergadas e das telas do painel administrativo.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      
+        <script src="../../../evidencias/prototipos/carousel.js"></script>
+      
+    
+  </body>
+</html>
