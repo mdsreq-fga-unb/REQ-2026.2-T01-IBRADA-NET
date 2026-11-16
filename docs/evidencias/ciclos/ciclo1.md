@@ -1,6 +1,6 @@
 ## Protótipos Iniciais
 
-As primeiras representações visuais do produto foram desenvolvidas durante o ciclo do Incremento 1 e serviram de base para a estrutura visual e os fluxos do produto. As imagens a seguir foram exibidas ao cliente com o objetivo de validar os fluxos de operações; no entanto, devido à dificuldade de entendimento desses protótipos de baixa fidelidade, as validações foram realizadas com os protótipos de média fidelidade exibidos no [mapa de rastreabilidade](../planejamento/rastreabilidade.md#mapa-interativo), onde a estrutura visual do site e os fluxos de atividades são mais evidentes.
+As primeiras representações visuais do produto foram desenvolvidas durante o ciclo do Incremento 1 e serviram de base para a estrutura visual e os fluxos do produto. As imagens a seguir foram exibidas ao cliente com o objetivo de validar os fluxos de operações; no entanto, devido à dificuldade de entendimento desses protótipos simplificados, as validações foram realizadas com os protótipos de média fidelidade exibidos no [mapa de rastreabilidade](../planejamento/rastreabilidade.md#mapa-interativo), onde a estrutura visual do site e os fluxos de atividades são mais evidentes.
 
 === "EP05"
 

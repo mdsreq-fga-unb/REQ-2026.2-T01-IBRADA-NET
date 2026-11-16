@@ -61,6 +61,7 @@ nav:
   - Home: index.md
   - Planejamento e Escopo:
       - Rastreabilidade do MVP: planejamento/rastreabilidade.md
+      - Processo de Atualização: planejamento/atualizacao.md
       - Evidências:
         - Por Ciclo: 
           - Incremento 1: evidencias/ciclos/ciclo1.md

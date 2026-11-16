@@ -76,7 +76,7 @@ Equipe responsável pelo desenvolvimento do projeto de Engenharia de Requisitos.
 
 ---
 
-**Última atualização**: 07-09-2026
+**Última atualização**: 16-11-2026
 
 !!! note "Dica"
     Use o menu de navegação acima para explorar as diferentes seções da documentação.

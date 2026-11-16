@@ -56,3 +56,12 @@ A Unidade 2 representou um momento de diálogo, evolução e compromisso, na qua
 - Causa e Consequências: Dado nosso problema com o MVP citado anteriormente, a equipe concentrou muitos esforços para solucioná-lo e acabou deixando adiando outras pendências e necessidades do projeto, fato que gerou entregas corridas no final da unidade.
 - Mudanças Adotadas: Priorização de resolução rápida de atividades e alocação de membros com melhor disponibilidade de tempo para isso. 
 - Evidência: Issues fechadas no tempo correto e atividades na unidade posterior.
+
+## 11.3 Unidade 3
+
+### Organização e Planejamento
+
+- Dificuldade encontrada: Dificuldade em organização e atualização das informações registradas. 
+- Causa e Consequências: Na primeira reunião de atribuição de valor de negócio (MOSCOW) para cada um dos requisitos, o cliente entendeu mal a metodologia e atribui valor 4 (MUST HAVE) para quase todos os requisitos, o que resultou numa priorização ruim na matriz para o MVP.
+- Mudanças Adotadas: Resolvemos marcar uma segunda reunião de atribuição de valor de negócio com o cliente, onde explicamos melhor o objetivo do Moscow e reatribuimos os valores de negócio para os requisitos. Além disso, levamos em consideração também um critério de frequência de uso para cada um dos requisitos, fato que ajudou a alcançar um MVP mais adequado. 
+- Evidência: Elaboração do tópico 10.2 do documento de Visão do Produto e Projeto, e reuniões gravadas com o cliente.

@@ -46,6 +46,7 @@
 |12/11/2026|2.9 |Ajustes em Estratégias e Requisitos|Cauã|
 |13/11/2026|2.10 |Ajustes em UserStories e Mapa de rastreabilidade|Cauã|
 |16/11/2026|2.11 |Reorganização do Pages, Adição de Evidências e Ajustes no Mapa de Rastreabilidade|Gabriel|
+|16/11/2026|2.12 |Atualização nas informações do Backlog, Requisitos. Adição da tabela DoD nos ciclos|Gabriel|
 
 
 *Tabela 1: Tabela de versionamento*

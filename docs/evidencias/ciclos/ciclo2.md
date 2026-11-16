@@ -66,6 +66,8 @@
 
 # Diagramas de Atividade
 
+> Alguns diagramas representam mais de uma história de usuário. Nestes casos, as histórias complementam ou representam o mesmo fluxo de atividades.
+
 === "EP03 & EP05"
 
     <div class="swiper ibrada-carousel">
@@ -127,3 +129,14 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
     </div>
+
+# Definition of Done
+
+| Critério do DoD | Evidências | Status |
+| --------------- | ---------- | ------ |
+| O código foi devidamente revisado e integrado? | - | - |
+| A funcionalidade atende às regras de negócio e critérios de aceitação? | - | - |
+| Os Requisitos Não Funcionais (RNFs) aplicáveis foram atendidos? | - | - |
+| Os testes foram executados com sucesso (ou com exceção devidamente registrada)? | - | - |
+| A entrega passou pelas etapas de verificação, demonstração e aceite? | - | - |
+| A documentação foi atualizada? | - | - |
