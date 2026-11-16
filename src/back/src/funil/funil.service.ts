@@ -55,7 +55,8 @@ export interface ResultadoFiltragem {
  * da oportunidade (CriterioFunil). Os critérios suportados são:
  *
  *   1. **exigeExperiencia** — candidato deve ter marcado `experienciaNaArea = true`
- *   2. **educacaoMinima** — nível mínimo de educação (ordem hierárquica)
+ *   2. **educacaoMinima** — nível mínimo de educação (ordem hierárquica). Compara só o
+ *      nível; a situação (completo, em andamento ou incompleto) não exclui o candidato.
  *   3. **habilidadesExigidas** — tags declaradas no campo de habilidades extras
  *      (`outros`), comparadas integralmente e sem diferenciar maiúsculas
  *

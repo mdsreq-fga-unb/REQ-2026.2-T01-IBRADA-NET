@@ -263,7 +263,7 @@ describe('OportunidadesService (US13, US14, US21, RF19)', () => {
 
       const response = await service.create(validDto);
 
-      expect(response.message).toContain('publicada com sucesso');
+      expect(response.message).toContain('inscrições abertas com sucesso');
       expect(response.data.title).toBe('Educador Ambiental Voluntário');
       expect(response.data.habilidades).toEqual(validDto.habilidades);
       expect(mockPrisma.oportunidade.create).toHaveBeenCalledWith({
@@ -287,27 +287,27 @@ describe('OportunidadesService (US13, US14, US21, RF19)', () => {
       });
     });
 
-    it('deve permitir salvar como rascunho (isOpen: false) e exibir mensagem condizente', async () => {
+    it('deve permitir cadastrar já fechada (isOpen: false) e exibir mensagem condizente', async () => {
       mockPrisma.projeto.findUnique.mockResolvedValue({ id: 'proj-educa' });
       mockPrisma.categoria.findUnique.mockResolvedValue({ id: 'cat-educa' });
 
-      const dtoRascunho: CreateOportunidadeDto = {
+      const dtoFechada: CreateOportunidadeDto = {
         ...validDto,
         isOpen: false,
         criteriosFunil: undefined,
       };
 
       mockPrisma.oportunidade.create.mockResolvedValue({
-        id: 'op-rascunho',
-        ...dtoRascunho,
-        habilidades: JSON.stringify(dtoRascunho.habilidades),
+        id: 'op-fechada',
+        ...dtoFechada,
+        habilidades: JSON.stringify(dtoFechada.habilidades),
         createdAt: new Date(),
         updatedAt: new Date(),
       });
 
-      const response = await service.create(dtoRascunho);
+      const response = await service.create(dtoFechada);
 
-      expect(response.message).toContain('salva como rascunho com sucesso');
+      expect(response.message).toContain('inscrições fechadas com sucesso');
       expect(mockPrisma.criterioFunil.create).not.toHaveBeenCalled();
     });
 
@@ -447,6 +447,15 @@ describe('OportunidadesService (US13, US14, US21, RF19)', () => {
     await service.update('op-1', { criteriosFunil: { exigeExperiencia: true } });
     expect(mockPrisma.criterioFunil.upsert).toHaveBeenCalledWith(expect.objectContaining({
       update: { exigeExperiencia: true },
+    }));
+  });
+
+  it('remove critérios quando educacaoMinima = null e habilidadesExigidas = []', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op-1' });
+    mockPrisma.oportunidade.update.mockResolvedValue({ id: 'op-1', habilidades: '[]' });
+    await service.update('op-1', { criteriosFunil: { educacaoMinima: null, habilidadesExigidas: [] } });
+    expect(mockPrisma.criterioFunil.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      update: { educacaoMinima: null, habilidadesExigidas: null },
     }));
   });
 

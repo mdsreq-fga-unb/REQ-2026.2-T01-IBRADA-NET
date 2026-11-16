@@ -7,9 +7,9 @@
 -- ---------------------------------------------------------------------------
 
 -- US13: disponibilidade e habilidades são obrigatórias no cadastro.
--- Para registros pré-existentes (se houver), usamos defaults temporários.
+-- Sem default: o schema.prisma também não define (o DTO garante o preenchimento).
 ALTER TABLE `Oportunidade`
-  ADD COLUMN `disponibilidade` VARCHAR(191) NOT NULL DEFAULT '',
+  ADD COLUMN `disponibilidade` VARCHAR(191) NOT NULL,
   ADD COLUMN `habilidades` TEXT NOT NULL,
   ADD COLUMN `atividades` TEXT NULL,
   ADD COLUMN `localAtuacao` VARCHAR(191) NULL;

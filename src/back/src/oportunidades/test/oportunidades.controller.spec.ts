@@ -82,14 +82,14 @@ describe('OportunidadesController (US13, US14, US21, RF19)', () => {
       };
 
       mockService.create.mockResolvedValue({
-        message: 'Oportunidade cadastrada e publicada com sucesso!',
+        message: 'Oportunidade cadastrada com inscrições abertas com sucesso!',
         data: { id: 'op-1', ...dto },
       });
 
       const result = await controller.create(dto);
 
       expect(mockService.create).toHaveBeenCalledWith(dto);
-      expect(result.message).toContain('publicada com sucesso');
+      expect(result.message).toContain('inscrições abertas com sucesso');
     });
   });
 

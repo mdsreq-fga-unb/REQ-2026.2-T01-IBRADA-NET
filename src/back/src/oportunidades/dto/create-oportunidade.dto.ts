@@ -28,9 +28,10 @@ export class CriterioFunilDto {
   exigeExperiencia?: boolean;
 
   /** Nível mínimo de educação exigido (ex.: GRADUACAO). */
-  @ValidateIf((_, value: unknown) => value !== undefined)
+  // `null` remove o critério (PATCH); `undefined` preserva o valor atual.
+  @ValidateIf((_, value: unknown) => value !== undefined && value !== null)
   @IsEnum(NivelEducacao, { message: 'educacaoMinima inválido. Valores aceitos: FUNDAMENTAL, MEDIO, GRADUACAO, POS_GRADUACAO, MESTRADO, DOUTORADO.' })
-  educacaoMinima?: NivelEducacao;
+  educacaoMinima?: NivelEducacao | null;
 
   /**
    * Tags de habilidades específicas exigidas.
@@ -38,11 +39,12 @@ export class CriterioFunilDto {
    * No funil, cada tag é comparada integralmente, sem diferenciar maiúsculas,
    * com as habilidades declaradas em `outros` (separadas por vírgula, ; ou quebra de linha).
    */
-  @ValidateIf((_, value: unknown) => value !== undefined)
+  // `null` ou lista vazia removem o critério (PATCH); `undefined` preserva o valor atual.
+  @ValidateIf((_, value: unknown) => value !== undefined && value !== null)
   @IsArray({ message: 'habilidadesExigidas deve ser um array de strings.' })
   @IsString({ each: true, message: 'Cada habilidade exigida deve ser um texto.' })
   @Matches(/\S/, { each: true, message: 'Habilidades não podem ser vazias.' })
-  habilidadesExigidas?: string[];
+  habilidadesExigidas?: string[] | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -111,9 +113,10 @@ export class CreateOportunidadeDto {
   localAtuacao?: string;
 
   /**
-   * Status de publicação (US13 critério atualizado).
-   * `true` = Publicada (visível na listagem pública US21).
-   * `false` = Rascunho (não visível publicamente).
+   * Inscrições abertas (US13/US21/RF19).
+   * `true` = aberta: aparece na listagem pública e aceita candidaturas.
+   * `false` = fechada: não aparece na listagem, mas o detalhe segue consultável (US14),
+   * com a candidatura bloqueada.
    * Padrão: `true`.
    */
   @ValidateIf((_, value: unknown) => value !== undefined)

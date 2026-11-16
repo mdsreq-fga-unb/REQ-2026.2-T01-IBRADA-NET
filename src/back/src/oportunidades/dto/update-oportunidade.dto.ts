@@ -63,7 +63,7 @@ export class UpdateOportunidadeDto {
 
   /**
    * Abrir ou fechar a oportunidade (RF19).
-   * `true` = Publicada / aberta. `false` = Fechada / rascunho.
+   * `true` = inscrições abertas. `false` = fechadas (some da listagem pública; o detalhe segue consultável).
    */
   @ValidateIf((_, value: unknown) => value !== undefined)
   @IsBoolean({ message: 'isOpen deve ser um valor booleano (true ou false).' })

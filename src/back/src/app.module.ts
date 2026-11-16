@@ -31,7 +31,6 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     ProjetosModule,
     OportunidadesModule,
     FunilModule,
-    AuthModule
     AuthModule,
     CategoriaModule
   ],

@@ -149,7 +149,7 @@ export class OportunidadesService {
    * Se `criteriosFunil` for informado, cria o registro CriterioFunil
    * associado dentro da mesma transação.
    *
-   * `isOpen` padrão = `true` (Publicada). Pode ser `false` para rascunho.
+   * `isOpen` padrão = `true` (inscrições abertas). `false` cadastra a vaga já fechada.
    */
   async create(dto: CreateOportunidadeDto) {
     // 1. Validar projeto
@@ -199,7 +199,7 @@ export class OportunidadesService {
             oportunidadeId: op.id,
             exigeExperiencia: dto.criteriosFunil.exigeExperiencia ?? false,
             educacaoMinima: dto.criteriosFunil.educacaoMinima ?? null,
-            habilidadesExigidas: dto.criteriosFunil.habilidadesExigidas
+            habilidadesExigidas: dto.criteriosFunil.habilidadesExigidas?.length
               ? JSON.stringify(dto.criteriosFunil.habilidadesExigidas)
               : null,
           },
@@ -211,13 +211,13 @@ export class OportunidadesService {
 
     this.logger.log(
       `Oportunidade criada: "${oportunidade.title}" (${oportunidade.id}) — ` +
-        `status: ${oportunidade.isOpen ? 'Publicada' : 'Rascunho'}`,
+        `inscrições: ${oportunidade.isOpen ? 'abertas' : 'fechadas'}`,
     );
 
     return {
       message: oportunidade.isOpen
-        ? 'Oportunidade cadastrada e publicada com sucesso!'
-        : 'Oportunidade salva como rascunho com sucesso!',
+        ? 'Oportunidade cadastrada com inscrições abertas com sucesso!'
+        : 'Oportunidade cadastrada com inscrições fechadas com sucesso!',
       data: {
         ...oportunidade,
         habilidades: dto.habilidades,
@@ -272,7 +272,7 @@ export class OportunidadesService {
             oportunidadeId: id,
             exigeExperiencia: dto.criteriosFunil.exigeExperiencia ?? false,
             educacaoMinima: dto.criteriosFunil.educacaoMinima ?? null,
-            habilidadesExigidas: dto.criteriosFunil.habilidadesExigidas
+            habilidadesExigidas: dto.criteriosFunil.habilidadesExigidas?.length
               ? JSON.stringify(dto.criteriosFunil.habilidadesExigidas)
               : null,
           },
@@ -284,7 +284,10 @@ export class OportunidadesService {
               educacaoMinima: dto.criteriosFunil.educacaoMinima,
             }),
             ...(dto.criteriosFunil.habilidadesExigidas !== undefined && {
-              habilidadesExigidas: JSON.stringify(dto.criteriosFunil.habilidadesExigidas),
+              // null ou lista vazia removem o critério
+              habilidadesExigidas: dto.criteriosFunil.habilidadesExigidas?.length
+                ? JSON.stringify(dto.criteriosFunil.habilidadesExigidas)
+                : null,
             }),
           },
         });
