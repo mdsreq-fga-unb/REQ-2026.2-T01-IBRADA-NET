@@ -44,6 +44,7 @@
 |12/11/2026|2.7 |Ajustes em Cenário Atual e Intervenção Social|Cauã|
 |12/11/2026|2.8 |Ajustes em Estratégias e Requisitos|Cauã|
 |13/11/2026|2.9 |Ajustes em UserStories e Mapa de rastreabilidade|Cauã|
+|16/11/2026| |Reorganização do Pages, Adição de Evidências e Ajustes no Mapa de Rastreabilidade|Gabriel|
 
 *Tabela 1: Tabela de versionamento*
 

@@ -67,8 +67,7 @@ window.MAPA_DATA = {
    "tema": "T01",
    "cp": "CP2",
    "rn": [
-    "RN01",
-    "RN02"
+    "RN01"
    ],
    "rnf": [
     "RNF01",
@@ -104,7 +103,7 @@ window.MAPA_DATA = {
    "tema": "T02",
    "cp": "CP3",
    "rn": [
-    "RN04"
+    "RN03"
    ],
    "rnf": [
     "RNF01",
@@ -120,7 +119,6 @@ window.MAPA_DATA = {
    "cp": "CP3",
    "rn": [],
    "rnf": [
-    "RNF01",
     "RNF04"
    ]
   },
@@ -129,7 +127,7 @@ window.MAPA_DATA = {
    "tema": "T02",
    "cp": "CP3",
    "rn": [
-    "RN03"
+    "RN02"
    ],
    "rnf": [
     "RNF01",
@@ -142,7 +140,7 @@ window.MAPA_DATA = {
    "tema": "T03",
    "cp": "CP4",
    "rn": [
-    "RN03"
+    "RN05"
    ],
    "rnf": [
     "RNF01",
@@ -167,7 +165,7 @@ window.MAPA_DATA = {
    "tema": "T03",
    "cp": "CP4",
    "rn": [
-    "RN05"
+    "RN04"
    ],
    "rnf": [
     "RNF01",
@@ -197,36 +195,36 @@ window.MAPA_DATA = {
    ]
   },
   "RN02": {
-   "nome": "Encaminhamento para Departamentos",
-   "desc": "Se a triagem identificar outro serviço, encaminhar solicitação para um departamento específico, realizando o roteamento interno.",
-   "rel": "CP2",
+   "nome": "Cadastro de email de usuário.",
+   "desc": "Cada email registrado pode ter apenas um usuário vinculado a ele.",
+   "rel": "CP3",
    "cps": [
-    "CP2"
+    "CP3"
    ]
   },
   "RN03": {
-   "nome": "Cadastro de email de usuário",
-   "desc": "Cada email registrado pode ter apenas um usuário vinculado a ele.",
-   "rel": "CP3, CP4",
+   "nome": "Pagamento via gateway externo.",
+   "desc": "Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento.",
+   "rel": "CP3",
    "cps": [
     "CP3",
     "CP4"
    ]
   },
   "RN04": {
-   "nome": "Pagamento via gateway externo",
-   "desc": "Os pagamentos realizados no produto deverão utilizar um gateway externo via API, exibindo o status do pagamento.",
-   "rel": "CP3",
+   "nome": "Filtro de candidatos.",
+   "desc": "O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc). Essa filtragem deve ser feita de forma automatica pelo sistema e deve listar os cantidos em uma classificação disponibilizada para os gestores.",
+   "rel": "CP4",
    "cps": [
-    "CP3"
+    "CP5"
    ]
   },
   "RN05": {
-   "nome": "Filtro de candidatos",
-   "desc": "O sistema de processo seletivo deve filtrar candidatos aptos a uma oportunidade de voluntariado através de um funil baseado em critérios informados durante o cadastro selecionados pelo gestor durante o cadastro da oportunidade (exemplos: aptidão física, conhecimento técnico, experiências poteriores, etc.).",
-   "rel": "CP4",
+   "nome": "Notificações de oportunidades e projetos.",
+   "desc": "Notificações do sistema devem ser enviadas via email.",
+   "rel": "CP5",
    "cps": [
-    "CP4"
+    "CP5"
    ]
   }
  },
@@ -327,6 +325,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP01"
    ],
+   "rf": "RF05",
+   "rfUrl": "documento-visao/8_requisitos/#rf05",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,83",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante da plataforma, quero responder a um formulário de triagem guiado e simplificado, para ser encaminhado ao setor ou fluxo de comunicação adequado à minha necessidade.",
    "criterios": [
     "O sistema deve apresentar um formulário de triagem guiado, com campos simplificados, que possa ser concluído sem cadastro.",
@@ -336,8 +340,7 @@ window.MAPA_DATA = {
    ],
    "issue": 58,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/58",
-   "adaptado": true,
-   "rf": "RF05"
+   "adaptado": false
   },
   {
    "id": "US19",
@@ -345,6 +348,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP09"
    ],
+   "rf": "RF33",
+   "rfUrl": "documento-visao/8_requisitos/#rf33",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,56",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como representante de uma organização interessada, quero enviar uma solicitação contendo meus dados de contato e as informações da proposta, para iniciar uma possível parceria com o IBRADA.",
    "criterios": [
     "O sistema deve permitir o preenchimento dos dados de identificação e contato da organização e do representante interessado.",
@@ -362,6 +371,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP09"
    ],
+   "rf": "RF34",
+   "rfUrl": "documento-visao/8_requisitos/#rf34",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,61",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como gestor do IBRADA, quero visualizar as solicitações de parceria recebidas e suas informações, para organizar sua análise e entrar em contato com os potenciais parceiros.",
    "criterios": [
     "O sistema deve disponibilizar um ambiente com uma lista com as propostas enviadas para os gestores. Deve ser possível selecionar um item da lista para sua própria seção.",
@@ -378,6 +393,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP02"
    ],
+   "rf": "RF06",
+   "rfUrl": "documento-visao/8_requisitos/#rf06",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3,4 / 1,78",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante, quero visualizar o catálogo de pacotes de ecoturismo, para conhecer as opções disponíveis e escolher a mais adequada ao meu interesse e planejamento.",
    "criterios": [
     "O sistema deve exibir uma lista das experiências de ecoturismo com nome, descrição, data, vagas disponíveis e valor.",
@@ -386,8 +407,7 @@ window.MAPA_DATA = {
    ],
    "issue": 59,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/59",
-   "adaptado": false,
-   "rf": "RF06"
+   "adaptado": false
   },
   {
    "id": "US03",
@@ -395,6 +415,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP02"
    ],
+   "rf": "RF07",
+   "rfUrl": "documento-visao/8_requisitos/#rf07",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3 / 1,61",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante, quero visualizar as informações detalhadas de um pacote de ecoturismo selecionado, para planejar minha participação com precisão.",
    "criterios": [
     "A página de cada experiência deve conter todas as informações sobre o pacote de ecoturismo (descrição, roteiro, data, vagas disponíveis e valor).",
@@ -402,8 +428,7 @@ window.MAPA_DATA = {
    ],
    "issue": 60,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/60",
-   "adaptado": false,
-   "rf": "RF07"
+   "adaptado": false
   },
   {
    "id": "US24",
@@ -411,6 +436,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP02"
    ],
+   "rf": "RF36",
+   "rfUrl": "documento-visao/8_requisitos/#rf36",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3 / 1,61",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.",
    "criterios": [
     "O sistema deve disponibilizar, na página de cada experiência, uma opção para compartilhar seu conteúdo.",
@@ -419,8 +450,7 @@ window.MAPA_DATA = {
    ],
    "issue": 69,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/69",
-   "adaptado": false,
-   "rf": "RF36"
+   "adaptado": false
   },
   {
    "id": "US08",
@@ -428,6 +458,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP04"
    ],
+   "rf": "RF12",
+   "rfUrl": "documento-visao/8_requisitos/#rf12",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 2,22",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como cliente, quero realizar a reserva de um pacote de ecoturismo selecionado, para garantir minha vaga na experiência desejada.",
    "criterios": [
     "O sistema deve permitir que o cliente autenticado selecione uma experiência com vaga disponível e informe os dados da reserva.",
@@ -439,8 +475,7 @@ window.MAPA_DATA = {
    ],
    "issue": 61,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/61",
-   "adaptado": false,
-   "rf": "RF12"
+   "adaptado": false
   },
   {
    "id": "US09",
@@ -448,6 +483,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP04"
    ],
+   "rf": "RF13",
+   "rfUrl": "documento-visao/8_requisitos/#rf13",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,72",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como cliente, quero visualizar um resumo completo da minha reserva e confirmar os dados antes do pagamento, para validar as informações do passeio e os valores, evitando erros ou cobranças indevidas.",
    "criterios": [
     "Antes do pagamento, o sistema deve exibir um resumo da reserva com experiência, data, quantidade, valores, condições e tempo regressivo restante da pré-reserva.",
@@ -457,8 +498,7 @@ window.MAPA_DATA = {
    ],
    "issue": 62,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/62",
-   "adaptado": false,
-   "rf": "RF13"
+   "adaptado": false
   },
   {
    "id": "US10",
@@ -466,6 +506,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP04"
    ],
+   "rf": "RF14",
+   "rfUrl": "documento-visao/8_requisitos/#rf14",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 3,39",
+   "valorNegocioUrl": "documento-visao/10_backlog/#valor-de-negocio",
    "historia": "Como cliente, quero realizar o pagamento dos pacotes de ecoturismo que reservei, para confirmar minha vaga e receber o comprovante da transação.",
    "criterios": [
     "O sistema deve encaminhar o cliente ao gateway de pagamento externo para realizar o pagamento da reserva.",
@@ -476,8 +522,7 @@ window.MAPA_DATA = {
    ],
    "issue": 63,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/63",
-   "adaptado": true,
-   "rf": "RF14"
+   "adaptado": false
   },
   {
    "id": "US11",
@@ -485,6 +530,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP05"
    ],
+   "rf": "RF15",
+   "rfUrl": "documento-visao/8_requisitos/#rf15",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3 / 1,67",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como gestor do IBRADA, quero cadastrar novas experiências de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-las aos clientes interessados.",
    "criterios": [
     "O sistema deve verificar o preenchimento dos campos obrigatórios da experiência (roteiro, datas, valores e disponibilidade).",
@@ -494,8 +545,7 @@ window.MAPA_DATA = {
    ],
    "issue": 64,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/64",
-   "adaptado": false,
-   "rf": "RF15"
+   "adaptado": false
   },
   {
    "id": "US12",
@@ -503,16 +553,23 @@ window.MAPA_DATA = {
    "epicos": [
     "EP05"
    ],
+   "rf": "RF17",
+   "rfUrl": "documento-visao/8_requisitos/#rf17",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,61",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como gestor, quero habilitar ou desabilitar a disponibilidade de pacotes de ecoturismo, para controlar a oferta dos pacotes.",
    "criterios": [
     "O sistema deve permitir que o gestor autenticado marque uma experiência como disponível ou indisponível.",
     "Experiências indisponíveis devem ser sinalizadas no catálogo e não devem aceitar novas reservas.",
     "O sistema deve retornar uma mensagem de sucesso caso a alteração seja salva e uma mensagem de erro caso contrário."
    ],
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
    "issue": 65,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/65",
-   "adaptado": false,
-   "rf": "RF17"
+   "adaptado": false
   },
   {
    "id": "US04",
@@ -520,6 +577,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP03"
    ],
+   "rf": "RF08",
+   "rfUrl": "documento-visao/8_requisitos/#rf08",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,72",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante da plataforma, quero me cadastrar como cliente de ecoturismo, para criar uma conta pessoal e acessar as funcionalidades de compra de pacotes de ecoturismo.",
    "criterios": [
     "O sistema deve verificar o preenchimento dos campos obrigatórios.",
@@ -539,6 +602,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP03"
    ],
+   "rf": "RF09",
+   "rfUrl": "documento-visao/8_requisitos/#rf09",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3,4 / 1,5",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como cliente, quero visualizar e editar meus dados pessoais registrados, para manter minhas informações corretas e atualizadas durante o uso dos serviços da plataforma.",
    "criterios": [
     "O sistema deve verificar se os dados preenchidos obedecem às regras de seu campo antes do salvamento.",
@@ -555,6 +624,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP03"
    ],
+   "rf": "RF10",
+   "rfUrl": "documento-visao/8_requisitos/#rf10",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 2,06",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como cliente, quero autenticar-me no sistema informando minhas credenciais, para acessar minha conta de forma segura e utilizar as funcionalidades de compra de pacotes de ecoturismo.",
    "criterios": [
     "O sistema deve verificar se as credenciais correspondem aos dados registrados da conta.",
@@ -572,6 +647,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP03"
    ],
+   "rf": "RF11",
+   "rfUrl": "documento-visao/8_requisitos/#rf11",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,5",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como cliente, quero encerrar minha sessão ativa no sistema, para proteger minha conta e impedir acessos não autorizados no dispositivo utilizado.",
    "criterios": [
     "O sistema deve solicitar confirmação antes de encerrar a sessão do usuário.",
@@ -587,9 +668,14 @@ window.MAPA_DATA = {
    "id": "US23",
    "nome": "Registrar consentimento de uso de dados",
    "epicos": [
-    "EP03",
-    "EP06"
+    "EP03"
    ],
+   "rf": "RF29",
+   "rfUrl": "documento-visao/8_requisitos/#rf29",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,44",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como usuário em processo de cadastro, quero consultar e aceitar explicitamente o termo de uso de dados pessoais, para decidir de forma consciente sobre o tratamento das minhas informações.",
    "criterios": [
     "Durante o cadastro, o sistema deve exibir uma opção para ver os termos de uso de dados pessoais.",
@@ -607,6 +693,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP06"
    ],
+   "rf": "RF23",
+   "rfUrl": "documento-visao/8_requisitos/#rf23",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,89",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como interessado em atuar como voluntário, quero criar um perfil informando minhas habilidades, experiências, áreas de interesse e disponibilidade, para apresentar ao IBRADA como posso contribuir com seus projetos.",
    "criterios": [
     "O sistema deve verificar o preenchimento dos campos obrigatórios.",
@@ -627,6 +719,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP06"
    ],
+   "rf": "RF26",
+   "rfUrl": "documento-visao/8_requisitos/#rf26",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 2",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como voluntário cadastrado, quero autenticar-me com minhas credenciais, para acessar com segurança meu perfil e as funcionalidades destinadas aos voluntários.",
    "criterios": [
     "O sistema deve verificar se as credenciais correspondem aos dados registrados da conta.",
@@ -644,6 +742,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP06"
    ],
+   "rf": "RF27",
+   "rfUrl": "documento-visao/8_requisitos/#rf27",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,39",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como voluntário autenticado, quero encerrar minha sessão, para proteger minha conta contra acessos não autorizados no dispositivo utilizado.",
    "criterios": [
     "O sistema deve solicitar confirmação antes de encerrar a sessão do usuário.",
@@ -661,6 +765,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP07"
    ],
+   "rf": "RF22",
+   "rfUrl": "documento-visao/8_requisitos/#rf22",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3,4 / 1,5",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante da plataforma, quero visualizar as informações detalhadas de uma oportunidade de voluntariado selecionada, para conhecer o projeto associado, a duração, a disponibilidade e as habilidades requeridas.",
    "criterios": [
     "A página de cada oportunidade deve conter todas as informações sobre a atividade de voluntariado (projeto associado, atividades planejadas, duração, disponibilidade e habilidades requeridas).",
@@ -677,6 +787,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP07"
    ],
+   "rf": "RF25",
+   "rfUrl": "documento-visao/8_requisitos/#rf25",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,72",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como voluntário, quero me candidatar a oportunidades de voluntariado que se encaixem no meu perfil, para que o gestor visualize meu interesse em participar do projeto.",
    "criterios": [
     "O sistema deve permitir a candidatura apenas a voluntários autenticados, direcionando os demais à página de login.",
@@ -686,8 +802,7 @@ window.MAPA_DATA = {
    ],
    "issue": 67,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/67",
-   "adaptado": false,
-   "rf": "RF25"
+   "adaptado": false
   },
   {
    "id": "US21",
@@ -695,6 +810,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP07"
    ],
+   "rf": "RF21",
+   "rfUrl": "documento-visao/8_requisitos/#rf21",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,44",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como interessado em voluntariado, quero consultar as oportunidades abertas, para encontrar formas de contribuir compatíveis com meus interesses e disponibilidade.",
    "criterios": [
     "O sistema deve exibir uma lista de todas as oportunidades de voluntariado abertas.",
@@ -712,6 +833,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP08"
    ],
+   "rf": "RF18",
+   "rfUrl": "documento-visao/8_requisitos/#rf18",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "3,4 / 2,06",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como gestor, quero cadastrar oportunidades de voluntariado, definindo habilidades requeridas, duração, disponibilidade e projeto associado, para divulgar as vagas disponíveis e atrair voluntários com o perfil adequado às necessidades de cada ação.",
    "criterios": [
     "O sistema deve verificar o preenchimento dos campos obrigatórios da oportunidade (habilidades requeridas, duração, disponibilidade e projeto associado).",
@@ -721,8 +848,7 @@ window.MAPA_DATA = {
    ],
    "issue": 66,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/66",
-   "adaptado": false,
-   "rf": "RF18"
+   "adaptado": false
   },
   {
    "id": "US18",
@@ -730,6 +856,12 @@ window.MAPA_DATA = {
    "epicos": [
     "EP08"
    ],
+   "rf": "RF28",
+   "rfUrl": "documento-visao/8_requisitos/#rf28",
+   "ciclo": "Ciclo 1",
+   "cicloUrl": "documento-visao/10_backlog/#ciclo-1",
+   "valorNegocio": "4 / 1,94",
+   "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como gestor membro da equipe do IBRADA, quero visualizar os candidatos voluntários de uma oportunidade em formato de funil, para acompanhar com clareza o processo de triagem e seleção.",
    "criterios": [
     "O sistema deve exibir ao gestor os candidatos de uma oportunidade agrupados por etapa do funil.",
@@ -740,8 +872,7 @@ window.MAPA_DATA = {
    ],
    "issue": 68,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/68",
-   "adaptado": false,
-   "rf": "RF28"
+   "adaptado": false
   }
  ]
 };
