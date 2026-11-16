@@ -1,42 +1,21 @@
 # 10 BACKLOG DO PRODUTO 
 
-O Backlog do Produto foi dividido em duas visões para facilitar a análise. A tabela abaixo apresenta **exclusivamente** o **Escopo do MVP**, que filtra apenas os épicos e histórias priorizados para a primeira entrega. Logo a seguir, é possível expandir o restante da estrutura que compõe o produto geral.
-
-### Escopo do MVP (Primeira Entrega)
-
-| Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
-| --- | --- | --- | --- | --- | --- |
-| [T01](../planejamento/rastreabilidade.md#t01) | [EP01](../planejamento/rastreabilidade.md#ep01) | Triagem e direcionamento | US01 | RN01, RN02 | RNF01, RNF07, RNF09 |
-| [T02](../planejamento/rastreabilidade.md#t02) | [EP02](../planejamento/rastreabilidade.md#ep02) | Descoberta de experiências e pacotes | US02, US03, US24 | — | RNF01, RNF03, RNF07 |
-| [T02](../planejamento/rastreabilidade.md#t02) | [EP03](../planejamento/rastreabilidade.md#ep03) | Conta do cliente | US04, US05, US06, US07, US23 | RN03 | RNF01, RNF04, RNF08 |
-| [T02](../planejamento/rastreabilidade.md#t02) | [EP04](../planejamento/rastreabilidade.md#ep04) | Reserva e pagamento | US08, US09, US10 | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
-| [T02](../planejamento/rastreabilidade.md#t02) | [EP05](../planejamento/rastreabilidade.md#ep05) | Gestão de experiências e pacotes | US11, US12 | — | RNF01, RNF04 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP06](../planejamento/rastreabilidade.md#ep06) | Conta e perfil do voluntário | US15, US17, US22, US23 | — | RNF01, RNF04, RNF08 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP07](../planejamento/rastreabilidade.md#ep07) | Descoberta e candidatura | US14, US16, US21 | — | RNF01, RNF04, RNF07, RNF08 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP08](../planejamento/rastreabilidade.md#ep08) | Gestão de oportunidades e candidatos | US13, US18 | RN05 | RNF01, RNF04, RNF08 |
-| [T04](../planejamento/rastreabilidade.md#t04) | [EP09](../planejamento/rastreabilidade.md#ep09) | Solicitação e análise de parcerias | US19, US20 | — | RNF01, RNF04, RNF07, RNF08 |
-
-<br>
-
-<details>
-<summary><strong> Clique aqui para expandir o restante do Backlog Geral (Itens Pós-MVP)</strong></summary>
-<br>
-
-| Tema relacionado | ID | Épico | User Stories relacionadas | Regras de negócio | Requisitos não funcionais |
-| --- | --- | --- | --- | --- | --- |
-| [T02](../planejamento/rastreabilidade.md#t02) | [EP05](../planejamento/rastreabilidade.md#ep05) | Gestão de experiências e pacotes | US30 | — | RNF01, RNF04 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP06](../planejamento/rastreabilidade.md#ep06) | Conta e perfil do voluntário | US33 | RN03 | RNF01, RNF04, RNF08 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP08](../planejamento/rastreabilidade.md#ep08) | Gestão de oportunidades e candidatos | US31 | RN05 | RNF01, RNF04, RNF08 |
-| [T04](../planejamento/rastreabilidade.md#t04) | [EP09](../planejamento/rastreabilidade.md#ep09) | Solicitação e análise de parcerias | US37 | — | RNF01, RNF04, RNF07, RNF08, RNF10 |
-| [T05](../planejamento/rastreabilidade.md#t05) | [EP10](../planejamento/rastreabilidade.md#ep10) | Gestão de projetos | US25, US26, US27 | — | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
-| [T05](../planejamento/rastreabilidade.md#t05) | [EP11](../planejamento/rastreabilidade.md#ep11) | Transparência e impacto dos projetos | US29 | — | RNF01, RNF03, RNF04, RNF06, RNF07, RNF10 |
-| [T03](../planejamento/rastreabilidade.md#t03) | [EP12](../planejamento/rastreabilidade.md#ep12) | Gestão de acesso administrativo | US32 | — | RNF01, RNF04, RNF07, RNF08, RNF10 |
-| [T06](../planejamento/rastreabilidade.md#t06) | [EP13](../planejamento/rastreabilidade.md#ep13) | Preferências de notificações | US34 | RN06 | RNF01, RNF06, RNF07, RNF10 |
-| [T06](../planejamento/rastreabilidade.md#t06) | [EP14](../planejamento/rastreabilidade.md#ep14) | Gestão e monitoramento de notificações | US35, US36 | RN06 | RNF01, RNF06, RNF07, RNF10 |
-
-*(Nota: O identificador US28 permanece sem atribuição nesta versão do backlog, conforme documentação.)*
-
-</details>
+| Tema do Produto | ID Épico | Nome do Épico | Escopo de Entrega | Histórias no MVP | Histórias Fora do MVP (Backlog Futuro) | Regras de Negócio | Requisitos Não Funcionais |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **T01** — Atendimento e Triagem | EP01 | Triagem e direcionamento | **MVP** | [US01](10_userStories.md#us01-realizar-triagem) | — | RN01, RN02 | RNF01, RNF07, RNF09 |
+| **T02** — Ecoturismo e Reservas | EP02 | Descoberta de experiências e pacotes | **MVP** | [US02](10_userStories.md#us02-visualizar-catalogo-de-ecoturismo), [US03](10_userStories.md#us03-visualizar-detalhes-de-pacote-de-ecoturismo), [US24](10_userStories.md#us24-compartilhar-experiencia-de-ecoturismo) | — | — | RNF01, RNF03, RNF07 |
+| **T02** — Ecoturismo e Reservas | EP03 | Conta do cliente | **MVP** | [US04](10_userStories.md#us04-cadastrar-se-como-cliente), [US05](10_userStories.md#us05-visualizar-e-editar-dados-pessoais), [US06](10_userStories.md#us06-autenticar-se-como-cliente), [US07](10_userStories.md#us07-encerrar-sessao-de-cliente), [US23](10_userStories.md#us23-registrar-consentimento-de-uso-de-dados) | — | RN03 | RNF01, RNF04, RNF08 |
+| **T02** — Ecoturismo e Reservas | EP04 | Reserva e pagamento | **MVP** | [US08](10_userStories.md#us08-reservar-pacote-de-ecoturismo), [US09](10_userStories.md#us09-revisar-e-confirmar-reserva), [US10](10_userStories.md#us10-pagar-reserva) | — | RN04 | RNF01, RNF02, RNF04, RNF05, RNF08 |
+| **T02** — Ecoturismo e Reservas | EP05 | Gestão de experiências e pacotes | **Parcial no MVP** | [US11](10_userStories.md#us11-cadastrar-experiencia-de-ecoturismo), [US12](10_userStories.md#us12-controlar-disponibilidade-de-pacotes) | [US30](10_userStoriesForaMVP.md#us30-editar-pacotes-de-ecoturismo) | — | RNF01, RNF04 |
+| **T03** — Voluntariado | EP06 | Conta e perfil do voluntário | **Parcial no MVP** | [US15](10_userStories.md#us15-criar-perfil-de-voluntario), [US17](10_userStories.md#us17-autenticar-se-como-voluntario), [US22](10_userStories.md#us22-encerrar-sessao-de-voluntario), [US23](10_userStories.md#us23-registrar-consentimento-de-uso-de-dados) | [US33](10_userStoriesForaMVP.md#us33-editar-perfil-de-voluntario) | — | RNF01, RNF04, RNF08 |
+| **T03** — Voluntariado | EP07 | Descoberta e candidatura | **MVP** | [US14](10_userStories.md#us14-visualizar-detalhes-da-oportunidade), [US16](10_userStories.md#us16-candidatar-se-a-uma-oportunidade), [US21](10_userStories.md#us21-consultar-oportunidades-abertas) | — | — | RNF01, RNF04, RNF07, RNF08 |
+| **T03** — Voluntariado | EP08 | Gestão de oportunidades e candidatos | **Parcial no MVP** | [US13](10_userStories.md#us13-cadastrar-oportunidade-de-voluntariado), [US18](10_userStories.md#us18-visualizar-candidatos-em-funil) | [US31](10_userStoriesForaMVP.md#us31-editar-oportunidade-de-voluntariado) | RN05 | RNF01, RNF04, RNF08 |
+| **T03** — Voluntariado | EP12 | Gestão de acesso administrativo | **Fora do MVP** | — | [US32](10_userStoriesForaMVP.md#us32-gerenciar-acesso-de-gestores) | — | RNF04 |
+| **T04** — Parcerias Institucionais | EP09 | Solicitação e análise de parcerias | **Parcial no MVP** | [US19](10_userStories.md#us19-enviar-solicitacao-de-parceria), [US20](10_userStories.md#us20-visualizar-solicitacoes-de-parceria) | [US37](10_userStoriesForaMVP.md#us37-responder-a-solicitacao-de-parceria) | — | RNF01, RNF04, RNF07, RNF08 |
+| **T05** — Gestão e Transparência de Projetos | EP10 | Gestão de projetos | **Fora do MVP** | — | [US25](10_userStoriesForaMVP.md#us25-cadastrar-projetos), [US26](10_userStoriesForaMVP.md#us26-editar-projetos), [US27](10_userStoriesForaMVP.md#us27-remover-projetos) | — | RNF01, RNF03, RNF04 |
+| **T05** — Gestão e Transparência de Projetos | EP11 | Transparência e impacto dos projetos | **Fora do MVP** | — | [US29](10_userStoriesForaMVP.md#us29-visualizar-painel-publico-de-projetos) | — | RNF01, RNF03, RNF07 |
+| **T06** — Notificações e Engajamento | EP13 | Preferências de notificações | **Fora do MVP** | — | [US34](10_userStoriesForaMVP.md#us34-configurar-preferencias-de-notificacoes) | — | RNF01, RNF04 |
+| **T06** — Notificações e Engajamento | EP14 | Gestão e monitoramento de notificações | **Fora do MVP** | — | [US35](10_userStoriesForaMVP.md#us35-visualizar-alcance-das-notificacoes), [US36](10_userStoriesForaMVP.md#us36-gerenciar-notificacoes) | — | RNF01, RNF04 |
 
 ## 10.1 Backlog Geral
 
