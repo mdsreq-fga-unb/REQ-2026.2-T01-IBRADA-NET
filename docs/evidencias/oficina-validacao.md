@@ -1,7 +1,7 @@
-# Oficinas de validação
+# Oficinas de Validação
 
 Como essas validações visuais e de fluxo dependem da interação real com os representantes do IBRADA, o documento abaixo estabelece a estrutura oficial de registro e já mapeia o planejamento para as sessões dos quatro fluxos críticos levantados na análise de domínio, ainda não temos protótipos, por isso não temos registros ainda.
 
 Identificação|Participantes|US|Observações|Decisão|Impacto|Registro|
 |-|-|-|-|-|-|-|
-|Data: A definir | A definir | - |Pendente de realização da oficina.|Pendente|Pendente|link|
+| Data: 01-11-2026 | **Cliente:** Guilherme Scartezini **Equipe:** Arthur Scartezini, Vinicius Dias, Cauã Coelho (presente até às 21h38 / ~01h38 de reunião) | Validação dos fluxos de Ecoturismo (US02, US03, US08), Voluntariado (US13, US14, US16), Parcerias (US19), Triagem (US01) e Formulários Integrados. |Apresentação dos protótipos de baixa e média fidelidade (Figma). Alinhamento sobre identidade visual, inclusão da operadora no Cadastur/Supertour, padronização de contatos e ajuste no fluxo do WhatsApp.|**Validado com ressalvas pontuais.** Ajustes visuais (vermelho institucional, logo com fundo retangular) e estudo de integração com a plataforma Supertour.|Refinamento dos protótipos para alta fidelidade e realização de estudo técnico sobre mitigação de overbooking com o Supertour.|Gravação da Reunião: https://youtu.be/KLD07IS4AJI Ata da reunião: [01-11.md] (../atas-reuniao/unidade-3/01-11.md) |

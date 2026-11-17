@@ -29,7 +29,7 @@ export class ExperienciasService {
   constructor(private readonly prisma: PrismaService) {}
 
   /**
-   * US02: Lista pública de experiências de ecoturismo no catálogo.
+   * US02: Lista pública de pacotes de ecoturismo no catálogo.
    * Calcula as vagas disponíveis (availableSeats = capacity até o ciclo 9),
    * sinaliza se está indisponível ou sem vagas e formata o preço com precisão monetária.
    */
@@ -108,7 +108,7 @@ export class ExperienciasService {
   }
 
   /**
-   * US11: Cadastro de nova experiência de ecoturismo por gestor.
+   * US11: Cadastro de nova pacote de ecoturismo por gestor.
    * Valida regras de negócio: startsAt < endsAt, capacity > 0,
    * converte o preço com precisão decimal exata e gera slug único.
    */

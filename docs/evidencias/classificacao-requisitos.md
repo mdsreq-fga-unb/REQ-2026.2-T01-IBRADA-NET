@@ -43,6 +43,8 @@
 | RF33 | Preencher solicitação de parceria | Permitir que um candidato a parceiro preencha um formulário simplificado para solicitação de parceria, coletando informações (data, tipo e área). | CP6 | 4 | 4 | 4,0 |
 | RF34 | Visualizar propostas de parceria | Apresentar um painel centralizado para a equipe do IBRADA visualizar as solicitações de parceria recebidas. | CP6 | 4 | 4 | 4,0 |
 | RF35 | Enviar resposta de solicitação | Permitir que o gestor escreva uma resposta a solicitação de parceria pelo sistema, que será enviada de forma automática por email para a empresa candidata. | CP6 | 2 | 2 | 2,0 |
+| RF36 | Compartilhar experiências | Permitir que o usuário compartilhe o conteúdo de uma experiência de ecoturismo selecionada, identificando corretamente a experiência compartilhada. | CP3 | 3 | 3 | 3 |
+| RF37 | Enviar notificações automatizadas | Enviar notificações automatizadas para usuários cujas preferências correspondem ao seu assunto. | CP5 | 2 | 3 | 2,6 |
 | RNF01 | Responsividade da interface | A interface deve se adaptar a smartphones, tablets e desktops sem quebra de layout ou sobreposição. | Transversal — todas as CPs | 4 |-| 4 |
 | RNF02 | Integridade transacional | O sistema deve garantir transações ACID e impedir reservas concorrentes para a mesma vaga, evitando overbooking. | CP3 | 4 |-| 4 |
 | RNF03 | Desempenho do catálogo | As listagens de projetos e experiências de ecoturismo devem carregar em até 3 segundos em conexão de 15 Mbps. | CP1 e CP3 | 4 |-| 4 |
@@ -95,6 +97,8 @@
 | RF33 | 3,33 | 3,33 | 3,67 | 10,33 | 1,56 |
 | RF34 | 3,33 | 3,17 | 3,67 | 10,17 | 1,61 |
 | RF35 | 3,33 | 3 | 3,33 | 9,67 | 1,78 |
+| RF36 | 3,33 | 3,33 | 3,5 | 10,17 | 1,61 |
+| RF37 | 3,17 | 2,33 | 3,17 | 8,67 | 2,11 |
 | RNF01 | 2 | 2 | 1,83 | 5,83 | 3,06 |
 | RNF02 | 2,83 | 3 | 2,67 | 8,5 | 2,17 |
 | RNF03 | 1,5 | 2 | 1,33 | 4,83 | 3,39 |

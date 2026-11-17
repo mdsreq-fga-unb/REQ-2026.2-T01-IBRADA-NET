@@ -69,8 +69,8 @@ body.mapa-sem-rolagem { overflow: hidden; }
 .mapa-story { padding: 8px 10px; border-left: 3px solid var(--t2); background: color-mix(in srgb, var(--t2) 10%, transparent); border-radius: 0 8px 8px 0; font-style: italic; margin-top: 10px; }
 .mapa-check { list-style: none; margin: 0; padding: 0; }
 .mapa-check li { margin: 0; }
-.mapa-check label { display: flex; gap: 8px; padding: 3px 0; cursor: pointer; }
-.mapa-check input { margin-top: 3px; accent-color: var(--t2); }
+.mapa-check label { display: flex; gap: 8px; padding: 3px 0; }
+.mapa-check input { margin-top: 3px; accent-color: var(--t2); pointer-events: none; }
 .mapa-check input:checked + span { color: var(--m-mut); text-decoration: line-through; }
 .mapa-src { display: inline-block; font-size: .68rem; color: var(--m-mut); margin-top: 4px; }
 .mapa-list { display: flex; flex-wrap: wrap; gap: 2px; }
@@ -87,3 +87,13 @@ body.mapa-sem-rolagem { overflow: hidden; }
 .mapa-proto span { display: none; color: var(--m-mut); font-size: .72rem; }
 .mapa-proto.vazio { padding: 28px 8px; }
 .mapa-proto.vazio span { display: block; }
+.mapa-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mapa-drawer a.mapa-valor {
+  color: var(--t2);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mapa-drawer a.mapa-valor:hover {
+  text-decoration: underline;
+}

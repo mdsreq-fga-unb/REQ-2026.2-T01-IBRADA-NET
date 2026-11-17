@@ -19,7 +19,9 @@ export default function Login() {
         const data = new FormData(e.currentTarget);
         try {
             await login(String(data.get("email")), String(data.get("senha")));
-            router.push("/");
+            // Visitante vindo de uma vaga volta para ela; só aceita caminho interno.
+            const next = new URLSearchParams(window.location.search).get("next");
+            router.push(next && next.startsWith("/") && !next.startsWith("//") ? next : "/");
         } catch (err) {
             setError(err instanceof Error ? err.message : "Não foi possível entrar. Tente novamente.");
         } finally {

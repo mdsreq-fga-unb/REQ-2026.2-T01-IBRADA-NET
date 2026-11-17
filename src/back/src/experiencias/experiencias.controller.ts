@@ -45,7 +45,7 @@ export class ExperienciasController {
   }
 
   /**
-   * US11: Cadastrar experiência de ecoturismo (RF15).
+   * US11: Cadastrar pacote de ecoturismo (RF15).
    * Rota restrita: apenas gestores autenticados podem cadastrar pacotes.
    */
   @Roles(UserRole.GESTOR)
