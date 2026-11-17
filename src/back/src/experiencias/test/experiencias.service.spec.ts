@@ -28,7 +28,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
   });
 
   describe('findAllPublic (US02 - Catálogo)', () => {
-    it('deve listar experiências sinalizando vagas disponíveis, indisponibilidade e formatos monetários', async () => {
+    it('deve listar pacotes sinalizando vagas disponíveis, indisponibilidade e formatos monetários', async () => {
       mockPrisma.experiencia.findMany.mockResolvedValue([
         {
           id: 'exp-1',
@@ -115,7 +115,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
     });
   });
 
-  describe('create (US11 - Cadastro de experiência)', () => {
+  describe('create (US11 - Cadastro de pacote)', () => {
     const validDto: CreateExperienciaDto = {
       title: 'Passeio Histórico & Botânico',
       description: 'Conhecendo a flora e a história local',
@@ -125,9 +125,11 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       endsAt: '2026-12-01T18:00:00.000Z',
       capacity: 20,
       isAvailable: true,
+      photos: ['https://exemplo.com/capa.jpg', 'https://exemplo.com/galeria.jpg'],
+      videos: ['https://exemplo.com/video.mp4'],
     };
 
-    it('deve cadastrar uma experiência com sucesso repassando string decimal exata ao Prisma', async () => {
+    it('deve cadastrar um pacote com sucesso repassando string decimal exata ao Prisma', async () => {
       mockPrisma.experiencia.findUnique.mockResolvedValue(null);
       mockPrisma.experiencia.create.mockResolvedValue({
         id: 'exp-novo',
@@ -144,7 +146,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
 
       const response = await service.create(validDto);
 
-      expect(response.message).toBe('Experiência cadastrada com sucesso!');
+      expect(response.message).toBe('Pacote cadastrado com sucesso!');
       expect(mockPrisma.experiencia.create).toHaveBeenCalledWith({
         data: {
           title: validDto.title,
@@ -156,7 +158,15 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
           endsAt: new Date(validDto.endsAt),
           capacity: 20,
           isAvailable: true,
+          midias: {
+            create: [
+              { tipo: 'FOTO', url: 'https://exemplo.com/capa.jpg', ordem: 0 },
+              { tipo: 'FOTO', url: 'https://exemplo.com/galeria.jpg', ordem: 1 },
+              { tipo: 'VIDEO', url: 'https://exemplo.com/video.mp4', ordem: 0 },
+            ],
+          },
         },
+        include: { midias: { orderBy: { ordem: 'asc' } } },
       });
       expect(response.data.priceCents).toBe(12050);
       expect(response.data.priceFormatted).toBe('R$ 120,50');
@@ -326,13 +336,14 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       expect(mockPrisma.experiencia.update).toHaveBeenCalledWith({
         where: { id: 'exp-1' },
         data: { isAvailable: false },
+        include: { midias: { orderBy: { ordem: 'asc' } } },
       });
       expect(result.data.isAvailable).toBe(false);
       expect(result.data.priceCents).toBe(10000);
       expect(result.data.priceFormatted).toBe('R$ 100,00');
     });
 
-    it('deve lançar NotFoundException ao tentar alterar experiência inexistente', async () => {
+    it('deve lançar NotFoundException ao tentar alterar pacote inexistente', async () => {
       mockPrisma.experiencia.findUnique.mockResolvedValue(null);
 
       await expect(

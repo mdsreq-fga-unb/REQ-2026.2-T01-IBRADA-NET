@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { RequireAuth } from "@/components/require-auth";
 
 export const metadata: Metadata = {
-  title: "Gestão de voluntariado",
+  title: "Gestão IBRADA",
 };
 
 // Todas as rotas de /gestor exigem sessão com perfil GESTOR (o back também confere o papel).
