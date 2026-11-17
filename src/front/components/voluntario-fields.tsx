@@ -19,6 +19,15 @@ export type VoluntarioFormValues = {
   outros: string;
 };
 
+// US15: escolaridade (nível e situação) e apresentação/disponibilidade são obrigatórias.
+// Áreas de interesse e outras habilidades continuam opcionais.
+export function validarVoluntario(values: VoluntarioFormValues): string | null {
+  if (!values.educacaoNivel) return "Informe seu nível de escolaridade.";
+  if (!values.educacaoCompletude) return "Informe a situação da sua formação.";
+  if (!values.bio.trim()) return "Preencha a apresentação, experiências e disponibilidade.";
+  return null;
+}
+
 type VoluntarioFieldsProps = {
   values: VoluntarioFormValues;
   onChange: (next: VoluntarioFormValues) => void;
@@ -129,8 +138,9 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
       {/* Escolaridade */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <label className="block text-sm font-medium text-foreground">
-          Nível de escolaridade
+          Nível de escolaridade *
           <select
+            required
             value={values.educacaoNivel}
             disabled={disabled}
             onChange={(e) =>
@@ -138,7 +148,7 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
             }
             className="mt-1.5 min-h-11 w-full rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/40 disabled:opacity-60"
           >
-            <option value="">Selecione (opcional)</option>
+            <option value="">Selecione</option>
             {NIVEL_EDUCACAO_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
@@ -148,8 +158,9 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
         </label>
 
         <label className="block text-sm font-medium text-foreground">
-          Situação da formação
+          Situação da formação *
           <select
+            required
             value={values.educacaoCompletude}
             disabled={disabled}
             onChange={(e) =>
@@ -157,7 +168,7 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
             }
             className="mt-1.5 min-h-11 w-full rounded-lg border border-input bg-card px-3 py-2 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/40 disabled:opacity-60"
           >
-            <option value="">Selecione (opcional)</option>
+            <option value="">Selecione</option>
             {STATUS_EDUCACAO_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
@@ -169,8 +180,9 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
 
       {/* Apresentação, experiências e disponibilidade (bio) */}
       <label className="block text-sm font-medium text-foreground">
-        Apresentação, experiências e disponibilidade
+        Apresentação, experiências e disponibilidade *
         <textarea
+          required
           rows={4}
           disabled={disabled}
           value={values.bio}

@@ -1,5 +1,7 @@
 import {
   BadRequestException,
+  ConflictException,
+  ForbiddenException,
   Injectable,
   Logger,
   NotFoundException,
@@ -82,6 +84,77 @@ export class OportunidadesService {
         createdAt: true,
       },
     });
+  }
+
+  // ===========================================================================
+  // US16 — Candidatar-se a uma oportunidade (voluntário autenticado)
+  // ===========================================================================
+
+  /**
+   * Registra a candidatura do usuário logado em uma oportunidade aberta,
+   * com status inicial INSCRITO (entrada do funil, US18).
+   *
+   * - 404: oportunidade inexistente
+   * - 400: oportunidade encerrada
+   * - 403: usuário sem perfil de voluntário (o front leva para Minha Conta)
+   * - 409: já existe candidatura do voluntário nessa vaga
+   */
+  async candidatar(userId: string, oportunidadeId: string) {
+    const oportunidade = await this.prisma.oportunidade.findUnique({
+      where: { id: oportunidadeId },
+      select: { id: true, isOpen: true },
+    });
+
+    if (!oportunidade) {
+      throw new NotFoundException(`Oportunidade com ID '${oportunidadeId}' não encontrada.`);
+    }
+
+    if (!oportunidade.isOpen) {
+      throw new BadRequestException('Esta oportunidade não está aceitando candidaturas no momento.');
+    }
+
+    const perfil = await this.prisma.perfilVoluntario.findUnique({
+      where: { userId },
+      select: { id: true },
+    });
+
+    if (!perfil) {
+      throw new ForbiddenException(
+        'Complete seu perfil de voluntário para se candidatar a uma oportunidade.',
+      );
+    }
+
+    const existente = await this.prisma.candidatura.findUnique({
+      where: { perfilId_oportunidadeId: { perfilId: perfil.id, oportunidadeId } },
+      select: { id: true },
+    });
+
+    if (existente) {
+      throw new ConflictException('Você já se candidatou a esta oportunidade.');
+    }
+
+    const candidatura = await this.prisma.candidatura.create({
+      data: { perfilId: perfil.id, oportunidadeId },
+      select: { id: true, status: true, createdAt: true },
+    });
+
+    this.logger.log(`Candidatura ${candidatura.id} registrada na oportunidade ${oportunidadeId} (US16)`);
+    return candidatura;
+  }
+
+  /** Informa se o usuário logado já se candidatou à oportunidade (desabilita o botão no front). */
+  async jaCandidatou(userId: string, oportunidadeId: string) {
+    const perfil = await this.prisma.perfilVoluntario.findUnique({
+      where: { userId },
+      select: { id: true },
+    });
+    if (!perfil) return { candidatado: false, temPerfil: false };
+
+    const existente = await this.prisma.candidatura.findUnique({
+      where: { perfilId_oportunidadeId: { perfilId: perfil.id, oportunidadeId } },
+      select: { id: true },
+    });
+    return { candidatado: !!existente, temPerfil: true };
   }
 
   // ===========================================================================

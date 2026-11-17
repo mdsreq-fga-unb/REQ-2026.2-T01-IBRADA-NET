@@ -1,4 +1,9 @@
-import { BadRequestException, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  ForbiddenException,
+  NotFoundException,
+} from '@nestjs/common';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { OportunidadesService } from '../oportunidades.service.js';
 import { CreateOportunidadeDto } from '../dto/create-oportunidade.dto.js';
@@ -18,6 +23,13 @@ const mockPrisma = {
   categoria: {
     findUnique: vi.fn(),
   },
+  perfilVoluntario: {
+    findUnique: vi.fn(),
+  },
+  candidatura: {
+    findUnique: vi.fn(),
+    create: vi.fn(),
+  },
   criterioFunil: {
     create: vi.fn(),
     upsert: vi.fn(),
@@ -32,6 +44,9 @@ const resetMockPrisma = () => {
   mockPrisma.oportunidade.update.mockReset();
   mockPrisma.projeto.findUnique.mockReset();
   mockPrisma.categoria.findUnique.mockReset();
+  mockPrisma.perfilVoluntario.findUnique.mockReset();
+  mockPrisma.candidatura.findUnique.mockReset();
+  mockPrisma.candidatura.create.mockReset();
   mockPrisma.criterioFunil.create.mockReset();
   mockPrisma.criterioFunil.upsert.mockReset();
   mockPrisma.$transaction.mockReset();
@@ -475,4 +490,60 @@ describe('OportunidadesService (US13, US14, US21, RF19)', () => {
     }));
   });
 
+});
+
+describe('OportunidadesService — candidatura (US16)', () => {
+  let service: OportunidadesService;
+
+  beforeEach(() => {
+    resetMockPrisma();
+    service = new OportunidadesService(mockPrisma as never);
+  });
+
+  it('registra candidatura com status INSCRITO', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op1', isOpen: true });
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'pf1' });
+    mockPrisma.candidatura.findUnique.mockResolvedValue(null);
+    mockPrisma.candidatura.create.mockResolvedValue({ id: 'c1', status: 'INSCRITO' });
+
+    const res = await service.candidatar('u1', 'op1');
+
+    expect(res.status).toBe('INSCRITO');
+    expect(mockPrisma.candidatura.create).toHaveBeenCalledWith(
+      expect.objectContaining({ data: { perfilId: 'pf1', oportunidadeId: 'op1' } }),
+    );
+  });
+
+  it('retorna 404 se a oportunidade não existe', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue(null);
+    await expect(service.candidatar('u1', 'x')).rejects.toBeInstanceOf(NotFoundException);
+  });
+
+  it('bloqueia candidatura em oportunidade encerrada', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op1', isOpen: false });
+    await expect(service.candidatar('u1', 'op1')).rejects.toBeInstanceOf(BadRequestException);
+    expect(mockPrisma.candidatura.create).not.toHaveBeenCalled();
+  });
+
+  it('retorna 403 se o usuário não tem perfil de voluntário', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op1', isOpen: true });
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue(null);
+    await expect(service.candidatar('u1', 'op1')).rejects.toBeInstanceOf(ForbiddenException);
+  });
+
+  it('impede candidatura duplicada (409)', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op1', isOpen: true });
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'pf1' });
+    mockPrisma.candidatura.findUnique.mockResolvedValue({ id: 'c1' });
+    await expect(service.candidatar('u1', 'op1')).rejects.toBeInstanceOf(ConflictException);
+  });
+
+  it('jaCandidatou informa temPerfil e candidatado', async () => {
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue(null);
+    expect(await service.jaCandidatou('u1', 'op1')).toEqual({ candidatado: false, temPerfil: false });
+
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'pf1' });
+    mockPrisma.candidatura.findUnique.mockResolvedValue({ id: 'c1' });
+    expect(await service.jaCandidatou('u1', 'op1')).toEqual({ candidatado: true, temPerfil: true });
+  });
 });

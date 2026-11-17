@@ -10,6 +10,7 @@ import {
   IsDateString,
   IsIn,
   Equals,
+  ValidateIf,
 } from 'class-validator';
 
 // Siglas das 27 UFs: o campo `estado` é padronizado como sigla de 2 letras maiúsculas.
@@ -99,8 +100,10 @@ export class CreateUserDto {
   // TODO(front): a aba/tela de perfil de voluntário ainda não existe; hoje o front
   // cadastra só clientes. Estes campos já estão prontos para quando ela for criada.
 
+  // Obrigatórios apenas quando role = VOLUNTARIO (US15): bio e escolaridade.
+  @ValidateIf((o: CreateUserDto) => o.role === PublicUserRole.VOLUNTARIO)
   @IsString()
-  @IsOptional()
+  @IsNotEmpty({ message: 'Informe sua apresentação, experiências e disponibilidade.' })
   bio?: string;
 
   // Habilidades que não estão na lista de categorias.
@@ -108,12 +111,12 @@ export class CreateUserDto {
   @IsOptional()
   outros?: string;
 
-  @IsOptional()
-  @IsEnum(NivelEducacao, { message: 'Nível de educação inválido.' })
+  @ValidateIf((o: CreateUserDto) => o.role === PublicUserRole.VOLUNTARIO)
+  @IsEnum(NivelEducacao, { message: 'Informe um nível de escolaridade válido.' })
   educacaoNivel?: NivelEducacao;
 
-  @IsOptional()
-  @IsEnum(StatusEducacao, { message: 'Situação da educação inválida.' })
+  @ValidateIf((o: CreateUserDto) => o.role === PublicUserRole.VOLUNTARIO)
+  @IsEnum(StatusEducacao, { message: 'Informe uma situação da formação válida.' })
   educacaoCompletude?: StatusEducacao;
 
   // Ids de Categoria (interesses do voluntário).
