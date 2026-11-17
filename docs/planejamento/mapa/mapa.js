@@ -75,6 +75,10 @@
       return set;
     }
     function usApplying(id) {
+      if (id.indexOf("ciclo:") === 0) {
+        var nomeCiclo = id.slice(6);
+        return D.us.filter(function (u) { return u.ciclo === nomeCiclo; }).map(function (u) { return u.id; });
+      }
       var eps = Object.keys(D.epicos).filter(function (e) {
         var ep = D.epicos[e];
         return ep.cp === id || ep.rn.indexOf(id) >= 0 || ep.rnf.indexOf(id) >= 0 ||
@@ -114,6 +118,7 @@
       '<div class="mapa-chips"><span class="mapa-chips-t">Características de produto</span><span id="mapa-cps"></span></div>' +
       '<div class="mapa-chips"><span class="mapa-chips-t">Regras de negócio</span><span id="mapa-rns"></span></div>' +
       '<div class="mapa-chips"><span class="mapa-chips-t">Requisitos não funcionais</span><span id="mapa-rnfs"></span></div>' +
+      '<div class="mapa-chips"><span class="mapa-chips-t">Ciclos</span><span id="mapa-ciclos"></span></div>' +
       '<p class="mapa-dica">Passe o mouse para ver o caminho de cada item; clique para abrir os detalhes e acompanhar os critérios sincronizados com o GitHub.</p>';
 
     var map = $("#mapa-map");
@@ -155,6 +160,12 @@
     $("#mapa-cps").innerHTML = Object.keys(D.cp).map(function (c) { return '<button type="button" class="mapa-chip" data-open="' + c + '">' + c + "</button>"; }).join("");
     $("#mapa-rns").innerHTML = Object.keys(D.rn).map(function (c) { return '<button type="button" class="mapa-chip" data-open="' + c + '" title="' + esc(D.rn[c].nome) + '">' + c + "</button>"; }).join("");
     $("#mapa-rnfs").innerHTML = Object.keys(D.rnf).map(function (c) { return '<button type="button" class="mapa-chip" data-open="' + c + '" title="' + esc(D.rnf[c].nome) + '">' + c + "</button>"; }).join("");
+    var ciclos = [];
+    D.us.forEach(function (u) { if (u.ciclo && ciclos.indexOf(u.ciclo) < 0) ciclos.push(u.ciclo); });
+    ciclos.sort();
+    $("#mapa-ciclos").innerHTML = ciclos.map(function (c) {
+      return '<button type="button" class="mapa-chip" data-open="ciclo:' + esc(c) + '">' + esc(c) + "</button>";
+    }).join("");
 
     /* ---------- destaque ---------- */
     function applyHl() {
@@ -239,6 +250,13 @@
         k = (D.rn[id] ? "Regra de negócio" : "Requisito não funcional" + (r.classe ? " · " + r.classe : "")); t = id + " — " + r.nome;
         h = "<h4>Relação no catálogo</h4><p>" + esc(r.rel) + "</p><h4>Aplica-se às histórias</h4>" + chipsOf(usApplying(id)) +
           '<p class="mapa-pagina">' + docLink("8_requisitos", id, "Ver no catálogo de requisitos →") + "</p>";
+      } else if (id.indexOf("ciclo:") === 0) {
+        var nomeCiclo = id.slice(6);
+        var usCiclo = D.us.filter(function (q) { return q.ciclo === nomeCiclo; });
+        var urlCiclo = usCiclo[0] && usCiclo[0].cicloUrl;
+        k = "Ciclo / Incremento"; t = nomeCiclo;
+        h = (urlCiclo ? '<p class="mapa-def"><a class="mapa-valor" href="' + BASE + urlCiclo + '">Ver no cronograma →</a></p>' : "") +
+          "<h4>User stories (" + usCiclo.length + ")</h4>" + chipsOf(usCiclo.map(function (q) { return q.id; }));
       }
       return { k: k, t: t, h: h };
     }
