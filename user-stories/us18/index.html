@@ -2732,6 +2732,10 @@
 <li>[ ] O acesso ao funil de candidatos deve ser permitido apenas ao gestor autenticado.</li>
 </ul>
 <p><em>Fonte: <a href="https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/68">issue #68</a>.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Estado da implementação (RN05)</p>
+<p>A regra de filtragem está implementada no back como <code>FunilService.filtrarCandidatos</code>, usando os critérios que o gestor escolhe no cadastro da oportunidade (US13): experiência na área, escolaridade mínima e habilidades exigidas. A escolaridade compara só o nível, sem considerar se o curso está completo. As habilidades são comparadas, como tags completas, com as declaradas em <code>outros</code> no perfil do voluntário. Ainda não há rota HTTP nem tela do funil: o serviço está pronto para ser usado por elas.</p>
+</div>
 <h2 id="prototipo">Protótipo</h2>
 <!-- Inserir aqui a captura do protótipo, por exemplo: ![Protótipo da US18](../assets/prototipos/us18.png) -->
 

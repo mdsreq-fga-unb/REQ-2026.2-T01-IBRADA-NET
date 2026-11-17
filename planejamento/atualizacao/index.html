@@ -593,6 +593,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alteracoes-das-regras-de-negocio-e-dos-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alterações das Regras de Negócio e dos Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2688,6 +2699,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alteracoes-das-regras-de-negocio-e-dos-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alterações das Regras de Negócio e dos Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2744,6 +2766,97 @@
 <td>Atualização</td>
 <td>Especificação do termo "gerenciar" usado na descrição do requisito: uso de críterios para manipular o alcance das notificações.</td>
 <td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>US02, US03, US11, US12, US24</td>
+<td>RF06, RF07, RF15, RF17, RF36</td>
+<td>Atualização</td>
+<td>Substituição do termo "experiência" por "pacote" em todos os artefatos de ecoturismo, a pedido do cliente (<a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10</a>), reforçada nas validações de <a href="../../atas-reuniao/unidade-3/08-11/">08/11</a> e <a href="../../atas-reuniao/unidade-3/15-11/">15/11</a>.</td>
+<td>Dentro do MVP</td>
+</tr>
+<tr>
+<td>US30</td>
+<td>RF16</td>
+<td>Remoção do escopo</td>
+<td>A edição de pacotes ficou fora do MVP; as alterações serão feitas por substituição do cadastro (<a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10</a>). Na validação de <a href="../../atas-reuniao/unidade-3/08-11/">08/11</a> foi esclarecido que o cliente exclui e recria o pacote, ou a equipe altera direto no banco.</td>
+<td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>US31, US33</td>
+<td>RF19, RF24</td>
+<td>Remoção do escopo</td>
+<td>A edição de oportunidades de voluntariado e do perfil do voluntário não fará parte do MVP (<a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10</a>).</td>
+<td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>US34, US35, US36</td>
+<td>RF30, RF31, RF32</td>
+<td>Remoção do escopo</td>
+<td>O módulo de notificações foi retirado do MVP, corrigindo um erro da matriz que o havia incluído (<a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10</a>).</td>
+<td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>US32</td>
+<td>RF20</td>
+<td>Esclarecimento</td>
+<td>No MVP, as contas de gestor são criadas diretamente no banco de dados (<a href="../../atas-reuniao/unidade-3/08-11/">ata de 08/11</a>). Na matriz, o RF20 aparece também em outras CPs como dependência de gestão de acesso, mas sua origem continua na CP4.</td>
+<td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>US23</td>
+<td>RF29</td>
+<td>Atualização</td>
+<td>O vínculo passa a incluir CP3 e CP4, porque o consentimento é registrado no cadastro único, usado por clientes e voluntários (<a href="../../atas-reuniao/unidade-3/08-11/">ata de 08/11</a>).</td>
+<td>Dentro do MVP</td>
+</tr>
+<tr>
+<td>US09, US10, US25, US26, US27, US29</td>
+<td>RF13, RF14, RF01, RF02, RF03, RF04</td>
+<td>Refinamento de redação</td>
+<td>Detalhamento do comportamento esperado: revisão dos dados antes do checkout (RF13), confirmação da participação após pagamento aprovado (RF14), controle de visibilidade dos projetos (RF01) e distinção entre resultados alcançados e impactos pretendidos (RF04).</td>
+<td>US09 e US10: dentro do MVP; demais: <em>fora do MVP</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="alteracoes-das-regras-de-negocio-e-dos-requisitos-nao-funcionais">Alterações das Regras de Negócio e dos Requisitos Não Funcionais</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Tipo de Alteração</th>
+<th>O que mudou</th>
+<th>Motivo</th>
+<th>Status no MVP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RN01 a RN05 (antes RN01 a RN06)</td>
+<td>Reorganização</td>
+<td>A regra de encaminhamento da triagem foi consolidada na RN01 (encaminhamento via WhatsApp para o departamento específico) e as demais regras foram renumeradas.</td>
+<td>O envio automático de notificações por correspondência de interesses saiu da regra de negócio e virou o RF37 (<a href="../../atas-reuniao/unidade-3/08-11/">ata de 08/11</a>). A RN05 passou a tratar apenas do envio por e-mail.</td>
+<td>Conforme a CP de origem (RN05 é da CP5, <em>fora do MVP</em>)</td>
+</tr>
+<tr>
+<td>RNF06</td>
+<td>Remoção do escopo</td>
+<td>Retirado do MVP e reformulado (tempo de resposta de até 3 s e taxa de erro de até 2%, em teste de carga).</td>
+<td>O volume de tráfego atual do IBRADA não exige alta escalabilidade (<a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10</a>).</td>
+<td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>RNF10</td>
+<td>Remoção do escopo</td>
+<td>Compatibilidade entre navegadores retirada do MVP.</td>
+<td>A paridade em navegadores legados não é necessária para o contexto atual (<a href="../../atas-reuniao/unidade-2/11-10/">ata de 11/10</a>).</td>
+<td><em>Fora do MVP</em></td>
+</tr>
+<tr>
+<td>RNF01 a RNF05, RNF07 a RNF09</td>
+<td>Reformulação</td>
+<td>Redação revisada com critério de aferição: RNF03 (95% das medições, com até 50 usuários simultâneos), RNF04 (log com data, hora e rota), RNF05 (notificações de pagamento sem processamento em duplicidade), RNF07 (monitoramento externo a cada 5 minutos), RNF08 (HTTPS/TLS e senhas armazenadas com hash); RNF01 passou de Portabilidade para Usabilidade.</td>
+<td>Tornar os requisitos verificáveis, para que possam ser validados nas etapas de verificação e validação.</td>
+<td>Dentro do MVP</td>
 </tr>
 </tbody>
 </table>
