@@ -861,24 +861,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Visão geral
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -895,36 +877,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#us32-gerenciar-acesso-de-gestores" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        US32 — Gerenciar acesso de gestores
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2657,25 +2609,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#us32-gerenciar-acesso-de-gestores" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        US32 — Gerenciar acesso de gestores
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2797,58 +2730,29 @@
 </tr>
 </tbody>
 </table>
-<h2 id="us32-gerenciar-acesso-de-gestores">US32 — Gerenciar acesso de gestores</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Campo</th>
-<th style="text-align: left;">Relação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Requisito de origem</td>
-<td style="text-align: left;"><a href="../../documento-visao/8_requisitos/#rf20">RF20</a> — Gerenciar papel de gestor</td>
-</tr>
-<tr>
-<td style="text-align: left;">Tema</td>
-<td style="text-align: left;"><a href="../../planejamento/rastreabilidade/#t03">T03</a> — Voluntariado</td>
-</tr>
-<tr>
-<td style="text-align: left;">Épico</td>
-<td style="text-align: left;">EP12 — Gestão de acesso administrativo</td>
-</tr>
-<tr>
-<td style="text-align: left;">Escopo</td>
-<td style="text-align: left;"><strong>Fora do MVP (Backlog Futuro / Pós-MVP)</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>História de usuário</strong></p>
-<blockquote>
-<p>Como gestor administrador, quero cadastrar e conceder permissão de gestor a outros membros da equipe através de um painel visual, para delegar a administração das operações do sistema.</p>
-</blockquote>
 <hr />
-<h3 id="registro-de-decisao-tecnica-e-provisionamento-inicial-do-acesso-de-gestor-mvp">Registro de Decisão Técnica e Provisionamento Inicial do Acesso de Gestor (MVP)</h3>
-<blockquote>
-<p><strong>Decisão de Arquitetura e Escopo — Adiamento de RF20 / US32:</strong></p>
-<p>Durante as reuniões de refinamento da Unidade 2, a equipe e os representantes do IBRADA deliberaram que a construção de uma interface gráfica complexa para cadastrar, editar e revogar acessos de gestores (RF20 / US32) <strong>não é essencial para a viabilização da primeira versão (MVP)</strong>, visto que o corpo diretor e administrativo da instituição é enxuto, conhecido e altamente estável.</p>
-<p>Para viabilizar a operação e segurança dos módulos administrativos do MVP (US11, US12, US13, US18 e US20), o acesso inicial de gestores será disponibilizado da seguinte forma:</p>
-<ol>
-<li><strong>Mecanismo de disponibilização do acesso:</strong></li>
-<li>O provisionamento dos usuários gestores será realizado por meio de <strong>scripts de carga inicial e migração (Database Seeding / Migrations)</strong> executados no momento da implantação do banco de dados em ambiente de produção/homologação.</li>
-<li>
-<p>As senhas de primeiro acesso serão geradas com entropia segura, criptografadas via hash <strong>bcrypt</strong> (RNF08) e disponibilizadas em canal privado individual aos coordenadores autorizados, com obrigatoriedade de troca de senha no primeiro login.</p>
-</li>
-<li>
-<p><strong>Quem poderá utilizar o acesso inicial de gestor:</strong></p>
-</li>
-<li><strong>Guilherme Sampaio:</strong> Representante Institucional e Coordenador Geral do IBRADA.</li>
-<li><strong>Outro gestor do IBRADA:</strong> Representante Institucional escolhido por Guilherme Sampaio.</li>
-<li><strong>Administrador Técnico da Equipe:</strong> Usuário de manutenção técnica com fins exclusivos de auditoria e suporte.</li>
-</ol>
-<p>Com essa deliberação, todos os requisitos que dependem de gestores autenticados operam normalmente desde o primeiro incremento, mantendo a integridade de segurança (RNF04) e postergando a tela de gestão de usuários administrativos para ciclos futuros.</p>
-</blockquote>
+<!--
+### Registro de Decisão Técnica e Provisionamento Inicial do Acesso de Gestor (MVP)
+
+> **Decisão de Arquitetura e Escopo — Adiamento de RF20 / US32:**
+> 
+> Durante as reuniões de refinamento da Unidade 2, a equipe e os representantes do IBRADA deliberaram que a construção de uma interface gráfica complexa para cadastrar, editar e revogar acessos de gestores (RF20 / US32) **não é essencial para a viabilização da primeira versão (MVP)**, visto que o corpo diretor e administrativo da instituição é enxuto, conhecido e altamente estável.
+> 
+> Para viabilizar a operação e segurança dos módulos administrativos do MVP (US11, US12, US13, US18 e US20), o acesso inicial de gestores será disponibilizado da seguinte forma:
+> 
+> 1. **Mecanismo de disponibilização do acesso:**
+>    * O provisionamento dos usuários gestores será realizado por meio de **scripts de carga inicial e migração (Database Seeding / Migrations)** executados no momento da implantação do banco de dados em ambiente de produção/homologação.
+>    * As senhas de primeiro acesso serão geradas com entropia segura, criptografadas via hash **bcrypt** (RNF08) e disponibilizadas em canal privado individual aos coordenadores autorizados, com obrigatoriedade de troca de senha no primeiro login.
+> 
+> 2. **Quem poderá utilizar o acesso inicial de gestor:**
+>    * **Guilherme Sampaio:** Representante Institucional e Coordenador Geral do IBRADA.
+>    * **Outro gestor do IBRADA:** Representante Institucional escolhido por Guilherme Sampaio.
+>    * **Administrador Técnico da Equipe:** Usuário de manutenção técnica com fins exclusivos de auditoria e suporte.
+> 
+> Com essa deliberação, todos os requisitos que dependem de gestores autenticados operam normalmente desde o primeiro incremento, mantendo a integridade de segurança (RNF04) e postergando a tela de gestão de usuários administrativos para ciclos futuros.
+
+-->
+
 <p>As histórias dentro do MVP e seus vínculos estão em <a href="../../planejamento/rastreabilidade/">Rastreabilidade</a>.</p>
 
 
