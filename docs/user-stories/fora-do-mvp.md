@@ -18,22 +18,9 @@ Estas histórias permanecem no backlog geral do produto, mas não fazem parte do
 | [US37](us37.md) | Responder à solicitação de parceria | [RF35](../documento-visao/8_requisitos.md#rf35) | EP09 — Solicitação e análise de parcerias | T04 — Parcerias Institucionais |
 | [US38](us38.md) | Receber notificações de interesse | [RF37](../documento-visao/8_requisitos.md#rf37) | EP13 — Preferências de notificações | T06 — Notificações e Engajamento |
 
-
-## US32 — Gerenciar acesso de gestores
-
-| Campo | Relação |
-| :--- | :--- |
-| Requisito de origem | [RF20](../documento-visao/8_requisitos.md#rf20) — Gerenciar papel de gestor |
-| Tema | [T03](../planejamento/rastreabilidade.md#t03) — Voluntariado |
-| Épico | EP12 — Gestão de acesso administrativo |
-| Escopo | **Fora do MVP (Backlog Futuro / Pós-MVP)** |
-
-**História de usuário**
-
-> Como gestor administrador, quero cadastrar e conceder permissão de gestor a outros membros da equipe através de um painel visual, para delegar a administração das operações do sistema.
-
 ---
 
+<!--
 ### Registro de Decisão Técnica e Provisionamento Inicial do Acesso de Gestor (MVP)
 
 > **Decisão de Arquitetura e Escopo — Adiamento de RF20 / US32:**
@@ -52,5 +39,7 @@ Estas histórias permanecem no backlog geral do produto, mas não fazem parte do
 >    * **Administrador Técnico da Equipe:** Usuário de manutenção técnica com fins exclusivos de auditoria e suporte.
 > 
 > Com essa deliberação, todos os requisitos que dependem de gestores autenticados operam normalmente desde o primeiro incremento, mantendo a integridade de segurança (RNF04) e postergando a tela de gestão de usuários administrativos para ciclos futuros.
+
+-->
 
 As histórias dentro do MVP e seus vínculos estão em [Rastreabilidade](../planejamento/rastreabilidade.md).
