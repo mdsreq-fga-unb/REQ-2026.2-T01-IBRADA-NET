@@ -78,4 +78,4 @@ A Unidade 2 representou um momento de diálogo, evolução e compromisso, na qua
 - Dificuldade encontrada: Validar protótipos iniciais com o cliente.
 - Causa e Consequências: Os protótipos iniciais não representavam adequadamente o design visual do site, o que tornou o fluxo de atividades difícil de compreender e prejudicou o entendimento por parte do cliente.
 - Mudanças Adotadas: Foram realizados protótipos de média fidelidade para melhor visualização.
-- Evidência: Reuniões com o cliente da unidade 3,
+- Evidência: Reuniões com o cliente da unidade 3.
