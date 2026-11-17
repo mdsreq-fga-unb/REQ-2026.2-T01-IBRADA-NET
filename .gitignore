@@ -7,3 +7,7 @@ src/generated/
 
 # Segredos locais (nunca versionar)
 .env
+node_modules/
+dist/
+.next/
+*.tsbuildinfo

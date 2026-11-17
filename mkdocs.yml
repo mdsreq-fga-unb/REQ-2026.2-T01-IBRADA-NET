@@ -31,6 +31,8 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
@@ -47,39 +49,27 @@ markdown_extensions:
       toc_depth: 2
 
 extra_css:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
   - stylesheets/custom.css
+  - evidencias/prototipos/carousel.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
+  - evidencias/prototipos/carousel.js
 
 nav:
   - Home: index.md
   - Planejamento e Escopo:
-      - Rastreabilidade: planejamento/rastreabilidade.md
-      - User Stories:
-        - Dentro do MVP:
-          - "US01 — Realizar triagem": user-stories/us01.md
-          - "US02 — Visualizar catálogo de ecoturismo": user-stories/us02.md
-          - "US03 — Visualizar detalhes de pacote de ecoturismo": user-stories/us03.md
-          - "US04 — Cadastrar-se como cliente": user-stories/us04.md
-          - "US05 — Visualizar e editar dados pessoais": user-stories/us05.md
-          - "US06 — Autenticar-se como cliente": user-stories/us06.md
-          - "US07 — Encerrar sessão de cliente": user-stories/us07.md
-          - "US08 — Reservar pacote de ecoturismo": user-stories/us08.md
-          - "US09 — Revisar e confirmar reserva": user-stories/us09.md
-          - "US10 — Pagar reserva": user-stories/us10.md
-          - "US11 — Cadastrar pacote de ecoturismo": user-stories/us11.md
-          - "US12 — Controlar disponibilidade de pacotes": user-stories/us12.md
-          - "US13 — Cadastrar oportunidade de voluntariado": user-stories/us13.md
-          - "US14 — Visualizar detalhes da oportunidade": user-stories/us14.md
-          - "US15 — Criar perfil de voluntário": user-stories/us15.md
-          - "US16 — Candidatar-se a uma oportunidade": user-stories/us16.md
-          - "US17 — Autenticar-se como voluntário": user-stories/us17.md
-          - "US18 — Visualizar candidatos em funil": user-stories/us18.md
-          - "US19 — Enviar solicitação de parceria": user-stories/us19.md
-          - "US20 — Visualizar solicitações de parceria": user-stories/us20.md
-          - "US21 — Consultar oportunidades abertas": user-stories/us21.md
-          - "US22 — Encerrar sessão de voluntário": user-stories/us22.md
-          - "US23 — Registrar consentimento de uso de dados": user-stories/us23.md
-          - "US24 — Compartilhar pacote de ecoturismo": user-stories/us24.md
-        - Fora do MVP:
+      - Rastreabilidade do MVP: planejamento/rastreabilidade.md
+      - Processo de Atualização: planejamento/atualizacao.md
+      - Evidências:
+        - Por Ciclo: 
+          - Incremento 1: evidencias/ciclos/ciclo1.md
+          - Incremento 2: evidencias/ciclos/ciclo2.md
+          - Incremento 3: evidencias/ciclos/ciclo3.md
+        - Análise de Domínio: evidencias/analise-dominio.md
+        - Oficinas de Validação: evidencias/oficina-validacao.md
+      - Fora do MVP:
           - Visão geral: user-stories/fora-do-mvp.md
           - "US25 — Cadastrar projetos": user-stories/us25.md
           - "US26 — Editar projetos": user-stories/us26.md
@@ -93,6 +83,34 @@ nav:
           - "US35 — Visualizar alcance das notificações": user-stories/us35.md
           - "US36 — Gerenciar notificações": user-stories/us36.md
           - "US37 — Responder à solicitação de parceria": user-stories/us37.md
+          - "US38 — Receber notificações de interesse": user-stories/us38.md
+        #- Dentro do MVP:
+          #- "US01 — Realizar triagem": user-stories/us01.md
+          #- "US02 — Visualizar catálogo de ecoturismo": user-stories/us02.md
+          #- "US03 — Visualizar detalhes de pacote de ecoturismo": user-stories/us03.md
+          #- "US04 — Cadastrar-se como cliente": user-stories/us04.md
+          #- "US05 — Visualizar e editar dados pessoais": user-stories/us05.md
+          #- "US06 — Autenticar-se como cliente": user-stories/us06.md
+          #- "US07 — Encerrar sessão de cliente": user-stories/us07.md
+          #- "US08 — Reservar pacote de ecoturismo": user-stories/us08.md
+          #- "US09 — Revisar e confirmar reserva": user-stories/us09.md
+          #- "US10 — Pagar reserva": user-stories/us10.md
+          #- "US11 — Cadastrar experiência de ecoturismo": user-stories/us11.md
+          #- "US12 — Controlar disponibilidade de pacotes": user-stories/us12.md
+          #- "US13 — Cadastrar oportunidade de voluntariado": user-stories/us13.md
+          #- "US14 — Visualizar detalhes da oportunidade": user-stories/us14.md
+          #- "US15 — Criar perfil de voluntário": user-stories/us15.md
+          #- "US16 — Candidatar-se a uma oportunidade": user-stories/us16.md
+          #- "US17 — Autenticar-se como voluntário": user-stories/us17.md
+          #- "US18 — Visualizar candidatos em funil": user-stories/us18.md
+          #- "US19 — Enviar solicitação de parceria": user-stories/us19.md
+          #- "US20 — Visualizar solicitações de parceria": user-stories/us20.md
+          #- "US21 — Consultar oportunidades abertas": user-stories/us21.md
+          #- "US22 — Encerrar sessão de voluntário": user-stories/us22.md
+          #- "US23 — Registrar consentimento de uso de dados": user-stories/us23.md
+          #- "US24 — Compartilhar experiência de ecoturismo": user-stories/us24.md
+
+    
 
   - Visão do Produto e Projeto:
       - 1 Cenário Atual do Cliente e do Negócio: documento-visao/1_cenarioAtual.md
@@ -104,12 +122,8 @@ nav:
       - 7 Interação entre Equipe e Cliente: documento-visao/7_interacao.md
       - 8 Requisitos de Software: documento-visao/8_requisitos.md
       - 9 DOR e DOD: documento-visao/9_dor_dod.md
-      - 10 Backlog do Produto: 
-        - Backlog do Produto: documento-visao/10_backlog.md
+      - 10 Backlog do Produto: documento-visao/10_backlog.md
       - 11 Lições Aprendidas: documento-visao/11_licoes.md
-
-
-
 
   - Atas de Reunião:
       - Unidade 1: 
@@ -124,31 +138,26 @@ nav:
         - Cliente (11/10/2026): atas-reuniao/unidade-2/11-10.md
       - Unidade 3: 
         - Equipe (23/10/2026): atas-reuniao/unidade-3/23-10.md
-
-      # - Unidade 3: atas-reuniao/unidade-3/ata3.md
-      # - Unidade 4: atas-reuniao/unidade-4/ata4.md
+        - Cliente (01/11/2026): atas-reuniao/unidade-3/01-11.md
+        - Cliente (08/11/2026): atas-reuniao/unidade-3/08-11.md
+        - Cliente (15/11/2026): atas-reuniao/unidade-3/15-11.md
 
   # - Especificação de Requisitos:
   #     - User Stories: especificacao/user-stories.md
   #     - Arquitetura: especificacao/arquitetura.md
-  # - Documentação:
-  - Glossário e Termos: 
-    - Glosário: documentacao/glossario.md
-    - Termos: documentacao/termos.md
 
-  - Evidências: 
+  - Documentação: 
+    - Glossário: documentacao/glossario.md
     - Classificação dos Requisitos: evidencias/classificacao-requisitos.md
-    - Análise de Domínio: evidencias/analise-dominio.md
-    - Oficinas de Validação: evidencias/oficina-validacao.md
     - Atividades:
       - Unidade 2:
         - Atividade 1: evidencias/atividade1.md
         - Atividade 2: evidencias/atividade2.md
         - Atividade 3: evidencias/atividade3.md
         - Atividade 4: evidencias/atividade4.md
-        # - Atividade 5: evidencias/atividade5.md
-
-  - Glossário: documentacao/glossario.md 
+    #- Dados Obsoletos:
+    #  - Visão Geral: documentacao/historico-obsoleto.md
+    #  - Tabelas Obsoletas: documentacao/tabelas-obsoletas.md
          
   - Entrega de vídeos: videos/entrega-videos.md
   - Referências: referencias/referencia.md

@@ -56,3 +56,26 @@ A Unidade 2 representou um momento de diálogo, evolução e compromisso, na qua
 - Causa e Consequências: Dado nosso problema com o MVP citado anteriormente, a equipe concentrou muitos esforços para solucioná-lo e acabou deixando adiando outras pendências e necessidades do projeto, fato que gerou entregas corridas no final da unidade.
 - Mudanças Adotadas: Priorização de resolução rápida de atividades e alocação de membros com melhor disponibilidade de tempo para isso. 
 - Evidência: Issues fechadas no tempo correto e atividades na unidade posterior.
+
+## 11.3 Unidade 3
+
+### Organização e Planejamento
+
+- Dificuldade encontrada: Dificuldade em organização e atualização das informações registradas. 
+- Causa e Consequências: A alteração de um dado exigia modificações em vários registros, o que dificultava tanto a manutenção do sistema quanto a clareza na exibição das informações.
+- Mudanças Adotadas: Reestruturação do Github Pages do projeto, redução de dados e tabelas com informações repetidas.
+- Evidência: A nova estrutura deste site.
+
+### Integração das funcionalidades
+
+- Dificuldade encontrada: Dificuldade de integreção de sistemas.
+- Causa e Consequências: Devido ao curto prazo de implementação, o trabalho foi distribuído entre diferentes membros da equipe para execução simultânea. Isso resultou em conflitos no momento de integrar os arquivos.
+- Mudanças Adotadas: Os conflitos necessitaram de trabalho adicionou da equipe para serem tratados.
+- Evidência: Pull request de implementação.
+
+### Validações com o Cliente
+
+- Dificuldade encontrada: Validar protótipos iniciais com o cliente.
+- Causa e Consequências: Os protótipos iniciais não representavam adequadamente o design visual do site, o que tornou o fluxo de atividades difícil de compreender e prejudicou o entendimento por parte do cliente.
+- Mudanças Adotadas: Foram realizados protótipos de média fidelidade para melhor visualização.
+- Evidência: Reuniões com o cliente da unidade 3,
