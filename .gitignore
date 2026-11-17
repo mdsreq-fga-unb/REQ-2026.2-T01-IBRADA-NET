@@ -1,8 +1,12 @@
-site/
-./site/*
-!.gitkeep
-tmp/*
-./tmp/*
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+src/generated/
+
+# Segredos locais (nunca versionar)
+.env
 node_modules/
 dist/
 .next/

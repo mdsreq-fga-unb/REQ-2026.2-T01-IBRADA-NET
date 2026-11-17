@@ -360,6 +360,7 @@ window.MAPA_DATA = {
     "O sistema deve disponibilizar uma seção de texto livre para que o usuário possa descrever o tipo de parceria que queira sugerir ou trabalhar.",
     "Deve haver um botão para enviar a proposta. O botão deve ser bloqueado caso algum campo de identificação não seja preenchido."
    ],
+   "feitos": [0, 1],
    "issue": 44,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/44",
    "adaptado": false,
@@ -401,11 +402,12 @@ window.MAPA_DATA = {
    "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
    "historia": "Como visitante, quero visualizar o catálogo de pacotes de ecoturismo, para conhecer as opções disponíveis e escolher a mais adequada ao meu interesse e planejamento.",
    "criterios": [
-    "O sistema deve exibir uma lista das experiências de ecoturismo com imagem de destaque, nome, descrição, data, vagas disponíveis e valor por pessoa.",
+    "O sistema deve exibir uma lista dos pacotes de ecoturismo com imagem de destaque, nome, descrição, data, vagas disponíveis e valor por pessoa.",
     "Experiências sem vagas ou indisponíveis devem ser sinalizadas na listagem, desabilitando o clique para compra.",
     "O catálogo deve carregar em até 3 segundos em condições normais de conexão (RNF03).",
     "O sistema deve permitir que o usuário selecione uma experiência e direcione para sua própria página de detalhes."
    ],
+   "feitos": [0, 1],
    "issue": 59,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/59",
    "adaptado": false
@@ -427,13 +429,14 @@ window.MAPA_DATA = {
     "A página de cada experiência deve conter todas as informações sobre o pacote de ecoturismo (descrição, roteiro, data, vagas disponíveis e valor).",
     "O sistema deve exibir uma opção para reservar, e bloqueá-la caso a experiência esteja indisponível ou sem vagas."
    ],
+   "feitos": [0],
    "issue": 60,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/60",
    "adaptado": false
   },
   {
    "id": "US24",
-   "nome": "Compartilhar experiência de ecoturismo",
+   "nome": "Compartilhar pacote de ecoturismo",
    "epicos": [
     "EP02"
    ],
@@ -443,7 +446,7 @@ window.MAPA_DATA = {
    "cicloUrl": "documento-visao/6_cronograma/#ic3",
    "valorNegocio": "3 / 1,61",
    "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
-   "historia": "Como visitante, quero compartilhar uma experiência de ecoturismo, para apresentá-la a outras pessoas interessadas.",
+   "historia": "Como visitante, quero compartilhar um pacote de ecoturismo, para apresentá-lo a outras pessoas interessadas.",
    "criterios": [
     "O sistema deve disponibilizar, na página de cada experiência, uma opção para compartilhar seu conteúdo.",
     "O conteúdo compartilhado deve identificar a experiência (nome e descrição resumida).",
@@ -527,7 +530,7 @@ window.MAPA_DATA = {
   },
   {
    "id": "US11",
-   "nome": "Cadastrar experiência de ecoturismo",
+   "nome": "Cadastrar pacote de ecoturismo",
    "epicos": [
     "EP05"
    ],
@@ -537,13 +540,14 @@ window.MAPA_DATA = {
    "cicloUrl": "documento-visao/6_cronograma/#ic3",
    "valorNegocio": "3 / 1,67",
    "valorNegocioUrl": "documento-visao/10_backlog/#102-priorizacao-do-backlog-e-mvp",
-   "historia": "Como gestor do IBRADA, quero cadastrar novas experiências de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-las aos clientes interessados.",
+   "historia": "Como gestor do IBRADA, quero cadastrar novos pacotes de ecoturismo, informando seus roteiros, datas, valores e disponibilidade, para oferecê-los aos clientes interessados.",
    "criterios": [
     "O sistema deve verificar o preenchimento dos campos obrigatórios da experiência (roteiro, datas, valores e disponibilidade).",
     "O cadastro de experiências deve ser permitido apenas ao gestor autenticado.",
     "O sistema deve retornar uma mensagem de erro caso o cadastro não seja concluído e uma mensagem de sucesso caso a experiência seja salva.",
     "A experiência cadastrada deve aparecer no catálogo conforme sua disponibilidade."
    ],
+   "feitos": [0, 1, 2, 3],
    "issue": 64,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/64",
    "adaptado": false
@@ -566,6 +570,7 @@ window.MAPA_DATA = {
     "Experiências indisponíveis devem ser sinalizadas no catálogo e não devem aceitar novas reservas.",
     "O sistema deve retornar uma mensagem de sucesso caso a alteração seja salva e uma mensagem de erro caso contrário."
    ],
+   "feitos": [0, 2],
    "issue": 65,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/65",
    "adaptado": false
@@ -590,6 +595,7 @@ window.MAPA_DATA = {
     "O sistema deve retornar uma mensagem de erro caso o cadastro não seja realizado com sucesso.",
     "O sistema deve direcionar o usuário para a página de login após o cadastro."
    ],
+   "feitos": [0, 1, 2, 3, 4],
    "issue": 37,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/37",
    "adaptado": false,
@@ -635,6 +641,7 @@ window.MAPA_DATA = {
     "Caso a autenticação falhe, o sistema deve bloquear o acesso e retornar uma mensagem de erro.",
     "Caso as credenciais sejam válidas, o sistema deve autenticar o usuário e direcioná-lo à página inicial."
    ],
+   "feitos": [0, 1, 2],
    "issue": 39,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/39",
    "adaptado": false,
@@ -658,6 +665,7 @@ window.MAPA_DATA = {
     "Após a confirmação, o sistema deve invalidar a sessão ativa e retornar para a página inicial ou página de login.",
     "Após o encerramento, o sistema deve impedir acesso a regiões protegidas sem uma nova autenticação."
    ],
+   "feitos": [0, 1, 2],
    "issue": 40,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/40",
    "adaptado": false,
@@ -681,6 +689,7 @@ window.MAPA_DATA = {
     "O sistema deve permitir que o usuário aceite explicitamente os termos de uso de dados pessoais durante o cadastro e registrar data, hora e versão do termo aceito, conforme RF29.",
     "O sistema deve bloquear o cadastro de uma nova conta caso os termos de uso de dados pessoais não sejam aceitos."
    ],
+   "feitos": [0, 1, 2],
    "issue": 48,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/48",
    "adaptado": true,
@@ -730,6 +739,7 @@ window.MAPA_DATA = {
     "Caso a autenticação falhe, o sistema deve bloquear o acesso e retornar uma mensagem de erro.",
     "Caso as credenciais sejam válidas, o sistema deve autenticar o usuário e direcioná-lo à página inicial."
    ],
+   "feitos": [0, 1, 2],
    "issue": 43,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/43",
    "adaptado": false,
@@ -753,6 +763,7 @@ window.MAPA_DATA = {
     "Após a confirmação, o sistema deve invalidar a sessão ativa e retornar para a página inicial ou página de login.",
     "Após o encerramento, o sistema deve impedir acesso a regiões protegidas sem uma nova autenticação."
    ],
+   "feitos": [0, 1, 2],
    "issue": 47,
    "issueUrl": "https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-IBRADA-NET/issues/47",
    "adaptado": false,

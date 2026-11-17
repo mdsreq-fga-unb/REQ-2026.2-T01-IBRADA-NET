@@ -11,6 +11,7 @@ Esta é a documentação centralizada de requisitos de software para nosso proje
 
 - [Vídeo Entrega Unidade 1](videos/entrega-videos.md)
 - [Vídeo Entrega Unidade 2](videos/entrega-videos.md)
+- [Vídeo Entrega Unidade 3](videos/entrega-videos.md)
 - [Visão do Produto e Projeto](documento-visao/1_cenarioAtual.md)
 - [Cronograma](documento-visao/6_cronograma.md)
 
@@ -76,7 +77,7 @@ Equipe responsável pelo desenvolvimento do projeto de Engenharia de Requisitos.
 
 ---
 
-**Última atualização**: 16-11-2026
+**Última atualização**: 17-11-2026
 
 !!! note "Dica"
     Use o menu de navegação acima para explorar as diferentes seções da documentação.
