@@ -150,63 +150,6 @@ const FALLBACK_IMAGEM_POR_BIOMA: Record<BiomaCategoria, string> = {
     "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80",
 };
 
-export const catalogoInicialExperiencias: ExperienciaResponseDto[] = [
-  {
-    id: "exp-cerrado-nascentes",
-    slug: "trilha-das-nascentes-do-cerrado",
-    title: "Trilha das Nascentes do Cerrado",
-    description:
-      "Caminhada guiada por veredas e nascentes recuperadas pelo próprio assentamento, com banho de cachoeira e almoço preparado pelas famílias agricultoras.",
-    itinerary:
-      "07h30 – Recepção na sede do assentamento e café da roça\n08h30 – Roda de conversa sobre a história da comunidade\n09h30 – Trilha pelas veredas e nascentes recuperadas\n12h30 – Almoço agroecológico com as famílias\n14h00 – Banho de cachoeira e retorno",
-    price: "120.00",
-    startsAt: "2026-11-14T08:00:00.000Z",
-    endsAt: "2026-11-14T16:00:00.000Z",
-    capacity: 8,
-    availableSeats: 8,
-    isAvailable: true,
-    isSoldOut: false,
-    createdAt: "2026-10-01T12:00:00.000Z",
-    updatedAt: "2026-10-01T12:00:00.000Z",
-  },
-  {
-    id: "exp-kalunga-saberes",
-    slug: "vivencia-de-saberes-quilombolas",
-    title: "Vivência de Saberes Quilombolas",
-    description:
-      "Imersão de dois dias no Território Kalunga com oficinas de artesanato em fibras, culinária tradicional, cantos de roda e pernoite em hospedagem familiar.",
-    itinerary:
-      "08h00 – Boas-vindas na Comunidade Kalunga e café de mandioca\n10h00 – Oficina de biojoias e fibras do Cerrado\n14h00 – Caminhada leve até o mirante e roda de histórias\n08h30 (Dia 2) – Roça agroecológica e culinária quilombola\n17h00 (Dia 2) – Partilha final e encerramento",
-    price: "380.00",
-    startsAt: "2026-11-21T08:00:00.000Z",
-    endsAt: "2026-11-22T17:00:00.000Z",
-    capacity: 4,
-    availableSeats: 4,
-    isAvailable: true,
-    isSoldOut: false,
-    createdAt: "2026-10-02T12:00:00.000Z",
-    updatedAt: "2026-10-02T12:00:00.000Z",
-  },
-  {
-    id: "exp-amazonia-ribeirinha",
-    slug: "rio-e-floresta-ribeirinha",
-    title: "Rio e Floresta Ribeirinha",
-    description:
-      "Expedição de quatro dias com a Comunidade Ribeirinha São Raimundo navegando em canoas tradicionais, observando fauna amazônica e vivenciando o manejo florestal comunitário.",
-    itinerary:
-      "Dia 1 – Embarque em Novo Airão/AM e chegada à comunidade São Raimundo\nDia 2 – Navegação em igarapés e trilha de manejo de castanha e açaí\nDia 3 – Observação de aves ao amanhecer e oficina de farinha artesanal\nDia 4 – Roda de partilha comunitária e retorno ao porto",
-    price: "1650.00",
-    startsAt: "2027-01-15T08:00:00.000Z",
-    endsAt: "2027-01-18T17:00:00.000Z",
-    capacity: 10,
-    availableSeats: 10,
-    isAvailable: true,
-    isSoldOut: false,
-    createdAt: "2026-10-03T12:00:00.000Z",
-    updatedAt: "2026-10-03T12:00:00.000Z",
-  },
-];
-
 export async function listarExperiencias(): Promise<ExperienciaResponseDto[]> {
   return api<ExperienciaResponseDto[]>("/experiencias");
 }
@@ -405,6 +348,20 @@ export function calcularDuracaoTexto(
 export function resolverMetaVisual(
   experiencia: ExperienciaDto | ExperienciaResponseDto,
 ): ExperienciaVisualMeta {
+  const meta = resolverMetaBase(experiencia);
+  const capa =
+    "photos" in experiencia && experiencia.photos && experiencia.photos.length > 0
+      ? experiencia.photos[0]
+      : null;
+
+  return capa
+    ? { ...meta, imagemUrl: capa, imagemAlt: experiencia.title }
+    : meta;
+}
+
+function resolverMetaBase(
+  experiencia: ExperienciaDto | ExperienciaResponseDto,
+): ExperienciaVisualMeta {
   const preset = META_VISUAL_POR_SLUG[experiencia.slug];
   if (preset) return preset;
 
@@ -452,7 +409,7 @@ export function resolverMetaVisual(
     capacidadeTotalReferencia: Math.max(1, experiencia.capacity),
     maxPorReserva: 6,
     impactoComunidade:
-      "70% do valor fica com as famílias da comunidade anfitriã: guia, alimentação e manutenção das trilhas. O restante apoia a recuperação ambiental.",
+      "Parte do valor fica com as famílias da comunidade anfitriã (guia, alimentação e manutenção das trilhas) e parte apoia a conservação do território.",
     itensInclusos: ITENS_INCLUSOS_PADRAO,
     regrasConservacao: REGRAS_CONSERVACAO_PADRAO,
     guiaNome: "Guia Comunitário IBRADA",

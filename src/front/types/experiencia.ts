@@ -17,7 +17,10 @@ export interface ExperienciaDto {
 export type CreateExperienciaPayload = Omit<
   ExperienciaDto,
   "id" | "slug" | "createdAt" | "updatedAt"
->;
+> & {
+  photos: string[]; // ao menos uma foto de divulgação (a primeira é a capa)
+  videos?: string[];
+};
 
 // Payload para atualização de disponibilidade (UpdateDisponibilidadeDto)
 export interface UpdateDisponibilidadePayload {
@@ -26,6 +29,8 @@ export interface UpdateDisponibilidadePayload {
 
 // Resposta enriquecida opcional retornada pelo ExperienciasService do NestJS
 export interface ExperienciaResponseDto extends ExperienciaDto {
+  photos?: string[];
+  videos?: string[];
   availableSeats?: number;
   isSoldOut?: boolean;
   priceDecimal?: string;

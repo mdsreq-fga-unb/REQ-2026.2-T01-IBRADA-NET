@@ -15,6 +15,7 @@ const validBody = {
   endsAt: '2026-12-01T18:00:00.000Z',
   capacity: 10,
   isAvailable: true,
+  photos: ['https://exemplo.com/capa.jpg'],
 };
 
 const validate = (body: unknown, metatype: new () => object = CreateExperienciaDto) =>
@@ -55,7 +56,7 @@ describe('CreateExperienciaDto (US11 - campos obrigatórios)', () => {
 
   it('rejeita roteiro vazio', async () => {
     expect(await mensagens({ ...validBody, itinerary: '' })).toContain(
-      'O roteiro da experiência é obrigatório.',
+      'O roteiro do pacote é obrigatório.',
     );
   });
 

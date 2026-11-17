@@ -35,12 +35,12 @@ export class ExperienciasController {
 
   /**
    * US03: Visualizar detalhes de pacote de ecoturismo (RF07).
-   * Rota pública: acessível por qualquer visitante através do slug da experiência.
+   * Rota pública: acessível por qualquer visitante através do slug do pacote.
    */
   @Public()
   @Get(':slug')
   async findBySlug(@Param('slug') slug: string) {
-    this.logger.log(`Consulta pública aos detalhes da experiência pelo slug: ${slug} (US03)`);
+    this.logger.log(`Consulta pública aos detalhes do pacote pelo slug: ${slug} (US03)`);
     return this.experienciasService.findBySlug(slug);
   }
 
@@ -52,7 +52,7 @@ export class ExperienciasController {
   @Post()
   @HttpCode(HttpStatus.CREATED)
   async create(@Body() dto: CreateExperienciaDto) {
-    this.logger.log(`Gestor solicitou cadastro de nova experiência: "${dto.title}" (US11)`);
+    this.logger.log(`Gestor solicitou cadastro de novo pacote: "${dto.title}" (US11)`);
     return this.experienciasService.create(dto);
   }
 
@@ -66,7 +66,7 @@ export class ExperienciasController {
     @Param('id') id: string,
     @Body() dto: UpdateDisponibilidadeDto,
   ) {
-    this.logger.log(`Gestor alterou disponibilidade da experiência ID: ${id} para ${dto.isAvailable} (US12)`);
+    this.logger.log(`Gestor alterou disponibilidade do pacote ID: ${id} para ${dto.isAvailable} (US12)`);
     return this.experienciasService.updateDisponibilidade(id, dto);
   }
 }

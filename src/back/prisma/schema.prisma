@@ -22,6 +22,11 @@ enum BookingStatus {
   CANCELED
 }
 
+enum TipoMidia {
+  FOTO // foto de divulgação do pacote (US11)
+  VIDEO // vídeo de divulgação do pacote (US11)
+}
+
 enum PaymentStatus {
   PENDING
   PAID
@@ -107,7 +112,22 @@ model Experiencia {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
+  midias   MidiaExperiencia[]
   bookings Booking[]
+}
+
+// Fotos e vídeos de divulgação do pacote (US11). Guarda só a URL; o arquivo fica em hospedagem externa.
+model MidiaExperiencia {
+  id            String      @id @default(cuid())
+  experienciaId String
+  tipo          TipoMidia
+  url           String      @db.VarChar(2048)
+  ordem         Int         @default(0) // posição na galeria (0 = capa)
+  createdAt     DateTime    @default(now())
+
+  experiencia Experiencia @relation(fields: [experienciaId], references: [id], onDelete: Cascade)
+
+  @@index([experienciaId])
 }
 
 model Booking {

@@ -49,6 +49,7 @@ describe('ExperienciasController', () => {
       endsAt: '2026-12-01T12:00:00Z',
       capacity: 5,
       isAvailable: true,
+      photos: ['https://exemplo.com/capa.jpg'],
     };
     mockService.create.mockResolvedValue({ message: 'Criado', data: dto });
 

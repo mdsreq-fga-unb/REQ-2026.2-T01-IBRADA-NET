@@ -1,10 +1,15 @@
 import {
+  ArrayMaxSize,
+  ArrayMinSize,
+  IsArray,
   IsBoolean,
   IsDateString,
   IsDefined,
   IsInt,
   IsNotEmpty,
+  IsOptional,
   IsString,
+  IsUrl,
   Min,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -12,15 +17,15 @@ import { ToCurrency } from '../decorators/to-currency.decorator.js';
 
 export class CreateExperienciaDto {
   @IsString({ message: 'O título deve ser um texto válido.' })
-  @IsNotEmpty({ message: 'O título da experiência é obrigatório.' })
+  @IsNotEmpty({ message: 'O título do pacote é obrigatório.' })
   title: string;
 
   @IsString({ message: 'A descrição deve ser um texto válido.' })
-  @IsNotEmpty({ message: 'A descrição da experiência é obrigatória.' })
+  @IsNotEmpty({ message: 'A descrição do pacote é obrigatória.' })
   description: string;
 
   @IsString({ message: 'O roteiro deve ser um texto válido.' })
-  @IsNotEmpty({ message: 'O roteiro da experiência é obrigatório.' })
+  @IsNotEmpty({ message: 'O roteiro do pacote é obrigatório.' })
   itinerary: string;
 
   /**
@@ -46,6 +51,23 @@ export class CreateExperienciaDto {
   capacity: number;
 
   @IsBoolean({ message: 'A disponibilidade deve ser um valor booleano (true ou false).' })
-  @IsDefined({ message: 'A disponibilidade da experiência é obrigatória.' })
+  @IsDefined({ message: 'A disponibilidade do pacote é obrigatória.' })
   isAvailable: boolean;
+
+  /**
+   * Fotos de divulgação (URLs). Todo pacote publicado tem fotos (US11, validado com o cliente);
+   * a primeira é a capa.
+   */
+  @IsArray({ message: 'As fotos devem ser enviadas como uma lista de links.' })
+  @ArrayMinSize(1, { message: 'Informe ao menos uma foto de divulgação do pacote.' })
+  @ArrayMaxSize(20, { message: 'Envie no máximo 20 fotos por pacote.' })
+  @IsUrl({ require_protocol: true, protocols: ['http', 'https'] }, { each: true, message: 'Cada foto deve ser um link válido (http ou https).' })
+  photos: string[];
+
+  /** Vídeos de divulgação (URLs), opcionais. */
+  @IsOptional()
+  @IsArray({ message: 'Os vídeos devem ser enviados como uma lista de links.' })
+  @ArrayMaxSize(5, { message: 'Envie no máximo 5 vídeos por pacote.' })
+  @IsUrl({ require_protocol: true, protocols: ['http', 'https'] }, { each: true, message: 'Cada vídeo deve ser um link válido (http ou https).' })
+  videos?: string[];
 }

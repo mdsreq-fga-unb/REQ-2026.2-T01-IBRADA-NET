@@ -16,10 +16,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/brand-icons";
-import { ApiError } from "@/lib/api";
 import {
   calcularDuracaoTexto,
-  catalogoInicialExperiencias,
   formatarDataCurta,
   formatarPrecoExperiencia,
   listarExperiencias,
@@ -211,7 +209,7 @@ function ExperienciaCard({
         >
           {indisponivel
             ? "Ver Detalhes (Indisponível)"
-            : "Ver Experiência & Reservar"}
+            : "Ver pacote e reservar"}
         </Link>
       </div>
     </article>
@@ -228,16 +226,12 @@ async function fetchCatalogoExperiencias(): Promise<ResultadoCatalogo> {
     const dados = await listarExperiencias();
     return { experiencias: dados, error: null };
   } catch (err: unknown) {
-    if (err instanceof ApiError && err.status === 0) {
-      // Fallback para catálogo padrão quando a API NestJS estiver offline localmente
-      return { experiencias: catalogoInicialExperiencias, error: null };
-    }
     return {
       experiencias: [],
       error:
         err instanceof Error
           ? err.message
-          : "Não foi possível carregar as vivências de ecoturismo.",
+          : "Não foi possível carregar os pacotes de ecoturismo.",
     };
   }
 }
@@ -273,11 +267,6 @@ export default function EcoturismoPage(): React.JSX.Element {
     aplicarResultado(resultado);
   };
 
-  const usarCatalogoDemonstrativo = (): void => {
-    setError(null);
-    setExperiencias(catalogoInicialExperiencias);
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Cabeçalho / Hero Mobile-First */}
@@ -288,12 +277,12 @@ export default function EcoturismoPage(): React.JSX.Element {
           </p>
 
           <h1 className="mt-3 max-w-md font-serif text-[2rem] leading-[1.12] font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
-            Vivências no Cerrado e na Amazônia
+            Pacotes no Cerrado e na Amazônia
           </h1>
 
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             Trilhas, saberes e sabores guiados por quem vive no território.
-            Escolha sua vivência, veja o roteiro completo e reserve em poucos
+            Escolha seu pacote, veja o roteiro completo e reserve em poucos
             passos.
           </p>
 
@@ -320,9 +309,9 @@ export default function EcoturismoPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* Catálogo de Experiências */}
+      {/* Catálogo de pacotes */}
       <section
-        aria-label="Catálogo de vivências"
+        aria-label="Catálogo de pacotes"
         className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
       >
         {loading && (
@@ -332,7 +321,7 @@ export default function EcoturismoPage(): React.JSX.Element {
             className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
             <span className="sr-only">
-              Carregando vivências de ecoturismo...
+              Carregando pacotes de ecoturismo...
             </span>
             <CardSkeleton />
             <CardSkeleton />
@@ -350,7 +339,7 @@ export default function EcoturismoPage(): React.JSX.Element {
               className="mx-auto size-10 text-destructive"
             />
             <h2 className="mt-3 font-serif text-xl font-semibold text-foreground">
-              Erro ao carregar vivências
+              Erro ao carregar pacotes
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">{error}</p>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
@@ -364,13 +353,6 @@ export default function EcoturismoPage(): React.JSX.Element {
                 <RefreshCw aria-hidden="true" className="size-4" />
                 Tentar novamente
               </button>
-              <button
-                type="button"
-                onClick={usarCatalogoDemonstrativo}
-                className="inline-flex min-h-10 items-center justify-center rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-              >
-                Visualizar catálogo padrão
-              </button>
             </div>
           </div>
         )}
@@ -382,7 +364,7 @@ export default function EcoturismoPage(): React.JSX.Element {
               className="mx-auto size-10 text-primary"
             />
             <h2 className="mt-3 font-serif text-xl font-semibold text-foreground">
-              Nenhuma vivência disponível no momento
+              Nenhum pacote disponível no momento
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Novas expedições comunitárias no Cerrado e na Amazônia serão
@@ -419,7 +401,7 @@ export default function EcoturismoPage(): React.JSX.Element {
       <div className="fixed right-4 bottom-4 z-40 sm:right-6 sm:bottom-6">
         <a
           href={buildWhatsAppLink(
-            "Olá! Gostaria de saber mais sobre as vivências de ecoturismo comunitário do IBRADA.",
+            "Olá! Gostaria de saber mais sobre os pacotes de ecoturismo comunitário do IBRADA.",
           )}
           target="_blank"
           rel="noopener noreferrer"

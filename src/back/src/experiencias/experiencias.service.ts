@@ -17,6 +17,20 @@ import {
 
 const MAX_SLUG_ATTEMPTS = 5;
 
+// Fotos e vídeos vêm junto do pacote, na ordem da galeria (a primeira foto é a capa).
+const INCLUDE_MIDIAS = { midias: { orderBy: { ordem: 'asc' as const } } };
+
+type MidiaRow = { tipo: string; url: string };
+
+// Separa as mídias do banco em listas de URLs de fotos e de vídeos.
+function separarMidias(midias?: MidiaRow[] | null) {
+  const lista = midias ?? [];
+  return {
+    photos: lista.filter((m) => m.tipo === 'FOTO').map((m) => m.url),
+    videos: lista.filter((m) => m.tipo === 'VIDEO').map((m) => m.url),
+  };
+}
+
 // P2002 = violação de restrição única no Prisma.
 function isUniqueViolation(error: unknown): boolean {
   return typeof error === 'object' && error !== null && (error as { code?: string }).code === 'P2002';
@@ -36,6 +50,7 @@ export class ExperienciasService {
   async findAllPublic() {
     const experiencias = await this.prisma.experiencia.findMany({
       orderBy: { startsAt: 'asc' },
+      include: INCLUDE_MIDIAS,
     });
 
     return experiencias.map((exp) => {
@@ -61,6 +76,7 @@ export class ExperienciasService {
         availableSeats,
         isAvailable: exp.isAvailable,
         isSoldOut,
+        ...separarMidias(exp.midias),
         createdAt: exp.createdAt,
         updatedAt: exp.updatedAt,
       };
@@ -74,10 +90,11 @@ export class ExperienciasService {
   async findBySlug(slug: string) {
     const exp = await this.prisma.experiencia.findUnique({
       where: { slug },
+      include: INCLUDE_MIDIAS,
     });
 
     if (!exp) {
-      throw new NotFoundException(`Experiência com o slug '${slug}' não encontrada.`);
+      throw new NotFoundException(`Pacote com o slug '${slug}' não encontrado.`);
     }
 
     const availableSeats = exp.capacity;
@@ -102,6 +119,7 @@ export class ExperienciasService {
       availableSeats,
       isAvailable: exp.isAvailable,
       isSoldOut,
+      ...separarMidias(exp.midias),
       createdAt: exp.createdAt,
       updatedAt: exp.updatedAt,
     };
@@ -150,7 +168,14 @@ export class ExperienciasService {
             endsAt,
             capacity: dto.capacity,
             isAvailable: dto.isAvailable,
+            midias: {
+              create: [
+                ...dto.photos.map((url, i) => ({ tipo: 'FOTO' as const, url, ordem: i })),
+                ...(dto.videos ?? []).map((url, i) => ({ tipo: 'VIDEO' as const, url, ordem: i })),
+              ],
+            },
           },
+          include: INCLUDE_MIDIAS,
         });
         break;
       } catch (error) {
@@ -163,19 +188,22 @@ export class ExperienciasService {
     }
 
     if (!created) {
-      throw new ConflictException('Não foi possível gerar um slug único para a experiência.');
+      throw new ConflictException('Não foi possível gerar um slug único para o pacote.');
     }
 
     const priceDecimal = created.price.toString();
     const priceCents = decimalStringToCents(priceDecimal);
     const priceFormatted = centsToFormattedBrl(priceCents);
 
-    this.logger.log(`Nova experiência criada com sucesso: ${created.title} (slug: ${created.slug})`);
+    this.logger.log(`Novo pacote criado com sucesso: ${created.title} (slug: ${created.slug})`);
+
+    const { midias, ...createdSemMidias } = created;
 
     return {
-      message: 'Experiência cadastrada com sucesso!',
+      message: 'Pacote cadastrado com sucesso!',
       data: {
-        ...created,
+        ...createdSemMidias,
+        ...separarMidias(midias),
         price: Number(created.price),
         priceDecimal,
         priceCents,
@@ -196,26 +224,30 @@ export class ExperienciasService {
     });
 
     if (!exists) {
-      throw new NotFoundException(`Experiência com ID '${id}' não encontrada.`);
+      throw new NotFoundException(`Pacote com ID '${id}' não encontrado.`);
     }
 
     const updated = await this.prisma.experiencia.update({
       where: { id },
       data: { isAvailable: dto.isAvailable },
+      include: INCLUDE_MIDIAS,
     });
+
+    const { midias, ...updatedSemMidias } = updated;
 
     const priceDecimal = updated.price.toString();
     const priceCents = decimalStringToCents(priceDecimal);
     const priceFormatted = centsToFormattedBrl(priceCents);
 
     this.logger.log(
-      `Disponibilidade da experiência '${updated.title}' alterada para: ${updated.isAvailable}`,
+      `Disponibilidade do pacote '${updated.title}' alterada para: ${updated.isAvailable}`,
     );
 
     return {
       message: `Disponibilidade atualizada para ${updated.isAvailable ? 'disponível' : 'indisponível'} com sucesso!`,
       data: {
-        ...updated,
+        ...updatedSemMidias,
+        ...separarMidias(midias),
         price: Number(updated.price),
         priceDecimal,
         priceCents,
@@ -232,7 +264,7 @@ export class ExperienciasService {
     title: string,
     startFrom = 1,
   ): Promise<{ slug: string; suffix: number }> {
-    const baseSlug = slugify(title) || 'experiencia';
+    const baseSlug = slugify(title) || 'pacote';
     let suffix = startFrom;
     let slug = suffix === 1 ? baseSlug : `${baseSlug}-${suffix}`;
 
