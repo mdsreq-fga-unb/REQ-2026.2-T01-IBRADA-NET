@@ -78,3 +78,37 @@ export async function buscarOportunidade(id: string): Promise<Oportunidade | nul
     throw erro;
   }
 }
+
+// US16: candidatura do voluntário autenticado.
+export type StatusCandidatura = { candidatado: boolean; temPerfil: boolean };
+
+export async function statusCandidatura(id: string): Promise<StatusCandidatura> {
+  return api<StatusCandidatura>(`/oportunidades/${encodeURIComponent(id)}/candidatura`);
+}
+
+export async function candidatar(id: string): Promise<void> {
+  await api(`/oportunidades/${encodeURIComponent(id)}/candidaturas`, { method: "POST" });
+}
+
+// Quem ainda não tem perfil de voluntário é levado a Minha Conta; guardamos a vaga
+// para voltar a ela depois de criar o perfil.
+const RETORNO_KEY = "ibrada:retorno_candidatura";
+
+export function guardarRetornoCandidatura(path: string) {
+  try {
+    sessionStorage.setItem(RETORNO_KEY, path);
+  } catch {
+    /* storage indisponível: o usuário volta pela home */
+  }
+}
+
+export function consumirRetornoCandidatura(): string | null {
+  try {
+    const path = sessionStorage.getItem(RETORNO_KEY);
+    sessionStorage.removeItem(RETORNO_KEY);
+    return path && path.startsWith("/") ? path : null;
+  } catch {
+    return null;
+  }
+}
+

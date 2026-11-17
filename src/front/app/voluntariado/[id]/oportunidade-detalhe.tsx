@@ -2,9 +2,18 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Check, Clock3, FolderOpen } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowLeft, CalendarDays, Check, Clock3, FolderOpen, Loader2 } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
-import { buscarOportunidade, type Oportunidade } from "@/lib/oportunidades";
+import { ApiError } from "@/lib/api";
+import {
+  buscarOportunidade,
+  candidatar,
+  guardarRetornoCandidatura,
+  statusCandidatura,
+  type Oportunidade,
+  type StatusCandidatura,
+} from "@/lib/oportunidades";
 
 type Estado =
   | { tipo: "carregando" }
@@ -25,7 +34,10 @@ const voltar = (
 export function OportunidadeDetalhe({ id }: { id: string }) {
   const [estado, setEstado] = useState<Estado>({ tipo: "carregando" });
   const { user } = useAuth();
-  const [aviso, setAviso] = useState(false);
+  const router = useRouter();
+  const [status, setStatus] = useState<StatusCandidatura | null>(null);
+  const [enviando, setEnviando] = useState(false);
+  const [feedback, setFeedback] = useState<{ tipo: "sucesso" | "erro"; texto: string } | null>(null);
 
   useEffect(() => {
     let ativo = true;
@@ -39,6 +51,56 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
       ativo = false;
     };
   }, [id]);
+
+  // US16: descobre se o usuário logado já se candidatou / tem perfil de voluntário.
+  useEffect(() => {
+    if (!user) {
+      setStatus(null);
+      return;
+    }
+    let ativo = true;
+    statusCandidatura(id)
+      .then((resultado) => ativo && setStatus(resultado))
+      .catch(() => ativo && setStatus(null));
+    return () => {
+      ativo = false;
+    };
+  }, [id, user]);
+
+  function irParaPerfil() {
+    guardarRetornoCandidatura(`/voluntariado/${id}`);
+    router.push("/minha-conta#perfil-voluntario");
+  }
+
+  async function handleCandidatar() {
+    setFeedback(null);
+    // Sem perfil de voluntário (cliente): completa o perfil e volta para esta vaga.
+    if (status ? !status.temPerfil : user?.role === "CLIENTE") {
+      irParaPerfil();
+      return;
+    }
+
+    setEnviando(true);
+    try {
+      await candidatar(id);
+      setStatus({ candidatado: true, temPerfil: true });
+      setFeedback({ tipo: "sucesso", texto: "Candidatura enviada com sucesso! O gestor poderá acompanhá-la." });
+    } catch (erro) {
+      if (erro instanceof ApiError && erro.status === 403) {
+        irParaPerfil();
+        return;
+      }
+      if (erro instanceof ApiError && erro.status === 409) {
+        setStatus({ candidatado: true, temPerfil: true });
+      }
+      setFeedback({
+        tipo: "erro",
+        texto: erro instanceof Error ? erro.message : "Não foi possível enviar a candidatura.",
+      });
+    } finally {
+      setEnviando(false);
+    }
+  }
 
   if (estado.tipo !== "ok") {
     return (
@@ -158,18 +220,28 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
               Candidatar-se
             </Link>
           ) : oportunidade.aberta ? (
-            // TODO (US16, ciclo 8): enviar a candidatura. Por enquanto só avisa.
+            // US16: envia a candidatura (status inicial INSCRITO).
             <>
               <button
                 type="button"
-                onClick={() => setAviso(true)}
-                className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                onClick={handleCandidatar}
+                disabled={enviando || status?.candidatado}
+                className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Candidatar-se
+                {enviando && <Loader2 aria-hidden="true" className="size-4 animate-spin" />}
+                {status?.candidatado ? "Candidatura enviada" : "Candidatar-se"}
               </button>
-              {aviso && (
+              {feedback && (
+                <p
+                  role={feedback.tipo === "erro" ? "alert" : "status"}
+                  className={`mt-3 text-sm ${feedback.tipo === "erro" ? "text-destructive" : "text-primary"}`}
+                >
+                  {feedback.texto}
+                </p>
+              )}
+              {!feedback && status?.candidatado && (
                 <p role="status" className="mt-3 text-sm text-muted-foreground">
-                  O envio de candidaturas ainda não está disponível.
+                  Você já se candidatou a esta oportunidade.
                 </p>
               )}
             </>

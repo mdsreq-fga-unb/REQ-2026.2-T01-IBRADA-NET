@@ -9,6 +9,7 @@ import {
   Patch,
   Post,
   Query,
+  Request,
 } from '@nestjs/common';
 import { OportunidadesService } from './oportunidades.service.js';
 import { CreateOportunidadeDto } from './dto/create-oportunidade.dto.js';
@@ -16,6 +17,7 @@ import { UpdateOportunidadeDto } from './dto/update-oportunidade.dto.js';
 import { Public } from '../auth/public.decorator.js';
 import { Roles } from '../auth/roles.decorator.js';
 import { UserRole } from '../user/dto/create-user.dto.js';
+import type { AuthenticatedRequest } from '../auth/auth.types.js';
 
 @Controller('oportunidades')
 export class OportunidadesController {
@@ -65,6 +67,24 @@ export class OportunidadesController {
   // ===========================================================================
   // US14 — Visualizar detalhes da oportunidade (rota pública)
   // ===========================================================================
+
+  // ===========================================================================
+  // US16 — Candidatar-se (usuário autenticado)
+  // ===========================================================================
+
+  /** GET /oportunidades/:id/candidatura — o usuário logado já se candidatou? */
+  @Get(':id/candidatura')
+  async minhaCandidatura(@Param('id') id: string, @Request() req: AuthenticatedRequest) {
+    return this.oportunidadesService.jaCandidatou(req.user.sub, id);
+  }
+
+  /** POST /oportunidades/:id/candidaturas — registra a candidatura (status INSCRITO). */
+  @Post(':id/candidaturas')
+  @HttpCode(HttpStatus.CREATED)
+  async candidatar(@Param('id') id: string, @Request() req: AuthenticatedRequest) {
+    this.logger.log(`Usuário ${req.user.email} solicitou candidatura na oportunidade ${id} (US16)`);
+    return this.oportunidadesService.candidatar(req.user.sub, id);
+  }
 
   /**
    * GET /oportunidades/:id

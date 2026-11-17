@@ -20,7 +20,8 @@ import {
 } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
 import { UFS, type NivelEducacao, type StatusEducacao } from "@/lib/brasil";
-import { VoluntarioFields, type VoluntarioFormValues } from "@/components/voluntario-fields";
+import { consumirRetornoCandidatura } from "@/lib/oportunidades";
+import { VoluntarioFields, validarVoluntario, type VoluntarioFormValues } from "@/components/voluntario-fields";
 
 const ROLE_LABELS: Record<Role, string> = {
   CLIENTE: "Cliente IBRADA",
@@ -209,6 +210,12 @@ export default function MinhaConta() {
 
     setVoluntarioError("");
     setVoluntarioSuccess("");
+
+    const erroVoluntario = validarVoluntario(voluntarioForm);
+    if (erroVoluntario) {
+      setVoluntarioError(erroVoluntario);
+      return;
+    }
     setSavingVoluntario(true);
 
     const payload = {
@@ -229,7 +236,7 @@ export default function MinhaConta() {
         setFlashMessage(
           "Perfil de voluntário criado com sucesso! Agora você já faz parte da rede de voluntários do IBRADA.",
         );
-        router.push("/");
+        router.push(consumirRetornoCandidatura() ?? "/");
         return;
       }
 

@@ -12,7 +12,7 @@ import {
 import { useAuth } from "@/lib/auth-context";
 import { UFS, type NivelEducacao, type StatusEducacao } from "@/lib/brasil";
 import { terms } from "@/lib/site";
-import { VoluntarioFields, type VoluntarioFormValues } from "@/components/voluntario-fields";
+import { VoluntarioFields, validarVoluntario, type VoluntarioFormValues } from "@/components/voluntario-fields";
 
 // Mesma regra do back (CreateUserDto): 8+ caracteres, 1 maiúscula, 1 número, 1 especial.
 const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
@@ -44,6 +44,14 @@ export default function Cadastro() {
     setError("");
 
     // Se o usuário já possui sessão ativa e está completando o perfil de voluntário:
+    if (wantVolunteer) {
+      const erroVoluntario = validarVoluntario(voluntarioValues);
+      if (erroVoluntario) {
+        setError(erroVoluntario);
+        return;
+      }
+    }
+
     if (user && wantVolunteer) {
       setLoading(true);
       try {
