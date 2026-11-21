@@ -92,4 +92,22 @@ export async function criarOportunidade(dados: NovaOportunidade) {
       }),
     },
   });
+
+export type EditarOportunidadePayload = {
+  title?: string;
+  description?: string;
+  duracao?: string;
+  disponibilidade?: string;
+  atividades?: string;
+  localAtuacao?: string;
+  habilidades?: string[];
+  isOpen?: boolean;
+};
+
+export async function atualizarOportunidade(id: string, dados: EditarOportunidadePayload) {
+  return api(`/oportunidades/${encodeURIComponent(id)}`, {
+    method: "PATCH",
+    body: dados,
+  });
+}
 }

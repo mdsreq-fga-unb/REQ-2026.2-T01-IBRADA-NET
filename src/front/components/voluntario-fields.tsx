@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AlertCircle, Check, Loader2 } from "lucide-react";
 import { getCategorias, type Categoria } from "@/lib/api";
+import { agruparCategorias } from "@/lib/categorias-keywords";
 import {
   NIVEL_EDUCACAO_OPTIONS,
   STATUS_EDUCACAO_OPTIONS,
@@ -65,6 +66,8 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
     };
   }, []);
 
+  const grupos = useMemo(() => agruparCategorias(categorias), [categorias]);
+
   function toggleCategoria(id: string) {
     if (disabled) return;
     const exists = values.categoriaIds.includes(id);
@@ -75,20 +78,20 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
   }
 
   return (
-    <div className="space-y-5">
-      {/* Áreas de interesse / Habilidades (Categoria) */}
+    <div className="space-y-6">
+      {/* Áreas de interesse / Palavras-chave agrupadas (Documento 15/11) */}
       <div>
         <span className="block text-sm font-medium text-foreground">
-          Áreas de interesse e atuação
+          Perfil, áreas de interesse e habilidades práticas
         </span>
         <p className="mt-0.5 text-xs text-muted-foreground">
-          Selecione uma ou mais frentes em que você gostaria de contribuir com o IBRADA.
+          Selecione todas as opções que representam sua vivência, formação ou interesse em contribuir com o IBRADA.
         </p>
 
         {loadingCategorias && (
           <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
             <Loader2 className="size-4 animate-spin" />
-            <span>Carregando áreas disponíveis...</span>
+            <span>Carregando categorias disponíveis...</span>
           </div>
         )}
 
@@ -108,29 +111,42 @@ export function VoluntarioFields({ values, onChange, disabled = false }: Volunta
           </p>
         )}
 
-        {!loadingCategorias && !erroCategorias && categorias.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Áreas de interesse">
-            {categorias.map((cat) => {
-              const selected = values.categoriaIds.includes(cat.id);
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  disabled={disabled}
-                  aria-pressed={selected}
-                  onClick={() => toggleCategoria(cat.id)}
-                  className={cn(
-                    "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors cursor-pointer disabled:cursor-not-allowed disabled:opacity-60",
-                    selected
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-input bg-card text-foreground hover:bg-secondary/70",
-                  )}
-                >
-                  {selected && <Check className="size-3.5" aria-hidden="true" />}
-                  <span>{cat.nome}</span>
-                </button>
-              );
-            })}
+        {!loadingCategorias && !erroCategorias && grupos.length > 0 && (
+          <div className="mt-4 space-y-4">
+            {grupos.map((grupo) => (
+              <fieldset
+                key={grupo.titulo}
+                className="rounded-xl border border-border/80 bg-background/60 p-4"
+              >
+                <legend className="px-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+                  {grupo.titulo}
+                </legend>
+                <p className="mb-3 text-xs text-muted-foreground">{grupo.descricao}</p>
+                <div className="flex flex-wrap gap-2" role="group" aria-label={grupo.titulo}>
+                  {grupo.categorias.map((cat) => {
+                    const selected = values.categoriaIds.includes(cat.id);
+                    return (
+                      <button
+                        key={cat.id}
+                        type="button"
+                        disabled={disabled}
+                        aria-pressed={selected}
+                        onClick={() => toggleCategoria(cat.id)}
+                        className={cn(
+                          "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors cursor-pointer disabled:cursor-not-allowed disabled:opacity-60",
+                          selected
+                            ? "border-primary bg-primary text-primary-foreground"
+                            : "border-input bg-card text-foreground hover:bg-secondary/70",
+                        )}
+                      >
+                        {selected && <Check className="size-3.5" aria-hidden="true" />}
+                        <span>{cat.nome}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+            ))}
           </div>
         )}
       </div>

@@ -144,7 +144,7 @@ export function OpportunityList() {
                   </div>
                 )}
                 <h3 className="text-xl leading-snug font-semibold">
-                  <Link href={`/voluntariado/${o.id}`} className="after:absolute after:inset-0 focus-visible:outline-none">
+                  <Link href={`/voluntariado/${o.id}`} className="hover:text-primary focus-visible:outline-none">
                     {o.titulo}
                   </Link>
                 </h3>
@@ -181,9 +181,14 @@ export function OpportunityList() {
                     </ul>
                   </div>
                 )}
-                <span className="mt-auto text-sm font-semibold text-primary group-hover:underline">
-                  Ver detalhes e candidatar-se →
-                </span>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href={`/voluntariado/${o.id}`}
+                    className="inline-flex min-h-10 items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  >
+                    Ver detalhes →
+                  </Link>
+                </div>
               </article>
             </li>
           ))}

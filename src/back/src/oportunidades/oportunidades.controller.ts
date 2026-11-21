@@ -18,6 +18,7 @@ import { Public } from '../auth/public.decorator.js';
 import { Roles } from '../auth/roles.decorator.js';
 import { UserRole } from '../user/dto/create-user.dto.js';
 import type { AuthenticatedRequest } from '../auth/auth.types.js';
+import { CreateCandidaturaDto } from './dto/create-candidatura.dto.js';
 
 @Controller('oportunidades')
 export class OportunidadesController {
@@ -81,9 +82,13 @@ export class OportunidadesController {
   /** POST /oportunidades/:id/candidaturas — registra a candidatura (status INSCRITO). */
   @Post(':id/candidaturas')
   @HttpCode(HttpStatus.CREATED)
-  async candidatar(@Param('id') id: string, @Request() req: AuthenticatedRequest) {
+  async candidatar(
+    @Param('id') id: string,
+    @Request() req: AuthenticatedRequest,
+    @Body() dto?: CreateCandidaturaDto,
+  ) {
     this.logger.log(`Usuário ${req.user.email} solicitou candidatura na oportunidade ${id} (US16)`);
-    return this.oportunidadesService.candidatar(req.user.sub, id);
+    return this.oportunidadesService.candidatar(req.user.sub, id, dto);
   }
 
   /**

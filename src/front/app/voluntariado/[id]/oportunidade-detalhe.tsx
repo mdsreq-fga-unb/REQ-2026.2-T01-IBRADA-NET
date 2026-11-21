@@ -3,9 +3,18 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, CalendarDays, Check, Clock3, FolderOpen, Loader2 } from "lucide-react";
+import {
+  AlertCircle,
+  ArrowLeft,
+  CalendarDays,
+  Check,
+  Clock3,
+  FolderOpen,
+  Loader2,
+  MapPin,
+} from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
-import { ApiError } from "@/lib/api";
+import { ApiError, setFlashMessage } from "@/lib/api";
 import {
   buscarOportunidade,
   candidatar,
@@ -36,6 +45,8 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
   const { user } = useAuth();
   const router = useRouter();
   const [status, setStatus] = useState<StatusCandidatura | null>(null);
+  const [experienciaNaArea, setExperienciaNaArea] = useState(false);
+  const [mensagem, setMensagem] = useState("");
   const [enviando, setEnviando] = useState(false);
   const [feedback, setFeedback] = useState<{ tipo: "sucesso" | "erro"; texto: string } | null>(null);
 
@@ -52,7 +63,7 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
     };
   }, [id]);
 
-  // US16: descobre se o usuário logado já se candidatou / tem perfil de voluntário.
+  // US16: verifica se o usuário logado já possui perfil de voluntário e se já se candidatou.
   useEffect(() => {
     if (!user) {
       setStatus(null);
@@ -69,12 +80,12 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
 
   function irParaPerfil() {
     guardarRetornoCandidatura(`/voluntariado/${id}`);
+    setFlashMessage("Complete seu perfil de voluntário abaixo para poder se candidatar à vaga.");
     router.push("/minha-conta#perfil-voluntario");
   }
 
   async function handleCandidatar() {
     setFeedback(null);
-    // Sem perfil de voluntário (cliente): completa o perfil e volta para esta vaga.
     if (status ? !status.temPerfil : user?.role === "CLIENTE") {
       irParaPerfil();
       return;
@@ -82,9 +93,15 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
 
     setEnviando(true);
     try {
-      await candidatar(id);
+      await candidatar(id, {
+        experienciaNaArea,
+        mensagem: mensagem.trim() || undefined,
+      });
       setStatus({ candidatado: true, temPerfil: true });
-      setFeedback({ tipo: "sucesso", texto: "Candidatura enviada com sucesso! O gestor poderá acompanhá-la." });
+      setFeedback({
+        tipo: "sucesso",
+        texto: "Candidatura enviada com sucesso! Acompanhe o andamento em Minha Conta.",
+      });
     } catch (erro) {
       if (erro instanceof ApiError && erro.status === 403) {
         irParaPerfil();
@@ -122,12 +139,13 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
   }
 
   const { oportunidade } = estado;
+  const semPerfilVoluntario = Boolean(user && (status ? !status.temPerfil : user.role === "CLIENTE"));
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
       {voltar}
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-10">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-10">
         <div>
           {oportunidade.categoria && (
             <div className="mb-3 flex flex-wrap gap-2">
@@ -140,6 +158,12 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
           <h1 className="max-w-3xl text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem]">
             {oportunidade.titulo}
           </h1>
+
+          {oportunidade.descricao && (
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
+              {oportunidade.descricao}
+            </p>
+          )}
 
           {oportunidade.projeto && (
             <section
@@ -209,42 +233,94 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
                 <dd className="text-sm font-medium">{oportunidade.disponibilidade}</dd>
               </div>
             </div>
+            {oportunidade.local && (
+              <div className="flex items-start gap-3">
+                <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
+                <div>
+                  <dt className="text-xs text-muted-foreground">Local de atuação</dt>
+                  <dd className="text-sm font-medium">{oportunidade.local}</dd>
+                </div>
+              </div>
+            )}
           </dl>
 
           {oportunidade.aberta && !user ? (
-            // Visitante: segue para o login.
             <Link
               href={`/login?next=${encodeURIComponent(`/voluntariado/${oportunidade.id}`)}`}
               className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               Candidatar-se
             </Link>
+          ) : oportunidade.aberta && semPerfilVoluntario ? (
+            // US16: fluxo fechado para usuário logado que ainda não possui perfil de voluntário.
+            <div className="mt-5 space-y-3 rounded-xl border border-amber-300/80 bg-amber-50 p-4 text-amber-950">
+              <div className="flex items-start gap-2">
+                <AlertCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-amber-700" />
+                <p className="text-xs leading-relaxed">
+                  Você ainda não possui um <strong>perfil de voluntário</strong> ativo. Complete seus dados de voluntariado para se candidatar a esta oportunidade.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={irParaPerfil}
+                className="inline-flex min-h-10 w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 cursor-pointer"
+              >
+                Completar perfil de voluntário
+              </button>
+            </div>
           ) : oportunidade.aberta ? (
-            // US16: envia a candidatura (status inicial INSCRITO).
-            <>
+            <div className="mt-5 space-y-3 border-t border-border pt-4">
+              {!status?.candidatado && (
+                <>
+                  <label className="flex items-start gap-2.5 text-xs leading-relaxed text-foreground cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={experienciaNaArea}
+                      onChange={(e) => setExperienciaNaArea(e.target.checked)}
+                      className="mt-0.5 size-4 accent-primary"
+                    />
+                    <span>
+                      Tenho experiência prática nesta área (desmarque se tiver apenas interesse em aprender).
+                    </span>
+                  </label>
+
+                  <label className="block text-xs font-medium text-foreground">
+                    Mensagem de apresentação (opcional)
+                    <textarea
+                      rows={3}
+                      value={mensagem}
+                      onChange={(e) => setMensagem(e.target.value)}
+                      placeholder="Conte rapidamente sua motivação ou disponibilidade..."
+                      className="mt-1 w-full rounded-lg border border-input bg-background p-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/40"
+                    />
+                  </label>
+                </>
+              )}
+
               <button
                 type="button"
                 onClick={handleCandidatar}
                 disabled={enviando || status?.candidatado}
-                className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
               >
                 {enviando && <Loader2 aria-hidden="true" className="size-4 animate-spin" />}
                 {status?.candidatado ? "Candidatura enviada" : "Candidatar-se"}
               </button>
+
               {feedback && (
                 <p
                   role={feedback.tipo === "erro" ? "alert" : "status"}
-                  className={`mt-3 text-sm ${feedback.tipo === "erro" ? "text-destructive" : "text-primary"}`}
+                  className={`text-sm ${feedback.tipo === "erro" ? "text-destructive" : "text-primary"}`}
                 >
                   {feedback.texto}
                 </p>
               )}
               {!feedback && status?.candidatado && (
-                <p role="status" className="mt-3 text-sm text-muted-foreground">
+                <p role="status" className="text-sm text-muted-foreground">
                   Você já se candidatou a esta oportunidade.
                 </p>
               )}
-            </>
+            </div>
           ) : (
             <>
               <button
