@@ -9,6 +9,7 @@ import {
 import { PrismaService } from '../prisma/prisma.service.js';
 import { CreateOportunidadeDto } from './dto/create-oportunidade.dto.js';
 import { UpdateOportunidadeDto } from './dto/update-oportunidade.dto.js';
+import { CreateCandidaturaDto } from './dto/create-candidatura.dto.js';
 
 @Injectable()
 export class OportunidadesService {
@@ -99,7 +100,7 @@ export class OportunidadesService {
    * - 403: usuário sem perfil de voluntário (o front leva para Minha Conta)
    * - 409: já existe candidatura do voluntário nessa vaga
    */
-  async candidatar(userId: string, oportunidadeId: string) {
+  async candidatar(userId: string, oportunidadeId: string, dto?: CreateCandidaturaDto) {
     const oportunidade = await this.prisma.oportunidade.findUnique({
       where: { id: oportunidadeId },
       select: { id: true, isOpen: true },
@@ -133,9 +134,22 @@ export class OportunidadesService {
       throw new ConflictException('Você já se candidatou a esta oportunidade.');
     }
 
+    const mensagemLimpa = dto?.mensagem?.trim();
+
     const candidatura = await this.prisma.candidatura.create({
-      data: { perfilId: perfil.id, oportunidadeId },
-      select: { id: true, status: true, createdAt: true },
+      data: {
+        perfilId: perfil.id,
+        oportunidadeId,
+        experienciaNaArea: dto?.experienciaNaArea ?? false,
+        mensagem: mensagemLimpa ? mensagemLimpa : null,
+      },
+      select: {
+        id: true,
+        status: true,
+        experienciaNaArea: true,
+        mensagem: true,
+        createdAt: true,
+      },
     });
 
     this.logger.log(`Candidatura ${candidatura.id} registrada na oportunidade ${oportunidadeId} (US16)`);
