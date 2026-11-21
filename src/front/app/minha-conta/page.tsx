@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   AlertCircle,
   CheckCircle2,
+  ClipboardList,
   HeartHandshake,
   Loader2,
   LogOut,
@@ -20,6 +22,12 @@ import {
 } from "@/lib/api";
 import { useAuth } from "@/lib/auth-context";
 import { UFS, type NivelEducacao, type StatusEducacao } from "@/lib/brasil";
+import {
+  ETAPA_LABELS,
+  listarMinhasCandidaturas,
+  type EtapaCandidatura,
+  type MinhaCandidaturaItem,
+} from "@/lib/gestor-candidaturas";
 import { consumirRetornoCandidatura } from "@/lib/oportunidades";
 import { VoluntarioFields, validarVoluntario, type VoluntarioFormValues } from "@/components/voluntario-fields";
 
@@ -27,6 +35,14 @@ const ROLE_LABELS: Record<Role, string> = {
   CLIENTE: "Cliente IBRADA",
   VOLUNTARIO: "Voluntário IBRADA",
   GESTOR: "Gestor IBRADA",
+};
+
+const CANDIDATURA_BADGE_CLASS: Record<EtapaCandidatura, string> = {
+  INSCRITO: "bg-secondary text-secondary-foreground",
+  EM_ANALISE: "bg-amber-100 text-amber-900",
+  ENTREVISTA: "bg-sky-100 text-sky-900",
+  APROVADO: "bg-emerald-100 text-emerald-900",
+  REJEITADO: "bg-rose-100 text-rose-900",
 };
 
 function getInitials(name: string): string {
@@ -44,6 +60,12 @@ function formatMemberSince(isoDate: string): string {
     year: "numeric",
   }).format(date);
   return `Membro desde ${formatted}`;
+}
+
+function formatShortDate(isoDate: string): string {
+  const date = new Date(isoDate);
+  if (Number.isNaN(date.getTime())) return "—";
+  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "short" }).format(date);
 }
 
 function toDateInputValue(isoDate: string | null): string {
@@ -115,6 +137,10 @@ export default function MinhaConta() {
   const [voluntarioError, setVoluntarioError] = useState("");
   const [voluntarioSuccess, setVoluntarioSuccess] = useState("");
 
+  // Estado de "Minhas candidaturas" (US16 / US18)
+  const [candidaturas, setCandidaturas] = useState<MinhaCandidaturaItem[]>([]);
+  const [loadingCandidaturas, setLoadingCandidaturas] = useState(false);
+
   const loadProfile = useCallback(async () => {
     setLoadingPage(true);
     setPageError("");
@@ -123,6 +149,20 @@ export default function MinhaConta() {
       setProfile(data);
       setPersonalForm(buildPersonalState(data));
       setVoluntarioForm(buildVoluntarioState(data));
+
+      if (data.perfilVoluntario) {
+        setLoadingCandidaturas(true);
+        try {
+          const minhas = await listarMinhasCandidaturas();
+          setCandidaturas(minhas);
+        } catch {
+          setCandidaturas([]);
+        } finally {
+          setLoadingCandidaturas(false);
+        }
+      } else {
+        setCandidaturas([]);
+      }
     } catch (err) {
       setPageError(err instanceof Error ? err.message : "Não foi possível carregar seus dados.");
     } finally {
@@ -230,7 +270,7 @@ export default function MinhaConta() {
 
     try {
       if (!profile.perfilVoluntario) {
-        // Criação pela primeira vez (US15): cria perfil, atualiza role/token e vai para a home.
+        // Criação pela primeira vez (US15): cria perfil, atualiza role/token e vai para a vaga ou home.
         const created = await createPerfilVoluntario(payload);
         updateSession(created.user, created.access_token);
         setFlashMessage(
@@ -348,6 +388,17 @@ export default function MinhaConta() {
                       <span>Perfil voluntário</span>
                     </a>
                   </li>
+                  {profile.perfilVoluntario && (
+                    <li>
+                      <a
+                        href="#minhas-candidaturas"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-2 font-medium text-foreground transition-colors hover:bg-background/70"
+                      >
+                        <ClipboardList className="size-4 text-primary" />
+                        <span>Minhas candidaturas</span>
+                      </a>
+                    </li>
+                  )}
                 </ul>
 
                 <div className="mt-4 border-t border-border/80 pt-3">
@@ -590,6 +641,82 @@ export default function MinhaConta() {
                   </div>
                 </form>
               </section>
+
+              {/* CARD 3: Minhas candidaturas (US16 / US18) */}
+              {profile.perfilVoluntario && (
+                <section
+                  id="minhas-candidaturas"
+                  className="scroll-mt-24 rounded-2xl border border-border bg-card p-6 shadow-xs sm:p-8"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <h2 className="font-serif text-2xl font-bold text-foreground">
+                        Minhas candidaturas
+                      </h2>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        Acompanhe o andamento das vagas de voluntariado em que você se inscreveu.
+                      </p>
+                    </div>
+                    <Link
+                      href="/voluntariado"
+                      className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+                    >
+                      Ver vagas abertas →
+                    </Link>
+                  </div>
+
+                  {loadingCandidaturas ? (
+                    <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+                      <Loader2 className="size-4 animate-spin text-primary" />
+                      <span>Carregando suas candidaturas...</span>
+                    </div>
+                  ) : candidaturas.length === 0 ? (
+                    <div className="mt-6 rounded-xl border border-dashed border-border p-6 text-center">
+                      <p className="text-sm text-muted-foreground">
+                        Você ainda não se candidatou a nenhuma oportunidade de voluntariado.
+                      </p>
+                      <Link
+                        href="/voluntariado"
+                        className="mt-3 inline-flex min-h-10 items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                      >
+                        Explorar oportunidades
+                      </Link>
+                    </div>
+                  ) : (
+                    <ul className="mt-6 divide-y divide-border rounded-xl border border-border">
+                      {candidaturas.map((item) => (
+                        <li
+                          key={item.id}
+                          className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5"
+                        >
+                          <div className="space-y-1">
+                            <Link
+                              href={`/voluntariado/${item.oportunidade.id}`}
+                              className="text-base font-semibold text-foreground hover:text-primary hover:underline"
+                            >
+                              {item.oportunidade.title}
+                            </Link>
+                            <p className="text-xs text-muted-foreground">
+                              Projeto: <span className="font-medium text-foreground">{item.oportunidade.projeto.title}</span>
+                              {" · "}
+                              {item.oportunidade.categoria.nome}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              Inscrito em {formatShortDate(item.createdAt)} · {item.oportunidade.disponibilidade}
+                            </p>
+                          </div>
+
+                          <span
+                            className={`inline-flex w-fit shrink-0 items-center rounded-full px-3 py-1 text-xs font-semibold ${CANDIDATURA_BADGE_CLASS[item.status]}`}
+                          >
+                            {ETAPA_LABELS[item.status]}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              )}
             </div>
           </div>
         )}
