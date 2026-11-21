@@ -11,6 +11,7 @@ import { ProjetosModule } from './projetos/projetos.module.js';
 import { OportunidadesModule } from './oportunidades/oportunidades.module.js';
 import { FunilModule } from './funil/funil.module.js';
 import { CategoriaModule } from './categoria/categoria.module.js';
+import { ReservasModule } from './reservas/reservas.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -32,7 +33,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     OportunidadesModule,
     FunilModule,
     AuthModule,
-    CategoriaModule
+    CategoriaModule,
+    ReservasModule,
   ],
   controllers: [AppController],
   providers: [AppService],

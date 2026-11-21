@@ -131,13 +131,16 @@ model MidiaExperiencia {
 }
 
 model Booking {
-  id           String        @id @default(cuid())
-  userId       String
-  experienceId String
-  seats        Int           @default(1)
-  totalAmount  Decimal       @db.Decimal(10, 2)
-  status       BookingStatus @default(PENDING)
-  createdAt    DateTime      @default(now())
+  id                  String        @id @default(cuid())
+  userId              String
+  experienceId        String
+  seats               Int           @default(1)
+  totalAmount         Decimal       @db.Decimal(10, 2)
+  status              BookingStatus @default(PENDING)
+  createdAt           DateTime      @default(now())
+  expiresAt           DateTime?
+  revision            Int           @default(1)
+  checkoutConfirmedAt DateTime?
 
   user       User        @relation(fields: [userId], references: [id])
   experience Experiencia @relation(fields: [experienceId], references: [id])
@@ -155,12 +158,23 @@ model Payment {
   method     String // "PIX", "CARD"... (vira enum quando o gateway for definido)
   status     PaymentStatus @default(PENDING)
   externalId String? // id da transação no gateway
+  provider   String?
+  checkoutUrl String? @db.Text
   paidAt     DateTime?
   createdAt  DateTime      @default(now())
 
   booking Booking @relation(fields: [bookingId], references: [id])
 
   @@index([bookingId])
+  @@unique([provider, externalId])
+}
+
+model PaymentWebhookEvent {
+  provider    String
+  eventId     String
+  processedAt DateTime @default(now())
+
+  @@id([provider, eventId])
 }
 
 model PedidoParceria {
