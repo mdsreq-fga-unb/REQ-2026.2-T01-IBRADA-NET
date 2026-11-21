@@ -8,12 +8,53 @@ import { PrismaMariaDb } from '@prisma/adapter-mariadb';
 // troque pelos projetos reais do instituto quando existirem.
 
 const CATEGORIAS_INICIAIS = [
-  'Ecoturismo e Condução de Trilhas',
-  'Gestão de Projetos e Captação de Recursos',
-  'Cultura e Agricultura familiar',
-  'Agroecologia e Reflorestamento',
-  'Apoio Administrativo e Jurídico',
-  'Saúde e Bem-Estar Comunitário',
+  // De acordo com o documento do dia 15/11/2026 fornecido pelo presidente do IBRADA
+  // 1. Perfil e Vínculo Comunitário
+  'Estudante de Ensino Médio',
+  'Estudante Universitário / Graduação',
+  'Pós-graduando / Pesquisador',
+  'Profissional / Consultor Técnico',
+  'Agricultor(a) Familiar',
+  'Morador(a) de Comunidade Rural ou Periferia',
+  'Indígena',
+  'Quilombola',
+  'Comunidade Tradicional / Extrativista',
+  'Guia ou Condutor(a) de Turismo',
+  'Praticante de Trilhas / Ecoturista',
+
+  // 2. Áreas de Projeto (Alinhadas ao IBRADA)
+  // Regularização Fundiária e Geoprocessamento
+  'Geoprocessamento / SIG / Mapeamento',
+  'Regularização Fundiária e Ambiental (CAR)',
+  'Topografia e Memorial Descritivo',
+  'Direito Ambiental e Agrário',
+  // Ecoturismo e Gestão de Áreas Protegidas
+  'Ecoturismo e Trilhas',
+  'Turismo de Base Comunitária (TBC)',
+  'Venda e Operação de Pacotes Turísticos',
+  'Unidades de Conservação (UC) e RPPN',
+  'Plano de Manejo e Plano Diretor de UC',
+  'Governança do Turismo',
+  // Agroecologia e Recuperação Ambiental
+  'Agroecologia e Produção Orgânica',
+  'Sistemas Agroflorestais (SAFs)',
+  'Reflorestamento e Recuperação de Áreas Degradadas (PRAD)',
+  'Corredores Ecológicos',
+  'Assistência Técnica e Extensão Rural (ATER)',
+  // Mobilização Social e Educação
+  'Inclusão Socioprodutiva',
+  'Mobilização e Organização Comunitária',
+  'Educação Ambiental e Patrimonial',
+  'Oficinas Educativas e Culturais',
+
+  // 3. Habilidades Práticas e Apoio Operacional
+  'Conhecimento Local / Mateiro(a)',
+  'Primeiros Socorros em Áreas Remotas',
+  'Manejo de Viveiros e Sementes',
+  'Comunicação, Fotografia e Documentário',
+  'Captação de Recursos e Elaboração de Projetos',
+  'Vendas e Atendimento ao Cliente',
+  'Logística e Apoio em Campo',
 ];
 
 const PROJETOS = [
@@ -62,7 +103,7 @@ const OPORTUNIDADES: Array<{
   {
     title: 'Monitor(a) de Trilhas Ecológicas',
     projeto: 'Ecoturismo de Base Comunitária',
-    categoria: 'Ecoturismo e Condução de Trilhas',
+    categoria: 'Ecoturismo e Trilhas',
     description: 'Apoio à condução de grupos nas trilhas e à recepção de visitantes.',
     atividades: 'Acompanhar grupos nas trilhas\nApresentar a fauna e a flora local\nApoiar a recepção dos visitantes',
     duracao: '3 meses',
@@ -75,7 +116,7 @@ const OPORTUNIDADES: Array<{
   {
     title: 'Apoio na Captação de Recursos',
     projeto: 'Restauração de Nascentes no Cerrado',
-    categoria: 'Gestão de Projetos e Captação de Recursos',
+    categoria: 'Captação de Recursos e Elaboração de Projetos',
     description: 'Pesquisa de editais e apoio à escrita de propostas de financiamento.',
     atividades: 'Pesquisar editais abertos\nApoiar a escrita de propostas\nOrganizar a documentação exigida',
     duracao: '2 meses',
@@ -88,7 +129,7 @@ const OPORTUNIDADES: Array<{
   {
     title: 'Oficinas de Agroecologia',
     projeto: 'Agroecologia e Quintais Produtivos',
-    categoria: 'Agroecologia e Reflorestamento',
+    categoria: 'Agroecologia e Produção Orgânica',
     description: 'Apoio às oficinas práticas com famílias agricultoras.',
     atividades: 'Preparar o material das oficinas\nApoiar a condução das atividades práticas\nRegistrar a participação das famílias',
     duracao: '6 meses',
@@ -100,7 +141,7 @@ const OPORTUNIDADES: Array<{
   {
     title: 'Apoio Jurídico em Regularização Fundiária',
     projeto: 'Restauração de Nascentes no Cerrado',
-    categoria: 'Apoio Administrativo e Jurídico',
+    categoria: 'Direito Ambiental e Agrário',
     description: 'Apoio à análise de documentos e à elaboração de peças em processos de regularização.',
     atividades: 'Analisar documentos fundiários\nRedigir minutas e pareceres simples\nApoiar o atendimento às comunidades',
     duracao: '4 meses',
@@ -114,7 +155,7 @@ const OPORTUNIDADES: Array<{
     // Fechada: serve para testar o bloqueio da candidatura e o botão "Retomar" do gestor.
     title: 'Mutirão de Plantio de Mudas',
     projeto: 'Restauração de Nascentes no Cerrado',
-    categoria: 'Agroecologia e Reflorestamento',
+    categoria: 'Agroecologia e Produção Orgânica',
     description: 'Mutirão de plantio de mudas nativas em áreas de nascente.',
     atividades: 'Preparar as covas\nPlantar e irrigar as mudas',
     duracao: '1 dia',
@@ -143,7 +184,7 @@ const USUARIOS_TESTE = [
       outros: 'Primeiros socorros, Educação ambiental',
       educacaoNivel: 'GRADUACAO' as const,
       educacaoCompletude: 'COMPLETO' as const,
-      interesses: ['Ecoturismo e Condução de Trilhas', 'Agroecologia e Reflorestamento'],
+      interesses: ['Ecoturismo e Trilhas', 'Agroecologia e Produção Orgânica'],
     },
     candidaturas: [
       { oportunidade: 'Monitor(a) de Trilhas Ecológicas', experienciaNaArea: true },
@@ -159,7 +200,7 @@ const USUARIOS_TESTE = [
       outros: 'Pesquisa de editais',
       educacaoNivel: 'MEDIO' as const,
       educacaoCompletude: 'EM_ANDAMENTO' as const,
-      interesses: ['Gestão de Projetos e Captação de Recursos'],
+      interesses: ['Captação de Recursos e Elaboração de Projetos'],
     },
     candidaturas: [
       { oportunidade: 'Monitor(a) de Trilhas Ecológicas', experienciaNaArea: false },
