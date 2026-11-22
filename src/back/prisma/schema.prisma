@@ -109,6 +109,21 @@ model Experiencia {
   endsAt      DateTime
   capacity    Int // vagas totais
   isAvailable Boolean  @default(true) // US12: gestor liga/desliga a oferta
+
+  // Informações exibidas no catálogo e no detalhe (US02/US03). Nulos só em pacotes antigos.
+  location        String? // local de atuação, ex.: Planaltina/DF
+  community       String? // comunidade anfitriã
+  biome           String? // bioma (Cerrado, Amazônia...)
+  difficulty      String? // LEVE | MODERADA | INTENSA
+  meetingPoint    String? // ponto de encontro
+  meetingTime     String? // horário de encontro, ex.: 07h30
+  includedItems   Json? // lista de itens inclusos
+  rules           Json? // lista de regras de conservação
+  clothingTips    Json? // lista de recomendações de vestuário
+  communityImpact String? @db.Text // como o valor beneficia a comunidade
+  guideName       String? // guia local (opcional)
+  guideRole       String?
+  maxPerBooking   Int      @default(6) // máximo de pessoas por reserva
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

@@ -28,6 +28,20 @@ describe('ExperienciasController (e2e)', () => {
     endsAt: '2026-12-01T17:00:00.000Z',
     capacity: 12,
     isAvailable: true,
+    photos: ['https://exemplo.com/capa.jpg'],
+    location: 'Planaltina/DF',
+    community: 'Assentamento Pequeno William',
+    biome: 'Cerrado',
+    difficulty: 'MODERADA',
+    meetingPoint: 'Sede do assentamento',
+    meetingTime: '07h30',
+    includedItems: ['Guia local', 'Almoço'],
+    rules: ['Permaneça na trilha'],
+    clothingTips: ['Calçado fechado'],
+    communityImpact: 'Parte do valor fica com as famílias anfitriãs.',
+    guideName: 'Seu Raimundo',
+    guideRole: 'Guia local',
+    maxPerBooking: 6,
     ...extra,
   });
 
@@ -101,10 +115,12 @@ describe('ExperienciasController (e2e)', () => {
         .send(novaExperiencia());
 
       expect(res.status).toBe(201);
-      expect(res.body.message).toBe('Experiência cadastrada com sucesso!');
+      expect(res.body.message).toBe('Pacote cadastrado com sucesso!');
       expect(res.body.data.slug).toBe(`trilha-e2e-${sufixo}`);
       expect(res.body.data.priceCents).toBe(15050);
       expect(res.body.data.availableSeats).toBe(12);
+      expect(res.body.data.location).toBe('Planaltina/DF');
+      expect(res.body.data.includedItems).toEqual(['Guia local', 'Almoço']);
       criados.push(res.body.data.id);
     });
 
@@ -140,6 +156,9 @@ describe('ExperienciasController (e2e)', () => {
       expect(res.body.startsAt).toBe('2026-12-01T08:00:00.000Z');
       expect(res.body.priceFormatted).toBe('R$ 150,50');
       expect(res.body.availableSeats).toBe(12);
+      expect(res.body.meetingPoint).toBe('Sede do assentamento');
+      expect(res.body.meetingTime).toBe('07h30');
+      expect(res.body.clothingTips).toEqual(['Calçado fechado']);
     });
 
     it('404 para slug inexistente', async () => {

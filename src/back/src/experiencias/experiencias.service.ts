@@ -31,6 +31,47 @@ function separarMidias(midias?: MidiaRow[] | null) {
   };
 }
 
+type Lista = unknown;
+
+function comoLista(valor: Lista): string[] {
+  return Array.isArray(valor) ? valor.filter((v): v is string => typeof v === 'string') : [];
+}
+
+type DadosReais = {
+  location: string | null;
+  community: string | null;
+  biome: string | null;
+  difficulty: string | null;
+  meetingPoint: string | null;
+  meetingTime: string | null;
+  includedItems: unknown;
+  rules: unknown;
+  clothingTips: unknown;
+  communityImpact: string | null;
+  guideName: string | null;
+  guideRole: string | null;
+  maxPerBooking: number;
+};
+
+// Informações reais do pacote (US02/US03), sem valores inventados: o que não foi cadastrado vai vazio.
+function dadosReais(exp: DadosReais) {
+  return {
+    location: exp.location,
+    community: exp.community,
+    biome: exp.biome,
+    difficulty: exp.difficulty,
+    meetingPoint: exp.meetingPoint,
+    meetingTime: exp.meetingTime,
+    includedItems: comoLista(exp.includedItems),
+    rules: comoLista(exp.rules),
+    clothingTips: comoLista(exp.clothingTips),
+    communityImpact: exp.communityImpact,
+    guideName: exp.guideName,
+    guideRole: exp.guideRole,
+    maxPerBooking: exp.maxPerBooking,
+  };
+}
+
 // P2002 = violação de restrição única no Prisma.
 function isUniqueViolation(error: unknown): boolean {
   return typeof error === 'object' && error !== null && (error as { code?: string }).code === 'P2002';
@@ -76,6 +117,7 @@ export class ExperienciasService {
         availableSeats,
         isAvailable: exp.isAvailable,
         isSoldOut,
+        ...dadosReais(exp),
         ...separarMidias(exp.midias),
         createdAt: exp.createdAt,
         updatedAt: exp.updatedAt,
@@ -119,6 +161,7 @@ export class ExperienciasService {
       availableSeats,
       isAvailable: exp.isAvailable,
       isSoldOut,
+      ...dadosReais(exp),
       ...separarMidias(exp.midias),
       createdAt: exp.createdAt,
       updatedAt: exp.updatedAt,
@@ -168,6 +211,19 @@ export class ExperienciasService {
             endsAt,
             capacity: dto.capacity,
             isAvailable: dto.isAvailable,
+            location: dto.location,
+            community: dto.community,
+            biome: dto.biome,
+            difficulty: dto.difficulty,
+            meetingPoint: dto.meetingPoint,
+            meetingTime: dto.meetingTime,
+            includedItems: dto.includedItems,
+            rules: dto.rules ?? [],
+            clothingTips: dto.clothingTips ?? [],
+            communityImpact: dto.communityImpact?.trim() || null,
+            guideName: dto.guideName?.trim() || null,
+            guideRole: dto.guideRole?.trim() || null,
+            maxPerBooking: dto.maxPerBooking ?? 6,
             midias: {
               create: [
                 ...dto.photos.map((url, i) => ({ tipo: 'FOTO' as const, url, ordem: i })),
@@ -203,6 +259,7 @@ export class ExperienciasService {
       message: 'Pacote cadastrado com sucesso!',
       data: {
         ...createdSemMidias,
+        ...dadosReais(created),
         ...separarMidias(midias),
         price: Number(created.price),
         priceDecimal,
@@ -247,6 +304,7 @@ export class ExperienciasService {
       message: `Disponibilidade atualizada para ${updated.isAvailable ? 'disponível' : 'indisponível'} com sucesso!`,
       data: {
         ...updatedSemMidias,
+        ...dadosReais(updated),
         ...separarMidias(midias),
         price: Number(updated.price),
         priceDecimal,

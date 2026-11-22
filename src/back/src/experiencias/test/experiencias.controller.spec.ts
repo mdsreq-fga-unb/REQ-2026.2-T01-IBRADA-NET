@@ -50,6 +50,19 @@ describe('ExperienciasController', () => {
       capacity: 5,
       isAvailable: true,
       photos: ['https://exemplo.com/capa.jpg'],
+      location: 'Planaltina/DF',
+      community: 'Assentamento Pequeno William',
+      biome: 'Cerrado',
+      difficulty: 'MODERADA',
+      meetingPoint: 'Sede do assentamento',
+      meetingTime: '07h30',
+      includedItems: ['Guia local', 'Almoço'],
+      rules: ['Permaneça na trilha'],
+      clothingTips: ['Calçado fechado'],
+      communityImpact: 'Parte do valor fica com as famílias anfitriãs.',
+      guideName: 'Seu Raimundo',
+      guideRole: 'Guia local',
+      maxPerBooking: 6,
     };
     mockService.create.mockResolvedValue({ message: 'Criado', data: dto });
 
