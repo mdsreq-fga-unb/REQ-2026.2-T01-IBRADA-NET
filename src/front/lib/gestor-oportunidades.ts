@@ -92,6 +92,7 @@ export async function criarOportunidade(dados: NovaOportunidade) {
       }),
     },
   });
+}
 
 export type EditarOportunidadePayload = {
   title?: string;
@@ -109,5 +110,4 @@ export async function atualizarOportunidade(id: string, dados: EditarOportunidad
     method: "PATCH",
     body: dados,
   });
-}
 }

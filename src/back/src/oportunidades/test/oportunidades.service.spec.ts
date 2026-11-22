@@ -510,7 +510,52 @@ describe('OportunidadesService — candidatura (US16)', () => {
 
     expect(res.status).toBe('INSCRITO');
     expect(mockPrisma.candidatura.create).toHaveBeenCalledWith(
-      expect.objectContaining({ data: { perfilId: 'pf1', oportunidadeId: 'op1' } }),
+      expect.objectContaining({
+        data: {
+          perfilId: 'pf1',
+          oportunidadeId: 'op1',
+          experienciaNaArea: false,
+          mensagem: null,
+        },
+      }),
+    );
+  });
+
+  it('grava experiência na área e mensagem sem espaços nas pontas', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op1', isOpen: true });
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'pf1' });
+    mockPrisma.candidatura.findUnique.mockResolvedValue(null);
+    mockPrisma.candidatura.create.mockResolvedValue({ id: 'c1', status: 'INSCRITO' });
+
+    await service.candidatar('u1', 'op1', {
+      experienciaNaArea: true,
+      mensagem: '  Tenho experiência  ',
+    });
+
+    expect(mockPrisma.candidatura.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: {
+          perfilId: 'pf1',
+          oportunidadeId: 'op1',
+          experienciaNaArea: true,
+          mensagem: 'Tenho experiência',
+        },
+      }),
+    );
+  });
+
+  it('transforma mensagem só com espaços em null', async () => {
+    mockPrisma.oportunidade.findUnique.mockResolvedValue({ id: 'op1', isOpen: true });
+    mockPrisma.perfilVoluntario.findUnique.mockResolvedValue({ id: 'pf1' });
+    mockPrisma.candidatura.findUnique.mockResolvedValue(null);
+    mockPrisma.candidatura.create.mockResolvedValue({ id: 'c1', status: 'INSCRITO' });
+
+    await service.candidatar('u1', 'op1', { mensagem: '   ' });
+
+    expect(mockPrisma.candidatura.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({ mensagem: null, experienciaNaArea: false }),
+      }),
     );
   });
 
