@@ -18,6 +18,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/brand-icons";
+import { CompartilharPacoteButton } from "@/components/compartilhar-pacote-button";
 import { ApiError } from "@/lib/api";
 import {
   buscarExperienciaPorSlug,
@@ -255,13 +256,20 @@ export function ExperienciaDetalhe({
         />
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-6 sm:px-6 md:pb-8 lg:px-8">
-          <Link
-            href="/ecoturismo"
-            className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-white/85 transition-colors hover:text-white sm:text-sm"
-          >
-            <ArrowLeft aria-hidden="true" className="size-3.5 sm:size-4" />
-            Todos os pacotes
-          </Link>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Link
+              href="/ecoturismo"
+              className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-white/85 transition-colors hover:text-white sm:text-sm"
+            >
+              <ArrowLeft aria-hidden="true" className="size-3.5 sm:size-4" />
+              Todos os pacotes
+            </Link>
+            <CompartilharPacoteButton
+              titulo={experiencia.title}
+              descricao={experiencia.description}
+              slug={experiencia.slug}
+            />
+          </div>
 
           <p className="mt-3 text-xs font-medium text-white/90 sm:text-sm">
             {meta.comunidade}

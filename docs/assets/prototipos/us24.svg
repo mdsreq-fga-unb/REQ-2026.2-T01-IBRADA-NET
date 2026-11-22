@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Arial, sans-serif" font-size="14">
+  <rect width="900" height="560" fill="#f4f1ea"/>
+  <rect x="0" y="0" width="900" height="56" fill="#ffffff" stroke="#cfc8b8"/>
+  <text x="24" y="34" font-weight="bold" fill="#2f5d3a">IBRADA</text>
+  <text x="560" y="34" fill="#555">Ecoturismo   Voluntariado   Parcerias   Minha conta</text>
+  <rect x="0" y="56" width="900" height="190" fill="#8a9a86"/>
+  <text x="24" y="92" fill="#ffffff">← Todos os pacotes</text>
+  <rect x="690" y="72" width="186" height="34" rx="17" fill="#ffffff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="722" y="94" fill="#2f5d3a" font-weight="bold">⤴ Compartilhar pacote</text>
+  <text x="24" y="196" fill="#ffffff" font-size="12">Comunidade</text>
+  <text x="24" y="226" fill="#ffffff" font-size="24" font-weight="bold">Título do pacote</text>
+  <rect x="24" y="270" width="520" height="14" fill="#cfc8b8"/>
+  <rect x="24" y="296" width="480" height="14" fill="#cfc8b8"/>
+  <rect x="24" y="322" width="500" height="14" fill="#cfc8b8"/>
+  <rect x="24" y="360" width="520" height="160" fill="#e3ddd0" stroke="#cfc8b8"/>
+  <text x="40" y="386" fill="#555">Roteiro / fotos / vídeos</text>
+  <rect x="580" y="270" width="296" height="250" fill="#ffffff" stroke="#cfc8b8"/>
+  <text x="600" y="300" fill="#333" font-weight="bold">Reserva</text>
+  <text x="600" y="326" fill="#555">Data · Participantes · Total</text>
+  <rect x="600" y="452" width="256" height="44" rx="8" fill="#2f5d3a"/>
+  <text x="680" y="480" fill="#ffffff">Reservar vagas</text>
+  <rect x="560" y="120" width="316" height="82" rx="10" fill="#ffffff" stroke="#2f5d3a" stroke-dasharray="6 4"/>
+  <text x="576" y="146" fill="#2f5d3a" font-weight="bold">Ao clicar (celular):</text>
+  <text x="576" y="168" fill="#333" font-size="13">folha de compartilhamento do aparelho</text>
+  <text x="576" y="188" fill="#333" font-size="13">Desktop: "Link copiado!" (copia o link)</text>
+</svg>
