@@ -361,4 +361,144 @@ describe('Voluntariado (e2e)', () => {
       expect(criterio?.exigeExperiencia).toBe(true);
     });
   });
+
+  // ===========================================================================
+  // US16 e US18 — Candidaturas e Funil do Gestor
+  // ===========================================================================
+  describe('Candidaturas e Funil (US16 e US18)', () => {
+    const emailSemPerfil = `semperfil-${sufixo}@e2e.com`;
+    const emailVoluntario = `voluntario-${sufixo}@e2e.com`;
+    let userSemPerfilId: string;
+    let userVoluntarioId: string;
+    let tokenSemPerfil: string;
+    let tokenVoluntarioReal: string;
+    let candidaturaId: string;
+
+    beforeAll(async () => {
+      const jwt = app.get(JwtService);
+
+      const uSem = await prisma.user.create({
+        data: {
+          name: `Cliente Sem Perfil ${sufixo}`,
+          email: emailSemPerfil,
+          passwordHash: 'hash-e2e',
+          role: 'CLIENTE',
+        },
+      });
+      userSemPerfilId = uSem.id;
+      tokenSemPerfil = await jwt.signAsync({
+        sub: uSem.id,
+        email: uSem.email,
+        role: 'CLIENTE',
+      });
+
+      const uVol = await prisma.user.create({
+        data: {
+          name: `Voluntário E2E ${sufixo}`,
+          email: emailVoluntario,
+          passwordHash: 'hash-e2e',
+          role: 'VOLUNTARIO',
+          perfilVoluntario: {
+            create: {
+              bio: 'Experiência em campo',
+              outros: 'Botânica',
+              educacaoNivel: 'GRADUACAO',
+              educacaoCompletude: 'COMPLETO',
+            },
+          },
+        },
+      });
+      userVoluntarioId = uVol.id;
+      tokenVoluntarioReal = await jwt.signAsync({
+        sub: uVol.id,
+        email: uVol.email,
+        role: 'VOLUNTARIO',
+      });
+    });
+
+    afterAll(async () => {
+      await prisma.user.deleteMany({
+        where: { id: { in: [userSemPerfilId, userVoluntarioId].filter(Boolean) } },
+      });
+    });
+
+    it('US16: retorna 403 quando usuário sem perfil tenta se candidatar', async () => {
+      const res = await http()
+        .post(`/oportunidades/${oportunidadeId}/candidaturas`)
+        .set(comToken(tokenSemPerfil))
+        .send({ experienciaNaArea: false });
+      expect(res.status).toBe(403);
+    });
+
+    it('US16: registra candidatura (201) e bloqueia candidatura duplicada (409)', async () => {
+      const primeira = await http()
+        .post(`/oportunidades/${oportunidadeId}/candidaturas`)
+        .set(comToken(tokenVoluntarioReal))
+        .send({ experienciaNaArea: true, mensagem: 'Tenho disponibilidade aos sábados.' });
+
+      expect(primeira.status).toBe(201);
+      expect(primeira.body.id).toBeTruthy();
+      expect(primeira.body.status).toBe('INSCRITO');
+      candidaturaId = primeira.body.id;
+
+      // Duplicada deve falhar com 409 Conflict
+      const duplicada = await http()
+        .post(`/oportunidades/${oportunidadeId}/candidaturas`)
+        .set(comToken(tokenVoluntarioReal))
+        .send({ experienciaNaArea: true });
+      expect(duplicada.status).toBe(409);
+
+      // Voluntário consegue listar suas próprias candidaturas
+      const minhas = await http()
+        .get('/candidaturas/minhas')
+        .set(comToken(tokenVoluntarioReal));
+      expect(minhas.status).toBe(200);
+      expect(minhas.body.some((c: { id: string }) => c.id === candidaturaId)).toBe(true);
+    });
+
+    it('US18: bloqueia GET /candidaturas e PATCH /candidaturas/:id/status para não-gestores (401/403)', async () => {
+      const semToken = await http().get('/candidaturas');
+      expect(semToken.status).toBe(401);
+
+      const comoVoluntario = await http()
+        .get('/candidaturas')
+        .set(comToken(tokenVoluntarioReal));
+      expect(comoVoluntario.status).toBe(403);
+
+      const patchVoluntario = await http()
+        .patch(`/candidaturas/${candidaturaId}/status`)
+        .set(comToken(tokenVoluntarioReal))
+        .send({ status: 'APROVADO' });
+      expect(patchVoluntario.status).toBe(403);
+    });
+
+    it('US18: lista candidaturas com filtro por oportunidade/status e paginação, e avança etapas no funil', async () => {
+      const lista = await http()
+        .get('/candidaturas')
+        .query({ oportunidadeId, status: 'INSCRITO', page: 1, limit: 5 })
+        .set(comToken(gestorToken));
+
+      expect(lista.status).toBe(200);
+      expect(lista.body.meta).toMatchObject({ page: 1, limit: 5 });
+      expect(lista.body.data.some((c: { id: string }) => c.id === candidaturaId)).toBe(true);
+
+      // Move INSCRITO -> EM_ANALISE -> ENTREVISTA -> APROVADO
+      for (const etapa of ['EM_ANALISE', 'ENTREVISTA', 'APROVADO']) {
+        const res = await http()
+          .patch(`/candidaturas/${candidaturaId}/status`)
+          .set(comToken(gestorToken))
+          .send({ status: etapa });
+        expect(res.status).toBe(200);
+        expect(res.body.data.status).toBe(etapa);
+      }
+
+      // Filtro por status APROVADO retorna a candidatura atualizada
+      const aprovadas = await http()
+        .get('/candidaturas')
+        .query({ oportunidadeId, status: 'APROVADO' })
+        .set(comToken(gestorToken));
+      expect(aprovadas.status).toBe(200);
+      expect(aprovadas.body.data.some((c: { id: string }) => c.id === candidaturaId)).toBe(true);
+    });
+  });
 });

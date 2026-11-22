@@ -1,11 +1,9 @@
 import { ApiError, api } from "@/lib/api";
 
-// Modelo usado pelas telas de voluntariado (US21 e US14).
-// `formato` e `local` não constam nas histórias: são opcionais e só aparecem
-// nas telas quando a API os enviar.
 export type Oportunidade = {
   id: string;
   titulo: string;
+  descricao?: string;
   categoria?: string;
   formato?: string;
   local?: string;
@@ -18,12 +16,10 @@ export type Oportunidade = {
   habilidades: string[];
 };
 
-// Formato da API de oportunidades (GET /oportunidades e /oportunidades/:id).
-// Toda a adaptação fica concentrada em `normalizar`, para absorver ajustes
-// de nome sem mexer nas telas.
 export type OportunidadeApi = {
   id: string;
   title: string;
+  description?: string;
   duracao: string;
   disponibilidade: string;
   isOpen?: boolean;
@@ -46,6 +42,7 @@ export function normalizar(raw: OportunidadeApi): Oportunidade {
   return {
     id: raw.id,
     titulo: raw.title,
+    descricao: raw.description,
     categoria: typeof raw.categoria === "string" ? raw.categoria : raw.categoria?.nome,
     formato: raw.formato,
     local: raw.local ?? raw.localAtuacao ?? undefined,
@@ -59,14 +56,12 @@ export function normalizar(raw: OportunidadeApi): Oportunidade {
   };
 }
 
-// US21: lista pública das oportunidades abertas.
 export async function listarOportunidades(): Promise<Oportunidade[]> {
   const dados = await api<OportunidadeApi[] | { data: OportunidadeApi[] }>("/oportunidades");
   const lista = Array.isArray(dados) ? dados : dados.data;
   return lista.map(normalizar);
 }
 
-// US14: detalhe público; devolve null quando a API responde 404.
 export async function buscarOportunidade(id: string): Promise<Oportunidade | null> {
   try {
     const dados = await api<OportunidadeApi | { data: OportunidadeApi }>(
@@ -79,26 +74,31 @@ export async function buscarOportunidade(id: string): Promise<Oportunidade | nul
   }
 }
 
-// US16: candidatura do voluntário autenticado.
 export type StatusCandidatura = { candidatado: boolean; temPerfil: boolean };
 
 export async function statusCandidatura(id: string): Promise<StatusCandidatura> {
   return api<StatusCandidatura>(`/oportunidades/${encodeURIComponent(id)}/candidatura`);
 }
 
-export async function candidatar(id: string): Promise<void> {
-  await api(`/oportunidades/${encodeURIComponent(id)}/candidaturas`, { method: "POST" });
+export type CandidatarPayload = {
+  experienciaNaArea?: boolean;
+  mensagem?: string;
+};
+
+export async function candidatar(id: string, payload?: CandidatarPayload): Promise<void> {
+  await api(`/oportunidades/${encodeURIComponent(id)}/candidaturas`, {
+    method: "POST",
+    body: payload ?? {},
+  });
 }
 
-// Quem ainda não tem perfil de voluntário é levado a Minha Conta; guardamos a vaga
-// para voltar a ela depois de criar o perfil.
 const RETORNO_KEY = "ibrada:retorno_candidatura";
 
 export function guardarRetornoCandidatura(path: string) {
   try {
     sessionStorage.setItem(RETORNO_KEY, path);
   } catch {
-    /* storage indisponível: o usuário volta pela home */
+    /* storage indisponível */
   }
 }
 
@@ -111,4 +111,3 @@ export function consumirRetornoCandidatura(): string | null {
     return null;
   }
 }
-
