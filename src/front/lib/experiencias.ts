@@ -33,7 +33,7 @@ const DIFICULDADE_LABELS: Record<NivelDificuldade, string> = {
 };
 
 // Imagem neutra usada só em pacotes antigos sem nenhuma foto cadastrada.
-const IMAGEM_SEM_FOTO =
+export const IMAGEM_SEM_FOTO =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(
     '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900"><rect width="100%" height="100%" fill="#d9d4c7"/></svg>',

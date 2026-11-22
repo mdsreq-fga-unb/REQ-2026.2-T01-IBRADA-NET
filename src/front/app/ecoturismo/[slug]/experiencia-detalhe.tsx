@@ -28,6 +28,7 @@ import {
   extrairEtapasRoteiro,
   formatarPrecoExperiencia,
   formatarPeriodoExperiencia,
+  IMAGEM_SEM_FOTO,
   obterVagasDisponiveis,
   resolverMetaVisual,
   type EtapaRoteiro,
@@ -245,6 +246,11 @@ export function ExperienciaDetalhe({
         <img
           src={meta.imagemUrl}
           alt={meta.imagemAlt}
+          onError={(evento): void => {
+            // Link de foto inválido ou fora do ar: troca por uma imagem neutra, sem o texto alternativo solto.
+            evento.currentTarget.onerror = null;
+            evento.currentTarget.src = IMAGEM_SEM_FOTO;
+          }}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div
