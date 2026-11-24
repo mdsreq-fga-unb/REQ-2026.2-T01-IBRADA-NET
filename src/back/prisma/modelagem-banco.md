@@ -51,6 +51,7 @@ erDiagram
         datetime startsAt
         datetime endsAt
         int capacity
+        int availableSeats
         boolean isAvailable
         datetime createdAt
         datetime updatedAt
@@ -63,6 +64,7 @@ erDiagram
         int seats
         decimal totalAmount
         BookingStatus status "PENDING | CONFIRMED | CANCELED"
+        datetime expiresAt
         datetime createdAt
     }
 

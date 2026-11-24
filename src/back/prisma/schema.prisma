@@ -107,8 +107,9 @@ model Experiencia {
   price       Decimal  @db.Decimal(10, 2) // dinheiro: nunca Float
   startsAt    DateTime
   endsAt      DateTime
-  capacity    Int // vagas totais
-  isAvailable Boolean  @default(true) // US12: gestor liga/desliga a oferta
+  capacity       Int // vagas totais
+  availableSeats Int // vagas restantes (debitadas na reserva e devolvidas se expirar/cancelar)
+  isAvailable    Boolean  @default(true) // US12: gestor liga/desliga a oferta
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -137,6 +138,7 @@ model Booking {
   seats        Int           @default(1)
   totalAmount  Decimal       @db.Decimal(10, 2)
   status       BookingStatus @default(PENDING)
+  expiresAt    DateTime
   createdAt    DateTime      @default(now())
 
   user       User        @relation(fields: [userId], references: [id])
@@ -145,6 +147,7 @@ model Booking {
 
   @@index([userId])
   @@index([experienceId])
+  @@index([status, expiresAt])
 }
 
 // Uma reserva pode ter várias tentativas de pagamento (falhou, tentou de novo).
