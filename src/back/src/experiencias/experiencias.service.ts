@@ -44,7 +44,7 @@ export class ExperienciasService {
 
   /**
    * US02: Lista pública de pacotes de ecoturismo no catálogo.
-   * Calcula as vagas disponíveis (availableSeats = capacity até o ciclo 9),
+   * Expõe as vagas disponíveis atuais (availableSeats),
    * sinaliza se está indisponível ou sem vagas e formata o preço com precisão monetária.
    */
   async findAllPublic() {
@@ -54,7 +54,7 @@ export class ExperienciasService {
     });
 
     return experiencias.map((exp) => {
-      const availableSeats = exp.capacity;
+      const availableSeats = Math.max(0, exp.availableSeats);
       const isSoldOut = availableSeats <= 0;
       const priceDecimal = exp.price.toString();
       const priceCents = decimalStringToCents(priceDecimal);
@@ -97,7 +97,7 @@ export class ExperienciasService {
       throw new NotFoundException(`Pacote com o slug '${slug}' não encontrado.`);
     }
 
-    const availableSeats = exp.capacity;
+    const availableSeats = Math.max(0, exp.availableSeats);
     const isSoldOut = availableSeats <= 0;
     const priceDecimal = exp.price.toString();
     const priceCents = decimalStringToCents(priceDecimal);
@@ -167,6 +167,7 @@ export class ExperienciasService {
             startsAt,
             endsAt,
             capacity: dto.capacity,
+            availableSeats: dto.capacity,
             isAvailable: dto.isAvailable,
             midias: {
               create: [
@@ -208,8 +209,8 @@ export class ExperienciasService {
         priceDecimal,
         priceCents,
         priceFormatted,
-        availableSeats: created.capacity,
-        isSoldOut: created.capacity <= 0,
+        availableSeats: created.availableSeats,
+        isSoldOut: created.availableSeats <= 0,
       },
     };
   }
@@ -248,6 +249,8 @@ export class ExperienciasService {
       data: {
         ...updatedSemMidias,
         ...separarMidias(midias),
+        availableSeats: Math.max(0, updated.availableSeats),
+        isSoldOut: updated.availableSeats <= 0,
         price: Number(updated.price),
         priceDecimal,
         priceCents,
