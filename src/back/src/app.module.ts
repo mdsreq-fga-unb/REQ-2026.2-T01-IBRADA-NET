@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ScheduleModule } from '@nestjs/schedule';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
@@ -12,11 +13,13 @@ import { OportunidadesModule } from './oportunidades/oportunidades.module.js';
 import { FunilModule } from './funil/funil.module.js';
 import { CategoriaModule } from './categoria/categoria.module.js';
 import { CandidaturasModule } from './candidaturas/candidaturas.module.js';
+import { ReservasModule } from './reservas/reservas.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
 @Module({
-  imports: [ 
+  imports: [
+    ScheduleModule.forRoot(),
     // Distributed tracing, auto-correlated logs, request/job metrics, error
     // telemetry, alarms, and more — out of the box. Sign up at https://observe.nestjs.com,
     // then run `npx @nestjs/observe link` to write your key pair into .env.
@@ -34,7 +37,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     FunilModule,
     AuthModule,
     CategoriaModule,
-    CandidaturasModule
+    CandidaturasModule,
+    ReservasModule,
   ],
   controllers: [AppController],
   providers: [AppService],

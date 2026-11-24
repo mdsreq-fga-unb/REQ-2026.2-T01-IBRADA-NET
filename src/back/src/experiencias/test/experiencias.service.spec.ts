@@ -40,6 +40,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
           startsAt: new Date('2026-12-01T08:00:00Z'),
           endsAt: new Date('2026-12-01T17:00:00Z'),
           capacity: 10,
+          availableSeats: 10,
           isAvailable: true,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -54,6 +55,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
           startsAt: new Date('2026-12-05T09:00:00Z'),
           endsAt: new Date('2026-12-05T15:00:00Z'),
           capacity: 0,
+          availableSeats: 0,
           isAvailable: false,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -76,6 +78,51 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       expect(result[1].isAvailable).toBe(false);
       expect(result[1].priceCents).toBe(8000);
     });
+
+    it('deve expor availableSeats real (menor que capacity) quando houver vagas reservadas', async () => {
+      mockPrisma.experiencia.findMany.mockResolvedValue([
+        {
+          id: 'exp-parcial',
+          slug: 'trilha-parcial',
+          title: 'Trilha Parcial',
+          description: 'Caminhada',
+          itinerary: null,
+          price: '120.00',
+          startsAt: new Date('2026-12-01T08:00:00Z'),
+          endsAt: new Date('2026-12-01T17:00:00Z'),
+          capacity: 10,
+          availableSeats: 3,
+          isAvailable: true,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 'exp-lotada',
+          slug: 'trilha-lotada',
+          title: 'Trilha Lotada',
+          description: 'Caminhada',
+          itinerary: null,
+          price: '120.00',
+          startsAt: new Date('2026-12-02T08:00:00Z'),
+          endsAt: new Date('2026-12-02T17:00:00Z'),
+          capacity: 10,
+          availableSeats: 0,
+          isAvailable: true,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ]);
+
+      const result = await service.findAllPublic();
+
+      expect(result[0].capacity).toBe(10);
+      expect(result[0].availableSeats).toBe(3);
+      expect(result[0].isSoldOut).toBe(false);
+
+      expect(result[1].capacity).toBe(10);
+      expect(result[1].availableSeats).toBe(0);
+      expect(result[1].isSoldOut).toBe(true);
+    });
   });
 
   describe('findBySlug (US03 - Detalhes do pacote)', () => {
@@ -90,6 +137,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         startsAt: new Date('2026-12-10T08:00:00Z'),
         endsAt: new Date('2026-12-10T18:00:00Z'),
         capacity: 15,
+        availableSeats: 15,
         isAvailable: true,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -104,6 +152,50 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       expect(result.priceDecimal).toBe('200.00');
       expect(result.priceCents).toBe(20000);
       expect(result.priceFormatted).toBe('R$ 200,00');
+    });
+
+    it('deve expor availableSeats restante e sinalizar isSoldOut quando zerar', async () => {
+      mockPrisma.experiencia.findUnique
+        .mockResolvedValueOnce({
+          id: 'exp-1',
+          slug: 'vivencia-quilombola',
+          title: 'Vivência Quilombola',
+          description: 'Imersão cultural',
+          itinerary: null,
+          price: '200.00',
+          startsAt: new Date('2026-12-10T08:00:00Z'),
+          endsAt: new Date('2026-12-10T18:00:00Z'),
+          capacity: 15,
+          availableSeats: 4,
+          isAvailable: true,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })
+        .mockResolvedValueOnce({
+          id: 'exp-2',
+          slug: 'vivencia-esgotada',
+          title: 'Vivência Esgotada',
+          description: 'Imersão cultural',
+          itinerary: null,
+          price: '200.00',
+          startsAt: new Date('2026-12-10T08:00:00Z'),
+          endsAt: new Date('2026-12-10T18:00:00Z'),
+          capacity: 15,
+          availableSeats: 0,
+          isAvailable: true,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        });
+
+      const parcial = await service.findBySlug('vivencia-quilombola');
+      expect(parcial.capacity).toBe(15);
+      expect(parcial.availableSeats).toBe(4);
+      expect(parcial.isSoldOut).toBe(false);
+
+      const esgotada = await service.findBySlug('vivencia-esgotada');
+      expect(esgotada.capacity).toBe(15);
+      expect(esgotada.availableSeats).toBe(0);
+      expect(esgotada.isSoldOut).toBe(true);
     });
 
     it('deve lançar NotFoundException (404) quando o slug não existir', async () => {
@@ -141,6 +233,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         startsAt: new Date(validDto.startsAt),
         endsAt: new Date(validDto.endsAt),
         capacity: 20,
+        availableSeats: 20,
         isAvailable: true,
       });
 
@@ -157,6 +250,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
           startsAt: new Date(validDto.startsAt),
           endsAt: new Date(validDto.endsAt),
           capacity: 20,
+          availableSeats: 20,
           isAvailable: true,
           midias: {
             create: [
@@ -170,6 +264,8 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       });
       expect(response.data.priceCents).toBe(12050);
       expect(response.data.priceFormatted).toBe('R$ 120,50');
+      expect(response.data.availableSeats).toBe(20);
+      expect(response.data.isSoldOut).toBe(false);
     });
 
     it('deve aceitar preço em string brasileira com vírgula ("150,50")', async () => {
@@ -182,6 +278,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         startsAt: new Date(validDto.startsAt),
         endsAt: new Date(validDto.endsAt),
         capacity: 20,
+        availableSeats: 20,
         isAvailable: true,
       });
 
@@ -206,6 +303,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         startsAt: new Date(validDto.startsAt),
         endsAt: new Date(validDto.endsAt),
         capacity: 20,
+        availableSeats: 20,
         isAvailable: true,
       });
 
@@ -234,6 +332,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         startsAt: new Date(validDto.startsAt),
         endsAt: new Date(validDto.endsAt),
         capacity: 20,
+        availableSeats: 20,
         isAvailable: true,
       });
 
@@ -260,6 +359,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
           startsAt: new Date(validDto.startsAt),
           endsAt: new Date(validDto.endsAt),
           capacity: 20,
+          availableSeats: 20,
           isAvailable: true,
         });
 
@@ -326,6 +426,8 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       mockPrisma.experiencia.update.mockResolvedValue({
         id: 'exp-1',
         title: 'Trilha da Lua',
+        capacity: 10,
+        availableSeats: 4,
         isAvailable: false,
         price: '100.00',
       });
@@ -339,6 +441,8 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         include: { midias: { orderBy: { ordem: 'asc' } } },
       });
       expect(result.data.isAvailable).toBe(false);
+      expect(result.data.availableSeats).toBe(4);
+      expect(result.data.isSoldOut).toBe(false);
       expect(result.data.priceCents).toBe(10000);
       expect(result.data.priceFormatted).toBe('R$ 100,00');
     });
