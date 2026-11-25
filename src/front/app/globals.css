@@ -112,3 +112,163 @@
     @apply font-serif text-balance;
   }
 }
+
+.triagem-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(calc(100% - 32px), 460px);
+  height: fit-content;
+  max-width: none;
+  padding: 0;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #d5d1c7;
+  border-radius: 16px;
+  background: #fdfcf9;
+  color: #102418;
+  font: 400 13px/1.35 var(--font-sans);
+}
+
+.triagem-modal::backdrop {
+  background: rgb(51 42 21 / 15%);
+  backdrop-filter: blur(3px);
+}
+
+.triagem-cabecalho {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 67px;
+  padding: 14px 42px 14px 18px;
+  background: #20492e;
+  color: #fdfcf9;
+}
+
+.triagem-cabecalho h2 {
+  font: 600 17px/1.2 var(--font-fraunces), Georgia, serif;
+}
+
+.triagem-cabecalho p {
+  margin-top: 1px;
+  color: #d1dbce;
+}
+
+.triagem-logo,
+.triagem-icone {
+  display: grid;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 11px;
+}
+
+.triagem-logo {
+  background: rgb(255 255 255 / 14%);
+}
+
+.triagem-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.triagem-fechar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  cursor: pointer;
+}
+
+.triagem-conteudo {
+  padding: 14px 18px 18px;
+}
+
+.triagem-progresso {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.triagem-progresso span {
+  flex: 1;
+  height: 5px;
+  border-radius: 5px;
+  background: #f0eadf;
+}
+
+.triagem-progresso span[data-ativo="true"] {
+  background: #20492e;
+}
+
+.triagem-progresso small {
+  margin-left: 4px;
+  font-size: 11px;
+  color: #3e493a;
+  white-space: nowrap;
+}
+
+.triagem-conteudo h3 {
+  margin-bottom: 12px;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.triagem-opcoes {
+  display: grid;
+  gap: 7px;
+}
+
+.triagem-opcao {
+  display: flex;
+  width: 100%;
+  min-height: 59px;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 11px;
+  border: 1px solid #e2d9c8;
+  border-radius: 15px;
+  text-align: left;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.triagem-opcao:hover {
+  background: #f7f2e8;
+}
+
+.triagem-opcao:disabled,
+.triagem-fechar:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.triagem-icone {
+  background: #f1e5cf;
+  color: #20492e;
+}
+
+.triagem-seta {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #455c46;
+}
+
+html:has(.triagem-modal[open]) {
+  overflow: hidden;
+}
+
+.triagem-modal button:focus-visible {
+  outline: 2px solid #547f5f;
+  outline-offset: 2px;
+}

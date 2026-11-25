@@ -13,6 +13,8 @@ import { FunilModule } from './funil/funil.module.js';
 import { CategoriaModule } from './categoria/categoria.module.js';
 import { CandidaturasModule } from './candidaturas/candidaturas.module.js';
 
+import { TriagemModule } from './triagem/triagem.module.js';
+
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
 @Module({
@@ -34,7 +36,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     FunilModule,
     AuthModule,
     CategoriaModule,
-    CandidaturasModule
+    CandidaturasModule,
+    TriagemModule,
   ],
   controllers: [AppController],
   providers: [AppService],
