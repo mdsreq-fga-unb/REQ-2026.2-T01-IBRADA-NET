@@ -58,6 +58,11 @@ export async function listarExperiencias(): Promise<ExperienciaResponseDto[]> {
   return api<ExperienciaResponseDto[]>("/experiencias");
 }
 
+// Lista do gestor: igual ao catálogo, mais quem cadastrou cada pacote.
+export async function listarExperienciasGestor(): Promise<ExperienciaResponseDto[]> {
+  return api<ExperienciaResponseDto[]>("/experiencias/gestor");
+}
+
 export async function buscarExperienciaPorSlug(
   slug: string,
 ): Promise<ExperienciaResponseDto> {

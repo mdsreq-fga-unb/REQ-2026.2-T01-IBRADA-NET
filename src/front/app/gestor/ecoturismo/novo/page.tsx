@@ -71,7 +71,7 @@ export default function NovoPacotePage() {
         capacity: Number(ler("capacity")),
         isAvailable: dados.get("isAvailable") === "on",
         location: ler("location"),
-        community: ler("community"),
+        ...(ler("community") && { community: ler("community") }),
         biome: ler("biome") as BiomaCategoria,
         difficulty: ler("difficulty") as "LEVE" | "MODERADA" | "INTENSA",
         meetingPoint: ler("meetingPoint"),
@@ -105,7 +105,7 @@ export default function NovoPacotePage() {
             className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
             <ArrowLeft aria-hidden="true" className="size-4" />
-            Ecoturismo comunitário
+            Ecoturismo
           </Link>
           <h1 className="font-serif text-4xl text-primary sm:text-5xl">Criar pacote</h1>
         </header>
@@ -151,8 +151,8 @@ export default function NovoPacotePage() {
                 <input name="location" required pattern=".*\S.*" placeholder="Ex. Planaltina/DF" className={fieldClass} />
               </label>
               <label className={labelClass}>
-                Comunidade anfitriã
-                <input name="community" required pattern=".*\S.*" className={fieldClass} />
+                Comunidade anfitriã (opcional)
+                <input name="community" className={fieldClass} />
               </label>
               <label className={labelClass}>
                 Bioma

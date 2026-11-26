@@ -289,7 +289,7 @@ export default function EcoturismoPage(): React.JSX.Element {
       <section className="border-b border-border bg-secondary/45">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14 lg:px-8">
           <p className="text-[11px] font-semibold tracking-[0.14em] text-earth uppercase sm:text-xs">
-            Ecoturismo Comunitário
+            Ecoturismo
           </p>
 
           <h1 className="mt-3 max-w-md font-serif text-[2rem] leading-[1.12] font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
@@ -383,7 +383,7 @@ export default function EcoturismoPage(): React.JSX.Element {
               Nenhum pacote disponível no momento
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Novas expedições comunitárias no Cerrado e na Amazônia serão
+              Novas expedições no Cerrado e na Amazônia serão
               publicadas em breve.
             </p>
             <button
@@ -417,7 +417,7 @@ export default function EcoturismoPage(): React.JSX.Element {
       <div className="fixed right-4 bottom-4 z-40 sm:right-6 sm:bottom-6">
         <a
           href={buildWhatsAppLink(
-            "Olá! Gostaria de saber mais sobre os pacotes de ecoturismo comunitário do IBRADA.",
+            "Olá! Gostaria de saber mais sobre os pacotes de ecoturismo do IBRADA.",
           )}
           target="_blank"
           rel="noopener noreferrer"

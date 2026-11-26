@@ -8,6 +8,7 @@ import {
   Param,
   Patch,
   Post,
+  Request,
 } from '@nestjs/common';
 import { ExperienciasService } from './experiencias.service.js';
 import { CreateExperienciaDto } from './dto/create-experiencia.dto.js';
@@ -15,6 +16,7 @@ import { UpdateDisponibilidadeDto } from './dto/update-disponibilidade.dto.js';
 import { Public } from '../auth/public.decorator.js';
 import { Roles } from '../auth/roles.decorator.js';
 import { UserRole } from '../user/dto/create-user.dto.js';
+import type { AuthenticatedRequest } from '../auth/auth.types.js';
 
 @Controller('experiencias')
 export class ExperienciasController {
@@ -31,6 +33,17 @@ export class ExperienciasController {
   async findAll() {
     this.logger.log('Consulta pública ao catálogo de ecoturismo (US02)');
     return this.experienciasService.findAllPublic();
+  }
+
+  /**
+   * US11/US12: lista do gestor, com quem cadastrou cada pacote.
+   * Declarada antes de ':slug' para 'gestor' não ser lido como slug.
+   */
+  @Roles(UserRole.GESTOR)
+  @Get('gestor')
+  async findAllGestor() {
+    this.logger.log('Gestor consultou a lista de pacotes (US11/US12)');
+    return this.experienciasService.findAllGestor();
   }
 
   /**
@@ -51,9 +64,9 @@ export class ExperienciasController {
   @Roles(UserRole.GESTOR)
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() dto: CreateExperienciaDto) {
+  async create(@Body() dto: CreateExperienciaDto, @Request() req: AuthenticatedRequest) {
     this.logger.log(`Gestor solicitou cadastro de novo pacote: "${dto.title}" (US11)`);
-    return this.experienciasService.create(dto);
+    return this.experienciasService.create(dto, req.user.sub);
   }
 
   /**

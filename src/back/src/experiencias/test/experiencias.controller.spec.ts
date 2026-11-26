@@ -10,6 +10,7 @@ describe('ExperienciasController', () => {
 
   const mockService = {
     findAllPublic: vi.fn(),
+    findAllGestor: vi.fn(),
     findBySlug: vi.fn(),
     create: vi.fn(),
     updateDisponibilidade: vi.fn(),
@@ -28,6 +29,15 @@ describe('ExperienciasController', () => {
 
     expect(result).toHaveLength(1);
     expect(mockService.findAllPublic).toHaveBeenCalled();
+  });
+
+  it('deve delegar chamada findAllGestor para o service', async () => {
+    mockService.findAllGestor.mockResolvedValue([{ id: 'exp-1', createdBy: { id: 'g1', name: 'Ana' } }]);
+
+    const result = await controller.findAllGestor();
+
+    expect(result[0].createdBy.name).toBe('Ana');
+    expect(mockService.findAllGestor).toHaveBeenCalled();
   });
 
   it('deve delegar chamada findBySlug para o service com o slug correto', async () => {
@@ -66,10 +76,10 @@ describe('ExperienciasController', () => {
     };
     mockService.create.mockResolvedValue({ message: 'Criado', data: dto });
 
-    const result = await controller.create(dto);
+    const result = await controller.create(dto, { user: { sub: 'gestor-1', email: 'g@ibrada.org' } } as never);
 
     expect(result.message).toBe('Criado');
-    expect(mockService.create).toHaveBeenCalledWith(dto);
+    expect(mockService.create).toHaveBeenCalledWith(dto, 'gestor-1');
   });
 
   it('deve delegar chamada updateDisponibilidade para o service com id e dto', async () => {

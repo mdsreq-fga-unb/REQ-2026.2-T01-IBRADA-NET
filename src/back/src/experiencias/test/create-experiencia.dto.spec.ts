@@ -54,14 +54,13 @@ describe('CreateExperienciaDto (US11 - campos obrigatórios)', () => {
     expect(dto.includedItems).toEqual(['Guia local', 'Almoço']);
   });
 
-  it('exige local, comunidade, ponto e horário de encontro e itens inclusos (US03)', async () => {
-    const { location: _l, community: _c, meetingPoint: _p, meetingTime: _t, includedItems: _i, ...incompleto } = validBody;
+  it('exige local, ponto e horário de encontro e itens inclusos (US03)', async () => {
+    const { location: _l, meetingPoint: _p, meetingTime: _t, includedItems: _i, ...incompleto } = validBody;
     const msgs = await mensagens(incompleto);
 
     expect(msgs).toEqual(
       expect.arrayContaining([
         'O local do pacote é obrigatório.',
-        'A comunidade anfitriã é obrigatória.',
         'O ponto de encontro é obrigatório.',
         'O horário de encontro é obrigatório.',
         'Os itens inclusos devem ser enviados como uma lista.',
@@ -77,7 +76,7 @@ describe('CreateExperienciaDto (US11 - campos obrigatórios)', () => {
   });
 
   it('aceita regras, vestuário, impacto e guia como opcionais', async () => {
-    const { rules: _r, clothingTips: _v, communityImpact: _ci, guideName: _gn, guideRole: _gr, maxPerBooking: _m, ...semOpcionais } = validBody;
+    const { community: _co, rules: _r, clothingTips: _v, communityImpact: _ci, guideName: _gn, guideRole: _gr, maxPerBooking: _m, ...semOpcionais } = validBody;
 
     await expect(validate(semOpcionais)).resolves.toBeDefined();
   });

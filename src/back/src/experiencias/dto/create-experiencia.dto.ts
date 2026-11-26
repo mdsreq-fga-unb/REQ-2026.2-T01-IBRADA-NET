@@ -66,10 +66,11 @@ export class CreateExperienciaDto {
   @MaxLength(191, { message: 'O local deve ter no máximo 191 caracteres.' })
   location: string;
 
+  /** Comunidade anfitriã. Opcional: nem todo ecoturismo é comunitário. */
+  @IsOptional()
   @IsString({ message: 'A comunidade deve ser um texto válido.' })
-  @IsNotEmpty({ message: 'A comunidade anfitriã é obrigatória.' })
   @MaxLength(191, { message: 'A comunidade deve ter no máximo 191 caracteres.' })
-  community: string;
+  community?: string;
 
   @IsIn(BIOMAS, { message: `O bioma deve ser um destes: ${BIOMAS.join(', ')}.` })
   biome: string;

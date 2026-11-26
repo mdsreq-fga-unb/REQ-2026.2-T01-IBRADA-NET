@@ -196,7 +196,7 @@ export function ExperienciaDetalhe({
             className="mt-6 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
             <ArrowLeft aria-hidden="true" className="size-4" />
-            Voltar para Ecoturismo Comunitário
+            Voltar para Ecoturismo
           </Link>
         </div>
       </div>
@@ -678,7 +678,7 @@ export function ExperienciaDetalhe({
                   href={buildWhatsAppLink(mensagemReserva)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+                  className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-destructive px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-destructive/90"
                 >
                   Reservar vagas
                 </a>

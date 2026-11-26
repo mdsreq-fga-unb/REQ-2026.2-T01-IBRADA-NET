@@ -247,7 +247,7 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
           {oportunidade.aberta && !user ? (
             <Link
               href={`/login?next=${encodeURIComponent(`/voluntariado/${oportunidade.id}`)}`}
-              className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-destructive px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-destructive/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               Candidatar-se
             </Link>
@@ -301,7 +301,7 @@ export function OportunidadeDetalhe({ id }: { id: string }) {
                 type="button"
                 onClick={handleCandidatar}
                 disabled={enviando || status?.candidatado}
-                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-destructive px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-destructive/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
               >
                 {enviando && <Loader2 aria-hidden="true" className="size-4 animate-spin" />}
                 {status?.candidatado ? "Candidatura enviada" : "Candidatar-se"}

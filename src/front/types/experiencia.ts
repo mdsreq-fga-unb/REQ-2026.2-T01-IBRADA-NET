@@ -34,7 +34,7 @@ export type CreateExperienciaPayload = Omit<
   photos: string[]; // ao menos uma foto de divulgação (a primeira é a capa)
   videos?: string[];
   location: string;
-  community: string;
+  community?: string;
   biome: BiomaCategoria;
   difficulty: "LEVE" | "MODERADA" | "INTENSA";
   meetingPoint: string;
@@ -56,6 +56,8 @@ export interface ExperienciaResponseDto extends ExperienciaDto {
   priceDecimal?: string;
   priceCents?: number;
   priceFormatted?: string;
+  // Só vem na lista do gestor (GET /experiencias/gestor); nulo em pacotes antigos.
+  createdBy?: { id: string; name: string } | null;
 }
 
 export type BiomaCategoria =

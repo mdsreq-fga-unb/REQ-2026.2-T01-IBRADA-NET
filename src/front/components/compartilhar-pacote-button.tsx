@@ -88,7 +88,7 @@ export function CompartilharPacoteButton({
       }
     }
 
-    const copiou = await copiarParaAreaDeTransferencia(url);
+    const copiou = await copiarParaAreaDeTransferencia(`${texto}\n${url}`);
     mostrarFeedback(copiou ? "copiado" : "erro");
   };
 

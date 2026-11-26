@@ -126,6 +126,22 @@ export class ExperienciasService {
   }
 
   /**
+   * US11/US12: lista do gestor. Igual ao catálogo, mais o gestor que cadastrou o pacote
+   * (nome e id). Essa informação nunca vai para a rota pública.
+   */
+  async findAllGestor() {
+    const [lista, autores] = await Promise.all([
+      this.findAllPublic(),
+      this.prisma.experiencia.findMany({
+        select: { id: true, createdBy: { select: { id: true, name: true } } },
+      }),
+    ]);
+    const porId = new Map(autores.map((a) => [a.id, a.createdBy]));
+
+    return lista.map((exp) => ({ ...exp, createdBy: porId.get(exp.id) ?? null }));
+  }
+
+  /**
    * US03: Detalhe público de um pacote de ecoturismo por slug.
    * Retorna roteiro, datas, vagas e representação financeira completa.
    */
@@ -173,7 +189,7 @@ export class ExperienciasService {
    * Valida regras de negócio: startsAt < endsAt, capacity > 0,
    * converte o preço com precisão decimal exata e gera slug único.
    */
-  async create(dto: CreateExperienciaDto) {
+  async create(dto: CreateExperienciaDto, createdById?: string) {
     const startsAt = new Date(dto.startsAt);
     const endsAt = new Date(dto.endsAt);
 
@@ -212,7 +228,7 @@ export class ExperienciasService {
             capacity: dto.capacity,
             isAvailable: dto.isAvailable,
             location: dto.location,
-            community: dto.community,
+            community: dto.community?.trim() || null,
             biome: dto.biome,
             difficulty: dto.difficulty,
             meetingPoint: dto.meetingPoint,
@@ -224,6 +240,7 @@ export class ExperienciasService {
             guideName: dto.guideName?.trim() || null,
             guideRole: dto.guideRole?.trim() || null,
             maxPerBooking: dto.maxPerBooking ?? 6,
+            createdById: createdById ?? null,
             midias: {
               create: [
                 ...dto.photos.map((url, i) => ({ tipo: 'FOTO' as const, url, ordem: i })),
