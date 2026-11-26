@@ -1,12 +1,15 @@
 "use client";
 
-import { useState, type SubmitEvent } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useState, type SubmitEvent } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 
-export default function Login() {
+function LoginForm() {
     const { login } = useAuth();
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const redirectUrl = searchParams.get("redirect") || "/";
+
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -19,7 +22,7 @@ export default function Login() {
         const data = new FormData(e.currentTarget);
         try {
             await login(String(data.get("email")), String(data.get("senha")));
-            router.push("/");
+            router.push(redirectUrl);
         } catch (err) {
             setError(err instanceof Error ? err.message : "Não foi possível entrar. Tente novamente.");
         } finally {
@@ -27,6 +30,68 @@ export default function Login() {
         }
     }
 
+    const isReservaRedirect = redirectUrl.includes("reserva");
+
+    return (
+        <div className="mx-auto w-full max-w-md rounded-md border border-gray-300 p-5 sm:p-8 lg:max-w-none lg:p-10">
+            <h1 className="text-xl font-semibold">Entrar na sua conta</h1>
+            <p className="text-sm text-gray-600">Preencha os campos abaixo para acessar sua conta</p>
+
+            {isReservaRedirect && (
+                <div className="mt-3 rounded-md bg-amber-50 p-3 text-sm text-amber-900 border border-amber-200">
+                    <strong>Atenção:</strong> Faça login para continuar com a sua reserva de ecoturismo.
+                </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
+                <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Email"
+                    className="min-h-11 w-full rounded-md border border-gray-300 p-2 text-base"
+                />
+                <input
+                    name="senha"
+                    type={showPassword ? "text" : "password"}
+                    required
+                    placeholder="Senha"
+                    className="min-h-11 w-full rounded-md border border-gray-300 p-2 text-base"
+                />
+                {error && <p className="text-sm text-red-600" role="alert">{error}</p>}
+                <button type="submit" disabled={loading} className="min-h-11 rounded-md bg-green-800 p-2 text-white disabled:opacity-60 font-medium">
+                    {loading ? "Entrando..." : "Entrar"}
+                </button>
+                <label className="flex items-center gap-2">
+                    <input type="checkbox" className="size-4" />
+                    <span className="text-sm text-gray-600">Lembrar-me</span>
+                </label>
+                <label className="mb-3 flex items-center gap-2">
+                    <input
+                        type="checkbox"
+                        className="size-4"
+                        checked={showPassword}
+                        onChange={(e) => setShowPassword(e.target.checked)}
+                    />
+                    <span className="text-sm text-gray-600">Exibir senha</span>
+                </label>
+            </form>
+            <span>
+                Não tem uma conta?{" "}
+                <a href="/cadastro" className="text-blue-500 underline">
+                    Faça seu cadastro
+                </a>
+            </span>
+            <div className="mt-8 flex flex-col items-center justify-center gap-2 rounded-2xl bg-amber-100 p-4 text-center sm:p-5">
+                <h2>Precisa de ajuda para acessar sua conta?</h2>
+                <span className="text-sm">Entre em contato com nosso suporte para obter assistência.</span>
+                <button className="mt-2 min-h-11 rounded-md bg-green-800 px-4 py-2 text-white text-sm font-medium">Suporte</button>
+            </div>
+        </div>
+    );
+}
+
+export default function Login() {
     return (
         <div className="mx-auto grid min-h-screen w-full max-w-6xl grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-2 lg:gap-12 lg:py-16">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -39,57 +104,12 @@ export default function Login() {
                         className="h-auto w-full rounded-2xl object-cover"
                     />
                 </div>
-                <span className="mt-3 text-sm text-gray-600">Crescer, cuidar e tranformar. Juntos!</span>
+                <span className="mt-3 text-sm text-gray-600">Crescer, cuidar e transformar. Juntos!</span>
             </div>
 
-            <div className="mx-auto w-full max-w-md rounded-md border border-gray-300 p-5 sm:p-8 lg:max-w-none lg:p-10">
-                <h1 className="text-xl font-semibold">Entrar na sua conta</h1>
-                <span className="text-sm text-gray-600">Preencha os campos abaixo para acessar sua conta</span>
-                <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
-                    <input
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="Email"
-                        className="min-h-11 w-full rounded-md border border-gray-300 p-2 text-base"
-                    />
-                    <input
-                        name="senha"
-                        type={showPassword ? "text" : "password"}
-                        required
-                        placeholder="Senha"
-                        className="min-h-11 w-full rounded-md border border-gray-300 p-2 text-base"
-                    />
-                    {error && <p className="text-sm text-red-600" role="alert">{error}</p>}
-                    <button type="submit" disabled={loading} className="min-h-11 rounded-md bg-green-800 p-2 text-white disabled:opacity-60">
-                        {loading ? "Entrando..." : "Entrar"}
-                    </button>
-                    <label className="flex items-center gap-2">
-                        <input type="checkbox" className="size-4" />
-                        <span className="text-sm text-gray-600">Lembrar-me</span>
-                    </label>
-                    <label className="mb-3 flex items-center gap-2">
-                        <input
-                            type="checkbox"
-                            className="size-4"
-                            checked={showPassword}
-                            onChange={(e) => setShowPassword(e.target.checked)}
-                        />
-                        <span className="text-sm text-gray-600">Exibir senha</span>
-                    </label>
-                </form>
-                <span>
-                    Não tem uma conta?{" "}
-                    <a href="/cadastro" className="text-blue-500">
-                        Faça seu cadastro
-                    </a>
-                </span>
-                <div className="mt-8 flex flex-col items-center justify-center gap-2 rounded-2xl bg-amber-100 p-4 text-center sm:p-5">
-                    <h2>Precisa de ajuda para acessar sua conta?</h2>
-                    <span>Entre em contato com nosso suporte para obter assistência.</span>
-                    <button className="mt-2 min-h-11 rounded-md bg-green-800 px-4 py-2 text-white">Suporte</button>
-                </div>
-            </div>
+            <Suspense fallback={<div className="p-8 text-center">Carregando...</div>}>
+                <LoginForm />
+            </Suspense>
         </div>
-    )
+    );
 }
