@@ -21,6 +21,7 @@ services:
 
   back:
     container_name: ibrada_backend
+    command: ["npm", "run", "start:dev", "--", "--path", "tsconfig.docker.json"]
     build:
       context: ./src/back
       dockerfile: Dockerfile
@@ -40,6 +41,7 @@ services:
     volumes:
       - ./src/back:/app
       - /app/node_modules
+      - /app/dist
     depends_on:
       db:
         condition: service_healthy
@@ -55,6 +57,8 @@ services:
     environment:
       PORT: 3000
       NEXT_PUBLIC_API_URL: "http://localhost:3001"
+      NEXT_PUBLIC_TRIAGEM_WHATSAPP: ${NEXT_PUBLIC_TRIAGEM_WHATSAPP:-}
+      NEXT_PUBLIC_IBRADA_INSTAGRAM_URL: ${NEXT_PUBLIC_IBRADA_INSTAGRAM_URL:-}
       WATCHPACK_POLLING: "true"
     volumes:
       - ./src/front:/app

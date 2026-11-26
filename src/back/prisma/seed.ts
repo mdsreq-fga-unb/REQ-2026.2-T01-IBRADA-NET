@@ -209,6 +209,39 @@ const USUARIOS_TESTE = [
   },
 ];
 
+const EXPERIENCIAS_DEMONSTRACAO = [
+  {
+    slug: 'trilha-das-nascentes-do-cerrado',
+    title: 'Trilha das Nascentes do Cerrado',
+    description: 'Experiência de demonstração. Caminhada guiada em Planaltina/DF para observar veredas e conhecer iniciativas de recuperação de nascentes.',
+    itinerary: '08h00 – Recepção e orientações\n09h00 – Caminhada pelas veredas\n12h00 – Pausa para almoço\n16h00 – Encerramento',
+    price: '95.00',
+    capacity: 15,
+    diasAteInicio: 14,
+    duracaoHoras: 8,
+  },
+  {
+    slug: 'vivencia-de-saberes-quilombolas',
+    title: 'Pacote Vivência de Saberes Quilombolas',
+    description: 'Experiência de demonstração. Roteiro de dois dias em Cavalcante/GO, com atividades culturais, oficina de artesanato e caminhada leve.',
+    itinerary: 'Dia 1 – Chegada, roda de conversa e oficina de artesanato\nDia 2 – Caminhada guiada e encerramento',
+    price: '320.00',
+    capacity: 8,
+    diasAteInicio: 28,
+    duracaoHoras: 32,
+  },
+  {
+    slug: 'rio-e-floresta-ribeirinha',
+    title: 'Pacote Rio e Floresta Ribeirinha',
+    description: 'Experiência de demonstração. Roteiro de quatro dias em Novo Airão/AM, com navegação e caminhadas guiadas para conhecer a floresta amazônica.',
+    itinerary: 'Dia 1 – Recepção e orientações\nDia 2 – Navegação e observação da paisagem\nDia 3 – Caminhada guiada na floresta\nDia 4 – Retorno e encerramento',
+    price: '790.00',
+    capacity: 12,
+    diasAteInicio: 42,
+    duracaoHoras: 80,
+  },
+];
+
 async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) {
@@ -295,11 +328,27 @@ async function main() {
       `Oportunidades: ${oportunidadesCriadas} criada(s), ${OPORTUNIDADES.length - oportunidadesCriadas} já existiam.`,
     );
 
-    // 4. Usuários de teste, perfis e candidaturas (nunca em produção)
+    // Experiências e usuários de demonstração ficam restritos ao ambiente de desenvolvimento.
     if (process.env.NODE_ENV === 'production') {
-      console.log('Usuários de teste ignorados (NODE_ENV=production).');
+      console.log('Experiências de demonstração e usuários de teste ignorados (NODE_ENV=production).');
       return;
     }
+
+    const inicio = new Date();
+    inicio.setUTCHours(11, 0, 0, 0);
+    for (const { diasAteInicio, duracaoHoras, ...experiencia } of EXPERIENCIAS_DEMONSTRACAO) {
+      const startsAt = new Date(inicio);
+      startsAt.setUTCDate(startsAt.getUTCDate() + diasAteInicio);
+      const endsAt = new Date(startsAt);
+      endsAt.setUTCHours(endsAt.getUTCHours() + duracaoHoras);
+
+      await prisma.experiencia.upsert({
+        where: { slug: experiencia.slug },
+        update: {},
+        create: { ...experiencia, startsAt, endsAt, isAvailable: true },
+      });
+    }
+    console.log(`Experiências de demonstração: ${EXPERIENCIAS_DEMONSTRACAO.length} verificadas/criadas.`);
 
     const passwordHash = await bcrypt.hash(SENHA_TESTE, 10);
     let usuariosCriados = 0;

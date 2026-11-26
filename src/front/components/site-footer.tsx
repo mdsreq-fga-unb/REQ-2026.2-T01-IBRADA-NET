@@ -1,13 +1,8 @@
 import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { IbradaMark } from '@/components/brand-icons'
 import { navItems, site } from '@/lib/site'
 
-const socials = [
-  { label: 'Instagram', href: 'https://instagram.com' },
-  // { label: 'Facebook', href: 'https://facebook.com' },
-  { label: 'YouTube', href: 'https://youtube.com' },
-]
+const instagram = process.env.NEXT_PUBLIC_IBRADA_INSTAGRAM_URL?.trim()
 
 export function SiteFooter() {
   return (
@@ -57,23 +52,19 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
-          <h2 className="mb-4 font-sans text-sm font-semibold tracking-wide uppercase">Redes sociais</h2>
-          <ul className="flex flex-wrap gap-2 text-sm">
-            {socials.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex rounded-full border border-primary-foreground/25 px-3 py-1.5 transition-colors hover:bg-primary-foreground/10"
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {instagram && (
+          <div>
+            <h2 className="mb-4 font-sans text-sm font-semibold tracking-wide uppercase">Redes sociais</h2>
+            <a
+              href={instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full border border-primary-foreground/25 px-3 py-1.5 text-sm transition-colors hover:bg-primary-foreground/10"
+            >
+              Instagram
+            </a>
+          </div>
+        )}
       </div>
 
       <div className="border-t border-primary-foreground/15">

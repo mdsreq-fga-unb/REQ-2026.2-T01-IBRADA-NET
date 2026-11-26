@@ -22,8 +22,8 @@ export const fluxos = {
     rotulo: "Quero ser voluntário em um projeto",
     pergunta: "Como você quer participar?",
     opcoes: [
-      opcao("conhecer", "Conhecer projetos"),
-      opcao("projeto", "Participar de um projeto específico"),
+      opcao("conhecer", "Ver todas as oportunidades"),
+      opcao("projeto", "Escolher uma oportunidade"),
       opcao("duvidas", "Tirar dúvidas sobre voluntariado"),
     ],
   },
@@ -33,10 +33,10 @@ export const fluxos = {
     opcoes: [...tiposApoio, opcao("avaliando", "Ainda estou avaliando")],
   },
   apoio: {
-    rotulo: "Sou agricultor familiar ou comunidade e busco apoio técnico/regularização fundiária",
+    rotulo: "Sou agricultor familiar ou comunidade e busco assistência técnica/regularização fundiária",
     pergunta: "De que ajuda você precisa?",
     opcoes: [
-      opcao("tecnico", "Apoio técnico"),
+      opcao("tecnico", "Assistência técnica"),
       opcao("regularizacao", "Orientação sobre regularização de terras"),
       opcao("identificar", "Preciso de ajuda para identificar"),
     ],
@@ -47,7 +47,7 @@ export const fluxos = {
     opcoes: [
       opcao("instituto", "O que é o IBRADA?"),
       opcao("areas", "Quais são os principais projetos e áreas de atuação do IBRADA?"),
-      opcao("regioes", "Onde o IBRADA atua?"),
+      opcao("regioes", "Como funciona o atendimento do IBRADA?"),
       opcao("contato", "Como posso entrar em contato com o IBRADA?"),
     ],
   },
@@ -62,14 +62,14 @@ export const situacoes = [
 export const acoesInstitucionais: Record<string, string> = {
   instituto: "Conhecer o IBRADA",
   areas: "Ver projetos",
-  regioes: "Consultar regiões de atuação",
-  contato: "Falar pelo WhatsApp",
+  regioes: "Ver serviços e projetos",
+  contato: "Enviar e-mail",
 };
 
 export type PerfilTriagem = keyof typeof fluxos;
 
 export function registrarTriagem(perfil: PerfilTriagem, tipoSolicitacao: string, escolha?: string) {
-  return api<{ id: string; href: string; departamento: string; whatsappUrl: string }>("/triagem", {
+  return api<{ id: string; href?: string; departamento: string; assunto?: string; mensagem?: string }>("/triagem", {
     method: "POST",
     body: { perfil, tipoSolicitacao, escolha },
   });
