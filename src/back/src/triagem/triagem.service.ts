@@ -89,13 +89,15 @@ export class TriagemService {
         if (escolha === 'nao-encontrei') return { assunto: 'Projeto', mensagem: mensagens.projeto };
         const oportunidade = await this.prisma.oportunidade.findUnique({
           where: { id: escolha, isOpen: true },
-          select: { id: true },
+          select: { title: true },
         });
-        if (!oportunidade) throw new BadRequestException('Selecione uma oportunidade de voluntariado aberta.');
-        return { href: `/voluntariado/${encodeURIComponent(oportunidade.id)}` };
+        if (!oportunidade) throw new BadRequestException('Selecione um projeto de voluntariado com inscrições abertas.');
+        return { assunto: `Projeto (${oportunidade.title})` };
       }
       case 'parcerias':
-        return { href: tipo === 'avaliando' ? '/parcerias' : `/parcerias?tipoApoio=${tipo}`, assunto: 'Patrocinadores e Apoiadores' };
+        return tipo === 'avaliando'
+          ? { assunto: 'Patrocinadores e Apoiadores' }
+          : { href: '/parcerias' };
       case 'apoio':
         if (tipo === 'regularizacao' || escolha === 'terra') return { href: '/atuacao', assunto: 'Regularização de Imóveis Rurais' };
         if (tipo === 'tecnico') return { assunto: assuntoAter, mensagem: mensagens.tecnico };

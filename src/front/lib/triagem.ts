@@ -22,15 +22,15 @@ export const fluxos = {
     rotulo: "Quero ser voluntário em um projeto",
     pergunta: "Como você quer participar?",
     opcoes: [
-      opcao("conhecer", "Ver todas as oportunidades"),
-      opcao("projeto", "Escolher uma oportunidade"),
+      opcao("conhecer", "Ver todos os projetos"),
+      opcao("projeto", "Tirar dúvidas sobre um projeto específico"),
       opcao("duvidas", "Tirar dúvidas sobre voluntariado"),
     ],
   },
   parcerias: {
     rotulo: "Sou empresa/instituição e quero propor parceria ou apoio",
     pergunta: "Que tipo de parceria ou apoio?",
-    opcoes: [...tiposApoio, opcao("avaliando", "Ainda estou avaliando")],
+    opcoes: [...tiposApoio, opcao("avaliando", "Tirar dúvidas sobre parcerias ou apoio")],
   },
   apoio: {
     rotulo: "Sou agricultor familiar ou comunidade e busco assistência técnica/regularização fundiária",

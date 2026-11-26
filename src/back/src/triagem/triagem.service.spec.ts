@@ -14,20 +14,20 @@ describe('TriagemService', () => {
     vi.resetAllMocks();
     create.mockResolvedValue({ id: 'triagem-1' });
     findFirst.mockResolvedValue({ slug: 'trilha-1', title: 'Trilha do Cerrado' });
-    findUnique.mockResolvedValue({ id: 'vaga-1' });
+    findUnique.mockResolvedValue({ title: 'Oficinas de Agroecologia' });
   });
 
   it.each([
     ['ecoturismo', 'disponiveis', undefined, '/ecoturismo', undefined],
     ['ecoturismo', 'trilha', 'trilha-1', '/ecoturismo/trilha-1', 'Ecoturismo (Trilha do Cerrado)'],
     ['voluntariado', 'conhecer', undefined, '/voluntariado', undefined],
-    ['voluntariado', 'projeto', 'vaga-1', '/voluntariado/vaga-1', undefined],
+    ['voluntariado', 'projeto', 'vaga-1', undefined, 'Projeto (Oficinas de Agroecologia)'],
     ['voluntariado', 'projeto', 'nao-encontrei', 'Olá, não encontrei o projeto de voluntariado desejado', 'Projeto'],
     ['voluntariado', 'duvidas', undefined, 'Olá, estou com dúvidas sobre voluntariado', 'Voluntariado'],
-    ['parcerias', 'patrocinio', undefined, '/parcerias?tipoApoio=patrocinio', 'Patrocinadores e Apoiadores'],
-    ['parcerias', 'doacao', undefined, '/parcerias?tipoApoio=doacao', 'Patrocinadores e Apoiadores'],
-    ['parcerias', 'institucional', undefined, '/parcerias?tipoApoio=institucional', 'Patrocinadores e Apoiadores'],
-    ['parcerias', 'avaliando', undefined, '/parcerias', 'Patrocinadores e Apoiadores'],
+    ['parcerias', 'patrocinio', undefined, '/parcerias', undefined],
+    ['parcerias', 'doacao', undefined, '/parcerias', undefined],
+    ['parcerias', 'institucional', undefined, '/parcerias', undefined],
+    ['parcerias', 'avaliando', undefined, undefined, 'Patrocinadores e Apoiadores'],
     ['apoio', 'tecnico', undefined, 'Olá, sou agricultor familiar ou faço parte de uma comunidade e busco assistência técnica', 'ATER (Ass. Téc. e Extensão Rural)'],
     ['apoio', 'regularizacao', undefined, '/atuacao', 'Regularização de Imóveis Rurais'],
     ['apoio', 'identificar', 'cultivo', 'Olá, sou agricultor familiar ou faço parte de uma comunidade e preciso de orientação para melhorar o meu cultivo', 'ATER (Ass. Téc. e Extensão Rural)'],
@@ -41,7 +41,7 @@ describe('TriagemService', () => {
     const resultado = await service.criar({ perfil, tipoSolicitacao, escolha });
 
     expect(resultado.assunto).toBe(assunto);
-    if (destino.startsWith('/')) {
+    if (destino?.startsWith('/')) {
       expect(resultado.href).toBe(destino);
     } else {
       expect(resultado.href).toBeUndefined();
@@ -82,7 +82,7 @@ describe('TriagemService', () => {
       perfil: 'voluntariado', tipoSolicitacao: 'projeto', escolha: 'vaga-1',
     })).rejects.toBeInstanceOf(BadRequestException);
     expect(findUnique).toHaveBeenCalledWith({
-      where: { id: 'vaga-1', isOpen: true }, select: { id: true },
+      where: { id: 'vaga-1', isOpen: true }, select: { title: true },
     });
     expect(create).not.toHaveBeenCalled();
   });
