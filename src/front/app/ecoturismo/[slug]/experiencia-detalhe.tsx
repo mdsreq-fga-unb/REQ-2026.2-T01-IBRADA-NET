@@ -247,7 +247,7 @@ export function ExperienciaDetalhe({
         <img
           src={meta.imagemUrl}
           alt={meta.imagemAlt}
-          className="h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div
           aria-hidden="true"

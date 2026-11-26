@@ -28,6 +28,7 @@ export class ParceriasService {
         contactName: dto.contactName.trim(),
         contactEmail: dto.contactEmail.trim(),
         contactPhone: dto.contactPhone?.trim() || null,
+        ...(dto.tipoApoio && { tipoApoio: dto.tipoApoio }),
         proposal: dto.proposal.trim(),
         status: PartnershipStatus.RECEIVED,
       },

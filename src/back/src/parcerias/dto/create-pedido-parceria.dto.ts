@@ -1,6 +1,7 @@
 import { Transform } from 'class-transformer';
 import {
   IsEmail,
+  IsIn,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -58,6 +59,10 @@ export class CreatePedidoParceriaDto {
   @IsNotEmpty({ message: 'O nome do responsável é obrigatório.' })
   @MaxLength(MAX_CAMPO, { message: `O nome do responsável deve ter no máximo ${MAX_CAMPO} caracteres.` })
   contactName: string;
+
+  @IsOptional()
+  @IsIn(['patrocinio', 'doacao', 'institucional'], { message: 'Selecione um tipo de apoio válido.' })
+  tipoApoio?: string;
 
   // === Proposta / Texto Livre (US19) ===
   @Transform(trim)

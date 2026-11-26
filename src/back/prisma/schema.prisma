@@ -171,6 +171,7 @@ model PedidoParceria {
   contactEmail String
   contactPhone String?
   proposal     String            @db.Text
+  tipoApoio    String?
   status       PartnershipStatus @default(RECEIVED)
   createdAt    DateTime          @default(now())
 }
@@ -284,4 +285,13 @@ model CriterioFunil {
   updatedAt           DateTime       @updatedAt
 
   oportunidade Oportunidade @relation(fields: [oportunidadeId], references: [id], onDelete: Cascade)
+}
+
+model Triagem {
+  id              String   @id @default(cuid())
+  tipoSolicitacao String
+  perfil          String
+  departamento    String
+  respostas       Json
+  createdAt       DateTime @default(now())
 }

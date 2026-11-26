@@ -33,6 +33,32 @@ export class ProjetosService {
     });
   }
 
+  listarComVagas() {
+    return this.prisma.projeto.findMany({
+      where: { oportunidades: { some: { isOpen: true } } },
+      orderBy: { title: 'asc' },
+      select: { id: true, title: true },
+    });
+  }
+
+  async buscarComVagas(id: string) {
+    const projeto = await this.prisma.projeto.findUnique({
+      where: { id, oportunidades: { some: { isOpen: true } } },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        oportunidades: {
+          where: { isOpen: true },
+          orderBy: { title: 'asc' },
+          select: { id: true, title: true, localAtuacao: true },
+        },
+      },
+    });
+    if (!projeto) throw new NotFoundException('Projeto com vagas abertas não encontrado.');
+    return projeto;
+  }
+
   /**
    * Busca um projeto pelo ID.
    */

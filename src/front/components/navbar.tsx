@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { LogOut, Menu, MessageCircle, UserRound } from 'lucide-react'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
-import { IbradaMark } from '@/components/brand-icons'
+import { TriagemModal } from '@/components/triagem-modal'
 import { useAuth } from '@/lib/auth-context'
-import { buildWhatsAppLink, navItems, site } from '@/lib/site'
+import { navItems, site } from '@/lib/site'
 import { cn } from '@/lib/utils'
 import { FlashBanner } from '@/components/flash-banner'
 
@@ -98,12 +98,11 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  // TODO: o botão deve abrir uma sobretela de triagem (perguntas guiadas) e só
-  // então redirecionar ao WhatsApp com uma mensagem mais bem formulada.
-  // Por enquanto abre o WhatsApp direto com uma mensagem fixa.
-  const openTriage = () => {
-    const link= buildWhatsAppLink('Olá, gostaria de iniciar a triagem.')
-    window.open(link, '_blank')
+  const triagemDialog = useRef<HTMLDialogElement>(null)
+  const abrirTriagemAoFecharMenu = useRef(false)
+
+  function openTriage() {
+    if (!triagemDialog.current?.open) triagemDialog.current?.showModal()
   }
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
@@ -142,7 +141,9 @@ export function SiteHeader() {
           <LogoutButton variant="ghost" className="hidden h-10 md:inline-flex" />
           <Button
             size="lg"
-            onClick={() => openTriage()}
+            onClick={openTriage}
+            aria-haspopup="dialog"
+            aria-controls="triagem-modal"
             className="hidden h-10 bg-accent px-4 text-accent-foreground hover:bg-accent/90 sm:inline-flex"
           >
             <MessageCircle data-icon="inline-start" />
@@ -160,7 +161,12 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+      <Sheet open={menuOpen} onOpenChange={setMenuOpen} onOpenChangeComplete={(open) => {
+        if (!open && abrirTriagemAoFecharMenu.current) {
+          abrirTriagemAoFecharMenu.current = false
+          openTriage()
+        }
+      }}>
         <SheetContent side="right" className="w-full max-w-sm gap-0 p-0">
           <SheetHeader className="border-b p-5">
             <SheetTitle className="font-serif text-lg">Menu</SheetTitle>
@@ -189,10 +195,12 @@ export function SiteHeader() {
           <div className="flex flex-col gap-2 border-t p-5">
             <Button
               size="lg"
+              aria-haspopup="dialog"
+              aria-controls="triagem-modal"
               className="h-11 bg-accent text-accent-foreground hover:bg-accent/90"
               onClick={() => {
+                abrirTriagemAoFecharMenu.current = true
                 setMenuOpen(false)
-                openTriage()
               }}
             >
               <MessageCircle data-icon="inline-start" />
@@ -204,6 +212,7 @@ export function SiteHeader() {
         </SheetContent>
       </Sheet>
     </header>
+    <TriagemModal dialog={triagemDialog} />
     <FlashBanner />
     </>
   )

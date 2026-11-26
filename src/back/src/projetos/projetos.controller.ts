@@ -11,6 +11,7 @@ import {
 import { ProjetosService } from './projetos.service.js';
 import { CreateProjetoDto } from './dto/create-projeto.dto.js';
 import { Roles } from '../auth/roles.decorator.js';
+import { Public } from '../auth/public.decorator.js';
 import { UserRole } from '../user/dto/create-user.dto.js';
 
 @Controller('projetos')
@@ -28,6 +29,18 @@ export class ProjetosController {
   async findAll() {
     this.logger.log('Gestor solicitou a lista de projetos');
     return this.projetosService.findAll();
+  }
+
+  @Public()
+  @Get('publicos')
+  listarComVagas() {
+    return this.projetosService.listarComVagas();
+  }
+
+  @Public()
+  @Get('publicos/:id')
+  buscarComVagas(@Param('id') id: string) {
+    return this.projetosService.buscarComVagas(id);
   }
 
   /**
