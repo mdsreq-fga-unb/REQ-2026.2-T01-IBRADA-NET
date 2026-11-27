@@ -311,7 +311,7 @@ export default function MinhaConta() {
             Olá, {firstName}. Este é o seu espaço.
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Seus dados, voluntariado e experiências em um só lugar. Uma conta única para todas as suas formas de participar.
+            Seus dados, voluntariado e pacotes em um só lugar. Uma conta única para todas as suas formas de participar.
           </p>
         </div>
       </section>

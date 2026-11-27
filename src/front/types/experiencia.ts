@@ -9,6 +9,19 @@ export interface ExperienciaDto {
   endsAt: string; // ISO 8601 Date string
   capacity: number;
   isAvailable: boolean;
+  location?: string | null; // local de atuação, ex.: Planaltina/DF
+  community?: string | null;
+  biome?: string | null;
+  difficulty?: "LEVE" | "MODERADA" | "INTENSA" | null;
+  meetingPoint?: string | null;
+  meetingTime?: string | null;
+  includedItems?: string[];
+  rules?: string[];
+  clothingTips?: string[];
+  communityImpact?: string | null;
+  guideName?: string | null;
+  guideRole?: string | null;
+  maxPerBooking?: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -20,6 +33,13 @@ export type CreateExperienciaPayload = Omit<
 > & {
   photos: string[]; // ao menos uma foto de divulgação (a primeira é a capa)
   videos?: string[];
+  location: string;
+  community?: string;
+  biome: BiomaCategoria;
+  difficulty: "LEVE" | "MODERADA" | "INTENSA";
+  meetingPoint: string;
+  meetingTime: string;
+  includedItems: string[];
 };
 
 // Payload para atualização de disponibilidade (UpdateDisponibilidadeDto)
@@ -36,9 +56,17 @@ export interface ExperienciaResponseDto extends ExperienciaDto {
   priceDecimal?: string;
   priceCents?: number;
   priceFormatted?: string;
+  // Só vem na lista do gestor (GET /experiencias/gestor); nulo em pacotes antigos.
+  createdBy?: { id: string; name: string } | null;
 }
 
-export type BiomaCategoria = "Cerrado" | "Amazônia";
+export type BiomaCategoria =
+  | "Cerrado"
+  | "Amazônia"
+  | "Caatinga"
+  | "Mata Atlântica"
+  | "Pantanal"
+  | "Pampa";
 
 export type NivelDificuldade = "leve" | "moderada" | "intensa";
 
@@ -47,26 +75,24 @@ export interface EtapaRoteiro {
   descricao: string;
 }
 
-export interface OpcaoDataExperiencia {
-  id: string;
-  isoDate: string;
-  label: string;
-}
-
+// Dados de apresentação derivados do que o gestor cadastrou. Nada aqui é inventado:
+// o que não foi cadastrado vem nulo ou vazio e a tela omite a seção.
 export interface ExperienciaVisualMeta {
-  bioma: BiomaCategoria;
-  comunidade: string;
-  local: string;
+  bioma: string | null;
+  comunidade: string | null;
+  local: string | null;
   duracaoTexto?: string;
-  dificuldade: NivelDificuldade;
-  dificuldadeLabel: string;
+  dificuldade: NivelDificuldade | null;
+  dificuldadeLabel: string | null;
   imagemUrl: string;
   imagemAlt: string;
-  capacidadeTotalReferencia: number;
   maxPorReserva: number;
-  impactoComunidade: string;
+  impactoComunidade: string | null;
   itensInclusos: readonly string[];
   regrasConservacao: readonly string[];
-  guiaNome: string;
-  guiaPapel: string;
+  vestuario: readonly string[];
+  pontoEncontro: string | null;
+  horarioEncontro: string | null;
+  guiaNome: string | null;
+  guiaPapel: string | null;
 }

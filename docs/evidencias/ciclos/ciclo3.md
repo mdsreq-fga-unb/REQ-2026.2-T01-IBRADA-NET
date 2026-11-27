@@ -14,6 +14,10 @@
           <img src="../../../assets/prototipos/us03.png" alt="Protótipo da US03">
           <p class="slide-caption">US03</p>
         </div>
+        <div class="swiper-slide">
+          <img src="../../../assets/prototipos/us24.svg" alt="Protótipo de baixa fidelidade da US24">
+          <p class="slide-caption">US24 (baixa fidelidade)</p>
+        </div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
@@ -27,6 +31,20 @@
         <div class="swiper-slide">
           <img src="../../../assets/prototipos/us11.png" alt="Protótipo da US11 e US12">
           <p class="slide-caption">US11 e US12</p>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+=== "EP07"
+
+    <div class="swiper ibrada-carousel">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../../../assets/prototipos/us16.png" alt="Protótipo da US16">
+          <p class="slide-caption">US16</p>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -83,6 +101,29 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
     </div>
+
+=== "EP07"
+
+    **US16 — Candidatar-se a uma oportunidade**
+
+    ```mermaid
+    flowchart TD
+        A([Início]) --> B[Visitante abre a oportunidade]
+        B --> C{Está autenticado?}
+        C -- Não --> D[Redireciona para o login] --> B
+        C -- Sim --> E{Tem perfil de voluntário?}
+        E -- Não --> F[Completa o perfil em Minha conta] --> G[Retorna à oportunidade]
+        G --> H
+        E -- Sim --> H{Oportunidade aberta?}
+        H -- Não --> I[Exibe erro: oportunidade encerrada] --> Z([Fim])
+        H -- Sim --> J{Já se candidatou?}
+        J -- Sim --> K[Exibe erro: candidatura duplicada] --> Z
+        J -- Não --> L[Informa experiência na área e mensagem opcional]
+        L --> M[Envia a candidatura]
+        M --> N[Registra com status Inscrito no funil - US18]
+        N --> O[Exibe mensagem de sucesso e marca Candidatura enviada]
+        O --> Z
+    ```
 
 === "EP08"
 

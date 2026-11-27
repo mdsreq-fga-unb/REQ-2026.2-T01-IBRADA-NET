@@ -7,7 +7,6 @@ import type {
   ExperienciaResponseDto,
   ExperienciaVisualMeta,
   NivelDificuldade,
-  OpcaoDataExperiencia,
   UpdateDisponibilidadePayload,
 } from "@/types/experiencia";
 
@@ -19,7 +18,6 @@ export type {
   ExperienciaResponseDto,
   ExperienciaVisualMeta,
   NivelDificuldade,
-  OpcaoDataExperiencia,
   UpdateDisponibilidadePayload,
 };
 
@@ -34,124 +32,35 @@ const DIFICULDADE_LABELS: Record<NivelDificuldade, string> = {
   intensa: "Dificuldade intensa",
 };
 
-const ROTEIRO_PADRAO: readonly EtapaRoteiro[] = [
-  {
-    horario: "07h30",
-    descricao: "Recepção na sede do assentamento e café da roça",
-  },
-  {
-    horario: "08h30",
-    descricao: "Roda de conversa sobre a história da comunidade",
-  },
-  {
-    horario: "09h30",
-    descricao: "Trilha pelas veredas e nascentes recuperadas",
-  },
-  {
-    horario: "12h30",
-    descricao: "Almoço agroecológico com as famílias",
-  },
-  {
-    horario: "14h00",
-    descricao: "Banho de cachoeira e retorno",
-  },
-];
+// Imagem neutra usada só em pacotes antigos sem nenhuma foto cadastrada.
+export const IMAGEM_SEM_FOTO =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900"><rect width="100%" height="100%" fill="#d9d4c7"/></svg>',
+  );
 
-const REGRAS_CONSERVACAO_PADRAO: readonly string[] = [
-  "Leve sua garrafa de água: não usamos descartáveis",
-  "Não retire plantas, sementes ou pedras",
-  "Permaneça sempre na trilha sinalizada",
-  "Use protetor solar biodegradável",
-];
-
-const ITENS_INCLUSOS_PADRAO: readonly string[] = [
-  "Guia local credenciado",
-  "Café da manhã e almoço",
-  "Seguro aventura",
-  "Kit de boas-vindas",
-];
-
-const META_VISUAL_POR_SLUG: Record<string, ExperienciaVisualMeta> = {
-  "trilha-das-nascentes-do-cerrado": {
-    bioma: "Cerrado",
-    comunidade: "Assentamento Pequeno William",
-    local: "Planaltina/DF",
-    duracaoTexto: "1 dia (8h)",
-    dificuldade: "moderada",
-    dificuldadeLabel: DIFICULDADE_LABELS.moderada,
-    imagemUrl:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1400&q=80",
-    imagemAlt: "Cachoeira com águas cristalinas e vegetação nativa do Cerrado",
-    capacidadeTotalReferencia: 15,
-    maxPorReserva: 6,
-    impactoComunidade:
-      "70% do valor fica com as famílias do assentamento: guia, alimentação e manutenção das trilhas. O restante apoia a recuperação das nascentes.",
-    itensInclusos: ITENS_INCLUSOS_PADRAO,
-    regrasConservacao: REGRAS_CONSERVACAO_PADRAO,
-    guiaNome: "Dona Maria das Graças",
-    guiaPapel: "Guia local credenciada e agricultora",
-  },
-  "vivencia-de-saberes-quilombolas": {
-    bioma: "Cerrado",
-    comunidade: "Comunidade Quilombola Kalunga",
-    local: "Cavalcante/GO",
-    duracaoTexto: "2 dias (1 pernoite)",
-    dificuldade: "leve",
-    dificuldadeLabel: DIFICULDADE_LABELS.leve,
-    imagemUrl:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
-    imagemAlt:
-      "Visitantes em roda de conversa e oficina de saberes com a comunidade",
-    capacidadeTotalReferencia: 8,
-    maxPorReserva: 6,
-    impactoComunidade:
-      "70% do valor remunera diretamente as famílias quilombolas pela hospedagem, oficinas culturais e alimentação tradicional. O restante financia ações socioambientais no território.",
-    itensInclusos: [
-      "Guia comunitário Kalunga",
-      "Hospedagem familiar (1 pernoite) e refeições",
-      "Oficina de artesanato em fibras",
-      "Seguro aventura",
-    ],
-    regrasConservacao: REGRAS_CONSERVACAO_PADRAO,
-    guiaNome: "Mestra Tereza Kalunga",
-    guiaPapel: "Guardiã dos saberes locais e artesã",
-  },
-  "rio-e-floresta-ribeirinha": {
-    bioma: "Amazônia",
-    comunidade: "Comunidade Ribeirinha São Raimundo",
-    local: "Novo Airão/AM",
-    duracaoTexto: "4 dias (3 pernoites)",
-    dificuldade: "intensa",
-    dificuldadeLabel: DIFICULDADE_LABELS.intensa,
-    imagemUrl:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80",
-    imagemAlt:
-      "Embarcação tradicional navegando em rio amazônico cercado pela floresta",
-    capacidadeTotalReferencia: 12,
-    maxPorReserva: 6,
-    impactoComunidade:
-      "70% do valor fortalece a economia extrativista da comunidade ribeirinha: piloteiros, anfitriãs e guias locais. O restante apoia o monitoramento comunitário da floresta.",
-    itensInclusos: [
-      "Guias e piloteiros ribeirinhos credenciados",
-      "Pernoites comunitárias e alimentação regional",
-      "Navegação em canoa tradicional",
-      "Seguro expedição",
-    ],
-    regrasConservacao: REGRAS_CONSERVACAO_PADRAO,
-    guiaNome: "Seu Raimundo Nonato",
-    guiaPapel: "Condutor fluvial e líder comunitário",
-  },
+const DIFICULDADE_API: Record<string, NivelDificuldade> = {
+  LEVE: "leve",
+  MODERADA: "moderada",
+  INTENSA: "intensa",
 };
 
-const FALLBACK_IMAGEM_POR_BIOMA: Record<BiomaCategoria, string> = {
-  Cerrado:
-    "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1400&q=80",
-  Amazônia:
-    "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80",
-};
+export const BIOMAS_OPCOES: readonly BiomaCategoria[] = [
+  "Cerrado",
+  "Amazônia",
+  "Caatinga",
+  "Mata Atlântica",
+  "Pantanal",
+  "Pampa",
+];
 
 export async function listarExperiencias(): Promise<ExperienciaResponseDto[]> {
   return api<ExperienciaResponseDto[]>("/experiencias");
+}
+
+// Lista do gestor: igual ao catálogo, mais quem cadastrou cada pacote.
+export async function listarExperienciasGestor(): Promise<ExperienciaResponseDto[]> {
+  return api<ExperienciaResponseDto[]>("/experiencias/gestor");
 }
 
 export async function buscarExperienciaPorSlug(
@@ -244,39 +153,13 @@ export function formatarDataCurta(isoDate: string): string {
   }).format(date);
 }
 
-function capitalizarPalavrasData(texto: string): string {
-  return texto
-    .split(" ")
-    .map((palavra: string): string =>
-      palavra.length > 0
-        ? palavra.charAt(0).toUpperCase() + palavra.slice(1)
-        : palavra,
-    )
-    .join(" ");
-}
-
-export function gerarOpcoesDatas(startsAt: string): OpcaoDataExperiencia[] {
-  const baseDate = new Date(startsAt);
-  if (Number.isNaN(baseDate.getTime())) {
-    return [
-      {
-        id: "data-0",
-        isoDate: startsAt,
-        label: "Data A Confirmar",
-      },
-    ];
-  }
-
-  const offsetsDias: readonly number[] = [0, 14, 28];
-  return offsetsDias.map((offset: number, index: number): OpcaoDataExperiencia => {
-    const dt = new Date(baseDate.getTime() + offset * 24 * 60 * 60 * 1000);
-    const iso = dt.toISOString();
-    return {
-      id: `data-${index}`,
-      isoDate: iso,
-      label: capitalizarPalavrasData(formatarDataCurta(iso)),
-    };
-  });
+// Período real do pacote: "1 dez 2026" ou "1 dez 2026 a 3 dez 2026".
+export function formatarPeriodoExperiencia(startsAt: string, endsAt: string): string {
+  const inicio = formatarDataCurta(startsAt);
+  const fim = formatarDataCurta(endsAt);
+  if (inicio === "Data a definir") return inicio;
+  if (fim === "Data a definir" || fim === inicio) return inicio;
+  return `${inicio} a ${fim}`;
 }
 
 export function extrairEtapasRoteiro(itinerary?: string | null): EtapaRoteiro[] {
@@ -286,7 +169,7 @@ export function extrairEtapasRoteiro(itinerary?: string | null): EtapaRoteiro[] 
     .filter((linha: string): boolean => linha.length > 0);
 
   if (linhas.length === 0) {
-    return [...ROTEIRO_PADRAO];
+    return [];
   }
 
   return linhas.map((linha: string, index: number): EtapaRoteiro => {
@@ -348,72 +231,27 @@ export function calcularDuracaoTexto(
 export function resolverMetaVisual(
   experiencia: ExperienciaDto | ExperienciaResponseDto,
 ): ExperienciaVisualMeta {
-  const meta = resolverMetaBase(experiencia);
-  const capa =
-    "photos" in experiencia && experiencia.photos && experiencia.photos.length > 0
-      ? experiencia.photos[0]
-      : null;
-
-  return capa
-    ? { ...meta, imagemUrl: capa, imagemAlt: experiencia.title }
-    : meta;
-}
-
-function resolverMetaBase(
-  experiencia: ExperienciaDto | ExperienciaResponseDto,
-): ExperienciaVisualMeta {
-  const preset = META_VISUAL_POR_SLUG[experiencia.slug];
-  if (preset) return preset;
-
-  const texto =
-    `${experiencia.title} ${experiencia.description} ${experiencia.itinerary ?? ""}`.toLowerCase();
-
-  const isAmazonia =
-    texto.includes("amazôn") ||
-    texto.includes("amazon") ||
-    texto.includes("ribeir") ||
-    texto.includes("novo airão") ||
-    texto.includes("/am");
-
-  const bioma: BiomaCategoria = isAmazonia ? "Amazônia" : "Cerrado";
-
-  let dificuldade: NivelDificuldade = "moderada";
-  if (
-    texto.includes("intensa") ||
-    texto.includes("expedição") ||
-    texto.includes("ribeirinh")
-  ) {
-    dificuldade = "intensa";
-  } else if (
-    texto.includes("leve") ||
-    texto.includes("saberes") ||
-    texto.includes("oficina")
-  ) {
-    dificuldade = "leve";
-  }
-
-  const localMatch = `${experiencia.title} ${experiencia.description}`.match(
-    /[A-ZÀ-Ú][A-Za-zÀ-ú\s]{2,25}\/[A-Z]{2}/,
-  );
+  const resposta = experiencia as ExperienciaResponseDto;
+  const capa = resposta.photos && resposta.photos.length > 0 ? resposta.photos[0] : null;
+  const dificuldade = resposta.difficulty ? (DIFICULDADE_API[resposta.difficulty] ?? null) : null;
 
   return {
-    bioma,
-    comunidade: isAmazonia
-      ? "Comunidade Ribeirinha Parceira"
-      : "Comunidade Parceira do Cerrado",
-    local: localMatch ? localMatch[0] : isAmazonia ? "Amazônia/AM" : "Cerrado/DF",
+    bioma: resposta.biome ?? null,
+    comunidade: resposta.community ?? null,
+    local: resposta.location ?? null,
     dificuldade,
-    dificuldadeLabel: DIFICULDADE_LABELS[dificuldade],
-    imagemUrl: FALLBACK_IMAGEM_POR_BIOMA[bioma],
+    dificuldadeLabel: dificuldade ? DIFICULDADE_LABELS[dificuldade] : null,
+    imagemUrl: capa ?? IMAGEM_SEM_FOTO,
     imagemAlt: experiencia.title,
-    capacidadeTotalReferencia: Math.max(1, experiencia.capacity),
-    maxPorReserva: 6,
-    impactoComunidade:
-      "Parte do valor fica com as famílias da comunidade anfitriã (guia, alimentação e manutenção das trilhas) e parte apoia a conservação do território.",
-    itensInclusos: ITENS_INCLUSOS_PADRAO,
-    regrasConservacao: REGRAS_CONSERVACAO_PADRAO,
-    guiaNome: "Guia Comunitário IBRADA",
-    guiaPapel: "Guia local credenciado",
+    maxPorReserva: resposta.maxPerBooking ?? 6,
+    impactoComunidade: resposta.communityImpact ?? null,
+    itensInclusos: resposta.includedItems ?? [],
+    regrasConservacao: resposta.rules ?? [],
+    vestuario: resposta.clothingTips ?? [],
+    pontoEncontro: resposta.meetingPoint ?? null,
+    horarioEncontro: resposta.meetingTime ?? null,
+    guiaNome: resposta.guideName ?? null,
+    guiaPapel: resposta.guideRole ?? null,
   };
 }
 

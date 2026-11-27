@@ -28,7 +28,7 @@ export function ToCurrency(validationOptions?: ValidationOptions) {
       }
     }),
     IsNotEmpty({
-      message: 'O preço da experiência é obrigatório.',
+      message: 'O preço do pacote é obrigatório.',
       ...validationOptions,
     }),
     Matches(/^\d+\.\d{2}$/, {

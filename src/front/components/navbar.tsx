@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { LogOut, Menu, MessageCircle, UserRound } from 'lucide-react'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet'
@@ -11,6 +11,17 @@ import { useAuth } from '@/lib/auth-context'
 import { buildWhatsAppLink, navItems, site } from '@/lib/site'
 import { cn } from '@/lib/utils'
 import { FlashBanner } from '@/components/flash-banner'
+
+const noopSubscribe = () => () => {}
+
+/**
+ * Falso no servidor e na hidratação, verdadeiro depois. A sessão vem do localStorage, então o
+ * servidor sempre desenha o visitante; sem isso o navegador desenharia o usuário logado já na
+ * hidratação e o React acusaria diferença entre os dois HTMLs.
+ */
+function useHydrated() {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false)
+}
 
 function Logo() {
   return (
@@ -40,7 +51,8 @@ function AccountButton({
   labelClassName?: string
   onNavigate?: () => void
 }) {
-  const { user } = useAuth()
+  const { user: sessionUser } = useAuth()
+  const user = useHydrated() ? sessionUser : null
 
   const loggedIn = {
     href: '/minha-conta',
@@ -75,7 +87,8 @@ function LogoutButton({
   className?: string
   onNavigate?: () => void
 }) {
-  const { user, logout } = useAuth()
+  const { user: sessionUser, logout } = useAuth()
+  const user = useHydrated() ? sessionUser : null
   const router = useRouter()
   if (!user) return null
 

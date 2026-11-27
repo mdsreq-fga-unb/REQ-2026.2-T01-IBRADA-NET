@@ -27,6 +27,37 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
     service = new ExperienciasService(mockPrisma as never);
   });
 
+  describe('findAllGestor (US11/US12 - lista do gestor)', () => {
+    it('acrescenta quem cadastrou cada pacote e deixa nulo nos pacotes antigos', async () => {
+      const base = {
+        description: 'Desc',
+        itinerary: null,
+        price: '100.00',
+        startsAt: new Date('2026-12-01T08:00:00Z'),
+        endsAt: new Date('2026-12-01T17:00:00Z'),
+        capacity: 10,
+        isAvailable: true,
+        createdAt: new Date('2026-11-20T10:00:00Z'),
+        updatedAt: new Date(),
+      };
+      mockPrisma.experiencia.findMany
+        .mockResolvedValueOnce([
+          { ...base, id: 'exp-1', slug: 'a', title: 'A' },
+          { ...base, id: 'exp-2', slug: 'b', title: 'B' },
+        ])
+        .mockResolvedValueOnce([
+          { id: 'exp-1', createdBy: { id: 'gestor-1', name: 'Gestora Ana' } },
+          { id: 'exp-2', createdBy: null },
+        ]);
+
+      const lista = await service.findAllGestor();
+
+      expect(lista[0].createdBy).toEqual({ id: 'gestor-1', name: 'Gestora Ana' });
+      expect(lista[0].createdAt).toEqual(new Date('2026-11-20T10:00:00Z'));
+      expect(lista[1].createdBy).toBeNull();
+    });
+  });
+
   describe('findAllPublic (US02 - Catálogo)', () => {
     it('deve listar pacotes sinalizando vagas disponíveis, indisponibilidade e formatos monetários', async () => {
       mockPrisma.experiencia.findMany.mockResolvedValue([
@@ -127,6 +158,19 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
       isAvailable: true,
       photos: ['https://exemplo.com/capa.jpg', 'https://exemplo.com/galeria.jpg'],
       videos: ['https://exemplo.com/video.mp4'],
+      location: 'Planaltina/DF',
+      community: 'Assentamento Pequeno William',
+      biome: 'Cerrado',
+      difficulty: 'MODERADA',
+      meetingPoint: 'Sede do assentamento',
+      meetingTime: '07h30',
+      includedItems: ['Guia local', 'Almoço'],
+      rules: ['Permaneça na trilha'],
+      clothingTips: ['Calçado fechado'],
+      communityImpact: 'Parte do valor fica com as famílias anfitriãs.',
+      guideName: 'Seu Raimundo',
+      guideRole: 'Guia local',
+      maxPerBooking: 6,
     };
 
     it('deve cadastrar um pacote com sucesso repassando string decimal exata ao Prisma', async () => {
@@ -144,7 +188,7 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
         isAvailable: true,
       });
 
-      const response = await service.create(validDto);
+      const response = await service.create(validDto, 'gestor-1');
 
       expect(response.message).toBe('Pacote cadastrado com sucesso!');
       expect(mockPrisma.experiencia.create).toHaveBeenCalledWith({
@@ -158,6 +202,20 @@ describe('ExperienciasService (US02, US03, US11, US12)', () => {
           endsAt: new Date(validDto.endsAt),
           capacity: 20,
           isAvailable: true,
+          location: 'Planaltina/DF',
+          community: 'Assentamento Pequeno William',
+          biome: 'Cerrado',
+          difficulty: 'MODERADA',
+          meetingPoint: 'Sede do assentamento',
+          meetingTime: '07h30',
+          includedItems: ['Guia local', 'Almoço'],
+          rules: ['Permaneça na trilha'],
+          clothingTips: ['Calçado fechado'],
+          communityImpact: 'Parte do valor fica com as famílias anfitriãs.',
+          guideName: 'Seu Raimundo',
+          guideRole: 'Guia local',
+          maxPerBooking: 6,
+          createdById: 'gestor-1',
           midias: {
             create: [
               { tipo: 'FOTO', url: 'https://exemplo.com/capa.jpg', ordem: 0 },

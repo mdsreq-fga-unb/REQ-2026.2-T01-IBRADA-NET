@@ -20,6 +20,7 @@ import {
   calcularDuracaoTexto,
   formatarDataCurta,
   formatarPrecoExperiencia,
+  IMAGEM_SEM_FOTO,
   listarExperiencias,
   obterVagasDisponiveis,
   resolverMetaVisual,
@@ -126,14 +127,21 @@ function ExperienciaCard({
         <img
           src={meta.imagemUrl}
           alt={meta.imagemAlt}
+          onError={(evento): void => {
+            // Link de foto inválido ou fora do ar: troca por uma imagem neutra, sem o texto alternativo solto.
+            evento.currentTarget.onerror = null;
+            evento.currentTarget.src = IMAGEM_SEM_FOTO;
+          }}
           className={cn(
             "h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]",
             indisponivel && "grayscale-[35%]",
           )}
         />
-        <span className="absolute top-3 left-3 rounded-full bg-card/95 px-3 py-1 text-xs font-medium text-foreground shadow-xs">
-          {meta.bioma}
-        </span>
+        {meta.bioma && (
+          <span className="absolute top-3 left-3 rounded-full bg-card/95 px-3 py-1 text-xs font-medium text-foreground shadow-xs">
+            {meta.bioma}
+          </span>
+        )}
         {indisponivel && (
           <span className="absolute top-3 right-3 rounded-full bg-destructive px-3 py-1 text-xs font-medium text-white shadow-xs">
             {!experiencia.isAvailable ? "Indisponível" : "Esgotada"}
@@ -142,17 +150,21 @@ function ExperienciaCard({
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-medium text-earth">{meta.comunidade}</p>
+        {meta.comunidade && (
+          <p className="text-xs font-medium text-earth">{meta.comunidade}</p>
+        )}
         <h2 className="mt-1 font-serif text-lg font-semibold leading-snug text-foreground">
           {experiencia.title}
         </h2>
 
         <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-muted-foreground">
-          <div className="flex min-w-0 items-center gap-1.5">
-            <dt className="sr-only">Local</dt>
-            <MapPin aria-hidden="true" className="size-3.5 shrink-0" />
-            <dd className="truncate">{meta.local}</dd>
-          </div>
+          {meta.local && (
+            <div className="flex min-w-0 items-center gap-1.5">
+              <dt className="sr-only">Local</dt>
+              <MapPin aria-hidden="true" className="size-3.5 shrink-0" />
+              <dd className="truncate">{meta.local}</dd>
+            </div>
+          )}
           <div className="flex min-w-0 items-center gap-1.5">
             <dt className="sr-only">Duração</dt>
             <Clock aria-hidden="true" className="size-3.5 shrink-0" />
@@ -179,14 +191,18 @@ function ExperienciaCard({
         <hr className="my-4 border-border" />
 
         <div className="mt-auto flex items-end justify-between gap-3">
-          <span
-            className={cn(
-              "inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium whitespace-nowrap",
-              ESTILO_DIFICULDADE[meta.dificuldade],
-            )}
-          >
-            {meta.dificuldadeLabel}
-          </span>
+          {meta.dificuldade ? (
+            <span
+              className={cn(
+                "inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium whitespace-nowrap",
+                ESTILO_DIFICULDADE[meta.dificuldade],
+              )}
+            >
+              {meta.dificuldadeLabel}
+            </span>
+          ) : (
+            <span />
+          )}
 
           <div className="text-right leading-none">
             <span className="mb-1 block text-[11px] text-muted-foreground">
@@ -273,7 +289,7 @@ export default function EcoturismoPage(): React.JSX.Element {
       <section className="border-b border-border bg-secondary/45">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14 lg:px-8">
           <p className="text-[11px] font-semibold tracking-[0.14em] text-earth uppercase sm:text-xs">
-            Ecoturismo Comunitário
+            Ecoturismo
           </p>
 
           <h1 className="mt-3 max-w-md font-serif text-[2rem] leading-[1.12] font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
@@ -367,7 +383,7 @@ export default function EcoturismoPage(): React.JSX.Element {
               Nenhum pacote disponível no momento
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Novas expedições comunitárias no Cerrado e na Amazônia serão
+              Novas expedições no Cerrado e na Amazônia serão
               publicadas em breve.
             </p>
             <button
@@ -401,7 +417,7 @@ export default function EcoturismoPage(): React.JSX.Element {
       <div className="fixed right-4 bottom-4 z-40 sm:right-6 sm:bottom-6">
         <a
           href={buildWhatsAppLink(
-            "Olá! Gostaria de saber mais sobre os pacotes de ecoturismo comunitário do IBRADA.",
+            "Olá! Gostaria de saber mais sobre os pacotes de ecoturismo do IBRADA.",
           )}
           target="_blank"
           rel="noopener noreferrer"

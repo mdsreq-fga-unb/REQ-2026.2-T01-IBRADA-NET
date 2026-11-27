@@ -22,7 +22,7 @@ export const navItems = [
   },
   {
     href: '/ecoturismo',
-    label: 'Ecoturismo Comunitário',
+    label: 'Ecoturismo',
     description: 'Vivências no Cerrado e trilhas ecológicas',
   },
   {

@@ -16,6 +16,19 @@ const validBody = {
   capacity: 10,
   isAvailable: true,
   photos: ['https://exemplo.com/capa.jpg'],
+  location: 'Planaltina/DF',
+  community: 'Assentamento Pequeno William',
+  biome: 'Cerrado',
+  difficulty: 'MODERADA',
+  meetingPoint: 'Sede do assentamento',
+  meetingTime: '07h30',
+  includedItems: ['Guia local', 'Almoço'],
+  rules: ['Permaneça na trilha'],
+  clothingTips: ['Calçado fechado'],
+  communityImpact: 'Parte do valor fica com as famílias anfitriãs.',
+  guideName: 'Seu Raimundo',
+  guideRole: 'Guia local',
+  maxPerBooking: 6,
 };
 
 const validate = (body: unknown, metatype: new () => object = CreateExperienciaDto) =>
@@ -37,6 +50,35 @@ describe('CreateExperienciaDto (US11 - campos obrigatórios)', () => {
 
     expect(dto.price).toBe('150.50');
     expect(dto.capacity).toBe(10);
+    expect(dto.location).toBe('Planaltina/DF');
+    expect(dto.includedItems).toEqual(['Guia local', 'Almoço']);
+  });
+
+  it('exige local, ponto e horário de encontro e itens inclusos (US03)', async () => {
+    const { location: _l, meetingPoint: _p, meetingTime: _t, includedItems: _i, ...incompleto } = validBody;
+    const msgs = await mensagens(incompleto);
+
+    expect(msgs).toEqual(
+      expect.arrayContaining([
+        'O local do pacote é obrigatório.',
+        'O ponto de encontro é obrigatório.',
+        'O horário de encontro é obrigatório.',
+        'Os itens inclusos devem ser enviados como uma lista.',
+      ]),
+    );
+  });
+
+  it('rejeita bioma e dificuldade fora das opções válidas', async () => {
+    const msgs = await mensagens({ ...validBody, biome: 'Deserto', difficulty: 'EXTREMA' });
+
+    expect(msgs.join(' ')).toContain('O bioma deve ser um destes');
+    expect(msgs.join(' ')).toContain('A dificuldade deve ser');
+  });
+
+  it('aceita regras, vestuário, impacto e guia como opcionais', async () => {
+    const { community: _co, rules: _r, clothingTips: _v, communityImpact: _ci, guideName: _gn, guideRole: _gr, maxPerBooking: _m, ...semOpcionais } = validBody;
+
+    await expect(validate(semOpcionais)).resolves.toBeDefined();
   });
 
   it.each(['title', 'description', 'itinerary', 'price', 'startsAt', 'endsAt', 'capacity', 'isAvailable'])(

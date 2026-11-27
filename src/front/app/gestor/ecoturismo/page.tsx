@@ -10,12 +10,12 @@ import {
   atualizarDisponibilidadeExperiencia,
   formatarDataCurta,
   formatarPrecoExperiencia,
-  listarExperiencias,
+  listarExperienciasGestor,
   type ExperienciaResponseDto,
 } from "@/lib/experiencias";
 import { cn } from "@/lib/utils";
 
-const COLUNAS = ["Pacote", "Data", "Vagas", "Valor", "Publicação", "Ações"];
+const COLUNAS = ["Pacote", "Data", "Vagas", "Valor", "Cadastrado por", "Publicação", "Ações"];
 
 // Mensagem de sucesso ou erro da última alteração (US12).
 type Aviso = { tipo: "sucesso" | "erro"; texto: string };
@@ -29,7 +29,7 @@ export default function GestaoEcoturismoPage() {
 
   const carregar = useCallback(async () => {
     try {
-      setPacotes(await listarExperiencias());
+      setPacotes(await listarExperienciasGestor());
       setEstado("ok");
     } catch (e) {
       setErroLista(mensagemDeErro(e, "Não foi possível carregar os pacotes."));
@@ -72,7 +72,7 @@ export default function GestaoEcoturismoPage() {
       <header className="mb-8 flex flex-wrap items-center justify-between gap-5">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-earth">Administração</p>
-          <h1 className="font-serif text-4xl sm:text-5xl">Ecoturismo comunitário</h1>
+          <h1 className="font-serif text-4xl sm:text-5xl">Ecoturismo</h1>
           <p className="mt-3 text-muted-foreground">Gerencie os pacotes e a disponibilidade da oferta.</p>
         </div>
         <Link href="/gestor/ecoturismo/novo" className={cn(buttonVariants(), "h-11 gap-2 rounded-xl px-5")}>
@@ -144,6 +144,10 @@ export default function GestaoEcoturismoPage() {
                     </td>
                     <td className="px-4 py-4 sm:px-5">{p.availableSeats ?? p.capacity}</td>
                     <td className="px-4 py-4 sm:px-5">{formatarPrecoExperiencia(p.priceDecimal ?? p.price)}</td>
+                    <td className="px-4 py-4 sm:px-5">
+                      <p>{p.createdBy?.name ?? "—"}</p>
+                      <p className="text-xs text-muted-foreground">em {formatarDataCurta(p.createdAt)}</p>
+                    </td>
                     <td className="px-4 py-4 sm:px-5">
                       <span
                         className={cn(

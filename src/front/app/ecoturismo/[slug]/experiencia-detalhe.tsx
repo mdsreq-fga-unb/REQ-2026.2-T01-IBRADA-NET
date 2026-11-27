@@ -15,9 +15,11 @@ import {
   Minus,
   Plus,
   RefreshCw,
+  Shirt,
   UserRound,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/brand-icons";
+import { CompartilharPacoteButton } from "@/components/compartilhar-pacote-button";
 import { ApiError } from "@/lib/api";
 import {
   buscarExperienciaPorSlug,
@@ -25,13 +27,13 @@ import {
   calcularPrecoTotalExperiencia,
   extrairEtapasRoteiro,
   formatarPrecoExperiencia,
-  gerarOpcoesDatas,
+  formatarPeriodoExperiencia,
+  IMAGEM_SEM_FOTO,
   obterVagasDisponiveis,
   resolverMetaVisual,
   type EtapaRoteiro,
   type ExperienciaResponseDto,
   type NivelDificuldade,
-  type OpcaoDataExperiencia,
 } from "@/lib/experiencias";
 import { buildWhatsAppLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -81,7 +83,6 @@ export function ExperienciaDetalhe({
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [notFoundState, setNotFoundState] = useState<boolean>(false);
-  const [selectedDateIndex, setSelectedDateIndex] = useState<number>(0);
   const [participantes, setParticipantes] = useState<number>(1);
 
   const aplicarResultado = useCallback((resultado: ResultadoDetalhe): void => {
@@ -195,7 +196,7 @@ export function ExperienciaDetalhe({
             className="mt-6 inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
             <ArrowLeft aria-hidden="true" className="size-4" />
-            Voltar para Ecoturismo Comunitário
+            Voltar para Ecoturismo
           </Link>
         </div>
       </div>
@@ -204,10 +205,7 @@ export function ExperienciaDetalhe({
 
   const meta = resolverMetaVisual(experiencia);
   const vagas = obterVagasDisponiveis(experiencia);
-  const capacidadeTotal = Math.max(
-    experiencia.capacity,
-    meta.capacidadeTotalReferencia,
-  );
+  const capacidadeTotal = experiencia.capacity;
   const isSoldOut = experiencia.isSoldOut ?? vagas <= 0;
   const indisponivel = !experiencia.isAvailable || isSoldOut;
 
@@ -219,9 +217,10 @@ export function ExperienciaDetalhe({
     meta.duracaoTexto,
   );
   const etapasRoteiro = extrairEtapasRoteiro(experiencia.itinerary);
-  const opcoesDatas = gerarOpcoesDatas(experiencia.startsAt);
-  const opcaoDataSelecionada =
-    opcoesDatas[selectedDateIndex] ?? opcoesDatas[0];
+  const periodoTexto = formatarPeriodoExperiencia(
+    experiencia.startsAt,
+    experiencia.endsAt,
+  );
 
   const maxParticipantes = Math.max(1, Math.min(meta.maxPorReserva, vagas));
   const participantesAtivos = Math.min(participantes, maxParticipantes);
@@ -238,7 +237,7 @@ export function ExperienciaDetalhe({
 
   const mensagemReserva = `Olá! Gostaria de reservar ${participantesAtivos} ${
     participantesAtivos === 1 ? "vaga" : "vagas"
-  } para "${experiencia.title}" na data ${opcaoDataSelecionada.label} (Total: ${precoTotalTexto}).`;
+  } para "${experiencia.title}" no período ${periodoTexto} (Total: ${precoTotalTexto}).`;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -247,7 +246,12 @@ export function ExperienciaDetalhe({
         <img
           src={meta.imagemUrl}
           alt={meta.imagemAlt}
-          className="h-full w-full object-cover"
+          onError={(evento): void => {
+            // Link de foto inválido ou fora do ar: troca por uma imagem neutra, sem o texto alternativo solto.
+            evento.currentTarget.onerror = null;
+            evento.currentTarget.src = IMAGEM_SEM_FOTO;
+          }}
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div
           aria-hidden="true"
@@ -255,17 +259,26 @@ export function ExperienciaDetalhe({
         />
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-6 sm:px-6 md:pb-8 lg:px-8">
-          <Link
-            href="/ecoturismo"
-            className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-white/85 transition-colors hover:text-white sm:text-sm"
-          >
-            <ArrowLeft aria-hidden="true" className="size-3.5 sm:size-4" />
-            Todos os pacotes
-          </Link>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Link
+              href="/ecoturismo"
+              className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-white/85 transition-colors hover:text-white sm:text-sm"
+            >
+              <ArrowLeft aria-hidden="true" className="size-3.5 sm:size-4" />
+              Todos os pacotes
+            </Link>
+            <CompartilharPacoteButton
+              titulo={experiencia.title}
+              descricao={experiencia.description}
+              slug={experiencia.slug}
+            />
+          </div>
 
-          <p className="mt-3 text-xs font-medium text-white/90 sm:text-sm">
-            {meta.comunidade}
-          </p>
+          {meta.comunidade && (
+            <p className="mt-3 text-xs font-medium text-white/90 sm:text-sm">
+              {meta.comunidade}
+            </p>
+          )}
 
           <h1 className="mt-1 max-w-3xl font-serif text-2xl leading-tight font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
             {experiencia.title}
@@ -280,13 +293,15 @@ export function ExperienciaDetalhe({
           <div>
             {/* Metadados do pacote */}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground sm:text-sm">
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin
-                  aria-hidden="true"
-                  className="size-3.5 shrink-0 text-primary"
-                />
-                <span>{meta.local}</span>
-              </span>
+              {meta.local && (
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin
+                    aria-hidden="true"
+                    className="size-3.5 shrink-0 text-primary"
+                  />
+                  <span>{meta.local}</span>
+                </span>
+              )}
               <span className="inline-flex items-center gap-1.5">
                 <Clock
                   aria-hidden="true"
@@ -294,14 +309,16 @@ export function ExperienciaDetalhe({
                 />
                 <span>{duracaoTexto}</span>
               </span>
-              <span
-                className={cn(
-                  "inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium",
-                  ESTILO_DIFICULDADE[meta.dificuldade],
-                )}
-              >
-                {meta.dificuldadeLabel}
-              </span>
+              {meta.dificuldade && (
+                <span
+                  className={cn(
+                    "inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium",
+                    ESTILO_DIFICULDADE[meta.dificuldade],
+                  )}
+                >
+                  {meta.dificuldadeLabel}
+                </span>
+              )}
             </div>
 
             {/* Descrição */}
@@ -353,7 +370,40 @@ export function ExperienciaDetalhe({
               </section>
             )}
 
+            {/* Ponto e horário de encontro (US03) */}
+            {(meta.pontoEncontro || meta.horarioEncontro) && (
+              <section
+                aria-label="Ponto e horário de encontro"
+                className="mt-6 rounded-2xl border border-border bg-card p-5"
+              >
+                <h2 className="font-sans text-sm font-semibold text-foreground">
+                  Ponto e horário de encontro
+                </h2>
+                <dl className="mt-3 grid gap-3 text-xs text-foreground/90 sm:grid-cols-2 sm:text-sm">
+                  {meta.pontoEncontro && (
+                    <div className="flex items-start gap-2">
+                      <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <div>
+                        <dt className="sr-only">Ponto de encontro</dt>
+                        <dd>{meta.pontoEncontro}</dd>
+                      </div>
+                    </div>
+                  )}
+                  {meta.horarioEncontro && (
+                    <div className="flex items-start gap-2">
+                      <Clock aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <div>
+                        <dt className="sr-only">Horário de encontro</dt>
+                        <dd>{meta.horarioEncontro}</dd>
+                      </div>
+                    </div>
+                  )}
+                </dl>
+              </section>
+            )}
+
             {/* Impacto na comunidade */}
+            {meta.impactoComunidade && (
             <section
               aria-label="Impacto na comunidade"
               className="mt-6 rounded-2xl bg-secondary/60 p-5 sm:p-6"
@@ -373,37 +423,41 @@ export function ExperienciaDetalhe({
                 </div>
               </div>
             </section>
+            )}
 
             {/* Roteiro (Timeline Vertical) */}
+            {etapasRoteiro.length > 0 && (
             <section aria-label="Roteiro" className="mt-8">
-              <h2 className="font-serif text-xl font-bold text-foreground sm:text-2xl">
-                Roteiro
-              </h2>
-              <ol className="relative mt-5 ml-1.5 space-y-5 border-l border-border pl-6">
-                {etapasRoteiro.map(
-                  (etapa: EtapaRoteiro, index: number): React.JSX.Element => (
-                    <li
-                      key={`${etapa.horario}-${index}`}
-                      className="relative"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="absolute top-1.5 -left-[29px] size-2.5 rounded-full bg-primary ring-4 ring-background"
-                      />
-                      <p className="text-xs font-bold text-primary">
-                        {etapa.horario}
-                      </p>
-                      <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">
-                        {etapa.descricao}
-                      </p>
-                    </li>
-                  ),
-                )}
-              </ol>
-            </section>
+                <h2 className="font-serif text-xl font-bold text-foreground sm:text-2xl">
+                  Roteiro
+                </h2>
+                <ol className="relative mt-5 ml-1.5 space-y-5 border-l border-border pl-6">
+                  {etapasRoteiro.map(
+                    (etapa: EtapaRoteiro, index: number): React.JSX.Element => (
+                      <li
+                        key={`${etapa.horario}-${index}`}
+                        className="relative"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="absolute top-1.5 -left-[29px] size-2.5 rounded-full bg-primary ring-4 ring-background"
+                        />
+                        <p className="text-xs font-bold text-primary">
+                          {etapa.horario}
+                        </p>
+                        <p className="mt-0.5 text-sm leading-relaxed text-foreground/90">
+                          {etapa.descricao}
+                        </p>
+                      </li>
+                    ),
+                  )}
+                </ol>
+              </section>
+            )}
 
             {/* Incluso + Regras de Conservação */}
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {meta.itensInclusos.length > 0 && (
               <section
                 aria-label="O que está incluso"
                 className="rounded-2xl border border-border bg-card p-5"
@@ -428,7 +482,9 @@ export function ExperienciaDetalhe({
                   )}
                 </ul>
               </section>
+              )}
 
+              {meta.regrasConservacao.length > 0 && (
               <section
                 aria-label="Regras de conservação"
                 className="rounded-2xl border border-[#ebd5c8] bg-[#fbf3ee] p-5"
@@ -457,9 +513,36 @@ export function ExperienciaDetalhe({
                   )}
                 </ul>
               </section>
+              )}
+
+              {meta.vestuario.length > 0 && (
+              <section
+                aria-label="Recomendações de vestuário"
+                className="rounded-2xl border border-border bg-card p-5 sm:col-span-2"
+              >
+                <h2 className="flex items-center gap-2 font-sans text-sm font-semibold text-foreground">
+                  <Shirt aria-hidden="true" className="size-4 shrink-0 text-primary" />
+                  <span>Recomendações de vestuário</span>
+                </h2>
+                <ul className="mt-3.5 space-y-2.5">
+                  {meta.vestuario.map(
+                    (dica: string): React.JSX.Element => (
+                      <li
+                        key={dica}
+                        className="flex items-start gap-2.5 text-xs leading-relaxed text-foreground/85 sm:text-[13px]"
+                      >
+                        <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span>{dica}</span>
+                      </li>
+                    ),
+                  )}
+                </ul>
+              </section>
+              )}
             </div>
 
             {/* Seu Guia Local */}
+            {meta.guiaNome && (
             <section
               aria-label="Seu guia local"
               className="mt-4 flex items-center gap-4 rounded-2xl border border-border bg-card p-4 sm:p-5"
@@ -474,11 +557,14 @@ export function ExperienciaDetalhe({
                 <p className="mt-0.5 font-serif text-base font-bold text-foreground">
                   {meta.guiaNome}
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  {meta.guiaPapel}
-                </p>
+                {meta.guiaPapel && (
+                  <p className="text-xs text-muted-foreground">
+                    {meta.guiaPapel}
+                  </p>
+                )}
               </div>
             </section>
+            )}
           </div>
 
           {/* Coluna Direita / Card de Reserva */}
@@ -508,58 +594,17 @@ export function ExperienciaDetalhe({
             </div>
 
             <div className="space-y-5 p-6">
-              {/* Seletor de Data */}
-              <fieldset>
-                <legend className="text-xs font-semibold text-foreground">
-                  Escolha a data
-                </legend>
-                <div role="radiogroup" className="mt-2.5 space-y-2">
-                  {opcoesDatas.map(
-                    (
-                      opcao: OpcaoDataExperiencia,
-                      index: number,
-                    ): React.JSX.Element => {
-                      const isSelected = selectedDateIndex === index;
-                      return (
-                        <button
-                          key={opcao.id}
-                          type="button"
-                          role="radio"
-                          aria-checked={isSelected}
-                          onClick={(): void => {
-                            setSelectedDateIndex(index);
-                          }}
-                          className={cn(
-                            "flex w-full items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-xs font-medium transition-colors sm:text-sm",
-                            isSelected
-                              ? "border-primary bg-secondary/45 text-foreground"
-                              : "border-border bg-card text-foreground/85 hover:border-primary/50",
-                          )}
-                        >
-                          <span
-                            aria-hidden="true"
-                            className={cn(
-                              "flex size-4 shrink-0 items-center justify-center rounded-full border",
-                              isSelected
-                                ? "border-primary"
-                                : "border-muted-foreground/40",
-                            )}
-                          >
-                            {isSelected && (
-                              <span className="size-2 rounded-full bg-primary" />
-                            )}
-                          </span>
-                          <Calendar
-                            aria-hidden="true"
-                            className="size-4 shrink-0 text-primary"
-                          />
-                          <span>{opcao.label}</span>
-                        </button>
-                      );
-                    },
-                  )}
-                </div>
-              </fieldset>
+              {/* Data do pacote */}
+              <div>
+                <p className="text-xs font-semibold text-foreground">Data</p>
+                <p className="mt-2.5 flex items-center gap-3 rounded-xl border border-border bg-secondary/45 px-3.5 py-2.5 text-xs font-medium text-foreground sm:text-sm">
+                  <Calendar
+                    aria-hidden="true"
+                    className="size-4 shrink-0 text-primary"
+                  />
+                  <span>{periodoTexto}</span>
+                </p>
+              </div>
 
               {/* Seletor de Participantes */}
               <div>
@@ -633,7 +678,7 @@ export function ExperienciaDetalhe({
                   href={buildWhatsAppLink(mensagemReserva)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+                  className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-destructive px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-destructive/90"
                 >
                   Reservar vagas
                 </a>
